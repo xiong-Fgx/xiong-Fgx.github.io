@@ -1,0 +1,1958 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>02_部署调用链码 | POWDER SNOW</title>
+  <meta name="keywords" content=" 区块链 ">
+  <meta name="description" content="02_部署调用链码 | POWDER SNOW">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<meta property="og:type" content="website">
+<meta property="og:title" content="categories">
+<meta property="og:url" content="http://yoursite.com/categories/index.html">
+<meta property="og:site_name" content="POWDER SNOW">
+<meta property="article:published_time" content="2018-03-02T04:33:16.000Z">
+<meta property="article:modified_time" content="2020-03-05T13:28:59.839Z">
+<meta property="article:author" content="冯冠雄">
+<meta name="twitter:card" content="summary">
+
+
+<link rel="icon" href="/img/avatar.jpg">
+
+<link href="/css/style.css?v=1.0.1" rel="stylesheet">
+
+<link href="/css/hl_theme/atom-light.css?v=1.0.1" rel="stylesheet">
+
+<link href="//cdn.bootcss.com/animate.css/3.5.2/animate.min.css" rel="stylesheet">
+<link href="//cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+
+<script src="//cdn.bootcss.com/jquery/2.2.4/jquery.min.js"></script>
+<script src="/js/jquery.autocomplete.min.js?v=1.0.1" ></script>
+
+<script src="//cdn.bootcss.com/highlight.js/9.12.0/highlight.min.js"></script>
+<script>
+    hljs.initHighlightingOnLoad();
+</script>
+
+<script src="//cdn.bootcss.com/nprogress/0.2.0/nprogress.min.js"></script>
+
+
+
+<script src="//cdn.bootcss.com/jquery-cookie/1.4.1/jquery.cookie.min.js" ></script>
+
+<script src="/js/iconfont.js?v=1.0.1" ></script>
+
+<meta name="generator" content="Hexo 4.2.0"></head>
+<div style="display: none">
+  <input class="theme_disqus_on" value="false">
+  <input class="theme_preload_comment" value="false">
+  <input class="theme_blog_path" value="">
+</div>
+
+<body>
+<aside class="nav">
+    <div class="nav-left">
+        <a href="/" class="avatar_target">
+    <img class="avatar" src="/img/avatar.jpg" />
+</a>
+<div class="author">
+    <span>冯冠雄</span>
+</div>
+
+<div class="icon">
+    
+        
+        <a title="github" href="https://github.com/xiong-Fgx" target="_blank">
+            
+                <svg class="iconfont-svg" aria-hidden="true">
+                    <use xlink:href="#icon-github"></use>
+                </svg>
+            
+        </a>
+        
+    
+        
+        <a title="linkedin" href="https://www.linkedin.com/in/guanxiong-feng-8b6aa8179" target="_blank">
+            
+                <svg class="iconfont-svg" aria-hidden="true">
+                    <use xlink:href="#icon-linkedin"></use>
+                </svg>
+            
+        </a>
+        
+    
+        
+        <a title="email" href="mailto:guanxiongf@gmail.com" target="_blank">
+            
+                <svg class="iconfont-svg" aria-hidden="true">
+                    <use xlink:href="#icon-email"></use>
+                </svg>
+            
+        </a>
+        
+    
+</div>
+
+
+
+
+<ul>
+    <li><div class="all active">全部文章</div></li>
+    
+        
+            
+            <li><div data-rel="网络"><i class="fold iconfont icon-right"></i>网络</div>
+                
+                    <ul class="sub hide">
+                        
+                        <li><div data-rel="HTTP">HTTP</div>
+                            
+                        </li>
+                            
+                        <li><div data-rel="protobuf">protobuf</div>
+                            
+                        </li>
+                            
+                        <li><div data-rel="网络编程">网络编程</div>
+                            
+                        </li>
+                            
+                    </ul>
+                
+            </li>
+            
+        
+    
+        
+            
+            <li><div data-rel="数据库">数据库</div>
+                
+            </li>
+            
+        
+    
+        
+            
+        
+    
+        
+            
+            <li><div data-rel="SSM"><i class="fold iconfont icon-right"></i>SSM</div>
+                
+                    <ul class="sub hide">
+                        
+                        <li><div data-rel="SSM整合">SSM整合</div>
+                            
+                        </li>
+                            
+                        <li><div data-rel="Spring">Spring</div>
+                            
+                        </li>
+                            
+                        <li><div data-rel="SpringMVC">SpringMVC</div>
+                            
+                        </li>
+                            
+                        <li><div data-rel="MyBatis">MyBatis</div>
+                            
+                        </li>
+                            
+                        <li><div data-rel="SpringBoot">SpringBoot</div>
+                            
+                        </li>
+                            
+                    </ul>
+                
+            </li>
+            
+        
+    
+        
+            
+        
+    
+        
+            
+        
+    
+        
+            
+        
+    
+        
+            
+        
+    
+        
+            
+            <li><div data-rel="客户端"><i class="fold iconfont icon-right"></i>客户端</div>
+                
+                    <ul class="sub hide">
+                        
+                        <li><div data-rel="QT">QT</div>
+                            
+                        </li>
+                            
+                    </ul>
+                
+            </li>
+            
+        
+    
+        
+            
+            <li><div data-rel="区块链"><i class="fold iconfont icon-right"></i>区块链</div>
+                
+                    <ul class="sub hide">
+                        
+                        <li><div data-rel="论文">论文</div>
+                            
+                        </li>
+                            
+                        <li><div data-rel="Fabric">Fabric</div>
+                            
+                        </li>
+                            
+                        <li><div data-rel="fabric">fabric</div>
+                            
+                        </li>
+                            
+                    </ul>
+                
+            </li>
+            
+        
+    
+        
+            
+            <li><div data-rel="分布式">分布式</div>
+                
+            </li>
+            
+        
+    
+        
+            
+            <li><div data-rel="大数据"><i class="fold iconfont icon-right"></i>大数据</div>
+                
+                    <ul class="sub hide">
+                        
+                        <li><div data-rel="hadoop">hadoop</div>
+                            
+                        </li>
+                            
+                    </ul>
+                
+            </li>
+            
+        
+    
+        
+            
+            <li><div data-rel="前端"><i class="fold iconfont icon-right"></i>前端</div>
+                
+                    <ul class="sub hide">
+                        
+                        <li><div data-rel="HTML">HTML</div>
+                            
+                        </li>
+                            
+                        <li><div data-rel="CSS">CSS</div>
+                            
+                        </li>
+                            
+                    </ul>
+                
+            </li>
+            
+        
+    
+        
+            
+        
+    
+        
+            
+        
+    
+        
+            
+        
+    
+        
+            
+        
+    
+        
+            
+        
+    
+        
+            
+            <li><div data-rel="笔记">笔记</div>
+                
+            </li>
+            
+        
+    
+        
+            
+        
+    
+        
+            
+        
+    
+        
+            
+        
+    
+        
+            
+        
+    
+        
+            
+        
+    
+</ul>
+<div class="left-bottom">
+    <div class="menus">
+    
+    
+    
+    
+    </div>
+    <div></div>
+</div>
+<input type="hidden" id="yelog_site_posts_number" value="71">
+
+<div style="display: none">
+    <span id="busuanzi_value_site_uv"></span>
+    <span id="busuanzi_value_site_pv"></span>
+</div>
+
+    </div>
+    <div class="nav-right">
+        <div class="friends-area">
+    <div class="friends-title">
+        友情链接
+        <i class="back-title-list"></i>
+    </div>
+    <div class="friends-content">
+        <ul>
+            
+            <li><a target="_blank" href="http://yelog.org/">叶落阁</a></li>
+            
+        </ul>
+    </div>
+</div>
+        <div class="title-list">
+    <form onkeydown="if(event.keyCode === 13){return false;}">
+        <input id="local-search-input" class="search" type="text" placeholder="Search..." />
+        <i class="cross"></i>
+        <span>
+            <label for="tagswitch">Tags:</label>
+            <input id="tagswitch" type="checkbox" style="display: none" />
+            <i id="tagsWitchIcon"></i>
+        </span>
+    </form>
+    <div class="tags-list">
+    
+    <li class="article-tag-list-item">
+        <a class="color5">HTTP</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a class="color4">protobuf</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a class="color5">MySQL SQL</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a class="color2">Spring</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a class="color5">java</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a class="color3">QT</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a class="color4">区块链</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a class="color4">分布式</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a class="color4">大数据</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a class="color3">前端</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a class="color3">MyBatis</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a class="color1">SpringBoot</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a class="color5">网络编程</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a class="color1">Redis</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a class="color4">多线程</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a class="color4">数据库</a>
+    </li>
+    
+    <div class="clearfix"></div>
+</div>
+
+    
+    <nav id="title-list-nav">
+        
+        <a  class="前端 CSS "
+           href="/2021/01/11/html/4_%E7%9B%92%E5%AD%90%E6%A8%A1%E5%9E%8B/"
+           data-tag="前端"
+           data-author="" >
+            <span class="post-title" title="【前端 4】盒子模型">【前端 4】盒子模型</span>
+            <span class="post-date" title="2021-01-11 09:41:10">2021/01/11</span>
+        </a>
+        
+        <a  class="前端 CSS "
+           href="/2021/01/09/html/3_CSS%E8%BF%9B%E9%98%B6/"
+           data-tag="前端"
+           data-author="" >
+            <span class="post-title" title="【前端 3】CSS进阶">【前端 3】CSS进阶</span>
+            <span class="post-date" title="2021-01-09 09:43:10">2021/01/09</span>
+        </a>
+        
+        <a  class="前端 CSS "
+           href="/2021/01/05/html/2_CSS/"
+           data-tag="前端"
+           data-author="" >
+            <span class="post-title" title="【前端 2】CSS">【前端 2】CSS</span>
+            <span class="post-date" title="2021-01-05 16:22:10">2021/01/05</span>
+        </a>
+        
+        <a  class="前端 HTML "
+           href="/2021/01/04/html/1_html/"
+           data-tag="前端"
+           data-author="" >
+            <span class="post-title" title="【前端 1】HTML">【前端 1】HTML</span>
+            <span class="post-date" title="2021-01-04 10:46:10">2021/01/04</span>
+        </a>
+        
+        <a  class="区块链 fabric "
+           href="/2020/12/12/fabric/08_%E9%93%BE%E7%A0%81/"
+           data-tag="区块链"
+           data-author="" >
+            <span class="post-title" title="07_链码接口使用">07_链码接口使用</span>
+            <span class="post-date" title="2020-12-12 11:43:23">2020/12/12</span>
+        </a>
+        
+        <a  class="区块链 fabric "
+           href="/2020/12/12/fabric/02_%E9%83%A8%E7%BD%B2%E8%B0%83%E7%94%A8%E9%93%BE%E7%A0%81/"
+           data-tag="区块链"
+           data-author="" >
+            <span class="post-title" title="02_部署调用链码">02_部署调用链码</span>
+            <span class="post-date" title="2020-12-12 10:56:23">2020/12/12</span>
+        </a>
+        
+        <a  class="区块链 fabric "
+           href="/2020/12/09/fabric/07_dockerCompose%E5%90%AF%E5%8A%A8fabric/"
+           data-tag="区块链"
+           data-author="" >
+            <span class="post-title" title="06_docker compose启动节点">06_docker compose启动节点</span>
+            <span class="post-date" title="2020-12-09 11:35:23">2020/12/09</span>
+        </a>
+        
+        <a  class="区块链 fabric "
+           href="/2020/12/09/fabric/03_%E7%BD%91%E7%BB%9C%E7%BB%93%E6%9E%84%E5%8F%98%E5%8A%A8/"
+           data-tag="区块链"
+           data-author="" >
+            <span class="post-title" title="03_用户结构变动">03_用户结构变动</span>
+            <span class="post-date" title="2020-12-09 10:35:23">2020/12/09</span>
+        </a>
+        
+        <a  class="区块链 fabric "
+           href="/2020/12/02/fabric/01_%E6%90%AD%E5%BB%BA%E5%9F%BA%E7%A1%80%E7%BD%91%E7%BB%9C/"
+           data-tag="区块链"
+           data-author="" >
+            <span class="post-title" title="01_搭建基础网络">01_搭建基础网络</span>
+            <span class="post-date" title="2020-12-02 11:05:23">2020/12/02</span>
+        </a>
+        
+        <a  class="区块链 fabric "
+           href="/2020/12/01/fabric/05_java%20SDK%E4%BD%BF%E7%94%A8/"
+           data-tag="区块链"
+           data-author="" >
+            <span class="post-title" title="05_javaSDK使用">05_javaSDK使用</span>
+            <span class="post-date" title="2020-12-01 15:04:23">2020/12/01</span>
+        </a>
+        
+        <a  class="区块链 fabric "
+           href="/2020/12/01/fabric/04_%E7%94%A8%E6%88%B7%E4%BD%BF%E7%94%A8%E9%93%BE%E7%A0%81/"
+           data-tag="区块链"
+           data-author="" >
+            <span class="post-title" title="04_用户使用链码">04_用户使用链码</span>
+            <span class="post-date" title="2020-12-01 10:55:23">2020/12/01</span>
+        </a>
+        
+        <a  class="大数据 hadoop "
+           href="/2020/11/26/hadoop/%E5%AE%89%E8%A3%85/"
+           data-tag="大数据"
+           data-author="" >
+            <span class="post-title" title="【hadoop 3】hadoop分布式安装总结">【hadoop 3】hadoop分布式安装总结</span>
+            <span class="post-date" title="2020-11-26 17:50:09">2020/11/26</span>
+        </a>
+        
+        <a  class="客户端 QT "
+           href="/2020/10/29/QT/4_%E6%A8%A1%E5%9E%8B%20%E8%A7%86%E5%9B%BE%E7%BB%93%E6%9E%84/"
+           data-tag="QT"
+           data-author="" >
+            <span class="post-title" title="【QT 3】模型-视图结构">【QT 3】模型-视图结构</span>
+            <span class="post-date" title="2020-10-29 16:49:10">2020/10/29</span>
+        </a>
+        
+        <a  class="客户端 QT "
+           href="/2020/10/28/QT/3_%E6%8E%A7%E4%BB%B6/"
+           data-tag="QT"
+           data-author="" >
+            <span class="post-title" title="【QT 2】控件">【QT 2】控件</span>
+            <span class="post-date" title="2020-10-28 16:55:10">2020/10/28</span>
+        </a>
+        
+        <a  class="客户端 QT "
+           href="/2020/10/28/QT/2_%E5%B8%83%E5%B1%80%E7%AE%A1%E7%90%86/"
+           data-tag="QT"
+           data-author="" >
+            <span class="post-title" title="【QT 1】布局管理">【QT 1】布局管理</span>
+            <span class="post-date" title="2020-10-28 14:37:10">2020/10/28</span>
+        </a>
+        
+        <a  class="客户端 QT "
+           href="/2020/10/20/QT/QT%E7%95%8C%E9%9D%A2%E7%BC%96%E8%BE%91%E5%99%A8/"
+           data-tag="QT"
+           data-author="" >
+            <span class="post-title" title="【QT 4】QT界面编辑器">【QT 4】QT界面编辑器</span>
+            <span class="post-date" title="2020-10-20 15:52:10">2020/10/20</span>
+        </a>
+        
+        <a  class="SSM Spring "
+           href="/2020/06/01/%E7%AC%94%E8%AE%B0/spring/"
+           data-tag="Spring"
+           data-author="" >
+            <span class="post-title" title="【笔记】Spring总结">【笔记】Spring总结</span>
+            <span class="post-date" title="2020-06-01 03:57:17">2020/06/01</span>
+        </a>
+        
+        <a  class="笔记 "
+           href="/2020/05/12/%E7%AC%94%E8%AE%B0/%E6%95%B0%E6%8D%AE%E5%BA%93/"
+           data-tag="数据库"
+           data-author="" >
+            <span class="post-title" title="【笔记】数据库与MySQL">【笔记】数据库与MySQL</span>
+            <span class="post-date" title="2020-05-12 21:38:05">2020/05/12</span>
+        </a>
+        
+        <a  class="笔记 "
+           href="/2020/05/07/%E7%AC%94%E8%AE%B0/redis/"
+           data-tag="Redis"
+           data-author="" >
+            <span class="post-title" title="【笔记】Redis">【笔记】Redis</span>
+            <span class="post-date" title="2020-05-07 18:38:05">2020/05/07</span>
+        </a>
+        
+        <a  class="笔记 "
+           href="/2020/04/25/%E7%AC%94%E8%AE%B0/%E5%A4%9A%E7%BA%BF%E7%A8%8B/"
+           data-tag="多线程"
+           data-author="" >
+            <span class="post-title" title="【笔记】java并发">【笔记】java并发</span>
+            <span class="post-date" title="2020-04-25 15:38:01">2020/04/25</span>
+        </a>
+        
+        <a  class="大数据 hadoop "
+           href="/2020/03/18/hadoop/2_%E4%BD%BF%E7%94%A8hadoop/"
+           data-tag="大数据"
+           data-author="" >
+            <span class="post-title" title="【hadoop 2】hadoop三种模式使用">【hadoop 2】hadoop三种模式使用</span>
+            <span class="post-date" title="2020-03-18 17:49:04">2020/03/18</span>
+        </a>
+        
+        <a  class="SSM SpringBoot "
+           href="/2020/03/18/springboot/3_springboot%E7%9A%84%E9%85%8D%E7%BD%AE/"
+           data-tag="SpringBoot"
+           data-author="" >
+            <span class="post-title" title="【SpringBoot 02】配置文件">【SpringBoot 02】配置文件</span>
+            <span class="post-date" title="2020-03-18 12:58:23">2020/03/18</span>
+        </a>
+        
+        <a  class="SSM SpringBoot "
+           href="/2020/03/17/springboot/2_springboot%E7%9A%84helloworld/"
+           data-tag="SpringBoot"
+           data-author="" >
+            <span class="post-title" title="【SpringBoot 01】HelloWorld">【SpringBoot 01】HelloWorld</span>
+            <span class="post-date" title="2020-03-17 19:58:23">2020/03/17</span>
+        </a>
+        
+        <a  class="SSM SSM整合 "
+           href="/2020/03/05/3-SpringMVC/1_%E6%90%AD%E5%BB%BAspring/"
+           data-tag="java"
+           data-author="" >
+            <span class="post-title" title="【SSM实战】SSM框架整合">【SSM实战】SSM框架整合</span>
+            <span class="post-date" title="2020-03-05 20:37:01">2020/03/05</span>
+        </a>
+        
+        <a  class="SSM SpringMVC "
+           href="/2020/03/05/3-SpringMVC/7_SpringMVC%E5%BC%82%E5%B8%B8%E5%A4%84%E7%90%86%E4%B8%8E%E6%8B%A6%E6%88%AA%E5%99%A8/"
+           data-tag="java"
+           data-author="" >
+            <span class="post-title" title="【SpringMVC实战6】异常处理与拦截器">【SpringMVC实战6】异常处理与拦截器</span>
+            <span class="post-date" title="2020-03-05 13:06:19">2020/03/05</span>
+        </a>
+        
+        <a  class="SSM SpringMVC "
+           href="/2020/03/04/3-SpringMVC/6_SpringMVC%E5%93%8D%E5%BA%94/"
+           data-tag="java"
+           data-author="" >
+            <span class="post-title" title="【SpringMVC实战5】响应">【SpringMVC实战5】响应</span>
+            <span class="post-date" title="2020-03-04 19:26:39">2020/03/04</span>
+        </a>
+        
+        <a  class="SSM SpringMVC "
+           href="/2020/03/03/3-SpringMVC/4_SpringMVC%E7%9A%84%E5%B8%B8%E7%94%A8%E6%B3%A8%E8%A7%A3/"
+           data-tag="java"
+           data-author="" >
+            <span class="post-title" title="【SpringMVC实战3】常用注解">【SpringMVC实战3】常用注解</span>
+            <span class="post-date" title="2020-03-03 15:26:29">2020/03/03</span>
+        </a>
+        
+        <a  class="SSM SpringMVC "
+           href="/2020/03/03/3-SpringMVC/5_%E8%AF%B7%E6%B1%82%E5%8F%82%E6%95%B0%E7%BB%91%E5%AE%9A/"
+           data-tag="java"
+           data-author="" >
+            <span class="post-title" title="【SpringMVC实战4】请求参数绑定">【SpringMVC实战4】请求参数绑定</span>
+            <span class="post-date" title="2020-03-03 09:13:23">2020/03/03</span>
+        </a>
+        
+        <a  class="SSM SpringMVC "
+           href="/2020/03/02/3-SpringMVC/3_SpringMVC%E7%9A%84%E6%89%A7%E8%A1%8C%E6%B5%81%E7%A8%8B/"
+           data-tag="java"
+           data-author="" >
+            <span class="post-title" title="【SpringMVC实战2】执行流程">【SpringMVC实战2】执行流程</span>
+            <span class="post-date" title="2020-03-02 18:26:39">2020/03/02</span>
+        </a>
+        
+        <a  class="SSM SpringMVC "
+           href="/2020/03/02/3-SpringMVC/2_%E5%85%A5%E9%97%A8%E6%A1%88%E4%BE%8B/"
+           data-tag="java"
+           data-author="" >
+            <span class="post-title" title="【SpringMVC实战1】入门案例">【SpringMVC实战1】入门案例</span>
+            <span class="post-date" title="2020-03-02 14:26:39">2020/03/02</span>
+        </a>
+        
+        <a  class="SSM Spring "
+           href="/2020/02/21/13-Spring/8_%E4%BA%8B%E5%8A%A1%E6%8E%A7%E5%88%B6/"
+           data-tag="Spring"
+           data-author="" >
+            <span class="post-title" title="【Spring实战8】事务控制">【Spring实战8】事务控制</span>
+            <span class="post-date" title="2020-02-21 15:23:48">2020/02/21</span>
+        </a>
+        
+        <a  class="SSM Spring "
+           href="/2020/02/20/13-Spring/7_JdbcTemplate/"
+           data-tag="Spring"
+           data-author="" >
+            <span class="post-title" title="【Spring实战7】JdbcTemplate">【Spring实战7】JdbcTemplate</span>
+            <span class="post-date" title="2020-02-20 09:32:29">2020/02/20</span>
+        </a>
+        
+        <a  class="SSM Spring "
+           href="/2020/02/19/13-Spring/6_%E5%9F%BA%E4%BA%8Exml%E5%92%8C%E6%B3%A8%E8%A7%A3%E7%9A%84AOP%E9%85%8D%E7%BD%AE/"
+           data-tag="Spring"
+           data-author="" >
+            <span class="post-title" title="【Spring实战6】基于xml和注解的AOP配置">【Spring实战6】基于xml和注解的AOP配置</span>
+            <span class="post-date" title="2020-02-19 21:31:44">2020/02/19</span>
+        </a>
+        
+        <a  class="SSM Spring "
+           href="/2020/02/19/13-Spring/5_AOP/"
+           data-tag="Spring"
+           data-author="" >
+            <span class="post-title" title="【Spring实战5】AOP">【Spring实战5】AOP</span>
+            <span class="post-date" title="2020-02-19 18:56:47">2020/02/19</span>
+        </a>
+        
+        <a  class="SSM Spring "
+           href="/2020/02/18/13-Spring/4_%E5%8A%A8%E6%80%81%E4%BB%A3%E7%90%86/"
+           data-tag="Spring"
+           data-author="" >
+            <span class="post-title" title="【Spring实战4】动态代理">【Spring实战4】动态代理</span>
+            <span class="post-date" title="2020-02-18 17:15:32">2020/02/18</span>
+        </a>
+        
+        <a  class="SSM Spring "
+           href="/2020/02/14/13-Spring/3_%E5%9F%BA%E4%BA%8E%E6%B3%A8%E8%A7%A3%E7%9A%84IOC/"
+           data-tag="Spring"
+           data-author="" >
+            <span class="post-title" title="【Spring实战3】IoC注解">【Spring实战3】IoC注解</span>
+            <span class="post-date" title="2020-02-14 20:57:17">2020/02/14</span>
+        </a>
+        
+        <a  class="SSM Spring "
+           href="/2020/02/13/13-Spring/2_IOC/"
+           data-tag="Spring"
+           data-author="" >
+            <span class="post-title" title="【Spring实战2】IoC与DI">【Spring实战2】IoC与DI</span>
+            <span class="post-date" title="2020-02-13 20:56:03">2020/02/13</span>
+        </a>
+        
+        <a  class="SSM Spring "
+           href="/2020/02/13/13-Spring/1_%E7%A8%8B%E5%BA%8F%E8%80%A6%E5%90%88%E4%B8%8E%E8%A7%A3%E8%80%A6/"
+           data-tag="Spring"
+           data-author="" >
+            <span class="post-title" title="【Spring实战1】程序的耦合与解耦">【Spring实战1】程序的耦合与解耦</span>
+            <span class="post-date" title="2020-02-13 13:17:03">2020/02/13</span>
+        </a>
+        
+        <a  class="SSM MyBatis "
+           href="/2020/02/07/mybatis/10_%E6%B3%A8%E8%A7%A3%E5%BC%80%E5%8F%91/"
+           data-tag="MyBatis"
+           data-author="" >
+            <span class="post-title" title="【Mybatis实战5】注解开发">【Mybatis实战5】注解开发</span>
+            <span class="post-date" title="2020-02-07 16:18:37">2020/02/07</span>
+        </a>
+        
+        <a  class="SSM MyBatis "
+           href="/2020/02/06/mybatis/9_%E7%BC%93%E5%AD%98/"
+           data-tag="MyBatis"
+           data-author="" >
+            <span class="post-title" title="【Mybatis实战4】加载与缓存">【Mybatis实战4】加载与缓存</span>
+            <span class="post-date" title="2020-02-06 18:29:03">2020/02/06</span>
+        </a>
+        
+        <a  class="SSM MyBatis "
+           href="/2020/02/06/mybatis/8_%E5%8A%A8%E6%80%81SQL%E4%B8%8E%E5%A4%9A%E8%A1%A8%E6%93%8D%E4%BD%9C/"
+           data-tag="MyBatis"
+           data-author="" >
+            <span class="post-title" title="【Mybatis实战3】动态SQL与多表操作">【Mybatis实战3】动态SQL与多表操作</span>
+            <span class="post-date" title="2020-02-06 18:08:29">2020/02/06</span>
+        </a>
+        
+        <a  class="SSM MyBatis "
+           href="/2020/02/06/mybatis/6_mybatis%E8%BF%9B%E8%A1%8CCRUD/"
+           data-tag="MyBatis"
+           data-author="" >
+            <span class="post-title" title="【Mybatis实战2】CRUD操作">【Mybatis实战2】CRUD操作</span>
+            <span class="post-date" title="2020-02-06 13:21:03">2020/02/06</span>
+        </a>
+        
+        <a  class="SSM MyBatis "
+           href="/2020/02/05/mybatis/2_%E5%9F%BA%E4%BA%8Exml%E7%9A%84%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/"
+           data-tag="MyBatis"
+           data-author="" >
+            <span class="post-title" title="【Mybatis实战1】两种环境搭建方法及示例">【Mybatis实战1】两种环境搭建方法及示例</span>
+            <span class="post-date" title="2020-02-05 10:21:01">2020/02/05</span>
+        </a>
+        
+        <a  class="数据库 "
+           href="/2020/01/29/11-MySQL/3_%E5%A4%9A%E8%A1%A8%E6%9F%A5%E8%AF%A2%E4%B8%8E%E4%BA%8B%E5%8A%A1/"
+           data-tag="MySQL SQL"
+           data-author="" >
+            <span class="post-title" title="多表查询与事务">多表查询与事务</span>
+            <span class="post-date" title="2020-01-29 13:52:00">2020/01/29</span>
+        </a>
+        
+        <a  class="数据库 "
+           href="/2020/01/26/11-MySQL/2_SQL%E9%AB%98%E7%BA%A7/"
+           data-tag="MySQL SQL"
+           data-author="" >
+            <span class="post-title" title="数据库高级知识及SQL实现">数据库高级知识及SQL实现</span>
+            <span class="post-date" title="2020-01-26 23:01:52">2020/01/26</span>
+        </a>
+        
+        <a  class="数据库 "
+           href="/2020/01/23/11-MySQL/1_SQL%E8%AF%AD%E8%A8%80%E5%9F%BA%E6%9C%AC%E6%93%8D%E4%BD%9C/"
+           data-tag="MySQL SQL"
+           data-author="" >
+            <span class="post-title" title="SQL语言基础">SQL语言基础</span>
+            <span class="post-date" title="2020-01-23 20:06:39">2020/01/23</span>
+        </a>
+        
+        <a  class="网络 protobuf "
+           href="/2020/01/16/10-java%E7%BD%91%E7%BB%9C/2_protobuf/"
+           data-tag="protobuf"
+           data-author="" >
+            <span class="post-title" title="java使用protobuf">java使用protobuf</span>
+            <span class="post-date" title="2020-01-16 17:57:52">2020/01/16</span>
+        </a>
+        
+        <a  class="网络 HTTP "
+           href="/2020/01/15/10-java%E7%BD%91%E7%BB%9C/1_HTTP/"
+           data-tag="HTTP"
+           data-author="" >
+            <span class="post-title" title="java实现简单的HTTP">java实现简单的HTTP</span>
+            <span class="post-date" title="2020-01-15 18:03:21">2020/01/15</span>
+        </a>
+        
+        <a  class="大数据 hadoop "
+           href="/2020/01/06/hadoop/1_hadoop/"
+           data-tag="大数据"
+           data-author="" >
+            <span class="post-title" title="【hadoop 1】hadoop环境搭建">【hadoop 1】hadoop环境搭建</span>
+            <span class="post-date" title="2020-01-06 14:55:10">2020/01/06</span>
+        </a>
+        
+        <a  class="区块链 Fabric "
+           href="/2019/11/24/blockchain/09/"
+           data-tag="区块链"
+           data-author="" >
+            <span class="post-title" title="Hyperledger Fabric系统框架笔记">Hyperledger Fabric系统框架笔记</span>
+            <span class="post-date" title="2019-11-24 12:43:08">2019/11/24</span>
+        </a>
+        
+        <a  class="区块链 论文 "
+           href="/2019/11/21/blockchain/08/"
+           data-tag="区块链"
+           data-author="" >
+            <span class="post-title" title="闪电网络（四）比特币闪电网络：The Bitcoin Lightning Network">闪电网络（四）比特币闪电网络：The Bitcoin Lightning Network</span>
+            <span class="post-date" title="2019-11-21 21:31:53">2019/11/21</span>
+        </a>
+        
+        <a  class="区块链 论文 "
+           href="/2019/11/20/blockchain/07/"
+           data-tag="区块链"
+           data-author="" >
+            <span class="post-title" title="闪电网络（三）哈希时间锁合约：Hashed Timelock Contract (HTLC)">闪电网络（三）哈希时间锁合约：Hashed Timelock Contract (HTLC)</span>
+            <span class="post-date" title="2019-11-20 10:51:23">2019/11/20</span>
+        </a>
+        
+        <a  class="区块链 论文 "
+           href="/2019/11/20/blockchain/05/"
+           data-tag="区块链"
+           data-author="" >
+            <span class="post-title" title="闪电网络（二）双向支付通道：Bidirectional Payment Channels + RSMC">闪电网络（二）双向支付通道：Bidirectional Payment Channels + RSMC</span>
+            <span class="post-date" title="2019-11-20 10:51:23">2019/11/20</span>
+        </a>
+        
+        <a  class="区块链 论文 "
+           href="/2019/11/19/blockchain/06/"
+           data-tag="区块链"
+           data-author="" >
+            <span class="post-title" title="闪电网络（一）微支付通道">闪电网络（一）微支付通道</span>
+            <span class="post-date" title="2019-11-19 10:07:02">2019/11/19</span>
+        </a>
+        
+        <a  class="区块链 论文 "
+           href="/2019/11/15/blockchain/03/"
+           data-tag="区块链"
+           data-author="" >
+            <span class="post-title" title="论文翻译 OmniLedger">论文翻译 OmniLedger</span>
+            <span class="post-date" title="2019-11-15 16:15:33">2019/11/15</span>
+        </a>
+        
+        <a  class="网络 网络编程 "
+           href="/2019/11/03/networkProgram/%E7%BD%91%E7%BB%9C%E7%BC%96%E7%A8%8B10UDP%E8%BF%9E%E6%8E%A5/"
+           data-tag="网络编程"
+           data-author="" >
+            <span class="post-title" title="网络编程10：UDP连接">网络编程10：UDP连接</span>
+            <span class="post-date" title="2019-11-03 16:15:07">2019/11/03</span>
+        </a>
+        
+        <a  class="网络 网络编程 "
+           href="/2019/11/02/networkProgram/%E7%BD%91%E7%BB%9C%E7%BC%96%E7%A8%8B9TCP%E7%9A%84%E5%BC%82%E5%B8%B8/"
+           data-tag="网络编程"
+           data-author="" >
+            <span class="post-title" title="网络编程9：TCP的异常">网络编程9：TCP的异常</span>
+            <span class="post-date" title="2019-11-02 13:57:10">2019/11/02</span>
+        </a>
+        
+        <a  class="网络 网络编程 "
+           href="/2019/11/01/networkProgram/%E7%BD%91%E7%BB%9C%E7%BC%96%E7%A8%8B8TCP%E6%95%B0%E6%8D%AE%E4%BC%A0%E8%BE%93/"
+           data-tag="网络编程"
+           data-author="" >
+            <span class="post-title" title="网络编程8：TCP数据传输">网络编程8：TCP数据传输</span>
+            <span class="post-date" title="2019-11-01 18:34:10">2019/11/01</span>
+        </a>
+        
+        <a  class="网络 网络编程 "
+           href="/2019/10/31/networkProgram/%E7%BD%91%E7%BB%9C%E7%BC%96%E7%A8%8B7TCP%E8%BF%9E%E6%8E%A5%E7%8A%B6%E6%80%81/"
+           data-tag="网络编程"
+           data-author="" >
+            <span class="post-title" title="网络编程7：TCP连接状态">网络编程7：TCP连接状态</span>
+            <span class="post-date" title="2019-10-31 17:14:55">2019/10/31</span>
+        </a>
+        
+        <a  class="网络 网络编程 "
+           href="/2019/10/30/networkProgram/%E7%BD%91%E7%BB%9C%E7%BC%96%E7%A8%8B6%E5%85%B3%E9%97%AD%E8%BF%9E%E6%8E%A5/"
+           data-tag="网络编程"
+           data-author="" >
+            <span class="post-title" title="网络编程6：关闭连接">网络编程6：关闭连接</span>
+            <span class="post-date" title="2019-10-30 18:34:12">2019/10/30</span>
+        </a>
+        
+        <a  class="网络 网络编程 "
+           href="/2019/10/29/networkProgram/%E7%BD%91%E7%BB%9C%E7%BC%96%E7%A8%8B5%E7%BD%91%E7%BB%9C%E5%B7%A5%E5%85%B7/"
+           data-tag="网络编程"
+           data-author="" >
+            <span class="post-title" title="网络编程5：网络工具">网络编程5：网络工具</span>
+            <span class="post-date" title="2019-10-29 14:24:11">2019/10/29</span>
+        </a>
+        
+        <a  class="网络 网络编程 "
+           href="/2019/10/28/networkProgram/%E7%BD%91%E7%BB%9C%E7%BC%96%E7%A8%8B3UDP%E5%8D%8F%E8%AE%AE%E4%BD%BF%E7%94%A8socket/"
+           data-tag="网络编程"
+           data-author="" >
+            <span class="post-title" title="网络编程3：UDP协议使用socket">网络编程3：UDP协议使用socket</span>
+            <span class="post-date" title="2019-10-28 10:11:10">2019/10/28</span>
+        </a>
+        
+        <a  class="网络 网络编程 "
+           href="/2019/10/28/networkProgram/%E7%BD%91%E7%BB%9C%E7%BC%96%E7%A8%8B4%E6%9C%AC%E5%9C%B0socket/"
+           data-tag="网络编程"
+           data-author="" >
+            <span class="post-title" title="网络编程4：本地套接字">网络编程4：本地套接字</span>
+            <span class="post-date" title="2019-10-28 10:11:10">2019/10/28</span>
+        </a>
+        
+        <a  class="网络 网络编程 "
+           href="/2019/10/27/networkProgram/%E7%BD%91%E7%BB%9C%E7%BC%96%E7%A8%8B2TCP%E5%8D%8F%E8%AE%AE%E4%BD%BF%E7%94%A8socket/"
+           data-tag="网络编程"
+           data-author="" >
+            <span class="post-title" title="网络编程2：TCP协议使用socket">网络编程2：TCP协议使用socket</span>
+            <span class="post-date" title="2019-10-27 17:59:09">2019/10/27</span>
+        </a>
+        
+        <a  class="网络 网络编程 "
+           href="/2019/10/26/networkProgram/%E7%BD%91%E7%BB%9C%E7%BC%96%E7%A8%8B1/"
+           data-tag="网络编程"
+           data-author="" >
+            <span class="post-title" title="网络编程1：基础部分">网络编程1：基础部分</span>
+            <span class="post-date" title="2019-10-26 16:54:02">2019/10/26</span>
+        </a>
+        
+        <a  class="分布式 "
+           href="/2019/09/12/distribute/01/"
+           data-tag="分布式"
+           data-author="" >
+            <span class="post-title" title="分布式系统的一致性与共识">分布式系统的一致性与共识</span>
+            <span class="post-date" title="2019-09-12 13:47:52">2019/09/12</span>
+        </a>
+        
+        <a  class="网络 HTTP "
+           href="/2019/08/05/http/030205/"
+           data-tag="HTTP"
+           data-author="" >
+            <span class="post-title" title="HTTP协议学习（五）HTTPS与安全">HTTP协议学习（五）HTTPS与安全</span>
+            <span class="post-date" title="2019-08-05 20:46:07">2019/08/05</span>
+        </a>
+        
+        <a  class="网络 HTTP "
+           href="/2019/07/20/http/030204/"
+           data-tag="HTTP"
+           data-author="" >
+            <span class="post-title" title="HTTP协议学习（四）cookie、缓存、代理机制">HTTP协议学习（四）cookie、缓存、代理机制</span>
+            <span class="post-date" title="2019-07-20 13:15:07">2019/07/20</span>
+        </a>
+        
+        <a  class="网络 HTTP "
+           href="/2019/07/10/http/030203/"
+           data-tag="HTTP"
+           data-author="" >
+            <span class="post-title" title="HTTP协议学习（三）数据传输与连接">HTTP协议学习（三）数据传输与连接</span>
+            <span class="post-date" title="2019-07-10 14:36:55">2019/07/10</span>
+        </a>
+        
+        <a  class="网络 HTTP "
+           href="/2019/07/01/http/030202/"
+           data-tag="HTTP"
+           data-author="" >
+            <span class="post-title" title="HTTP协议学习（二）基础">HTTP协议学习（二）基础</span>
+            <span class="post-date" title="2019-07-01 14:05:51">2019/07/01</span>
+        </a>
+        
+        <a  class="网络 HTTP "
+           href="/2019/06/14/http/030201/"
+           data-tag="HTTP"
+           data-author="" >
+            <span class="post-title" title="HTTP协议学习（一）概念">HTTP协议学习（一）概念</span>
+            <span class="post-date" title="2019-06-14 16:08:25">2019/06/14</span>
+        </a>
+        
+    </nav>
+</div>
+    </div>
+    <div class="hide-list">
+        <div class="semicircle">
+            <div class="brackets first"><</div>
+            <div class="brackets">&gt;</div>
+        </div>
+    </div>
+</aside>
+<div class="post">
+    <div class="pjax">
+        <article id="post-fabric/02_部署调用链码" class="article article-type-post" itemscope itemprop="blogPost">
+    
+        <h1 class="article-title">02_部署调用链码</h1>
+    
+    <div class="article-meta">
+        
+        
+        
+        <span class="book">
+            
+                <a  data-rel="区块链">区块链</a>/
+            
+                <a  data-rel="fabric">fabric</a>
+            
+        </span>
+        
+        
+        <span class="tag">
+            
+            <a class="color4">区块链</a>
+            
+        </span>
+        
+    </div>
+    <div class="article-meta">
+        
+        创建时间:<time class="date" title='更新时间: 2021-01-11 10:50:18'>2020-12-12 10:56</time>
+        
+    </div>
+    <div class="article-meta">
+        
+        
+        
+    </div>
+    
+    <div class="toc-ref">
+    
+        <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#部署链码"><span class="toc-text">部署链码</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#1-安装链码"><span class="toc-text">1. 安装链码</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-1-打包链码"><span class="toc-text">1.1 打包链码</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#1-2-org1上安装链码"><span class="toc-text">1.2 org1上安装链码</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#1-3-org2上安装链码"><span class="toc-text">1.3 org2上安装链码</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-签名（审议）链码定义"><span class="toc-text">2. 签名（审议）链码定义</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3-向channel提交链码定义"><span class="toc-text">3. 向channel提交链码定义</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#调用链码"><span class="toc-text">调用链码</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#1-初始化链码"><span class="toc-text">1. 初始化链码</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-调用链码"><span class="toc-text">2. 调用链码</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3-查询"><span class="toc-text">3. 查询</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#使用SDK-go调用链码"><span class="toc-text">使用SDK-go调用链码</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#1-安装SDK"><span class="toc-text">1. 安装SDK</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-配置证书"><span class="toc-text">2. 配置证书</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3-创建配置文件"><span class="toc-text">3. 创建配置文件</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#4-调用"><span class="toc-text">4. 调用</span></a></li></ol></li></ol>
+    
+<style>
+    .left-col .switch-btn,
+    .left-col .switch-area {
+        display: none;
+    }
+    .toc-level-3 i,
+    .toc-level-3 ol {
+        display: none !important;
+    }
+</style>
+</div>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="部署链码"><a href="#部署链码" class="headerlink" title="部署链码"></a>部署链码</h1><p>这一步用到的链码是example中的链码，存放的位置是：</p>
+<pre><code>fabric-samples/chaincode/sacc</code></pre><p>直接将这个文件夹拷贝到<strong>两个peer节点</strong>，目录为</p>
+<pre><code>peer/chaincode/sacc</code></pre><h2 id="1-安装链码"><a href="#1-安装链码" class="headerlink" title="1. 安装链码"></a>1. 安装链码</h2><p>因为实现Go链码的时候需要Go的标准库之外的一些依赖包（比如说shim），当链码安装到peer的时候，需要将这些包都包含在链码包中，构造称为一个模块，因此需要使用几个命令来处理依赖</p>
+<pre><code class="bash">go mod tidy
+go mod vendor</code></pre>
+<p>此后就将链码的依赖放进了本地的vendor目录中</p>
+<p>当连同依赖都引入之后，可以调用以下命令将这些依赖包一起放入链码包</p>
+<pre><code class="bash">peer chaincode package
+peer chaincode install </code></pre>
+<h3 id="1-1-打包链码"><a href="#1-1-打包链码" class="headerlink" title="1.1 打包链码"></a>1.1 打包链码</h3><p>在Org1和Org2的peer中，<strong>分别执行</strong>以下步骤，将链码安装到各自的peer上。</p>
+<pre><code class="bash">cd chaincode/sacc/
+go env -w GO111MODULE=on
+go mod init sacc
+go mod tidy
+go mod vendor</code></pre>
+<p>打包链码</p>
+<pre><code class="bash">cd peer
+peer lifecycle chaincode package chaincode/sacc.tar.gz --path chaincode/sacc --lang golang --label sacc_1</code></pre>
+<h3 id="1-2-org1上安装链码"><a href="#1-2-org1上安装链码" class="headerlink" title="1.2 org1上安装链码"></a>1.2 org1上安装链码</h3><pre><code class="bash">export CORE_PEER_TLS_ENABLED=true
+export CORE_PEER_LOCALMSPID=&quot;Org1MSP&quot;
+export CORE_PEER_TLS_ROOTCERT_FILE=${PWD}/../organizations/peerOrganizations/org1.example.com/users/Admin@org1.example.com/tls/ca.crt
+export CORE_PEER_MSPCONFIGPATH=${PWD}/../organizations/peerOrganizations/org1.example.com/users/Admin@org1.example.com/msp
+export CORE_PEER_ADDRESS=peer0.org1.example.com:7051
+
+export ORDERER_TLSCA=${PWD}/../organizations/ordererOrganizations/example.com/orderers/orderer.example.com/msp/tlscacerts/tlsca.example.com-cert.pem
+
+peer lifecycle chaincode install chaincode/sacc.tar.gz
+peer lifecycle chaincode queryinstalled # 查询确认一下</code></pre>
+<h3 id="1-3-org2上安装链码"><a href="#1-3-org2上安装链码" class="headerlink" title="1.3 org2上安装链码"></a>1.3 org2上安装链码</h3><pre><code class="bash">export CORE_PEER_TLS_ENABLED=true
+export CORE_PEER_LOCALMSPID=&quot;Org2MSP&quot;
+export CORE_PEER_TLS_ROOTCERT_FILE=${PWD}/../organizations/peerOrganizations/org2.example.com/users/Admin@org2.example.com/tls/ca.crt
+export CORE_PEER_MSPCONFIGPATH=${PWD}/../organizations/peerOrganizations/org2.example.com/users/Admin@org2.example.com/msp
+export CORE_PEER_ADDRESS=peer0.org2.example.com:7051
+
+export ORDERER_TLSCA=${PWD}/../organizations/ordererOrganizations/example.com/orderers/orderer.example.com/msp/tlscacerts/tlsca.example.com-cert.pem
+
+peer lifecycle chaincode install chaincode/sacc.tar.gz
+peer lifecycle chaincode queryinstalled # 查询确认一下</code></pre>
+<h2 id="2-签名（审议）链码定义"><a href="#2-签名（审议）链码定义" class="headerlink" title="2. 签名（审议）链码定义"></a>2. 签名（审议）链码定义</h2><p>Org1和Org2的peer分别执行以下操作:</p>
+<p>获取Package ID</p>
+<pre><code class="bash">peer lifecycle chaincode queryinstalled</code></pre>
+<p>将Package ID放入环境变量（相同的链码，在不同的peer上，PackageID的值是一样的。但只要链码中有一点变化比如多个空格多个注释，PackageID就会不同，但不同的peer上有不同的PackageID值并不影响链码提交上线）</p>
+<pre><code class="bash">export CC_PACKAGE_ID=sacc_1:b33357c4012471d8bd96ba48fd2a12ada5fedfbfd6d623590295778500a0368d</code></pre>
+<p>签名链码定义。签名链码定义是组织级别的，所以只需要一个peer节点操作，审议结果会通过gossip协议通知到组织内。</p>
+<pre><code class="bash">peer lifecycle chaincode approveformyorg -o orderer.example.com:7050  --channelID channel1 --init-required --name sacc --version 1.0 --package-id $CC_PACKAGE_ID --sequence 1 --tls --cafile $ORDERER_TLSCA</code></pre>
+<ul>
+<li>–package-id标识链码；</li>
+<li>–sequence是整数序列，第一次部署值为1，当链码升级时值为2；</li>
+<li>–init-required 表示链码需要初始化，第一次invoke时，使用–isInit来初始化链码，执行init函数。</li>
+<li>注意：在链码版本升级时，如果旧版本审议时有参数–init-required，则新版本的链码审议时–init-required也必须要有，否则审议通不过。</li>
+</ul>
+<p>查询确认结果</p>
+<pre><code class="bash">peer lifecycle chaincode checkcommitreadiness --channelID channel1 --init-required --name sacc --version 1.0 --sequence 1 --tls --cafile $ORDERER_TLSCA --output json</code></pre>
+<h2 id="3-向channel提交链码定义"><a href="#3-向channel提交链码定义" class="headerlink" title="3. 向channel提交链码定义"></a>3. 向channel提交链码定义</h2><p>当通道内大多数成员都已审议了链码定义后，可以提交链码到通道。提交需要用–peerAddresses来指定Org1和Org2中的两个节点，即需要有满足部署链码策略的足够的成员。组织已经同意了链码定义，因此选择组织中任意一个peer即可。</p>
+<p>首先现将Org2的peer0.org2.example.com的tls证书复制过来，在org1中：</p>
+<pre><code class="bash">mkdir -p peerOrganizations/org2.example.com/peers/peer0.org2.example.com/tls/</code></pre>
+<p>并且将Org2中该文件夹下的文件拷贝到Org1的该文件夹中</p>
+<p>提交链码</p>
+<pre><code class="bash">cd peer
+peer lifecycle chaincode commit -o orderer.example.com:7050 --channelID channel1 --init-required --name sacc --version 1.0 --sequence 1 --tls --cafile $ORDERER_TLSCA --peerAddresses peer0.org1.example.com:7051 --tlsRootCertFiles $CORE_PEER_TLS_ROOTCERT_FILE --peerAddresses peer0.org2.example.com:7051 --tlsRootCertFiles ${PWD}/../organizations/peerOrganizations/org2.example.com/peers/peer0.org2.example.com/tls/ca.crt</code></pre>
+<p>查询链码是否已经被提交到通道上</p>
+<pre><code class="bash">peer lifecycle chaincode querycommitted --channelID channel1 --name sacc --cafile $ORDERER_TLSCA</code></pre>
+<h1 id="调用链码"><a href="#调用链码" class="headerlink" title="调用链码"></a>调用链码</h1><p>链码调用需要有足够的满足背书策略的节点</p>
+<h2 id="1-初始化链码"><a href="#1-初始化链码" class="headerlink" title="1. 初始化链码"></a>1. 初始化链码</h2><p>因链码定义中有–init-required，所以需要首先调用初始化函数Init。通过–isInit来指定运行Init函数</p>
+<pre><code class="bash">peer chaincode invoke -o orderer.example.com:7050 --tls --cafile $ORDERER_TLSCA -C channel1 -n sacc --peerAddresses peer0.org1.example.com:7051 --tlsRootCertFiles $CORE_PEER_TLS_ROOTCERT_FILE --peerAddresses peer0.org2.example.com:7051 --tlsRootCertFiles ${PWD}/../organizations/peerOrganizations/org2.example.com/peers/peer0.org2.example.com/tls/ca.crt --isInit -c &#39;{&quot;Args&quot;:[&quot;a&quot;,&quot;bb&quot;]}&#39;</code></pre>
+<p>此处因链码Init函数中使用stub.GetStringArgs()来获取参数，所以只需要传递具体值即可，不用传函数名。’{“Args”:[“a”,”bb”]}’</p>
+<h2 id="2-调用链码"><a href="#2-调用链码" class="headerlink" title="2. 调用链码"></a>2. 调用链码</h2><p>此时链码中的Invoke函数，使用stub.GetFunctionAndParameters()来获取参数。第一个参数是函数名，第二个是函数参数的数组。注意需要使用–peerAddresses来收集足够多的背书节点，否则链码虽然会执行，但不会改变账本的数据。</p>
+<pre><code class="bash">peer chaincode invoke -o orderer.example.com:7050 --tls --cafile $ORDERER_TLSCA -C channel1 -n sacc --peerAddresses peer0.org1.example.com:7051 --tlsRootCertFiles $CORE_PEER_TLS_ROOTCERT_FILE --peerAddresses peer0.org2.example.com:7051 --tlsRootCertFiles ${PWD}/../organizations/peerOrganizations/org2.example.com/peers/peer0.org2.example.com/tls/ca.crt  -c &#39;{&quot;Args&quot;:[&quot;set&quot;,&quot;a&quot;,&quot;cc&quot;]}&#39;</code></pre>
+<h2 id="3-查询"><a href="#3-查询" class="headerlink" title="3. 查询"></a>3. 查询</h2><pre><code class="bash">peer chaincode query -C channel1 -n sacc  -c &#39;{&quot;Args&quot;:[&quot;query&quot;,&quot;a&quot;]}&#39;</code></pre>
+<h1 id="使用SDK-go调用链码"><a href="#使用SDK-go调用链码" class="headerlink" title="使用SDK-go调用链码"></a>使用SDK-go调用链码</h1><h2 id="1-安装SDK"><a href="#1-安装SDK" class="headerlink" title="1. 安装SDK"></a>1. 安装SDK</h2><pre><code class="bash">go get github.com/hyperledger/fabric-sdk-go</code></pre>
+<h2 id="2-配置证书"><a href="#2-配置证书" class="headerlink" title="2. 配置证书"></a>2. 配置证书</h2><p>在peer1中复制org2的TLS证书</p>
+<pre><code class="bash">将 organizations/peerOrganizations/org2.example.com/tlsca/tlsca.org2.example.com-cert.pem
+放入 peerOrganizations/org2.example.com/tlsca 文件夹中</code></pre>
+<h2 id="3-创建配置文件"><a href="#3-创建配置文件" class="headerlink" title="3. 创建配置文件"></a>3. 创建配置文件</h2><p>创建一个SDK目录（与peer同级），并且编辑 <code>connection-profile.yaml</code> 文件</p>
+<pre><code class="yaml">#
+# Schema version of the content. Used by the SDK to apply the corresponding parsing rules.
+#
+version: 1.0.0
+
+#
+# The client section used by GO SDK.
+#
+client:
+
+  # Which organization does this application instance belong to? The value must be the name of an org
+  # defined under &quot;organizations&quot;
+  organization: Org1MSP
+
+  logging:
+    level: info
+
+  # Global configuration for peer, event service and orderer timeouts
+  # if this this section is omitted, then default values will be used (same values as below)
+#  peer:
+#    timeout:
+#      connection: 10s
+#      response: 180s
+#      discovery:
+#        # Expiry period for discovery service greylist filter
+#        # The channel client will greylist peers that are found to be offline
+#        # to prevent re-selecting them in subsequent retries.
+#        # This interval will define how long a peer is greylisted
+#        greylistExpiry: 10s
+#  eventService:
+    # the below timeouts are commented out to use the default values that are found in
+    # &quot;pkg/fab/endpointconfig.go&quot;
+    # the client is free to override the default values by uncommenting and resetting
+    # the values as they see fit in their config file
+#    timeout:
+#      registrationResponse: 15s
+#  orderer:
+#    timeout:
+#      connection: 15s
+#      response: 15s
+#  global:
+#    timeout:
+#      query: 180s
+#      execute: 180s
+#      resmgmt: 180s
+#    cache:
+#      connectionIdle: 30s
+#      eventServiceIdle: 2m
+#      channelConfig: 30m
+#      channelMembership: 30s
+#      discovery: 10s
+#      selection: 10m
+
+  # Root of the MSP directories with keys and certs.
+  cryptoconfig:
+    # path: ${FABRIC_SDK_GO_PROJECT_PATH}/${CRYPTOCONFIG_FIXTURES_PATH}
+    path: ../organizations
+  # Some SDKs support pluggable KV stores, the properties under &quot;credentialStore&quot;
+  # are implementation specific
+  credentialStore:
+    # [Optional]. Used by user store. Not needed if all credentials are embedded in configuration
+    # and enrollments are performed elswhere.
+    path: &quot;./tmp/state-store&quot;
+
+    # [Optional]. Specific to the CryptoSuite implementation used by GO SDK. Software-based implementations
+    # requiring a key store. PKCS#11 based implementations does not.
+    cryptoStore:
+      # Specific to the underlying KeyValueStore that backs the crypto key store.
+      path: ../organizations/peerOrganizations/org1.example.com/users/Admin@org1.example.com/msp/
+
+  # [Optional] BCCSP config for the client. Used by GO SDK.
+  BCCSP:
+    security:
+     enabled: true
+     default:
+      provider: &quot;SW&quot;
+     hashAlgorithm: &quot;SHA2&quot;
+     softVerify: true
+     level: 256
+
+  tlsCerts:
+    # [Optional]. Use system certificate pool when connecting to peers, orderers (for negotiating TLS) Default: false
+    systemCertPool: true
+
+    # [Optional]. Client key and cert for TLS handshake with peers and orderers
+    client:
+      key:
+        # path: ${FABRIC_SDK_GO_PROJECT_PATH}/${CRYPTOCONFIG_FIXTURES_PATH}/peerOrganizations/tls.example.com/users/User1@tls.example.com/tls/client.key
+        path: ../organizations/peerOrganizations/org1.example.com/users/Admin@org1.example.com/tls/client.key
+      cert:
+        # path: ${FABRIC_SDK_GO_PROJECT_PATH}/${CRYPTOCONFIG_FIXTURES_PATH}/peerOrganizations/tls.example.com/users/User1@tls.example.com/tls/client.crt
+        path: ../organizations/peerOrganizations/org1.example.com/users/Admin@org1.example.com/tls/client.crt
+
+#
+# [Optional]. But most apps would have this section so that channel objects can be constructed
+# based on the content below. If an app is creating channels, then it likely will not need this
+# section.
+#
+channels:
+  # Default channel is used if channel configuration is missing or if defined channel configuration is missing info
+  # If channel doesn&#39;t define peers then peers from default channel will be used
+  # If channel doesn&#39;t define orderes then orderes from default channel will be used
+  # If channel doesn&#39;t define policies then policies from default channel will be used.
+  # Also, if channel defines policies and some policy info is missing than that missing info will be filled from default channel.
+  _default:
+
+    # Optional. list of peers from participating orgs
+    peers:
+      peer0.org1.example.com:
+        # [Optional]. will this peer be sent transaction proposals for endorsement? The peer must
+        # have the chaincode installed. The app can also use this property to decide which peers
+        # to send the chaincode install request. Default: true
+        endorsingPeer: true
+
+        # [Optional]. will this peer be sent query proposals? The peer must have the chaincode
+        # installed. The app can also use this property to decide which peers to send the
+        # chaincode install request. Default: true
+        chaincodeQuery: true
+
+        # [Optional]. will this peer be sent query proposals that do not require chaincodes, like
+        # queryBlock(), queryTransaction(), etc. Default: true
+        ledgerQuery: true
+
+        # [Optional]. will this peer be the target of the SDK&#39;s listener registration? All peers can
+        # produce events but the app typically only needs to connect to one to listen to events.
+        # Default: true
+        eventSource: true
+
+    # [Optional]. The application can use these options to perform channel operations like retrieving channel
+    # config etc.
+    policies:
+      #[Optional] options for retrieving channel configuration blocks
+      queryChannelConfig:
+        #[Optional] min number of success responses (from targets/peers)
+        minResponses: 1
+        #[Optional] channel config will be retrieved for these number of random targets
+        maxTargets: 1
+        #[Optional] retry options for query config block
+        retryOpts:
+          #[Optional] number of retry attempts
+          attempts: 5
+          #[Optional] the back off interval for the first retry attempt
+          initialBackoff: 500ms
+          #[Optional] the maximum back off interval for any retry attempt
+          maxBackoff: 5s
+          #[Optional] he factor by which the initial back off period is exponentially incremented
+          backoffFactor: 2.0
+      #[Optional] options for retrieving discovery info
+      discovery:
+        #[Optional] discovery info will be retrieved for these number of random targets
+        maxTargets: 2
+        #[Optional] retry options for retrieving discovery info
+        retryOpts:
+          #[Optional] number of retry attempts
+          attempts: 4
+          #[Optional] the back off interval for the first retry attempt
+          initialBackoff: 500ms
+          #[Optional] the maximum back off interval for any retry attempt
+          maxBackoff: 5s
+          #[Optional] he factor by which the initial back off period is exponentially incremented
+          backoffFactor: 2.0
+
+      #[Optional] options for the event service
+      eventService:
+        # [Optional] resolverStrategy specifies the peer resolver strategy to use when connecting to a peer
+        # Possible values: [PreferOrg (default), MinBlockHeight, Balanced]
+        #
+        # PreferOrg:
+        #   Determines which peers are suitable based on block height lag threshold, although will prefer the peers in the
+        #   current org (as long as their block height is above a configured threshold). If none of the peers from the current org
+        #   are suitable then a peer from another org is chosen.
+        # MinBlockHeight:
+        #   Chooses the best peer according to a block height lag threshold. The maximum block height of all peers is
+        #   determined and the peers whose block heights are under the maximum height but above a provided &quot;lag&quot; threshold are load
+        #   balanced. The other peers are not considered.
+        # Balanced:
+        #   Chooses peers using the configured balancer.
+        resolverStrategy: PreferOrg
+
+        # [Optional] balancer is the balancer to use when choosing a peer to connect to
+        # Possible values: [Random (default), RoundRobin]
+        balancer: Random
+
+        # [Optional] blockHeightLagThreshold sets the block height lag threshold. This value is used for choosing a peer
+        # to connect to. If a peer is lagging behind the most up-to-date peer by more than the given number of
+        # blocks then it will be excluded from selection.
+        # Note that this parameter is applicable only when minBlockHeightResolverMode is set to ResolveByThreshold.
+        # Default: 5
+        blockHeightLagThreshold: 5
+
+        # [Optional] reconnectBlockHeightLagThreshold - the event client will disconnect from the peer if the peer&#39;s
+        # block height falls behind the specified number of blocks and will reconnect to a better performing peer.
+        # Note that this parameter is only applicable if peerMonitor is set to Enabled (default).
+        # Default: 10
+        # NOTES:
+        #   - Setting this value too low may cause the event client to disconnect/reconnect too frequently, thereby
+        #     affecting performance.
+        reconnectBlockHeightLagThreshold: 8
+
+        # [Optional] peerMonitorPeriod is the period in which the connected peer is monitored to see if
+        # the event client should disconnect from it and reconnect to another peer.
+        # Default: 0 (disabled) for Balanced resolverStrategy; 5s for PreferOrg and MinBlockHeight strategy
+        peerMonitorPeriod: 6s
+
+
+  #[Required if _default not defined; Optional if _default defined].
+  # name of the channel
+  # mychannel:
+  channel1:
+
+    # list of orderers designated by the application to use for transactions on this
+    # channel. This list can be a result of access control (&quot;org1&quot; can only access &quot;ordererA&quot;), or
+    # operational decisions to share loads from applications among the orderers.  The values must
+    # be &quot;names&quot; of orgs defined under &quot;organizations/peers&quot;
+    # deprecated: not recommended, to override any orderer configuration items, entity matchers should be used.
+   # orderers:
+   #   - orderer.example.com
+
+    #[Required if _default peers not defined; Optional if _default peers defined].
+    # list of peers from participating orgs
+    peers:
+      peer0.org1.example.com:
+        # [Optional]. will this peer be sent transaction proposals for endorsement? The peer must
+        # have the chaincode installed. The app can also use this property to decide which peers
+        # to send the chaincode install request. Default: true
+        endorsingPeer: true
+
+        # [Optional]. will this peer be sent query proposals? The peer must have the chaincode
+        # installed. The app can also use this property to decide which peers to send the
+        # chaincode install request. Default: true
+        chaincodeQuery: true
+
+        # [Optional]. will this peer be sent query proposals that do not require chaincodes, like
+        # queryBlock(), queryTransaction(), etc. Default: true
+        ledgerQuery: true
+
+        # [Optional]. will this peer be the target of the SDK&#39;s listener registration? All peers can
+        # produce events but the app typically only needs to connect to one to listen to events.
+        # Default: true
+        eventSource: true
+
+#
+# list of participating organizations in this network
+#
+organizations:
+  # Org1:
+  Org1MSP:
+    mspid: Org1MSP
+
+    # This org&#39;s MSP store (absolute path or relative to client.cryptoconfig)
+    # cryptoPath:  peerOrganizations/org1.example.com/users/User1@org1.example.com/msp
+    cryptoPath:  ../organizations/peerOrganizations/org1.example.com/users/Admin@org1.example.com/msp
+
+    peers:
+      - peer0.org1.example.com
+
+    # [Optional]. Certificate Authorities issue certificates for identification purposes in a Fabric based
+    # network. Typically certificates provisioning is done in a separate process outside of the
+    # runtime network. Fabric-CA is a special certificate authority that provides a REST APIs for
+    # dynamic certificate management (enroll, revoke, re-enroll). The following section is only for
+    # Fabric-CA servers.
+    # certificateAuthorities:
+      # - ca.org1.example.com
+
+  # the profile will contain public information about organizations other than the one it belongs to.
+  # These are necessary information to make transaction lifecycles work, including MSP IDs and
+  # peers with a public URL to send transaction proposals. The file will not contain private
+  # information reserved for members of the organization, such as admin key and certificate,
+  # fabric-ca registrar enroll ID and secret, etc.
+  # Org2:
+  #   mspid: Org2MSP
+
+  #   # This org&#39;s MSP store (absolute path or relative to client.cryptoconfig)
+  #   cryptoPath:  peerOrganizations/org2.example.com/users/{username}@org2.example.com/msp
+
+  #   peers:
+  #     - peer0.org2.example.com
+
+  #   certificateAuthorities:
+  #     - ca.org2.example.com
+
+  # Orderer Org name
+  # ordererorg:
+#   OrdererOrg:
+#       # Membership Service Provider ID for this organization
+#       mspID: OrdererMSP
+
+#       # Needed to load users crypto keys and certs for this org (absolute path or relative to global crypto path, DEV mode)
+#       cryptoPath: ordererOrganizations/example.com/users/{username}@example.com/msp
+
+
+# #
+# List of orderers to send transaction and channel create/update requests to. For the time
+# being only one orderer is needed. If more than one is defined, which one get used by the
+# SDK is implementation specific. Consult each SDK&#39;s documentation for its handling of orderers.
+#
+orderers: #这部分内容没有起作用，原因未知
+  orderer.example.com:
+    # [Optional] Default: Infer from hostname
+    url: orderer.example.com:7050
+
+    # these are standard properties defined by the gRPC library
+    # they will be passed in as-is to gRPC client constructor
+    grpcOptions:
+      ssl-target-name-override: orderer.example.com
+      # These parameters should be set in coordination with the keepalive policy on the server,
+      # as incompatible settings can result in closing of connection.
+      # When duration of the &#39;keep-alive-time&#39; is set to 0 or less the keep alive client parameters are disabled
+      keep-alive-time: 0s
+      keep-alive-timeout: 20s
+      keep-alive-permit: false
+      fail-fast: false
+      # allow-insecure will be taken into consideration if address has no protocol defined, if true then grpc or else grpcs
+      allow-insecure: false
+
+    tlsCACerts:
+      # Certificate location absolute path
+      # path: ${FABRIC_SDK_GO_PROJECT_PATH}/${CRYPTOCONFIG_FIXTURES_PATH}/ordererOrganizations/example.com/tlsca/tlsca.example.com-cert.pem
+      path: ../organizations/orderer.example.com/tlscacerts/tlsca.example.com-cert.pem
+
+#
+# List of peers to send various requests to, including endorsement, query
+# and event listener registration.
+#
+peers:
+  peer0.org1.example.com:
+    # this URL is used to send endorsement and query requests
+    # [Optional] Default: Infer from hostname
+    url: peer0.org1.example.com:7051
+
+    grpcOptions:
+      ssl-target-name-override: peer0.org1.example.com
+      # These parameters should be set in coordination with the keepalive policy on the server,
+      # as incompatible settings can result in closing of connection.
+      # When duration of the &#39;keep-alive-time&#39; is set to 0 or less the keep alive client parameters are disabled
+      keep-alive-time: 0s
+      keep-alive-timeout: 20s
+      keep-alive-permit: false
+      fail-fast: false
+      # allow-insecure will be taken into consideration if address has no protocol defined, if true then grpc or else grpcs
+      allow-insecure: false
+
+    tlsCACerts:
+      # Certificate location absolute path
+      # path: ${FABRIC_SDK_GO_PROJECT_PATH}/${CRYPTOCONFIG_FIXTURES_PATH}/peerOrganizations/org1.example.com/tlsca/tlsca.org1.example.com-cert.pem
+      path: ../organizations/peerOrganizations/org1.example.com/tlsca/tlsca.org1.example.com-cert.pem
+
+  # peer1.org1.example.com:
+  #   # this URL is used to send endorsement and query requests
+  #   url: peer1.org1.example.com:7151
+
+  #   grpcOptions:
+  #     ssl-target-name-override: peer1.org1.example.com
+  #     # These parameters should be set in coordination with the keepalive policy on the server,
+  #     # as incompatible settings can result in closing of connection.
+  #     # When duration of the &#39;keep-alive-time&#39; is set to 0 or less the keep alive client parameters are disabled
+  #     keep-alive-time: 0s
+  #     keep-alive-timeout: 20s
+  #     keep-alive-permit: false
+  #     fail-fast: false
+  #     # allow-insecure will be taken into consideration if address has no protocol defined, if true then grpc or else grpcs
+  #     allow-insecure: false
+
+  #   tlsCACerts:
+  #     # Certificate location absolute path
+  #     path: ${FABRIC_SDK_GO_PROJECT_PATH}/${CRYPTOCONFIG_FIXTURES_PATH}/peerOrganizations/org1.example.com/tlsca/tlsca.org1.example.com-cert.pem
+
+  peer0.org2.example.com:
+    url: peer0.org2.example.com:7051
+    grpcOptions:
+      ssl-target-name-override: peer0.org2.example.com
+      # These parameters should be set in coordination with the keepalive policy on the server,
+      # as incompatible settings can result in closing of connection.
+      # When duration of the &#39;keep-alive-time&#39; is set to 0 or less the keep alive client parameters are disabled
+      keep-alive-time: 0s
+      keep-alive-timeout: 20s
+      keep-alive-permit: false
+      fail-fast: false
+      # allow-insecure will be taken into consideration if address has no protocol defined, if true then grpc or else grpcs
+      allow-insecure: falseca
+
+    tlsCACerts:
+      # path: ${FABRIC_SDK_GO_PROJECT_PATH}/${CRYPTOCONFIG_FIXTURES_PATH}/peerOrganizations/org2.example.com/tlsca/tlsca.org2.example.com-cert.pem
+      path: ../organizations/peerOrganizations/org2.example.com/tlsca/tlsca.org2.example.com-cert.pem
+
+#
+# Fabric-CA is a special kind of Certificate Authority provided by Hyperledger Fabric which allows
+# certificate management to be done via REST APIs. Application may choose to use a standard
+# Certificate Authority instead of Fabric-CA, in which case this section would not be specified.
+#
+# certificateAuthorities:
+#   ca.org1.example.com:
+#     # [Optional] Default: Infer from hostname
+#     url: https://ca.org1.example.com:7054
+#     tlsCACerts:
+#       # Comma-Separated list of paths
+#       path: ${FABRIC_SDK_GO_PROJECT_PATH}/${CRYPTOCONFIG_FIXTURES_PATH}/peerOrganizations/org1.example.com/tlsca/tlsca.org1.example.com-cert.pem
+#       # Client key and cert for SSL handshake with Fabric CA
+#       client:
+#         key:
+#           path: ${FABRIC_SDK_GO_PROJECT_PATH}/${CRYPTOCONFIG_FIXTURES_PATH}/peerOrganizations/tls.example.com/users/User1@tls.example.com/tls/client.key
+#         cert:
+#           path: ${FABRIC_SDK_GO_PROJECT_PATH}/${CRYPTOCONFIG_FIXTURES_PATH}/peerOrganizations/tls.example.com/users/User1@tls.example.com/tls/client.crt
+
+#     # Fabric-CA supports dynamic user enrollment via REST APIs. A &quot;root&quot; user, a.k.a registrar, is
+#     # needed to enroll and invoke new users.
+#     registrar:
+#       enrollId: admin
+#       enrollSecret: adminpw
+#     # [Optional] The optional name of the CA.
+#     caName: ca.org1.example.com
+#   ca.org2.example.com:
+#     url: https://ca.org2.example.com:8054
+#     tlsCACerts:
+#       # Comma-Separated list of paths
+#       path: ${FABRIC_SDK_GO_PROJECT_PATH}/${CRYPTOCONFIG_FIXTURES_PATH}/peerOrganizations/org2.example.com/tlsca/tlsca.org2.example.com-cert.pem
+#       # Client key and cert for SSL handshake with Fabric CA
+#       client:
+#         key:
+#           path: ${FABRIC_SDK_GO_PROJECT_PATH}/${CRYPTOCONFIG_FIXTURES_PATH}/peerOrganizations/tls.example.com/users/User1@tls.example.com/tls/client.key
+#         cert:
+#           path: ${FABRIC_SDK_GO_PROJECT_PATH}/${CRYPTOCONFIG_FIXTURES_PATH}/peerOrganizations/tls.example.com/users/User1@tls.example.com/tls/client.crt
+
+#      # Fabric-CA supports dynamic user enrollment via REST APIs. A &quot;root&quot; user, a.k.a registrar, is
+#      # needed to enroll and invoke new users.
+#     registrar:
+#       enrollId: admin
+#       enrollSecret: adminpw
+#     # [Optional] The optional name of the CA.
+#     caName: ca.org2.example.com
+
+# EntityMatchers enable substitution of network hostnames with static configurations
+ # so that properties can be mapped. Regex can be used for this purpose
+# UrlSubstitutionExp can be empty which means the same network hostname will be used
+# UrlSubstitutionExp can be given same as mapped peer url, so that mapped peer url can be used
+# UrlSubstitutionExp can have golang regex matchers like ${1}.local.example.${2}:${3} for pattern
+ # like peer0.org1.example.com:1234 which converts peer0.org1.example.com to peer0.org1.local.example.com:1234
+# sslTargetOverrideUrlSubstitutionExp follow in the same lines as
+ # SubstitutionExp for the fields gprcOptions.ssl-target-name-override respectively
+# In any case mappedHost&#39;s config will be used, so mapped host cannot be empty, if entityMatchers are used
+#entityMatchers:
+entityMatchers:
+  peer:
+    - pattern: (\w+).org1.example.com:(\d+)
+      urlSubstitutionExp: ${1}.org1.example.com:${2}
+      sslTargetOverrideUrlSubstitutionExp: ${1}.org1.example.com
+      mappedHost: peer0.org1.example.com
+
+    - pattern: (\w+).org2.example.com:(\d+)
+      urlSubstitutionExp: ${1}.org2.example.com:${2}
+      sslTargetOverrideUrlSubstitutionExp: ${1}.org2.example.com
+      mappedHost: peer0.org2.example.com
+
+  orderer:
+    - pattern: (\w+) #理论上该写(\w+).example.(\w+)，但总是访问127.0.0.1:7050,暂时未找到原因，先模糊匹配
+      urlSubstitutionExp: orderer.example.com:7050
+      sslTargetOverrideUrlSubstitutionExp: orderer.example.com
+      mappedHost: orderer.example.com
+#
+#    - pattern: (\w+).example2.(\w+)
+#      urlSubstitutionExp: localhost:7050
+#      sslTargetOverrideUrlSubstitutionExp: localhost
+#      mappedHost: orderer.example.com
+#
+#    - pattern: (\w+).example3.(\w+)
+#      urlSubstitutionExp:
+#      sslTargetOverrideUrlSubstitutionExp:
+#      mappedHost: orderer.example.com
+#
+#    - pattern: (\w+).example4.(\w+):(\d+)
+#      urlSubstitutionExp: ${1}.example.${2}:${3}
+#      sslTargetOverrideUrlSubstitutionExp: ${1}.example.${2}
+#      mappedHost: orderer.example.com
+#
+#  certificateAuthority:
+#    - pattern: (\w+).org1.example.(\w+)
+#      urlSubstitutionExp:
+#      mappedHost: ca.org1.example.com
+#
+#    - pattern: (\w+).org2.example.(\w+)
+#      urlSubstitutionExp:
+#      mappedHost: ca.org2.example.com</code></pre>
+<h2 id="4-调用"><a href="#4-调用" class="headerlink" title="4. 调用"></a>4. 调用</h2><pre><code class="bash">vim main.go</code></pre>
+<p>编写SDK调用的代码</p>
+<pre><code class="go">package main
+
+import (
+        &quot;fmt&quot;
+        &quot;os&quot;
+        &quot;github.com/hyperledger/fabric-sdk-go/pkg/core/config&quot;
+        &quot;github.com/hyperledger/fabric-sdk-go/pkg/fabsdk&quot;
+        &quot;github.com/hyperledger/fabric-sdk-go/pkg/common/logging&quot;
+        &quot;github.com/hyperledger/fabric-sdk-go/pkg/client/channel&quot;
+)
+
+var (
+        cc          = &quot;sacc&quot;
+        user        = &quot;Admin&quot; //此处Admin，但实际中应使用User1
+        secret      = &quot;&quot;
+        channelName = &quot;channel1&quot;
+        lvl         = logging.INFO
+        orgName     = &quot;Org1MSP&quot;
+)
+
+
+func main(){
+        c := config.FromFile(&quot;./connection-profile.yaml&quot;)
+        sdk, err := fabsdk.New(c)
+        if err != nil {
+                fmt.Printf(&quot;Failed to create new SDK: %s\n&quot;, err)
+                os.Exit(1)
+        }
+        defer sdk.Close()
+        clientChannelContext := sdk.ChannelContext(channelName, fabsdk.WithUser(user), fabsdk.WithOrg(orgName))
+        if err != nil {
+                fmt.Printf(&quot;Failed to create channel [%s] client: %#v&quot;, channelName, err)
+                os.Exit(1)
+        }
+
+        client, err := channel.New(clientChannelContext)
+        if err != nil {
+                fmt.Printf(&quot;Failed to create channel [%s]:&quot;, channelName, err)
+        }
+        queryCC(client, []byte(&quot;a&quot;))
+        invokeCC(client, &quot;ff55&quot;)
+        queryCC(client, []byte(&quot;a&quot;))
+}
+
+
+func invokeCC(client *channel.Client, newValue string) {
+        invokeArgs := [][]byte{[]byte(&quot;a&quot;), []byte(newValue)}
+
+        _, err := client.Execute(channel.Request{
+                ChaincodeID: cc,
+                Fcn:         &quot;set&quot;,
+                Args:        invokeArgs,
+        })
+
+        if err != nil {
+                fmt.Printf(&quot;Failed to invoke: %+v\n&quot;, err)
+        }
+}
+
+func queryCC(client *channel.Client, name []byte) string {
+        var queryArgs = [][]byte{name}
+        response, err := client.Query(channel.Request{
+                ChaincodeID: cc,
+                Fcn:         &quot;query&quot;,
+                Args:        queryArgs,
+        })
+
+        if err != nil {
+                fmt.Println(&quot;Failed to query: &quot;, err)
+        }
+
+        ret := string(response.Payload)
+        fmt.Println(&quot;Chaincode status: &quot;, response.ChaincodeStatus)
+        fmt.Println(&quot;Payload: &quot;, ret)
+        return ret
+}
+</code></pre>
+<p>运行这段代码</p>
+<pre><code class="bash">go mod init testsdk
+go mod tidy
+go mod vendor
+go run main.go</code></pre>
+
+      
+       
+    </div>
+</article>
+
+
+
+
+
+
+
+    
+        <!-- MathJax配置，可通过单美元符号书写行内公式等 -->
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+    "HTML-CSS": {
+        preferredFont: "TeX",
+        availableFonts: ["STIX","TeX"],
+        linebreaks: { automatic:true },
+        EqnChunk: (MathJax.Hub.Browser.isMobile ? 10 : 50)
+    },
+    tex2jax: {
+        inlineMath: [ ["$", "$"], ["\\(","\\)"] ],
+        processEscapes: true,
+        ignoreClass: "tex2jax_ignore|dno",
+        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+    },
+    TeX: {
+        equationNumbers: { autoNumber: "AMS" },
+        noUndefined: { attributes: { mathcolor: "red", mathbackground: "#FFEEEE", mathsize: "90%" } },
+        Macros: { href: "{}" }
+    },
+    messageStyle: "none"
+    });
+</script>
+<!-- 给MathJax元素添加has-jax class -->
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax(), i;
+        for(i=0; i < all.length; i += 1) {
+            all[i].SourceElement().parentNode.className += ' has-jax';
+        }
+    });
+</script>
+<!-- 通过连接CDN加载MathJax的js代码 -->
+<script type="text/javascript" async
+        src="//cdn.bootcss.com/mathjax/2.7.2/MathJax.js?config=TeX-MML-AM_CHTML">
+</script>
+<input type="hidden" id="MathJax-js"
+        value="//cdn.bootcss.com/mathjax/2.7.2/MathJax.js?config=TeX-MML-AM_CHTML">
+</input>
+    
+
+
+
+
+    </div>
+    <div class="copyright">
+        <p class="footer-entry">©2019-2020 POWDER SNOW</p>
+
+    </div>
+    <div class="full-toc">
+        <button class="full"><span class="min "></span></button>
+<button class="post-toc-menu"><span class="post-toc-menu-icons"></span></button>
+<div class="post-toc"><span class="post-toc-title">目录</span>
+    <div class="post-toc-content">
+
+    </div>
+</div>
+<a class="" id="rocket" ></a>
+
+    </div>
+</div>
+<div class="acParent"></div>
+
+</body>
+<script src="/js/jquery.pjax.js?v=1.0.1" ></script>
+
+<script src="/js/script.js?v=1.0.1" ></script>
+<script>
+    var img_resize = 'default';
+    /*作者、标签的自动补全*/
+    $(function () {
+        $('.search').AutoComplete({
+            'data': ['#HTTP','#protobuf','#MySQL SQL','#Spring','#java','#QT','#区块链','#分布式','#大数据','#前端','#MyBatis','#SpringBoot','#网络编程','#Redis','#多线程','#数据库',],
+            'itemHeight': 20,
+            'width': 418
+        }).AutoComplete('show');
+    })
+    function initArticle() {
+        /*渲染对应的表格样式*/
+        
+            $(".post .pjax table").addClass("green_title");
+        
+
+        /*渲染打赏样式*/
+        
+
+        /*高亮代码块行号*/
+        
+
+        /*访问数量*/
+        
+
+        /*代码高亮，行号对齐*/
+        $('.pre-numbering').css('line-height',$('.has-numbering').css('line-height'));
+
+        
+        
+    }
+
+    /*打赏页面隐藏与展示*/
+    
+
+</script>
+
+<!--加入行号的高亮代码块样式-->
+
+<!--自定义样式设置-->
+<style>
+    
+    
+    .nav {
+        width: 544px;
+    }
+    .nav.fullscreen {
+        margin-left: -544px;
+    }
+    .nav-left {
+        width: 122px;
+    }
+    
+    
+    @media screen and (max-width: 1468px) {
+        .nav {
+            width: 492px;
+        }
+        .nav.fullscreen {
+            margin-left: -492px;
+        }
+        .nav-left {
+            width: 100px;
+        }
+    }
+    
+    
+    @media screen and (max-width: 1024px) {
+        .nav {
+            width: 492px;
+            margin-left: -492px
+        }
+        .nav.fullscreen {
+            margin-left: 0;
+        }
+        .nav .hide-list.fullscreen {
+            left: 492px
+        }
+    }
+    
+    @media screen and (max-width: 426px) {
+        .nav {
+            width: 100%;
+        }
+        .nav-left {
+            width: 100%;
+        }
+    }
+    
+    
+    .nav-right .title-list nav a .post-title, .nav-right .title-list #local-search-result a .post-title {
+        color: #383636;
+    }
+    
+    
+    .nav-right .title-list nav a .post-date, .nav-right .title-list #local-search-result a .post-date {
+        color: #5e5e5f;
+    }
+    
+    
+    .nav-right nav a.hover, #local-search-result a.hover{
+        background-color: #fbf4a8;
+    }
+    
+    
+
+    /*列表样式*/
+    
+    .post .pjax article .article-entry>ol, .post .pjax article .article-entry>ul, .post .pjax article>ol, .post .pjax article>ul{
+        border: #e2dede solid 1px;
+        border-radius: 10px;
+        padding: 10px 32px 10px 56px;
+    }
+    .post .pjax article .article-entry li>ol, .post .pjax article .article-entry li>ul,.post .pjax article li>ol, .post .pjax article li>ul{
+        padding-top: 5px;
+        padding-bottom: 5px;
+    }
+    .post .pjax article .article-entry>ol>li, .post .pjax article .article-entry>ul>li,.post .pjax article>ol>li, .post .pjax article>ul>li{
+        margin-bottom: auto;
+        margin-left: auto;
+    }
+    .post .pjax article .article-entry li>ol>li, .post .pjax article .article-entry li>ul>li,.post .pjax article li>ol>li, .post .pjax article li>ul>li{
+        margin-bottom: auto;
+        margin-left: auto;
+    }
+    
+
+    /* 背景图样式 */
+    
+    .post {
+        background: url(/img/bck.jpg);
+    }
+    
+    
+    .post.index {
+        background: url(/img/background.jpg);
+    }
+    
+
+
+    /*引用块样式*/
+    
+
+    /*文章列表背景图*/
+    
+    .nav-right:before {
+        content: ' ';
+        display: block;
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        opacity: 0.3;
+        background: url("/img/123.jpg");
+        background-repeat: no-repeat;
+        background-position: 50% 0;
+        -ms-background-size: cover;
+        -o-background-size: cover;
+        -moz-background-size: cover;
+        -webkit-background-size: cover;
+        background-size: cover;
+    }
+    
+
+    
+</style>
+
+
+
+
+
+
+
+</html>

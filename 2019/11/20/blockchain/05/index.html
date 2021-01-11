@@ -1,0 +1,1621 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>闪电网络（二）双向支付通道：Bidirectional Payment Channels + RSMC | POWDER SNOW</title>
+  <meta name="keywords" content=" 区块链 ">
+  <meta name="description" content="闪电网络（二）双向支付通道：Bidirectional Payment Channels + RSMC | POWDER SNOW">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<meta property="og:type" content="website">
+<meta property="og:title" content="categories">
+<meta property="og:url" content="http://yoursite.com/categories/index.html">
+<meta property="og:site_name" content="POWDER SNOW">
+<meta property="article:published_time" content="2018-03-02T04:33:16.000Z">
+<meta property="article:modified_time" content="2020-03-05T13:28:59.839Z">
+<meta property="article:author" content="冯冠雄">
+<meta name="twitter:card" content="summary">
+
+
+<link rel="icon" href="/img/avatar.jpg">
+
+<link href="/css/style.css?v=1.0.1" rel="stylesheet">
+
+<link href="/css/hl_theme/atom-light.css?v=1.0.1" rel="stylesheet">
+
+<link href="//cdn.bootcss.com/animate.css/3.5.2/animate.min.css" rel="stylesheet">
+<link href="//cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+
+<script src="//cdn.bootcss.com/jquery/2.2.4/jquery.min.js"></script>
+<script src="/js/jquery.autocomplete.min.js?v=1.0.1" ></script>
+
+<script src="//cdn.bootcss.com/highlight.js/9.12.0/highlight.min.js"></script>
+<script>
+    hljs.initHighlightingOnLoad();
+</script>
+
+<script src="//cdn.bootcss.com/nprogress/0.2.0/nprogress.min.js"></script>
+
+
+
+<script src="//cdn.bootcss.com/jquery-cookie/1.4.1/jquery.cookie.min.js" ></script>
+
+<script src="/js/iconfont.js?v=1.0.1" ></script>
+
+<meta name="generator" content="Hexo 4.2.0"></head>
+<div style="display: none">
+  <input class="theme_disqus_on" value="false">
+  <input class="theme_preload_comment" value="false">
+  <input class="theme_blog_path" value="">
+</div>
+
+<body>
+<aside class="nav">
+    <div class="nav-left">
+        <a href="/" class="avatar_target">
+    <img class="avatar" src="/img/avatar.jpg" />
+</a>
+<div class="author">
+    <span>冯冠雄</span>
+</div>
+
+<div class="icon">
+    
+        
+        <a title="github" href="https://github.com/xiong-Fgx" target="_blank">
+            
+                <svg class="iconfont-svg" aria-hidden="true">
+                    <use xlink:href="#icon-github"></use>
+                </svg>
+            
+        </a>
+        
+    
+        
+        <a title="linkedin" href="https://www.linkedin.com/in/guanxiong-feng-8b6aa8179" target="_blank">
+            
+                <svg class="iconfont-svg" aria-hidden="true">
+                    <use xlink:href="#icon-linkedin"></use>
+                </svg>
+            
+        </a>
+        
+    
+        
+        <a title="email" href="mailto:guanxiongf@gmail.com" target="_blank">
+            
+                <svg class="iconfont-svg" aria-hidden="true">
+                    <use xlink:href="#icon-email"></use>
+                </svg>
+            
+        </a>
+        
+    
+</div>
+
+
+
+
+<ul>
+    <li><div class="all active">全部文章</div></li>
+    
+        
+            
+            <li><div data-rel="网络"><i class="fold iconfont icon-right"></i>网络</div>
+                
+                    <ul class="sub hide">
+                        
+                        <li><div data-rel="HTTP">HTTP</div>
+                            
+                        </li>
+                            
+                        <li><div data-rel="protobuf">protobuf</div>
+                            
+                        </li>
+                            
+                        <li><div data-rel="网络编程">网络编程</div>
+                            
+                        </li>
+                            
+                    </ul>
+                
+            </li>
+            
+        
+    
+        
+            
+            <li><div data-rel="数据库">数据库</div>
+                
+            </li>
+            
+        
+    
+        
+            
+        
+    
+        
+            
+            <li><div data-rel="SSM"><i class="fold iconfont icon-right"></i>SSM</div>
+                
+                    <ul class="sub hide">
+                        
+                        <li><div data-rel="SSM整合">SSM整合</div>
+                            
+                        </li>
+                            
+                        <li><div data-rel="Spring">Spring</div>
+                            
+                        </li>
+                            
+                        <li><div data-rel="SpringMVC">SpringMVC</div>
+                            
+                        </li>
+                            
+                        <li><div data-rel="MyBatis">MyBatis</div>
+                            
+                        </li>
+                            
+                        <li><div data-rel="SpringBoot">SpringBoot</div>
+                            
+                        </li>
+                            
+                    </ul>
+                
+            </li>
+            
+        
+    
+        
+            
+        
+    
+        
+            
+        
+    
+        
+            
+        
+    
+        
+            
+        
+    
+        
+            
+            <li><div data-rel="客户端"><i class="fold iconfont icon-right"></i>客户端</div>
+                
+                    <ul class="sub hide">
+                        
+                        <li><div data-rel="QT">QT</div>
+                            
+                        </li>
+                            
+                    </ul>
+                
+            </li>
+            
+        
+    
+        
+            
+            <li><div data-rel="区块链"><i class="fold iconfont icon-right"></i>区块链</div>
+                
+                    <ul class="sub hide">
+                        
+                        <li><div data-rel="论文">论文</div>
+                            
+                        </li>
+                            
+                        <li><div data-rel="Fabric">Fabric</div>
+                            
+                        </li>
+                            
+                        <li><div data-rel="fabric">fabric</div>
+                            
+                        </li>
+                            
+                    </ul>
+                
+            </li>
+            
+        
+    
+        
+            
+            <li><div data-rel="分布式">分布式</div>
+                
+            </li>
+            
+        
+    
+        
+            
+            <li><div data-rel="大数据"><i class="fold iconfont icon-right"></i>大数据</div>
+                
+                    <ul class="sub hide">
+                        
+                        <li><div data-rel="hadoop">hadoop</div>
+                            
+                        </li>
+                            
+                    </ul>
+                
+            </li>
+            
+        
+    
+        
+            
+            <li><div data-rel="前端"><i class="fold iconfont icon-right"></i>前端</div>
+                
+                    <ul class="sub hide">
+                        
+                        <li><div data-rel="HTML">HTML</div>
+                            
+                        </li>
+                            
+                        <li><div data-rel="CSS">CSS</div>
+                            
+                        </li>
+                            
+                    </ul>
+                
+            </li>
+            
+        
+    
+        
+            
+        
+    
+        
+            
+        
+    
+        
+            
+        
+    
+        
+            
+        
+    
+        
+            
+        
+    
+        
+            
+            <li><div data-rel="笔记">笔记</div>
+                
+            </li>
+            
+        
+    
+        
+            
+        
+    
+        
+            
+        
+    
+        
+            
+        
+    
+        
+            
+        
+    
+        
+            
+        
+    
+</ul>
+<div class="left-bottom">
+    <div class="menus">
+    
+    
+    
+    
+    </div>
+    <div></div>
+</div>
+<input type="hidden" id="yelog_site_posts_number" value="71">
+
+<div style="display: none">
+    <span id="busuanzi_value_site_uv"></span>
+    <span id="busuanzi_value_site_pv"></span>
+</div>
+
+    </div>
+    <div class="nav-right">
+        <div class="friends-area">
+    <div class="friends-title">
+        友情链接
+        <i class="back-title-list"></i>
+    </div>
+    <div class="friends-content">
+        <ul>
+            
+            <li><a target="_blank" href="http://yelog.org/">叶落阁</a></li>
+            
+        </ul>
+    </div>
+</div>
+        <div class="title-list">
+    <form onkeydown="if(event.keyCode === 13){return false;}">
+        <input id="local-search-input" class="search" type="text" placeholder="Search..." />
+        <i class="cross"></i>
+        <span>
+            <label for="tagswitch">Tags:</label>
+            <input id="tagswitch" type="checkbox" style="display: none" />
+            <i id="tagsWitchIcon"></i>
+        </span>
+    </form>
+    <div class="tags-list">
+    
+    <li class="article-tag-list-item">
+        <a class="color5">HTTP</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a class="color4">protobuf</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a class="color5">MySQL SQL</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a class="color2">Spring</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a class="color5">java</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a class="color3">QT</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a class="color4">区块链</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a class="color4">分布式</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a class="color4">大数据</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a class="color3">前端</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a class="color3">MyBatis</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a class="color1">SpringBoot</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a class="color5">网络编程</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a class="color1">Redis</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a class="color4">多线程</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a class="color4">数据库</a>
+    </li>
+    
+    <div class="clearfix"></div>
+</div>
+
+    
+    <nav id="title-list-nav">
+        
+        <a  class="前端 CSS "
+           href="/2021/01/11/html/4_%E7%9B%92%E5%AD%90%E6%A8%A1%E5%9E%8B/"
+           data-tag="前端"
+           data-author="" >
+            <span class="post-title" title="【前端 4】盒子模型">【前端 4】盒子模型</span>
+            <span class="post-date" title="2021-01-11 09:41:10">2021/01/11</span>
+        </a>
+        
+        <a  class="前端 CSS "
+           href="/2021/01/09/html/3_CSS%E8%BF%9B%E9%98%B6/"
+           data-tag="前端"
+           data-author="" >
+            <span class="post-title" title="【前端 3】CSS进阶">【前端 3】CSS进阶</span>
+            <span class="post-date" title="2021-01-09 09:43:10">2021/01/09</span>
+        </a>
+        
+        <a  class="前端 CSS "
+           href="/2021/01/05/html/2_CSS/"
+           data-tag="前端"
+           data-author="" >
+            <span class="post-title" title="【前端 2】CSS">【前端 2】CSS</span>
+            <span class="post-date" title="2021-01-05 16:22:10">2021/01/05</span>
+        </a>
+        
+        <a  class="前端 HTML "
+           href="/2021/01/04/html/1_html/"
+           data-tag="前端"
+           data-author="" >
+            <span class="post-title" title="【前端 1】HTML">【前端 1】HTML</span>
+            <span class="post-date" title="2021-01-04 10:46:10">2021/01/04</span>
+        </a>
+        
+        <a  class="区块链 fabric "
+           href="/2020/12/12/fabric/08_%E9%93%BE%E7%A0%81/"
+           data-tag="区块链"
+           data-author="" >
+            <span class="post-title" title="07_链码接口使用">07_链码接口使用</span>
+            <span class="post-date" title="2020-12-12 11:43:23">2020/12/12</span>
+        </a>
+        
+        <a  class="区块链 fabric "
+           href="/2020/12/12/fabric/02_%E9%83%A8%E7%BD%B2%E8%B0%83%E7%94%A8%E9%93%BE%E7%A0%81/"
+           data-tag="区块链"
+           data-author="" >
+            <span class="post-title" title="02_部署调用链码">02_部署调用链码</span>
+            <span class="post-date" title="2020-12-12 10:56:23">2020/12/12</span>
+        </a>
+        
+        <a  class="区块链 fabric "
+           href="/2020/12/09/fabric/07_dockerCompose%E5%90%AF%E5%8A%A8fabric/"
+           data-tag="区块链"
+           data-author="" >
+            <span class="post-title" title="06_docker compose启动节点">06_docker compose启动节点</span>
+            <span class="post-date" title="2020-12-09 11:35:23">2020/12/09</span>
+        </a>
+        
+        <a  class="区块链 fabric "
+           href="/2020/12/09/fabric/03_%E7%BD%91%E7%BB%9C%E7%BB%93%E6%9E%84%E5%8F%98%E5%8A%A8/"
+           data-tag="区块链"
+           data-author="" >
+            <span class="post-title" title="03_用户结构变动">03_用户结构变动</span>
+            <span class="post-date" title="2020-12-09 10:35:23">2020/12/09</span>
+        </a>
+        
+        <a  class="区块链 fabric "
+           href="/2020/12/02/fabric/01_%E6%90%AD%E5%BB%BA%E5%9F%BA%E7%A1%80%E7%BD%91%E7%BB%9C/"
+           data-tag="区块链"
+           data-author="" >
+            <span class="post-title" title="01_搭建基础网络">01_搭建基础网络</span>
+            <span class="post-date" title="2020-12-02 11:05:23">2020/12/02</span>
+        </a>
+        
+        <a  class="区块链 fabric "
+           href="/2020/12/01/fabric/05_java%20SDK%E4%BD%BF%E7%94%A8/"
+           data-tag="区块链"
+           data-author="" >
+            <span class="post-title" title="05_javaSDK使用">05_javaSDK使用</span>
+            <span class="post-date" title="2020-12-01 15:04:23">2020/12/01</span>
+        </a>
+        
+        <a  class="区块链 fabric "
+           href="/2020/12/01/fabric/04_%E7%94%A8%E6%88%B7%E4%BD%BF%E7%94%A8%E9%93%BE%E7%A0%81/"
+           data-tag="区块链"
+           data-author="" >
+            <span class="post-title" title="04_用户使用链码">04_用户使用链码</span>
+            <span class="post-date" title="2020-12-01 10:55:23">2020/12/01</span>
+        </a>
+        
+        <a  class="大数据 hadoop "
+           href="/2020/11/26/hadoop/%E5%AE%89%E8%A3%85/"
+           data-tag="大数据"
+           data-author="" >
+            <span class="post-title" title="【hadoop 3】hadoop分布式安装总结">【hadoop 3】hadoop分布式安装总结</span>
+            <span class="post-date" title="2020-11-26 17:50:09">2020/11/26</span>
+        </a>
+        
+        <a  class="客户端 QT "
+           href="/2020/10/29/QT/4_%E6%A8%A1%E5%9E%8B%20%E8%A7%86%E5%9B%BE%E7%BB%93%E6%9E%84/"
+           data-tag="QT"
+           data-author="" >
+            <span class="post-title" title="【QT 3】模型-视图结构">【QT 3】模型-视图结构</span>
+            <span class="post-date" title="2020-10-29 16:49:10">2020/10/29</span>
+        </a>
+        
+        <a  class="客户端 QT "
+           href="/2020/10/28/QT/3_%E6%8E%A7%E4%BB%B6/"
+           data-tag="QT"
+           data-author="" >
+            <span class="post-title" title="【QT 2】控件">【QT 2】控件</span>
+            <span class="post-date" title="2020-10-28 16:55:10">2020/10/28</span>
+        </a>
+        
+        <a  class="客户端 QT "
+           href="/2020/10/28/QT/2_%E5%B8%83%E5%B1%80%E7%AE%A1%E7%90%86/"
+           data-tag="QT"
+           data-author="" >
+            <span class="post-title" title="【QT 1】布局管理">【QT 1】布局管理</span>
+            <span class="post-date" title="2020-10-28 14:37:10">2020/10/28</span>
+        </a>
+        
+        <a  class="客户端 QT "
+           href="/2020/10/20/QT/QT%E7%95%8C%E9%9D%A2%E7%BC%96%E8%BE%91%E5%99%A8/"
+           data-tag="QT"
+           data-author="" >
+            <span class="post-title" title="【QT 4】QT界面编辑器">【QT 4】QT界面编辑器</span>
+            <span class="post-date" title="2020-10-20 15:52:10">2020/10/20</span>
+        </a>
+        
+        <a  class="SSM Spring "
+           href="/2020/06/01/%E7%AC%94%E8%AE%B0/spring/"
+           data-tag="Spring"
+           data-author="" >
+            <span class="post-title" title="【笔记】Spring总结">【笔记】Spring总结</span>
+            <span class="post-date" title="2020-06-01 03:57:17">2020/06/01</span>
+        </a>
+        
+        <a  class="笔记 "
+           href="/2020/05/12/%E7%AC%94%E8%AE%B0/%E6%95%B0%E6%8D%AE%E5%BA%93/"
+           data-tag="数据库"
+           data-author="" >
+            <span class="post-title" title="【笔记】数据库与MySQL">【笔记】数据库与MySQL</span>
+            <span class="post-date" title="2020-05-12 21:38:05">2020/05/12</span>
+        </a>
+        
+        <a  class="笔记 "
+           href="/2020/05/07/%E7%AC%94%E8%AE%B0/redis/"
+           data-tag="Redis"
+           data-author="" >
+            <span class="post-title" title="【笔记】Redis">【笔记】Redis</span>
+            <span class="post-date" title="2020-05-07 18:38:05">2020/05/07</span>
+        </a>
+        
+        <a  class="笔记 "
+           href="/2020/04/25/%E7%AC%94%E8%AE%B0/%E5%A4%9A%E7%BA%BF%E7%A8%8B/"
+           data-tag="多线程"
+           data-author="" >
+            <span class="post-title" title="【笔记】java并发">【笔记】java并发</span>
+            <span class="post-date" title="2020-04-25 15:38:01">2020/04/25</span>
+        </a>
+        
+        <a  class="大数据 hadoop "
+           href="/2020/03/18/hadoop/2_%E4%BD%BF%E7%94%A8hadoop/"
+           data-tag="大数据"
+           data-author="" >
+            <span class="post-title" title="【hadoop 2】hadoop三种模式使用">【hadoop 2】hadoop三种模式使用</span>
+            <span class="post-date" title="2020-03-18 17:49:04">2020/03/18</span>
+        </a>
+        
+        <a  class="SSM SpringBoot "
+           href="/2020/03/18/springboot/3_springboot%E7%9A%84%E9%85%8D%E7%BD%AE/"
+           data-tag="SpringBoot"
+           data-author="" >
+            <span class="post-title" title="【SpringBoot 02】配置文件">【SpringBoot 02】配置文件</span>
+            <span class="post-date" title="2020-03-18 12:58:23">2020/03/18</span>
+        </a>
+        
+        <a  class="SSM SpringBoot "
+           href="/2020/03/17/springboot/2_springboot%E7%9A%84helloworld/"
+           data-tag="SpringBoot"
+           data-author="" >
+            <span class="post-title" title="【SpringBoot 01】HelloWorld">【SpringBoot 01】HelloWorld</span>
+            <span class="post-date" title="2020-03-17 19:58:23">2020/03/17</span>
+        </a>
+        
+        <a  class="SSM SSM整合 "
+           href="/2020/03/05/3-SpringMVC/1_%E6%90%AD%E5%BB%BAspring/"
+           data-tag="java"
+           data-author="" >
+            <span class="post-title" title="【SSM实战】SSM框架整合">【SSM实战】SSM框架整合</span>
+            <span class="post-date" title="2020-03-05 20:37:01">2020/03/05</span>
+        </a>
+        
+        <a  class="SSM SpringMVC "
+           href="/2020/03/05/3-SpringMVC/7_SpringMVC%E5%BC%82%E5%B8%B8%E5%A4%84%E7%90%86%E4%B8%8E%E6%8B%A6%E6%88%AA%E5%99%A8/"
+           data-tag="java"
+           data-author="" >
+            <span class="post-title" title="【SpringMVC实战6】异常处理与拦截器">【SpringMVC实战6】异常处理与拦截器</span>
+            <span class="post-date" title="2020-03-05 13:06:19">2020/03/05</span>
+        </a>
+        
+        <a  class="SSM SpringMVC "
+           href="/2020/03/04/3-SpringMVC/6_SpringMVC%E5%93%8D%E5%BA%94/"
+           data-tag="java"
+           data-author="" >
+            <span class="post-title" title="【SpringMVC实战5】响应">【SpringMVC实战5】响应</span>
+            <span class="post-date" title="2020-03-04 19:26:39">2020/03/04</span>
+        </a>
+        
+        <a  class="SSM SpringMVC "
+           href="/2020/03/03/3-SpringMVC/4_SpringMVC%E7%9A%84%E5%B8%B8%E7%94%A8%E6%B3%A8%E8%A7%A3/"
+           data-tag="java"
+           data-author="" >
+            <span class="post-title" title="【SpringMVC实战3】常用注解">【SpringMVC实战3】常用注解</span>
+            <span class="post-date" title="2020-03-03 15:26:29">2020/03/03</span>
+        </a>
+        
+        <a  class="SSM SpringMVC "
+           href="/2020/03/03/3-SpringMVC/5_%E8%AF%B7%E6%B1%82%E5%8F%82%E6%95%B0%E7%BB%91%E5%AE%9A/"
+           data-tag="java"
+           data-author="" >
+            <span class="post-title" title="【SpringMVC实战4】请求参数绑定">【SpringMVC实战4】请求参数绑定</span>
+            <span class="post-date" title="2020-03-03 09:13:23">2020/03/03</span>
+        </a>
+        
+        <a  class="SSM SpringMVC "
+           href="/2020/03/02/3-SpringMVC/3_SpringMVC%E7%9A%84%E6%89%A7%E8%A1%8C%E6%B5%81%E7%A8%8B/"
+           data-tag="java"
+           data-author="" >
+            <span class="post-title" title="【SpringMVC实战2】执行流程">【SpringMVC实战2】执行流程</span>
+            <span class="post-date" title="2020-03-02 18:26:39">2020/03/02</span>
+        </a>
+        
+        <a  class="SSM SpringMVC "
+           href="/2020/03/02/3-SpringMVC/2_%E5%85%A5%E9%97%A8%E6%A1%88%E4%BE%8B/"
+           data-tag="java"
+           data-author="" >
+            <span class="post-title" title="【SpringMVC实战1】入门案例">【SpringMVC实战1】入门案例</span>
+            <span class="post-date" title="2020-03-02 14:26:39">2020/03/02</span>
+        </a>
+        
+        <a  class="SSM Spring "
+           href="/2020/02/21/13-Spring/8_%E4%BA%8B%E5%8A%A1%E6%8E%A7%E5%88%B6/"
+           data-tag="Spring"
+           data-author="" >
+            <span class="post-title" title="【Spring实战8】事务控制">【Spring实战8】事务控制</span>
+            <span class="post-date" title="2020-02-21 15:23:48">2020/02/21</span>
+        </a>
+        
+        <a  class="SSM Spring "
+           href="/2020/02/20/13-Spring/7_JdbcTemplate/"
+           data-tag="Spring"
+           data-author="" >
+            <span class="post-title" title="【Spring实战7】JdbcTemplate">【Spring实战7】JdbcTemplate</span>
+            <span class="post-date" title="2020-02-20 09:32:29">2020/02/20</span>
+        </a>
+        
+        <a  class="SSM Spring "
+           href="/2020/02/19/13-Spring/6_%E5%9F%BA%E4%BA%8Exml%E5%92%8C%E6%B3%A8%E8%A7%A3%E7%9A%84AOP%E9%85%8D%E7%BD%AE/"
+           data-tag="Spring"
+           data-author="" >
+            <span class="post-title" title="【Spring实战6】基于xml和注解的AOP配置">【Spring实战6】基于xml和注解的AOP配置</span>
+            <span class="post-date" title="2020-02-19 21:31:44">2020/02/19</span>
+        </a>
+        
+        <a  class="SSM Spring "
+           href="/2020/02/19/13-Spring/5_AOP/"
+           data-tag="Spring"
+           data-author="" >
+            <span class="post-title" title="【Spring实战5】AOP">【Spring实战5】AOP</span>
+            <span class="post-date" title="2020-02-19 18:56:47">2020/02/19</span>
+        </a>
+        
+        <a  class="SSM Spring "
+           href="/2020/02/18/13-Spring/4_%E5%8A%A8%E6%80%81%E4%BB%A3%E7%90%86/"
+           data-tag="Spring"
+           data-author="" >
+            <span class="post-title" title="【Spring实战4】动态代理">【Spring实战4】动态代理</span>
+            <span class="post-date" title="2020-02-18 17:15:32">2020/02/18</span>
+        </a>
+        
+        <a  class="SSM Spring "
+           href="/2020/02/14/13-Spring/3_%E5%9F%BA%E4%BA%8E%E6%B3%A8%E8%A7%A3%E7%9A%84IOC/"
+           data-tag="Spring"
+           data-author="" >
+            <span class="post-title" title="【Spring实战3】IoC注解">【Spring实战3】IoC注解</span>
+            <span class="post-date" title="2020-02-14 20:57:17">2020/02/14</span>
+        </a>
+        
+        <a  class="SSM Spring "
+           href="/2020/02/13/13-Spring/2_IOC/"
+           data-tag="Spring"
+           data-author="" >
+            <span class="post-title" title="【Spring实战2】IoC与DI">【Spring实战2】IoC与DI</span>
+            <span class="post-date" title="2020-02-13 20:56:03">2020/02/13</span>
+        </a>
+        
+        <a  class="SSM Spring "
+           href="/2020/02/13/13-Spring/1_%E7%A8%8B%E5%BA%8F%E8%80%A6%E5%90%88%E4%B8%8E%E8%A7%A3%E8%80%A6/"
+           data-tag="Spring"
+           data-author="" >
+            <span class="post-title" title="【Spring实战1】程序的耦合与解耦">【Spring实战1】程序的耦合与解耦</span>
+            <span class="post-date" title="2020-02-13 13:17:03">2020/02/13</span>
+        </a>
+        
+        <a  class="SSM MyBatis "
+           href="/2020/02/07/mybatis/10_%E6%B3%A8%E8%A7%A3%E5%BC%80%E5%8F%91/"
+           data-tag="MyBatis"
+           data-author="" >
+            <span class="post-title" title="【Mybatis实战5】注解开发">【Mybatis实战5】注解开发</span>
+            <span class="post-date" title="2020-02-07 16:18:37">2020/02/07</span>
+        </a>
+        
+        <a  class="SSM MyBatis "
+           href="/2020/02/06/mybatis/9_%E7%BC%93%E5%AD%98/"
+           data-tag="MyBatis"
+           data-author="" >
+            <span class="post-title" title="【Mybatis实战4】加载与缓存">【Mybatis实战4】加载与缓存</span>
+            <span class="post-date" title="2020-02-06 18:29:03">2020/02/06</span>
+        </a>
+        
+        <a  class="SSM MyBatis "
+           href="/2020/02/06/mybatis/8_%E5%8A%A8%E6%80%81SQL%E4%B8%8E%E5%A4%9A%E8%A1%A8%E6%93%8D%E4%BD%9C/"
+           data-tag="MyBatis"
+           data-author="" >
+            <span class="post-title" title="【Mybatis实战3】动态SQL与多表操作">【Mybatis实战3】动态SQL与多表操作</span>
+            <span class="post-date" title="2020-02-06 18:08:29">2020/02/06</span>
+        </a>
+        
+        <a  class="SSM MyBatis "
+           href="/2020/02/06/mybatis/6_mybatis%E8%BF%9B%E8%A1%8CCRUD/"
+           data-tag="MyBatis"
+           data-author="" >
+            <span class="post-title" title="【Mybatis实战2】CRUD操作">【Mybatis实战2】CRUD操作</span>
+            <span class="post-date" title="2020-02-06 13:21:03">2020/02/06</span>
+        </a>
+        
+        <a  class="SSM MyBatis "
+           href="/2020/02/05/mybatis/2_%E5%9F%BA%E4%BA%8Exml%E7%9A%84%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/"
+           data-tag="MyBatis"
+           data-author="" >
+            <span class="post-title" title="【Mybatis实战1】两种环境搭建方法及示例">【Mybatis实战1】两种环境搭建方法及示例</span>
+            <span class="post-date" title="2020-02-05 10:21:01">2020/02/05</span>
+        </a>
+        
+        <a  class="数据库 "
+           href="/2020/01/29/11-MySQL/3_%E5%A4%9A%E8%A1%A8%E6%9F%A5%E8%AF%A2%E4%B8%8E%E4%BA%8B%E5%8A%A1/"
+           data-tag="MySQL SQL"
+           data-author="" >
+            <span class="post-title" title="多表查询与事务">多表查询与事务</span>
+            <span class="post-date" title="2020-01-29 13:52:00">2020/01/29</span>
+        </a>
+        
+        <a  class="数据库 "
+           href="/2020/01/26/11-MySQL/2_SQL%E9%AB%98%E7%BA%A7/"
+           data-tag="MySQL SQL"
+           data-author="" >
+            <span class="post-title" title="数据库高级知识及SQL实现">数据库高级知识及SQL实现</span>
+            <span class="post-date" title="2020-01-26 23:01:52">2020/01/26</span>
+        </a>
+        
+        <a  class="数据库 "
+           href="/2020/01/23/11-MySQL/1_SQL%E8%AF%AD%E8%A8%80%E5%9F%BA%E6%9C%AC%E6%93%8D%E4%BD%9C/"
+           data-tag="MySQL SQL"
+           data-author="" >
+            <span class="post-title" title="SQL语言基础">SQL语言基础</span>
+            <span class="post-date" title="2020-01-23 20:06:39">2020/01/23</span>
+        </a>
+        
+        <a  class="网络 protobuf "
+           href="/2020/01/16/10-java%E7%BD%91%E7%BB%9C/2_protobuf/"
+           data-tag="protobuf"
+           data-author="" >
+            <span class="post-title" title="java使用protobuf">java使用protobuf</span>
+            <span class="post-date" title="2020-01-16 17:57:52">2020/01/16</span>
+        </a>
+        
+        <a  class="网络 HTTP "
+           href="/2020/01/15/10-java%E7%BD%91%E7%BB%9C/1_HTTP/"
+           data-tag="HTTP"
+           data-author="" >
+            <span class="post-title" title="java实现简单的HTTP">java实现简单的HTTP</span>
+            <span class="post-date" title="2020-01-15 18:03:21">2020/01/15</span>
+        </a>
+        
+        <a  class="大数据 hadoop "
+           href="/2020/01/06/hadoop/1_hadoop/"
+           data-tag="大数据"
+           data-author="" >
+            <span class="post-title" title="【hadoop 1】hadoop环境搭建">【hadoop 1】hadoop环境搭建</span>
+            <span class="post-date" title="2020-01-06 14:55:10">2020/01/06</span>
+        </a>
+        
+        <a  class="区块链 Fabric "
+           href="/2019/11/24/blockchain/09/"
+           data-tag="区块链"
+           data-author="" >
+            <span class="post-title" title="Hyperledger Fabric系统框架笔记">Hyperledger Fabric系统框架笔记</span>
+            <span class="post-date" title="2019-11-24 12:43:08">2019/11/24</span>
+        </a>
+        
+        <a  class="区块链 论文 "
+           href="/2019/11/21/blockchain/08/"
+           data-tag="区块链"
+           data-author="" >
+            <span class="post-title" title="闪电网络（四）比特币闪电网络：The Bitcoin Lightning Network">闪电网络（四）比特币闪电网络：The Bitcoin Lightning Network</span>
+            <span class="post-date" title="2019-11-21 21:31:53">2019/11/21</span>
+        </a>
+        
+        <a  class="区块链 论文 "
+           href="/2019/11/20/blockchain/07/"
+           data-tag="区块链"
+           data-author="" >
+            <span class="post-title" title="闪电网络（三）哈希时间锁合约：Hashed Timelock Contract (HTLC)">闪电网络（三）哈希时间锁合约：Hashed Timelock Contract (HTLC)</span>
+            <span class="post-date" title="2019-11-20 10:51:23">2019/11/20</span>
+        </a>
+        
+        <a  class="区块链 论文 "
+           href="/2019/11/20/blockchain/05/"
+           data-tag="区块链"
+           data-author="" >
+            <span class="post-title" title="闪电网络（二）双向支付通道：Bidirectional Payment Channels + RSMC">闪电网络（二）双向支付通道：Bidirectional Payment Channels + RSMC</span>
+            <span class="post-date" title="2019-11-20 10:51:23">2019/11/20</span>
+        </a>
+        
+        <a  class="区块链 论文 "
+           href="/2019/11/19/blockchain/06/"
+           data-tag="区块链"
+           data-author="" >
+            <span class="post-title" title="闪电网络（一）微支付通道">闪电网络（一）微支付通道</span>
+            <span class="post-date" title="2019-11-19 10:07:02">2019/11/19</span>
+        </a>
+        
+        <a  class="区块链 论文 "
+           href="/2019/11/15/blockchain/03/"
+           data-tag="区块链"
+           data-author="" >
+            <span class="post-title" title="论文翻译 OmniLedger">论文翻译 OmniLedger</span>
+            <span class="post-date" title="2019-11-15 16:15:33">2019/11/15</span>
+        </a>
+        
+        <a  class="网络 网络编程 "
+           href="/2019/11/03/networkProgram/%E7%BD%91%E7%BB%9C%E7%BC%96%E7%A8%8B10UDP%E8%BF%9E%E6%8E%A5/"
+           data-tag="网络编程"
+           data-author="" >
+            <span class="post-title" title="网络编程10：UDP连接">网络编程10：UDP连接</span>
+            <span class="post-date" title="2019-11-03 16:15:07">2019/11/03</span>
+        </a>
+        
+        <a  class="网络 网络编程 "
+           href="/2019/11/02/networkProgram/%E7%BD%91%E7%BB%9C%E7%BC%96%E7%A8%8B9TCP%E7%9A%84%E5%BC%82%E5%B8%B8/"
+           data-tag="网络编程"
+           data-author="" >
+            <span class="post-title" title="网络编程9：TCP的异常">网络编程9：TCP的异常</span>
+            <span class="post-date" title="2019-11-02 13:57:10">2019/11/02</span>
+        </a>
+        
+        <a  class="网络 网络编程 "
+           href="/2019/11/01/networkProgram/%E7%BD%91%E7%BB%9C%E7%BC%96%E7%A8%8B8TCP%E6%95%B0%E6%8D%AE%E4%BC%A0%E8%BE%93/"
+           data-tag="网络编程"
+           data-author="" >
+            <span class="post-title" title="网络编程8：TCP数据传输">网络编程8：TCP数据传输</span>
+            <span class="post-date" title="2019-11-01 18:34:10">2019/11/01</span>
+        </a>
+        
+        <a  class="网络 网络编程 "
+           href="/2019/10/31/networkProgram/%E7%BD%91%E7%BB%9C%E7%BC%96%E7%A8%8B7TCP%E8%BF%9E%E6%8E%A5%E7%8A%B6%E6%80%81/"
+           data-tag="网络编程"
+           data-author="" >
+            <span class="post-title" title="网络编程7：TCP连接状态">网络编程7：TCP连接状态</span>
+            <span class="post-date" title="2019-10-31 17:14:55">2019/10/31</span>
+        </a>
+        
+        <a  class="网络 网络编程 "
+           href="/2019/10/30/networkProgram/%E7%BD%91%E7%BB%9C%E7%BC%96%E7%A8%8B6%E5%85%B3%E9%97%AD%E8%BF%9E%E6%8E%A5/"
+           data-tag="网络编程"
+           data-author="" >
+            <span class="post-title" title="网络编程6：关闭连接">网络编程6：关闭连接</span>
+            <span class="post-date" title="2019-10-30 18:34:12">2019/10/30</span>
+        </a>
+        
+        <a  class="网络 网络编程 "
+           href="/2019/10/29/networkProgram/%E7%BD%91%E7%BB%9C%E7%BC%96%E7%A8%8B5%E7%BD%91%E7%BB%9C%E5%B7%A5%E5%85%B7/"
+           data-tag="网络编程"
+           data-author="" >
+            <span class="post-title" title="网络编程5：网络工具">网络编程5：网络工具</span>
+            <span class="post-date" title="2019-10-29 14:24:11">2019/10/29</span>
+        </a>
+        
+        <a  class="网络 网络编程 "
+           href="/2019/10/28/networkProgram/%E7%BD%91%E7%BB%9C%E7%BC%96%E7%A8%8B3UDP%E5%8D%8F%E8%AE%AE%E4%BD%BF%E7%94%A8socket/"
+           data-tag="网络编程"
+           data-author="" >
+            <span class="post-title" title="网络编程3：UDP协议使用socket">网络编程3：UDP协议使用socket</span>
+            <span class="post-date" title="2019-10-28 10:11:10">2019/10/28</span>
+        </a>
+        
+        <a  class="网络 网络编程 "
+           href="/2019/10/28/networkProgram/%E7%BD%91%E7%BB%9C%E7%BC%96%E7%A8%8B4%E6%9C%AC%E5%9C%B0socket/"
+           data-tag="网络编程"
+           data-author="" >
+            <span class="post-title" title="网络编程4：本地套接字">网络编程4：本地套接字</span>
+            <span class="post-date" title="2019-10-28 10:11:10">2019/10/28</span>
+        </a>
+        
+        <a  class="网络 网络编程 "
+           href="/2019/10/27/networkProgram/%E7%BD%91%E7%BB%9C%E7%BC%96%E7%A8%8B2TCP%E5%8D%8F%E8%AE%AE%E4%BD%BF%E7%94%A8socket/"
+           data-tag="网络编程"
+           data-author="" >
+            <span class="post-title" title="网络编程2：TCP协议使用socket">网络编程2：TCP协议使用socket</span>
+            <span class="post-date" title="2019-10-27 17:59:09">2019/10/27</span>
+        </a>
+        
+        <a  class="网络 网络编程 "
+           href="/2019/10/26/networkProgram/%E7%BD%91%E7%BB%9C%E7%BC%96%E7%A8%8B1/"
+           data-tag="网络编程"
+           data-author="" >
+            <span class="post-title" title="网络编程1：基础部分">网络编程1：基础部分</span>
+            <span class="post-date" title="2019-10-26 16:54:02">2019/10/26</span>
+        </a>
+        
+        <a  class="分布式 "
+           href="/2019/09/12/distribute/01/"
+           data-tag="分布式"
+           data-author="" >
+            <span class="post-title" title="分布式系统的一致性与共识">分布式系统的一致性与共识</span>
+            <span class="post-date" title="2019-09-12 13:47:52">2019/09/12</span>
+        </a>
+        
+        <a  class="网络 HTTP "
+           href="/2019/08/05/http/030205/"
+           data-tag="HTTP"
+           data-author="" >
+            <span class="post-title" title="HTTP协议学习（五）HTTPS与安全">HTTP协议学习（五）HTTPS与安全</span>
+            <span class="post-date" title="2019-08-05 20:46:07">2019/08/05</span>
+        </a>
+        
+        <a  class="网络 HTTP "
+           href="/2019/07/20/http/030204/"
+           data-tag="HTTP"
+           data-author="" >
+            <span class="post-title" title="HTTP协议学习（四）cookie、缓存、代理机制">HTTP协议学习（四）cookie、缓存、代理机制</span>
+            <span class="post-date" title="2019-07-20 13:15:07">2019/07/20</span>
+        </a>
+        
+        <a  class="网络 HTTP "
+           href="/2019/07/10/http/030203/"
+           data-tag="HTTP"
+           data-author="" >
+            <span class="post-title" title="HTTP协议学习（三）数据传输与连接">HTTP协议学习（三）数据传输与连接</span>
+            <span class="post-date" title="2019-07-10 14:36:55">2019/07/10</span>
+        </a>
+        
+        <a  class="网络 HTTP "
+           href="/2019/07/01/http/030202/"
+           data-tag="HTTP"
+           data-author="" >
+            <span class="post-title" title="HTTP协议学习（二）基础">HTTP协议学习（二）基础</span>
+            <span class="post-date" title="2019-07-01 14:05:51">2019/07/01</span>
+        </a>
+        
+        <a  class="网络 HTTP "
+           href="/2019/06/14/http/030201/"
+           data-tag="HTTP"
+           data-author="" >
+            <span class="post-title" title="HTTP协议学习（一）概念">HTTP协议学习（一）概念</span>
+            <span class="post-date" title="2019-06-14 16:08:25">2019/06/14</span>
+        </a>
+        
+    </nav>
+</div>
+    </div>
+    <div class="hide-list">
+        <div class="semicircle">
+            <div class="brackets first"><</div>
+            <div class="brackets">&gt;</div>
+        </div>
+    </div>
+</aside>
+<div class="post">
+    <div class="pjax">
+        <article id="post-blockchain/05" class="article article-type-post" itemscope itemprop="blogPost">
+    
+        <h1 class="article-title">闪电网络（二）双向支付通道：Bidirectional Payment Channels + RSMC</h1>
+    
+    <div class="article-meta">
+        
+        
+        
+        <span class="book">
+            
+                <a  data-rel="区块链">区块链</a>/
+            
+                <a  data-rel="论文">论文</a>
+            
+        </span>
+        
+        
+        <span class="tag">
+            
+            <a class="color4">区块链</a>
+            
+        </span>
+        
+    </div>
+    <div class="article-meta">
+        
+        创建时间:<time class="date" title='更新时间: 2020-03-06 06:45:43'>2019-11-20 10:51</time>
+        
+    </div>
+    <div class="article-meta">
+        
+        
+        
+    </div>
+    
+    <div class="toc-ref">
+    
+        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#3-双向支付通道"><span class="toc-text">3. 双向支付通道</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#3-1-使用通道的流程"><span class="toc-text">3.1 使用通道的流程</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#3-1-1-创建未签名的Funding-Tx"><span class="toc-text">3.1.1 创建未签名的Funding Tx</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#3-1-2-从未签名的Tx中消费"><span class="toc-text">3.1.2 从未签名的Tx中消费</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#3-1-3-Commitment-Tx-不强制的构造"><span class="toc-text">3.1.3 Commitment Tx: 不强制的构造</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#3-1-4-Commitment-Tx-违约惩罚"><span class="toc-text">3.1.4 Commitment Tx: 违约惩罚</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-2-创建带合同撤销的通道"><span class="toc-text">3.2 创建带合同撤销的通道</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-3-基于Sequence成熟度的合约（RSMC）"><span class="toc-text">3.3 基于Sequence成熟度的合约（RSMC）</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#3-3-1-区块链的timestop机制"><span class="toc-text">3.3.1 区块链的timestop机制</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#3-3-2-可撤销的-Commitment-Tx"><span class="toc-text">3.3.2 可撤销的 Commitment Tx</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#3-3-3-合作双方赎回资金的方式"><span class="toc-text">3.3.3 合作双方赎回资金的方式</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#3-3-4-创建新的-Commitment-Tx并撤销之前的"><span class="toc-text">3.3.4 创建新的 Commitment Tx并撤销之前的</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#3-3-5-创建可撤销交易的步骤"><span class="toc-text">3.3.5 创建可撤销交易的步骤</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-4-合作关闭一个通道"><span class="toc-text">3.4 合作关闭一个通道</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-5-双向通道的实现与总结"><span class="toc-text">3.5 双向通道的实现与总结</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#RSMC"><span class="toc-text">RSMC</span></a></li></ol>
+    
+<style>
+    .left-col .switch-btn,
+    .left-col .switch-area {
+        display: none;
+    }
+    .toc-level-3 i,
+    .toc-level-3 ol {
+        display: none !important;
+    }
+</style>
+</div>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p><div class='inner-toc'><h2>目录</h2><ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#3-双向支付通道"><span class="toc-text">3. 双向支付通道</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#3-1-使用通道的流程"><span class="toc-text">3.1 使用通道的流程</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#3-1-1-创建未签名的Funding-Tx"><span class="toc-text">3.1.1 创建未签名的Funding Tx</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#3-1-2-从未签名的Tx中消费"><span class="toc-text">3.1.2 从未签名的Tx中消费</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#3-1-3-Commitment-Tx-不强制的构造"><span class="toc-text">3.1.3 Commitment Tx: 不强制的构造</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#3-1-4-Commitment-Tx-违约惩罚"><span class="toc-text">3.1.4 Commitment Tx: 违约惩罚</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-2-创建带合同撤销的通道"><span class="toc-text">3.2 创建带合同撤销的通道</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-3-基于Sequence成熟度的合约（RSMC）"><span class="toc-text">3.3 基于Sequence成熟度的合约（RSMC）</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#3-3-1-区块链的timestop机制"><span class="toc-text">3.3.1 区块链的timestop机制</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#3-3-2-可撤销的-Commitment-Tx"><span class="toc-text">3.3.2 可撤销的 Commitment Tx</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#3-3-3-合作双方赎回资金的方式"><span class="toc-text">3.3.3 合作双方赎回资金的方式</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#3-3-4-创建新的-Commitment-Tx并撤销之前的"><span class="toc-text">3.3.4 创建新的 Commitment Tx并撤销之前的</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#3-3-5-创建可撤销交易的步骤"><span class="toc-text">3.3.5 创建可撤销交易的步骤</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-4-合作关闭一个通道"><span class="toc-text">3.4 合作关闭一个通道</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-5-双向通道的实现与总结"><span class="toc-text">3.5 双向通道的实现与总结</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#RSMC"><span class="toc-text">RSMC</span></a></li></ol></div></p>
+<p>PS：这篇文章的英语表述特别native，而且全篇59页，写的非常详细，是一片不可多得的佳作。由于原文内容非常长，所以这里将原文拆成4个部分，分别为：</p>
+<ul>
+<li>（一）微支付通道</li>
+<li>（二）双向支付通道：Bidirectional Payment Channels + RSMC</li>
+<li>（三）哈希时间锁合约：Hashed Timelock Contract (HTLC) </li>
+<li>（四）比特币闪电网络：The Bitcoin Lightning Network</li>
+</ul>
+<p>前面关于综述的部分我就直接用自己的理解简述了，至于后面具体的操作流程则采用段落翻译与理解结合的方式，以便于对照原文理解。</p>
+<p><strong>本文为本系列的第二篇，文中的标题序号均按照原论文中顺序进行编号</strong></p>
+<p>这一部分的目的就是生成一个双向的支付通道，其大致的思路就是两个人同时交一部分押金，然后这两个人之间可以进行任意多次交易，只需要在想要结束通道的时候将两人的余额广播到区块链网络上就可以了，可以采用不设置第三方的方式（RSMC）来自动执行。</p>
+<p>这里，关闭通道有两种方式</p>
+<ul>
+<li>一种是基于RSMC的方式，经过区块链一定时间的区块确认之后默认生效，一方中途退出，另外一方可以立即拿回钱，而不是等到nLockTime到期才能拿回钱，同时，应该对主动退出方实行惩罚。</li>
+<li>另一种是交易双方合作共同关闭通道。</li>
+</ul>
+<p>不过其中的细节还是相当复杂的，需要好好品味，而且论文中有些语句描述非常模棱两可（可能是英语不太好吧），导致理解起来比较困难。</p>
+<p>RSMC用下面这个公众号里写的方式来理解反而更容易，<a href="https://mp.weixin.qq.com/s?__biz=MzU3NjU3NjYxMA==&mid=2247483800&idx=1&sn=9e7cf1690dc0853ec563361ef695d85e&chksm=fd108c95ca67058301ac938bc8da1361dd1ab8001b5b910475ddbefb1ca991a7ca532e190a2b&mpshare=1&scene=23&srcid=&sharer_sharetime=1574219943426&sharer_shareid=e0275a8c90beb99c1f6a71d4254cec74#rd" target="_blank" rel="noopener">第14课 闪电网络(Lightning Network) 之 RSMC</a></p>
+<h2 id="3-双向支付通道"><a href="#3-双向支付通道" class="headerlink" title="3. 双向支付通道"></a>3. 双向支付通道</h2><p>Bidirectional Payment Channels</p>
+<p>Micropayment channels permit a simple deferral of a transaction state to be broadcast at a later time. The contracts are enforced by creating a responsibility for one party to broadcast transactions before or after certain dates. If the blockchain is a decentralized timestamping system, it is possible to use clocks as a component of decentralized consensus[5] to determine data validity, as well as present states as a method to order events[6].</p>
+<p>微支付通道允许<strong>将交易状态的简单延迟到以后广播</strong>。  这些合约的执行方式是，让一方有责任在特定日期之前或之后广播交易。如果区块链是分散式时间戳系统，则可以<strong>使用时钟作为分散式共识[5]的组件来确定数据有效性</strong>，也可以使用当前状态作为对事件[6]进行排序的方法。</p>
+<p>By creating timeframes where certain states can be broadcast and later invalidated, it is possible to create complex contracts using bitcoin transaction scripts. There has been prior work for Hub-and-Spoke Micropayment Channels (and trusted payment channel networkslooking at building a hub-and-spoke network today. However, Lightning Network’s bidirectional micropayment channel requires the malleability softfork described in Appendix A to enable near-infinite scalability while mitigating risks of intermediate node default.  </p>
+<p>通过创建时间框架，某些状态可以被广播，然后在一段时间之后失效，就有可能使用比特币交易脚本创建复杂的合约。之前已经有了<strong>中心辐射型</strong>（Hub-and-Spoke）微支付通道的工作(以及可信的支付通道网络，目前正在考虑构建中心辐射型网络)。然而，Lightning Network的双向微支付通道需要附录A中描述的软分叉的延展性，以支持近乎无限的可伸缩性，同时降低中间节点默认的风险。</p>
+<p>By chaining together multiple micropayment channels, it is possible to create a network of transaction paths. Paths can be routed using a BGPlike system, and the sender may designate a particular path to the recipient. The output scripts are encumbered by a hash, which is generated by the recipient. By disclosing the input to that hash, the recipient’s counterparty will be able to pull funds along the route.</p>
+<p>通过将多个小额付款通道链接在一起，可以<strong>创建交易路径网络</strong>。 可以使用类似BGP的系统进行路由，发送方可以<strong>为接收方指定特定的路径</strong>。输出脚本由接收方生成的散列阻碍。通过公开该散列的输入，接收方的交易对手将能够沿着这条路径提取资金。</p>
+<h3 id="3-1-使用通道的流程"><a href="#3-1-使用通道的流程" class="headerlink" title="3.1 使用通道的流程"></a>3.1 使用通道的流程</h3><h4 id="3-1-1-创建未签名的Funding-Tx"><a href="#3-1-1-创建未签名的Funding-Tx" class="headerlink" title="3.1.1 创建未签名的Funding Tx"></a>3.1.1 创建未签名的Funding Tx</h4><p>An initial channel Funding Transaction is created whereby one or both channel counterparties fund the inputs of this transaction. Both parties create the inputs and outputs for this transaction but do not sign the transaction.</p>
+<p>创建初始通道<code>Funding Tx</code> 是<strong>通过一个或两个通道交易对手方为该交易的投入提供资金而创建的</strong>。双方为该事务创建输入和输出，但不对该事务签名。（对比上面的那个例子，这里的<code>Funding Tx</code>指的就是饭店和水果店老板各自交的100块钱押金）</p>
+<p>下文中的2-of-2的意思应该是从2个人得到输入，然后输出也是这两个人，即from 2 to 2</p>
+<p>The output for this Funding Transaction is a single 2-of-2 multisignature script with both participants in this channel, henceforth named Alice and Bob. Both participants do not exchange signatures for the Funding Transaction until they have created spends from this 2-of-2 output refunding the original amount back to its respective funders. The purpose of not signing the transaction allows for one to spend from a transaction which does not yet exist. If Alice and Bob exchange the signatures from the Funding Transaction without being able to broadcast spends from the Funding Transaction, the funds may be locked up forever if Alice and Bob do not cooperate (or other coin loss may occur through hostage scenarios whereby one pays for the cooperation from the counterparty).</p>
+<p>此资金交易的输出是一个单一的2-of-2多重签名脚本，此通道中的两个参与者都使用这个脚本，将参与者称为Alice和Bob。 双方都不会为这个<code>Funding Tx</code>进行交换签名，直到他们<strong>从2-of-2的输出中创建了支出，并将原始金额退还给了各自的出资者</strong>。 不签名的目的是允许人们<strong>从尚不存在的交易中支出</strong>。 如果Alice和Bob为<code>Founding TX</code>交换了签名，而又无法广播<code>Founding TX</code>的支出，资金可能会永远被锁定 (或其他硬币损失可能发生在人质场景,一个从交易对手支付合作)。 </p>
+<p>Alice and Bob both exchange inputs to fund the Funding Transaction (to know which inputs are used to determine the total value of the channel), and exchange one key to use to sign with later. This key is used for the 2-of-2 output for the Funding Transaction; both signatures are needed to spend from the Funding Transaction, in other words, both Alice and Bob need to agree to spend from the Funding Transaction.</p>
+<p>Alice和Bob都把一些资金放进<code>Funding Tx</code>（以了解哪些输入用于确定通道的总价值），并<strong>交换一个密钥以供日后使用</strong>。 此密钥用于<strong>从<code>Funding Tx</code>进行2-of-2输出</strong>； <strong>从<code>Funding Tx</code>中进行消费需要同时拥有这两个签名，也就是说，Alice和Bob需要同时同意从<code>Funding Tx</code>中支出。</strong></p>
+<h4 id="3-1-2-从未签名的Tx中消费"><a href="#3-1-2-从未签名的Tx中消费" class="headerlink" title="3.1.2 从未签名的Tx中消费"></a>3.1.2 从未签名的Tx中消费</h4><p>The Lightning Network uses a SIGHASH NOINPUT transaction to spend from this 2-of-2 Funding Transaction output, as it is necessary to spend from a transaction for which the signatures are not yet exchanged. SIGHASH NOINPUT, implemented using a soft-fork, ensures transactions can be spent from before it is signed by all parties, as transactions would need to be signed to get a transaction ID without new sighash flags. Without SIGHASH NOINPUT, Bitcoin transactions cannot be spent from before they may be broadcast |it’s as if one could not draft a contract without paying the other party first. SIGHASH NOINPUT resolves this problem. See Appendix A for more information and implementation.</p>
+<p>闪电网络使用SIGHASH NOINPUT交易从2-of-2<code>Funding Tx</code>的资金中支出， 因为必须从尚未交换签名的事务中支出。  使用<strong>软分叉实现的SIGHASH NOINPUT确保交易在所有参与者签名之前就可以被花费</strong>， 因为事务需要在没有新的SIGHASH标志的情况下进行签名才能获得事务ID。如果没有SIGHASH NOINPUT，则不能在广播之前就花费比特币交易|就像是一个人如果不先付钱给另一方就无法起草合同。 SIGHASH NOINPUT解决了此问题。 有关更多信息和实现，请参见附录A。</p>
+<blockquote>
+<p>下面提到的父母和孩子的意思应该指的是：parent意思是<code>Funding Tx</code>这个大头，相当于所有的交易的原始资金都来自这里，因此称之为parent，而child则表示从这个TX中派生出来的交易，资金的源头头来自这里，因此称为child</p>
+</blockquote>
+<p>Without SIGHASH NOINPUT, it is not possible to generate a spend from a transaction without exchanging signatures, since spending the Funding Transaction requires a transaction ID as part of the signature in the child’s input. A component of the Transaction ID is the parent’s (Funding Transaction’s) signature, so both parties need to exchange their signatures of the parent transaction before the child can be spent. Since one or both parties must know the parent’s signatures to spend from it, that means one or both parties are able to broadcast the parent (Funding Transaction) before the child even exists. SIGHASH NOINPUT gets around this by permitting the child to spend without signing the input. With SIGHASH NOINPUT, the order of operations are to:</p>
+<p>如果没有SIGHASH NOINPUT，则<strong>不能在不交换签名的情况下从某个交易中产生支出</strong>，因为花费<code>Funding Tx</code>时需要交易ID作为孩子输入中签名的一部分。 交易ID的一个组成部分是父母（<code>Funding Tx</code>）的签名，因此双方都需要交换父母交易的签名，然后才能花掉孩子。 由于一方或双方必须知道父母的签字才能从中花费，因此，一方或双方都可以在孩子还没有出生之前就广播父母（<code>Funding Tx</code>）。 SIGHASH NOINPUT通过允许孩子在不签名输入的情况下进行消费来解决此问题。 使用SIGHASH NOINPUT，操作顺序为：</p>
+<ol>
+<li><p><strong>Create the parent (Funding Transaction)</strong></p>
+<p>创建父母（<code>Funding Tx</code>），这里就相当于饭店和水果店老板交的那一共200块钱</p>
+</li>
+<li><p><strong>Create the children (Commitment Transactions and all spends from the commitment transactions)</strong></p>
+<p>创建孩子（<code>commitment Tx</code>和所有从<code>commitment Tx</code>花费的交易），这里相当于两人私下自己记账的交易</p>
+</li>
+<li><p><strong>Sign the children</strong></p>
+<p>相当于为<code>commitment Tx</code>进行签名sign</p>
+</li>
+<li><p><strong>Exchange the signatures for the children</strong></p>
+<p>二者对签名后的<code>commitment Tx</code>进行交换</p>
+</li>
+<li><p><strong>Sign the parent</strong></p>
+<p>对父母进行签名，相当于是打上了<code>Funding Tx</code>的签名，这个签名所需要的密钥是在第一步就生成并交换的，只是二者始终没有用到这个密钥。</p>
+</li>
+<li><p><strong>Exchange the signatures for the parent</strong></p>
+<p>将前一步签名后的内容进行交换</p>
+</li>
+<li><p><strong>Broadcast the parent on the blockchain</strong></p>
+<p>在网络上将前面交换后的parent进行广播，相当于往链上写了</p>
+</li>
+</ol>
+<p>One is not able to broadcast the parent (Step 7) until Step 6 is complete. Both parties have not given their signature to spend from the Funding Transaction until step 6. Further, if one party fails during Step 6, the parent can either be spent to become the parent transaction or the inputs to the parent transaction can be double-spent (so that this entire transaction path is invalidated).</p>
+<p>3-7步是一系列的签名操作。在步骤6完成之前，无法广播parent（步骤7）。 双方直到第6步都没有提供<code>Funding Tx</code>的签名。此外，如果一方在第6步中失败，则parent可以被消费并成为parent交易，或者双倍花费parent交易的输入 （以使整个交易路径无效）。（这里的double spent应该指的是一方违约另一方收到了双倍的funding）</p>
+<h4 id="3-1-3-Commitment-Tx-不强制的构造"><a href="#3-1-3-Commitment-Tx-不强制的构造" class="headerlink" title="3.1.3 Commitment Tx: 不强制的构造"></a>3.1.3 Commitment Tx: 不强制的构造</h4><p>Commitment Transactions: Unenforcible Construction</p>
+<p>After the unsigned (and unbroadcasted) Funding Transaction has been created, both parties sign and exchange an initial Commitment Transaction. These Commitment Transactions spends from the 2-of-2 output of the Funding Transaction (parent). However, only the Funding Transaction is broadcast on the blockchain.</p>
+<p>创建未签名（且未广播）的<code>Funding Tx</code>后，双方签署并交换初始的<code>Commitment Tx</code>。 这些<code>Commitment Tx</code>的支出是来自<code>Funding Tx</code>（parent）2-of-2的输出。 但是，只有<code>Funding Tx</code>会在区块链上广播。</p>
+<p>Since the Funding Transaction has already entered into the blockchain, and the output is a 2-of-2 multisignature transaction which requires the agreement of both parties to spend from, Commitment Transactions are used to express the present balance. If only one 2-of-2 signed Commitment Transaction is exchanged between both parties, then both parties will be sure that they are able to get their money back after the Funding Transaction enters the blockchain. Both parties do not broadcast the Commitment Transactions onto the blockchain until they want to close out the current balance in the channel. They do so by broadcasting the present Commitment Transaction.</p>
+<p>由于<code>Funding Tx</code>已经进入区块链，并且输出是2的2多重签名交易，需要双方同时同意才能从中进行支出，因此使用<code>Commitment Tx</code>来表示当前余额。 如果双方之间仅交换了2-of-2的已sign的<code>Commitment Tx</code>，那么双方将确保在<code>Funding Tx</code>进入区块链后能够取回资金。</p>
+<p><strong>！！！！！双方只有在想要关闭当前通道的时候，才将<code>Commitment Tx</code>广播到区块链上！！！！！</strong>。 他们<strong>通过广播当前的<code>Commitment Tx</code>来做到这一点</strong>。</p>
+<p>Commitment Transactions pay out the respective current balances to each party. A naive (broken) implementation would construct an unbroadcasted transaction whereby there is a 2-of-2 spend from a single transaction which have two outputs that return all current balances to both channel counterparties. This will return all funds to the original party when creating an initial Commitment Transaction.</p>
+<p><strong><code>Commitment Tx</code>向每一方支付各自的当前余额</strong>。 简单的（不完整的）实现将构造一个未广播的交易，从而从单个交易中获得2-of-2的支出，该支出有两个输出，<strong>将所有当前余额返还给两个通道的交易对手</strong>。 创建初始<code>Commitment Tx</code>时，这会将所有资金退还给原始方。</p>
+<p><img src="/2019/11/20/blockchain/05/1574146669477.png" alt="1574146669477"></p>
+<p>Figure 1: A naive broken funding transaction is described in this diagram. The Funding Transaction (F), designated in green, is broadcast on the blockchain after all other transactions are signed. All other transactions spending from the funding transactions are not yet broadcast, in case the counterparties wish to update their balance. Only the Funding Transaction is broadcast on the blockchain at this time.</p>
+<p>图1：此图中描述了一个简单的原始资金交易。 在签署所有其他交易后，绿色的<code>Funding Tx</code>（F）在区块链上广播。 <strong>如果交易对手希望更新其余额，则尚未广播所有来自<code>Funding Tx</code>的其他交易支出</strong>。 此时，只有<code>Funding Tx</code>会在区块链上广播。</p>
+<p>For instance, if Alice and Bob agree to create a Funding Transaction with a single 2-of-2 output worth 1.0 BTC (with 0.5 BTC contribution from each), they create a Commitment Transaction where there are two 0.5 BTC outputs for Alice and Bob. The Commitment Transactions are signed first and keys are exchanged so either is able to broadcast the Commitment Transaction at any time contingent upon the Funding Transaction entering into the blockchain. At this point, the Funding Transaction signatures can safely be exchanged, as either party is able to redeem their funds by broadcasting the Commitment Transaction.</p>
+<p>例如，如果Alice和Bob同意创建一个总金额为1.0 BTC的2-of-2输出（双方都贡献了0.5 BTC）的<code>Funding Tx</code>，则他们创建一个<code>Commitment Tx</code>，其中Alice和Bob各有0.5 BTC输出。首先<strong>对<code>Commitment Tx</code>进行签名并交换密钥</strong>，以便<strong>在<code>Funding Tx</code>进入区块链的任何时候都可以广播<code>Commitment Tx</code></strong>。 此时，可以安全地交换<code>Funding Tx</code>签名，因为<strong>任何一方都可以通过广播<code>Commitment Tx</code>来赎回其资金</strong>。</p>
+<p>This construction breaks, however, when one wishes to update the present balance. In order to update the balance, they must update their Commitment Transaction output values (the Funding Transaction has already entered into the blockchain and cannot be changed).</p>
+<p>但是，当人们希望更新当前余额时，这种结构就会中断。 为了更新余额，他们必须更新其<code>Commitment Tx</code>输出值<strong>（<code>Funding Tx</code>已进入区块链，并且无法更改）</strong>。</p>
+<p>When both parties agree to a new Commitment Transaction and exchange signatures for the new Commitment Transaction, either Commitment Transactions can be broadcast. As the output from the Funding Transaction can only be redeemed once, only one of those transactions will be valid. For instance, if Alice and Bob agree that the balance of the channel is now 0.4 to Alice and 0.6 to Bob, and a new Commitment Transaction is created to reflect that, either Commitment Transaction can be broadcast. In effect, one would be unable to restrict which Commitment Transaction is broadcast, since both parties have signed and exchanged the signatures for either balance to be broadcast.  </p>
+<p>当双方同意新的<code>Commitment Tx</code>并交换新的<code>Commitment Tx</code>的签名时，可以通过广播任一<code>Commitment Tx</code>来使得更新的余额生效。 <strong>由于<code>Funding Tx</code>的输出只能兑换一次，因此其中只有一项<code>Commitment Tx</code>交易有效。</strong> 例如，如果爱丽丝（Alice）和鲍勃（Bob）同意通道的余额现在对爱丽丝（Alice）为0.4，对鲍勃（Bob）为0.6，并且创建了一个新的<code>Commitment Tx</code>以反映这一点，则可以广播任意一个<code>Commitment Tx</code>（个人理解这里的广播任意一个指的是<code>Commitment Tx</code>有两个，一个是生成funding tx的时候的，一个是俩人私下转账之后签署的一个<code>Commitment Tx</code>）。 实际上，由于双方已经签名并交换了要广播的任何余额的签名，因此将无法限制广播哪个<code>Commitment Tx</code>。</p>
+<p><img src="/2019/11/20/blockchain/05/1574146958565.png" alt="1574146958565"></p>
+<p>Figure 2: Either of the Commitment Transactions can be broadcast any any time by either party, only one will successfully spend from the single Funding Transaction. This cannot work because one party will not want to broadcast the most recent transaction.</p>
+<p>图2：<strong>任何一方都可以在任何时间广播<code>Commitment Tx</code>中的任何一项，只有一个人可以从单个<code>Funding Tx</code>中成功支出。 由于一方不愿广播最近的交易，因此这是行不通的。</strong>（这里就引入了后面一直在提出要解决的问题，也就是为什么）</p>
+<p>Since either party may broadcast the Commitment Transaction at any time, the result would be after the new Commitment Transaction is generated, the one who receives less funds has significant incentive to broadcast the transaction which has greater values for themselves in the Commitment Transaction outputs. As a result, the channel would be immediately closed and funds stolen. Therefore, one cannot create payment channels under this model.</p>
+<p>由于任何一方都可以随时广播<code>Commitment Tx</code>，因此结果将是在生成新的<code>Commitment Tx</code>之后，<strong>获得较少资金的一方就有很大的动机去广播该交易（比较早的，对自己有利的那一个），从而在<code>Commitment Tx</code>输出中为自己带来更大的价值</strong>。 结果，该通道将立即关闭并且资金被盗。 因此，无法在此模型下创建支付通道。</p>
+<h4 id="3-1-4-Commitment-Tx-违约惩罚"><a href="#3-1-4-Commitment-Tx-违约惩罚" class="headerlink" title="3.1.4 Commitment Tx: 违约惩罚"></a>3.1.4 Commitment Tx: 违约惩罚</h4><p>Since any signed Commitment Transaction may be broadcast on the blockchain, and only one can be successfully broadcast, it is necessary to prevent old Commitment Transactions from being broadcast. It is not possible to revoke tens of thousands of transactions in Bitcoin, so an alternate method is necessary. Instead of active revocation enforced by the blockchain, it’s necessary to construct the channel itself in similar manner to a Fidelity Bond, whereby both parties make commitments, and violations of these commitments are enforced by penalties. If one party violates their agreement, then they will lose all the money in the channel.</p>
+<p>由于任何已签名的<code>Commitment Tx</code>都可以在区块链上广播，并且只能成功广播一次，因此有必要防止旧的<code>Commitment Tx</code>被广播。 不可能撤销比特币中成千上万的交易，因此有必要使用另一种方法。 代替由区块链强制撤销活动，有必要以类似于保真债券的方式构造通道本身，<strong>由双方共同做出承诺，违反这些承诺的行为将受到处罚</strong>。 如果一方违反了他们的协议，那么他们将损失通道中的所有资金。</p>
+<p>For this payment channel, the contract terms are that both parties commit to broadcasting only the most recent transaction. Any broadcast of older transactions will cause a violation of the contract, and all funds are given to the other party as a penalty.</p>
+<p>对于此付款通道，合同条款是双方承诺<strong>仅广播最近的交易</strong>。 <strong>任何较早交易的广播都将违反合同，所有资金均将作为违约金给予对方。</strong></p>
+<p>This can only be enforced if one is able to ascribe blame for broadcasting an old transaction. In order to do so, one must be able to uniquely identify who broadcast an older transaction. This can be done if each counterparty has a uniquely identifiable Commitment Transaction. Both parties must sign the inputs to the Commitment Transaction which the other party is responsible for broadcasting. Since one has a version of the Commitment Transaction that is signed by the other party, one can only broadcast one’s own version of the Commitment Transaction.</p>
+<p>只有在能够归咎于广播旧交易的情况下才可以强制执行此操作。 为此，必须能够唯一地标识谁广播了较旧的交易。 如果每个交易对手都有一个唯一可识别的<code>Commitment Tx</code>，就可以做到这一点。 双方必须签署由另一方负责广播的<code>Commitment Tx</code>的输入。 由于一个人拥有由另一方签署的<code>Commitment Tx</code>版本，因此一个人<strong>只能广播自己的版本的<code>Commitment Tx</code>（为了追究责任用）</strong>。</p>
+<p>For the Lightning Network, all spends from the Funding Transaction output, Commitment Transactions, have two half-signed transactions. One Commitment Transaction in which Alice signs and gives to Bob (C1b), and another which Bob signs and gives to Alice (C1a). These two Commitment Transactions spend from the same output (Funding Transaction), and have different contents; only one can be broadcast on the blockchain, as both pairs of Commitment Transactions spend from the same Funding Transaction. Either party may broadcast their received Commitment Transaction by signing their version and including the counterparty’s signature. For example, Bob can broadcast Commitment C1b, since he has already received the signature for C1b from Alice |he includes Alice’s signature and signs C1b himself. The transaction will be a valid spend from the Funding Transaction’s 2-of-2 output requiring both Alice and Bob’s signature.</p>
+<p>对于闪电网络，<code>Funding Tx</code>输出（<code>Commitment Tx</code>）中的所有支出都有两个半签名交易。 一个<code>Commitment Tx</code>，其中Alice签署并赠予Bob（C1b），另一项Bob签署并赠予Alice（C1a）。 这两个<code>Commitment Tx</code>从同一输出中支出（<code>Funding Tx</code>），并且具有不同的内容； 由于两对<code>Commitment Tx</code>都从同一笔<code>Funding Tx</code>中支出，因此只能在区块链上进行广播。 任何一方都可以通过签署其版本并包括交易对手的签名来广播其收到的<code>Commitment Tx</code>。 例如，鲍勃可以广播承诺C1b，因为他已经从爱丽丝那里收到了C1b的签名|他包括爱丽丝的签名和他自己的C1b签名。 该交易将是<code>Funding Tx</code>的2-of-2输出（需要Alice和Bob签名）的有效支出。</p>
+<p><img src="/2019/11/20/blockchain/05/1574147424719.png" alt="1574147424719"></p>
+<p>Figure 3: Purple boxes are unbroadcasted transactions which only Alice can broadcast. Blue boxes are unbroadcasted transaction which only Bob can broadcast. Alice can only broadcast Commitment 1a, Bob can only broadcast Commitment 1b. Only one Commitment Transaction can be spent from the Funding Transaction output. Blame is ascribed, but either one can still be spent with no penalty.</p>
+<p>图3：紫色框是未广播的交易，<strong>只有爱丽丝可以广播</strong>。 蓝框是未广播的交易，<strong>只有鲍勃可以广播</strong>。 爱丽丝只能广播Commitment 1a，鲍勃只能广播Commitment 1b。 <code>Funding Tx</code>输出中只能花费一项<code>Commitment Tx</code>。 归咎于罪魁祸首，但任何一方仍然可以不受惩罚。</p>
+<p>However, even with this construction, one has only merely allocated blame. It is not yet possible to enforce this contract on the Bitcoin blockchain. Bob still trusts Alice not to broadcast an old Commitment Transaction. At this time, he is only able to prove that Alice has done so via a half-signed transaction proof.</p>
+<p>然而，即使有了这样的解释，人们也只能责怪（blame）。目前还不可能在比特币区块链上执行该合同。Bob仍然相信Alice不会广播旧的<code>Commitment Tx</code>。此时，他只能通过一个半签名的事务证明来证明Alice已经这样做了。</p>
+<h3 id="3-2-创建带合同撤销的通道"><a href="#3-2-创建带合同撤销的通道" class="headerlink" title="3.2 创建带合同撤销的通道"></a>3.2 创建带合同撤销的通道</h3><p>To be able to actually enforce the terms of the contract, it’s necessary to construct a Commitment Transaction (along with its spends) where one is able to revoke a transaction. This revocation is achievable by using data about when a transaction enters into a blockchain and using the maturity of the transaction to determine validation paths.</p>
+<p>为了能够实际执行合约，有必要构建一个能<strong>够撤消（revoke）交易的<code>Commitment Tx</code></strong>（连同支出）。 通过使用有关交易何时进入区块链的数据并使用交易的成熟度来确定验证路径，可以实现这种撤销。</p>
+<h3 id="3-3-基于Sequence成熟度的合约（RSMC）"><a href="#3-3-基于Sequence成熟度的合约（RSMC）" class="headerlink" title="3.3 基于Sequence成熟度的合约（RSMC）"></a>3.3 基于Sequence成熟度的合约（RSMC）</h3><p>Sequence Maturity，通俗点讲，就是等到Sequence Number满足条件了，进行履约。</p>
+<p>所以翻译成中文就是：<strong>可撤销的、基于Sequence成熟度的合约。</strong></p>
+<p>Mark Freidenbach has proposed that Sequence Numbers can be enforcible via a relative block maturity of the parent transaction via a soft-fork[12]. This would allow some basic ability to ensure some form of relative block confirmation time lock on the spending script. In addition, an additional opcode, OP CHECKSEQUENCEVERIFY[13] (a.k.a. OP RELATIVECHECKLOCKTIMEVERIFY)[14], would permit further abilities, including allowing a stop-gap solution before a more permanent solution for resolving transaction malleability. A future version of this paper will include proposed solutions.</p>
+<p>Mark Freidenbach提出，可以通过软分叉通过父事务的相对块成熟度来<strong>强制执行序列号</strong>。 这将提供一些基本功能，以确保在支出脚本上锁定某种形式的相对块确认时间。 另外，附加的操作码OP CHECKSEQUENCEVERIFY [13]（又称OP RELATIVECHECKLOCKTIMEVERIFYY）[14]将允许进一步的功能，包括在解决交易延展性的更永久性解决方案之前允许采用权宜之计。 本文的未来版本将包括建议的解决方案。</p>
+<p>To summarize, Bitcoin was released with a sequence number which was only enforced in the mempool of unconfirmed transactions. The original behavior permitted transaction replacement by replacing transactions in the mempool with newer transactions if they have a higher sequence number. Due to transaction replacement rules, it is not enforced due to denial of service attack risks. It appears as though the intended purpose of the sequence number is to replace unbroadcasted transactions. However, this higher sequence number replacement behavior is unenforcible. One cannot be assured that old versions of transactions were replaced in the mempool and a block contains the most recent version of the transaction. A way to enforce transaction versions off-chain is via time commitments.</p>
+<p>总而言之，比特币的发布序列号仅在<strong>未确认交易的内存池中</strong>强制执行。 原始行为允许在内存池中通过较新的交易替换较早的交易（根据序号判断先后）。 根据交易替换规则，由于拒绝服务攻击风险，这一规则并未强制执行。似乎序列号原本的目的是<strong>替换未广播的事务</strong>。 但是，这种更高的序号替换行为是<strong>不可强制的（unenforcible）</strong>。 不能保证在内存池中已替换了旧版本的事务，并且一个块中包含该事务的最新版本。 强制执行链下交易版本的方法是通过时间承诺。</p>
+<p>A Revocable Transaction spends from a unique output where the transaction has a unique type of output script. This parent’s output has two redemption paths where the first can be redeemed immediately, and the second can only be redeemed if the child has a minimum number of confirmations between transactions. This is achieved by making the sequence number of the child transaction require a minimum number of confirmations from the parent. In essence, this new sequence number behavior will only permit a spend from this output to be valid if the number of blocks between the output and the redeeming transaction is above a specified block height.</p>
+<p><code>Revocable Transaction</code>（可撤销交易）从唯一输出中支出，其中该交易具有唯一类型的输出脚本。 此父级的输出有两个赎回路径(redemption paths)，其中第一个可以立即赎回，而第二个<strong>需要经过一个最少确认次数之后</strong>才能赎回。 这是通过使子事务的序列号<strong>要求最小数量的父级确认来实现的</strong>。实际上，这种新的序列号行为只允许在输出和赎回事务之间经过的区块数量超过指定块高度（这里的指定高度也就是后面所说的nSequence）时，此输出中的开销才有效（经过确认后才有效）。</p>
+<p>A transaction can be revoked with this sequence number behavior by creating a restriction with some defined number of blocks defined in the sequence number, which will result in the spend being only valid after the parent has entered into the blockchain for some defined number of blocks. This creates a structure whereby the parent transaction with this output becomes a bonded deposit, attesting that there is no revocation. A time period exists which anyone on the blockchain can refute this attestation by broadcasting a spend immediately after the transaction is broadcast.</p>
+<p>通过创建具有在序列号中定义的一些定义数量的块的限制，可以使用这种序列号行为撤销交易，这将导致支出仅在父级进入区块链中的某些定义数量的块之后才有效。 这创建了一个结构，由此具有此输出的父交易成为保证金，证明没有撤销。 存在一个时间段，区块链上的任何人都可以在广播交易后立即广播支出来反驳此证明。</p>
+<p>If one wishes to permit revocable transactions with a 1000-confirmation delay, the output transaction construction would remain a 2-of-2 multisig:</p>
+<p>如果希望允许1000确认延迟的<code>Revocable Transaction</code>，则输出交易构造将保持2-of-2的多重信号：</p>
+<p><code>2 &lt;Alice1&gt; &lt;Bob1&gt; 2 OP CHECKMULTISIG</code></p>
+<p>However, the child spending transaction would contain a nSequence value of 1000. Since this transaction requires the signature of both counterparties to be valid, both parties include the nSequence number of 1000 as part of the signature. Both parties may, at their discretion, agree to create another transaction which supersedes that transaction without any nSequence number.</p>
+<p>但是，<strong>child交易将包含一个值为1000的nSequence</strong>。由于此交易需要双方的签名才有效，所以双方都<strong>将值为1000的nSequence作为签名的一部分</strong>。双方可以自行决定创建另一个没有任何nSequence的交易</p>
+<p>This construction, a Revocable Sequence Maturity Contract (RSMC), creates two paths, with very specific contract terms.</p>
+<p>这种可撤销序列成熟度合同（RSMC）的构造创建了两条具有非常详细的合同条款的路径。</p>
+<p>The contract terms are:  </p>
+<ol>
+<li><p>All parties pay into a contract with an output enforcing this contract</p>
+<p>所有各方都<strong>向合同中支付一定数额的款项</strong>，以执行本合同</p>
+</li>
+<li><p>Both parties may agree to send funds to some contract, with some waiting period (1000 confirmations in our example script). This is the revocable output balance.</p>
+<p>双方会同意将资金发送到某个合同，但有一些等待期(在我们的示例脚本中有1000个区块确认之后)。这是<strong>可撤销的输出平衡</strong>。</p>
+</li>
+<li><p>One or both parties may elect to not broadcast (enforce) the payouts until some future date; either party may redeem the funds after the waiting period at any time.</p>
+<p>一方或双方可以选择<strong>在将来的某个日期之前不广播（强制执行）付款</strong>； 双方均可在<strong>等待期过后随时赎回</strong>资金。</p>
+</li>
+<li><p>If neither party has broadcast this transaction (redeemed the funds), they may revoke the above payouts if and only if both parties agree to do so by placing in a new payout term in a superseding transaction payout. The new transaction payout can be immediately redeemed after the contract is disclosed to the world (broadcast on the blockchain).</p>
+<p>如果任何一方都没有广播此交易（赎回资金），则当且仅当双方同意通过<strong>在取代的交易支出中放置新的支出期限来撤销上述支出</strong>时，他们才可以撤消上述支出。 合同向全世界披露后（在区块链上广播），可以立即赎回新的交易支出。</p>
+</li>
+<li><p>In the event that the contract is disclosed and the new payout structure is not redeemed, the prior revoked payout terms may be redeemed by either party (so it is the responsibility of either party to enforce the new terms).</p>
+<p>如果<strong>披露了合同且未兑现新的支出结构</strong>，则任何一方都可以赎回先前撤销的支出条款（因此，执行新条款是任何一方的责任）。</p>
+</li>
+</ol>
+<p>The pre-signed child transaction can be redeemed after the parent transaction has entered into the blockchain with 1000 confirmations, due to the child’s nSequence number on the input spending the parent.</p>
+<p>由于子项在父项上花费的输入的nSequence编号，在parent交易进入区块链并进行1000个确认后，可以赎回预签名的子项交易。</p>
+<p>In order to revoke this signed child transaction, both parties just agree to create another child transaction with the default field of the nSequence number of MAX INT, which has special behavior permitting spending at any time.</p>
+<p>为了撤销此已签名的子交易，双方仅同意<strong>创建另一个子交易</strong>，其默认字段为MAX INT的nSequence编号，<strong>该子交易具有特殊的行为，允许随时进行支出</strong>。</p>
+<p>This new signed spend supersedes the revocable spend so long as the new signed spend enters into the blockchain within 1000 confirmations of the parent transaction entering into the blockchain. In effect, if Alice and Bob agree to <strong>monitor the blockchain for incorrect broadcast of Commitment Transactions</strong>, the moment the transaction gets broadcast, they are able to spend using the <strong>superseding transaction</strong> immediately. In order to broadcast the revocable spend (deprecated transaction), which spends from the same output as the superseding transaction, they must wait 1000 confirmations. So long as both parties watch the blockchain, the revocable spend will never enter into the transaction if either party prefers the superseding transaction.</p>
+<p>只要新签署的支出在<strong>父交易进入区块链的1000次确认内</strong>进入区块链，<strong>就会取代可撤销的支出</strong>。 实际上，如果Alice和Bob同意监视区块链中<code>Commitment Tx</code>的不正确广播，则在交易（哪个交易？错误的吗）被广播的那一刻，他们能够立即<strong>使用替代交易进行消费</strong>。为了广播可撤消的支出（弃用的交易，deprecated transaction），该支出来自与替代交易<code>superseding transaction</code>相同的输出，他们必须等待1000次确认。 只要双方都关注区块链，如果任何一方更倾向于替代交易<code>superseding transaction</code>，可撤销的支出将永远不会进入交易。</p>
+<p>Using this construction, anyone could create a transaction, not broadcast the transaction, and then later create incentives to not ever broadcast that transaction in the future via penalties. This permits participants on the Bitcoin network to defer many transactions from ever hitting the blockchain.</p>
+<p>使用这种结构，任何人都可以创建一个事务，而不是传播该事务，然后<strong>通过惩罚来鼓励以后不要传播该事务</strong>。这使得比特币网络上的参与者可以推迟许多交易，以免触及区块链。</p>
+<h4 id="3-3-1-区块链的timestop机制"><a href="#3-3-1-区块链的timestop机制" class="headerlink" title="3.3.1 区块链的timestop机制"></a>3.3.1 区块链的timestop机制</h4><blockquote>
+<p>第一次读的时候，感觉这部分非常费解，为什么忽然说了句这个，其实就是为了后面做了一个铺垫而已，而且后面其实也不太难理解，如果理解不动可以直接跳过。</p>
+</blockquote>
+<p>To mitigate a flood of transactions by a malicious attacker requires a credible threat that the attack will fail. Greg Maxwell proposed using a timestop to mitigate a malicious flood on the blockchain:</p>
+<p>Greg Maxwell建议使用时间停止(timestop)来缓解区块链上的恶意洪水攻击：</p>
+<blockquote>
+<p>There are many ways to address this [flood risk] which haven’t been adequately explored yet |for example, the clock can stop when blocks are full; turning the security risk into more hold-up delay in the event of a dos attack.[15]</p>
+<p>解决此[洪水风险]的方法有很多，但尚未进行充分的探索，例如，当区块已满时，时钟可能会停止； 在发生dos攻击时，将安全风险转化为更多的延迟。[15]</p>
+</blockquote>
+<p>This can be mitigated by allowing the miner to specify whether the current (fee paid) mempool is presently being flooded with transactions. They can enter a “1” value into the last bit in the version number of the block header. If the last bit in the block header contains a “1”, then that block will not count towards the relative height maturity for the nSequence value and the block is designated as a congested block. There is an uncongested block height (which is always lower than the normal block height). This block height is used for the nSequence value, which only counts block maturity (confirmations).</p>
+<p>这可以通过允许矿工指定当前（付费）内存池当前是否充满交易来缓解。 他们可以在区块头的版本号的最后一位输入“ 1”值。 如果区块头中的最后一位包含“ 1”，则该块将不计入nSequence值的相对高度成熟度，并将该块指定为拥塞块（congested block）。 存在未阻塞的块高度（始终低于正常块高度）。 该块高度用于nSequence值，该值仅计算块成熟度（确认）。</p>
+<p>A miner can elect to define the block as a congested block or not. The default code could automatically set the congested block flag as “1” if the mempool is above some size and the average fee for that set size is above some value. However, a miner has full discretion to change the rules on what automatically sets as a congested block, or can select to permanently set the congestion flag to be permanently on or off. It’s expected that most honest miners would use the default behavior defined in their miner and not organize a 51% attack.</p>
+<p>矿工可以选择是否将该块定义为拥塞块（congested）。 如果内存池超过某个大小，并且该设置大小的平均费用超过某个值，则默认代码可以<strong>自动将拥塞块标志设置为“1”</strong>。 但是，矿工有完全的自由裁量权来更改关于自动设置为拥堵区块的规则，或者可以选择将拥堵标志永久设置为永久打开或关闭。 预计大多数诚实的矿工将使用其矿工中定义的默认行为，而不组织51％的攻击。</p>
+<p>For example, if a parent transaction output is spent by a child with a nSequence value of 10, one must wait 10 confirmations before the transaction becomes valid. However, if the timestop flag has been set, the counting of confirmations stops, even with new blocks. If 6 confirmations have elapsed (4 more are necessary for the transaction to be valid), and the timestop block has been set on the 7th block, that block does not count towards the nSequence requirement of 10 confirmations; the child is still at 6 blocks for the relative confirmation value. Functionally, this will be stored as some kind of auxiliary timestop block height which is used only for tracking the timestop value. When the timestop bit is set, all transactions using an nSequence value will stop counting until the timestop bit has been unset. This gives sufficient time and block-space for transactions at the current auxiliary timestop block height to enter into the blockchain, which can prevent systemic attackers from successfully attacking the system.</p>
+<p>例如，如果<strong>父交易输出由nSequence值为10的子项花费，则必须等待10次确认才能使交易生效</strong>。但是，<strong>如果设置了时间停止标志，则即使使用新的块，确认计数也将停止。</strong>如果经过了6个确认（要使交易有效，还需要4个确认），并且在第7个块上设置了timestop块，则该块不计入10个确认的nSequence要求；相对确认值，child仍处于6个区块。从功能上讲，它将存储为某种辅助时间停止块高度，仅用于跟踪timestop值。设置时间停止位后，所有使用nSequence值的事务都将停止计数，直到未设置时间停止位为止。这为在当前辅助时间停止块高度处的交易提供了足够的时间和块空间，以进入区块链，从而可能阻止系统攻击者成功攻击系统。</p>
+<p>However, this requires some kind of flag in the block to designate whether it is a timestop block. For full SPV compatibility (Simple Payment Verification; lightweight clients), it is desirable for this to be within the 80-byte block header instead of in the coinbase. There are two places which may be a good place to put in this flag in the block header: in the block time and in the block version. The block time may not be safe due to the last bits being used as an entropy source for some ASIC miners, therefore a bit may need to be consumed for timestop flags. Another option would be to hardcode timestop activation as a hard consensus rule (e.g. via block size), however this may make things less flexible. By setting sane defaults for timestop rules, these rules can be changed without consensus soft-forks.</p>
+<p>但是，这需要在区块中使用某种标志来指定是否为时间停止块。 为了完全兼容SPV（简单付款验证；轻量级客户端），希望此字段位于80字节的区块头中，而不是在coinbase中。 在区块头中将此标志放在两个位置可能是个好地方：区块时间和区块版本。 由于最后的位被用作某些ASIC矿工的熵源，因此区块时间可能不安全，因此可能需要将某个位用于时间停止标志。 另一个选择是将时间停止激活硬编码为硬共识规则（例如，通过区块大小），但这可能会使事情变得不太灵活。 通过为时间停止规则设置合理的默认值，可以更改这些规则而无需达成共识。</p>
+<p>If the block version is used as a flag, the contextual information must match the Chain ID used in some merge-mined coins.</p>
+<p>如果将块版本用作标记，则上下文信息必须与某些合并开采的硬币中使用的链ID匹配。</p>
+<h4 id="3-3-2-可撤销的-Commitment-Tx"><a href="#3-3-2-可撤销的-Commitment-Tx" class="headerlink" title="3.3.2 可撤销的 Commitment Tx"></a>3.3.2 可撤销的 Commitment Tx</h4><p>By combining the ascribing of blame as well as the revocable transaction, one is able to determine when a party is not abiding by the terms of the contract, and enforce penalties without trusting the counterparty.</p>
+<p>通过将违约惩罚与可撤销交易<code>revocable transaction</code>相结合，人们可以确定当事方<strong>何时不遵守合同条款</strong>，并在不需要信任交易对手的情况下执行处罚。</p>
+<p><img src="/2019/11/20/blockchain/05/1574155643874.png" alt="1574155643874"></p>
+<p>Figure 4: The Funding Transaction F, designated in green, is broadcast on the blockchain after all other transactions are signed. All transactions which only Alice can broadcast are in purple. All transactions which only Bob can broadcast is are blue. Only the Funding Transaction is broadcast on the blockchain at this time.</p>
+<p>图4：在其他所有交易均已签名后，以绿色指定的<code>Funding Tx</code> F在区块链上广播。 只有Alice可以广播的所有交易为紫色。 只有Bob可以广播的所有交易为蓝色。 此时，<strong>只有<code>Funding Tx</code>会在区块链上广播</strong>。</p>
+<p>The intent of creating a new Commitment Transaction is to invalidate all old Commitment Transactions when updating the new balance with a new Commitment Transaction. Invalidation of old transactions can happen by making an output be a Revocable Sequence Maturity Contract (RSMC). To invalidate a transaction, a superseding transaction will be signed and exchanged by both parties that gives all funds to the counterparty in the event an older transaction is incorrectly broadcast. The incorrect broadcast is identified by creating two different Commitment Transactions with the same final balance outputs, however the payment to oneself is encumbered by an RSMC.  </p>
+<p>创建新的<code>Commitment Tx</code>的目的是在<strong>用新的<code>Commitment Tx</code>更新新余额时使所有旧的<code>Commitment Tx</code>无效</strong>。 通过使输出成为可撤销序列成熟度合同（RSMC），可以发生旧事务的无效化。 为使交易无效，当较旧的交易被错误地广播时，双方将签署并交换取代交易，该交易将所有资金提供给交易对手。 <strong>通过创建两个具有相同最终余额输出的不同的<code>Commitment Tx</code>来识别不正确的广播</strong>，但是，RSMC会负担对自己的付款。</p>
+<p>In effect, there are two Commitment Transactions from a single Funding Transaction 2-of-2 outputs. Of these two Commitment Transactions, only one can enter into the blockchain. Each party within a channel has one version of this contract. So if this is the first Commitment Transaction pair, Alice’s Commitment Transaction is defined as C1a, and Bob’s Commitment Transaction is defined as C1b. By broadcasting a Commitment Transaction, one is requesting for the channel to close out and end. The first two outputs for the Commitment Transaction include a Delivery Transaction (payout) of the present unallocated balance to the channel counterparties. If Alice broadcasts C1a, one of the output is spendable by D1a, which sends funds to Bob. For Bob, C1b is spendable by D1b, which sends funds to Alice. The Delivery Transaction (D1a/D1b) is immediately redeemable and is not encumbered in any way in the event the Commitment Transaction is broadcast.</p>
+<p>实际上，单个<code>Founding Tx</code>的2-of-2输出有两个<code>Commitment Tx</code>。 <strong>在这两个<code>Commitment Tx</code>中，只有一个可以进入区块链</strong>。通道中的<strong>每一方都有此合同的一个版本</strong>。 因此，如果这是第一对<code>Commitment Tx</code>，则将Alice的<code>Commitment Tx</code>定义为C1a，将Bob的<code>Commitment Tx</code>定义为C1b。 通过广播<code>Commitment Tx</code>，可以请求关闭并结束该通道。 <code>Commitment Tx</code>的前两个输出包括当前<strong>未分配余额到交易对手的<code>Delivery Tx</code></strong>（交付支付）。 如果Alice广播C1a，则输出之一可由D1a花费，D1a将资金发送给Bob。 对于Bob来说，C1b可由D1b支出，后者将资金发送给Alice。 如果广播<code>Commitment Tx</code>，则可以立即兑换<code>Delivery Tx</code>（D1a / D1b），并且不以任何方式承担任何责任。</p>
+<p>For each party’s Commitment Transaction, they are attesting that they are broadcasting the most recent Commitment Transaction which they own. Since they are attesting that this is the current balance, the balance paid to the counterparty is assumed to be true, since one has no direct benefit by paying some funds to the counterparty as a penalty.</p>
+<p>对于每一方的<code>Commitment Tx</code>，他们都在证明自己正在广播自己拥有的最新的<code>Commitment Tx</code>。 由于他们证明这是当前余额，因此假设支付给对手方的余额是真实的，因为通过向对手方支付一些资金作为罚款没有直接好处。</p>
+<p>The balance paid to the person who broadcast the Commitment Transaction, however, is unverified. The participants on the blockchain have no idea if the Commitment Transaction is the most recent or not. If they do not broadcast their most recent version, they will be penalized by taking all the funds in the channel and giving it to the counterparty. Since their own funds are encumbered in their own RSMC, they will only be able to claim their funds after some set number of confirmations after the Commitment Transaction has been included in a block (in our example, 1000 confirmations). If they do broadcast their most recent Commitment Transaction, there should be no revocation transaction superseding the revocable transaction, so they will be able to receive their funds after some set amount of time (1000 confirmations).</p>
+<p>但是，支付给广播<code>Commitment Tx</code>的人的余额尚未验证。 区块链上的参与者不知道<code>Commitment Tx</code>是否是最新的。 如果他们不广播其最新版本，则将占用该频道中的所有资金并将其交给交易对手，将受到处罚。 由于他们自己的资金由自己的RSMC负担，因此他们只能在将<code>Commitment Tx</code>包含在一个区块中后（在我们的示例中为1000个确认），经过一定数量的确认后才能申领资金。 如果他们确实广播了最近的<code>Commitment Tx</code>，则不应有撤销交易取代可撤消交易，因此他们将能够在一定的时间（1000次确认）之后接收其资金。</p>
+<p>By knowing who broadcast the Commitment Transaction and encumbering one’s own payouts to be locked up for a predefined period of time, both parties will be able to revoke the Commitment Transaction in the future.</p>
+<p>通过知道谁广播了<code>Commitment Tx</code>，并阻碍了自己的付款被锁定了预定的时间，双方将来都可以撤消<code>Commitment Tx</code>。</p>
+<h4 id="3-3-3-合作双方赎回资金的方式"><a href="#3-3-3-合作双方赎回资金的方式" class="headerlink" title="3.3.3 合作双方赎回资金的方式"></a>3.3.3 合作双方赎回资金的方式</h4><p>Redeeming Funds from the Channel: Cooperative Counterparties</p>
+<p>Either party may redeem the funds from the channel. However, the party that broadcasts the Commitment Transaction must wait for the predefined number of confirmations described in the RSMC. The counterparty which did not broadcast the Commitment Transaction may redeem the funds immediately.</p>
+<p>任何一方都可以从通道中赎回资金。 但是，<strong>广播<code>Commitment Tx</code>的一方必须等待RSMC中描述的预定义数量的确认。 没有广播<code>Commitment Tx</code>的交易对手可以立即赎回资金。</strong></p>
+<p>For example, if the Funding Transaction is committed with 1 BTC (half to each counterparty) and Bob broadcasts the most recent Commitment Transaction, C1b, he must wait 1000 confirmations to receive his 0.5 BTC, while Alice can spend 0.5 BTC. For Alice, this transaction is fully closed if Alice agrees that Bob broadcast the correct Commitment Transaction (C1b).</p>
+<p>例如，如果资金交易以1个BTC（每个交易对手的一半）进行承诺，而Bob广播了最新的<code>Commitment Tx</code>C1b，则他必须等待1000次确认才能收到他的0.5个BTC，而Alice则可以花费0.5个BTC。 对于Alice，<strong>如果Alice同意Bob广播正确的<code>Commitment Tx</code>（C1b），则此交易将完全关闭。</strong></p>
+<p><img src="/2019/11/20/blockchain/05/1574155826861.png" alt="1574155826861"></p>
+<p>Figure 5: When Bob broadcasts C1b, Alice can immediately redeem her portion. Bob must wait 1000 confirmations. When the block is immediately broadcast, it is in this state. Transactions in green are transactions which are committed into the blockchain.</p>
+<p>图5：<strong>当Bob广播C1b时，Alice可以立即赎回她的部分。 Bob必须等待1000次确认。</strong> 当立即广播该块时，它处于此状态。 绿色交易是提交到区块链的交易。</p>
+<p>After the Commitment Transaction has been in the blockchain for 1000 blocks, Bob can then broadcast the Revocable Delivery transaction. He must wait 1000 blocks to prove he has not revoked this Commitment Transaction (C1b). After 1000 blocks, the Revocable Delivery transaction will be able to be included in a block. If a party attempt to include the Revocable Delivery transaction in a block before 1000 confirmations, the transaction will be invalid up until after 1000 confirmations have passed (at which point it will become valid if the output has not yet been redeemed).</p>
+<p>在<code>Commitment Tx</code>已在区块链中进行1000个区块之后，Bob可以在区块链网络中广播RD1b（可撤销交付交易）。<strong>他必须等待1000个区块才能证明他尚未撤消此<code>Commitment Tx</code>（C1b）</strong>。 在1000个区块之后，RD1b将可以包含在任意一个区块中。 如果一方试图在1000个确认之前将可撤销交付交易包括在一个区块中，则该交易将在1000个确认之前都是无效的（此时，如果尚未赎回输出，该交易将变为有效）。</p>
+<p><img src="/2019/11/20/blockchain/05/1574155866394.png" alt="1574155866394"></p>
+<p>Figure 6: Alice agrees that Bob broadcast the correct Commitment Transaction and 1000 confirmations have passed. Bob then is able to broadcast the Revocable Delivery (RD1b) transaction on the blockchain.</p>
+<p>图6：<strong>Alice同意Bob广播正确的<code>Commitment Tx</code>，并且已经通过了1000确认。 然后，Bob能够在区块链上广播RD1b</strong></p>
+<p>After Bob broadcasts the Revocable Delivery transaction, the channel is fully closed for both Alice and Bob, everyone has received the funds which they both agree are the current balance they each own in the channel.</p>
+<p><strong>在Bob广播RD1b后，Alice和Bob的通道均会完全关闭，每个人都收到了他们都同意的资金，这是他们各自在该通道中拥有的当前余额。</strong></p>
+<p>If it was instead Alice who broadcast the Commitment Transaction (C1a), she is the one who must wait 1000 confirmations instead of Bob.</p>
+<p>如果是Alice广播<code>Commitment Tx</code>（C1a），则她是必须等待1000次确认的那个人，而不是Bob。</p>
+<h4 id="3-3-4-创建新的-Commitment-Tx并撤销之前的"><a href="#3-3-4-创建新的-Commitment-Tx并撤销之前的" class="headerlink" title="3.3.4 创建新的 Commitment Tx并撤销之前的"></a>3.3.4 创建新的 Commitment Tx并撤销之前的</h4><p>Creating a new Commitment Transaction and Revoking Prior Commitments</p>
+<p>While each party may close out the most recent Commitment Transaction at any time, they may also elect to create a new Commitment Transaction and invalidate the old one.</p>
+<p>尽管各方可以<strong>随时关闭最近的<code>Commitment Tx</code></strong>，但他们也可以选择<strong>创建新的<code>Commitment Tx</code>并使旧的无效</strong>。</p>
+<p>Suppose Alice and Bob now want to update their current balances from 0.5 BTC each refunded to 0.6 BTC for Bob and 0.4 BTC for Alice. When they both agree to do so, they generate a new pair of Commitment Transactions.</p>
+<p>假设Alice和Bob现在希望将其当前余额从各自的0.5 BTC更新为Bob的0.6 BTC和Alice的0.4 BTC。 当他们俩都同意这样做时，就会生成一对新的<code>Commitment Tx</code>。</p>
+<p><img src="/2019/11/20/blockchain/05/1574156002302.png" alt="1574156002302"></p>
+<p>Figure 7: Four possible transactions can exist, a pair with the old commitments, and another pair with the new commitments. Each party inside the channel can only broadcast half of the total commitments (two each). There is no explicit enforcement preventing any particular Commitment being broadcast other than penalty spends, as they are all valid unbroadcasted spends. The Revocable Commitment still exists with the C1a/C1b pair, but are not displayed for brevity.</p>
+<p>图7：可以存在四个可能的事务，一个与旧的承诺对，另一个与新的承诺对。 频道内的每个参与方只能广播全部承诺的一半（也就是自己的那一半）。 没有明确的执法措施可以阻止除罚款支出之外的任何特定Commitment都被广播，因为它们都是有效的未广播支出。 RD1a和RD1b在C1a / C1b对中仍然存在，但为简洁起见并未显示。</p>
+<p>When a new pair of Commitment Transactions (C2a/C2b) is agreed upon, both parties will sign and exchange signatures for the new Commitment Transaction, then invalidate the old Commitment Transaction. This invalidation occurs by having both parties sign a Breach Remedy Transaction (BR1), which supersedes the Revocable Delivery Transaction (RD1). Each party hands to the other a half-signed revocation (BR1) from their own Revocable Delivery (RD1), which is a spend from the Commitment Transaction. The Breach Remedy Transaction will send all coins to the counterparty within the current balance of the channel. For example, if Alice and Bob both generate a new pair of Commitment Transactions (C2a/C2b) and invalidate prior commitments (C1a/C1b), and later Bob incorrectly broadcasts C1b on the blockchain, Alice can take all of Bob’s money from the channel. Alice can do this because Bob has proved to Alice via penalty that he will never broadcast C1b, since the moment he broadcasts C1b, Alice is able to take all of Bob’s money in the channel. In effect, by constructing a Breach Remedy transaction for the counterparty, one has attested that one will not be broadcasting any prior commitments. The counterparty can accept this, because they will get all the money in the channel when this agreement is violated.</p>
+<p><strong>当达成一对新的<code>Commitment Tx</code>（C2a / C2b）时，双方将为新的<code>Commitment Tx</code>签名并交换签名，然后使旧的<code>Commitment Tx</code>无效。</strong>通过使双方签署<strong>违约救济交易</strong>（BR1）<strong>取代可撤消交付交易</strong>（RD1）来发生这种无效。双方从其自己的可撤销交付（RD1）移交给对方半签名的撤销（BR1），这是来自<code>Commitment Tx</code>的支出。<strong>违约救济交易会将所有资产发送到交易对手。</strong>例如，如果Alice和Bob都生成了一对新的<code>Commitment Tx</code>（C2a / C2b）并使先前的<code>Commitment Tx</code>（C1a / C1b）无效，并且后来Bob在区块链上错误地广播了C1b，则Alice可以从通道中获取Bob的所有资金。爱丽丝之所以能够这样做，是因为鲍勃已经通过BR1向爱丽丝证明了自己永远不会播出C1b，自从他播出C1b的那一刻起，爱丽丝就可以将鲍勃的所有钱都拿走。实际上，通过为对方构建违约救济交易，人们证明了该人不会广播任何先前的承诺。交易对手可以接受这一点，因为当违反此协议时，他们将在通道中获得所有款项。<strong>（这段说的挺啰嗦的，就是两个人签了协议，如果一人违约把早期的commitment Tx广播了，对方就能得到违约者所有的钱）</strong></p>
+<p><img src="/2019/11/20/blockchain/05/1574156062370.png" alt="1574156062370"></p>
+<p>Figure 8: When C2a and C2b exist, both parties exchange Breach Remedy transactions. Both parties now have explicit economic incentive to avoid broadcasting old Commitment Transactions (C1a/C1b). If either party wishes to close out the channel, they will only use C2a (Alice) or C2b (Bob). If Alice broadcasts C1a, all her money will go to Bob. If Bob broadcasts C1b, all his money will go to Alice. See previous figure for C2a/C2b outputs.</p>
+<p>图8：当C2a和C2b存在时，双方交换违约救济交易<code>Breach Remedy transactions</code>（<strong>这个钱就是用来保证双方都不违约用的</strong>）。 双方现在都有明确的经济动机以避免广播旧的<code>Commitment Tx</code>（C1a / C1b）。 <strong>如果任何一方希望关闭通道，他们将仅使用C2a或C2b。 如果Alice广播了C1a，她所有的钱都将交给Bob。 如果Bob广播了C1b，他所有的钱都将交给Alice。（这两种操作就是违规地使用了先前的commitment Tx）</strong> 有关C2a / C2b输出，请参见上图。</p>
+<p>Due to this fact, one will likely delete all prior Commitment Transactions when a Breach Remedy Transaction has been passed to the counterparty. If one broadcasts an incorrect (deprecated and invalidated Commitment Transaction), all the money will go to one’s counterparty. For example, if Bob broadcasts C1b, so long as Alice watches the blockchain within the predefined number of blocks (in this case, 1000 blocks), Alice will be able to take all the money in this channel by broadcasting RD1b. Even if the present balance of the Commitment state (C2a/C2b) is 0.4 BTC to Alice and 0.6 BTC to Bob, because Bob violated the terms of the contract, all the money goes to Alice as a penalty. Functionally, the Revocable Transaction acts as a proof to the blockchain that Bob has violated the terms in the channel and this is programatically adjudicated by the blockchain.</p>
+<p>由于这一事实，当违约救济交易已传递给对方时，人们<strong>可能会删除所有先前的<code>Commitment Tx</code></strong>。 如果某人广播了错误的（弃用和无效的<code>Commitment Tx</code>），则所有款项都将流向对方。 例如，如果Bob广播C1b，只要Alice在预定义数量的块（在这种情况下为1000个块）内观看区块链，Alice将能够<strong>通过广播RD1b来占用此频道中的所有资金。</strong> 即使当前的承诺状态余额（C2a / C2b）对Alice来说是0.4 BTC，对Bob来说是0.6 BTC，由于Bob违反了合同条款，所有的钱都将作为惩罚而归给Alice。 从功能上讲，可撤销交易是对区块链的证明，证明Bob违反了频道中的条款，并且由区块链以程序方式裁定。</p>
+<p><img src="/2019/11/20/blockchain/05/1574156119799.png" alt="1574156119799"></p>
+<p>Figure 9: Transactions in green are committed to the blockchain. Bob incorrectly broadcasts C1b (only Bob is able to broadcast C1b/C2b). Because both agreed that the current state is the C2a/C2b Commitment pair, and have attested to each party that old commitments are invalidated via Breach Remedy Transactions, Alice is able to broadcast BR1b and take all the money in the channel, provided she does it within 1000 blocks after C1b is broadcast.</p>
+<p>图9：绿色交易已提交给区块链 Bob错误地广播了C1b（只有Bob能够广播C1b / C2b）。 因为双方都同意当前状态为C2a / C2b承诺对，并且已经通过Breach Remedy Transactions向双方证明了旧承诺已失效，所以<strong>Alice可以在Bob广播了C1b之后的1000个块内广播BR1b并在通道中拿走所有资金</strong>（只要她这样做了） 。</p>
+<p>However, if Alice does not broadcast BR1b within 1000 blocks, Bob may be able to steal some money, since his Revocable Delivery Transaction (RD1b) becomes valid after 1000 blocks. When an incorrect Commitment Transaction is broadcast, only the Breach Remedy Transaction can be broadcast for 1000 blocks (or whatever number of confirmations both parties agree to). <strong>After 1000 block confirmations, both the Breach Remedy (BR1b) and Revocable Delivery Transactions (RD1b) are able to be broadcast at any time.</strong> （这段有歧义，见下面的备注分析）Breach Remedy transactions only have exclusivity withinthis predefined time period, and any time after of that is functionally an expiration of the statute of limitations |according to Bitcoin blockchain consensus, the time for dispute has ended.</p>
+<p>但是，<strong>如果Alice没有在1000个块内广播BR1b，则Bob的恶意操作就生效了，因为他的可撤销传递交易（RD1b）在1000个块后就会生效。</strong> 广播不正确的<code>Commitment Tx</code>时，仅可以广播1000块（或双方同意的任何数量的确认）违约救济交易。 在进行1000次阻止确认后，可以随时广播违规补救措施（BR1b）和可撤销交付交易（RD1b）（是不是可以被合法地广播？）。 违反补救交易仅在此预定时间段内具有排他性，并且在此之后的任何时间根据比特币区块链共识在功能上是<strong>时效性法规期满</strong>，争执时间已经结束。</p>
+<blockquote>
+<p>（这一段描述的感觉有问题啊，应该是说如果Bob发送了一个早期的commitment Tx，如果Alice在1000个区块之内没有提出异议，就已生效了，但是原文中间写的那句加粗的话很有歧义，或许他想表达的意思是在1000个区块之后可以发表异议，但是已经没有意义了）</p>
+</blockquote>
+<p>For this reason, one should periodically monitor the blockchain to see if one’s counterparty has broadcast an invalidated Commitment Transaction, or delegate a third party to do so. A third party can be delegated by only giving the Breach Remedy transaction to this third party. They can be incentivized to watch the blockchain broadcast such a transaction in the event of counterparty maliciousness by giving these third parties some fee in the output. Since the third party is only able to take action when the counterparty is acting maliciously, this third party does not have any power to force close of the channel.</p>
+<p>因此，<strong>应定期监视区块链，以查看对方是否广播了无效的<code>Commitment Tx</code>，或委托第三方进行广播</strong>。 只能通过将违约救济交易交给该第三方来委派第三方。 如果交易对手发生恶意行为，可以通过在输出中给这些第三方一些费用来激励他们观看区块链广播此类交易。 由<strong>于第三方只能在交易对手恶意行事时采取行动，因此该第三方没有任何权力强制关闭通道。</strong></p>
+<h4 id="3-3-5-创建可撤销交易的步骤"><a href="#3-3-5-创建可撤销交易的步骤" class="headerlink" title="3.3.5 创建可撤销交易的步骤"></a>3.3.5 创建可撤销交易的步骤</h4><p>Process for Creating Revocable Commitment Transactions</p>
+<p>To create revocable Commitment Transactions, it requires proper construction of the channel from the beginning, and only signing transactions which may be broadcast at any time in the future, while ensuring that one will not lose out due to uncooperative or malicious counterparties. This requires determining which public key to use for new commitments, as using SIGHASH NOINPUT requires using unique keys for each Commitment Transaction RSMC (and HTLC) output. We use P to designate pubkeys and K to designate the corresponding private key used to sign.</p>
+<p>要创建可撤消的<code>Commitment Tx</code>，需要从一开始就适当地构建通道，并且<strong>只签署可以在将来的任何时间广播的交易</strong>，同时确保交易不会因合作伙伴或恶意交易对手而失败。 这需要确定用于<strong>新承诺的公共密钥</strong>，因为使<strong>用SIGHASH NOINPUT要求为每个承诺事务RSMC（和HTLC）输出使用唯一的密钥。</strong> 我们使用P来指定公钥，使用K来指定用于签名的对应私钥。</p>
+<p>When generating the first Commitment Transaction, Alice and Bob agree to create a multisig output from a Funding Transaction with a single multisig(PAliceF ; PBobF ) output, funded with 0.5 BTC from Alice and Bob for a total of 1 BTC. This output is a Pay to Script Hash[16] transaction, which requires both Alice and Bob to both agree to spend from the Funding Transaction. They do not yet make the Funding Transaction (F) spendable. Additionally, PAliceF and PBobF are only used for the Funding Transaction, they are not used for anything else.</p>
+<p>在<strong>生成第一笔<code>Commitment Tx</code>时</strong>，Alice和Bob同意<strong>从<code>Funding Tx</code>中创建一个multisig（PAliceF; PBobF）输出的multisig输出</strong>，并从Alice和Bob获得0.5 BTC的资金，总计1 BTC。 此输出是按脚本哈希付款[16]的交易，该交易要求Alice和Bob都同意从<code>Funding Tx</code>中支出。 他们尚未使<code>Funding Tx</code>（F）变为可用。 此外，<strong>PAliceF和PBobF仅用于注资交易，不用于其他任何用途。</strong></p>
+<p>Since the Delivery transaction is just a P2PKH output (bitcoin addresses beginning with 1) or P2SH transaction (commonly recognized as addresses beginning with the 3) which the counterparties designate beforehand, this can be generated as an output of PAliceD and PBobD. For simplicity, these output addresses will remain the same throughout the channel, since its funds are fully controlled by its designated recipient after the Commitment Transaction enters the blockchain. If desired, but not necessary, both parties may update and change PAliceD and PBobD for future Commitment Transactions.</p>
+<p>由于交付交易（Delivery transaction）只是交易对手事先指定的P2PKH输出（比特币地址以1开头）或P2SH交易（通常以3开头的地址），因此可以将其生成为PAliceD和PBobD的输出。 为简单起见，这些输出地址在整个通道中将保持不变，<strong>因为<code>Commitment Tx</code>进入区块链后，其资金完全由其指定的接收者控制</strong>。 如果需要，但不是必需的，双方可以为将来的<code>Commitment Tx</code>更新和更改PAliceD和PBobD。</p>
+<p>Both parties exchange pubkeys they intend to use for the RSMC (and HTLC described in future sections) for the Commitment Transaction. Each set of Commitment Transactions use their own public keys and are not ever reused. Both parties may already know all future pubkeys by using a BIP 0032[17] HD Wallet construction by exchanging Master Public Keys during channel construction. If they wish to generate a new Commitment Transaction pair C2a/C2b, they use multisig(PAliceRSMC2, PBobRSMC2) for the RSMC output.</p>
+<p>双方交换了他们打算用于RSMC（以及以后部分中描述的HTLC）以进行<code>Commitment Tx</code>的公钥。每组<code>Commitment Tx</code>使用其自己的公钥，并且永远不会重复使用。 双方可能已经通过使用BIP 0032 [17] HD钱包构造（通过在通道构建过程中交换主公钥）来了解所有将来的公钥。 <strong>如果他们希望生成新的<code>Commitment Tx</code>对C2a / C2b，则可以将multisig（PAliceRSMC2，PBobRSMC2）用于RSMC输出。</strong></p>
+<p>After both parties know the output values from the Commitment Transactions, both parties create the pair of Commitment Transactions, e.g. C2a/C2b, but do not exchange signatures for the Commitment Transactions. They both sign the Revocable Delivery transaction (RD2a/RD2b) and exchange the signatures. Bob signs RD1a and gives it to Alice (using KBobRSMC2), while Alice signs RD1b and gives it to Bob (using KAliceRSMC2).</p>
+<ul>
+<li>双方都知道了<code>Commitment Tx</code>的输出值后，双方就创建了一对<code>Commitment Tx</code>，例如 C2a / C2b，但不交换<code>Commitment Tx</code>的签名。 </li>
+<li>他们都签署了可撤销交付交易（RD2a / RD2b）并交换了签名。 </li>
+<li>Bob签名RD1a并将其提供给Alice（使用KBobRSMC2），而Alice签名RD1b并将其提供给Bob（使用KAliceRSMC2）。</li>
+</ul>
+<p>When both parties have the Revocable Delivery transaction, they exchange signatures for the Commitment Transactions. Bob signs C1a using KBobF and gives it to Alice, and Alice signs C1b using KAliceF and gives it to Bob.</p>
+<p><strong>交换签名的步骤：当双方都有可撤销交付交易时，他们交换<code>Commitment Tx</code>的签名。 Bob使用KBobF签名C1a并将其提供给Alice，Alice使用KAliceF签名C1b并将其提供给Bob。</strong></p>
+<p>At this point, the prior Commitment Transaction as well as the new Commitment Transaction can be broadcast; both C1a/C1b and C2a/C2b are valid. (Note that Commitments older than the prior Commitment are invalidated via penalties.) In order to invalidate C1a and C1b, both parties exchange Breach Remedy Transaction (BR1a/BR1b) signatures for the prior commitment C1a/C1b. Alice sends BR1a to Bob using KAliceRSMC1, and Bob sends BR1b to Alice using KBobRSMC1. When both Breach Remedy signatures have been exchanged, the channel state is now at the current Commitment C2a/C2b and the balances are now committed.</p>
+<p>此时，可以广播先前的<code>Commitment Tx</code>以及新的<code>Commitment Tx</code>。 C1a / C1b和C2a / C2b均有效。 （请注意，早于先前承诺的承诺将通过罚款而无效。）<strong>为了使C1a和C1b失效，双方将先前承诺C1a / C1b的违约救济交易（BR1a / BR1b）签名交换。</strong> Alice使用KAliceRSMC1将BR1a发送给Bob，Bob使用KBobRSMC1将BR1b发送给Alice。 交换了两个违反补救措施的签名后，通道状态现在处于当前的承诺C2a / C2b，并且余额已经提交。</p>
+<p>However, instead of disclosing the BR1a/BR1b signatures, it’s also possible to just disclose the private keys to the counterparty. This is more effective as described later in the key storage section. One can disclose the private keys used in one’s own Commitment Transaction. For example, if Bob wishes to invalidate C1b, he sends his private keys used in C1b to Alice (he does NOT disclose his keys used in C1a, as that would permit coin theft). Similarly, Alice discloses all her private key outputs in C1a to Bob to invalidate C1a.</p>
+<p>但是，除了公开BR1a / BR1b签名之外，还可以<strong>只向交易对手公开私钥</strong>。 如稍后在密钥存储部分中所述，这更有效。 人们可以披露自己的承诺交易中使用的私钥。 例如，<strong>如果Bob希望使C1b失效，则将他在C1b中使用的私钥发送给Alice（他不会透露在C1a中使用的私钥，因为这会导致硬币被盗）。 同样，Alice将自己在C1a中的所有私钥输出透露给Bob，以使C1a无效。</strong></p>
+<p>If Bob incorrectly broadcasts C1b, then because Alice has all the private keys used in the outputs of C1b, she can take the money. However, only Bob is able to broadcast C1b. To prevent this coin theft risk, Bob should destroy all old Commitment Transactions.</p>
+<p>如果Bob错误地广播了C1b，则由于Alice拥有C1b输出中使用的所有私钥，因此她可以拿钱。 但是，只有Bob能够广播C1b。 <strong>为防止这种硬币被盗的风险，Bob应销毁所有旧的<code>Commitment Tx</code>。</strong></p>
+<h3 id="3-4-合作关闭一个通道"><a href="#3-4-合作关闭一个通道" class="headerlink" title="3.4 合作关闭一个通道"></a>3.4 合作关闭一个通道</h3><p>Cooperatively Closing Out a Channel</p>
+<p>Both parties are able to send as many payments to their counterparty as they wish, as long as they have funds available in the channel, knowing that in the event of disagreements they can broadcast to the blockchain the current state at any time.</p>
+<p>只要双方在通道中有可用资金，双方都可以向他们的交易对手发送尽可能多的付款，<strong>并且知道在发生分歧时，他们可以随时向区块链广播当前状态。</strong></p>
+<p>In the vast majority of cases, all the outputs from the Funding Transaction will never be broadcast on the blockchain. They are just there in case the other party is non-cooperative, much like how a contract is rarely enforced in the courts. A proven ability for the contract to be enforced in a deterministic manner is sufficient incentive for both parties to act honestly.</p>
+<p>在绝大多数情况下，<code>Funding Tx</code>的所有输出将永远不会在区块链上广播。 他们只是在另一方不合作的情况下出现，就像法院很少执行合同一样。 事实证明，以确定性方式执行合同的能力足以激励双方诚实行事。</p>
+<p>When either party wishes to close out a channel cooperatively, they will be able to do so by contacting the other party and spending from the Funding Transaction with an output of the most current Commitment Transaction directly with no script encumbering conditions. No further payments may occur in the channel.</p>
+<p>当<strong>任何一方希望合作关闭通道时，他们都可以通过与另一方联系并直接从<code>Funding Tx</code>中支出最新的<code>Commitment Tx</code>的输出而没有脚本负担的情况来做到这一点</strong>。 该通道中不会再有其他付款。</p>
+<p><img src="/2019/11/20/blockchain/05/1574156584731.png" alt="1574156584731"></p>
+<p>Figure 10: If both counterparties are cooperative, they take the balances in the current Commitment Transaction and spend from the Funding Transaction with a Exercise Settlement Transaction (ES). If the most recent Commitment Transaction gets broadcast instead, the payout (less fees) will be the same.</p>
+<p>图10：如果两个交易对手是合作伙伴，则他们会在当前的<code>Commitment Tx</code>中获得余额，并通过执行结算交易（ES）从<code>Funding Tx</code>中支出。 如果改为广播最近的<code>Commitment Tx</code>，则支出（扣除费用）将相同。</p>
+<p>The purpose of closing out cooperatively is to reduce the number of transactions that occur on the blockchain and both parties will be able to receive their funds immediately (instead of one party waiting for the Revocation Delivery transaction to become valid). </p>
+<p><strong>合作关闭的目的是减少在区块链上发生的交易数量，并且双方都将能够立即收到其资金（而不是一方等待吊销交付交易生效）。</strong></p>
+<p>Channels may remain in perpetuity until they decide to cooperatively close out the transaction, or when one party does not cooperate with another and the channel gets closed out and enforced on the blockchain.</p>
+<p><strong>通道可能会永久保留，直到他们决定合作结束交易，或者当一方不与另一方合作且通道被封锁并在区块链上强制执行时。</strong></p>
+<h3 id="3-5-双向通道的实现与总结"><a href="#3-5-双向通道的实现与总结" class="headerlink" title="3.5 双向通道的实现与总结"></a>3.5 双向通道的实现与总结</h3><p>Bidirectional Channel Implications and Summary</p>
+<p>By ensuring channels can update only with the consent of both parties, it is possible to construct channels which perpetually exist in the blockchain. Both parties can update the balance inside the channel with whatever output balances they wish, so long as it’s equal or less than the total funds committed inside the Funding Transaction; balances can move in both directions. If one party becomes malicious, either party may immediately close out the channel and broadcast the most current state to the blockchain. By using a fidelity bond construction (Revocable Delivery Transactions), if a party violates the terms of the channel, the funds will be sent to the counterparty, provided the proof of violation (Breach Remedy Transaction) is entered into the blockchain in a timely manner. If both parties are cooperative, the channel can remain open indefinitely, possibly for many years.</p>
+<p>通过确保通道<strong>只能在双方同意的情况下进行更新</strong>，才有可能构建永久存在于区块链中的通道。 双<strong>方都可以使用自己希望的任何输出余额来更新通道内的余额，只要该余额等于或小于<code>Funding Tx</code>中承诺的总资金即可；</strong> 天平可以双向移动。 如果一方变得恶意，则任何一方都可以立即关闭该通道并将最新状态广播到区块链。 通过使用保真债券结构（可撤销交付交易），<strong>如果一方违反通道条款，只要及时将违反证明（违约救济交易）输入到区块链中，资金将被发送到交易对手 。 如果双方合作，通道可以无限期保持开放状态，可能会持续很多年。</strong></p>
+<p>This type of construction is only possible because adjudication occurs programatically over the blockchain as part of the Bitcoin consensus, so one does not need to trust the other party. As a result, one’s channel counterparty does not possess full custody or control of the funds.</p>
+<p>这种类型的构造仅是可能的，因为作为比特币共识的一部分，裁决程序性地在区块链上进行，因此一个人不需要信任另一方。 结果，通道交易对手无法完全托管或控制资金。</p>
+<h2 id="RSMC"><a href="#RSMC" class="headerlink" title="RSMC"></a>RSMC</h2><p>以下内容来自<a href="https://mp.weixin.qq.com/s?__biz=MzU3NjU3NjYxMA==&mid=2247483800&idx=1&sn=9e7cf1690dc0853ec563361ef695d85e&chksm=fd108c95ca67058301ac938bc8da1361dd1ab8001b5b910475ddbefb1ca991a7ca532e190a2b&mpshare=1&scene=23&srcid=&sharer_sharetime=1574219943426&sharer_shareid=e0275a8c90beb99c1f6a71d4254cec74#rd" target="_blank" rel="noopener">第14课 闪电网络(Lightning Network) 之 RSMC</a>,文章写得很好。</p>
+<p><strong>Step1</strong>: 同微支付通道1样，生成1个保证金交易(Funding Transaction）。不过和微支付通道的区别是，这里是双向支付。所以双方，各拿1笔钱出来，打入这个公共账户。如图：</p>
+<p><img src="/2019/11/20/blockchain/05/640.webp" alt="img"></p>
+<p><strong>Step2</strong>:  同微支付通道类似，为这笔钱生成退款交易（Refund Transaction）。双方可以各自拿回自己的0.5比特币。</p>
+<p><strong>备注：和微支付通道一样，实际过程是，双方完成了Step2之后，才会把Step1的交易广播出去。以防钱被死锁在公共账号里面！！！</strong></p>
+<p>重点来了：Alice生成的退款交易是C1a + RD1a，Bob生成的退款交易是C1b+RD1b，2者是对称的。 </p>
+<p>假入Alice要拿回钱，它就广播C1a + RD1a；</p>
+<p>假入Bob要拿回钱，它就广播C1b + RD1b。</p>
+<p>为什么这么处理呢？</p>
+<p>我们看一下：假设Alice想主动中断交易，也就是它把C1a + RD1a 广播到了区块链网络上，那结果是什么呢？？</p>
+<p>我们会看到C1a里面，会把Bob的0.5比特币立即返还给Bob，而Alice的0.5比特币被打到了1个新的公共账号： Alice2 &amp; Bob里面！！！</p>
+<p>Alice要拿回自己的0.5比特币，要等到RD1a被兑现。而RD1a有个seq = 1000属性，也就是要等到C1a所在的块，后面被追加了1000个块之后，RD1a这个交易才会被进入区块链里面，Alice才能拿到自己的钱！！</p>
+<p><strong>一句话：如果Alice主动中断交易（把C1a + RD1a广播到了区块链上），Bob立马拿回自己的钱，Alice则要等到Sequence Maturity之后，才能拿回钱（Alice被轻微惩罚了）。反之亦然！！</strong></p>
+<p><img src="/2019/11/20/blockchain/05/640.webp" alt="img"></p>
+<p><strong>Step3: Alice与Bob开始交易</strong></p>
+<p>假设Alice要付给Bob 0.1 比特币，那么公共账号里面的资金分配，就从0.5/0.5，变成了0.4/0.6。</p>
+<p>过程如下：</p>
+<p>Alice生成了C2a与RD2a，C1a与RD1a废除；</p>
+<p>同样，Bob生成了C2b与RD2b,  C1b和RD1b废除。</p>
+<p><img src="/2019/11/20/blockchain/05/640.webp" alt="img"></p>
+<p><strong>重点：</strong></p>
+<p>在双方达成了C2a/RD2a, C2b/RD2b之后，如何让C1a, RD1a, C1b, RD1b 废除呢？ 换句话说，如何保证Alice不反悔（不让Alice把C1a与Rd1a广播到区块链上去？）同样，如何保证Bob不反悔（不让Bob把C1b与Rd1b广播到区块链上去？）</p>
+<p>这需要引入惩罚机制！！</p>
+<p>在Alice生成C2a/RD2a之前，他要把自己在C1a里面的私钥 Alice2发给Bob；同样，Bob把自己的C1b里面的私钥Bob2发给Alice。</p>
+<p>这样，各自会生成一个惩罚交易：</p>
+<p>如下图所示：Alice把秘钥Alice2给了Bob，Bob会为C1a生成1个惩罚交易BR1a，攥在自己手里，以防Alice反悔。</p>
+<p>假设Alice反悔，也就是把C1a + RD1a广播出去了，Bob就把BR1a广播出去！！ BR1a由于没有Sequence，肯定会先于RD1a执行，所以结果是RD1a不会被执行，BR1a执行了。造成的结果是，Alice拿不回钱，Bob会把Alice的0.5 比特币全转账到自己账户里面，这就是对Alice的惩罚。</p>
+<p>反之亦然，会为C1b生成BR1b。</p>
+<p>一句话：BR1a是Bob攒在手里的Alice的把柄，BR1b是Alice攥在手里的Bob的把柄，任何1方都不敢把旧的交易广播出去。也就是一旦达成了C2a/RD2a + C2b/RD2b，1就废除了。</p>
+<p><img src="/2019/11/20/blockchain/05/640.webp" alt="img"></p>
+<p>Step4: 同微支付通道一样，双方最终完成了交易，把Step3里面，最后1次更新，广播到网络上，各自得到自己的钱。最后1次的，sequence = 0，双方都立即拿到自己的钱。</p>
+<p>总结</p>
+<p>通过上面的过程分析，我们可以看出，RSMC设计的很巧妙：</p>
+<p>（1）通过双方各自往同1个公共账号打钱，实现了双向支付。</p>
+<p>（2）Alice拿回钱的时候，没有直接打回到她自己的账号里面。而是打到1个新的公共账号 Alice2 &amp; Bob，然后再用一个有sequence number的 RD1a最终拿回钱。通过这点，实现了谁主动中断，谁延迟退钱。这点做的很巧妙！！！</p>
+<p>（3）双方协商新1轮的时候，都把自己上1轮的私钥给对方，相当于把自己的把柄给了对方，这样双方都不敢反悔。</p>
+<p>这里，又1个很巧的地方：</p>
+<p>虽然Alice把私钥给了对方，但Alice不广播C1a，那对方的处罚交易BR1a也不会执行。</p>
+<p>Alice广播了C1a，对方就基于广播的交易执行处罚交易BR1a；</p>
+<p>Alice不广播C1a，对方也就没机会执行处罚交易BR1a。 </p>
+<p>反之亦然！</p>
+
+      
+       
+    </div>
+</article>
+
+
+
+
+
+
+
+    
+        <!-- MathJax配置，可通过单美元符号书写行内公式等 -->
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+    "HTML-CSS": {
+        preferredFont: "TeX",
+        availableFonts: ["STIX","TeX"],
+        linebreaks: { automatic:true },
+        EqnChunk: (MathJax.Hub.Browser.isMobile ? 10 : 50)
+    },
+    tex2jax: {
+        inlineMath: [ ["$", "$"], ["\\(","\\)"] ],
+        processEscapes: true,
+        ignoreClass: "tex2jax_ignore|dno",
+        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+    },
+    TeX: {
+        equationNumbers: { autoNumber: "AMS" },
+        noUndefined: { attributes: { mathcolor: "red", mathbackground: "#FFEEEE", mathsize: "90%" } },
+        Macros: { href: "{}" }
+    },
+    messageStyle: "none"
+    });
+</script>
+<!-- 给MathJax元素添加has-jax class -->
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax(), i;
+        for(i=0; i < all.length; i += 1) {
+            all[i].SourceElement().parentNode.className += ' has-jax';
+        }
+    });
+</script>
+<!-- 通过连接CDN加载MathJax的js代码 -->
+<script type="text/javascript" async
+        src="//cdn.bootcss.com/mathjax/2.7.2/MathJax.js?config=TeX-MML-AM_CHTML">
+</script>
+<input type="hidden" id="MathJax-js"
+        value="//cdn.bootcss.com/mathjax/2.7.2/MathJax.js?config=TeX-MML-AM_CHTML">
+</input>
+    
+
+
+
+
+    </div>
+    <div class="copyright">
+        <p class="footer-entry">©2019-2020 POWDER SNOW</p>
+
+    </div>
+    <div class="full-toc">
+        <button class="full"><span class="min "></span></button>
+<button class="post-toc-menu"><span class="post-toc-menu-icons"></span></button>
+<div class="post-toc"><span class="post-toc-title">目录</span>
+    <div class="post-toc-content">
+
+    </div>
+</div>
+<a class="" id="rocket" ></a>
+
+    </div>
+</div>
+<div class="acParent"></div>
+
+</body>
+<script src="/js/jquery.pjax.js?v=1.0.1" ></script>
+
+<script src="/js/script.js?v=1.0.1" ></script>
+<script>
+    var img_resize = 'default';
+    /*作者、标签的自动补全*/
+    $(function () {
+        $('.search').AutoComplete({
+            'data': ['#HTTP','#protobuf','#MySQL SQL','#Spring','#java','#QT','#区块链','#分布式','#大数据','#前端','#MyBatis','#SpringBoot','#网络编程','#Redis','#多线程','#数据库',],
+            'itemHeight': 20,
+            'width': 418
+        }).AutoComplete('show');
+    })
+    function initArticle() {
+        /*渲染对应的表格样式*/
+        
+            $(".post .pjax table").addClass("green_title");
+        
+
+        /*渲染打赏样式*/
+        
+
+        /*高亮代码块行号*/
+        
+
+        /*访问数量*/
+        
+
+        /*代码高亮，行号对齐*/
+        $('.pre-numbering').css('line-height',$('.has-numbering').css('line-height'));
+
+        
+        
+    }
+
+    /*打赏页面隐藏与展示*/
+    
+
+</script>
+
+<!--加入行号的高亮代码块样式-->
+
+<!--自定义样式设置-->
+<style>
+    
+    
+    .nav {
+        width: 544px;
+    }
+    .nav.fullscreen {
+        margin-left: -544px;
+    }
+    .nav-left {
+        width: 122px;
+    }
+    
+    
+    @media screen and (max-width: 1468px) {
+        .nav {
+            width: 492px;
+        }
+        .nav.fullscreen {
+            margin-left: -492px;
+        }
+        .nav-left {
+            width: 100px;
+        }
+    }
+    
+    
+    @media screen and (max-width: 1024px) {
+        .nav {
+            width: 492px;
+            margin-left: -492px
+        }
+        .nav.fullscreen {
+            margin-left: 0;
+        }
+        .nav .hide-list.fullscreen {
+            left: 492px
+        }
+    }
+    
+    @media screen and (max-width: 426px) {
+        .nav {
+            width: 100%;
+        }
+        .nav-left {
+            width: 100%;
+        }
+    }
+    
+    
+    .nav-right .title-list nav a .post-title, .nav-right .title-list #local-search-result a .post-title {
+        color: #383636;
+    }
+    
+    
+    .nav-right .title-list nav a .post-date, .nav-right .title-list #local-search-result a .post-date {
+        color: #5e5e5f;
+    }
+    
+    
+    .nav-right nav a.hover, #local-search-result a.hover{
+        background-color: #fbf4a8;
+    }
+    
+    
+
+    /*列表样式*/
+    
+    .post .pjax article .article-entry>ol, .post .pjax article .article-entry>ul, .post .pjax article>ol, .post .pjax article>ul{
+        border: #e2dede solid 1px;
+        border-radius: 10px;
+        padding: 10px 32px 10px 56px;
+    }
+    .post .pjax article .article-entry li>ol, .post .pjax article .article-entry li>ul,.post .pjax article li>ol, .post .pjax article li>ul{
+        padding-top: 5px;
+        padding-bottom: 5px;
+    }
+    .post .pjax article .article-entry>ol>li, .post .pjax article .article-entry>ul>li,.post .pjax article>ol>li, .post .pjax article>ul>li{
+        margin-bottom: auto;
+        margin-left: auto;
+    }
+    .post .pjax article .article-entry li>ol>li, .post .pjax article .article-entry li>ul>li,.post .pjax article li>ol>li, .post .pjax article li>ul>li{
+        margin-bottom: auto;
+        margin-left: auto;
+    }
+    
+
+    /* 背景图样式 */
+    
+    .post {
+        background: url(/img/bck.jpg);
+    }
+    
+    
+    .post.index {
+        background: url(/img/background.jpg);
+    }
+    
+
+
+    /*引用块样式*/
+    
+
+    /*文章列表背景图*/
+    
+    .nav-right:before {
+        content: ' ';
+        display: block;
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        opacity: 0.3;
+        background: url("/img/123.jpg");
+        background-repeat: no-repeat;
+        background-position: 50% 0;
+        -ms-background-size: cover;
+        -o-background-size: cover;
+        -moz-background-size: cover;
+        -webkit-background-size: cover;
+        background-size: cover;
+    }
+    
+
+    
+</style>
+
+
+
+
+
+
+
+</html>

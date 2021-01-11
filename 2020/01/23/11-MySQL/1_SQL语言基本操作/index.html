@@ -1,0 +1,1784 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>SQL语言基础 | POWDER SNOW</title>
+  <meta name="keywords" content=" MySQL SQL ">
+  <meta name="description" content="SQL语言基础 | POWDER SNOW">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<meta property="og:type" content="website">
+<meta property="og:title" content="categories">
+<meta property="og:url" content="http://yoursite.com/categories/index.html">
+<meta property="og:site_name" content="POWDER SNOW">
+<meta property="article:published_time" content="2018-03-02T04:33:16.000Z">
+<meta property="article:modified_time" content="2020-03-05T13:28:59.839Z">
+<meta property="article:author" content="冯冠雄">
+<meta name="twitter:card" content="summary">
+
+
+<link rel="icon" href="/img/avatar.jpg">
+
+<link href="/css/style.css?v=1.0.1" rel="stylesheet">
+
+<link href="/css/hl_theme/atom-light.css?v=1.0.1" rel="stylesheet">
+
+<link href="//cdn.bootcss.com/animate.css/3.5.2/animate.min.css" rel="stylesheet">
+<link href="//cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+
+<script src="//cdn.bootcss.com/jquery/2.2.4/jquery.min.js"></script>
+<script src="/js/jquery.autocomplete.min.js?v=1.0.1" ></script>
+
+<script src="//cdn.bootcss.com/highlight.js/9.12.0/highlight.min.js"></script>
+<script>
+    hljs.initHighlightingOnLoad();
+</script>
+
+<script src="//cdn.bootcss.com/nprogress/0.2.0/nprogress.min.js"></script>
+
+
+
+<script src="//cdn.bootcss.com/jquery-cookie/1.4.1/jquery.cookie.min.js" ></script>
+
+<script src="/js/iconfont.js?v=1.0.1" ></script>
+
+<meta name="generator" content="Hexo 4.2.0"></head>
+<div style="display: none">
+  <input class="theme_disqus_on" value="false">
+  <input class="theme_preload_comment" value="false">
+  <input class="theme_blog_path" value="">
+</div>
+
+<body>
+<aside class="nav">
+    <div class="nav-left">
+        <a href="/" class="avatar_target">
+    <img class="avatar" src="/img/avatar.jpg" />
+</a>
+<div class="author">
+    <span>冯冠雄</span>
+</div>
+
+<div class="icon">
+    
+        
+        <a title="github" href="https://github.com/xiong-Fgx" target="_blank">
+            
+                <svg class="iconfont-svg" aria-hidden="true">
+                    <use xlink:href="#icon-github"></use>
+                </svg>
+            
+        </a>
+        
+    
+        
+        <a title="linkedin" href="https://www.linkedin.com/in/guanxiong-feng-8b6aa8179" target="_blank">
+            
+                <svg class="iconfont-svg" aria-hidden="true">
+                    <use xlink:href="#icon-linkedin"></use>
+                </svg>
+            
+        </a>
+        
+    
+        
+        <a title="email" href="mailto:guanxiongf@gmail.com" target="_blank">
+            
+                <svg class="iconfont-svg" aria-hidden="true">
+                    <use xlink:href="#icon-email"></use>
+                </svg>
+            
+        </a>
+        
+    
+</div>
+
+
+
+
+<ul>
+    <li><div class="all active">全部文章</div></li>
+    
+        
+            
+            <li><div data-rel="网络"><i class="fold iconfont icon-right"></i>网络</div>
+                
+                    <ul class="sub hide">
+                        
+                        <li><div data-rel="HTTP">HTTP</div>
+                            
+                        </li>
+                            
+                        <li><div data-rel="protobuf">protobuf</div>
+                            
+                        </li>
+                            
+                        <li><div data-rel="网络编程">网络编程</div>
+                            
+                        </li>
+                            
+                    </ul>
+                
+            </li>
+            
+        
+    
+        
+            
+            <li><div data-rel="数据库">数据库</div>
+                
+            </li>
+            
+        
+    
+        
+            
+        
+    
+        
+            
+            <li><div data-rel="SSM"><i class="fold iconfont icon-right"></i>SSM</div>
+                
+                    <ul class="sub hide">
+                        
+                        <li><div data-rel="SSM整合">SSM整合</div>
+                            
+                        </li>
+                            
+                        <li><div data-rel="Spring">Spring</div>
+                            
+                        </li>
+                            
+                        <li><div data-rel="SpringMVC">SpringMVC</div>
+                            
+                        </li>
+                            
+                        <li><div data-rel="MyBatis">MyBatis</div>
+                            
+                        </li>
+                            
+                        <li><div data-rel="SpringBoot">SpringBoot</div>
+                            
+                        </li>
+                            
+                    </ul>
+                
+            </li>
+            
+        
+    
+        
+            
+        
+    
+        
+            
+        
+    
+        
+            
+        
+    
+        
+            
+        
+    
+        
+            
+            <li><div data-rel="客户端"><i class="fold iconfont icon-right"></i>客户端</div>
+                
+                    <ul class="sub hide">
+                        
+                        <li><div data-rel="QT">QT</div>
+                            
+                        </li>
+                            
+                    </ul>
+                
+            </li>
+            
+        
+    
+        
+            
+            <li><div data-rel="区块链"><i class="fold iconfont icon-right"></i>区块链</div>
+                
+                    <ul class="sub hide">
+                        
+                        <li><div data-rel="论文">论文</div>
+                            
+                        </li>
+                            
+                        <li><div data-rel="Fabric">Fabric</div>
+                            
+                        </li>
+                            
+                        <li><div data-rel="fabric">fabric</div>
+                            
+                        </li>
+                            
+                    </ul>
+                
+            </li>
+            
+        
+    
+        
+            
+            <li><div data-rel="分布式">分布式</div>
+                
+            </li>
+            
+        
+    
+        
+            
+            <li><div data-rel="大数据"><i class="fold iconfont icon-right"></i>大数据</div>
+                
+                    <ul class="sub hide">
+                        
+                        <li><div data-rel="hadoop">hadoop</div>
+                            
+                        </li>
+                            
+                    </ul>
+                
+            </li>
+            
+        
+    
+        
+            
+            <li><div data-rel="前端"><i class="fold iconfont icon-right"></i>前端</div>
+                
+                    <ul class="sub hide">
+                        
+                        <li><div data-rel="HTML">HTML</div>
+                            
+                        </li>
+                            
+                        <li><div data-rel="CSS">CSS</div>
+                            
+                        </li>
+                            
+                    </ul>
+                
+            </li>
+            
+        
+    
+        
+            
+        
+    
+        
+            
+        
+    
+        
+            
+        
+    
+        
+            
+        
+    
+        
+            
+        
+    
+        
+            
+            <li><div data-rel="笔记">笔记</div>
+                
+            </li>
+            
+        
+    
+        
+            
+        
+    
+        
+            
+        
+    
+        
+            
+        
+    
+        
+            
+        
+    
+        
+            
+        
+    
+</ul>
+<div class="left-bottom">
+    <div class="menus">
+    
+    
+    
+    
+    </div>
+    <div></div>
+</div>
+<input type="hidden" id="yelog_site_posts_number" value="71">
+
+<div style="display: none">
+    <span id="busuanzi_value_site_uv"></span>
+    <span id="busuanzi_value_site_pv"></span>
+</div>
+
+    </div>
+    <div class="nav-right">
+        <div class="friends-area">
+    <div class="friends-title">
+        友情链接
+        <i class="back-title-list"></i>
+    </div>
+    <div class="friends-content">
+        <ul>
+            
+            <li><a target="_blank" href="http://yelog.org/">叶落阁</a></li>
+            
+        </ul>
+    </div>
+</div>
+        <div class="title-list">
+    <form onkeydown="if(event.keyCode === 13){return false;}">
+        <input id="local-search-input" class="search" type="text" placeholder="Search..." />
+        <i class="cross"></i>
+        <span>
+            <label for="tagswitch">Tags:</label>
+            <input id="tagswitch" type="checkbox" style="display: none" />
+            <i id="tagsWitchIcon"></i>
+        </span>
+    </form>
+    <div class="tags-list">
+    
+    <li class="article-tag-list-item">
+        <a class="color5">HTTP</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a class="color4">protobuf</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a class="color5">MySQL SQL</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a class="color2">Spring</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a class="color5">java</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a class="color3">QT</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a class="color4">区块链</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a class="color4">分布式</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a class="color4">大数据</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a class="color3">前端</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a class="color3">MyBatis</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a class="color1">SpringBoot</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a class="color5">网络编程</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a class="color1">Redis</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a class="color4">多线程</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a class="color4">数据库</a>
+    </li>
+    
+    <div class="clearfix"></div>
+</div>
+
+    
+    <nav id="title-list-nav">
+        
+        <a  class="前端 CSS "
+           href="/2021/01/11/html/4_%E7%9B%92%E5%AD%90%E6%A8%A1%E5%9E%8B/"
+           data-tag="前端"
+           data-author="" >
+            <span class="post-title" title="【前端 4】盒子模型">【前端 4】盒子模型</span>
+            <span class="post-date" title="2021-01-11 09:41:10">2021/01/11</span>
+        </a>
+        
+        <a  class="前端 CSS "
+           href="/2021/01/09/html/3_CSS%E8%BF%9B%E9%98%B6/"
+           data-tag="前端"
+           data-author="" >
+            <span class="post-title" title="【前端 3】CSS进阶">【前端 3】CSS进阶</span>
+            <span class="post-date" title="2021-01-09 09:43:10">2021/01/09</span>
+        </a>
+        
+        <a  class="前端 CSS "
+           href="/2021/01/05/html/2_CSS/"
+           data-tag="前端"
+           data-author="" >
+            <span class="post-title" title="【前端 2】CSS">【前端 2】CSS</span>
+            <span class="post-date" title="2021-01-05 16:22:10">2021/01/05</span>
+        </a>
+        
+        <a  class="前端 HTML "
+           href="/2021/01/04/html/1_html/"
+           data-tag="前端"
+           data-author="" >
+            <span class="post-title" title="【前端 1】HTML">【前端 1】HTML</span>
+            <span class="post-date" title="2021-01-04 10:46:10">2021/01/04</span>
+        </a>
+        
+        <a  class="区块链 fabric "
+           href="/2020/12/12/fabric/08_%E9%93%BE%E7%A0%81/"
+           data-tag="区块链"
+           data-author="" >
+            <span class="post-title" title="07_链码接口使用">07_链码接口使用</span>
+            <span class="post-date" title="2020-12-12 11:43:23">2020/12/12</span>
+        </a>
+        
+        <a  class="区块链 fabric "
+           href="/2020/12/12/fabric/02_%E9%83%A8%E7%BD%B2%E8%B0%83%E7%94%A8%E9%93%BE%E7%A0%81/"
+           data-tag="区块链"
+           data-author="" >
+            <span class="post-title" title="02_部署调用链码">02_部署调用链码</span>
+            <span class="post-date" title="2020-12-12 10:56:23">2020/12/12</span>
+        </a>
+        
+        <a  class="区块链 fabric "
+           href="/2020/12/09/fabric/07_dockerCompose%E5%90%AF%E5%8A%A8fabric/"
+           data-tag="区块链"
+           data-author="" >
+            <span class="post-title" title="06_docker compose启动节点">06_docker compose启动节点</span>
+            <span class="post-date" title="2020-12-09 11:35:23">2020/12/09</span>
+        </a>
+        
+        <a  class="区块链 fabric "
+           href="/2020/12/09/fabric/03_%E7%BD%91%E7%BB%9C%E7%BB%93%E6%9E%84%E5%8F%98%E5%8A%A8/"
+           data-tag="区块链"
+           data-author="" >
+            <span class="post-title" title="03_用户结构变动">03_用户结构变动</span>
+            <span class="post-date" title="2020-12-09 10:35:23">2020/12/09</span>
+        </a>
+        
+        <a  class="区块链 fabric "
+           href="/2020/12/02/fabric/01_%E6%90%AD%E5%BB%BA%E5%9F%BA%E7%A1%80%E7%BD%91%E7%BB%9C/"
+           data-tag="区块链"
+           data-author="" >
+            <span class="post-title" title="01_搭建基础网络">01_搭建基础网络</span>
+            <span class="post-date" title="2020-12-02 11:05:23">2020/12/02</span>
+        </a>
+        
+        <a  class="区块链 fabric "
+           href="/2020/12/01/fabric/05_java%20SDK%E4%BD%BF%E7%94%A8/"
+           data-tag="区块链"
+           data-author="" >
+            <span class="post-title" title="05_javaSDK使用">05_javaSDK使用</span>
+            <span class="post-date" title="2020-12-01 15:04:23">2020/12/01</span>
+        </a>
+        
+        <a  class="区块链 fabric "
+           href="/2020/12/01/fabric/04_%E7%94%A8%E6%88%B7%E4%BD%BF%E7%94%A8%E9%93%BE%E7%A0%81/"
+           data-tag="区块链"
+           data-author="" >
+            <span class="post-title" title="04_用户使用链码">04_用户使用链码</span>
+            <span class="post-date" title="2020-12-01 10:55:23">2020/12/01</span>
+        </a>
+        
+        <a  class="大数据 hadoop "
+           href="/2020/11/26/hadoop/%E5%AE%89%E8%A3%85/"
+           data-tag="大数据"
+           data-author="" >
+            <span class="post-title" title="【hadoop 3】hadoop分布式安装总结">【hadoop 3】hadoop分布式安装总结</span>
+            <span class="post-date" title="2020-11-26 17:50:09">2020/11/26</span>
+        </a>
+        
+        <a  class="客户端 QT "
+           href="/2020/10/29/QT/4_%E6%A8%A1%E5%9E%8B%20%E8%A7%86%E5%9B%BE%E7%BB%93%E6%9E%84/"
+           data-tag="QT"
+           data-author="" >
+            <span class="post-title" title="【QT 3】模型-视图结构">【QT 3】模型-视图结构</span>
+            <span class="post-date" title="2020-10-29 16:49:10">2020/10/29</span>
+        </a>
+        
+        <a  class="客户端 QT "
+           href="/2020/10/28/QT/3_%E6%8E%A7%E4%BB%B6/"
+           data-tag="QT"
+           data-author="" >
+            <span class="post-title" title="【QT 2】控件">【QT 2】控件</span>
+            <span class="post-date" title="2020-10-28 16:55:10">2020/10/28</span>
+        </a>
+        
+        <a  class="客户端 QT "
+           href="/2020/10/28/QT/2_%E5%B8%83%E5%B1%80%E7%AE%A1%E7%90%86/"
+           data-tag="QT"
+           data-author="" >
+            <span class="post-title" title="【QT 1】布局管理">【QT 1】布局管理</span>
+            <span class="post-date" title="2020-10-28 14:37:10">2020/10/28</span>
+        </a>
+        
+        <a  class="客户端 QT "
+           href="/2020/10/20/QT/QT%E7%95%8C%E9%9D%A2%E7%BC%96%E8%BE%91%E5%99%A8/"
+           data-tag="QT"
+           data-author="" >
+            <span class="post-title" title="【QT 4】QT界面编辑器">【QT 4】QT界面编辑器</span>
+            <span class="post-date" title="2020-10-20 15:52:10">2020/10/20</span>
+        </a>
+        
+        <a  class="SSM Spring "
+           href="/2020/06/01/%E7%AC%94%E8%AE%B0/spring/"
+           data-tag="Spring"
+           data-author="" >
+            <span class="post-title" title="【笔记】Spring总结">【笔记】Spring总结</span>
+            <span class="post-date" title="2020-06-01 03:57:17">2020/06/01</span>
+        </a>
+        
+        <a  class="笔记 "
+           href="/2020/05/12/%E7%AC%94%E8%AE%B0/%E6%95%B0%E6%8D%AE%E5%BA%93/"
+           data-tag="数据库"
+           data-author="" >
+            <span class="post-title" title="【笔记】数据库与MySQL">【笔记】数据库与MySQL</span>
+            <span class="post-date" title="2020-05-12 21:38:05">2020/05/12</span>
+        </a>
+        
+        <a  class="笔记 "
+           href="/2020/05/07/%E7%AC%94%E8%AE%B0/redis/"
+           data-tag="Redis"
+           data-author="" >
+            <span class="post-title" title="【笔记】Redis">【笔记】Redis</span>
+            <span class="post-date" title="2020-05-07 18:38:05">2020/05/07</span>
+        </a>
+        
+        <a  class="笔记 "
+           href="/2020/04/25/%E7%AC%94%E8%AE%B0/%E5%A4%9A%E7%BA%BF%E7%A8%8B/"
+           data-tag="多线程"
+           data-author="" >
+            <span class="post-title" title="【笔记】java并发">【笔记】java并发</span>
+            <span class="post-date" title="2020-04-25 15:38:01">2020/04/25</span>
+        </a>
+        
+        <a  class="大数据 hadoop "
+           href="/2020/03/18/hadoop/2_%E4%BD%BF%E7%94%A8hadoop/"
+           data-tag="大数据"
+           data-author="" >
+            <span class="post-title" title="【hadoop 2】hadoop三种模式使用">【hadoop 2】hadoop三种模式使用</span>
+            <span class="post-date" title="2020-03-18 17:49:04">2020/03/18</span>
+        </a>
+        
+        <a  class="SSM SpringBoot "
+           href="/2020/03/18/springboot/3_springboot%E7%9A%84%E9%85%8D%E7%BD%AE/"
+           data-tag="SpringBoot"
+           data-author="" >
+            <span class="post-title" title="【SpringBoot 02】配置文件">【SpringBoot 02】配置文件</span>
+            <span class="post-date" title="2020-03-18 12:58:23">2020/03/18</span>
+        </a>
+        
+        <a  class="SSM SpringBoot "
+           href="/2020/03/17/springboot/2_springboot%E7%9A%84helloworld/"
+           data-tag="SpringBoot"
+           data-author="" >
+            <span class="post-title" title="【SpringBoot 01】HelloWorld">【SpringBoot 01】HelloWorld</span>
+            <span class="post-date" title="2020-03-17 19:58:23">2020/03/17</span>
+        </a>
+        
+        <a  class="SSM SSM整合 "
+           href="/2020/03/05/3-SpringMVC/1_%E6%90%AD%E5%BB%BAspring/"
+           data-tag="java"
+           data-author="" >
+            <span class="post-title" title="【SSM实战】SSM框架整合">【SSM实战】SSM框架整合</span>
+            <span class="post-date" title="2020-03-05 20:37:01">2020/03/05</span>
+        </a>
+        
+        <a  class="SSM SpringMVC "
+           href="/2020/03/05/3-SpringMVC/7_SpringMVC%E5%BC%82%E5%B8%B8%E5%A4%84%E7%90%86%E4%B8%8E%E6%8B%A6%E6%88%AA%E5%99%A8/"
+           data-tag="java"
+           data-author="" >
+            <span class="post-title" title="【SpringMVC实战6】异常处理与拦截器">【SpringMVC实战6】异常处理与拦截器</span>
+            <span class="post-date" title="2020-03-05 13:06:19">2020/03/05</span>
+        </a>
+        
+        <a  class="SSM SpringMVC "
+           href="/2020/03/04/3-SpringMVC/6_SpringMVC%E5%93%8D%E5%BA%94/"
+           data-tag="java"
+           data-author="" >
+            <span class="post-title" title="【SpringMVC实战5】响应">【SpringMVC实战5】响应</span>
+            <span class="post-date" title="2020-03-04 19:26:39">2020/03/04</span>
+        </a>
+        
+        <a  class="SSM SpringMVC "
+           href="/2020/03/03/3-SpringMVC/4_SpringMVC%E7%9A%84%E5%B8%B8%E7%94%A8%E6%B3%A8%E8%A7%A3/"
+           data-tag="java"
+           data-author="" >
+            <span class="post-title" title="【SpringMVC实战3】常用注解">【SpringMVC实战3】常用注解</span>
+            <span class="post-date" title="2020-03-03 15:26:29">2020/03/03</span>
+        </a>
+        
+        <a  class="SSM SpringMVC "
+           href="/2020/03/03/3-SpringMVC/5_%E8%AF%B7%E6%B1%82%E5%8F%82%E6%95%B0%E7%BB%91%E5%AE%9A/"
+           data-tag="java"
+           data-author="" >
+            <span class="post-title" title="【SpringMVC实战4】请求参数绑定">【SpringMVC实战4】请求参数绑定</span>
+            <span class="post-date" title="2020-03-03 09:13:23">2020/03/03</span>
+        </a>
+        
+        <a  class="SSM SpringMVC "
+           href="/2020/03/02/3-SpringMVC/3_SpringMVC%E7%9A%84%E6%89%A7%E8%A1%8C%E6%B5%81%E7%A8%8B/"
+           data-tag="java"
+           data-author="" >
+            <span class="post-title" title="【SpringMVC实战2】执行流程">【SpringMVC实战2】执行流程</span>
+            <span class="post-date" title="2020-03-02 18:26:39">2020/03/02</span>
+        </a>
+        
+        <a  class="SSM SpringMVC "
+           href="/2020/03/02/3-SpringMVC/2_%E5%85%A5%E9%97%A8%E6%A1%88%E4%BE%8B/"
+           data-tag="java"
+           data-author="" >
+            <span class="post-title" title="【SpringMVC实战1】入门案例">【SpringMVC实战1】入门案例</span>
+            <span class="post-date" title="2020-03-02 14:26:39">2020/03/02</span>
+        </a>
+        
+        <a  class="SSM Spring "
+           href="/2020/02/21/13-Spring/8_%E4%BA%8B%E5%8A%A1%E6%8E%A7%E5%88%B6/"
+           data-tag="Spring"
+           data-author="" >
+            <span class="post-title" title="【Spring实战8】事务控制">【Spring实战8】事务控制</span>
+            <span class="post-date" title="2020-02-21 15:23:48">2020/02/21</span>
+        </a>
+        
+        <a  class="SSM Spring "
+           href="/2020/02/20/13-Spring/7_JdbcTemplate/"
+           data-tag="Spring"
+           data-author="" >
+            <span class="post-title" title="【Spring实战7】JdbcTemplate">【Spring实战7】JdbcTemplate</span>
+            <span class="post-date" title="2020-02-20 09:32:29">2020/02/20</span>
+        </a>
+        
+        <a  class="SSM Spring "
+           href="/2020/02/19/13-Spring/6_%E5%9F%BA%E4%BA%8Exml%E5%92%8C%E6%B3%A8%E8%A7%A3%E7%9A%84AOP%E9%85%8D%E7%BD%AE/"
+           data-tag="Spring"
+           data-author="" >
+            <span class="post-title" title="【Spring实战6】基于xml和注解的AOP配置">【Spring实战6】基于xml和注解的AOP配置</span>
+            <span class="post-date" title="2020-02-19 21:31:44">2020/02/19</span>
+        </a>
+        
+        <a  class="SSM Spring "
+           href="/2020/02/19/13-Spring/5_AOP/"
+           data-tag="Spring"
+           data-author="" >
+            <span class="post-title" title="【Spring实战5】AOP">【Spring实战5】AOP</span>
+            <span class="post-date" title="2020-02-19 18:56:47">2020/02/19</span>
+        </a>
+        
+        <a  class="SSM Spring "
+           href="/2020/02/18/13-Spring/4_%E5%8A%A8%E6%80%81%E4%BB%A3%E7%90%86/"
+           data-tag="Spring"
+           data-author="" >
+            <span class="post-title" title="【Spring实战4】动态代理">【Spring实战4】动态代理</span>
+            <span class="post-date" title="2020-02-18 17:15:32">2020/02/18</span>
+        </a>
+        
+        <a  class="SSM Spring "
+           href="/2020/02/14/13-Spring/3_%E5%9F%BA%E4%BA%8E%E6%B3%A8%E8%A7%A3%E7%9A%84IOC/"
+           data-tag="Spring"
+           data-author="" >
+            <span class="post-title" title="【Spring实战3】IoC注解">【Spring实战3】IoC注解</span>
+            <span class="post-date" title="2020-02-14 20:57:17">2020/02/14</span>
+        </a>
+        
+        <a  class="SSM Spring "
+           href="/2020/02/13/13-Spring/2_IOC/"
+           data-tag="Spring"
+           data-author="" >
+            <span class="post-title" title="【Spring实战2】IoC与DI">【Spring实战2】IoC与DI</span>
+            <span class="post-date" title="2020-02-13 20:56:03">2020/02/13</span>
+        </a>
+        
+        <a  class="SSM Spring "
+           href="/2020/02/13/13-Spring/1_%E7%A8%8B%E5%BA%8F%E8%80%A6%E5%90%88%E4%B8%8E%E8%A7%A3%E8%80%A6/"
+           data-tag="Spring"
+           data-author="" >
+            <span class="post-title" title="【Spring实战1】程序的耦合与解耦">【Spring实战1】程序的耦合与解耦</span>
+            <span class="post-date" title="2020-02-13 13:17:03">2020/02/13</span>
+        </a>
+        
+        <a  class="SSM MyBatis "
+           href="/2020/02/07/mybatis/10_%E6%B3%A8%E8%A7%A3%E5%BC%80%E5%8F%91/"
+           data-tag="MyBatis"
+           data-author="" >
+            <span class="post-title" title="【Mybatis实战5】注解开发">【Mybatis实战5】注解开发</span>
+            <span class="post-date" title="2020-02-07 16:18:37">2020/02/07</span>
+        </a>
+        
+        <a  class="SSM MyBatis "
+           href="/2020/02/06/mybatis/9_%E7%BC%93%E5%AD%98/"
+           data-tag="MyBatis"
+           data-author="" >
+            <span class="post-title" title="【Mybatis实战4】加载与缓存">【Mybatis实战4】加载与缓存</span>
+            <span class="post-date" title="2020-02-06 18:29:03">2020/02/06</span>
+        </a>
+        
+        <a  class="SSM MyBatis "
+           href="/2020/02/06/mybatis/8_%E5%8A%A8%E6%80%81SQL%E4%B8%8E%E5%A4%9A%E8%A1%A8%E6%93%8D%E4%BD%9C/"
+           data-tag="MyBatis"
+           data-author="" >
+            <span class="post-title" title="【Mybatis实战3】动态SQL与多表操作">【Mybatis实战3】动态SQL与多表操作</span>
+            <span class="post-date" title="2020-02-06 18:08:29">2020/02/06</span>
+        </a>
+        
+        <a  class="SSM MyBatis "
+           href="/2020/02/06/mybatis/6_mybatis%E8%BF%9B%E8%A1%8CCRUD/"
+           data-tag="MyBatis"
+           data-author="" >
+            <span class="post-title" title="【Mybatis实战2】CRUD操作">【Mybatis实战2】CRUD操作</span>
+            <span class="post-date" title="2020-02-06 13:21:03">2020/02/06</span>
+        </a>
+        
+        <a  class="SSM MyBatis "
+           href="/2020/02/05/mybatis/2_%E5%9F%BA%E4%BA%8Exml%E7%9A%84%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/"
+           data-tag="MyBatis"
+           data-author="" >
+            <span class="post-title" title="【Mybatis实战1】两种环境搭建方法及示例">【Mybatis实战1】两种环境搭建方法及示例</span>
+            <span class="post-date" title="2020-02-05 10:21:01">2020/02/05</span>
+        </a>
+        
+        <a  class="数据库 "
+           href="/2020/01/29/11-MySQL/3_%E5%A4%9A%E8%A1%A8%E6%9F%A5%E8%AF%A2%E4%B8%8E%E4%BA%8B%E5%8A%A1/"
+           data-tag="MySQL SQL"
+           data-author="" >
+            <span class="post-title" title="多表查询与事务">多表查询与事务</span>
+            <span class="post-date" title="2020-01-29 13:52:00">2020/01/29</span>
+        </a>
+        
+        <a  class="数据库 "
+           href="/2020/01/26/11-MySQL/2_SQL%E9%AB%98%E7%BA%A7/"
+           data-tag="MySQL SQL"
+           data-author="" >
+            <span class="post-title" title="数据库高级知识及SQL实现">数据库高级知识及SQL实现</span>
+            <span class="post-date" title="2020-01-26 23:01:52">2020/01/26</span>
+        </a>
+        
+        <a  class="数据库 "
+           href="/2020/01/23/11-MySQL/1_SQL%E8%AF%AD%E8%A8%80%E5%9F%BA%E6%9C%AC%E6%93%8D%E4%BD%9C/"
+           data-tag="MySQL SQL"
+           data-author="" >
+            <span class="post-title" title="SQL语言基础">SQL语言基础</span>
+            <span class="post-date" title="2020-01-23 20:06:39">2020/01/23</span>
+        </a>
+        
+        <a  class="网络 protobuf "
+           href="/2020/01/16/10-java%E7%BD%91%E7%BB%9C/2_protobuf/"
+           data-tag="protobuf"
+           data-author="" >
+            <span class="post-title" title="java使用protobuf">java使用protobuf</span>
+            <span class="post-date" title="2020-01-16 17:57:52">2020/01/16</span>
+        </a>
+        
+        <a  class="网络 HTTP "
+           href="/2020/01/15/10-java%E7%BD%91%E7%BB%9C/1_HTTP/"
+           data-tag="HTTP"
+           data-author="" >
+            <span class="post-title" title="java实现简单的HTTP">java实现简单的HTTP</span>
+            <span class="post-date" title="2020-01-15 18:03:21">2020/01/15</span>
+        </a>
+        
+        <a  class="大数据 hadoop "
+           href="/2020/01/06/hadoop/1_hadoop/"
+           data-tag="大数据"
+           data-author="" >
+            <span class="post-title" title="【hadoop 1】hadoop环境搭建">【hadoop 1】hadoop环境搭建</span>
+            <span class="post-date" title="2020-01-06 14:55:10">2020/01/06</span>
+        </a>
+        
+        <a  class="区块链 Fabric "
+           href="/2019/11/24/blockchain/09/"
+           data-tag="区块链"
+           data-author="" >
+            <span class="post-title" title="Hyperledger Fabric系统框架笔记">Hyperledger Fabric系统框架笔记</span>
+            <span class="post-date" title="2019-11-24 12:43:08">2019/11/24</span>
+        </a>
+        
+        <a  class="区块链 论文 "
+           href="/2019/11/21/blockchain/08/"
+           data-tag="区块链"
+           data-author="" >
+            <span class="post-title" title="闪电网络（四）比特币闪电网络：The Bitcoin Lightning Network">闪电网络（四）比特币闪电网络：The Bitcoin Lightning Network</span>
+            <span class="post-date" title="2019-11-21 21:31:53">2019/11/21</span>
+        </a>
+        
+        <a  class="区块链 论文 "
+           href="/2019/11/20/blockchain/07/"
+           data-tag="区块链"
+           data-author="" >
+            <span class="post-title" title="闪电网络（三）哈希时间锁合约：Hashed Timelock Contract (HTLC)">闪电网络（三）哈希时间锁合约：Hashed Timelock Contract (HTLC)</span>
+            <span class="post-date" title="2019-11-20 10:51:23">2019/11/20</span>
+        </a>
+        
+        <a  class="区块链 论文 "
+           href="/2019/11/20/blockchain/05/"
+           data-tag="区块链"
+           data-author="" >
+            <span class="post-title" title="闪电网络（二）双向支付通道：Bidirectional Payment Channels + RSMC">闪电网络（二）双向支付通道：Bidirectional Payment Channels + RSMC</span>
+            <span class="post-date" title="2019-11-20 10:51:23">2019/11/20</span>
+        </a>
+        
+        <a  class="区块链 论文 "
+           href="/2019/11/19/blockchain/06/"
+           data-tag="区块链"
+           data-author="" >
+            <span class="post-title" title="闪电网络（一）微支付通道">闪电网络（一）微支付通道</span>
+            <span class="post-date" title="2019-11-19 10:07:02">2019/11/19</span>
+        </a>
+        
+        <a  class="区块链 论文 "
+           href="/2019/11/15/blockchain/03/"
+           data-tag="区块链"
+           data-author="" >
+            <span class="post-title" title="论文翻译 OmniLedger">论文翻译 OmniLedger</span>
+            <span class="post-date" title="2019-11-15 16:15:33">2019/11/15</span>
+        </a>
+        
+        <a  class="网络 网络编程 "
+           href="/2019/11/03/networkProgram/%E7%BD%91%E7%BB%9C%E7%BC%96%E7%A8%8B10UDP%E8%BF%9E%E6%8E%A5/"
+           data-tag="网络编程"
+           data-author="" >
+            <span class="post-title" title="网络编程10：UDP连接">网络编程10：UDP连接</span>
+            <span class="post-date" title="2019-11-03 16:15:07">2019/11/03</span>
+        </a>
+        
+        <a  class="网络 网络编程 "
+           href="/2019/11/02/networkProgram/%E7%BD%91%E7%BB%9C%E7%BC%96%E7%A8%8B9TCP%E7%9A%84%E5%BC%82%E5%B8%B8/"
+           data-tag="网络编程"
+           data-author="" >
+            <span class="post-title" title="网络编程9：TCP的异常">网络编程9：TCP的异常</span>
+            <span class="post-date" title="2019-11-02 13:57:10">2019/11/02</span>
+        </a>
+        
+        <a  class="网络 网络编程 "
+           href="/2019/11/01/networkProgram/%E7%BD%91%E7%BB%9C%E7%BC%96%E7%A8%8B8TCP%E6%95%B0%E6%8D%AE%E4%BC%A0%E8%BE%93/"
+           data-tag="网络编程"
+           data-author="" >
+            <span class="post-title" title="网络编程8：TCP数据传输">网络编程8：TCP数据传输</span>
+            <span class="post-date" title="2019-11-01 18:34:10">2019/11/01</span>
+        </a>
+        
+        <a  class="网络 网络编程 "
+           href="/2019/10/31/networkProgram/%E7%BD%91%E7%BB%9C%E7%BC%96%E7%A8%8B7TCP%E8%BF%9E%E6%8E%A5%E7%8A%B6%E6%80%81/"
+           data-tag="网络编程"
+           data-author="" >
+            <span class="post-title" title="网络编程7：TCP连接状态">网络编程7：TCP连接状态</span>
+            <span class="post-date" title="2019-10-31 17:14:55">2019/10/31</span>
+        </a>
+        
+        <a  class="网络 网络编程 "
+           href="/2019/10/30/networkProgram/%E7%BD%91%E7%BB%9C%E7%BC%96%E7%A8%8B6%E5%85%B3%E9%97%AD%E8%BF%9E%E6%8E%A5/"
+           data-tag="网络编程"
+           data-author="" >
+            <span class="post-title" title="网络编程6：关闭连接">网络编程6：关闭连接</span>
+            <span class="post-date" title="2019-10-30 18:34:12">2019/10/30</span>
+        </a>
+        
+        <a  class="网络 网络编程 "
+           href="/2019/10/29/networkProgram/%E7%BD%91%E7%BB%9C%E7%BC%96%E7%A8%8B5%E7%BD%91%E7%BB%9C%E5%B7%A5%E5%85%B7/"
+           data-tag="网络编程"
+           data-author="" >
+            <span class="post-title" title="网络编程5：网络工具">网络编程5：网络工具</span>
+            <span class="post-date" title="2019-10-29 14:24:11">2019/10/29</span>
+        </a>
+        
+        <a  class="网络 网络编程 "
+           href="/2019/10/28/networkProgram/%E7%BD%91%E7%BB%9C%E7%BC%96%E7%A8%8B3UDP%E5%8D%8F%E8%AE%AE%E4%BD%BF%E7%94%A8socket/"
+           data-tag="网络编程"
+           data-author="" >
+            <span class="post-title" title="网络编程3：UDP协议使用socket">网络编程3：UDP协议使用socket</span>
+            <span class="post-date" title="2019-10-28 10:11:10">2019/10/28</span>
+        </a>
+        
+        <a  class="网络 网络编程 "
+           href="/2019/10/28/networkProgram/%E7%BD%91%E7%BB%9C%E7%BC%96%E7%A8%8B4%E6%9C%AC%E5%9C%B0socket/"
+           data-tag="网络编程"
+           data-author="" >
+            <span class="post-title" title="网络编程4：本地套接字">网络编程4：本地套接字</span>
+            <span class="post-date" title="2019-10-28 10:11:10">2019/10/28</span>
+        </a>
+        
+        <a  class="网络 网络编程 "
+           href="/2019/10/27/networkProgram/%E7%BD%91%E7%BB%9C%E7%BC%96%E7%A8%8B2TCP%E5%8D%8F%E8%AE%AE%E4%BD%BF%E7%94%A8socket/"
+           data-tag="网络编程"
+           data-author="" >
+            <span class="post-title" title="网络编程2：TCP协议使用socket">网络编程2：TCP协议使用socket</span>
+            <span class="post-date" title="2019-10-27 17:59:09">2019/10/27</span>
+        </a>
+        
+        <a  class="网络 网络编程 "
+           href="/2019/10/26/networkProgram/%E7%BD%91%E7%BB%9C%E7%BC%96%E7%A8%8B1/"
+           data-tag="网络编程"
+           data-author="" >
+            <span class="post-title" title="网络编程1：基础部分">网络编程1：基础部分</span>
+            <span class="post-date" title="2019-10-26 16:54:02">2019/10/26</span>
+        </a>
+        
+        <a  class="分布式 "
+           href="/2019/09/12/distribute/01/"
+           data-tag="分布式"
+           data-author="" >
+            <span class="post-title" title="分布式系统的一致性与共识">分布式系统的一致性与共识</span>
+            <span class="post-date" title="2019-09-12 13:47:52">2019/09/12</span>
+        </a>
+        
+        <a  class="网络 HTTP "
+           href="/2019/08/05/http/030205/"
+           data-tag="HTTP"
+           data-author="" >
+            <span class="post-title" title="HTTP协议学习（五）HTTPS与安全">HTTP协议学习（五）HTTPS与安全</span>
+            <span class="post-date" title="2019-08-05 20:46:07">2019/08/05</span>
+        </a>
+        
+        <a  class="网络 HTTP "
+           href="/2019/07/20/http/030204/"
+           data-tag="HTTP"
+           data-author="" >
+            <span class="post-title" title="HTTP协议学习（四）cookie、缓存、代理机制">HTTP协议学习（四）cookie、缓存、代理机制</span>
+            <span class="post-date" title="2019-07-20 13:15:07">2019/07/20</span>
+        </a>
+        
+        <a  class="网络 HTTP "
+           href="/2019/07/10/http/030203/"
+           data-tag="HTTP"
+           data-author="" >
+            <span class="post-title" title="HTTP协议学习（三）数据传输与连接">HTTP协议学习（三）数据传输与连接</span>
+            <span class="post-date" title="2019-07-10 14:36:55">2019/07/10</span>
+        </a>
+        
+        <a  class="网络 HTTP "
+           href="/2019/07/01/http/030202/"
+           data-tag="HTTP"
+           data-author="" >
+            <span class="post-title" title="HTTP协议学习（二）基础">HTTP协议学习（二）基础</span>
+            <span class="post-date" title="2019-07-01 14:05:51">2019/07/01</span>
+        </a>
+        
+        <a  class="网络 HTTP "
+           href="/2019/06/14/http/030201/"
+           data-tag="HTTP"
+           data-author="" >
+            <span class="post-title" title="HTTP协议学习（一）概念">HTTP协议学习（一）概念</span>
+            <span class="post-date" title="2019-06-14 16:08:25">2019/06/14</span>
+        </a>
+        
+    </nav>
+</div>
+    </div>
+    <div class="hide-list">
+        <div class="semicircle">
+            <div class="brackets first"><</div>
+            <div class="brackets">&gt;</div>
+        </div>
+    </div>
+</aside>
+<div class="post">
+    <div class="pjax">
+        <article id="post-11-MySQL/1_SQL语言基本操作" class="article article-type-post" itemscope itemprop="blogPost">
+    
+        <h1 class="article-title">SQL语言基础</h1>
+    
+    <div class="article-meta">
+        
+        
+        
+        <span class="book">
+            
+                <a  data-rel="数据库">数据库</a>
+            
+        </span>
+        
+        
+        <span class="tag">
+            
+            <a class="color5">MySQL SQL</a>
+            
+        </span>
+        
+    </div>
+    <div class="article-meta">
+        
+        创建时间:<time class="date" title='更新时间: 2020-03-06 06:46:59'>2020-01-23 20:06</time>
+        
+    </div>
+    <div class="article-meta">
+        
+        
+        
+    </div>
+    
+    <div class="toc-ref">
+    
+        <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#1-SQL语言"><span class="toc-text">1. SQL语言</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#1-DDL"><span class="toc-text">1. DDL</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-1-操作数据库"><span class="toc-text">1.1 操作数据库</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#1-2-操作数据表"><span class="toc-text">1.2 操作数据表</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-DML"><span class="toc-text">2. DML</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#2-1-添加数据"><span class="toc-text">2.1 添加数据</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-2-删除数据"><span class="toc-text">2.2 删除数据</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-3-修改数据"><span class="toc-text">2.3 修改数据</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3-DQL"><span class="toc-text">3. DQL</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#3-1-查询语法"><span class="toc-text">3.1 查询语法</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-2-基础查询"><span class="toc-text">3.2 基础查询</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-3-条件查询"><span class="toc-text">3.3 条件查询</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-4-模糊查询"><span class="toc-text">3.4 模糊查询</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-5-排序查询"><span class="toc-text">3.5 排序查询</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-6-聚合函数"><span class="toc-text">3.6 聚合函数</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-7-分组查询"><span class="toc-text">3.7 分组查询</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-8-分页查询"><span class="toc-text">3.8 分页查询</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#4-DCL"><span class="toc-text">4. DCL</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#4-1-管理用户"><span class="toc-text">4.1 管理用户</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4-2-管理权限"><span class="toc-text">4.2 管理权限</span></a></li></ol></li></ol></li></ol>
+    
+<style>
+    .left-col .switch-btn,
+    .left-col .switch-area {
+        display: none;
+    }
+    .toc-level-3 i,
+    .toc-level-3 ol {
+        display: none !important;
+    }
+</style>
+</div>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p><div class='inner-toc'><h2>目录</h2><ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#1-SQL语言"><span class="toc-text">1. SQL语言</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#1-DDL"><span class="toc-text">1. DDL</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-1-操作数据库"><span class="toc-text">1.1 操作数据库</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#1-2-操作数据表"><span class="toc-text">1.2 操作数据表</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-DML"><span class="toc-text">2. DML</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#2-1-添加数据"><span class="toc-text">2.1 添加数据</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-2-删除数据"><span class="toc-text">2.2 删除数据</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-3-修改数据"><span class="toc-text">2.3 修改数据</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3-DQL"><span class="toc-text">3. DQL</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#3-1-查询语法"><span class="toc-text">3.1 查询语法</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-2-基础查询"><span class="toc-text">3.2 基础查询</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-3-条件查询"><span class="toc-text">3.3 条件查询</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-4-模糊查询"><span class="toc-text">3.4 模糊查询</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-5-排序查询"><span class="toc-text">3.5 排序查询</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-6-聚合函数"><span class="toc-text">3.6 聚合函数</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-7-分组查询"><span class="toc-text">3.7 分组查询</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-8-分页查询"><span class="toc-text">3.8 分页查询</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#4-DCL"><span class="toc-text">4. DCL</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#4-1-管理用户"><span class="toc-text">4.1 管理用户</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4-2-管理权限"><span class="toc-text">4.2 管理权限</span></a></li></ol></li></ol></li></ol></div></p>
+<h1 id="1-SQL语言"><a href="#1-SQL语言" class="headerlink" title="1. SQL语言"></a>1. SQL语言</h1><p>分类：</p>
+<ul>
+<li>DDL：操作数据库、数据表</li>
+<li>DQL：查询表中数据</li>
+<li>DML：增删改表中数据</li>
+<li>DCL：用于授权</li>
+</ul>
+<h2 id="1-DDL"><a href="#1-DDL" class="headerlink" title="1. DDL"></a>1. DDL</h2><p>用来定义数据库对象:数据库，表，列等。 关键字：create,drop, alter等。</p>
+<h3 id="1-1-操作数据库"><a href="#1-1-操作数据库" class="headerlink" title="1.1 操作数据库"></a>1.1 操作数据库</h3><ol>
+<li><p><strong>创建</strong>（Create）</p>
+<ul>
+<li><p>创建数据库：</p>
+<pre><code class="mysql">CREATE DATABASE 数据库名称;</code></pre>
+</li>
+<li><p>创建数据库，如果不存在才创建</p>
+<pre><code class="mysql">CREATE DATABASE IF NOT EXISTS 数据库名称;</code></pre>
+</li>
+<li><p>创建数据库，并指定字符集</p>
+<pre><code class="mysql">CREATE DATABASE 数据库名称 CHARACTER SET 字符集名;</code></pre>
+</li>
+<li><p>综合上面的一条语句：</p>
+<pre><code class="mysql">CREATE DATABASE IF NOT EXISTS 数据库名称 CHARACTER SET 字符集名;</code></pre>
+</li>
+</ul>
+</li>
+<li><p><strong>查询</strong>（Retrieve）</p>
+<ul>
+<li><p>查询所有数据库的名称</p>
+<pre><code class="mysql">SHOW DATABASES;</code></pre>
+</li>
+<li><p>查询某个数据库的字符集：查询某个数据库的创建语句</p>
+<pre><code class="mysql">SHOW CREATE DATABASE 数据库名称;</code></pre>
+</li>
+</ul>
+</li>
+<li><p><strong>修改</strong>（Update）</p>
+<ul>
+<li><p>修改数据库的字符集</p>
+<pre><code class="mysql">ALTER DATABASE 数据库名称 CHARACTER SET 字符集名称;</code></pre>
+</li>
+</ul>
+</li>
+<li><p><strong>删除</strong>（Delete）</p>
+<ul>
+<li><p>删除数据库</p>
+<pre><code class="mysql">DROP DATABASE 数据库名称;</code></pre>
+</li>
+<li><p>判断数据库是否存在，如果存在则将其删除</p>
+<pre><code class="mysql">DROP DATABASE IF EXISTS 数据库名称;</code></pre>
+</li>
+</ul>
+</li>
+<li><p><strong>使用</strong></p>
+<ul>
+<li><p>查询当前正在使用的数据库名称</p>
+<pre><code class="mysql">SELECT DATABASE();</code></pre>
+</li>
+<li><p>使用当前使用的数据库</p>
+<pre><code class="mysql">USE 数据库名称;</code></pre>
+</li>
+</ul>
+</li>
+</ol>
+<h3 id="1-2-操作数据表"><a href="#1-2-操作数据表" class="headerlink" title="1.2 操作数据表"></a>1.2 操作数据表</h3><ol>
+<li><p><strong>创建</strong>（Create）</p>
+<ul>
+<li><p>语法：</p>
+<pre><code class="sql">CREATE TABLE 表名(
+    列名1 数据类型1,
+    列名2 数据类型2,
+    列名3 数据类型3,
+    ...
+);
+-- 最后一列不需要加逗号就可以了</code></pre>
+</li>
+<li><p>数据类型</p>
+<p>不同数据库的数据类型描述语言是不太相同的，以MYSQL为例，分为以下这些：</p>
+<ol>
+<li><p>Text类型</p>
+<table>
+<thead>
+<tr>
+<th>数据类型</th>
+<th>描述</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>CHAR(size)</td>
+<td>保存固定长度的字符串（可包含字母、数字以及特殊字符）。在括号中指定字符串的长度。最多 255 个字符。</td>
+</tr>
+<tr>
+<td>VARCHAR(size)</td>
+<td>保存可变长度的字符串（可包含字母、数字以及特殊字符）。在括号中指定字符串的最大长度。最多 255 个字符。如果值的长度大于 255，则被转换为 TEXT 类型。</td>
+</tr>
+<tr>
+<td>TINYTEXT</td>
+<td>存放最大长度为 255 个字符的字符串。</td>
+</tr>
+<tr>
+<td>TEXT</td>
+<td>存放最大长度为 65,535 个字符的字符串。</td>
+</tr>
+<tr>
+<td>BLOB</td>
+<td>用于 BLOBs (Binary Large OBjects)。存放最多 65,535 字节的数据。</td>
+</tr>
+<tr>
+<td>MEDIUMTEXT</td>
+<td>存放最大长度为 16,777,215 个字符的字符串。</td>
+</tr>
+<tr>
+<td>MEDIUMBLOB</td>
+<td>用于 BLOBs (Binary Large OBjects)。存放最多 16,777,215 字节的数据。</td>
+</tr>
+<tr>
+<td>LONGTEXT</td>
+<td>存放最大长度为 4,294,967,295 个字符的字符串。</td>
+</tr>
+<tr>
+<td>LONGBLOB</td>
+<td>用于 BLOBs (Binary Large OBjects)。存放最多 4,294,967,295 字节的数据。</td>
+</tr>
+<tr>
+<td>ENUM(x,y,z,etc.)</td>
+<td>允许你输入可能值的列表。可以在 ENUM 列表中列出最大 65535 个值。如果列表中不存在插入的值，则插入空值。注释：这些值是按照你输入的顺序存储的。可以按照此格式输入可能的值：ENUM(‘X’,’Y’,’Z’)</td>
+</tr>
+<tr>
+<td>SET</td>
+<td>与 ENUM 类似，SET 最多只能包含 64 个列表项，不过 SET 可存储一个以上的值。</td>
+</tr>
+</tbody></table>
+</li>
+</ol>
+</li>
+</ul>
+</li>
+</ol>
+<pre><code> 2. Number类型
+
+    | 数据类型        | 说明                                                         |
+    | --------------- | ------------------------------------------------------------ |
+    | TINYINT(size)   | -128 到 127 常规。0 到 255 无符号*。在括号中规定最大位数。   |
+    | SMALLINT(size)  | -32768 到 32767 常规。0 到 65535 无符号*。在括号中规定最大位数。 |
+    | MEDIUMINT(size) | -8388608 到 8388607 普通。0 to 16777215 无符号*。在括号中规定最大位数。 |
+    | INT(size)       | -2147483648 到 2147483647 常规。0 到 4294967295 无符号*。在括号中规定最大位数。 |
+    | BIGINT(size)    | -9223372036854775808 到 9223372036854775807 常规。0 到 18446744073709551615 无符号*。在括号中规定最大位数。 |
+    | FLOAT(size,d)   | 带有浮动小数点的小数字。在括号中规定最大位数。在 d 参数中规定小数点右侧的最大位数。 |
+    | DOUBLE(size,d)  | 带有浮动小数点的大数字。在括号中规定最大位数。在 d 参数中规定小数点右侧的最大位数。 |
+    | DECIMAL(size,d) | 作为字符串存储的 DOUBLE 类型，允许固定的小数点。             |
+
+
+
+ 3. Date类型
+
+    | 数据类型    | 说明                                                         |
+    | ----------- | ------------------------------------------------------------ |
+    | DATE()      | 日期。格式：YYYY-MM-DD，支持的范围是从 &#39;1000-01-01&#39; 到 &#39;9999-12-31&#39; |
+    | DATETIME()  | *日期和时间的组合。格式：YYYY-MM-DD HH:MM:SS，支持的范围是从 &#39;1000-01-01 00:00:00&#39; 到 &#39;9999-12-31 23:59:59&#39; |
+    | TIMESTAMP() | *时间戳。TIMESTAMP 值使用 Unix 纪元(&#39;1970-01-01 00:00:00&#39; UTC) 至今的描述来存储。格式：YYYY-MM-DD HH:MM:SS，支持的范围是从 &#39;1970-01-01 00:00:01&#39; UTC 到 &#39;2038-01-09 03:14:07&#39; UTC |
+    | TIME()      | 时间。格式：HH:MM:SS 注释：支持的范围是从 &#39;-838:59:59&#39; 到 &#39;838:59:59&#39; |
+    | YEAR()      | 2 位或 4 位格式的年。4 位格式所允许的值：1901 到 2155。2 位格式所允许的值：70 到 69，表示从 1970 到 2069。 |
+
+
+
+ - 例子：
+
+   ```mysql
+   CREATE TABLE player  (
+       -- player_id int(11) NOT NULL AUTO_INCREMENT,
+       player_name varchar(255) NOT NULL,
+       create_time date,
+       player_score double(5,3)
+   );
+   ```
+
+   数据类型中 有下面这些关键字，可以解释如下：
+
+   - `int(11)`：代表整数类型，显示长度为 11 位，括号中的参数 11 代表的是最大有效显示长度，与类型包含的数值范围大小无关。
+   - `varchar(255)`：代表的是最大长度为 255 的可变字符串类型。
+   - `date`：如果不设置或者设置为null，则默认使用当前的时间。
+   - `double(5,3)`：表示double类型数据一共5位，小数3位。
+   - `NOT NULL`：表明整个字段不能是空值，是一种数据约束。
+   - `AUTO_INCREMENT`：代表主键自动增长。</code></pre><ol start="2">
+<li><p><strong>查询</strong>（Retrieve）</p>
+<ul>
+<li><p>查询某个数据库中所有表的名称</p>
+<pre><code class="mysql">SHOW TABLES;</code></pre>
+</li>
+<li><p>查询表结构，也就是查看表中的详情</p>
+<pre><code class="sql">DESC 表名;</code></pre>
+</li>
+</ul>
+</li>
+<li><p><strong>修改</strong>（Update）</p>
+<ul>
+<li><p>修改表名</p>
+<pre><code class="mysql">ALTER TABLE 旧表名 RENAME TO 新表名;</code></pre>
+</li>
+<li><p>修改表的字符集</p>
+<pre><code class="mysql">ALTER TABLE 表名 CHARACTER SET UTF8;</code></pre>
+</li>
+<li><p>添加列</p>
+<pre><code class="mysql">ALTER TABLE 表名 ADD 列名 数据类型;</code></pre>
+</li>
+<li><p>修改列的名称和类型</p>
+<pre><code class="mysql">ALTER TABLE 表名 CHANGE 旧列名 新列名 新列类型; -- 列名称和数据类型同时修改
+ALTER TABLE 表名 MODIFY 旧列名 新列类型; -- 只修改列的数据类型，不修改列名称</code></pre>
+</li>
+</ul>
+</li>
+<li><p><strong>删除</strong>（Delete）</p>
+<ul>
+<li><p>删除列</p>
+<pre><code class="mysql">ALTER TABLE 表名 DROP 列名;</code></pre>
+</li>
+</ul>
+</li>
+</ol>
+<h2 id="2-DML"><a href="#2-DML" class="headerlink" title="2. DML"></a>2. DML</h2><h3 id="2-1-添加数据"><a href="#2-1-添加数据" class="headerlink" title="2.1 添加数据"></a>2.1 添加数据</h3><pre><code class="mysql">INSERT INTO 表名(列名1, 列名2, ...列名n) VALUES(值1, 值2, ...值n);
+/*
+1. 列名与值需要一一对应
+2. 如果没有指定列名，则默认表示所有列，并且需要在VALUES里面把所有列的值写进去
+3. 如果不给值，则写为NULL
+4. 除了数字类型之外，其他类型需要使用引号来引起来，并且单双引号都可以
+*/</code></pre>
+<h3 id="2-2-删除数据"><a href="#2-2-删除数据" class="headerlink" title="2.2 删除数据"></a>2.2 删除数据</h3><pre><code class="mysql">DELETE FROM 表名 [WHERE 条件]; -- 当条件满足时，就从指定表中删除 其中[]表示里面内容是可选项
+DELETE FROM 表名; -- 这种方式不管有多少条记录，就会执行多少次删除操作
+TRUNCATE TABLE 表名; -- 删除表，并且建立一个一模一样的空表，与上面不同在于会创建空表，并且只会执行两次语句，也就是drop 和 create，因此效率会更高</code></pre>
+<h3 id="2-3-修改数据"><a href="#2-3-修改数据" class="headerlink" title="2.3 修改数据"></a>2.3 修改数据</h3><pre><code class="mysql">UPDATE 表名 SET 列名1 = 值1, 列名2 = 值2, ... [WHERE 条件];
+-- 删除满足指定条件的项的数据
+-- 注意：如果不加任何条件，则会将表中所有记录全部都修改掉，因此是非常危险的</code></pre>
+<h2 id="3-DQL"><a href="#3-DQL" class="headerlink" title="3. DQL"></a>3. DQL</h2><p>用来查询数据库中表的记录(数据)。 关键字:select, where等</p>
+<h3 id="3-1-查询语法"><a href="#3-1-查询语法" class="headerlink" title="3.1 查询语法"></a>3.1 查询语法</h3><pre><code class="mysql">SELECT         -- 字段列表
+FROM         -- 表名列表
+WHERE        -- 条件列表
+GROUP BY    -- 分组字段
+HAVING        -- 分组之后的条件
+ORDER BY    -- 排序
+LIMIT        -- 分页
+-- 所谓列表就是可以写多个</code></pre>
+<h3 id="3-2-基础查询"><a href="#3-2-基础查询" class="headerlink" title="3.2 基础查询"></a>3.2 基础查询</h3><p>下面的查询内容都基于一个数据库，该数据库的定义如下：</p>
+<pre><code class="mysql">CREATE TABLE student (
+    id int, -- 编号
+    name varchar(20), -- 姓名
+    age int, -- 年龄
+    sex varchar(5), -- 性别
+    address varchar(100), -- 地址
+    math int, -- 数学
+    english int -- 英语
+);
+
+INSERT INTO student(id,NAME,age,sex,address,math,english) VALUES (1,&#39;马云&#39;,55,&#39;男&#39;,&#39;杭州&#39;,66,78),(2,&#39;马化腾&#39;,45,&#39;女&#39;,&#39;深圳&#39;,98,87),(3,&#39;马景涛&#39;,55,&#39;男&#39;,&#39;香港&#39;,56,77),(4,&#39;柳岩&#39;,20,&#39;女&#39;,&#39;湖南&#39;,76,65),(5,&#39;柳青&#39;,20,&#39;男&#39;,&#39;湖南&#39;,86,NULL),(6,&#39;刘德华&#39;,57,&#39;男&#39;,&#39;香港&#39;,99,99),(7,&#39;马德&#39;,22,&#39;女&#39;,&#39;香港&#39;,99,99),(8,&#39;德玛西亚&#39;,18,&#39;男&#39;,&#39;南京&#39;,56,65);</code></pre>
+<ol>
+<li><p><strong>多个字段的查询</strong></p>
+<p>注意：如果查询所有字段，则可以使用 <code>*</code> 来代替字段的列表。</p>
+<pre><code class="mysql">SELECT
+    name,
+    age
+FROM
+    student;</code></pre>
+</li>
+<li><p><strong>去除重复</strong></p>
+<p>去除重复仅需要在SELECT后面加上DISTINCT。注意，如果去重，需要两条查询出来的记录完全一样（而不是原始记录一样）</p>
+<pre><code class="mysql">SELECT
+DISTINCT
+    name,
+    age
+FROM
+    student;</code></pre>
+</li>
+<li><p><strong>计算列</strong></p>
+<p>相当于直接定义出一个新列，可以对其进行操作，但是，如果两列中其中之一为NULL，则结果就为NULL</p>
+<pre><code class="mysql">SELECT
+    name,
+    math,
+    english,
+    math + english
+FROM
+    student;</code></pre>
+<p>结果如下：</p>
+<img src="/2020/01/23/11-MySQL/1_SQL%E8%AF%AD%E8%A8%80%E5%9F%BA%E6%9C%AC%E6%93%8D%E4%BD%9C/image-20200120164721429.png" alt="image-20200120164721429" style="zoom:80%;">
+
+<p>但是，正常使用的时候，如果english为NULL，想要将其按照0来处理，则需要使用一个IFNULL来操作，比如下面：</p>
+<pre><code class="mysql">SELECT
+    name,
+    math,
+    english,
+    math + IFNULL(english, 0)
+FROM
+    student;</code></pre>
+<img src="/2020/01/23/11-MySQL/1_SQL%E8%AF%AD%E8%A8%80%E5%9F%BA%E6%9C%AC%E6%93%8D%E4%BD%9C/image-20200120164942272.png" alt="image-20200120164942272" style="zoom:80%;">
+
+<p>就成了想要的形式了。</p>
+</li>
+<li><p><strong>起别名</strong></p>
+<p>上面那个，因为math + ifnull(english, 0)太长了，而且不便于理解，因此可以给他起一个别名，用AS就可以了。甚至说AS也可以不用，只需要加空格就行了。</p>
+<pre><code class="mysql">SELECT
+    name 姓名,
+    math 数学,
+    english 英语,
+    math + IFNULL(english, 0) AS 总分
+FROM
+    student;</code></pre>
+<img src="/2020/01/23/11-MySQL/1_SQL%E8%AF%AD%E8%A8%80%E5%9F%BA%E6%9C%AC%E6%93%8D%E4%BD%9C/image-20200120165307118.png" alt="image-20200120165307118" style="zoom:80%;">
+
+</li>
+</ol>
+<h3 id="3-3-条件查询"><a href="#3-3-条件查询" class="headerlink" title="3.3 条件查询"></a>3.3 条件查询</h3><ul>
+<li><p>where子句后跟条件</p>
+</li>
+<li><p>运算符</p>
+<ul>
+<li><p><code>&gt; &lt; &lt;= &gt;= = != &lt;&gt;</code>，其中<code>&lt;&gt;</code>表示不等于，在mysql中可以使用==，但是没有!=这个运算符</p>
+<pre><code class="mysql">SELECT * FROM student WHERE age &gt; 20;        -- 大于
+SELECT * FROM student WHERE age &lt; 20;        -- 小于
+SELECT * FROM student WHERE age = 20;        -- 等于，注意等于是一个等号，不是两个
+SELECT * FROM student WHERE age != 20;        -- 不等于
+SELECT * FROM student WHERE age &lt;&gt; 20;        -- 不等于</code></pre>
+</li>
+<li><p>区间条件</p>
+<p>“<strong>与</strong>” 关系</p>
+<pre><code class="mysql">SELECT * FROM student WHERE age &gt;= 20 &amp;&amp; age &lt;= 30;
+SELECT * FROM student WHERE age &gt;= 20 AND age &lt;= 30;
+SELECT * FROM student WHERE age BETWEEN 20 AND 30;        -- 包含左右区间</code></pre>
+<p>“<strong>或</strong>” 关系</p>
+<pre><code class="mysql">SELECT * FROM student WHERE age = 20 || age = 23;
+SELECT * FROM student WHERE age = 20 OR age = 23 OR age = 17;
+SELECT * FROM student WHERE age IN (17, 20, 23);</code></pre>
+<p>“<strong>NULL</strong>” 关系</p>
+<pre><code class="mysql">SELECT * FROM student WHERE english IS NULL;    -- 查询为空的记录，注意不能使用=或者!=
+SELECT * FROM student WHERE english IS NOT NULL;    -- 查询不为空的记录</code></pre>
+</li>
+</ul>
+</li>
+</ul>
+<h3 id="3-4-模糊查询"><a href="#3-4-模糊查询" class="headerlink" title="3.4 模糊查询"></a>3.4 模糊查询</h3><p>模糊查询其实也是条件查询的一种，查询的结果并不需要与查询条件完全相同，需要理解的是占位符：</p>
+<ul>
+<li><code>_</code>：匹配1个任意字符</li>
+<li><code>%</code>：匹配0个或多个任意字符</li>
+</ul>
+<pre><code class="mysql">SELECT * FROM student WHERE name LIKE &#39;马%&#39;;        -- 查询第一个字是马的人
+SELECT * FROM student WHERE name LIKE &#39;_化%&#39;;    -- 查询第二个字是化的人
+SELECT * FROM student WHERE name LIKE &#39;___&#39;;     -- 查询name是三个字的人
+SELECT * FROM student WHERE name LIKE &#39;%腾%&#39;;    -- 查询包含腾的人，因为%可以匹配任意个字符</code></pre>
+<img src="/2020/01/23/11-MySQL/1_SQL%E8%AF%AD%E8%A8%80%E5%9F%BA%E6%9C%AC%E6%93%8D%E4%BD%9C/image-20200125131308376.png" alt="image-20200125131308376" style="zoom:80%;">
+
+<h3 id="3-5-排序查询"><a href="#3-5-排序查询" class="headerlink" title="3.5 排序查询"></a>3.5 排序查询</h3><ul>
+<li><p>语法：</p>
+<pre><code class="mysql">ORDER BY 排序字段1 排序方式1, 排序字段2 排序方式2, ...; 
+-- 注意，如果有多个排序条件，只有前面字段排序结果相同的时候，后面的排序字段才会被判断</code></pre>
+<p>排序方式：</p>
+<ol>
+<li><code>ASC</code>：升序，默认排序方式，如果不指定则为升序</li>
+<li><code>DESC</code>：降序</li>
+</ol>
+<pre><code class="mysql">SELECT * FROM student ORDER BY math ;        -- 如果不写排序方式，则默认为从小到大
+SELECT * FROM student ORDER BY math DESC;    -- 按照降序排列</code></pre>
+</li>
+<li><p>例子</p>
+<p>按照数学成绩排名，如果数学成绩一样，则按照英语成绩排名</p>
+<pre><code class="mysql">SELECT * FROM student ORDER BY math ASC, english ASC;</code></pre>
+<img src="/2020/01/23/11-MySQL/1_SQL%E8%AF%AD%E8%A8%80%E5%9F%BA%E6%9C%AC%E6%93%8D%E4%BD%9C/image-20200125132813440.png" alt="image-20200125132813440" style="zoom:80%;">
+
+</li>
+</ul>
+<h3 id="3-6-聚合函数"><a href="#3-6-聚合函数" class="headerlink" title="3.6 聚合函数"></a>3.6 聚合函数</h3><p>将一列数据作为一个整体，进行<strong>纵向计算</strong>，类似于求成绩的平均分等操作。</p>
+<ul>
+<li><p>语法</p>
+<p><code>COUNT</code>：计算个数</p>
+<p><code>MAX</code>：计算最大值</p>
+<p><code>MIN</code>：计算最小值</p>
+<p><code>SUM</code>：求和</p>
+<p><code>AVG</code>：计算平均值</p>
+<p><strong>注意</strong>：具体函数的计算会排除NULL，即如果遇到NULL的数据将不会统计。</p>
+<pre><code class="mysql">SELECT COUNT(name) FROM student; -- 输出为8，也就表示name中有8条记录
+-- 如果需要统计NULL，有两种方法：
+SELECT COUNT(IFNULL(english, 0)) FROM student; -- 将NULL转为0
+-- 选择不包含空的列进行计算，一般为主键
+
+-- 还有一种方式，不太常用
+SELECT COUNT(*) FROM student; -- 使用*表示只要有一个列不为空，就都统计上，但是一般不使用
+
+-- 注意以下的这几种操作都会排除NULL的记录，只统计不为NULL的数据
+SELECT MAX(math) FROM student;
+SELECT MIN(math) FROM student;
+SELECT SUM(math) FROM student;
+SELECT AVG(math) FROM student;</code></pre>
+</li>
+</ul>
+<h3 id="3-7-分组查询"><a href="#3-7-分组查询" class="headerlink" title="3.7 分组查询"></a>3.7 分组查询</h3><p>也就是将整个表分成多个组，来统计具有相同特征的某一类数据，将他们当做一个整体。</p>
+<ul>
+<li><p>语法</p>
+<p>使用<code>GROUP BY</code>关键字来操作</p>
+<p><strong>注意</strong>：</p>
+<ol>
+<li><p>分组之后，查询的字段为：分组字段、聚合函数。</p>
+<p>不可以写其他的字段。比如下面图中，红圈中的内容是分组字段，紫圈中的内容是聚合函数。</p>
+<img src="/2020/01/23/11-MySQL/1_SQL%E8%AF%AD%E8%A8%80%E5%9F%BA%E6%9C%AC%E6%93%8D%E4%BD%9C/image-20200125134358383.png" alt="image-20200125134358383" style="zoom:80%;">
+</li>
+<li><p><code>WHERE</code> 与 <code>HAVING</code> 的区别：</p>
+<p><code>WHERE</code>：在分组之前限定，如果不满足条件，则不参与分组，并且 <code>WHERE</code> 后面不能跟聚合函数</p>
+<p><code>HAVING</code>：在分组之后进行限定，如果不满足结果，则不会被查询出来，<code>HAVING</code> 后面可以跟聚合函数</p>
+</li>
+</ol>
+</li>
+<li><p>例子</p>
+<p>按照性别进行分组，分别查询男女的平均分</p>
+</li>
+</ul>
+<pre><code class="mysql">SELECT sex, AVG(math) FROM student GROUP BY sex;    
+-- 查询男、女的平均分
+SELECT sex, AVG(math), COUNT(id) FROM student GROUP BY sex; 
+-- 包含主键
+SELECT sex, AVG(math), COUNT(id) FROM student WHERE math &gt; 70 GROUP BY sex;
+-- 低于70分的不参与分组
+SELECT sex, AVG(math), COUNT(id) 人数 FROM student WHERE math &gt; 70 GROUP BY sex HAVING COUNT(id) &gt; 2;
+-- 低于70分的不参与分组，且分组之后的人数要大于2个人，并且将COUNT(id)改成人数</code></pre>
+<h3 id="3-8-分页查询"><a href="#3-8-分页查询" class="headerlink" title="3.8 分页查询"></a>3.8 分页查询</h3><ul>
+<li><p>语法：</p>
+<pre><code class="mysql">LIMIT 开始的索引, 每页查询的条数;</code></pre>
+<ol>
+<li><p>从客户端查询的方式一般都是页码和页大小，因此需要计算索引。</p>
+<p>计算公式：<code>索引 = (当前的页码 - 1) * 每页显示的条数;</code></p>
+</li>
+<li><p>如果没有那么多数据，则有多少就显示多少</p>
+</li>
+</ol>
+</li>
+<li><p>例子：</p>
+<pre><code class="mysql"> SELECT * FROM student ORDER BY math ASC, english ASC LIMIT 0, 5;
+ -- 表示从第0条开始，往后数5条</code></pre>
+<p>limit只能在mysql中使用（即limit是一个mysql的“方言”），在其他的数据库中不能使用，需要使用其他的关键词才可以进行分页查询操作</p>
+</li>
+</ul>
+<h2 id="4-DCL"><a href="#4-DCL" class="headerlink" title="4. DCL"></a>4. DCL</h2><h3 id="4-1-管理用户"><a href="#4-1-管理用户" class="headerlink" title="4.1 管理用户"></a>4.1 管理用户</h3><ol>
+<li><p><strong>添加用户</strong></p>
+<p>语法：</p>
+<pre><code class="mysql">CREATE USER &#39;用户名&#39;@&#39;主机名&#39; IDENTIFIED BY &#39;密码&#39;;
+
+-- 这里的主机名如果是localhost表示只能在本机使用，如果是%通配符，则表示可以在任意电脑上使用
+CREATE USER &#39;zhangsan&#39;@&#39;%&#39; IDENTIFIED BY &#39;root&#39;;</code></pre>
+<img src="/2020/01/23/11-MySQL/1_SQL%E8%AF%AD%E8%A8%80%E5%9F%BA%E6%9C%AC%E6%93%8D%E4%BD%9C/image-20200126222210956.png" alt="image-20200126222210956" style="zoom:80%;">
+</li>
+<li><p><strong>删除用户</strong></p>
+<p>语法：</p>
+<pre><code class="mysql">DROP USER &#39;用户名&#39;@&#39;主机名&#39;;</code></pre>
+</li>
+<li><p><strong>修改用户密码</strong></p>
+<p>修改一般用户的密码：</p>
+<pre><code class="mysql">UPDATE USER SET PASSWORD = PASSWORD(&#39;新密码&#39;) WHERE USER = &#39;用户名&#39;;
+
+SET PASSWORD FOR &#39;用户名&#39;@&#39;主机名&#39; = PASSWORD(&#39;新密码&#39;);
+-- 下面的这个是DCL特有的方式</code></pre>
+<p>修改root用户的密码：</p>
+<p>如果忘记了root用户的密码，</p>
+<ul>
+<li><p>先停掉mysql服务，在cmd中执行：</p>
+<pre><code>net stop mysql # 需要管理员权限</code></pre></li>
+<li><p>使用无验证方式启动mysql服务</p>
+<pre><code>mysqld --skip-grant-tables</code></pre><p>然后打开一个新的cmd窗口，直接输入mysql就可以启动了</p>
+</li>
+<li><p>使用mysql语句修改密码</p>
+<pre><code class="mysql">USE mysql;
+UPDATE USER SET PASSWORD = PASSWORD(&#39;新密码&#39;) WHERE USER = &#39;root&#39;;</code></pre>
+</li>
+<li><p>关闭mysqld进程</p>
+</li>
+<li><p>启动mysql服务</p>
+</li>
+<li><p>使用新密码登录</p>
+</li>
+</ul>
+</li>
+<li><p><strong>查询用户</strong></p>
+<ul>
+<li><p>切换到mysql数据库</p>
+<pre><code class="mysql">USE mysql;</code></pre>
+</li>
+<li><p>查询user表</p>
+<pre><code class="mysql">SELECT * FROM USER;</code></pre>
+</li>
+</ul>
+</li>
+</ol>
+<h3 id="4-2-管理权限"><a href="#4-2-管理权限" class="headerlink" title="4.2 管理权限"></a>4.2 管理权限</h3><p>之前在查询用户的时候，每个用户后面都有很多的权限，比如下图中所示的内容，因此，并不是每一个用户都有所有的权限，这些权限是可以授予或撤销的。</p>
+<ol>
+<li><p><strong>查询权限</strong></p>
+<pre><code class="mysql">SHOW GRANTS FOR &#39;用户名&#39;@&#39;主机名&#39;;</code></pre>
+</li>
+<li><p><strong>授予权限</strong></p>
+<pre><code class="mysql">GRANT 权限列表 ON 数据库名.表名 TO &#39;用户名&#39;@&#39;主机名&#39;;
+
+-- 例如：给李四查询的权限
+GRANT SELECT ON db3.account TO &#39;lisi&#39;@&#39;%&#39;;</code></pre>
+<p>只有授权过的表才可以被看到，如果没有进行授权，则甚至都无法使用SHOW展示出来，更不必说其他的操作。</p>
+<p>授予某个用户在所有数据库的所有表上的所有权限</p>
+<pre><code class="mysql">GRANT ALL *.* TO &#39;用户名&#39;@&#39;主机名&#39;;
+-- 所有权限的通配符为ALL
+-- 所有库和表的通配符为*</code></pre>
+</li>
+<li><p><strong>撤销权限</strong></p>
+<pre><code class="mysql">REVOKE 权限列表 ON 数据库名.表名 FROM &#39;用户名&#39;@&#39;主机名&#39;;
+
+-- 例如，撤销李四在db3的account表上面的更新权限
+REVOKE UPDATE ON db3.account FROM &#39;lisi&#39;@&#39;%&#39;;</code></pre>
+</li>
+</ol>
+
+      
+       
+    </div>
+</article>
+
+
+
+
+
+
+
+    
+
+
+
+
+    </div>
+    <div class="copyright">
+        <p class="footer-entry">©2019-2020 POWDER SNOW</p>
+
+    </div>
+    <div class="full-toc">
+        <button class="full"><span class="min "></span></button>
+<button class="post-toc-menu"><span class="post-toc-menu-icons"></span></button>
+<div class="post-toc"><span class="post-toc-title">目录</span>
+    <div class="post-toc-content">
+
+    </div>
+</div>
+<a class="" id="rocket" ></a>
+
+    </div>
+</div>
+<div class="acParent"></div>
+
+</body>
+<script src="/js/jquery.pjax.js?v=1.0.1" ></script>
+
+<script src="/js/script.js?v=1.0.1" ></script>
+<script>
+    var img_resize = 'default';
+    /*作者、标签的自动补全*/
+    $(function () {
+        $('.search').AutoComplete({
+            'data': ['#HTTP','#protobuf','#MySQL SQL','#Spring','#java','#QT','#区块链','#分布式','#大数据','#前端','#MyBatis','#SpringBoot','#网络编程','#Redis','#多线程','#数据库',],
+            'itemHeight': 20,
+            'width': 418
+        }).AutoComplete('show');
+    })
+    function initArticle() {
+        /*渲染对应的表格样式*/
+        
+            $(".post .pjax table").addClass("green_title");
+        
+
+        /*渲染打赏样式*/
+        
+
+        /*高亮代码块行号*/
+        
+
+        /*访问数量*/
+        
+
+        /*代码高亮，行号对齐*/
+        $('.pre-numbering').css('line-height',$('.has-numbering').css('line-height'));
+
+        
+        
+    }
+
+    /*打赏页面隐藏与展示*/
+    
+
+</script>
+
+<!--加入行号的高亮代码块样式-->
+
+<!--自定义样式设置-->
+<style>
+    
+    
+    .nav {
+        width: 544px;
+    }
+    .nav.fullscreen {
+        margin-left: -544px;
+    }
+    .nav-left {
+        width: 122px;
+    }
+    
+    
+    @media screen and (max-width: 1468px) {
+        .nav {
+            width: 492px;
+        }
+        .nav.fullscreen {
+            margin-left: -492px;
+        }
+        .nav-left {
+            width: 100px;
+        }
+    }
+    
+    
+    @media screen and (max-width: 1024px) {
+        .nav {
+            width: 492px;
+            margin-left: -492px
+        }
+        .nav.fullscreen {
+            margin-left: 0;
+        }
+        .nav .hide-list.fullscreen {
+            left: 492px
+        }
+    }
+    
+    @media screen and (max-width: 426px) {
+        .nav {
+            width: 100%;
+        }
+        .nav-left {
+            width: 100%;
+        }
+    }
+    
+    
+    .nav-right .title-list nav a .post-title, .nav-right .title-list #local-search-result a .post-title {
+        color: #383636;
+    }
+    
+    
+    .nav-right .title-list nav a .post-date, .nav-right .title-list #local-search-result a .post-date {
+        color: #5e5e5f;
+    }
+    
+    
+    .nav-right nav a.hover, #local-search-result a.hover{
+        background-color: #fbf4a8;
+    }
+    
+    
+
+    /*列表样式*/
+    
+    .post .pjax article .article-entry>ol, .post .pjax article .article-entry>ul, .post .pjax article>ol, .post .pjax article>ul{
+        border: #e2dede solid 1px;
+        border-radius: 10px;
+        padding: 10px 32px 10px 56px;
+    }
+    .post .pjax article .article-entry li>ol, .post .pjax article .article-entry li>ul,.post .pjax article li>ol, .post .pjax article li>ul{
+        padding-top: 5px;
+        padding-bottom: 5px;
+    }
+    .post .pjax article .article-entry>ol>li, .post .pjax article .article-entry>ul>li,.post .pjax article>ol>li, .post .pjax article>ul>li{
+        margin-bottom: auto;
+        margin-left: auto;
+    }
+    .post .pjax article .article-entry li>ol>li, .post .pjax article .article-entry li>ul>li,.post .pjax article li>ol>li, .post .pjax article li>ul>li{
+        margin-bottom: auto;
+        margin-left: auto;
+    }
+    
+
+    /* 背景图样式 */
+    
+    .post {
+        background: url(/img/bck.jpg);
+    }
+    
+    
+    .post.index {
+        background: url(/img/background.jpg);
+    }
+    
+
+
+    /*引用块样式*/
+    
+
+    /*文章列表背景图*/
+    
+    .nav-right:before {
+        content: ' ';
+        display: block;
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        opacity: 0.3;
+        background: url("/img/123.jpg");
+        background-repeat: no-repeat;
+        background-position: 50% 0;
+        -ms-background-size: cover;
+        -o-background-size: cover;
+        -moz-background-size: cover;
+        -webkit-background-size: cover;
+        background-size: cover;
+    }
+    
+
+    
+</style>
+
+
+
+
+
+
+
+</html>

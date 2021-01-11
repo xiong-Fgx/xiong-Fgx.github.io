@@ -1,0 +1,1557 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>HTTP协议学习（四）cookie、缓存、代理机制 | POWDER SNOW</title>
+  <meta name="keywords" content=" HTTP ">
+  <meta name="description" content="HTTP协议学习（四）cookie、缓存、代理机制 | POWDER SNOW">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<meta property="og:type" content="website">
+<meta property="og:title" content="categories">
+<meta property="og:url" content="http://yoursite.com/categories/index.html">
+<meta property="og:site_name" content="POWDER SNOW">
+<meta property="article:published_time" content="2018-03-02T04:33:16.000Z">
+<meta property="article:modified_time" content="2020-03-05T13:28:59.839Z">
+<meta property="article:author" content="冯冠雄">
+<meta name="twitter:card" content="summary">
+
+
+<link rel="icon" href="/img/avatar.jpg">
+
+<link href="/css/style.css?v=1.0.1" rel="stylesheet">
+
+<link href="/css/hl_theme/atom-light.css?v=1.0.1" rel="stylesheet">
+
+<link href="//cdn.bootcss.com/animate.css/3.5.2/animate.min.css" rel="stylesheet">
+<link href="//cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+
+<script src="//cdn.bootcss.com/jquery/2.2.4/jquery.min.js"></script>
+<script src="/js/jquery.autocomplete.min.js?v=1.0.1" ></script>
+
+<script src="//cdn.bootcss.com/highlight.js/9.12.0/highlight.min.js"></script>
+<script>
+    hljs.initHighlightingOnLoad();
+</script>
+
+<script src="//cdn.bootcss.com/nprogress/0.2.0/nprogress.min.js"></script>
+
+
+
+<script src="//cdn.bootcss.com/jquery-cookie/1.4.1/jquery.cookie.min.js" ></script>
+
+<script src="/js/iconfont.js?v=1.0.1" ></script>
+
+<meta name="generator" content="Hexo 4.2.0"></head>
+<div style="display: none">
+  <input class="theme_disqus_on" value="false">
+  <input class="theme_preload_comment" value="false">
+  <input class="theme_blog_path" value="">
+</div>
+
+<body>
+<aside class="nav">
+    <div class="nav-left">
+        <a href="/" class="avatar_target">
+    <img class="avatar" src="/img/avatar.jpg" />
+</a>
+<div class="author">
+    <span>冯冠雄</span>
+</div>
+
+<div class="icon">
+    
+        
+        <a title="github" href="https://github.com/xiong-Fgx" target="_blank">
+            
+                <svg class="iconfont-svg" aria-hidden="true">
+                    <use xlink:href="#icon-github"></use>
+                </svg>
+            
+        </a>
+        
+    
+        
+        <a title="linkedin" href="https://www.linkedin.com/in/guanxiong-feng-8b6aa8179" target="_blank">
+            
+                <svg class="iconfont-svg" aria-hidden="true">
+                    <use xlink:href="#icon-linkedin"></use>
+                </svg>
+            
+        </a>
+        
+    
+        
+        <a title="email" href="mailto:guanxiongf@gmail.com" target="_blank">
+            
+                <svg class="iconfont-svg" aria-hidden="true">
+                    <use xlink:href="#icon-email"></use>
+                </svg>
+            
+        </a>
+        
+    
+</div>
+
+
+
+
+<ul>
+    <li><div class="all active">全部文章</div></li>
+    
+        
+            
+            <li><div data-rel="网络"><i class="fold iconfont icon-right"></i>网络</div>
+                
+                    <ul class="sub hide">
+                        
+                        <li><div data-rel="HTTP">HTTP</div>
+                            
+                        </li>
+                            
+                        <li><div data-rel="protobuf">protobuf</div>
+                            
+                        </li>
+                            
+                        <li><div data-rel="网络编程">网络编程</div>
+                            
+                        </li>
+                            
+                    </ul>
+                
+            </li>
+            
+        
+    
+        
+            
+            <li><div data-rel="数据库">数据库</div>
+                
+            </li>
+            
+        
+    
+        
+            
+        
+    
+        
+            
+            <li><div data-rel="SSM"><i class="fold iconfont icon-right"></i>SSM</div>
+                
+                    <ul class="sub hide">
+                        
+                        <li><div data-rel="SSM整合">SSM整合</div>
+                            
+                        </li>
+                            
+                        <li><div data-rel="Spring">Spring</div>
+                            
+                        </li>
+                            
+                        <li><div data-rel="SpringMVC">SpringMVC</div>
+                            
+                        </li>
+                            
+                        <li><div data-rel="MyBatis">MyBatis</div>
+                            
+                        </li>
+                            
+                        <li><div data-rel="SpringBoot">SpringBoot</div>
+                            
+                        </li>
+                            
+                    </ul>
+                
+            </li>
+            
+        
+    
+        
+            
+        
+    
+        
+            
+        
+    
+        
+            
+        
+    
+        
+            
+        
+    
+        
+            
+            <li><div data-rel="客户端"><i class="fold iconfont icon-right"></i>客户端</div>
+                
+                    <ul class="sub hide">
+                        
+                        <li><div data-rel="QT">QT</div>
+                            
+                        </li>
+                            
+                    </ul>
+                
+            </li>
+            
+        
+    
+        
+            
+            <li><div data-rel="区块链"><i class="fold iconfont icon-right"></i>区块链</div>
+                
+                    <ul class="sub hide">
+                        
+                        <li><div data-rel="论文">论文</div>
+                            
+                        </li>
+                            
+                        <li><div data-rel="Fabric">Fabric</div>
+                            
+                        </li>
+                            
+                        <li><div data-rel="fabric">fabric</div>
+                            
+                        </li>
+                            
+                    </ul>
+                
+            </li>
+            
+        
+    
+        
+            
+            <li><div data-rel="分布式">分布式</div>
+                
+            </li>
+            
+        
+    
+        
+            
+            <li><div data-rel="大数据"><i class="fold iconfont icon-right"></i>大数据</div>
+                
+                    <ul class="sub hide">
+                        
+                        <li><div data-rel="hadoop">hadoop</div>
+                            
+                        </li>
+                            
+                    </ul>
+                
+            </li>
+            
+        
+    
+        
+            
+            <li><div data-rel="前端"><i class="fold iconfont icon-right"></i>前端</div>
+                
+                    <ul class="sub hide">
+                        
+                        <li><div data-rel="HTML">HTML</div>
+                            
+                        </li>
+                            
+                        <li><div data-rel="CSS">CSS</div>
+                            
+                        </li>
+                            
+                    </ul>
+                
+            </li>
+            
+        
+    
+        
+            
+        
+    
+        
+            
+        
+    
+        
+            
+        
+    
+        
+            
+        
+    
+        
+            
+        
+    
+        
+            
+            <li><div data-rel="笔记">笔记</div>
+                
+            </li>
+            
+        
+    
+        
+            
+        
+    
+        
+            
+        
+    
+        
+            
+        
+    
+        
+            
+        
+    
+        
+            
+        
+    
+</ul>
+<div class="left-bottom">
+    <div class="menus">
+    
+    
+    
+    
+    </div>
+    <div></div>
+</div>
+<input type="hidden" id="yelog_site_posts_number" value="71">
+
+<div style="display: none">
+    <span id="busuanzi_value_site_uv"></span>
+    <span id="busuanzi_value_site_pv"></span>
+</div>
+
+    </div>
+    <div class="nav-right">
+        <div class="friends-area">
+    <div class="friends-title">
+        友情链接
+        <i class="back-title-list"></i>
+    </div>
+    <div class="friends-content">
+        <ul>
+            
+            <li><a target="_blank" href="http://yelog.org/">叶落阁</a></li>
+            
+        </ul>
+    </div>
+</div>
+        <div class="title-list">
+    <form onkeydown="if(event.keyCode === 13){return false;}">
+        <input id="local-search-input" class="search" type="text" placeholder="Search..." />
+        <i class="cross"></i>
+        <span>
+            <label for="tagswitch">Tags:</label>
+            <input id="tagswitch" type="checkbox" style="display: none" />
+            <i id="tagsWitchIcon"></i>
+        </span>
+    </form>
+    <div class="tags-list">
+    
+    <li class="article-tag-list-item">
+        <a class="color5">HTTP</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a class="color4">protobuf</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a class="color5">MySQL SQL</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a class="color2">Spring</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a class="color5">java</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a class="color3">QT</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a class="color4">区块链</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a class="color4">分布式</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a class="color4">大数据</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a class="color3">前端</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a class="color3">MyBatis</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a class="color1">SpringBoot</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a class="color5">网络编程</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a class="color1">Redis</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a class="color4">多线程</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a class="color4">数据库</a>
+    </li>
+    
+    <div class="clearfix"></div>
+</div>
+
+    
+    <nav id="title-list-nav">
+        
+        <a  class="前端 CSS "
+           href="/2021/01/11/html/4_%E7%9B%92%E5%AD%90%E6%A8%A1%E5%9E%8B/"
+           data-tag="前端"
+           data-author="" >
+            <span class="post-title" title="【前端 4】盒子模型">【前端 4】盒子模型</span>
+            <span class="post-date" title="2021-01-11 09:41:10">2021/01/11</span>
+        </a>
+        
+        <a  class="前端 CSS "
+           href="/2021/01/09/html/3_CSS%E8%BF%9B%E9%98%B6/"
+           data-tag="前端"
+           data-author="" >
+            <span class="post-title" title="【前端 3】CSS进阶">【前端 3】CSS进阶</span>
+            <span class="post-date" title="2021-01-09 09:43:10">2021/01/09</span>
+        </a>
+        
+        <a  class="前端 CSS "
+           href="/2021/01/05/html/2_CSS/"
+           data-tag="前端"
+           data-author="" >
+            <span class="post-title" title="【前端 2】CSS">【前端 2】CSS</span>
+            <span class="post-date" title="2021-01-05 16:22:10">2021/01/05</span>
+        </a>
+        
+        <a  class="前端 HTML "
+           href="/2021/01/04/html/1_html/"
+           data-tag="前端"
+           data-author="" >
+            <span class="post-title" title="【前端 1】HTML">【前端 1】HTML</span>
+            <span class="post-date" title="2021-01-04 10:46:10">2021/01/04</span>
+        </a>
+        
+        <a  class="区块链 fabric "
+           href="/2020/12/12/fabric/08_%E9%93%BE%E7%A0%81/"
+           data-tag="区块链"
+           data-author="" >
+            <span class="post-title" title="07_链码接口使用">07_链码接口使用</span>
+            <span class="post-date" title="2020-12-12 11:43:23">2020/12/12</span>
+        </a>
+        
+        <a  class="区块链 fabric "
+           href="/2020/12/12/fabric/02_%E9%83%A8%E7%BD%B2%E8%B0%83%E7%94%A8%E9%93%BE%E7%A0%81/"
+           data-tag="区块链"
+           data-author="" >
+            <span class="post-title" title="02_部署调用链码">02_部署调用链码</span>
+            <span class="post-date" title="2020-12-12 10:56:23">2020/12/12</span>
+        </a>
+        
+        <a  class="区块链 fabric "
+           href="/2020/12/09/fabric/07_dockerCompose%E5%90%AF%E5%8A%A8fabric/"
+           data-tag="区块链"
+           data-author="" >
+            <span class="post-title" title="06_docker compose启动节点">06_docker compose启动节点</span>
+            <span class="post-date" title="2020-12-09 11:35:23">2020/12/09</span>
+        </a>
+        
+        <a  class="区块链 fabric "
+           href="/2020/12/09/fabric/03_%E7%BD%91%E7%BB%9C%E7%BB%93%E6%9E%84%E5%8F%98%E5%8A%A8/"
+           data-tag="区块链"
+           data-author="" >
+            <span class="post-title" title="03_用户结构变动">03_用户结构变动</span>
+            <span class="post-date" title="2020-12-09 10:35:23">2020/12/09</span>
+        </a>
+        
+        <a  class="区块链 fabric "
+           href="/2020/12/02/fabric/01_%E6%90%AD%E5%BB%BA%E5%9F%BA%E7%A1%80%E7%BD%91%E7%BB%9C/"
+           data-tag="区块链"
+           data-author="" >
+            <span class="post-title" title="01_搭建基础网络">01_搭建基础网络</span>
+            <span class="post-date" title="2020-12-02 11:05:23">2020/12/02</span>
+        </a>
+        
+        <a  class="区块链 fabric "
+           href="/2020/12/01/fabric/05_java%20SDK%E4%BD%BF%E7%94%A8/"
+           data-tag="区块链"
+           data-author="" >
+            <span class="post-title" title="05_javaSDK使用">05_javaSDK使用</span>
+            <span class="post-date" title="2020-12-01 15:04:23">2020/12/01</span>
+        </a>
+        
+        <a  class="区块链 fabric "
+           href="/2020/12/01/fabric/04_%E7%94%A8%E6%88%B7%E4%BD%BF%E7%94%A8%E9%93%BE%E7%A0%81/"
+           data-tag="区块链"
+           data-author="" >
+            <span class="post-title" title="04_用户使用链码">04_用户使用链码</span>
+            <span class="post-date" title="2020-12-01 10:55:23">2020/12/01</span>
+        </a>
+        
+        <a  class="大数据 hadoop "
+           href="/2020/11/26/hadoop/%E5%AE%89%E8%A3%85/"
+           data-tag="大数据"
+           data-author="" >
+            <span class="post-title" title="【hadoop 3】hadoop分布式安装总结">【hadoop 3】hadoop分布式安装总结</span>
+            <span class="post-date" title="2020-11-26 17:50:09">2020/11/26</span>
+        </a>
+        
+        <a  class="客户端 QT "
+           href="/2020/10/29/QT/4_%E6%A8%A1%E5%9E%8B%20%E8%A7%86%E5%9B%BE%E7%BB%93%E6%9E%84/"
+           data-tag="QT"
+           data-author="" >
+            <span class="post-title" title="【QT 3】模型-视图结构">【QT 3】模型-视图结构</span>
+            <span class="post-date" title="2020-10-29 16:49:10">2020/10/29</span>
+        </a>
+        
+        <a  class="客户端 QT "
+           href="/2020/10/28/QT/3_%E6%8E%A7%E4%BB%B6/"
+           data-tag="QT"
+           data-author="" >
+            <span class="post-title" title="【QT 2】控件">【QT 2】控件</span>
+            <span class="post-date" title="2020-10-28 16:55:10">2020/10/28</span>
+        </a>
+        
+        <a  class="客户端 QT "
+           href="/2020/10/28/QT/2_%E5%B8%83%E5%B1%80%E7%AE%A1%E7%90%86/"
+           data-tag="QT"
+           data-author="" >
+            <span class="post-title" title="【QT 1】布局管理">【QT 1】布局管理</span>
+            <span class="post-date" title="2020-10-28 14:37:10">2020/10/28</span>
+        </a>
+        
+        <a  class="客户端 QT "
+           href="/2020/10/20/QT/QT%E7%95%8C%E9%9D%A2%E7%BC%96%E8%BE%91%E5%99%A8/"
+           data-tag="QT"
+           data-author="" >
+            <span class="post-title" title="【QT 4】QT界面编辑器">【QT 4】QT界面编辑器</span>
+            <span class="post-date" title="2020-10-20 15:52:10">2020/10/20</span>
+        </a>
+        
+        <a  class="SSM Spring "
+           href="/2020/06/01/%E7%AC%94%E8%AE%B0/spring/"
+           data-tag="Spring"
+           data-author="" >
+            <span class="post-title" title="【笔记】Spring总结">【笔记】Spring总结</span>
+            <span class="post-date" title="2020-06-01 03:57:17">2020/06/01</span>
+        </a>
+        
+        <a  class="笔记 "
+           href="/2020/05/12/%E7%AC%94%E8%AE%B0/%E6%95%B0%E6%8D%AE%E5%BA%93/"
+           data-tag="数据库"
+           data-author="" >
+            <span class="post-title" title="【笔记】数据库与MySQL">【笔记】数据库与MySQL</span>
+            <span class="post-date" title="2020-05-12 21:38:05">2020/05/12</span>
+        </a>
+        
+        <a  class="笔记 "
+           href="/2020/05/07/%E7%AC%94%E8%AE%B0/redis/"
+           data-tag="Redis"
+           data-author="" >
+            <span class="post-title" title="【笔记】Redis">【笔记】Redis</span>
+            <span class="post-date" title="2020-05-07 18:38:05">2020/05/07</span>
+        </a>
+        
+        <a  class="笔记 "
+           href="/2020/04/25/%E7%AC%94%E8%AE%B0/%E5%A4%9A%E7%BA%BF%E7%A8%8B/"
+           data-tag="多线程"
+           data-author="" >
+            <span class="post-title" title="【笔记】java并发">【笔记】java并发</span>
+            <span class="post-date" title="2020-04-25 15:38:01">2020/04/25</span>
+        </a>
+        
+        <a  class="大数据 hadoop "
+           href="/2020/03/18/hadoop/2_%E4%BD%BF%E7%94%A8hadoop/"
+           data-tag="大数据"
+           data-author="" >
+            <span class="post-title" title="【hadoop 2】hadoop三种模式使用">【hadoop 2】hadoop三种模式使用</span>
+            <span class="post-date" title="2020-03-18 17:49:04">2020/03/18</span>
+        </a>
+        
+        <a  class="SSM SpringBoot "
+           href="/2020/03/18/springboot/3_springboot%E7%9A%84%E9%85%8D%E7%BD%AE/"
+           data-tag="SpringBoot"
+           data-author="" >
+            <span class="post-title" title="【SpringBoot 02】配置文件">【SpringBoot 02】配置文件</span>
+            <span class="post-date" title="2020-03-18 12:58:23">2020/03/18</span>
+        </a>
+        
+        <a  class="SSM SpringBoot "
+           href="/2020/03/17/springboot/2_springboot%E7%9A%84helloworld/"
+           data-tag="SpringBoot"
+           data-author="" >
+            <span class="post-title" title="【SpringBoot 01】HelloWorld">【SpringBoot 01】HelloWorld</span>
+            <span class="post-date" title="2020-03-17 19:58:23">2020/03/17</span>
+        </a>
+        
+        <a  class="SSM SSM整合 "
+           href="/2020/03/05/3-SpringMVC/1_%E6%90%AD%E5%BB%BAspring/"
+           data-tag="java"
+           data-author="" >
+            <span class="post-title" title="【SSM实战】SSM框架整合">【SSM实战】SSM框架整合</span>
+            <span class="post-date" title="2020-03-05 20:37:01">2020/03/05</span>
+        </a>
+        
+        <a  class="SSM SpringMVC "
+           href="/2020/03/05/3-SpringMVC/7_SpringMVC%E5%BC%82%E5%B8%B8%E5%A4%84%E7%90%86%E4%B8%8E%E6%8B%A6%E6%88%AA%E5%99%A8/"
+           data-tag="java"
+           data-author="" >
+            <span class="post-title" title="【SpringMVC实战6】异常处理与拦截器">【SpringMVC实战6】异常处理与拦截器</span>
+            <span class="post-date" title="2020-03-05 13:06:19">2020/03/05</span>
+        </a>
+        
+        <a  class="SSM SpringMVC "
+           href="/2020/03/04/3-SpringMVC/6_SpringMVC%E5%93%8D%E5%BA%94/"
+           data-tag="java"
+           data-author="" >
+            <span class="post-title" title="【SpringMVC实战5】响应">【SpringMVC实战5】响应</span>
+            <span class="post-date" title="2020-03-04 19:26:39">2020/03/04</span>
+        </a>
+        
+        <a  class="SSM SpringMVC "
+           href="/2020/03/03/3-SpringMVC/4_SpringMVC%E7%9A%84%E5%B8%B8%E7%94%A8%E6%B3%A8%E8%A7%A3/"
+           data-tag="java"
+           data-author="" >
+            <span class="post-title" title="【SpringMVC实战3】常用注解">【SpringMVC实战3】常用注解</span>
+            <span class="post-date" title="2020-03-03 15:26:29">2020/03/03</span>
+        </a>
+        
+        <a  class="SSM SpringMVC "
+           href="/2020/03/03/3-SpringMVC/5_%E8%AF%B7%E6%B1%82%E5%8F%82%E6%95%B0%E7%BB%91%E5%AE%9A/"
+           data-tag="java"
+           data-author="" >
+            <span class="post-title" title="【SpringMVC实战4】请求参数绑定">【SpringMVC实战4】请求参数绑定</span>
+            <span class="post-date" title="2020-03-03 09:13:23">2020/03/03</span>
+        </a>
+        
+        <a  class="SSM SpringMVC "
+           href="/2020/03/02/3-SpringMVC/3_SpringMVC%E7%9A%84%E6%89%A7%E8%A1%8C%E6%B5%81%E7%A8%8B/"
+           data-tag="java"
+           data-author="" >
+            <span class="post-title" title="【SpringMVC实战2】执行流程">【SpringMVC实战2】执行流程</span>
+            <span class="post-date" title="2020-03-02 18:26:39">2020/03/02</span>
+        </a>
+        
+        <a  class="SSM SpringMVC "
+           href="/2020/03/02/3-SpringMVC/2_%E5%85%A5%E9%97%A8%E6%A1%88%E4%BE%8B/"
+           data-tag="java"
+           data-author="" >
+            <span class="post-title" title="【SpringMVC实战1】入门案例">【SpringMVC实战1】入门案例</span>
+            <span class="post-date" title="2020-03-02 14:26:39">2020/03/02</span>
+        </a>
+        
+        <a  class="SSM Spring "
+           href="/2020/02/21/13-Spring/8_%E4%BA%8B%E5%8A%A1%E6%8E%A7%E5%88%B6/"
+           data-tag="Spring"
+           data-author="" >
+            <span class="post-title" title="【Spring实战8】事务控制">【Spring实战8】事务控制</span>
+            <span class="post-date" title="2020-02-21 15:23:48">2020/02/21</span>
+        </a>
+        
+        <a  class="SSM Spring "
+           href="/2020/02/20/13-Spring/7_JdbcTemplate/"
+           data-tag="Spring"
+           data-author="" >
+            <span class="post-title" title="【Spring实战7】JdbcTemplate">【Spring实战7】JdbcTemplate</span>
+            <span class="post-date" title="2020-02-20 09:32:29">2020/02/20</span>
+        </a>
+        
+        <a  class="SSM Spring "
+           href="/2020/02/19/13-Spring/6_%E5%9F%BA%E4%BA%8Exml%E5%92%8C%E6%B3%A8%E8%A7%A3%E7%9A%84AOP%E9%85%8D%E7%BD%AE/"
+           data-tag="Spring"
+           data-author="" >
+            <span class="post-title" title="【Spring实战6】基于xml和注解的AOP配置">【Spring实战6】基于xml和注解的AOP配置</span>
+            <span class="post-date" title="2020-02-19 21:31:44">2020/02/19</span>
+        </a>
+        
+        <a  class="SSM Spring "
+           href="/2020/02/19/13-Spring/5_AOP/"
+           data-tag="Spring"
+           data-author="" >
+            <span class="post-title" title="【Spring实战5】AOP">【Spring实战5】AOP</span>
+            <span class="post-date" title="2020-02-19 18:56:47">2020/02/19</span>
+        </a>
+        
+        <a  class="SSM Spring "
+           href="/2020/02/18/13-Spring/4_%E5%8A%A8%E6%80%81%E4%BB%A3%E7%90%86/"
+           data-tag="Spring"
+           data-author="" >
+            <span class="post-title" title="【Spring实战4】动态代理">【Spring实战4】动态代理</span>
+            <span class="post-date" title="2020-02-18 17:15:32">2020/02/18</span>
+        </a>
+        
+        <a  class="SSM Spring "
+           href="/2020/02/14/13-Spring/3_%E5%9F%BA%E4%BA%8E%E6%B3%A8%E8%A7%A3%E7%9A%84IOC/"
+           data-tag="Spring"
+           data-author="" >
+            <span class="post-title" title="【Spring实战3】IoC注解">【Spring实战3】IoC注解</span>
+            <span class="post-date" title="2020-02-14 20:57:17">2020/02/14</span>
+        </a>
+        
+        <a  class="SSM Spring "
+           href="/2020/02/13/13-Spring/2_IOC/"
+           data-tag="Spring"
+           data-author="" >
+            <span class="post-title" title="【Spring实战2】IoC与DI">【Spring实战2】IoC与DI</span>
+            <span class="post-date" title="2020-02-13 20:56:03">2020/02/13</span>
+        </a>
+        
+        <a  class="SSM Spring "
+           href="/2020/02/13/13-Spring/1_%E7%A8%8B%E5%BA%8F%E8%80%A6%E5%90%88%E4%B8%8E%E8%A7%A3%E8%80%A6/"
+           data-tag="Spring"
+           data-author="" >
+            <span class="post-title" title="【Spring实战1】程序的耦合与解耦">【Spring实战1】程序的耦合与解耦</span>
+            <span class="post-date" title="2020-02-13 13:17:03">2020/02/13</span>
+        </a>
+        
+        <a  class="SSM MyBatis "
+           href="/2020/02/07/mybatis/10_%E6%B3%A8%E8%A7%A3%E5%BC%80%E5%8F%91/"
+           data-tag="MyBatis"
+           data-author="" >
+            <span class="post-title" title="【Mybatis实战5】注解开发">【Mybatis实战5】注解开发</span>
+            <span class="post-date" title="2020-02-07 16:18:37">2020/02/07</span>
+        </a>
+        
+        <a  class="SSM MyBatis "
+           href="/2020/02/06/mybatis/9_%E7%BC%93%E5%AD%98/"
+           data-tag="MyBatis"
+           data-author="" >
+            <span class="post-title" title="【Mybatis实战4】加载与缓存">【Mybatis实战4】加载与缓存</span>
+            <span class="post-date" title="2020-02-06 18:29:03">2020/02/06</span>
+        </a>
+        
+        <a  class="SSM MyBatis "
+           href="/2020/02/06/mybatis/8_%E5%8A%A8%E6%80%81SQL%E4%B8%8E%E5%A4%9A%E8%A1%A8%E6%93%8D%E4%BD%9C/"
+           data-tag="MyBatis"
+           data-author="" >
+            <span class="post-title" title="【Mybatis实战3】动态SQL与多表操作">【Mybatis实战3】动态SQL与多表操作</span>
+            <span class="post-date" title="2020-02-06 18:08:29">2020/02/06</span>
+        </a>
+        
+        <a  class="SSM MyBatis "
+           href="/2020/02/06/mybatis/6_mybatis%E8%BF%9B%E8%A1%8CCRUD/"
+           data-tag="MyBatis"
+           data-author="" >
+            <span class="post-title" title="【Mybatis实战2】CRUD操作">【Mybatis实战2】CRUD操作</span>
+            <span class="post-date" title="2020-02-06 13:21:03">2020/02/06</span>
+        </a>
+        
+        <a  class="SSM MyBatis "
+           href="/2020/02/05/mybatis/2_%E5%9F%BA%E4%BA%8Exml%E7%9A%84%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/"
+           data-tag="MyBatis"
+           data-author="" >
+            <span class="post-title" title="【Mybatis实战1】两种环境搭建方法及示例">【Mybatis实战1】两种环境搭建方法及示例</span>
+            <span class="post-date" title="2020-02-05 10:21:01">2020/02/05</span>
+        </a>
+        
+        <a  class="数据库 "
+           href="/2020/01/29/11-MySQL/3_%E5%A4%9A%E8%A1%A8%E6%9F%A5%E8%AF%A2%E4%B8%8E%E4%BA%8B%E5%8A%A1/"
+           data-tag="MySQL SQL"
+           data-author="" >
+            <span class="post-title" title="多表查询与事务">多表查询与事务</span>
+            <span class="post-date" title="2020-01-29 13:52:00">2020/01/29</span>
+        </a>
+        
+        <a  class="数据库 "
+           href="/2020/01/26/11-MySQL/2_SQL%E9%AB%98%E7%BA%A7/"
+           data-tag="MySQL SQL"
+           data-author="" >
+            <span class="post-title" title="数据库高级知识及SQL实现">数据库高级知识及SQL实现</span>
+            <span class="post-date" title="2020-01-26 23:01:52">2020/01/26</span>
+        </a>
+        
+        <a  class="数据库 "
+           href="/2020/01/23/11-MySQL/1_SQL%E8%AF%AD%E8%A8%80%E5%9F%BA%E6%9C%AC%E6%93%8D%E4%BD%9C/"
+           data-tag="MySQL SQL"
+           data-author="" >
+            <span class="post-title" title="SQL语言基础">SQL语言基础</span>
+            <span class="post-date" title="2020-01-23 20:06:39">2020/01/23</span>
+        </a>
+        
+        <a  class="网络 protobuf "
+           href="/2020/01/16/10-java%E7%BD%91%E7%BB%9C/2_protobuf/"
+           data-tag="protobuf"
+           data-author="" >
+            <span class="post-title" title="java使用protobuf">java使用protobuf</span>
+            <span class="post-date" title="2020-01-16 17:57:52">2020/01/16</span>
+        </a>
+        
+        <a  class="网络 HTTP "
+           href="/2020/01/15/10-java%E7%BD%91%E7%BB%9C/1_HTTP/"
+           data-tag="HTTP"
+           data-author="" >
+            <span class="post-title" title="java实现简单的HTTP">java实现简单的HTTP</span>
+            <span class="post-date" title="2020-01-15 18:03:21">2020/01/15</span>
+        </a>
+        
+        <a  class="大数据 hadoop "
+           href="/2020/01/06/hadoop/1_hadoop/"
+           data-tag="大数据"
+           data-author="" >
+            <span class="post-title" title="【hadoop 1】hadoop环境搭建">【hadoop 1】hadoop环境搭建</span>
+            <span class="post-date" title="2020-01-06 14:55:10">2020/01/06</span>
+        </a>
+        
+        <a  class="区块链 Fabric "
+           href="/2019/11/24/blockchain/09/"
+           data-tag="区块链"
+           data-author="" >
+            <span class="post-title" title="Hyperledger Fabric系统框架笔记">Hyperledger Fabric系统框架笔记</span>
+            <span class="post-date" title="2019-11-24 12:43:08">2019/11/24</span>
+        </a>
+        
+        <a  class="区块链 论文 "
+           href="/2019/11/21/blockchain/08/"
+           data-tag="区块链"
+           data-author="" >
+            <span class="post-title" title="闪电网络（四）比特币闪电网络：The Bitcoin Lightning Network">闪电网络（四）比特币闪电网络：The Bitcoin Lightning Network</span>
+            <span class="post-date" title="2019-11-21 21:31:53">2019/11/21</span>
+        </a>
+        
+        <a  class="区块链 论文 "
+           href="/2019/11/20/blockchain/07/"
+           data-tag="区块链"
+           data-author="" >
+            <span class="post-title" title="闪电网络（三）哈希时间锁合约：Hashed Timelock Contract (HTLC)">闪电网络（三）哈希时间锁合约：Hashed Timelock Contract (HTLC)</span>
+            <span class="post-date" title="2019-11-20 10:51:23">2019/11/20</span>
+        </a>
+        
+        <a  class="区块链 论文 "
+           href="/2019/11/20/blockchain/05/"
+           data-tag="区块链"
+           data-author="" >
+            <span class="post-title" title="闪电网络（二）双向支付通道：Bidirectional Payment Channels + RSMC">闪电网络（二）双向支付通道：Bidirectional Payment Channels + RSMC</span>
+            <span class="post-date" title="2019-11-20 10:51:23">2019/11/20</span>
+        </a>
+        
+        <a  class="区块链 论文 "
+           href="/2019/11/19/blockchain/06/"
+           data-tag="区块链"
+           data-author="" >
+            <span class="post-title" title="闪电网络（一）微支付通道">闪电网络（一）微支付通道</span>
+            <span class="post-date" title="2019-11-19 10:07:02">2019/11/19</span>
+        </a>
+        
+        <a  class="区块链 论文 "
+           href="/2019/11/15/blockchain/03/"
+           data-tag="区块链"
+           data-author="" >
+            <span class="post-title" title="论文翻译 OmniLedger">论文翻译 OmniLedger</span>
+            <span class="post-date" title="2019-11-15 16:15:33">2019/11/15</span>
+        </a>
+        
+        <a  class="网络 网络编程 "
+           href="/2019/11/03/networkProgram/%E7%BD%91%E7%BB%9C%E7%BC%96%E7%A8%8B10UDP%E8%BF%9E%E6%8E%A5/"
+           data-tag="网络编程"
+           data-author="" >
+            <span class="post-title" title="网络编程10：UDP连接">网络编程10：UDP连接</span>
+            <span class="post-date" title="2019-11-03 16:15:07">2019/11/03</span>
+        </a>
+        
+        <a  class="网络 网络编程 "
+           href="/2019/11/02/networkProgram/%E7%BD%91%E7%BB%9C%E7%BC%96%E7%A8%8B9TCP%E7%9A%84%E5%BC%82%E5%B8%B8/"
+           data-tag="网络编程"
+           data-author="" >
+            <span class="post-title" title="网络编程9：TCP的异常">网络编程9：TCP的异常</span>
+            <span class="post-date" title="2019-11-02 13:57:10">2019/11/02</span>
+        </a>
+        
+        <a  class="网络 网络编程 "
+           href="/2019/11/01/networkProgram/%E7%BD%91%E7%BB%9C%E7%BC%96%E7%A8%8B8TCP%E6%95%B0%E6%8D%AE%E4%BC%A0%E8%BE%93/"
+           data-tag="网络编程"
+           data-author="" >
+            <span class="post-title" title="网络编程8：TCP数据传输">网络编程8：TCP数据传输</span>
+            <span class="post-date" title="2019-11-01 18:34:10">2019/11/01</span>
+        </a>
+        
+        <a  class="网络 网络编程 "
+           href="/2019/10/31/networkProgram/%E7%BD%91%E7%BB%9C%E7%BC%96%E7%A8%8B7TCP%E8%BF%9E%E6%8E%A5%E7%8A%B6%E6%80%81/"
+           data-tag="网络编程"
+           data-author="" >
+            <span class="post-title" title="网络编程7：TCP连接状态">网络编程7：TCP连接状态</span>
+            <span class="post-date" title="2019-10-31 17:14:55">2019/10/31</span>
+        </a>
+        
+        <a  class="网络 网络编程 "
+           href="/2019/10/30/networkProgram/%E7%BD%91%E7%BB%9C%E7%BC%96%E7%A8%8B6%E5%85%B3%E9%97%AD%E8%BF%9E%E6%8E%A5/"
+           data-tag="网络编程"
+           data-author="" >
+            <span class="post-title" title="网络编程6：关闭连接">网络编程6：关闭连接</span>
+            <span class="post-date" title="2019-10-30 18:34:12">2019/10/30</span>
+        </a>
+        
+        <a  class="网络 网络编程 "
+           href="/2019/10/29/networkProgram/%E7%BD%91%E7%BB%9C%E7%BC%96%E7%A8%8B5%E7%BD%91%E7%BB%9C%E5%B7%A5%E5%85%B7/"
+           data-tag="网络编程"
+           data-author="" >
+            <span class="post-title" title="网络编程5：网络工具">网络编程5：网络工具</span>
+            <span class="post-date" title="2019-10-29 14:24:11">2019/10/29</span>
+        </a>
+        
+        <a  class="网络 网络编程 "
+           href="/2019/10/28/networkProgram/%E7%BD%91%E7%BB%9C%E7%BC%96%E7%A8%8B3UDP%E5%8D%8F%E8%AE%AE%E4%BD%BF%E7%94%A8socket/"
+           data-tag="网络编程"
+           data-author="" >
+            <span class="post-title" title="网络编程3：UDP协议使用socket">网络编程3：UDP协议使用socket</span>
+            <span class="post-date" title="2019-10-28 10:11:10">2019/10/28</span>
+        </a>
+        
+        <a  class="网络 网络编程 "
+           href="/2019/10/28/networkProgram/%E7%BD%91%E7%BB%9C%E7%BC%96%E7%A8%8B4%E6%9C%AC%E5%9C%B0socket/"
+           data-tag="网络编程"
+           data-author="" >
+            <span class="post-title" title="网络编程4：本地套接字">网络编程4：本地套接字</span>
+            <span class="post-date" title="2019-10-28 10:11:10">2019/10/28</span>
+        </a>
+        
+        <a  class="网络 网络编程 "
+           href="/2019/10/27/networkProgram/%E7%BD%91%E7%BB%9C%E7%BC%96%E7%A8%8B2TCP%E5%8D%8F%E8%AE%AE%E4%BD%BF%E7%94%A8socket/"
+           data-tag="网络编程"
+           data-author="" >
+            <span class="post-title" title="网络编程2：TCP协议使用socket">网络编程2：TCP协议使用socket</span>
+            <span class="post-date" title="2019-10-27 17:59:09">2019/10/27</span>
+        </a>
+        
+        <a  class="网络 网络编程 "
+           href="/2019/10/26/networkProgram/%E7%BD%91%E7%BB%9C%E7%BC%96%E7%A8%8B1/"
+           data-tag="网络编程"
+           data-author="" >
+            <span class="post-title" title="网络编程1：基础部分">网络编程1：基础部分</span>
+            <span class="post-date" title="2019-10-26 16:54:02">2019/10/26</span>
+        </a>
+        
+        <a  class="分布式 "
+           href="/2019/09/12/distribute/01/"
+           data-tag="分布式"
+           data-author="" >
+            <span class="post-title" title="分布式系统的一致性与共识">分布式系统的一致性与共识</span>
+            <span class="post-date" title="2019-09-12 13:47:52">2019/09/12</span>
+        </a>
+        
+        <a  class="网络 HTTP "
+           href="/2019/08/05/http/030205/"
+           data-tag="HTTP"
+           data-author="" >
+            <span class="post-title" title="HTTP协议学习（五）HTTPS与安全">HTTP协议学习（五）HTTPS与安全</span>
+            <span class="post-date" title="2019-08-05 20:46:07">2019/08/05</span>
+        </a>
+        
+        <a  class="网络 HTTP "
+           href="/2019/07/20/http/030204/"
+           data-tag="HTTP"
+           data-author="" >
+            <span class="post-title" title="HTTP协议学习（四）cookie、缓存、代理机制">HTTP协议学习（四）cookie、缓存、代理机制</span>
+            <span class="post-date" title="2019-07-20 13:15:07">2019/07/20</span>
+        </a>
+        
+        <a  class="网络 HTTP "
+           href="/2019/07/10/http/030203/"
+           data-tag="HTTP"
+           data-author="" >
+            <span class="post-title" title="HTTP协议学习（三）数据传输与连接">HTTP协议学习（三）数据传输与连接</span>
+            <span class="post-date" title="2019-07-10 14:36:55">2019/07/10</span>
+        </a>
+        
+        <a  class="网络 HTTP "
+           href="/2019/07/01/http/030202/"
+           data-tag="HTTP"
+           data-author="" >
+            <span class="post-title" title="HTTP协议学习（二）基础">HTTP协议学习（二）基础</span>
+            <span class="post-date" title="2019-07-01 14:05:51">2019/07/01</span>
+        </a>
+        
+        <a  class="网络 HTTP "
+           href="/2019/06/14/http/030201/"
+           data-tag="HTTP"
+           data-author="" >
+            <span class="post-title" title="HTTP协议学习（一）概念">HTTP协议学习（一）概念</span>
+            <span class="post-date" title="2019-06-14 16:08:25">2019/06/14</span>
+        </a>
+        
+    </nav>
+</div>
+    </div>
+    <div class="hide-list">
+        <div class="semicircle">
+            <div class="brackets first"><</div>
+            <div class="brackets">&gt;</div>
+        </div>
+    </div>
+</aside>
+<div class="post">
+    <div class="pjax">
+        <article id="post-http/030204" class="article article-type-post" itemscope itemprop="blogPost">
+    
+        <h1 class="article-title">HTTP协议学习（四）cookie、缓存、代理机制</h1>
+    
+    <div class="article-meta">
+        
+        
+        
+        <span class="book">
+            
+                <a  data-rel="网络">网络</a>/
+            
+                <a  data-rel="HTTP">HTTP</a>
+            
+        </span>
+        
+        
+        <span class="tag">
+            
+            <a class="color5">HTTP</a>
+            
+        </span>
+        
+    </div>
+    <div class="article-meta">
+        
+        创建时间:<time class="date" title='更新时间: 2020-03-06 06:46:19'>2019-07-20 13:15</time>
+        
+    </div>
+    <div class="article-meta">
+        
+        
+        
+    </div>
+    
+    <div class="toc-ref">
+    
+        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#1-cookie机制"><span class="toc-text">1. cookie机制</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-1-cookie的简介与流程"><span class="toc-text">1.1 cookie的简介与流程</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#1-2-cookie的属性"><span class="toc-text">1.2 cookie的属性</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#1-3-cookie的应用"><span class="toc-text">1.3 cookie的应用</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-缓存机制"><span class="toc-text">2. 缓存机制</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#2-1-缓存何时生效"><span class="toc-text">2.1 缓存何时生效</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-2-服务器的缓存控制"><span class="toc-text">2.2 服务器的缓存控制</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-3-客户端的缓存控制"><span class="toc-text">2.3 客户端的缓存控制</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-4-条件请求"><span class="toc-text">2.4 条件请求</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#2-4-1-Last-Modified"><span class="toc-text">2.4.1 Last-Modified</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2-4-2-if-Modified-Since"><span class="toc-text">2.4.2 if-Modified-Since</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2-4-3-ETag-与-If-None-Match"><span class="toc-text">2.4.3 ETag 与 If-None-Match</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3-代理服务"><span class="toc-text">3. 代理服务</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#3-1-代理服务的作用"><span class="toc-text">3.1 代理服务的作用</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-2-代理相关头字段"><span class="toc-text">3.2 代理相关头字段</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-3-代理协议"><span class="toc-text">3.3 代理协议</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#4-缓存代理"><span class="toc-text">4. 缓存代理</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#4-1-源服务器的缓存控制"><span class="toc-text">4.1 源服务器的缓存控制</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4-2-客户端的缓存控制"><span class="toc-text">4.2 客户端的缓存控制</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4-3-Vary字段"><span class="toc-text">4.3 Vary字段</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4-4-Purge字段"><span class="toc-text">4.4 Purge字段</span></a></li></ol></li></ol>
+    
+<style>
+    .left-col .switch-btn,
+    .left-col .switch-area {
+        display: none;
+    }
+    .toc-level-3 i,
+    .toc-level-3 ol {
+        display: none !important;
+    }
+</style>
+</div>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>注：本系列的所有内容均为极客时间《透视HTTP协议》的内容总结！</p>
+<p><div class='inner-toc'><h2>目录</h2><ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#1-cookie机制"><span class="toc-text">1. cookie机制</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-1-cookie的简介与流程"><span class="toc-text">1.1 cookie的简介与流程</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#1-2-cookie的属性"><span class="toc-text">1.2 cookie的属性</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#1-3-cookie的应用"><span class="toc-text">1.3 cookie的应用</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-缓存机制"><span class="toc-text">2. 缓存机制</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#2-1-缓存何时生效"><span class="toc-text">2.1 缓存何时生效</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-2-服务器的缓存控制"><span class="toc-text">2.2 服务器的缓存控制</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-3-客户端的缓存控制"><span class="toc-text">2.3 客户端的缓存控制</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-4-条件请求"><span class="toc-text">2.4 条件请求</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#2-4-1-Last-Modified"><span class="toc-text">2.4.1 Last-Modified</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2-4-2-if-Modified-Since"><span class="toc-text">2.4.2 if-Modified-Since</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2-4-3-ETag-与-If-None-Match"><span class="toc-text">2.4.3 ETag 与 If-None-Match</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3-代理服务"><span class="toc-text">3. 代理服务</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#3-1-代理服务的作用"><span class="toc-text">3.1 代理服务的作用</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-2-代理相关头字段"><span class="toc-text">3.2 代理相关头字段</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-3-代理协议"><span class="toc-text">3.3 代理协议</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#4-缓存代理"><span class="toc-text">4. 缓存代理</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#4-1-源服务器的缓存控制"><span class="toc-text">4.1 源服务器的缓存控制</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4-2-客户端的缓存控制"><span class="toc-text">4.2 客户端的缓存控制</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4-3-Vary字段"><span class="toc-text">4.3 Vary字段</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4-4-Purge字段"><span class="toc-text">4.4 Purge字段</span></a></li></ol></li></ol></div></p>
+<h2 id="1-cookie机制"><a href="#1-cookie机制" class="headerlink" title="1. cookie机制"></a>1. cookie机制</h2><h3 id="1-1-cookie的简介与流程"><a href="#1-1-cookie的简介与流程" class="headerlink" title="1.1 cookie的简介与流程"></a>1.1 cookie的简介与流程</h3><p> HTTP Cookie（也叫Web Cookie或浏览器Cookie）是<strong>服务器发送到用户浏览器并保存在本地的一小块数据</strong>，它会在浏览器下次向同一服务器再发起请求时被携带并发送到服务器上。通常，它用于告知服务端两个请求是否来自同一浏览器，如保持用户的登录状态。Cookie<strong>使基于无状态的HTTP协议记录稳定的状态信息成为了可能</strong>。 </p>
+<p>cookie机制的运行需要两个字段：响应头字段 <code>Set-Cookie</code> 和请求头字段 <code>Cookie</code>。</p>
+<ul>
+<li><strong>客户端</strong>第一次访问服务器的时候，由服务器生成一个独特的身份标识数据，格式是 <code>key=value</code>，把这个数据放进 <code>Set-Cookie</code> 字段里，随响应报文一同发送给浏览器。</li>
+<li><strong>浏览器</strong>收到响应报文，看到里面有 Set-Cookie，知道这是服务器给的身份标识，于是就保存起来，下次再请求的时候就自动把这个值放进 Cookie 字段里发给服务器。</li>
+</ul>
+<blockquote>
+<p>服务器有时会在响应头里添加多个 Set-Cookie，存储多个<code>key=value</code>。但浏览器这边发送时不需要用多个 Cookie 字段，只要在一行里用<code>;</code>隔开就行。</p>
+</blockquote>
+<p>也就是下面这个流程</p>
+<p><img src="/2019/07/20/http/030204/9f6cca61802d65d063e24aa9ca7c38a4.png" alt="img"></p>
+<h3 id="1-2-cookie的属性"><a href="#1-2-cookie的属性" class="headerlink" title="1.2 cookie的属性"></a>1.2 cookie的属性</h3><p>Cookie 就是服务器委托浏览器存储在客户端里的一些数据，而这些数据通常都会记录用户的关键识别信息。所以，就需要在 <code>key=value</code> 外再用一些手段来保护，防止外泄或窃取，这些手段就是 Cookie 的属性。</p>
+<ul>
+<li><p><strong>生存周期</strong></p>
+<p>Cookie 的生存周期，也就是它的有效期，让它只能在一段时间内可用，一旦超过这个期限浏览器就认为是 Cookie 失效，在存储里删除，也不会发送给服务器。</p>
+<ol>
+<li><strong>Expires</strong>：俗称“<strong>过期时间</strong>”，用的是绝对时间点，可以理解为“截止日期”</li>
+<li><strong>Max-Age</strong>：相对时间，单位是秒，浏览器用<strong>收到报文的时间点再加上 Max-Age</strong>，就可以得到失效的绝对时间。</li>
+</ol>
+<p>Expires 和 Max-Age <strong>可以同时出现</strong>，两者的失效时间可以一致，也可以不一致，但浏览器会<strong>优先采用 Max-Age</strong> 计算失效期。</p>
+</li>
+<li><p><strong>作用域</strong></p>
+<p>让浏览器<strong>仅发送给特定的服务器和 URI</strong>，避免被其他网站盗用。</p>
+<ol>
+<li><strong>Domain</strong>：指定了 Cookie 所属的域名</li>
+<li><strong>Path</strong>：指定了 Cookie 所属的路径</li>
+</ol>
+<p>浏览器在发送 Cookie 前会从 URI 中提取出 host 和 path 部分，对比 Cookie 的属性。如果不满足条件，就不会在请求头里发送 Cookie。</p>
+<blockquote>
+<p>使用这两个属性可以为不同的域名和路径分别设置各自的 Cookie，比如“/19-1”用一个 Cookie，“/19-2”再用另外一个 Cookie，两者互不干扰。不过现实中为了省事，通常 Path 就用一个“/”或者直接省略，表示域名下的任意路径都允许使用 Cookie，让服务器自己去挑。</p>
+</blockquote>
+</li>
+<li><p><strong>安全性</strong></p>
+<ol>
+<li><p><strong>HttpOnly</strong></p>
+<p>属性“HttpOnly”会告诉浏览器，此 Cookie <strong>只能通过浏览器 HTTP 协议传输，禁止其他方式访问</strong>，浏览器的 JS 引擎就会禁用 document.cookie 等一切相关的 API，脚本攻击也就无从谈起了。</p>
+</li>
+<li><p><strong>SameSite</strong></p>
+<p>另一个属性“SameSite”可以防范“跨站请求伪造”（XSRF）攻击，设置成“SameSite=Strict”可以<strong>严格限定 Cookie 不能随着跳转链接跨站发送</strong>，而“SameSite=Lax”则略宽松一点，<strong>允许 GET/HEAD 等安全方法，但禁止 POST 跨站发送</strong>。</p>
+</li>
+<li><p><strong>Secure</strong></p>
+<p>表示这个 Cookie <strong>仅能用 HTTPS 协议加密传输</strong>，明文的 HTTP 协议会禁止发送。但 <strong>Cookie 本身不是加密的，浏览器里还是以明文的形式存在</strong>。</p>
+</li>
+</ol>
+</li>
+</ul>
+<h3 id="1-3-cookie的应用"><a href="#1-3-cookie的应用" class="headerlink" title="1.3 cookie的应用"></a>1.3 cookie的应用</h3><ol>
+<li><p><strong>身份识别</strong>：用于保存用户的登录信息，实现会话事务。</p>
+<blockquote>
+<p>比如，你用账号和密码登录某电商，登录成功后网站服务器就会发给浏览器一个 Cookie，内容大概是“name=yourid”，这样就成功地把身份标签贴在了你身上。之后你在网站里随便访问哪件商品的页面，浏览器都会自动把身份 Cookie 发给服务器，所以服务器总会知道你的身份，一方面免去了重复登录的麻烦，另一方面也能够自动记录你的浏览记录和购物下单（在后台数据库或者也用 Cookie），实现了“状态保持”。</p>
+</blockquote>
+</li>
+<li><p><strong>广告跟踪</strong>：广告商网站通过浏览记录、cookie收集了个人信息，将这些信息卖个其他的商户，当访问这些商户的网站时就可以根据喜好进行广告推送。</p>
+</li>
+</ol>
+<h2 id="2-缓存机制"><a href="#2-缓存机制" class="headerlink" title="2. 缓存机制"></a>2. 缓存机制</h2><p>缓存（Cache）是计算机领域里的一个重要概念，是优化系统性能的利器。</p>
+<p>由于链路漫长，网络时延不可控，浏览器使用 HTTP 获取资源的成本较高。所以，非常有必要把“来之不易”的数据缓存起来，下次再请求的时候尽可能地复用。这样，就<strong>可以避免多次请求 - 应答的通信成本，节约网络带宽，也可以加快响应速度</strong>。</p>
+<h3 id="2-1-缓存何时生效"><a href="#2-1-缓存何时生效" class="headerlink" title="2.1 缓存何时生效"></a>2.1 缓存何时生效</h3><p>在点击浏览器的“前进”“后退”按钮，此时不会发送网络请求，而是读取的磁盘上的缓存。在“前进”“后退”“跳转”这些重定向动作中浏览器用最基本的请求头，没有“Cache-Control”，所以就会检查缓存，直接利用之前的资源，不再进行网络通信。</p>
+<h3 id="2-2-服务器的缓存控制"><a href="#2-2-服务器的缓存控制" class="headerlink" title="2.2 服务器的缓存控制"></a>2.2 服务器的缓存控制</h3><ul>
+<li>浏览器发现缓存无数据，于是发送请求，向服务器获取资源；</li>
+<li>服务器响应请求，返回资源，同时标记资源的有效期； </li>
+<li>浏览器缓存资源，等待下次重用。</li>
+</ul>
+<p>服务器标记<strong>资源有效期</strong>使用的头字段是<code>Cache-Control</code>，里面的值<code>max-age=30</code>就是资源的有效时间，相当于告诉浏览器，“这个页面只能缓存 30 秒，之后就算是过期，不能用。”</p>
+<blockquote>
+<p>这里的 max-age 是“生存时间”（又叫“新鲜度”“缓存寿命”，类似 TTL，Time-To-Live），<strong>时间的计算起点是响应报文的创建时刻</strong>（即 Date 字段，也就是离开服务器的时刻），而不是客户端收到报文的时刻，也就是说包含了在链路传输过程中所有节点所停留的时间。</p>
+<p>比如，服务器设定“max-age=5”，但因为网络质量很糟糕，等浏览器收到响应报文已经过去了 4 秒，那么这个资源在客户端就最多能够再存 1 秒钟，之后就会失效。</p>
+</blockquote>
+<p>“max-age”是 HTTP 缓存控制最常用的属性，此外在响应报文里还可以用其他的属性来更精确地指示浏览器应该如何使用缓存：</p>
+<ul>
+<li><strong>no-store</strong>：不允许缓存，用于某些变化非常频繁的数据，例如秒杀页面；</li>
+<li><strong>no-cache</strong>：它的字面含义容易与 no-store 搞混，实际的意思并不是不允许缓存，而是可以缓存，但在使用之前必须要去服务器验证是否过期，是否有最新的版本；</li>
+<li><strong>must-revalidate</strong>：又是一个和 no-cache 相似的词，它的意思是如果缓存不过期就可以继续使用，但过期了如果还想用就必须去服务器验证。</li>
+</ul>
+<p>以上三种缓存控制流程可以用下面这张图来表示</p>
+<p><img src="/2019/07/20/http/030204/1575252303612.png" alt="1575252303612"></p>
+<h3 id="2-3-客户端的缓存控制"><a href="#2-3-客户端的缓存控制" class="headerlink" title="2.3 客户端的缓存控制"></a>2.3 客户端的缓存控制</h3><p>其实不止服务器可以发“Cache-Control”头，浏览器也可以发“Cache-Control”，也就是说请求 - 应答的双方都可以用这个字段进行缓存控制，互相协商缓存的使用策略。</p>
+<p><strong>刷新</strong></p>
+<p>当点击浏览器的“刷新”按钮的时候，浏览器会在请求头里加一个<code>Cache-Control: max-age=0</code>。因为 <code>max-age</code> 是“生存时间”，所以设置 <code>max-age=0</code> 后浏览器就不会使用缓存，而是向服务器发请求。服务器看到 <code>max-age=0</code>，也就会用一个最新生成的报文回应浏览器。</p>
+<p><strong>刷新与强制刷新</strong></p>
+<ul>
+<li><p>F5 和 Ctrl+R 都是普通刷新，若页面<strong>之前访问过，就会发一个空请求到服务器</strong>，服务器返回 304 Not Modified，表示资源未更新，可以使用浏览器缓存。</p>
+</li>
+<li><p>强制刷新 (ctrl+F5) 则<strong>不管浏览器是否缓存，都要重新去源站服务器请求资源</strong>，成功则返回 200。</p>
+</li>
+</ul>
+<h3 id="2-4-条件请求"><a href="#2-4-条件请求" class="headerlink" title="2.4 条件请求"></a>2.4 条件请求</h3><p>浏览器用 <code>Cache-Control</code> 做缓存控制只能是刷新数据，不能很好地利用缓存数据，又因为缓存会失效，使用前还必须要<strong>去服务器验证是否是最新版</strong>。</p>
+<p>浏览器可以用两个连续的请求组成“验证动作”：</p>
+<ul>
+<li>先是一个 HEAD，获取资源的修改时间等元信息，然后与缓存数据比较，</li>
+<li>如果没有改动就使用缓存，节省网络流量，否则就再发一个 GET 请求，获取最新的版本。</li>
+</ul>
+<p>但这样的两个请求网络成本太高了，所以 HTTP 协议就<strong>定义了一系列“If”开头的“条件请求”字段</strong>，专门用来<strong>检查验证资源是否过期</strong>，把两个请求才能完成的工作合并在一个请求里做。而且，验证的责任也交给服务器，浏览器只需“坐享其成”。</p>
+<p>条件请求一共有 5 个头字段，我们最常用的是 <code>if-Modified-Since</code> 和 <code>If-None-Match</code> 这两个。需要第一次的响应报文预先提供 <code>Last-modified</code> 和 <code>ETag</code> ，然后第二次请求时就可以带上缓存里的原值，验证资源是否是最新的。如果资源没有变，服务器就回应一个“304 Not Modified”，表示缓存依然有效，浏览器就可以更新一下有效期，然后放心大胆地使用缓存了。</p>
+<p><img src="/2019/07/20/http/030204/b239d0804be630ce182e24ea9e4ab237.png" alt="img"> </p>
+<h4 id="2-4-1-Last-Modified"><a href="#2-4-1-Last-Modified" class="headerlink" title="2.4.1 Last-Modified"></a>2.4.1 Last-Modified</h4><p>标准的HTTP请求头标签，用于记录页面的最后修改时间。</p>
+<blockquote>
+<p>在浏览器<strong>第一次请求某一个URL时</strong>，服务器端的返回状态会是200，内容是你请求的资源，同时有一个 <code>Last-Modified</code> 的属性标记此文件在服务期端最后被修改的时间，格式类似这样：</p>
+<pre><code>Last-Modified: Fri, 12 May 2006 18:53:33 GMT</code></pre><p>后面跟的时间是服务器存储的文件修改时间</p>
+</blockquote>
+<p>Last-Modified与Etag类似。不过<strong>Last-Modified表示响应资源在服务器最后修改时间而已</strong>。</p>
+<p>比如，一个文件在<strong>一秒内修改了多次</strong>，但因为修改时间是秒级，所以这一秒内的新版本无法区分。</p>
+<p>再比如，一个文件定期更新，但有时会是同样的内容，实际上没有变化，用修改时间就会误以为发生了变化，传送给浏览器就会浪费带宽。</p>
+<h4 id="2-4-2-if-Modified-Since"><a href="#2-4-2-if-Modified-Since" class="headerlink" title="2.4.2 if-Modified-Since"></a>2.4.2 if-Modified-Since</h4><p>标准的HTTP请求头标签，用于记录页面的最后修改时间。</p>
+<blockquote>
+<p>客户端第二次请求此URL时，根据 HTTP 协议的规定，浏览器会向服务器传送 <code>If-Modified-Since</code> 报头，询问该时间之后文件是否有被修改过：</p>
+<pre><code>If-Modified-Since: Fri, 12 May 2006 18:53:33 GMT</code></pre><p>后面跟的时间是本地浏览器存储的文件修改时间</p>
+<ul>
+<li><p><strong>服务器端的资源没有变化</strong>，则时间一致，自动返回HTTP状态码304（Not Changed.）状态码，内容为空，客户端接到之后，就直接把本地缓存文件显示到浏览器中，这样就节省了传输数据量。</p>
+</li>
+<li><p><strong>服务器端资源发生改变或者重启服务器时</strong>，时间不一致，就返回HTTP状态码200和新的文件内容，客户端接到之后，会丢弃旧文件，把新文件缓存起来，并显示到浏览器中。</p>
+</li>
+</ul>
+<p>以上操作可以保证不向客户端重复发出资源，也保证当服务器有变化时，客户端能够得到最新的资源。</p>
+</blockquote>
+<h4 id="2-4-3-ETag-与-If-None-Match"><a href="#2-4-3-ETag-与-If-None-Match" class="headerlink" title="2.4.3 ETag 与 If-None-Match"></a>2.4.3 ETag 与 If-None-Match</h4><p>ETag 是“实体标签”（Entity Tag）的缩写，是资源的一个唯一标识，主要是用来<strong>解决修改时间无法准确区分文件变化的问题</strong>。说白了，ETag为资源实体的哈希值。即ETag就是<strong>服务器生成的一个标记，用来标识返回值是否有变化</strong>。</p>
+<p>Etag是属于HTTP <strong>1.1</strong>属性，它是由<strong>服务器生成</strong>返回给前端，</p>
+<p>当<strong>第一次</strong>发起HTTP请求时，<strong>服务器</strong>会返回一个<strong>Etag</strong>。</p>
+<p>在<strong>第二次</strong>发起<strong>同一个请求</strong>时，客户端会<strong>同时</strong>发送一个<strong>If-None-Match</strong>，而它的值就是<strong>Etag</strong>的值（此处由发起请求的客户端来设置）。 </p>
+<p>然后，<strong>服务器会比</strong>对这个客服端发送过来的Etag<strong>是否与服务器的相同</strong>，</p>
+<ul>
+<li><p>如果<strong>相同</strong>，就将<strong>If-None-Match</strong>的值设为<strong>false</strong>，返回状态为<strong>304</strong>，<strong>客户端</strong>继续<strong>使用本地缓存</strong>，不解析服务器返回的数据（这种场景服务器也不返回数据，因为服务器的数据没有变化嘛）</p>
+</li>
+<li><p>如果不<strong>相同</strong>，就将<strong>If-None-Match</strong>的值设为<strong>true</strong>，返回状态为<strong>200，客户端重新解析服务器返回的数据</strong></p>
+</li>
+</ul>
+<h2 id="3-代理服务"><a href="#3-代理服务" class="headerlink" title="3. 代理服务"></a>3. 代理服务</h2><p> 代理其实就相当于是在浏览器和服务器之间的一个中间商。</p>
+<p><img src="/2019/07/20/http/030204/28237ef93ce0ddca076d2dc19c16fdf9.png" alt="img"></p>
+<p>所谓的“代理服务”就是指服务本身不生产内容，而是处于中间位置转发上下游的请求和响应，具有双重身份：</p>
+<ul>
+<li>面向下游的用户时，表现为服务器，代表源服务器响应客户端的请求；</li>
+<li>面向上游的源服务器时，又表现为客户端，代表客户端发送请求。</li>
+</ul>
+<h3 id="3-1-代理服务的作用"><a href="#3-1-代理服务的作用" class="headerlink" title="3.1 代理服务的作用"></a>3.1 代理服务的作用</h3><p><strong>负载均衡</strong>：因为在面向客户端时屏蔽了源服务器，客户端看到的只是代理服务器，源服务器究竟有多少台、是哪些 IP 地址都不知道。于是代理服务器就可以掌握请求分发的“大权”，决定由后面的哪台服务器来响应请求。</p>
+<p><strong>健康检查</strong>：使用“心跳”等机制监控后端服务器，发现有故障就及时“踢出”集群，保证服务高可用；</p>
+<p><strong>安全防护</strong>：保护被代理的后端服务器，限制 IP 地址或流量，抵御网络攻击和过载；</p>
+<p><strong>加密卸载</strong>：对外网使用 SSL/TLS 加密通信认证，而在安全的内网不加密，消除加解密成本；</p>
+<p><strong>数据过滤</strong>：拦截上下行的数据，任意指定策略修改请求或者响应；</p>
+<p><strong>内容缓存</strong>：暂存、复用服务器响应。</p>
+<h3 id="3-2-代理相关头字段"><a href="#3-2-代理相关头字段" class="headerlink" title="3.2 代理相关头字段"></a>3.2 代理相关头字段</h3><p><strong>Via</strong></p>
+<p>Via 是一个通用字段，请求头或响应头里都可以出现。<strong>每当报文经过一个代理节点，代理服务器就会把自身的信息追加到字段的末尾</strong>，就像是经手人盖了一个章。</p>
+<p><img src="/2019/07/20/http/030204/52a3bd760584972011f6be1a5258e2d7.png" alt="img"></p>
+<p>上图中有两个代理，proxy1 和 proxy2。</p>
+<ul>
+<li>客户端发送请求会经过这两个代理，依次添加就是“Via:  proxy1, proxy2”，</li>
+<li>服务器返回响应报文的时候就要反过来走，头字段就是“Via:  proxy2,  proxy1”。 </li>
+</ul>
+<p>Via 字段只解决了客户端和源服务器判断是否存在代理的问题，还不能知道对方的真实信息。</p>
+<p><strong>X-Forwarded-For</strong></p>
+<p>字面意思是“为谁而转发”，形式上和“Via”差不多，也是每经过一个代理节点就会在字段里追加一个信息。但“Via”追加的是代理主机名（或者域名），而“X-Forwarded-For”<strong>追加的是请求方的 IP 地址</strong>。所以，在字段里最左边的 IP 地址就客户端的地址。</p>
+<p><strong>X-Real-IP</strong></p>
+<p>是另一种获取客户端真实 IP 的手段，它的作用很简单，就是<strong>记录客户端 IP 地址，没有中间的代理信息</strong>，相当于是“X-Forwarded-For”的简化版。如果客户端和源服务器之间只有一个代理，那么这两个字段的值就是相同的。</p>
+<p><strong>X-Forwarded-Host</strong> 和 <strong>X-Forwarded-Proto</strong>，它们的作用与 <strong>X-Real-IP</strong> 类似，只记录客户端的信息，分别是客户端请求的原始域名和原始协议名。</p>
+<p>下面是一个真实HTTP请求中这些字段的信息</p>
+<p><img src="/2019/07/20/http/030204/c5aa6d5f82e8cc1a35772293972446e7.png" alt="img"> </p>
+<p>步骤：</p>
+<ol>
+<li><p>客户端 55061 先用三次握手连接到代理的 80 端口，然后发送 GET 请求；</p>
+</li>
+<li><p>代理不直接生产内容，所以就代表客户端，用 55063 端口连接到源服务器，也是三次握手；</p>
+</li>
+<li><p>代理成功连接源服务器后，发出了一个 HTTP/1.0 的 GET 请求；</p>
+</li>
+<li><p>因为 HTTP/1.0 默认是短连接，所以源服务器发送响应报文后立即用四次挥手关闭连接；</p>
+</li>
+<li><p>代理拿到响应报文后再发回给客户端，完成了一次代理服务。</p>
+</li>
+</ol>
+<h3 id="3-3-代理协议"><a href="#3-3-代理协议" class="headerlink" title="3.3 代理协议"></a>3.3 代理协议</h3><p>有了“X-Forwarded-For”等头字段，<strong>源服务器就可以拿到准确的客户端信息了</strong>。但对于代理服务器来说它并不是一个最佳的解决方案。有两个原因：</p>
+<ul>
+<li><p>首先，因为通过“X-Forwarded-For”操作代理信息必须要解析 HTTP 报文头，这对于代理来说成本比较高，原本只需要简单地转发消息就好，而现在却必须要费力解析数据再修改数据，会降低代理的转发性能。</p>
+</li>
+<li><p>另一个问题是“X-Forwarded-For”等头<strong>必须要修改原始报文</strong>，而有些情况下是不允许甚至不可能的（比如使用 HTTPS 通信被加密）。</p>
+</li>
+</ul>
+<p>所以就出现了一个专门的“代理协议”（The PROXY protocol），它由知名的代理软件 HAProxy 所定义，也是一个“事实标准”，被广泛采用（注意并不是 RFC）。<strong>它可以在不改动原始报文的情况下传递客户端的真实 IP</strong>。</p>
+<p>“代理协议”<strong>在 HTTP 报文前增加了一行 ASCII 码文本，相当于又多了一个头</strong>。</p>
+<p>这一行文本其实非常简单，开头必须是“PROXY”五个大写字母，然后是“TCP4”或者“TCP6”，表示客户端的 IP 地址类型，再后面是请求方地址、应答方地址、请求方端口号、应答方端口号，最后用一个回车换行（\r\n）结束。</p>
+<blockquote>
+<p>例如下面的这个例子，在 GET 请求行前多出了 PROXY 信息行，客户端的真实 IP 地址是“1.1.1.1”，端口号是 55555。</p>
+<pre><code>PROXY TCP4 1.1.1.1 2.2.2.2 55555 80\r\n
+GET / HTTP/1.1\r\n
+Host: www.xxx.com\r\n
+\r\n</code></pre><p>服务器看到这样的报文，只要解析第一行就可以拿到客户端地址，不需要再去理会后面的 HTTP 数据，省了很多事情。</p>
+</blockquote>
+<p>不过代理协议并不支持“X-Forwarded-For”的链式地址形式，所以拿到客户端地址后再如何处理就需要代理服务器与后端自行约定。</p>
+<h2 id="4-缓存代理"><a href="#4-缓存代理" class="headerlink" title="4. 缓存代理"></a>4. 缓存代理</h2><p>缓存代理就是<strong>支持缓存控制的代理服务</strong>。</p>
+<p><img src="/2019/07/20/http/030204/5e8d10b5758685850aeed2a473a6cdc2.png" alt="img"> </p>
+<p>在没有缓存的时候，代理服务器每次都是直接转发客户端和服务器的报文，中间不会存储任何数据，只有最简单的中转功能。</p>
+<p>加上缓存之后，代理服务收到源服务器发来的响应数据后需要做两件事。</p>
+<ul>
+<li>第一个是把报文转发给客户端，</li>
+<li>第二个就是把报文存入自己的 Cache 里。</li>
+</ul>
+<p>下一次再有相同的请求，代理服务器就可以直接发送 304 或者缓存数据，不必再从源服务器那里获取。这样就降低了客户端的等待时间，同时节约了源服务器的网络带宽。</p>
+<h3 id="4-1-源服务器的缓存控制"><a href="#4-1-源服务器的缓存控制" class="headerlink" title="4.1 源服务器的缓存控制"></a>4.1 源服务器的缓存控制</h3><p>服务器端的“Cache-Control”属性：max-age、no-store、no-cache 和 must-revalidate可以约束客户端，也可以约束代理。</p>
+<p>但客户端和代理是不一样的，客户端的缓存只是用户自己使用，而代理的缓存可能会为非常多的客户端提供服务。所以，需要对它的缓存再多一些限制条件。</p>
+<p>首先，我们要区分客户端上的缓存和代理上的缓存，可以使用两个新属性“private”和“public”。</p>
+<ul>
+<li>“private”表示缓存只能在客户端保存，是用户“私有”的，不能放在代理上。</li>
+<li>“public”的意思就是缓存完全开放，谁都可以存，谁都可以用。</li>
+</ul>
+<p>其次，缓存失效后的重新验证也要区分开（即使用条件请求“Last-modified”和“ETag”）</p>
+<ul>
+<li>“must-revalidate”是只要过期就必须回源服务器验证</li>
+<li>“proxy-revalidate”只要求代理的缓存过期后必须验证，客户端不必回源，只验证到代理这个环节就行了。</li>
+</ul>
+<p>此外，缓存的生存时间可以使用新的“s-maxage”（s 是 share 的意思，注意 maxage 中间没有“-”）。</p>
+<ul>
+<li>这个字段只限定在代理上能够存多久，而客户端仍然使用“max-age”。</li>
+</ul>
+<p>还有一个代理专用的属性“no-transform”，它禁止缓存服务器对缓存下来的数据进行修改。</p>
+<ul>
+<li>代理有时候会对缓存下来的数据做一些优化，比如把图片生成 png、webp 等几种格式，方便今后的请求处理，而“no-transform”就会禁止这样做，不许“偷偷摸摸搞小动作”。</li>
+</ul>
+<p>以上这些控制信息，可以用下面的这个流程图进行详细的解释</p>
+<p><img src="/2019/07/20/http/030204/1575256191001.png" alt="1575256191001"></p>
+<h3 id="4-2-客户端的缓存控制"><a href="#4-2-客户端的缓存控制" class="headerlink" title="4.2 客户端的缓存控制"></a>4.2 客户端的缓存控制</h3><p><img src="/2019/07/20/http/030204/1575256295777.png" alt="1575256295777"> </p>
+<p>max-age、no-store、no-cache 这三个属性在2.2节中已经说明了，在这里，这三个属性同样作用于代理和源服务器。</p>
+<ul>
+<li><strong>max-stale</strong>：意思是如果代理上的缓存过期了也可以接受，但不能过期太多，超过 x 秒也会不要。相当于延长了过期时间，是可以接受的过期时间</li>
+<li><strong>min-fresh</strong>：意思是缓存必须有效，而且必须在 x 秒内有效。相当于缩短了过期时间， 是可以接受的新鲜时间 </li>
+<li><strong>only-if-cached</strong>：表示<strong>只接受代理缓存的数据，不接受源服务器的响应</strong>。如果代理上没有缓存或者缓存过期，就应该给客户端返回一个 504（Gateway Timeout）。</li>
+</ul>
+<blockquote>
+<p>比如，草莓上贴着标签“max-age=5”，现在已经在冰柜里存了 7 天。如果有请求“max-stale=2”，意思是过期两天也能接受，所以刚好能卖出去。</p>
+<p>但要是“min-fresh=1”，这是绝对不允许过期的，就不会买走。这时如果有另外一个菠萝是“max-age=10”，那么“7+1&lt;10”，在一天之后还是新鲜的，所以就能卖出去。</p>
+</blockquote>
+<h3 id="4-3-Vary字段"><a href="#4-3-Vary字段" class="headerlink" title="4.3 Vary字段"></a>4.3 Vary字段</h3><p>它是内容协商的结果，相当于报文的一个版本标记。同一个请求，经过内容协商后可能会有不同的字符集、编码、浏览器等版本。比如，<code>Vary: Accept-Encoding</code>， <code>Vary: User-Agent</code>，缓存代理必须要存储这些不同的版本。</p>
+<p>当再收到相同的请求时，代理就读取缓存里的“Vary”，对比请求头里相应的 <code>Accept-Encoding</code>，<code>User-Agent</code> 等字段，如果和上一个请求的完全匹配，比如都是“gzip”“Chrome”，就表示版本一致，可以返回缓存的数据。</p>
+<h3 id="4-4-Purge字段"><a href="#4-4-Purge字段" class="headerlink" title="4.4 Purge字段"></a>4.4 Purge字段</h3><p>另一个问题是“Purge”，也就是“缓存清理”，它对于代理也是非常重要的功能，例如：</p>
+<ul>
+<li>过期的数据应该及时淘汰，避免占用空间；</li>
+<li>源站的资源有更新，需要删除旧版本，主动换成最新版（即刷新）；</li>
+<li>有时候会缓存了一些本不该存储的信息，例如网络谣言或者危险链接，必须尽快把它们删除。</li>
+</ul>
+<p>清理缓存的方法有很多，比较常用的一种做法是使用自定义请求方法“PURGE”，发给代理服务器，要求删除 URI 对应的缓存数据。</p>
+
+      
+       
+    </div>
+</article>
+
+
+
+
+
+
+
+    
+        <!-- MathJax配置，可通过单美元符号书写行内公式等 -->
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+    "HTML-CSS": {
+        preferredFont: "TeX",
+        availableFonts: ["STIX","TeX"],
+        linebreaks: { automatic:true },
+        EqnChunk: (MathJax.Hub.Browser.isMobile ? 10 : 50)
+    },
+    tex2jax: {
+        inlineMath: [ ["$", "$"], ["\\(","\\)"] ],
+        processEscapes: true,
+        ignoreClass: "tex2jax_ignore|dno",
+        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+    },
+    TeX: {
+        equationNumbers: { autoNumber: "AMS" },
+        noUndefined: { attributes: { mathcolor: "red", mathbackground: "#FFEEEE", mathsize: "90%" } },
+        Macros: { href: "{}" }
+    },
+    messageStyle: "none"
+    });
+</script>
+<!-- 给MathJax元素添加has-jax class -->
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax(), i;
+        for(i=0; i < all.length; i += 1) {
+            all[i].SourceElement().parentNode.className += ' has-jax';
+        }
+    });
+</script>
+<!-- 通过连接CDN加载MathJax的js代码 -->
+<script type="text/javascript" async
+        src="//cdn.bootcss.com/mathjax/2.7.2/MathJax.js?config=TeX-MML-AM_CHTML">
+</script>
+<input type="hidden" id="MathJax-js"
+        value="//cdn.bootcss.com/mathjax/2.7.2/MathJax.js?config=TeX-MML-AM_CHTML">
+</input>
+    
+
+
+
+
+    </div>
+    <div class="copyright">
+        <p class="footer-entry">©2019-2020 POWDER SNOW</p>
+
+    </div>
+    <div class="full-toc">
+        <button class="full"><span class="min "></span></button>
+<button class="post-toc-menu"><span class="post-toc-menu-icons"></span></button>
+<div class="post-toc"><span class="post-toc-title">目录</span>
+    <div class="post-toc-content">
+
+    </div>
+</div>
+<a class="" id="rocket" ></a>
+
+    </div>
+</div>
+<div class="acParent"></div>
+
+</body>
+<script src="/js/jquery.pjax.js?v=1.0.1" ></script>
+
+<script src="/js/script.js?v=1.0.1" ></script>
+<script>
+    var img_resize = 'default';
+    /*作者、标签的自动补全*/
+    $(function () {
+        $('.search').AutoComplete({
+            'data': ['#HTTP','#protobuf','#MySQL SQL','#Spring','#java','#QT','#区块链','#分布式','#大数据','#前端','#MyBatis','#SpringBoot','#网络编程','#Redis','#多线程','#数据库',],
+            'itemHeight': 20,
+            'width': 418
+        }).AutoComplete('show');
+    })
+    function initArticle() {
+        /*渲染对应的表格样式*/
+        
+            $(".post .pjax table").addClass("green_title");
+        
+
+        /*渲染打赏样式*/
+        
+
+        /*高亮代码块行号*/
+        
+
+        /*访问数量*/
+        
+
+        /*代码高亮，行号对齐*/
+        $('.pre-numbering').css('line-height',$('.has-numbering').css('line-height'));
+
+        
+        
+    }
+
+    /*打赏页面隐藏与展示*/
+    
+
+</script>
+
+<!--加入行号的高亮代码块样式-->
+
+<!--自定义样式设置-->
+<style>
+    
+    
+    .nav {
+        width: 544px;
+    }
+    .nav.fullscreen {
+        margin-left: -544px;
+    }
+    .nav-left {
+        width: 122px;
+    }
+    
+    
+    @media screen and (max-width: 1468px) {
+        .nav {
+            width: 492px;
+        }
+        .nav.fullscreen {
+            margin-left: -492px;
+        }
+        .nav-left {
+            width: 100px;
+        }
+    }
+    
+    
+    @media screen and (max-width: 1024px) {
+        .nav {
+            width: 492px;
+            margin-left: -492px
+        }
+        .nav.fullscreen {
+            margin-left: 0;
+        }
+        .nav .hide-list.fullscreen {
+            left: 492px
+        }
+    }
+    
+    @media screen and (max-width: 426px) {
+        .nav {
+            width: 100%;
+        }
+        .nav-left {
+            width: 100%;
+        }
+    }
+    
+    
+    .nav-right .title-list nav a .post-title, .nav-right .title-list #local-search-result a .post-title {
+        color: #383636;
+    }
+    
+    
+    .nav-right .title-list nav a .post-date, .nav-right .title-list #local-search-result a .post-date {
+        color: #5e5e5f;
+    }
+    
+    
+    .nav-right nav a.hover, #local-search-result a.hover{
+        background-color: #fbf4a8;
+    }
+    
+    
+
+    /*列表样式*/
+    
+    .post .pjax article .article-entry>ol, .post .pjax article .article-entry>ul, .post .pjax article>ol, .post .pjax article>ul{
+        border: #e2dede solid 1px;
+        border-radius: 10px;
+        padding: 10px 32px 10px 56px;
+    }
+    .post .pjax article .article-entry li>ol, .post .pjax article .article-entry li>ul,.post .pjax article li>ol, .post .pjax article li>ul{
+        padding-top: 5px;
+        padding-bottom: 5px;
+    }
+    .post .pjax article .article-entry>ol>li, .post .pjax article .article-entry>ul>li,.post .pjax article>ol>li, .post .pjax article>ul>li{
+        margin-bottom: auto;
+        margin-left: auto;
+    }
+    .post .pjax article .article-entry li>ol>li, .post .pjax article .article-entry li>ul>li,.post .pjax article li>ol>li, .post .pjax article li>ul>li{
+        margin-bottom: auto;
+        margin-left: auto;
+    }
+    
+
+    /* 背景图样式 */
+    
+    .post {
+        background: url(/img/bck.jpg);
+    }
+    
+    
+    .post.index {
+        background: url(/img/background.jpg);
+    }
+    
+
+
+    /*引用块样式*/
+    
+
+    /*文章列表背景图*/
+    
+    .nav-right:before {
+        content: ' ';
+        display: block;
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        opacity: 0.3;
+        background: url("/img/123.jpg");
+        background-repeat: no-repeat;
+        background-position: 50% 0;
+        -ms-background-size: cover;
+        -o-background-size: cover;
+        -moz-background-size: cover;
+        -webkit-background-size: cover;
+        background-size: cover;
+    }
+    
+
+    
+</style>
+
+
+
+
+
+
+
+</html>

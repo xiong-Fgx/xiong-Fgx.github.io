@@ -1,0 +1,1527 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>【Mybatis实战4】加载与缓存 | POWDER SNOW</title>
+  <meta name="keywords" content=" MyBatis ">
+  <meta name="description" content="【Mybatis实战4】加载与缓存 | POWDER SNOW">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<meta property="og:type" content="website">
+<meta property="og:title" content="categories">
+<meta property="og:url" content="http://yoursite.com/categories/index.html">
+<meta property="og:site_name" content="POWDER SNOW">
+<meta property="article:published_time" content="2018-03-02T04:33:16.000Z">
+<meta property="article:modified_time" content="2020-03-05T13:28:59.839Z">
+<meta property="article:author" content="冯冠雄">
+<meta name="twitter:card" content="summary">
+
+
+<link rel="icon" href="/img/avatar.jpg">
+
+<link href="/css/style.css?v=1.0.1" rel="stylesheet">
+
+<link href="/css/hl_theme/atom-light.css?v=1.0.1" rel="stylesheet">
+
+<link href="//cdn.bootcss.com/animate.css/3.5.2/animate.min.css" rel="stylesheet">
+<link href="//cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+
+<script src="//cdn.bootcss.com/jquery/2.2.4/jquery.min.js"></script>
+<script src="/js/jquery.autocomplete.min.js?v=1.0.1" ></script>
+
+<script src="//cdn.bootcss.com/highlight.js/9.12.0/highlight.min.js"></script>
+<script>
+    hljs.initHighlightingOnLoad();
+</script>
+
+<script src="//cdn.bootcss.com/nprogress/0.2.0/nprogress.min.js"></script>
+
+
+
+<script src="//cdn.bootcss.com/jquery-cookie/1.4.1/jquery.cookie.min.js" ></script>
+
+<script src="/js/iconfont.js?v=1.0.1" ></script>
+
+<meta name="generator" content="Hexo 4.2.0"></head>
+<div style="display: none">
+  <input class="theme_disqus_on" value="false">
+  <input class="theme_preload_comment" value="false">
+  <input class="theme_blog_path" value="">
+</div>
+
+<body>
+<aside class="nav">
+    <div class="nav-left">
+        <a href="/" class="avatar_target">
+    <img class="avatar" src="/img/avatar.jpg" />
+</a>
+<div class="author">
+    <span>冯冠雄</span>
+</div>
+
+<div class="icon">
+    
+        
+        <a title="github" href="https://github.com/xiong-Fgx" target="_blank">
+            
+                <svg class="iconfont-svg" aria-hidden="true">
+                    <use xlink:href="#icon-github"></use>
+                </svg>
+            
+        </a>
+        
+    
+        
+        <a title="linkedin" href="https://www.linkedin.com/in/guanxiong-feng-8b6aa8179" target="_blank">
+            
+                <svg class="iconfont-svg" aria-hidden="true">
+                    <use xlink:href="#icon-linkedin"></use>
+                </svg>
+            
+        </a>
+        
+    
+        
+        <a title="email" href="mailto:guanxiongf@gmail.com" target="_blank">
+            
+                <svg class="iconfont-svg" aria-hidden="true">
+                    <use xlink:href="#icon-email"></use>
+                </svg>
+            
+        </a>
+        
+    
+</div>
+
+
+
+
+<ul>
+    <li><div class="all active">全部文章</div></li>
+    
+        
+            
+            <li><div data-rel="网络"><i class="fold iconfont icon-right"></i>网络</div>
+                
+                    <ul class="sub hide">
+                        
+                        <li><div data-rel="HTTP">HTTP</div>
+                            
+                        </li>
+                            
+                        <li><div data-rel="protobuf">protobuf</div>
+                            
+                        </li>
+                            
+                        <li><div data-rel="网络编程">网络编程</div>
+                            
+                        </li>
+                            
+                    </ul>
+                
+            </li>
+            
+        
+    
+        
+            
+            <li><div data-rel="数据库">数据库</div>
+                
+            </li>
+            
+        
+    
+        
+            
+        
+    
+        
+            
+            <li><div data-rel="SSM"><i class="fold iconfont icon-right"></i>SSM</div>
+                
+                    <ul class="sub hide">
+                        
+                        <li><div data-rel="SSM整合">SSM整合</div>
+                            
+                        </li>
+                            
+                        <li><div data-rel="Spring">Spring</div>
+                            
+                        </li>
+                            
+                        <li><div data-rel="SpringMVC">SpringMVC</div>
+                            
+                        </li>
+                            
+                        <li><div data-rel="MyBatis">MyBatis</div>
+                            
+                        </li>
+                            
+                        <li><div data-rel="SpringBoot">SpringBoot</div>
+                            
+                        </li>
+                            
+                    </ul>
+                
+            </li>
+            
+        
+    
+        
+            
+        
+    
+        
+            
+        
+    
+        
+            
+        
+    
+        
+            
+        
+    
+        
+            
+            <li><div data-rel="客户端"><i class="fold iconfont icon-right"></i>客户端</div>
+                
+                    <ul class="sub hide">
+                        
+                        <li><div data-rel="QT">QT</div>
+                            
+                        </li>
+                            
+                    </ul>
+                
+            </li>
+            
+        
+    
+        
+            
+            <li><div data-rel="区块链"><i class="fold iconfont icon-right"></i>区块链</div>
+                
+                    <ul class="sub hide">
+                        
+                        <li><div data-rel="论文">论文</div>
+                            
+                        </li>
+                            
+                        <li><div data-rel="Fabric">Fabric</div>
+                            
+                        </li>
+                            
+                        <li><div data-rel="fabric">fabric</div>
+                            
+                        </li>
+                            
+                    </ul>
+                
+            </li>
+            
+        
+    
+        
+            
+            <li><div data-rel="分布式">分布式</div>
+                
+            </li>
+            
+        
+    
+        
+            
+            <li><div data-rel="大数据"><i class="fold iconfont icon-right"></i>大数据</div>
+                
+                    <ul class="sub hide">
+                        
+                        <li><div data-rel="hadoop">hadoop</div>
+                            
+                        </li>
+                            
+                    </ul>
+                
+            </li>
+            
+        
+    
+        
+            
+            <li><div data-rel="前端"><i class="fold iconfont icon-right"></i>前端</div>
+                
+                    <ul class="sub hide">
+                        
+                        <li><div data-rel="HTML">HTML</div>
+                            
+                        </li>
+                            
+                        <li><div data-rel="CSS">CSS</div>
+                            
+                        </li>
+                            
+                    </ul>
+                
+            </li>
+            
+        
+    
+        
+            
+        
+    
+        
+            
+        
+    
+        
+            
+        
+    
+        
+            
+        
+    
+        
+            
+        
+    
+        
+            
+            <li><div data-rel="笔记">笔记</div>
+                
+            </li>
+            
+        
+    
+        
+            
+        
+    
+        
+            
+        
+    
+        
+            
+        
+    
+        
+            
+        
+    
+        
+            
+        
+    
+</ul>
+<div class="left-bottom">
+    <div class="menus">
+    
+    
+    
+    
+    </div>
+    <div></div>
+</div>
+<input type="hidden" id="yelog_site_posts_number" value="71">
+
+<div style="display: none">
+    <span id="busuanzi_value_site_uv"></span>
+    <span id="busuanzi_value_site_pv"></span>
+</div>
+
+    </div>
+    <div class="nav-right">
+        <div class="friends-area">
+    <div class="friends-title">
+        友情链接
+        <i class="back-title-list"></i>
+    </div>
+    <div class="friends-content">
+        <ul>
+            
+            <li><a target="_blank" href="http://yelog.org/">叶落阁</a></li>
+            
+        </ul>
+    </div>
+</div>
+        <div class="title-list">
+    <form onkeydown="if(event.keyCode === 13){return false;}">
+        <input id="local-search-input" class="search" type="text" placeholder="Search..." />
+        <i class="cross"></i>
+        <span>
+            <label for="tagswitch">Tags:</label>
+            <input id="tagswitch" type="checkbox" style="display: none" />
+            <i id="tagsWitchIcon"></i>
+        </span>
+    </form>
+    <div class="tags-list">
+    
+    <li class="article-tag-list-item">
+        <a class="color5">HTTP</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a class="color4">protobuf</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a class="color5">MySQL SQL</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a class="color2">Spring</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a class="color5">java</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a class="color3">QT</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a class="color4">区块链</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a class="color4">分布式</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a class="color4">大数据</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a class="color3">前端</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a class="color3">MyBatis</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a class="color1">SpringBoot</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a class="color5">网络编程</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a class="color1">Redis</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a class="color4">多线程</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a class="color4">数据库</a>
+    </li>
+    
+    <div class="clearfix"></div>
+</div>
+
+    
+    <nav id="title-list-nav">
+        
+        <a  class="前端 CSS "
+           href="/2021/01/11/html/4_%E7%9B%92%E5%AD%90%E6%A8%A1%E5%9E%8B/"
+           data-tag="前端"
+           data-author="" >
+            <span class="post-title" title="【前端 4】盒子模型">【前端 4】盒子模型</span>
+            <span class="post-date" title="2021-01-11 09:41:10">2021/01/11</span>
+        </a>
+        
+        <a  class="前端 CSS "
+           href="/2021/01/09/html/3_CSS%E8%BF%9B%E9%98%B6/"
+           data-tag="前端"
+           data-author="" >
+            <span class="post-title" title="【前端 3】CSS进阶">【前端 3】CSS进阶</span>
+            <span class="post-date" title="2021-01-09 09:43:10">2021/01/09</span>
+        </a>
+        
+        <a  class="前端 CSS "
+           href="/2021/01/05/html/2_CSS/"
+           data-tag="前端"
+           data-author="" >
+            <span class="post-title" title="【前端 2】CSS">【前端 2】CSS</span>
+            <span class="post-date" title="2021-01-05 16:22:10">2021/01/05</span>
+        </a>
+        
+        <a  class="前端 HTML "
+           href="/2021/01/04/html/1_html/"
+           data-tag="前端"
+           data-author="" >
+            <span class="post-title" title="【前端 1】HTML">【前端 1】HTML</span>
+            <span class="post-date" title="2021-01-04 10:46:10">2021/01/04</span>
+        </a>
+        
+        <a  class="区块链 fabric "
+           href="/2020/12/12/fabric/08_%E9%93%BE%E7%A0%81/"
+           data-tag="区块链"
+           data-author="" >
+            <span class="post-title" title="07_链码接口使用">07_链码接口使用</span>
+            <span class="post-date" title="2020-12-12 11:43:23">2020/12/12</span>
+        </a>
+        
+        <a  class="区块链 fabric "
+           href="/2020/12/12/fabric/02_%E9%83%A8%E7%BD%B2%E8%B0%83%E7%94%A8%E9%93%BE%E7%A0%81/"
+           data-tag="区块链"
+           data-author="" >
+            <span class="post-title" title="02_部署调用链码">02_部署调用链码</span>
+            <span class="post-date" title="2020-12-12 10:56:23">2020/12/12</span>
+        </a>
+        
+        <a  class="区块链 fabric "
+           href="/2020/12/09/fabric/07_dockerCompose%E5%90%AF%E5%8A%A8fabric/"
+           data-tag="区块链"
+           data-author="" >
+            <span class="post-title" title="06_docker compose启动节点">06_docker compose启动节点</span>
+            <span class="post-date" title="2020-12-09 11:35:23">2020/12/09</span>
+        </a>
+        
+        <a  class="区块链 fabric "
+           href="/2020/12/09/fabric/03_%E7%BD%91%E7%BB%9C%E7%BB%93%E6%9E%84%E5%8F%98%E5%8A%A8/"
+           data-tag="区块链"
+           data-author="" >
+            <span class="post-title" title="03_用户结构变动">03_用户结构变动</span>
+            <span class="post-date" title="2020-12-09 10:35:23">2020/12/09</span>
+        </a>
+        
+        <a  class="区块链 fabric "
+           href="/2020/12/02/fabric/01_%E6%90%AD%E5%BB%BA%E5%9F%BA%E7%A1%80%E7%BD%91%E7%BB%9C/"
+           data-tag="区块链"
+           data-author="" >
+            <span class="post-title" title="01_搭建基础网络">01_搭建基础网络</span>
+            <span class="post-date" title="2020-12-02 11:05:23">2020/12/02</span>
+        </a>
+        
+        <a  class="区块链 fabric "
+           href="/2020/12/01/fabric/05_java%20SDK%E4%BD%BF%E7%94%A8/"
+           data-tag="区块链"
+           data-author="" >
+            <span class="post-title" title="05_javaSDK使用">05_javaSDK使用</span>
+            <span class="post-date" title="2020-12-01 15:04:23">2020/12/01</span>
+        </a>
+        
+        <a  class="区块链 fabric "
+           href="/2020/12/01/fabric/04_%E7%94%A8%E6%88%B7%E4%BD%BF%E7%94%A8%E9%93%BE%E7%A0%81/"
+           data-tag="区块链"
+           data-author="" >
+            <span class="post-title" title="04_用户使用链码">04_用户使用链码</span>
+            <span class="post-date" title="2020-12-01 10:55:23">2020/12/01</span>
+        </a>
+        
+        <a  class="大数据 hadoop "
+           href="/2020/11/26/hadoop/%E5%AE%89%E8%A3%85/"
+           data-tag="大数据"
+           data-author="" >
+            <span class="post-title" title="【hadoop 3】hadoop分布式安装总结">【hadoop 3】hadoop分布式安装总结</span>
+            <span class="post-date" title="2020-11-26 17:50:09">2020/11/26</span>
+        </a>
+        
+        <a  class="客户端 QT "
+           href="/2020/10/29/QT/4_%E6%A8%A1%E5%9E%8B%20%E8%A7%86%E5%9B%BE%E7%BB%93%E6%9E%84/"
+           data-tag="QT"
+           data-author="" >
+            <span class="post-title" title="【QT 3】模型-视图结构">【QT 3】模型-视图结构</span>
+            <span class="post-date" title="2020-10-29 16:49:10">2020/10/29</span>
+        </a>
+        
+        <a  class="客户端 QT "
+           href="/2020/10/28/QT/3_%E6%8E%A7%E4%BB%B6/"
+           data-tag="QT"
+           data-author="" >
+            <span class="post-title" title="【QT 2】控件">【QT 2】控件</span>
+            <span class="post-date" title="2020-10-28 16:55:10">2020/10/28</span>
+        </a>
+        
+        <a  class="客户端 QT "
+           href="/2020/10/28/QT/2_%E5%B8%83%E5%B1%80%E7%AE%A1%E7%90%86/"
+           data-tag="QT"
+           data-author="" >
+            <span class="post-title" title="【QT 1】布局管理">【QT 1】布局管理</span>
+            <span class="post-date" title="2020-10-28 14:37:10">2020/10/28</span>
+        </a>
+        
+        <a  class="客户端 QT "
+           href="/2020/10/20/QT/QT%E7%95%8C%E9%9D%A2%E7%BC%96%E8%BE%91%E5%99%A8/"
+           data-tag="QT"
+           data-author="" >
+            <span class="post-title" title="【QT 4】QT界面编辑器">【QT 4】QT界面编辑器</span>
+            <span class="post-date" title="2020-10-20 15:52:10">2020/10/20</span>
+        </a>
+        
+        <a  class="SSM Spring "
+           href="/2020/06/01/%E7%AC%94%E8%AE%B0/spring/"
+           data-tag="Spring"
+           data-author="" >
+            <span class="post-title" title="【笔记】Spring总结">【笔记】Spring总结</span>
+            <span class="post-date" title="2020-06-01 03:57:17">2020/06/01</span>
+        </a>
+        
+        <a  class="笔记 "
+           href="/2020/05/12/%E7%AC%94%E8%AE%B0/%E6%95%B0%E6%8D%AE%E5%BA%93/"
+           data-tag="数据库"
+           data-author="" >
+            <span class="post-title" title="【笔记】数据库与MySQL">【笔记】数据库与MySQL</span>
+            <span class="post-date" title="2020-05-12 21:38:05">2020/05/12</span>
+        </a>
+        
+        <a  class="笔记 "
+           href="/2020/05/07/%E7%AC%94%E8%AE%B0/redis/"
+           data-tag="Redis"
+           data-author="" >
+            <span class="post-title" title="【笔记】Redis">【笔记】Redis</span>
+            <span class="post-date" title="2020-05-07 18:38:05">2020/05/07</span>
+        </a>
+        
+        <a  class="笔记 "
+           href="/2020/04/25/%E7%AC%94%E8%AE%B0/%E5%A4%9A%E7%BA%BF%E7%A8%8B/"
+           data-tag="多线程"
+           data-author="" >
+            <span class="post-title" title="【笔记】java并发">【笔记】java并发</span>
+            <span class="post-date" title="2020-04-25 15:38:01">2020/04/25</span>
+        </a>
+        
+        <a  class="大数据 hadoop "
+           href="/2020/03/18/hadoop/2_%E4%BD%BF%E7%94%A8hadoop/"
+           data-tag="大数据"
+           data-author="" >
+            <span class="post-title" title="【hadoop 2】hadoop三种模式使用">【hadoop 2】hadoop三种模式使用</span>
+            <span class="post-date" title="2020-03-18 17:49:04">2020/03/18</span>
+        </a>
+        
+        <a  class="SSM SpringBoot "
+           href="/2020/03/18/springboot/3_springboot%E7%9A%84%E9%85%8D%E7%BD%AE/"
+           data-tag="SpringBoot"
+           data-author="" >
+            <span class="post-title" title="【SpringBoot 02】配置文件">【SpringBoot 02】配置文件</span>
+            <span class="post-date" title="2020-03-18 12:58:23">2020/03/18</span>
+        </a>
+        
+        <a  class="SSM SpringBoot "
+           href="/2020/03/17/springboot/2_springboot%E7%9A%84helloworld/"
+           data-tag="SpringBoot"
+           data-author="" >
+            <span class="post-title" title="【SpringBoot 01】HelloWorld">【SpringBoot 01】HelloWorld</span>
+            <span class="post-date" title="2020-03-17 19:58:23">2020/03/17</span>
+        </a>
+        
+        <a  class="SSM SSM整合 "
+           href="/2020/03/05/3-SpringMVC/1_%E6%90%AD%E5%BB%BAspring/"
+           data-tag="java"
+           data-author="" >
+            <span class="post-title" title="【SSM实战】SSM框架整合">【SSM实战】SSM框架整合</span>
+            <span class="post-date" title="2020-03-05 20:37:01">2020/03/05</span>
+        </a>
+        
+        <a  class="SSM SpringMVC "
+           href="/2020/03/05/3-SpringMVC/7_SpringMVC%E5%BC%82%E5%B8%B8%E5%A4%84%E7%90%86%E4%B8%8E%E6%8B%A6%E6%88%AA%E5%99%A8/"
+           data-tag="java"
+           data-author="" >
+            <span class="post-title" title="【SpringMVC实战6】异常处理与拦截器">【SpringMVC实战6】异常处理与拦截器</span>
+            <span class="post-date" title="2020-03-05 13:06:19">2020/03/05</span>
+        </a>
+        
+        <a  class="SSM SpringMVC "
+           href="/2020/03/04/3-SpringMVC/6_SpringMVC%E5%93%8D%E5%BA%94/"
+           data-tag="java"
+           data-author="" >
+            <span class="post-title" title="【SpringMVC实战5】响应">【SpringMVC实战5】响应</span>
+            <span class="post-date" title="2020-03-04 19:26:39">2020/03/04</span>
+        </a>
+        
+        <a  class="SSM SpringMVC "
+           href="/2020/03/03/3-SpringMVC/4_SpringMVC%E7%9A%84%E5%B8%B8%E7%94%A8%E6%B3%A8%E8%A7%A3/"
+           data-tag="java"
+           data-author="" >
+            <span class="post-title" title="【SpringMVC实战3】常用注解">【SpringMVC实战3】常用注解</span>
+            <span class="post-date" title="2020-03-03 15:26:29">2020/03/03</span>
+        </a>
+        
+        <a  class="SSM SpringMVC "
+           href="/2020/03/03/3-SpringMVC/5_%E8%AF%B7%E6%B1%82%E5%8F%82%E6%95%B0%E7%BB%91%E5%AE%9A/"
+           data-tag="java"
+           data-author="" >
+            <span class="post-title" title="【SpringMVC实战4】请求参数绑定">【SpringMVC实战4】请求参数绑定</span>
+            <span class="post-date" title="2020-03-03 09:13:23">2020/03/03</span>
+        </a>
+        
+        <a  class="SSM SpringMVC "
+           href="/2020/03/02/3-SpringMVC/3_SpringMVC%E7%9A%84%E6%89%A7%E8%A1%8C%E6%B5%81%E7%A8%8B/"
+           data-tag="java"
+           data-author="" >
+            <span class="post-title" title="【SpringMVC实战2】执行流程">【SpringMVC实战2】执行流程</span>
+            <span class="post-date" title="2020-03-02 18:26:39">2020/03/02</span>
+        </a>
+        
+        <a  class="SSM SpringMVC "
+           href="/2020/03/02/3-SpringMVC/2_%E5%85%A5%E9%97%A8%E6%A1%88%E4%BE%8B/"
+           data-tag="java"
+           data-author="" >
+            <span class="post-title" title="【SpringMVC实战1】入门案例">【SpringMVC实战1】入门案例</span>
+            <span class="post-date" title="2020-03-02 14:26:39">2020/03/02</span>
+        </a>
+        
+        <a  class="SSM Spring "
+           href="/2020/02/21/13-Spring/8_%E4%BA%8B%E5%8A%A1%E6%8E%A7%E5%88%B6/"
+           data-tag="Spring"
+           data-author="" >
+            <span class="post-title" title="【Spring实战8】事务控制">【Spring实战8】事务控制</span>
+            <span class="post-date" title="2020-02-21 15:23:48">2020/02/21</span>
+        </a>
+        
+        <a  class="SSM Spring "
+           href="/2020/02/20/13-Spring/7_JdbcTemplate/"
+           data-tag="Spring"
+           data-author="" >
+            <span class="post-title" title="【Spring实战7】JdbcTemplate">【Spring实战7】JdbcTemplate</span>
+            <span class="post-date" title="2020-02-20 09:32:29">2020/02/20</span>
+        </a>
+        
+        <a  class="SSM Spring "
+           href="/2020/02/19/13-Spring/6_%E5%9F%BA%E4%BA%8Exml%E5%92%8C%E6%B3%A8%E8%A7%A3%E7%9A%84AOP%E9%85%8D%E7%BD%AE/"
+           data-tag="Spring"
+           data-author="" >
+            <span class="post-title" title="【Spring实战6】基于xml和注解的AOP配置">【Spring实战6】基于xml和注解的AOP配置</span>
+            <span class="post-date" title="2020-02-19 21:31:44">2020/02/19</span>
+        </a>
+        
+        <a  class="SSM Spring "
+           href="/2020/02/19/13-Spring/5_AOP/"
+           data-tag="Spring"
+           data-author="" >
+            <span class="post-title" title="【Spring实战5】AOP">【Spring实战5】AOP</span>
+            <span class="post-date" title="2020-02-19 18:56:47">2020/02/19</span>
+        </a>
+        
+        <a  class="SSM Spring "
+           href="/2020/02/18/13-Spring/4_%E5%8A%A8%E6%80%81%E4%BB%A3%E7%90%86/"
+           data-tag="Spring"
+           data-author="" >
+            <span class="post-title" title="【Spring实战4】动态代理">【Spring实战4】动态代理</span>
+            <span class="post-date" title="2020-02-18 17:15:32">2020/02/18</span>
+        </a>
+        
+        <a  class="SSM Spring "
+           href="/2020/02/14/13-Spring/3_%E5%9F%BA%E4%BA%8E%E6%B3%A8%E8%A7%A3%E7%9A%84IOC/"
+           data-tag="Spring"
+           data-author="" >
+            <span class="post-title" title="【Spring实战3】IoC注解">【Spring实战3】IoC注解</span>
+            <span class="post-date" title="2020-02-14 20:57:17">2020/02/14</span>
+        </a>
+        
+        <a  class="SSM Spring "
+           href="/2020/02/13/13-Spring/2_IOC/"
+           data-tag="Spring"
+           data-author="" >
+            <span class="post-title" title="【Spring实战2】IoC与DI">【Spring实战2】IoC与DI</span>
+            <span class="post-date" title="2020-02-13 20:56:03">2020/02/13</span>
+        </a>
+        
+        <a  class="SSM Spring "
+           href="/2020/02/13/13-Spring/1_%E7%A8%8B%E5%BA%8F%E8%80%A6%E5%90%88%E4%B8%8E%E8%A7%A3%E8%80%A6/"
+           data-tag="Spring"
+           data-author="" >
+            <span class="post-title" title="【Spring实战1】程序的耦合与解耦">【Spring实战1】程序的耦合与解耦</span>
+            <span class="post-date" title="2020-02-13 13:17:03">2020/02/13</span>
+        </a>
+        
+        <a  class="SSM MyBatis "
+           href="/2020/02/07/mybatis/10_%E6%B3%A8%E8%A7%A3%E5%BC%80%E5%8F%91/"
+           data-tag="MyBatis"
+           data-author="" >
+            <span class="post-title" title="【Mybatis实战5】注解开发">【Mybatis实战5】注解开发</span>
+            <span class="post-date" title="2020-02-07 16:18:37">2020/02/07</span>
+        </a>
+        
+        <a  class="SSM MyBatis "
+           href="/2020/02/06/mybatis/9_%E7%BC%93%E5%AD%98/"
+           data-tag="MyBatis"
+           data-author="" >
+            <span class="post-title" title="【Mybatis实战4】加载与缓存">【Mybatis实战4】加载与缓存</span>
+            <span class="post-date" title="2020-02-06 18:29:03">2020/02/06</span>
+        </a>
+        
+        <a  class="SSM MyBatis "
+           href="/2020/02/06/mybatis/8_%E5%8A%A8%E6%80%81SQL%E4%B8%8E%E5%A4%9A%E8%A1%A8%E6%93%8D%E4%BD%9C/"
+           data-tag="MyBatis"
+           data-author="" >
+            <span class="post-title" title="【Mybatis实战3】动态SQL与多表操作">【Mybatis实战3】动态SQL与多表操作</span>
+            <span class="post-date" title="2020-02-06 18:08:29">2020/02/06</span>
+        </a>
+        
+        <a  class="SSM MyBatis "
+           href="/2020/02/06/mybatis/6_mybatis%E8%BF%9B%E8%A1%8CCRUD/"
+           data-tag="MyBatis"
+           data-author="" >
+            <span class="post-title" title="【Mybatis实战2】CRUD操作">【Mybatis实战2】CRUD操作</span>
+            <span class="post-date" title="2020-02-06 13:21:03">2020/02/06</span>
+        </a>
+        
+        <a  class="SSM MyBatis "
+           href="/2020/02/05/mybatis/2_%E5%9F%BA%E4%BA%8Exml%E7%9A%84%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/"
+           data-tag="MyBatis"
+           data-author="" >
+            <span class="post-title" title="【Mybatis实战1】两种环境搭建方法及示例">【Mybatis实战1】两种环境搭建方法及示例</span>
+            <span class="post-date" title="2020-02-05 10:21:01">2020/02/05</span>
+        </a>
+        
+        <a  class="数据库 "
+           href="/2020/01/29/11-MySQL/3_%E5%A4%9A%E8%A1%A8%E6%9F%A5%E8%AF%A2%E4%B8%8E%E4%BA%8B%E5%8A%A1/"
+           data-tag="MySQL SQL"
+           data-author="" >
+            <span class="post-title" title="多表查询与事务">多表查询与事务</span>
+            <span class="post-date" title="2020-01-29 13:52:00">2020/01/29</span>
+        </a>
+        
+        <a  class="数据库 "
+           href="/2020/01/26/11-MySQL/2_SQL%E9%AB%98%E7%BA%A7/"
+           data-tag="MySQL SQL"
+           data-author="" >
+            <span class="post-title" title="数据库高级知识及SQL实现">数据库高级知识及SQL实现</span>
+            <span class="post-date" title="2020-01-26 23:01:52">2020/01/26</span>
+        </a>
+        
+        <a  class="数据库 "
+           href="/2020/01/23/11-MySQL/1_SQL%E8%AF%AD%E8%A8%80%E5%9F%BA%E6%9C%AC%E6%93%8D%E4%BD%9C/"
+           data-tag="MySQL SQL"
+           data-author="" >
+            <span class="post-title" title="SQL语言基础">SQL语言基础</span>
+            <span class="post-date" title="2020-01-23 20:06:39">2020/01/23</span>
+        </a>
+        
+        <a  class="网络 protobuf "
+           href="/2020/01/16/10-java%E7%BD%91%E7%BB%9C/2_protobuf/"
+           data-tag="protobuf"
+           data-author="" >
+            <span class="post-title" title="java使用protobuf">java使用protobuf</span>
+            <span class="post-date" title="2020-01-16 17:57:52">2020/01/16</span>
+        </a>
+        
+        <a  class="网络 HTTP "
+           href="/2020/01/15/10-java%E7%BD%91%E7%BB%9C/1_HTTP/"
+           data-tag="HTTP"
+           data-author="" >
+            <span class="post-title" title="java实现简单的HTTP">java实现简单的HTTP</span>
+            <span class="post-date" title="2020-01-15 18:03:21">2020/01/15</span>
+        </a>
+        
+        <a  class="大数据 hadoop "
+           href="/2020/01/06/hadoop/1_hadoop/"
+           data-tag="大数据"
+           data-author="" >
+            <span class="post-title" title="【hadoop 1】hadoop环境搭建">【hadoop 1】hadoop环境搭建</span>
+            <span class="post-date" title="2020-01-06 14:55:10">2020/01/06</span>
+        </a>
+        
+        <a  class="区块链 Fabric "
+           href="/2019/11/24/blockchain/09/"
+           data-tag="区块链"
+           data-author="" >
+            <span class="post-title" title="Hyperledger Fabric系统框架笔记">Hyperledger Fabric系统框架笔记</span>
+            <span class="post-date" title="2019-11-24 12:43:08">2019/11/24</span>
+        </a>
+        
+        <a  class="区块链 论文 "
+           href="/2019/11/21/blockchain/08/"
+           data-tag="区块链"
+           data-author="" >
+            <span class="post-title" title="闪电网络（四）比特币闪电网络：The Bitcoin Lightning Network">闪电网络（四）比特币闪电网络：The Bitcoin Lightning Network</span>
+            <span class="post-date" title="2019-11-21 21:31:53">2019/11/21</span>
+        </a>
+        
+        <a  class="区块链 论文 "
+           href="/2019/11/20/blockchain/07/"
+           data-tag="区块链"
+           data-author="" >
+            <span class="post-title" title="闪电网络（三）哈希时间锁合约：Hashed Timelock Contract (HTLC)">闪电网络（三）哈希时间锁合约：Hashed Timelock Contract (HTLC)</span>
+            <span class="post-date" title="2019-11-20 10:51:23">2019/11/20</span>
+        </a>
+        
+        <a  class="区块链 论文 "
+           href="/2019/11/20/blockchain/05/"
+           data-tag="区块链"
+           data-author="" >
+            <span class="post-title" title="闪电网络（二）双向支付通道：Bidirectional Payment Channels + RSMC">闪电网络（二）双向支付通道：Bidirectional Payment Channels + RSMC</span>
+            <span class="post-date" title="2019-11-20 10:51:23">2019/11/20</span>
+        </a>
+        
+        <a  class="区块链 论文 "
+           href="/2019/11/19/blockchain/06/"
+           data-tag="区块链"
+           data-author="" >
+            <span class="post-title" title="闪电网络（一）微支付通道">闪电网络（一）微支付通道</span>
+            <span class="post-date" title="2019-11-19 10:07:02">2019/11/19</span>
+        </a>
+        
+        <a  class="区块链 论文 "
+           href="/2019/11/15/blockchain/03/"
+           data-tag="区块链"
+           data-author="" >
+            <span class="post-title" title="论文翻译 OmniLedger">论文翻译 OmniLedger</span>
+            <span class="post-date" title="2019-11-15 16:15:33">2019/11/15</span>
+        </a>
+        
+        <a  class="网络 网络编程 "
+           href="/2019/11/03/networkProgram/%E7%BD%91%E7%BB%9C%E7%BC%96%E7%A8%8B10UDP%E8%BF%9E%E6%8E%A5/"
+           data-tag="网络编程"
+           data-author="" >
+            <span class="post-title" title="网络编程10：UDP连接">网络编程10：UDP连接</span>
+            <span class="post-date" title="2019-11-03 16:15:07">2019/11/03</span>
+        </a>
+        
+        <a  class="网络 网络编程 "
+           href="/2019/11/02/networkProgram/%E7%BD%91%E7%BB%9C%E7%BC%96%E7%A8%8B9TCP%E7%9A%84%E5%BC%82%E5%B8%B8/"
+           data-tag="网络编程"
+           data-author="" >
+            <span class="post-title" title="网络编程9：TCP的异常">网络编程9：TCP的异常</span>
+            <span class="post-date" title="2019-11-02 13:57:10">2019/11/02</span>
+        </a>
+        
+        <a  class="网络 网络编程 "
+           href="/2019/11/01/networkProgram/%E7%BD%91%E7%BB%9C%E7%BC%96%E7%A8%8B8TCP%E6%95%B0%E6%8D%AE%E4%BC%A0%E8%BE%93/"
+           data-tag="网络编程"
+           data-author="" >
+            <span class="post-title" title="网络编程8：TCP数据传输">网络编程8：TCP数据传输</span>
+            <span class="post-date" title="2019-11-01 18:34:10">2019/11/01</span>
+        </a>
+        
+        <a  class="网络 网络编程 "
+           href="/2019/10/31/networkProgram/%E7%BD%91%E7%BB%9C%E7%BC%96%E7%A8%8B7TCP%E8%BF%9E%E6%8E%A5%E7%8A%B6%E6%80%81/"
+           data-tag="网络编程"
+           data-author="" >
+            <span class="post-title" title="网络编程7：TCP连接状态">网络编程7：TCP连接状态</span>
+            <span class="post-date" title="2019-10-31 17:14:55">2019/10/31</span>
+        </a>
+        
+        <a  class="网络 网络编程 "
+           href="/2019/10/30/networkProgram/%E7%BD%91%E7%BB%9C%E7%BC%96%E7%A8%8B6%E5%85%B3%E9%97%AD%E8%BF%9E%E6%8E%A5/"
+           data-tag="网络编程"
+           data-author="" >
+            <span class="post-title" title="网络编程6：关闭连接">网络编程6：关闭连接</span>
+            <span class="post-date" title="2019-10-30 18:34:12">2019/10/30</span>
+        </a>
+        
+        <a  class="网络 网络编程 "
+           href="/2019/10/29/networkProgram/%E7%BD%91%E7%BB%9C%E7%BC%96%E7%A8%8B5%E7%BD%91%E7%BB%9C%E5%B7%A5%E5%85%B7/"
+           data-tag="网络编程"
+           data-author="" >
+            <span class="post-title" title="网络编程5：网络工具">网络编程5：网络工具</span>
+            <span class="post-date" title="2019-10-29 14:24:11">2019/10/29</span>
+        </a>
+        
+        <a  class="网络 网络编程 "
+           href="/2019/10/28/networkProgram/%E7%BD%91%E7%BB%9C%E7%BC%96%E7%A8%8B3UDP%E5%8D%8F%E8%AE%AE%E4%BD%BF%E7%94%A8socket/"
+           data-tag="网络编程"
+           data-author="" >
+            <span class="post-title" title="网络编程3：UDP协议使用socket">网络编程3：UDP协议使用socket</span>
+            <span class="post-date" title="2019-10-28 10:11:10">2019/10/28</span>
+        </a>
+        
+        <a  class="网络 网络编程 "
+           href="/2019/10/28/networkProgram/%E7%BD%91%E7%BB%9C%E7%BC%96%E7%A8%8B4%E6%9C%AC%E5%9C%B0socket/"
+           data-tag="网络编程"
+           data-author="" >
+            <span class="post-title" title="网络编程4：本地套接字">网络编程4：本地套接字</span>
+            <span class="post-date" title="2019-10-28 10:11:10">2019/10/28</span>
+        </a>
+        
+        <a  class="网络 网络编程 "
+           href="/2019/10/27/networkProgram/%E7%BD%91%E7%BB%9C%E7%BC%96%E7%A8%8B2TCP%E5%8D%8F%E8%AE%AE%E4%BD%BF%E7%94%A8socket/"
+           data-tag="网络编程"
+           data-author="" >
+            <span class="post-title" title="网络编程2：TCP协议使用socket">网络编程2：TCP协议使用socket</span>
+            <span class="post-date" title="2019-10-27 17:59:09">2019/10/27</span>
+        </a>
+        
+        <a  class="网络 网络编程 "
+           href="/2019/10/26/networkProgram/%E7%BD%91%E7%BB%9C%E7%BC%96%E7%A8%8B1/"
+           data-tag="网络编程"
+           data-author="" >
+            <span class="post-title" title="网络编程1：基础部分">网络编程1：基础部分</span>
+            <span class="post-date" title="2019-10-26 16:54:02">2019/10/26</span>
+        </a>
+        
+        <a  class="分布式 "
+           href="/2019/09/12/distribute/01/"
+           data-tag="分布式"
+           data-author="" >
+            <span class="post-title" title="分布式系统的一致性与共识">分布式系统的一致性与共识</span>
+            <span class="post-date" title="2019-09-12 13:47:52">2019/09/12</span>
+        </a>
+        
+        <a  class="网络 HTTP "
+           href="/2019/08/05/http/030205/"
+           data-tag="HTTP"
+           data-author="" >
+            <span class="post-title" title="HTTP协议学习（五）HTTPS与安全">HTTP协议学习（五）HTTPS与安全</span>
+            <span class="post-date" title="2019-08-05 20:46:07">2019/08/05</span>
+        </a>
+        
+        <a  class="网络 HTTP "
+           href="/2019/07/20/http/030204/"
+           data-tag="HTTP"
+           data-author="" >
+            <span class="post-title" title="HTTP协议学习（四）cookie、缓存、代理机制">HTTP协议学习（四）cookie、缓存、代理机制</span>
+            <span class="post-date" title="2019-07-20 13:15:07">2019/07/20</span>
+        </a>
+        
+        <a  class="网络 HTTP "
+           href="/2019/07/10/http/030203/"
+           data-tag="HTTP"
+           data-author="" >
+            <span class="post-title" title="HTTP协议学习（三）数据传输与连接">HTTP协议学习（三）数据传输与连接</span>
+            <span class="post-date" title="2019-07-10 14:36:55">2019/07/10</span>
+        </a>
+        
+        <a  class="网络 HTTP "
+           href="/2019/07/01/http/030202/"
+           data-tag="HTTP"
+           data-author="" >
+            <span class="post-title" title="HTTP协议学习（二）基础">HTTP协议学习（二）基础</span>
+            <span class="post-date" title="2019-07-01 14:05:51">2019/07/01</span>
+        </a>
+        
+        <a  class="网络 HTTP "
+           href="/2019/06/14/http/030201/"
+           data-tag="HTTP"
+           data-author="" >
+            <span class="post-title" title="HTTP协议学习（一）概念">HTTP协议学习（一）概念</span>
+            <span class="post-date" title="2019-06-14 16:08:25">2019/06/14</span>
+        </a>
+        
+    </nav>
+</div>
+    </div>
+    <div class="hide-list">
+        <div class="semicircle">
+            <div class="brackets first"><</div>
+            <div class="brackets">&gt;</div>
+        </div>
+    </div>
+</aside>
+<div class="post">
+    <div class="pjax">
+        <article id="post-mybatis/9_缓存" class="article article-type-post" itemscope itemprop="blogPost">
+    
+        <h1 class="article-title">【Mybatis实战4】加载与缓存</h1>
+    
+    <div class="article-meta">
+        
+        
+        
+        <span class="book">
+            
+                <a  data-rel="SSM">SSM</a>/
+            
+                <a  data-rel="MyBatis">MyBatis</a>
+            
+        </span>
+        
+        
+        <span class="tag">
+            
+            <a class="color3">MyBatis</a>
+            
+        </span>
+        
+    </div>
+    <div class="article-meta">
+        
+        创建时间:<time class="date" title='更新时间: 2020-03-06 06:46:38'>2020-02-06 18:29</time>
+        
+    </div>
+    <div class="article-meta">
+        
+        
+        
+    </div>
+    
+    <div class="toc-ref">
+    
+        <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#延迟加载与立即加载"><span class="toc-text">延迟加载与立即加载</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#1-单表查询延迟加载"><span class="toc-text">1. 单表查询延迟加载</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-一对多查询延迟加载"><span class="toc-text">2. 一对多查询延迟加载</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#mybatis的缓存"><span class="toc-text">mybatis的缓存</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#1-什么是缓存"><span class="toc-text">1. 什么是缓存</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-为什么使用缓存"><span class="toc-text">2. 为什么使用缓存</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3-缓存使用的条件"><span class="toc-text">3. 缓存使用的条件</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#4-mybatis中的一级缓存"><span class="toc-text">4. mybatis中的一级缓存</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#5-mybatis中的二级缓存"><span class="toc-text">5. mybatis中的二级缓存</span></a></li></ol></li></ol>
+    
+<style>
+    .left-col .switch-btn,
+    .left-col .switch-area {
+        display: none;
+    }
+    .toc-level-3 i,
+    .toc-level-3 ol {
+        display: none !important;
+    }
+</style>
+</div>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p><div class='inner-toc'><h2>目录</h2><ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#延迟加载与立即加载"><span class="toc-text">延迟加载与立即加载</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#1-单表查询延迟加载"><span class="toc-text">1. 单表查询延迟加载</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-一对多查询延迟加载"><span class="toc-text">2. 一对多查询延迟加载</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#mybatis的缓存"><span class="toc-text">mybatis的缓存</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#1-什么是缓存"><span class="toc-text">1. 什么是缓存</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-为什么使用缓存"><span class="toc-text">2. 为什么使用缓存</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3-缓存使用的条件"><span class="toc-text">3. 缓存使用的条件</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#4-mybatis中的一级缓存"><span class="toc-text">4. mybatis中的一级缓存</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#5-mybatis中的二级缓存"><span class="toc-text">5. mybatis中的二级缓存</span></a></li></ol></li></ol></div></p>
+<h1 id="延迟加载与立即加载"><a href="#延迟加载与立即加载" class="headerlink" title="延迟加载与立即加载"></a>延迟加载与立即加载</h1><p>问题：在一对多中，假设当一个用户有100个账户。</p>
+<ul>
+<li>在查询用户的时候要不要把关联的账户查出来？</li>
+<li>在查询账户的时候要不要把关联的用户查出来？</li>
+</ul>
+<p>如果直接查出来但是不用，则会造成空间浪费，但是如果要用的时候没有查出来，则是不能使用的。因此需要在使用的时候再进行查询，而不是一次性全部都查出来。</p>
+<ul>
+<li><strong>延迟加载</strong>：在真正使用数据的时候才发起查询，不用的时候不查询，也就是按需加载</li>
+<li><strong>立即加载</strong>：不管用不用，只要一调用方法，就立即发起查询</li>
+</ul>
+<p>四种对应的四种表关系：一对多、多对一、一对一、多对多，可以根据关联的对象多少，将这四种关系分成两组：</p>
+<ul>
+<li><strong>一对多、多对多</strong>：对的是多，也就是需要加载的东西比较多，通常采用延迟加载</li>
+<li><strong>多对一、一对一</strong>：对的是一，也就是需要加载的东西不多，通常采用立即加载</li>
+</ul>
+<h2 id="1-单表查询延迟加载"><a href="#1-单表查询延迟加载" class="headerlink" title="1. 单表查询延迟加载"></a>1. 单表查询延迟加载</h2><p>先测试Account的单表测试：之前在一对一的映射过程中，association标签中配置的是将查询结果封装到Student对象中的一个对应映射关系。在这里因为需要延迟加载，所以需要将它换成另外一条select语句，也就是用到的时候才进行加载。在association的配置中有两个配置需要详细解释一下：</p>
+<ul>
+<li>select中指定的内容：查询用户的唯一标志</li>
+<li>column中指定的内容：用户根据id查询时，所需要的参数的值，也就是findById中的id</li>
+</ul>
+<pre><code class="xml">&lt;!--    定义封装account和student的resultmap--&gt;
+&lt;resultMap id=&quot;accountStudentMap&quot; type=&quot;com.xiong.domain.Account&quot;&gt;
+    &lt;!-- 保证account对象封装成功 --&gt;
+    &lt;id property=&quot;aid&quot; column=&quot;id&quot;&gt;&lt;/id&gt;
+    &lt;result property=&quot;uid&quot; column=&quot;uid&quot;&gt;&lt;/result&gt;
+    &lt;result property=&quot;money&quot; column=&quot;money&quot;&gt;&lt;/result&gt;
+    &lt;!-- 一对一的关系映射，也就是配置封装Student的内容
+         select中指定的内容：查询用户的唯一标志
+         column中指定的内容：用户根据id查询时，所需要的参数的值，也就是findById中的id--&gt;
+    &lt;association property=&quot;student&quot;
+                 column=&quot;uid&quot;
+                 javaType=&quot;com.xiong.domain.Student&quot;
+                 select=&quot;com.xiong.dao.StudentDao.findByID&quot;&gt;
+    &lt;/association&gt;
+&lt;/resultMap&gt;</code></pre>
+<p>查询的时候就用一个简单的单表查询来测试：</p>
+<pre><code class="xml">&lt;select id=&quot;findAll&quot; resultMap=&quot;accountStudentMap&quot;&gt;
+    select * from account;
+&lt;/select&gt;</code></pre>
+<p>测试的java方法为：</p>
+<pre><code class="java">@Test
+public void testFindAll() {
+    List&lt;Account&gt; accounts = accountDao.findAll();
+    for (Account account : accounts) {
+        System.out.println(account);
+        // 打印出从类中包含的主类相对应的student信息
+        // 实现了：查询账户，并获取账户对应的用户信息（用户就是Student类的对象）
+        System.out.println(account.getStudent());
+    }
+}</code></pre>
+<p>从下面的执行结果中可以看出，并没有发生延迟加载，因为在一个SQL语句中就直接把这三条子查询都执行了。</p>
+<img src="/2020/02/06/mybatis/9_%E7%BC%93%E5%AD%98/image-20200206192557060.png" alt="image-20200206192557060" style="zoom:80%;">
+
+<p>可以在mybatis的文档中看到setting中的两个标签</p>
+<img src="/2020/02/06/mybatis/9_%E7%BC%93%E5%AD%98/image-20200206193240533.png" alt="image-20200206193240533" style="zoom:80%;">
+
+<p>因此需要显式将这个属性给打开，才能实现延迟加载，因此在映射配置文件中进行配置，添加以下内容：</p>
+<pre><code class="xml">&lt;settings&gt;
+    &lt;!--延迟加载的配置，开启mybatis支持延迟加载--&gt;
+    &lt;setting name=&quot;lazyLoadingEnabled&quot; value=&quot;true&quot;/&gt;
+    &lt;!--允许触发方法进行立即加载，否则按需加载--&gt;
+    &lt;setting name=&quot;aggressiveLazyLoading&quot; value=&quot;false&quot;/&gt;
+&lt;/settings&gt;</code></pre>
+<img src="/2020/02/06/mybatis/9_%E7%BC%93%E5%AD%98/image-20200206193757089.png" alt="image-20200206193757089" style="zoom:80%;">
+
+<p>再次测试可以发现已经执行了延迟加载，也就是用到Student信息的时候才执行查询、</p>
+<img src="/2020/02/06/mybatis/9_%E7%BC%93%E5%AD%98/image-20200206193838741.png" alt="image-20200206193838741" style="zoom:80%;">
+
+<h2 id="2-一对多查询延迟加载"><a href="#2-一对多查询延迟加载" class="headerlink" title="2. 一对多查询延迟加载"></a>2. 一对多查询延迟加载</h2><p>将StudentDao的xml配置文件的resultMap进行修改，主要也就是修改collection标签，增加select字段，这个select实际上就是AccountDao中findAccountByUid的查询：</p>
+<pre><code class="xml">&lt;resultMap id=&quot;studentAccountMap&quot; type=&quot;com.xiong.domain.Student&quot;&gt;
+    &lt;id property=&quot;id&quot; column=&quot;id&quot;&gt;&lt;/id&gt;
+    &lt;result property=&quot;name&quot; column=&quot;name&quot;&gt;&lt;/result&gt;
+    &lt;result property=&quot;sex&quot; column=&quot;sex&quot;&gt;&lt;/result&gt;
+    &lt;result property=&quot;age&quot; column=&quot;age&quot;&gt;&lt;/result&gt;
+    &lt;result property=&quot;address&quot; column=&quot;address&quot;&gt;&lt;/result&gt;
+    &lt;result property=&quot;math&quot; column=&quot;math&quot;&gt;&lt;/result&gt;
+    &lt;result property=&quot;english&quot; column=&quot;english&quot;&gt;&lt;/result&gt;
+    &lt;!--配置accounts集合的映射，其中column是数据库中的列名，property是字段的名称--&gt;
+    &lt;collection property=&quot;accounts&quot;
+                ofType=&quot;com.xiong.domain.Account&quot;
+                select=&quot;com.xiong.dao.AccountDao.findAccountByUid&quot;
+                column=&quot;id&quot;&gt;
+    &lt;/collection&gt;
+&lt;/resultMap&gt;</code></pre>
+<p>还是测试findAll，此时的xml配置写成下面的形式：</p>
+<pre><code class="xml">&lt;select id=&quot;findAll&quot; resultMap=&quot;studentAccountMap&quot;&gt;
+    &lt;!--使用左外连接，返回左表的所有信息--&gt;
+    select * from student
+&lt;/select&gt;</code></pre>
+<p>调用的测试类写为下面：</p>
+<pre><code class="java">@Test
+public void testFindAll() {
+    // 执行查找所有方法
+    List&lt;Student&gt; students = studentDao.findAll();
+    for (Student student : students) {
+        System.out.println(student);
+        System.out.println(student.getAccounts());
+    }
+}</code></pre>
+<p>最终的结果可以看出就是使用了延迟加载</p>
+<img src="/2020/02/06/mybatis/9_%E7%BC%93%E5%AD%98/image-20200206195359858.png" alt="image-20200206195359858" style="zoom:80%;">
+
+<p>其实单表查询和一对多的查询，<strong>本质上都是在用的时候调用对方配置文件中的一个配置实现查询功能</strong></p>
+<h1 id="mybatis的缓存"><a href="#mybatis的缓存" class="headerlink" title="mybatis的缓存"></a>mybatis的缓存</h1><h2 id="1-什么是缓存"><a href="#1-什么是缓存" class="headerlink" title="1. 什么是缓存"></a>1. 什么是缓存</h2><p>存在于内存中的临时数据，在下次使用的时候不再去数据库查询，加快查询速度。</p>
+<h2 id="2-为什么使用缓存"><a href="#2-为什么使用缓存" class="headerlink" title="2. 为什么使用缓存"></a>2. 为什么使用缓存</h2><p>减少与数据库的交互次数，提高执行效率。</p>
+<h2 id="3-缓存使用的条件"><a href="#3-缓存使用的条件" class="headerlink" title="3. 缓存使用的条件"></a>3. 缓存使用的条件</h2><p>适用于缓存的数据：</p>
+<ul>
+<li>经常被查询不经常被改变</li>
+<li>数据的正确与否对最终的结果影响不大</li>
+</ul>
+<p>不适用于缓存的数据：</p>
+<ul>
+<li>经常改变的数据</li>
+<li>数据的正确与否对最终结果影响很大，例如商品的库存、银行的汇率等。</li>
+</ul>
+<h2 id="4-mybatis中的一级缓存"><a href="#4-mybatis中的一级缓存" class="headerlink" title="4. mybatis中的一级缓存"></a>4. mybatis中的一级缓存</h2><p>一级缓存：指的是mybatis中SqlSession对象的缓存，当执行查询之后，查询的结果会同时存入到SqlSession提供的一块区域中，该区域的结构是一个map。再次查询同样的数据时，mybatis会先去SqlSession中查看是否还有，如果有，就直接返回。当SqlSession对象消失的时候mybatis的一级缓存就消失了。</p>
+<p>测试一下一级缓存，就用最简单的mybatis查询就可以了，将前面的全部删掉，整个项目框架只留下这样：</p>
+<img src="/2020/02/06/mybatis/9_%E7%BC%93%E5%AD%98/image-20200206201310346.png" alt="image-20200206201310346" style="zoom:80%;">
+
+<p>在StudentDao的xml中只留下最朴素的通过id查找Student</p>
+<pre><code class="xml">&lt;select id=&quot;findByID&quot; parameterType=&quot;int&quot; resultType=&quot;com.xiong.domain.Student&quot;&gt;
+    select * from student where id=#{i};
+&lt;/select&gt;</code></pre>
+<p>然后在测试方法中连续调用两次，看两次执行得到的对象是否是同一个</p>
+<pre><code class="java">@Test
+public void testFirstLevelCache() {
+    Student stu = studentDao.findByID(3);
+    System.out.println(stu);
+    Student stu1 = studentDao.findByID(3);
+    System.out.println(stu1);
+    System.out.println(stu == stu1);
+}</code></pre>
+<p>最终的输出结果为：</p>
+<img src="/2020/02/06/mybatis/9_%E7%BC%93%E5%AD%98/image-20200206201507627.png" alt="image-20200206201507627" style="zoom:80%;">
+
+<p>也就是说明了，一级缓存生效，也就是说，stu和stu1是同一个对象，而且从debug信息可以看出，只执行了一次SQL查询。但是如果SqlSession关闭，则缓存就消失了。</p>
+<p>当然，如果将测试方法换成下面这样，也就是说查询完一次之后将sqlSession重新生成，则运行结果就不同了。</p>
+<pre><code class="java">@Test
+public void testFirstLevelCache() {
+    Student stu = studentDao.findByID(3);
+    System.out.println(stu);
+    sqlSession.close();
+    // 重新获取SqlSession的对象
+    sqlSession = factory.openSession();
+    studentDao = sqlSession.getMapper(StudentDao.class);
+    Student stu1 = studentDao.findByID(3);
+    System.out.println(stu1);
+    System.out.println(stu == stu1);
+}</code></pre>
+<p>运行结果如下，可以看出执行了两次SQL操作，并且两个得到的对象是不同的。</p>
+<img src="/2020/02/06/mybatis/9_%E7%BC%93%E5%AD%98/image-20200206201808499.png" alt="image-20200206201808499" style="zoom:80%;">
+
+<p>除了通过重新生成一个sqlSession之外，还可以通过clearCache方法来清空缓存，即：</p>
+<pre><code class="java">@Test
+public void testFirstLevelCache() {
+    Student stu = studentDao.findByID(3);
+    System.out.println(stu);
+    sqlSession.clearCache();
+    Student stu1 = studentDao.findByID(3);
+    System.out.println(stu1);
+    System.out.println(stu == stu1);
+}</code></pre>
+<p>从结果可以看出，也是用了两次SQL查询，虽然并没有重新生成sqlSession对象</p>
+<img src="/2020/02/06/mybatis/9_%E7%BC%93%E5%AD%98/image-20200206202124350.png" alt="image-20200206202124350" style="zoom:80%;">
+
+<p>如果数据库中的数据与一级缓存中的内容不同步了，那么是如何实现数据同步的呢？</p>
+<p>可以测试一下，获取完数据，再对数据库执行一次update操作，然后看看效果。</p>
+<p>在StudentDao中添加接口，并且在xml文件中添加SQL查询，这里就不写了，比较简单。然后将测试方法修改为下面这样：</p>
+<pre><code class="java">@Test
+public void testClearCache() {
+    Student stu = studentDao.findByID(10);
+    System.out.println(stu);
+
+    stu.setAddress(&quot;在家啊&quot;);
+    stu.setName(&quot;更新&quot;);
+    studentDao.update(stu);
+
+    Student stu1 = studentDao.findByID(10);
+    System.out.println(stu1);
+    System.out.println(stu == stu1);
+}</code></pre>
+<p>运行结果如下：发现没有从缓存中读取数据</p>
+<img src="/2020/02/06/mybatis/9_%E7%BC%93%E5%AD%98/image-20200206203344507.png" alt="image-20200206203344507" style="zoom:80%;">
+
+<p><strong>分析：因为一级缓存是SqlSession范围的缓存，当调用SqlSession的修改、添加、删除、commit()、close()方法的时候，会清空一级缓存。</strong>也就是下面这个操作流程：</p>
+<img src="/2020/02/06/mybatis/9_%E7%BC%93%E5%AD%98/image-20200206203610413.png" alt="image-20200206203610413" style="zoom: 67%;">
+
+<h2 id="5-mybatis中的二级缓存"><a href="#5-mybatis中的二级缓存" class="headerlink" title="5. mybatis中的二级缓存"></a>5. mybatis中的二级缓存</h2><p>指的是mybatis中SqlSessionFactory对象的缓存，由同一个SqlSessionFactory对象创建的SqlSession共享其缓存。</p>
+<p>下面主要通过修改test方法来查看其区别：</p>
+<pre><code class="java">public class SecondLevelCacheTest {
+    private InputStream in;
+    private SqlSessionFactory factory;
+
+    @Before // 这个注解表示在执行测试方法之前执行
+    public void init() throws IOException {
+        // 读取配置文件，生成输入字节流
+        in = Resources.getResourceAsStream(&quot;SqlMapConfig.xml&quot;);
+        // 获取SqlSessionFactory对象
+        factory = new SqlSessionFactoryBuilder().build(in);
+    }
+
+    @After // 这个注解表示在执行完测试方法之后执行
+    public void destroy() throws IOException {
+        // 因为没有提交事务，所以会rolling back，因此需要在这里进行提交
+        in.close();
+    }
+
+    /*
+     * 测试缓存的同步
+     * */
+    @Test
+    public void testClearCache() {
+        SqlSession sqlSession1 = factory.openSession();
+        StudentDao studentDao1 = sqlSession1.getMapper(StudentDao.class);
+        Student stu = studentDao1.findByID(10);
+        System.out.println(stu);
+        sqlSession1.close(); // 此时一级缓存消失
+
+        SqlSession sqlSession2 = factory.openSession();
+        StudentDao studentDao2 = sqlSession2.getMapper(StudentDao.class);
+        Student stu2 = studentDao2.findByID(10);
+        System.out.println(stu2);
+        sqlSession2.close();
+
+        System.out.println(stu == stu2);
+    }
+}</code></pre>
+<p>运行结果如下，发现并没有利用到缓存的意思，仍然是通过两次不同的查询。</p>
+<img src="/2020/02/06/mybatis/9_%E7%BC%93%E5%AD%98/image-20200206204342778.png" alt="image-20200206204342778" style="zoom:80%;">
+
+<p>所以要使用二级缓存的步骤是：</p>
+<ol>
+<li><p>让mybatis框架支持二级缓存，需要在主配置文件SqlMapConfig.xml中进行配置</p>
+<img src="/2020/02/06/mybatis/9_%E7%BC%93%E5%AD%98/image-20200206204646299.png" alt="image-20200206204646299" style="zoom:80%;">
+</li>
+<li><p>让当前的映射文件支持二级缓存，需要在StudentDao.xml文件中进行配置</p>
+<img src="/2020/02/06/mybatis/9_%E7%BC%93%E5%AD%98/image-20200206204739506.png" alt="image-20200206204739506" style="zoom:80%;">
+</li>
+<li><p>让当前的操作支持二级缓存，也就是在select标签中配置</p>
+<img src="/2020/02/06/mybatis/9_%E7%BC%93%E5%AD%98/image-20200206204801455.png" alt="image-20200206204801455" style="zoom:80%;">
+
+</li>
+</ol>
+<p>此时再来执行原来的方法，结果就变成下面这样，也就是只执行了一次查询</p>
+<img src="/2020/02/06/mybatis/9_%E7%BC%93%E5%AD%98/image-20200206204840725.png" alt="image-20200206204840725" style="zoom:80%;">
+
+<p>但是最后返回得到的两个student对象是不同的，即返回了false。原因是，<strong>二级缓存中存放的是数据而不是对象</strong>。新来一个新的查询，就把这个缓存内容通过数据填充到新的对象中，从而实现了缓存。</p>
+<p>因此在使用二级缓存时，<strong>所缓存的类一定要实现 java.io.Serializable 接口，这种就可以使用序列化方式来保存对象</strong>。  </p>
+
+      
+       
+    </div>
+</article>
+
+
+
+
+
+
+
+    
+
+
+
+
+    </div>
+    <div class="copyright">
+        <p class="footer-entry">©2019-2020 POWDER SNOW</p>
+
+    </div>
+    <div class="full-toc">
+        <button class="full"><span class="min "></span></button>
+<button class="post-toc-menu"><span class="post-toc-menu-icons"></span></button>
+<div class="post-toc"><span class="post-toc-title">目录</span>
+    <div class="post-toc-content">
+
+    </div>
+</div>
+<a class="" id="rocket" ></a>
+
+    </div>
+</div>
+<div class="acParent"></div>
+
+</body>
+<script src="/js/jquery.pjax.js?v=1.0.1" ></script>
+
+<script src="/js/script.js?v=1.0.1" ></script>
+<script>
+    var img_resize = 'default';
+    /*作者、标签的自动补全*/
+    $(function () {
+        $('.search').AutoComplete({
+            'data': ['#HTTP','#protobuf','#MySQL SQL','#Spring','#java','#QT','#区块链','#分布式','#大数据','#前端','#MyBatis','#SpringBoot','#网络编程','#Redis','#多线程','#数据库',],
+            'itemHeight': 20,
+            'width': 418
+        }).AutoComplete('show');
+    })
+    function initArticle() {
+        /*渲染对应的表格样式*/
+        
+            $(".post .pjax table").addClass("green_title");
+        
+
+        /*渲染打赏样式*/
+        
+
+        /*高亮代码块行号*/
+        
+
+        /*访问数量*/
+        
+
+        /*代码高亮，行号对齐*/
+        $('.pre-numbering').css('line-height',$('.has-numbering').css('line-height'));
+
+        
+        
+    }
+
+    /*打赏页面隐藏与展示*/
+    
+
+</script>
+
+<!--加入行号的高亮代码块样式-->
+
+<!--自定义样式设置-->
+<style>
+    
+    
+    .nav {
+        width: 544px;
+    }
+    .nav.fullscreen {
+        margin-left: -544px;
+    }
+    .nav-left {
+        width: 122px;
+    }
+    
+    
+    @media screen and (max-width: 1468px) {
+        .nav {
+            width: 492px;
+        }
+        .nav.fullscreen {
+            margin-left: -492px;
+        }
+        .nav-left {
+            width: 100px;
+        }
+    }
+    
+    
+    @media screen and (max-width: 1024px) {
+        .nav {
+            width: 492px;
+            margin-left: -492px
+        }
+        .nav.fullscreen {
+            margin-left: 0;
+        }
+        .nav .hide-list.fullscreen {
+            left: 492px
+        }
+    }
+    
+    @media screen and (max-width: 426px) {
+        .nav {
+            width: 100%;
+        }
+        .nav-left {
+            width: 100%;
+        }
+    }
+    
+    
+    .nav-right .title-list nav a .post-title, .nav-right .title-list #local-search-result a .post-title {
+        color: #383636;
+    }
+    
+    
+    .nav-right .title-list nav a .post-date, .nav-right .title-list #local-search-result a .post-date {
+        color: #5e5e5f;
+    }
+    
+    
+    .nav-right nav a.hover, #local-search-result a.hover{
+        background-color: #fbf4a8;
+    }
+    
+    
+
+    /*列表样式*/
+    
+    .post .pjax article .article-entry>ol, .post .pjax article .article-entry>ul, .post .pjax article>ol, .post .pjax article>ul{
+        border: #e2dede solid 1px;
+        border-radius: 10px;
+        padding: 10px 32px 10px 56px;
+    }
+    .post .pjax article .article-entry li>ol, .post .pjax article .article-entry li>ul,.post .pjax article li>ol, .post .pjax article li>ul{
+        padding-top: 5px;
+        padding-bottom: 5px;
+    }
+    .post .pjax article .article-entry>ol>li, .post .pjax article .article-entry>ul>li,.post .pjax article>ol>li, .post .pjax article>ul>li{
+        margin-bottom: auto;
+        margin-left: auto;
+    }
+    .post .pjax article .article-entry li>ol>li, .post .pjax article .article-entry li>ul>li,.post .pjax article li>ol>li, .post .pjax article li>ul>li{
+        margin-bottom: auto;
+        margin-left: auto;
+    }
+    
+
+    /* 背景图样式 */
+    
+    .post {
+        background: url(/img/bck.jpg);
+    }
+    
+    
+    .post.index {
+        background: url(/img/background.jpg);
+    }
+    
+
+
+    /*引用块样式*/
+    
+
+    /*文章列表背景图*/
+    
+    .nav-right:before {
+        content: ' ';
+        display: block;
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        opacity: 0.3;
+        background: url("/img/123.jpg");
+        background-repeat: no-repeat;
+        background-position: 50% 0;
+        -ms-background-size: cover;
+        -o-background-size: cover;
+        -moz-background-size: cover;
+        -webkit-background-size: cover;
+        background-size: cover;
+    }
+    
+
+    
+</style>
+
+
+
+
+
+
+
+</html>

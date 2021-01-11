@@ -1,0 +1,1551 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>【SpringMVC实战3】常用注解 | POWDER SNOW</title>
+  <meta name="keywords" content=" java ">
+  <meta name="description" content="【SpringMVC实战3】常用注解 | POWDER SNOW">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<meta property="og:type" content="website">
+<meta property="og:title" content="categories">
+<meta property="og:url" content="http://yoursite.com/categories/index.html">
+<meta property="og:site_name" content="POWDER SNOW">
+<meta property="article:published_time" content="2018-03-02T04:33:16.000Z">
+<meta property="article:modified_time" content="2020-03-05T13:28:59.839Z">
+<meta property="article:author" content="冯冠雄">
+<meta name="twitter:card" content="summary">
+
+
+<link rel="icon" href="/img/avatar.jpg">
+
+<link href="/css/style.css?v=1.0.1" rel="stylesheet">
+
+<link href="/css/hl_theme/atom-light.css?v=1.0.1" rel="stylesheet">
+
+<link href="//cdn.bootcss.com/animate.css/3.5.2/animate.min.css" rel="stylesheet">
+<link href="//cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+
+<script src="//cdn.bootcss.com/jquery/2.2.4/jquery.min.js"></script>
+<script src="/js/jquery.autocomplete.min.js?v=1.0.1" ></script>
+
+<script src="//cdn.bootcss.com/highlight.js/9.12.0/highlight.min.js"></script>
+<script>
+    hljs.initHighlightingOnLoad();
+</script>
+
+<script src="//cdn.bootcss.com/nprogress/0.2.0/nprogress.min.js"></script>
+
+
+
+<script src="//cdn.bootcss.com/jquery-cookie/1.4.1/jquery.cookie.min.js" ></script>
+
+<script src="/js/iconfont.js?v=1.0.1" ></script>
+
+<meta name="generator" content="Hexo 4.2.0"></head>
+<div style="display: none">
+  <input class="theme_disqus_on" value="false">
+  <input class="theme_preload_comment" value="false">
+  <input class="theme_blog_path" value="">
+</div>
+
+<body>
+<aside class="nav">
+    <div class="nav-left">
+        <a href="/" class="avatar_target">
+    <img class="avatar" src="/img/avatar.jpg" />
+</a>
+<div class="author">
+    <span>冯冠雄</span>
+</div>
+
+<div class="icon">
+    
+        
+        <a title="github" href="https://github.com/xiong-Fgx" target="_blank">
+            
+                <svg class="iconfont-svg" aria-hidden="true">
+                    <use xlink:href="#icon-github"></use>
+                </svg>
+            
+        </a>
+        
+    
+        
+        <a title="linkedin" href="https://www.linkedin.com/in/guanxiong-feng-8b6aa8179" target="_blank">
+            
+                <svg class="iconfont-svg" aria-hidden="true">
+                    <use xlink:href="#icon-linkedin"></use>
+                </svg>
+            
+        </a>
+        
+    
+        
+        <a title="email" href="mailto:guanxiongf@gmail.com" target="_blank">
+            
+                <svg class="iconfont-svg" aria-hidden="true">
+                    <use xlink:href="#icon-email"></use>
+                </svg>
+            
+        </a>
+        
+    
+</div>
+
+
+
+
+<ul>
+    <li><div class="all active">全部文章</div></li>
+    
+        
+            
+            <li><div data-rel="网络"><i class="fold iconfont icon-right"></i>网络</div>
+                
+                    <ul class="sub hide">
+                        
+                        <li><div data-rel="HTTP">HTTP</div>
+                            
+                        </li>
+                            
+                        <li><div data-rel="protobuf">protobuf</div>
+                            
+                        </li>
+                            
+                        <li><div data-rel="网络编程">网络编程</div>
+                            
+                        </li>
+                            
+                    </ul>
+                
+            </li>
+            
+        
+    
+        
+            
+            <li><div data-rel="数据库">数据库</div>
+                
+            </li>
+            
+        
+    
+        
+            
+        
+    
+        
+            
+            <li><div data-rel="SSM"><i class="fold iconfont icon-right"></i>SSM</div>
+                
+                    <ul class="sub hide">
+                        
+                        <li><div data-rel="SSM整合">SSM整合</div>
+                            
+                        </li>
+                            
+                        <li><div data-rel="Spring">Spring</div>
+                            
+                        </li>
+                            
+                        <li><div data-rel="SpringMVC">SpringMVC</div>
+                            
+                        </li>
+                            
+                        <li><div data-rel="MyBatis">MyBatis</div>
+                            
+                        </li>
+                            
+                        <li><div data-rel="SpringBoot">SpringBoot</div>
+                            
+                        </li>
+                            
+                    </ul>
+                
+            </li>
+            
+        
+    
+        
+            
+        
+    
+        
+            
+        
+    
+        
+            
+        
+    
+        
+            
+        
+    
+        
+            
+            <li><div data-rel="客户端"><i class="fold iconfont icon-right"></i>客户端</div>
+                
+                    <ul class="sub hide">
+                        
+                        <li><div data-rel="QT">QT</div>
+                            
+                        </li>
+                            
+                    </ul>
+                
+            </li>
+            
+        
+    
+        
+            
+            <li><div data-rel="区块链"><i class="fold iconfont icon-right"></i>区块链</div>
+                
+                    <ul class="sub hide">
+                        
+                        <li><div data-rel="论文">论文</div>
+                            
+                        </li>
+                            
+                        <li><div data-rel="Fabric">Fabric</div>
+                            
+                        </li>
+                            
+                        <li><div data-rel="fabric">fabric</div>
+                            
+                        </li>
+                            
+                    </ul>
+                
+            </li>
+            
+        
+    
+        
+            
+            <li><div data-rel="分布式">分布式</div>
+                
+            </li>
+            
+        
+    
+        
+            
+            <li><div data-rel="大数据"><i class="fold iconfont icon-right"></i>大数据</div>
+                
+                    <ul class="sub hide">
+                        
+                        <li><div data-rel="hadoop">hadoop</div>
+                            
+                        </li>
+                            
+                    </ul>
+                
+            </li>
+            
+        
+    
+        
+            
+            <li><div data-rel="前端"><i class="fold iconfont icon-right"></i>前端</div>
+                
+                    <ul class="sub hide">
+                        
+                        <li><div data-rel="HTML">HTML</div>
+                            
+                        </li>
+                            
+                        <li><div data-rel="CSS">CSS</div>
+                            
+                        </li>
+                            
+                    </ul>
+                
+            </li>
+            
+        
+    
+        
+            
+        
+    
+        
+            
+        
+    
+        
+            
+        
+    
+        
+            
+        
+    
+        
+            
+        
+    
+        
+            
+            <li><div data-rel="笔记">笔记</div>
+                
+            </li>
+            
+        
+    
+        
+            
+        
+    
+        
+            
+        
+    
+        
+            
+        
+    
+        
+            
+        
+    
+        
+            
+        
+    
+</ul>
+<div class="left-bottom">
+    <div class="menus">
+    
+    
+    
+    
+    </div>
+    <div></div>
+</div>
+<input type="hidden" id="yelog_site_posts_number" value="71">
+
+<div style="display: none">
+    <span id="busuanzi_value_site_uv"></span>
+    <span id="busuanzi_value_site_pv"></span>
+</div>
+
+    </div>
+    <div class="nav-right">
+        <div class="friends-area">
+    <div class="friends-title">
+        友情链接
+        <i class="back-title-list"></i>
+    </div>
+    <div class="friends-content">
+        <ul>
+            
+            <li><a target="_blank" href="http://yelog.org/">叶落阁</a></li>
+            
+        </ul>
+    </div>
+</div>
+        <div class="title-list">
+    <form onkeydown="if(event.keyCode === 13){return false;}">
+        <input id="local-search-input" class="search" type="text" placeholder="Search..." />
+        <i class="cross"></i>
+        <span>
+            <label for="tagswitch">Tags:</label>
+            <input id="tagswitch" type="checkbox" style="display: none" />
+            <i id="tagsWitchIcon"></i>
+        </span>
+    </form>
+    <div class="tags-list">
+    
+    <li class="article-tag-list-item">
+        <a class="color5">HTTP</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a class="color4">protobuf</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a class="color5">MySQL SQL</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a class="color2">Spring</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a class="color5">java</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a class="color3">QT</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a class="color4">区块链</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a class="color4">分布式</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a class="color4">大数据</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a class="color3">前端</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a class="color3">MyBatis</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a class="color1">SpringBoot</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a class="color5">网络编程</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a class="color1">Redis</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a class="color4">多线程</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a class="color4">数据库</a>
+    </li>
+    
+    <div class="clearfix"></div>
+</div>
+
+    
+    <nav id="title-list-nav">
+        
+        <a  class="前端 CSS "
+           href="/2021/01/11/html/4_%E7%9B%92%E5%AD%90%E6%A8%A1%E5%9E%8B/"
+           data-tag="前端"
+           data-author="" >
+            <span class="post-title" title="【前端 4】盒子模型">【前端 4】盒子模型</span>
+            <span class="post-date" title="2021-01-11 09:41:10">2021/01/11</span>
+        </a>
+        
+        <a  class="前端 CSS "
+           href="/2021/01/09/html/3_CSS%E8%BF%9B%E9%98%B6/"
+           data-tag="前端"
+           data-author="" >
+            <span class="post-title" title="【前端 3】CSS进阶">【前端 3】CSS进阶</span>
+            <span class="post-date" title="2021-01-09 09:43:10">2021/01/09</span>
+        </a>
+        
+        <a  class="前端 CSS "
+           href="/2021/01/05/html/2_CSS/"
+           data-tag="前端"
+           data-author="" >
+            <span class="post-title" title="【前端 2】CSS">【前端 2】CSS</span>
+            <span class="post-date" title="2021-01-05 16:22:10">2021/01/05</span>
+        </a>
+        
+        <a  class="前端 HTML "
+           href="/2021/01/04/html/1_html/"
+           data-tag="前端"
+           data-author="" >
+            <span class="post-title" title="【前端 1】HTML">【前端 1】HTML</span>
+            <span class="post-date" title="2021-01-04 10:46:10">2021/01/04</span>
+        </a>
+        
+        <a  class="区块链 fabric "
+           href="/2020/12/12/fabric/08_%E9%93%BE%E7%A0%81/"
+           data-tag="区块链"
+           data-author="" >
+            <span class="post-title" title="07_链码接口使用">07_链码接口使用</span>
+            <span class="post-date" title="2020-12-12 11:43:23">2020/12/12</span>
+        </a>
+        
+        <a  class="区块链 fabric "
+           href="/2020/12/12/fabric/02_%E9%83%A8%E7%BD%B2%E8%B0%83%E7%94%A8%E9%93%BE%E7%A0%81/"
+           data-tag="区块链"
+           data-author="" >
+            <span class="post-title" title="02_部署调用链码">02_部署调用链码</span>
+            <span class="post-date" title="2020-12-12 10:56:23">2020/12/12</span>
+        </a>
+        
+        <a  class="区块链 fabric "
+           href="/2020/12/09/fabric/07_dockerCompose%E5%90%AF%E5%8A%A8fabric/"
+           data-tag="区块链"
+           data-author="" >
+            <span class="post-title" title="06_docker compose启动节点">06_docker compose启动节点</span>
+            <span class="post-date" title="2020-12-09 11:35:23">2020/12/09</span>
+        </a>
+        
+        <a  class="区块链 fabric "
+           href="/2020/12/09/fabric/03_%E7%BD%91%E7%BB%9C%E7%BB%93%E6%9E%84%E5%8F%98%E5%8A%A8/"
+           data-tag="区块链"
+           data-author="" >
+            <span class="post-title" title="03_用户结构变动">03_用户结构变动</span>
+            <span class="post-date" title="2020-12-09 10:35:23">2020/12/09</span>
+        </a>
+        
+        <a  class="区块链 fabric "
+           href="/2020/12/02/fabric/01_%E6%90%AD%E5%BB%BA%E5%9F%BA%E7%A1%80%E7%BD%91%E7%BB%9C/"
+           data-tag="区块链"
+           data-author="" >
+            <span class="post-title" title="01_搭建基础网络">01_搭建基础网络</span>
+            <span class="post-date" title="2020-12-02 11:05:23">2020/12/02</span>
+        </a>
+        
+        <a  class="区块链 fabric "
+           href="/2020/12/01/fabric/05_java%20SDK%E4%BD%BF%E7%94%A8/"
+           data-tag="区块链"
+           data-author="" >
+            <span class="post-title" title="05_javaSDK使用">05_javaSDK使用</span>
+            <span class="post-date" title="2020-12-01 15:04:23">2020/12/01</span>
+        </a>
+        
+        <a  class="区块链 fabric "
+           href="/2020/12/01/fabric/04_%E7%94%A8%E6%88%B7%E4%BD%BF%E7%94%A8%E9%93%BE%E7%A0%81/"
+           data-tag="区块链"
+           data-author="" >
+            <span class="post-title" title="04_用户使用链码">04_用户使用链码</span>
+            <span class="post-date" title="2020-12-01 10:55:23">2020/12/01</span>
+        </a>
+        
+        <a  class="大数据 hadoop "
+           href="/2020/11/26/hadoop/%E5%AE%89%E8%A3%85/"
+           data-tag="大数据"
+           data-author="" >
+            <span class="post-title" title="【hadoop 3】hadoop分布式安装总结">【hadoop 3】hadoop分布式安装总结</span>
+            <span class="post-date" title="2020-11-26 17:50:09">2020/11/26</span>
+        </a>
+        
+        <a  class="客户端 QT "
+           href="/2020/10/29/QT/4_%E6%A8%A1%E5%9E%8B%20%E8%A7%86%E5%9B%BE%E7%BB%93%E6%9E%84/"
+           data-tag="QT"
+           data-author="" >
+            <span class="post-title" title="【QT 3】模型-视图结构">【QT 3】模型-视图结构</span>
+            <span class="post-date" title="2020-10-29 16:49:10">2020/10/29</span>
+        </a>
+        
+        <a  class="客户端 QT "
+           href="/2020/10/28/QT/3_%E6%8E%A7%E4%BB%B6/"
+           data-tag="QT"
+           data-author="" >
+            <span class="post-title" title="【QT 2】控件">【QT 2】控件</span>
+            <span class="post-date" title="2020-10-28 16:55:10">2020/10/28</span>
+        </a>
+        
+        <a  class="客户端 QT "
+           href="/2020/10/28/QT/2_%E5%B8%83%E5%B1%80%E7%AE%A1%E7%90%86/"
+           data-tag="QT"
+           data-author="" >
+            <span class="post-title" title="【QT 1】布局管理">【QT 1】布局管理</span>
+            <span class="post-date" title="2020-10-28 14:37:10">2020/10/28</span>
+        </a>
+        
+        <a  class="客户端 QT "
+           href="/2020/10/20/QT/QT%E7%95%8C%E9%9D%A2%E7%BC%96%E8%BE%91%E5%99%A8/"
+           data-tag="QT"
+           data-author="" >
+            <span class="post-title" title="【QT 4】QT界面编辑器">【QT 4】QT界面编辑器</span>
+            <span class="post-date" title="2020-10-20 15:52:10">2020/10/20</span>
+        </a>
+        
+        <a  class="SSM Spring "
+           href="/2020/06/01/%E7%AC%94%E8%AE%B0/spring/"
+           data-tag="Spring"
+           data-author="" >
+            <span class="post-title" title="【笔记】Spring总结">【笔记】Spring总结</span>
+            <span class="post-date" title="2020-06-01 03:57:17">2020/06/01</span>
+        </a>
+        
+        <a  class="笔记 "
+           href="/2020/05/12/%E7%AC%94%E8%AE%B0/%E6%95%B0%E6%8D%AE%E5%BA%93/"
+           data-tag="数据库"
+           data-author="" >
+            <span class="post-title" title="【笔记】数据库与MySQL">【笔记】数据库与MySQL</span>
+            <span class="post-date" title="2020-05-12 21:38:05">2020/05/12</span>
+        </a>
+        
+        <a  class="笔记 "
+           href="/2020/05/07/%E7%AC%94%E8%AE%B0/redis/"
+           data-tag="Redis"
+           data-author="" >
+            <span class="post-title" title="【笔记】Redis">【笔记】Redis</span>
+            <span class="post-date" title="2020-05-07 18:38:05">2020/05/07</span>
+        </a>
+        
+        <a  class="笔记 "
+           href="/2020/04/25/%E7%AC%94%E8%AE%B0/%E5%A4%9A%E7%BA%BF%E7%A8%8B/"
+           data-tag="多线程"
+           data-author="" >
+            <span class="post-title" title="【笔记】java并发">【笔记】java并发</span>
+            <span class="post-date" title="2020-04-25 15:38:01">2020/04/25</span>
+        </a>
+        
+        <a  class="大数据 hadoop "
+           href="/2020/03/18/hadoop/2_%E4%BD%BF%E7%94%A8hadoop/"
+           data-tag="大数据"
+           data-author="" >
+            <span class="post-title" title="【hadoop 2】hadoop三种模式使用">【hadoop 2】hadoop三种模式使用</span>
+            <span class="post-date" title="2020-03-18 17:49:04">2020/03/18</span>
+        </a>
+        
+        <a  class="SSM SpringBoot "
+           href="/2020/03/18/springboot/3_springboot%E7%9A%84%E9%85%8D%E7%BD%AE/"
+           data-tag="SpringBoot"
+           data-author="" >
+            <span class="post-title" title="【SpringBoot 02】配置文件">【SpringBoot 02】配置文件</span>
+            <span class="post-date" title="2020-03-18 12:58:23">2020/03/18</span>
+        </a>
+        
+        <a  class="SSM SpringBoot "
+           href="/2020/03/17/springboot/2_springboot%E7%9A%84helloworld/"
+           data-tag="SpringBoot"
+           data-author="" >
+            <span class="post-title" title="【SpringBoot 01】HelloWorld">【SpringBoot 01】HelloWorld</span>
+            <span class="post-date" title="2020-03-17 19:58:23">2020/03/17</span>
+        </a>
+        
+        <a  class="SSM SSM整合 "
+           href="/2020/03/05/3-SpringMVC/1_%E6%90%AD%E5%BB%BAspring/"
+           data-tag="java"
+           data-author="" >
+            <span class="post-title" title="【SSM实战】SSM框架整合">【SSM实战】SSM框架整合</span>
+            <span class="post-date" title="2020-03-05 20:37:01">2020/03/05</span>
+        </a>
+        
+        <a  class="SSM SpringMVC "
+           href="/2020/03/05/3-SpringMVC/7_SpringMVC%E5%BC%82%E5%B8%B8%E5%A4%84%E7%90%86%E4%B8%8E%E6%8B%A6%E6%88%AA%E5%99%A8/"
+           data-tag="java"
+           data-author="" >
+            <span class="post-title" title="【SpringMVC实战6】异常处理与拦截器">【SpringMVC实战6】异常处理与拦截器</span>
+            <span class="post-date" title="2020-03-05 13:06:19">2020/03/05</span>
+        </a>
+        
+        <a  class="SSM SpringMVC "
+           href="/2020/03/04/3-SpringMVC/6_SpringMVC%E5%93%8D%E5%BA%94/"
+           data-tag="java"
+           data-author="" >
+            <span class="post-title" title="【SpringMVC实战5】响应">【SpringMVC实战5】响应</span>
+            <span class="post-date" title="2020-03-04 19:26:39">2020/03/04</span>
+        </a>
+        
+        <a  class="SSM SpringMVC "
+           href="/2020/03/03/3-SpringMVC/4_SpringMVC%E7%9A%84%E5%B8%B8%E7%94%A8%E6%B3%A8%E8%A7%A3/"
+           data-tag="java"
+           data-author="" >
+            <span class="post-title" title="【SpringMVC实战3】常用注解">【SpringMVC实战3】常用注解</span>
+            <span class="post-date" title="2020-03-03 15:26:29">2020/03/03</span>
+        </a>
+        
+        <a  class="SSM SpringMVC "
+           href="/2020/03/03/3-SpringMVC/5_%E8%AF%B7%E6%B1%82%E5%8F%82%E6%95%B0%E7%BB%91%E5%AE%9A/"
+           data-tag="java"
+           data-author="" >
+            <span class="post-title" title="【SpringMVC实战4】请求参数绑定">【SpringMVC实战4】请求参数绑定</span>
+            <span class="post-date" title="2020-03-03 09:13:23">2020/03/03</span>
+        </a>
+        
+        <a  class="SSM SpringMVC "
+           href="/2020/03/02/3-SpringMVC/3_SpringMVC%E7%9A%84%E6%89%A7%E8%A1%8C%E6%B5%81%E7%A8%8B/"
+           data-tag="java"
+           data-author="" >
+            <span class="post-title" title="【SpringMVC实战2】执行流程">【SpringMVC实战2】执行流程</span>
+            <span class="post-date" title="2020-03-02 18:26:39">2020/03/02</span>
+        </a>
+        
+        <a  class="SSM SpringMVC "
+           href="/2020/03/02/3-SpringMVC/2_%E5%85%A5%E9%97%A8%E6%A1%88%E4%BE%8B/"
+           data-tag="java"
+           data-author="" >
+            <span class="post-title" title="【SpringMVC实战1】入门案例">【SpringMVC实战1】入门案例</span>
+            <span class="post-date" title="2020-03-02 14:26:39">2020/03/02</span>
+        </a>
+        
+        <a  class="SSM Spring "
+           href="/2020/02/21/13-Spring/8_%E4%BA%8B%E5%8A%A1%E6%8E%A7%E5%88%B6/"
+           data-tag="Spring"
+           data-author="" >
+            <span class="post-title" title="【Spring实战8】事务控制">【Spring实战8】事务控制</span>
+            <span class="post-date" title="2020-02-21 15:23:48">2020/02/21</span>
+        </a>
+        
+        <a  class="SSM Spring "
+           href="/2020/02/20/13-Spring/7_JdbcTemplate/"
+           data-tag="Spring"
+           data-author="" >
+            <span class="post-title" title="【Spring实战7】JdbcTemplate">【Spring实战7】JdbcTemplate</span>
+            <span class="post-date" title="2020-02-20 09:32:29">2020/02/20</span>
+        </a>
+        
+        <a  class="SSM Spring "
+           href="/2020/02/19/13-Spring/6_%E5%9F%BA%E4%BA%8Exml%E5%92%8C%E6%B3%A8%E8%A7%A3%E7%9A%84AOP%E9%85%8D%E7%BD%AE/"
+           data-tag="Spring"
+           data-author="" >
+            <span class="post-title" title="【Spring实战6】基于xml和注解的AOP配置">【Spring实战6】基于xml和注解的AOP配置</span>
+            <span class="post-date" title="2020-02-19 21:31:44">2020/02/19</span>
+        </a>
+        
+        <a  class="SSM Spring "
+           href="/2020/02/19/13-Spring/5_AOP/"
+           data-tag="Spring"
+           data-author="" >
+            <span class="post-title" title="【Spring实战5】AOP">【Spring实战5】AOP</span>
+            <span class="post-date" title="2020-02-19 18:56:47">2020/02/19</span>
+        </a>
+        
+        <a  class="SSM Spring "
+           href="/2020/02/18/13-Spring/4_%E5%8A%A8%E6%80%81%E4%BB%A3%E7%90%86/"
+           data-tag="Spring"
+           data-author="" >
+            <span class="post-title" title="【Spring实战4】动态代理">【Spring实战4】动态代理</span>
+            <span class="post-date" title="2020-02-18 17:15:32">2020/02/18</span>
+        </a>
+        
+        <a  class="SSM Spring "
+           href="/2020/02/14/13-Spring/3_%E5%9F%BA%E4%BA%8E%E6%B3%A8%E8%A7%A3%E7%9A%84IOC/"
+           data-tag="Spring"
+           data-author="" >
+            <span class="post-title" title="【Spring实战3】IoC注解">【Spring实战3】IoC注解</span>
+            <span class="post-date" title="2020-02-14 20:57:17">2020/02/14</span>
+        </a>
+        
+        <a  class="SSM Spring "
+           href="/2020/02/13/13-Spring/2_IOC/"
+           data-tag="Spring"
+           data-author="" >
+            <span class="post-title" title="【Spring实战2】IoC与DI">【Spring实战2】IoC与DI</span>
+            <span class="post-date" title="2020-02-13 20:56:03">2020/02/13</span>
+        </a>
+        
+        <a  class="SSM Spring "
+           href="/2020/02/13/13-Spring/1_%E7%A8%8B%E5%BA%8F%E8%80%A6%E5%90%88%E4%B8%8E%E8%A7%A3%E8%80%A6/"
+           data-tag="Spring"
+           data-author="" >
+            <span class="post-title" title="【Spring实战1】程序的耦合与解耦">【Spring实战1】程序的耦合与解耦</span>
+            <span class="post-date" title="2020-02-13 13:17:03">2020/02/13</span>
+        </a>
+        
+        <a  class="SSM MyBatis "
+           href="/2020/02/07/mybatis/10_%E6%B3%A8%E8%A7%A3%E5%BC%80%E5%8F%91/"
+           data-tag="MyBatis"
+           data-author="" >
+            <span class="post-title" title="【Mybatis实战5】注解开发">【Mybatis实战5】注解开发</span>
+            <span class="post-date" title="2020-02-07 16:18:37">2020/02/07</span>
+        </a>
+        
+        <a  class="SSM MyBatis "
+           href="/2020/02/06/mybatis/9_%E7%BC%93%E5%AD%98/"
+           data-tag="MyBatis"
+           data-author="" >
+            <span class="post-title" title="【Mybatis实战4】加载与缓存">【Mybatis实战4】加载与缓存</span>
+            <span class="post-date" title="2020-02-06 18:29:03">2020/02/06</span>
+        </a>
+        
+        <a  class="SSM MyBatis "
+           href="/2020/02/06/mybatis/8_%E5%8A%A8%E6%80%81SQL%E4%B8%8E%E5%A4%9A%E8%A1%A8%E6%93%8D%E4%BD%9C/"
+           data-tag="MyBatis"
+           data-author="" >
+            <span class="post-title" title="【Mybatis实战3】动态SQL与多表操作">【Mybatis实战3】动态SQL与多表操作</span>
+            <span class="post-date" title="2020-02-06 18:08:29">2020/02/06</span>
+        </a>
+        
+        <a  class="SSM MyBatis "
+           href="/2020/02/06/mybatis/6_mybatis%E8%BF%9B%E8%A1%8CCRUD/"
+           data-tag="MyBatis"
+           data-author="" >
+            <span class="post-title" title="【Mybatis实战2】CRUD操作">【Mybatis实战2】CRUD操作</span>
+            <span class="post-date" title="2020-02-06 13:21:03">2020/02/06</span>
+        </a>
+        
+        <a  class="SSM MyBatis "
+           href="/2020/02/05/mybatis/2_%E5%9F%BA%E4%BA%8Exml%E7%9A%84%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/"
+           data-tag="MyBatis"
+           data-author="" >
+            <span class="post-title" title="【Mybatis实战1】两种环境搭建方法及示例">【Mybatis实战1】两种环境搭建方法及示例</span>
+            <span class="post-date" title="2020-02-05 10:21:01">2020/02/05</span>
+        </a>
+        
+        <a  class="数据库 "
+           href="/2020/01/29/11-MySQL/3_%E5%A4%9A%E8%A1%A8%E6%9F%A5%E8%AF%A2%E4%B8%8E%E4%BA%8B%E5%8A%A1/"
+           data-tag="MySQL SQL"
+           data-author="" >
+            <span class="post-title" title="多表查询与事务">多表查询与事务</span>
+            <span class="post-date" title="2020-01-29 13:52:00">2020/01/29</span>
+        </a>
+        
+        <a  class="数据库 "
+           href="/2020/01/26/11-MySQL/2_SQL%E9%AB%98%E7%BA%A7/"
+           data-tag="MySQL SQL"
+           data-author="" >
+            <span class="post-title" title="数据库高级知识及SQL实现">数据库高级知识及SQL实现</span>
+            <span class="post-date" title="2020-01-26 23:01:52">2020/01/26</span>
+        </a>
+        
+        <a  class="数据库 "
+           href="/2020/01/23/11-MySQL/1_SQL%E8%AF%AD%E8%A8%80%E5%9F%BA%E6%9C%AC%E6%93%8D%E4%BD%9C/"
+           data-tag="MySQL SQL"
+           data-author="" >
+            <span class="post-title" title="SQL语言基础">SQL语言基础</span>
+            <span class="post-date" title="2020-01-23 20:06:39">2020/01/23</span>
+        </a>
+        
+        <a  class="网络 protobuf "
+           href="/2020/01/16/10-java%E7%BD%91%E7%BB%9C/2_protobuf/"
+           data-tag="protobuf"
+           data-author="" >
+            <span class="post-title" title="java使用protobuf">java使用protobuf</span>
+            <span class="post-date" title="2020-01-16 17:57:52">2020/01/16</span>
+        </a>
+        
+        <a  class="网络 HTTP "
+           href="/2020/01/15/10-java%E7%BD%91%E7%BB%9C/1_HTTP/"
+           data-tag="HTTP"
+           data-author="" >
+            <span class="post-title" title="java实现简单的HTTP">java实现简单的HTTP</span>
+            <span class="post-date" title="2020-01-15 18:03:21">2020/01/15</span>
+        </a>
+        
+        <a  class="大数据 hadoop "
+           href="/2020/01/06/hadoop/1_hadoop/"
+           data-tag="大数据"
+           data-author="" >
+            <span class="post-title" title="【hadoop 1】hadoop环境搭建">【hadoop 1】hadoop环境搭建</span>
+            <span class="post-date" title="2020-01-06 14:55:10">2020/01/06</span>
+        </a>
+        
+        <a  class="区块链 Fabric "
+           href="/2019/11/24/blockchain/09/"
+           data-tag="区块链"
+           data-author="" >
+            <span class="post-title" title="Hyperledger Fabric系统框架笔记">Hyperledger Fabric系统框架笔记</span>
+            <span class="post-date" title="2019-11-24 12:43:08">2019/11/24</span>
+        </a>
+        
+        <a  class="区块链 论文 "
+           href="/2019/11/21/blockchain/08/"
+           data-tag="区块链"
+           data-author="" >
+            <span class="post-title" title="闪电网络（四）比特币闪电网络：The Bitcoin Lightning Network">闪电网络（四）比特币闪电网络：The Bitcoin Lightning Network</span>
+            <span class="post-date" title="2019-11-21 21:31:53">2019/11/21</span>
+        </a>
+        
+        <a  class="区块链 论文 "
+           href="/2019/11/20/blockchain/07/"
+           data-tag="区块链"
+           data-author="" >
+            <span class="post-title" title="闪电网络（三）哈希时间锁合约：Hashed Timelock Contract (HTLC)">闪电网络（三）哈希时间锁合约：Hashed Timelock Contract (HTLC)</span>
+            <span class="post-date" title="2019-11-20 10:51:23">2019/11/20</span>
+        </a>
+        
+        <a  class="区块链 论文 "
+           href="/2019/11/20/blockchain/05/"
+           data-tag="区块链"
+           data-author="" >
+            <span class="post-title" title="闪电网络（二）双向支付通道：Bidirectional Payment Channels + RSMC">闪电网络（二）双向支付通道：Bidirectional Payment Channels + RSMC</span>
+            <span class="post-date" title="2019-11-20 10:51:23">2019/11/20</span>
+        </a>
+        
+        <a  class="区块链 论文 "
+           href="/2019/11/19/blockchain/06/"
+           data-tag="区块链"
+           data-author="" >
+            <span class="post-title" title="闪电网络（一）微支付通道">闪电网络（一）微支付通道</span>
+            <span class="post-date" title="2019-11-19 10:07:02">2019/11/19</span>
+        </a>
+        
+        <a  class="区块链 论文 "
+           href="/2019/11/15/blockchain/03/"
+           data-tag="区块链"
+           data-author="" >
+            <span class="post-title" title="论文翻译 OmniLedger">论文翻译 OmniLedger</span>
+            <span class="post-date" title="2019-11-15 16:15:33">2019/11/15</span>
+        </a>
+        
+        <a  class="网络 网络编程 "
+           href="/2019/11/03/networkProgram/%E7%BD%91%E7%BB%9C%E7%BC%96%E7%A8%8B10UDP%E8%BF%9E%E6%8E%A5/"
+           data-tag="网络编程"
+           data-author="" >
+            <span class="post-title" title="网络编程10：UDP连接">网络编程10：UDP连接</span>
+            <span class="post-date" title="2019-11-03 16:15:07">2019/11/03</span>
+        </a>
+        
+        <a  class="网络 网络编程 "
+           href="/2019/11/02/networkProgram/%E7%BD%91%E7%BB%9C%E7%BC%96%E7%A8%8B9TCP%E7%9A%84%E5%BC%82%E5%B8%B8/"
+           data-tag="网络编程"
+           data-author="" >
+            <span class="post-title" title="网络编程9：TCP的异常">网络编程9：TCP的异常</span>
+            <span class="post-date" title="2019-11-02 13:57:10">2019/11/02</span>
+        </a>
+        
+        <a  class="网络 网络编程 "
+           href="/2019/11/01/networkProgram/%E7%BD%91%E7%BB%9C%E7%BC%96%E7%A8%8B8TCP%E6%95%B0%E6%8D%AE%E4%BC%A0%E8%BE%93/"
+           data-tag="网络编程"
+           data-author="" >
+            <span class="post-title" title="网络编程8：TCP数据传输">网络编程8：TCP数据传输</span>
+            <span class="post-date" title="2019-11-01 18:34:10">2019/11/01</span>
+        </a>
+        
+        <a  class="网络 网络编程 "
+           href="/2019/10/31/networkProgram/%E7%BD%91%E7%BB%9C%E7%BC%96%E7%A8%8B7TCP%E8%BF%9E%E6%8E%A5%E7%8A%B6%E6%80%81/"
+           data-tag="网络编程"
+           data-author="" >
+            <span class="post-title" title="网络编程7：TCP连接状态">网络编程7：TCP连接状态</span>
+            <span class="post-date" title="2019-10-31 17:14:55">2019/10/31</span>
+        </a>
+        
+        <a  class="网络 网络编程 "
+           href="/2019/10/30/networkProgram/%E7%BD%91%E7%BB%9C%E7%BC%96%E7%A8%8B6%E5%85%B3%E9%97%AD%E8%BF%9E%E6%8E%A5/"
+           data-tag="网络编程"
+           data-author="" >
+            <span class="post-title" title="网络编程6：关闭连接">网络编程6：关闭连接</span>
+            <span class="post-date" title="2019-10-30 18:34:12">2019/10/30</span>
+        </a>
+        
+        <a  class="网络 网络编程 "
+           href="/2019/10/29/networkProgram/%E7%BD%91%E7%BB%9C%E7%BC%96%E7%A8%8B5%E7%BD%91%E7%BB%9C%E5%B7%A5%E5%85%B7/"
+           data-tag="网络编程"
+           data-author="" >
+            <span class="post-title" title="网络编程5：网络工具">网络编程5：网络工具</span>
+            <span class="post-date" title="2019-10-29 14:24:11">2019/10/29</span>
+        </a>
+        
+        <a  class="网络 网络编程 "
+           href="/2019/10/28/networkProgram/%E7%BD%91%E7%BB%9C%E7%BC%96%E7%A8%8B3UDP%E5%8D%8F%E8%AE%AE%E4%BD%BF%E7%94%A8socket/"
+           data-tag="网络编程"
+           data-author="" >
+            <span class="post-title" title="网络编程3：UDP协议使用socket">网络编程3：UDP协议使用socket</span>
+            <span class="post-date" title="2019-10-28 10:11:10">2019/10/28</span>
+        </a>
+        
+        <a  class="网络 网络编程 "
+           href="/2019/10/28/networkProgram/%E7%BD%91%E7%BB%9C%E7%BC%96%E7%A8%8B4%E6%9C%AC%E5%9C%B0socket/"
+           data-tag="网络编程"
+           data-author="" >
+            <span class="post-title" title="网络编程4：本地套接字">网络编程4：本地套接字</span>
+            <span class="post-date" title="2019-10-28 10:11:10">2019/10/28</span>
+        </a>
+        
+        <a  class="网络 网络编程 "
+           href="/2019/10/27/networkProgram/%E7%BD%91%E7%BB%9C%E7%BC%96%E7%A8%8B2TCP%E5%8D%8F%E8%AE%AE%E4%BD%BF%E7%94%A8socket/"
+           data-tag="网络编程"
+           data-author="" >
+            <span class="post-title" title="网络编程2：TCP协议使用socket">网络编程2：TCP协议使用socket</span>
+            <span class="post-date" title="2019-10-27 17:59:09">2019/10/27</span>
+        </a>
+        
+        <a  class="网络 网络编程 "
+           href="/2019/10/26/networkProgram/%E7%BD%91%E7%BB%9C%E7%BC%96%E7%A8%8B1/"
+           data-tag="网络编程"
+           data-author="" >
+            <span class="post-title" title="网络编程1：基础部分">网络编程1：基础部分</span>
+            <span class="post-date" title="2019-10-26 16:54:02">2019/10/26</span>
+        </a>
+        
+        <a  class="分布式 "
+           href="/2019/09/12/distribute/01/"
+           data-tag="分布式"
+           data-author="" >
+            <span class="post-title" title="分布式系统的一致性与共识">分布式系统的一致性与共识</span>
+            <span class="post-date" title="2019-09-12 13:47:52">2019/09/12</span>
+        </a>
+        
+        <a  class="网络 HTTP "
+           href="/2019/08/05/http/030205/"
+           data-tag="HTTP"
+           data-author="" >
+            <span class="post-title" title="HTTP协议学习（五）HTTPS与安全">HTTP协议学习（五）HTTPS与安全</span>
+            <span class="post-date" title="2019-08-05 20:46:07">2019/08/05</span>
+        </a>
+        
+        <a  class="网络 HTTP "
+           href="/2019/07/20/http/030204/"
+           data-tag="HTTP"
+           data-author="" >
+            <span class="post-title" title="HTTP协议学习（四）cookie、缓存、代理机制">HTTP协议学习（四）cookie、缓存、代理机制</span>
+            <span class="post-date" title="2019-07-20 13:15:07">2019/07/20</span>
+        </a>
+        
+        <a  class="网络 HTTP "
+           href="/2019/07/10/http/030203/"
+           data-tag="HTTP"
+           data-author="" >
+            <span class="post-title" title="HTTP协议学习（三）数据传输与连接">HTTP协议学习（三）数据传输与连接</span>
+            <span class="post-date" title="2019-07-10 14:36:55">2019/07/10</span>
+        </a>
+        
+        <a  class="网络 HTTP "
+           href="/2019/07/01/http/030202/"
+           data-tag="HTTP"
+           data-author="" >
+            <span class="post-title" title="HTTP协议学习（二）基础">HTTP协议学习（二）基础</span>
+            <span class="post-date" title="2019-07-01 14:05:51">2019/07/01</span>
+        </a>
+        
+        <a  class="网络 HTTP "
+           href="/2019/06/14/http/030201/"
+           data-tag="HTTP"
+           data-author="" >
+            <span class="post-title" title="HTTP协议学习（一）概念">HTTP协议学习（一）概念</span>
+            <span class="post-date" title="2019-06-14 16:08:25">2019/06/14</span>
+        </a>
+        
+    </nav>
+</div>
+    </div>
+    <div class="hide-list">
+        <div class="semicircle">
+            <div class="brackets first"><</div>
+            <div class="brackets">&gt;</div>
+        </div>
+    </div>
+</aside>
+<div class="post">
+    <div class="pjax">
+        <article id="post-3-SpringMVC/4_SpringMVC的常用注解" class="article article-type-post" itemscope itemprop="blogPost">
+    
+        <h1 class="article-title">【SpringMVC实战3】常用注解</h1>
+    
+    <div class="article-meta">
+        
+        
+        
+        <span class="book">
+            
+                <a  data-rel="SSM">SSM</a>/
+            
+                <a  data-rel="SpringMVC">SpringMVC</a>
+            
+        </span>
+        
+        
+        <span class="tag">
+            
+            <a class="color5">java</a>
+            
+        </span>
+        
+    </div>
+    <div class="article-meta">
+        
+        创建时间:<time class="date" title='更新时间: 2020-03-06 06:46:51'>2020-03-03 15:26</time>
+        
+    </div>
+    <div class="article-meta">
+        
+        
+        
+    </div>
+    
+    <div class="toc-ref">
+    
+        <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#RequestMapping建立映射"><span class="toc-text">RequestMapping建立映射</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#作用"><span class="toc-text">作用</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#出现位置"><span class="toc-text">出现位置</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#属性"><span class="toc-text">属性</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#RequestParam给形参赋指定名称"><span class="toc-text">RequestParam给形参赋指定名称</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#作用-1"><span class="toc-text">作用</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#属性-1"><span class="toc-text">属性</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#例子"><span class="toc-text">例子</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#RequestBody获取请求体内容"><span class="toc-text">RequestBody获取请求体内容</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#作用-2"><span class="toc-text">作用</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#属性-2"><span class="toc-text">属性</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#例子-1"><span class="toc-text">例子</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#PathVariable绑定URL占位符"><span class="toc-text">PathVariable绑定URL占位符</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#作用-3"><span class="toc-text">作用</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#属性-3"><span class="toc-text">属性</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#例子-2"><span class="toc-text">例子</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#RequestHeader获取请求头"><span class="toc-text">RequestHeader获取请求头</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#作用-4"><span class="toc-text">作用</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#属性-4"><span class="toc-text">属性</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#例子-3"><span class="toc-text">例子</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#CookieValue获取指定cookie的值"><span class="toc-text">CookieValue获取指定cookie的值</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#作用-5"><span class="toc-text">作用</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#属性-5"><span class="toc-text">属性</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#例子-4"><span class="toc-text">例子</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#ModelAttribute控制参数"><span class="toc-text">ModelAttribute控制参数</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#作用-6"><span class="toc-text">作用</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#属性-6"><span class="toc-text">属性</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#应用场景"><span class="toc-text">应用场景</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#例子-5"><span class="toc-text">例子</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#SessionAttributes"><span class="toc-text">SessionAttributes</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#作用-7"><span class="toc-text">作用</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#属性-7"><span class="toc-text">属性</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#例子-6"><span class="toc-text">例子</span></a></li></ol></li></ol>
+    
+<style>
+    .left-col .switch-btn,
+    .left-col .switch-area {
+        display: none;
+    }
+    .toc-level-3 i,
+    .toc-level-3 ol {
+        display: none !important;
+    }
+</style>
+</div>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p><div class='inner-toc'><h2>目录</h2><ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#RequestMapping建立映射"><span class="toc-text">RequestMapping建立映射</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#作用"><span class="toc-text">作用</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#出现位置"><span class="toc-text">出现位置</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#属性"><span class="toc-text">属性</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#RequestParam给形参赋指定名称"><span class="toc-text">RequestParam给形参赋指定名称</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#作用-1"><span class="toc-text">作用</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#属性-1"><span class="toc-text">属性</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#例子"><span class="toc-text">例子</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#RequestBody获取请求体内容"><span class="toc-text">RequestBody获取请求体内容</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#作用-2"><span class="toc-text">作用</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#属性-2"><span class="toc-text">属性</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#例子-1"><span class="toc-text">例子</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#PathVariable绑定URL占位符"><span class="toc-text">PathVariable绑定URL占位符</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#作用-3"><span class="toc-text">作用</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#属性-3"><span class="toc-text">属性</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#例子-2"><span class="toc-text">例子</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#RequestHeader获取请求头"><span class="toc-text">RequestHeader获取请求头</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#作用-4"><span class="toc-text">作用</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#属性-4"><span class="toc-text">属性</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#例子-3"><span class="toc-text">例子</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#CookieValue获取指定cookie的值"><span class="toc-text">CookieValue获取指定cookie的值</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#作用-5"><span class="toc-text">作用</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#属性-5"><span class="toc-text">属性</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#例子-4"><span class="toc-text">例子</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#ModelAttribute控制参数"><span class="toc-text">ModelAttribute控制参数</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#作用-6"><span class="toc-text">作用</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#属性-6"><span class="toc-text">属性</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#应用场景"><span class="toc-text">应用场景</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#例子-5"><span class="toc-text">例子</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#SessionAttributes"><span class="toc-text">SessionAttributes</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#作用-7"><span class="toc-text">作用</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#属性-7"><span class="toc-text">属性</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#例子-6"><span class="toc-text">例子</span></a></li></ol></li></ol></div></p>
+<h1 id="RequestMapping建立映射"><a href="#RequestMapping建立映射" class="headerlink" title="RequestMapping建立映射"></a>RequestMapping建立映射</h1><h2 id="作用"><a href="#作用" class="headerlink" title="作用"></a>作用</h2><p>用于建立请求 URL 和处理请求方法之间的对应关系</p>
+<h2 id="出现位置"><a href="#出现位置" class="headerlink" title="出现位置"></a>出现位置</h2><p><strong>类上：</strong></p>
+<ul>
+<li><p>请求 URL 的第一级访问目录。</p>
+<p>此处不写的话，就相当于<strong>应用的根目录</strong>。 写的话需要以/开头。</p>
+<p>它出现的目的是为了使 URL 可以按照模块化管理:</p>
+<p>例如：</p>
+<pre><code>账户模块：
+/account/add
+/account/update
+/account/delete
+...
+订单模块：
+/order/add
+/order/update
+/order/delete</code></pre><p>其中，<code>/account</code> 和 <code>/order</code> 就是把 RequsetMappding 写在类上，称为一级目录，<code>/add</code> <code>/update</code> <code>/delete</code> 是第二级访问目录。</p>
+</li>
+</ul>
+<p><strong>方法上：</strong></p>
+<ul>
+<li>请求 URL 的第二级访问目录。</li>
+</ul>
+<p>例如，下面将重新创建一个方法，想要访问该方法，就需要在index.jsp里面将超链接的路径写成下面</p>
+<pre><code class="jsp">&lt;a href=&quot;user/testReqMapping&quot;&gt;Requesting Mapping 注解&lt;/a&gt;</code></pre>
+<img src="/2020/03/03/3-SpringMVC/4_SpringMVC%E7%9A%84%E5%B8%B8%E7%94%A8%E6%B3%A8%E8%A7%A3/image-20200302152925940.png" alt="image-20200302152925940" style="zoom:80%;">
+
+<h2 id="属性"><a href="#属性" class="headerlink" title="属性"></a>属性</h2><ul>
+<li><p><code>value</code></p>
+<p><strong>作用</strong>：用于指定请求的 URL。 它和 path 属性的作用是一样的。</p>
+</li>
+<li><p><code>method</code></p>
+<p><strong>作用</strong>：用于指定请求的方式。</p>
+<p>其中可用的属性为：</p>
+<pre><code class="java">public enum RequestMethod {
+    GET,
+    HEAD,
+    POST,
+    PUT,
+    PATCH,
+    DELETE,
+    OPTIONS,
+    TRACE;
+
+    private RequestMethod() {
+    }
+}</code></pre>
+<p><strong>例子</strong>：前面一致在用的点击超链接的方式，都是GET方法，但是可以通过其他的方式指定请求方式，例如POST等。</p>
+<pre><code class="java">@RequestMapping(path = &quot;/testReqMapping&quot;, method = {RequestMethod.POST})
+public  String testRequestingMapping() {
+    System.out.println(&quot;测试注解&quot;);
+    return &quot;success&quot;;
+}</code></pre>
+</li>
+<li><p><code>params</code></p>
+<p><strong>作用</strong>：用于指定限制请求参数的条件。 它支持简单的表达式。 要求请求参数的 key 和 value 必须和配置的一模一样。</p>
+<p><strong>例如</strong>：</p>
+<p><code>params = {&quot;accountName&quot;}</code>，表示请求参数必须有 accountName</p>
+<p><code>params = {&quot;moeny=100&quot;}</code>，表示请求参数中 money 必须是 100</p>
+<p><code>params = {&quot;moeny!100&quot;}</code>，表示请求参数中 money 不能是 100</p>
+<pre><code class="java">@RequestMapping(path = &quot;/testReqMapping&quot;, params = {&quot;username&quot;})
+public  String testRequestingMapping() {
+    System.out.println(&quot;测试注解&quot;);
+    return &quot;success&quot;;
+}</code></pre>
+<p>此时请求需要更换为下面：</p>
+<pre><code class="jsp">&lt;a href=&quot;user/testReqMapping?username=hehe&quot;&gt;Requesting Mapping 注解&lt;/a&gt;</code></pre>
+</li>
+<li><p><code>headers</code></p>
+<p><strong>作用</strong>：发送的请求中必须包含的请求头。</p>
+<p>请求头在浏览器的F12中可以查看</p>
+<img src="/2020/03/03/3-SpringMVC/4_SpringMVC%E7%9A%84%E5%B8%B8%E7%94%A8%E6%B3%A8%E8%A7%A3/image-20200302155056117.png" alt="image-20200302155056117" style="zoom:80%;">
+
+</li>
+</ul>
+<p>注意：<br>以上四个属性只要出现多个，他们的关系是<strong>与</strong>的关系。  </p>
+<h1 id="RequestParam给形参赋指定名称"><a href="#RequestParam给形参赋指定名称" class="headerlink" title="RequestParam给形参赋指定名称"></a>RequestParam给形参赋指定名称</h1><h2 id="作用-1"><a href="#作用-1" class="headerlink" title="作用"></a>作用</h2><p>把请求中指定名称的参数给控制器中的形参赋值。</p>
+<h2 id="属性-1"><a href="#属性-1" class="headerlink" title="属性"></a>属性</h2><p>value： 请求参数中的名称。</p>
+<p>required：请求参数中是否必须提供此参数。 默认值： true。表示必须提供，如果不提供将报错。</p>
+<h2 id="例子"><a href="#例子" class="headerlink" title="例子"></a>例子</h2><p>在jsp文件中传参：</p>
+<pre><code class="jsp">&lt;body&gt;
+    &lt;%--常用注解--%&gt;
+    &lt;a href=&quot;anno/testRequestParam?name=haha&quot;&gt;TestRequestParam&lt;/a&gt;
+&lt;/body&gt;</code></pre>
+<p>在对应Controller的参数列表中写增加注解</p>
+<pre><code class="java">@Controller
+@RequestMapping(&quot;/anno&quot;)
+public class AnnoController {
+
+    @RequestMapping(&quot;/testRequestParam&quot;)
+    public String testRequestParam(
+        @RequestParam(name = &quot;name&quot;,  required = false) String username
+    ) {
+        System.out.println(username);
+        return &quot;success&quot;;
+    }
+}</code></pre>
+<p>就可以将请求中的name参数映射为函数中的username参数了。</p>
+<h1 id="RequestBody获取请求体内容"><a href="#RequestBody获取请求体内容" class="headerlink" title="RequestBody获取请求体内容"></a>RequestBody获取请求体内容</h1><h2 id="作用-2"><a href="#作用-2" class="headerlink" title="作用"></a>作用</h2><p>用于获取<strong>请求体</strong>内容。 直接使用得到是 key=value&amp;key=value…结构的数据。</p>
+<p>get 请求方式不适用。可以用表单来测试</p>
+<h2 id="属性-2"><a href="#属性-2" class="headerlink" title="属性"></a>属性</h2><p>required：是否必须有请求体。默认值是:true。当取值为 true 时,get 请求方式会报错。如果取值为 false， get 请求得到是 null。  </p>
+<h2 id="例子-1"><a href="#例子-1" class="headerlink" title="例子"></a>例子</h2><p>在jsp中创建一个表单：</p>
+<pre><code class="jsp">&lt;form action=&quot;anno/testRequestBody&quot; method=&quot;post&quot;&gt;
+    姓名：&lt;input type=&quot;text&quot; name=&quot;username&quot; /&gt; &lt;br/&gt;
+    年龄：&lt;input type=&quot;text&quot; name=&quot;age&quot; /&gt; &lt;br/&gt;
+
+    &lt;input type=&quot;submit&quot; value=&quot;提交&quot;/&gt; &lt;br/&gt;
+&lt;/form&gt;</code></pre>
+<p>在对应的Controller进行测试：</p>
+<pre><code class="java">@RequestMapping(&quot;/testRequestBody&quot;)
+public String testRequestBody(@RequestBody(required = true) String body) {
+    System.out.println(body);
+    return &quot;success&quot;;
+}</code></pre>
+<p>测试结果就是：</p>
+<pre><code>username=hehe&amp;age=321</code></pre><h1 id="PathVariable绑定URL占位符"><a href="#PathVariable绑定URL占位符" class="headerlink" title="PathVariable绑定URL占位符"></a>PathVariable绑定URL占位符</h1><h2 id="作用-3"><a href="#作用-3" class="headerlink" title="作用"></a>作用</h2><p>用于绑定 url 中的占位符。 例如：请求 url 中 <code>/delete/{id}</code>， 这个{id}就是 url 占位符。</p>
+<p>使用REST风格也就表示这里不需要写 <code>/id=10</code>，而是直接写一个 <code>/10</code> 就可以了</p>
+<p>url 支持占位符是 spring3.0 之后加入的。是 springmvc 支持 rest 风格 URL 的一个重要标志。</p>
+<h2 id="属性-3"><a href="#属性-3" class="headerlink" title="属性"></a>属性</h2><p>value： 用于指定 url 中占位符名称。</p>
+<p>required：是否必须提供占位符。  </p>
+<h2 id="例子-2"><a href="#例子-2" class="headerlink" title="例子"></a>例子</h2><p>jsp文件中的定义：</p>
+<pre><code class="jsp">&lt;a href=&quot;anno/testVariable/10&quot;&gt;testPathVariable&lt;/a&gt;</code></pre>
+<p>在Controller类中的定义：</p>
+<pre><code class="java">@RequestMapping(&quot;/testVariable/{id}&quot;)
+public String testPathVariable(@PathVariable(name = &quot;id&quot;) String id) {
+    System.out.println(id);
+    return &quot;success&quot;;
+}</code></pre>
+<h1 id="RequestHeader获取请求头"><a href="#RequestHeader获取请求头" class="headerlink" title="RequestHeader获取请求头"></a>RequestHeader获取请求头</h1><h2 id="作用-4"><a href="#作用-4" class="headerlink" title="作用"></a>作用</h2><p>用于获取请求消息头。</p>
+<h2 id="属性-4"><a href="#属性-4" class="headerlink" title="属性"></a>属性</h2><p>value：提供消息头名称</p>
+<p>required：是否必须有此消息头  </p>
+<h2 id="例子-3"><a href="#例子-3" class="headerlink" title="例子"></a>例子</h2><p>在jsp文件中定义：</p>
+<pre><code class="jsp">&lt;a href=&quot;anno/testRequestHeader&quot;&gt;testRequestHeader&lt;/a&gt;</code></pre>
+<p>在Controller类中定义：</p>
+<pre><code class="java">@RequestMapping(&quot;/testRequestHeader&quot;)
+public String testRequestHeader(@RequestHeader(value = &quot;Accpet&quot;) String header) {
+    System.out.println(header);
+    return &quot;success&quot;;
+}</code></pre>
+<p>得到的结果为：</p>
+<pre><code>text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9</code></pre><h1 id="CookieValue获取指定cookie的值"><a href="#CookieValue获取指定cookie的值" class="headerlink" title="CookieValue获取指定cookie的值"></a>CookieValue获取指定cookie的值</h1><h2 id="作用-5"><a href="#作用-5" class="headerlink" title="作用"></a>作用</h2><p>用于把指定 cookie 名称的值传入控制器方法参数。</p>
+<h2 id="属性-5"><a href="#属性-5" class="headerlink" title="属性"></a>属性</h2><p>value：指定 cookie 的名称。</p>
+<p>required：是否必须有此 cookie。  </p>
+<h2 id="例子-4"><a href="#例子-4" class="headerlink" title="例子"></a>例子</h2><p>在jsp文件中添加下面语句</p>
+<pre><code class="jsp">&lt;a href=&quot;anno/testCookieValue&quot;&gt;testCookieValue&lt;/a&gt;</code></pre>
+<p>在Controller中添加：</p>
+<pre><code class="java">@RequestMapping(&quot;/testCookieValue&quot;)
+public String testCookieValue(@CookieValue(value = &quot;JSESSIONID&quot;) String cookie) {
+    System.out.println(cookie);
+    return &quot;success&quot;;
+}</code></pre>
+<p>得到的结果是：</p>
+<pre><code>330A894BCD72B8FF4719E7D82E501F32</code></pre><p>拿到了指定的cookie值</p>
+<h1 id="ModelAttribute控制参数"><a href="#ModelAttribute控制参数" class="headerlink" title="ModelAttribute控制参数"></a>ModelAttribute控制参数</h1><h2 id="作用-6"><a href="#作用-6" class="headerlink" title="作用"></a>作用</h2><p>该注解是 SpringMVC4.3 版本以后新加入的。它可以用于修饰方法和参数。</p>
+<ul>
+<li>出现在方法上，表示当前方法会在控制器的方法执行之前，先执行。它可以修饰没有返回值的方法，也可<br>以修饰有具体返回值的方法。</li>
+<li>出现在参数上，获取指定的数据给参数赋值。</li>
+</ul>
+<h2 id="属性-6"><a href="#属性-6" class="headerlink" title="属性"></a>属性</h2><p>value：用于获取数据的 key。 key 可以是 POJO 的属性名称，也可以是 map 结构的 key。</p>
+<h2 id="应用场景"><a href="#应用场景" class="headerlink" title="应用场景"></a>应用场景</h2><p>当表单提交数据不是完整的实体类数据时，保证没有提交数据的字段使用数据库对象原来的数据。</p>
+<p>例如，用户的POJO类型为：</p>
+<img src="/2020/03/03/3-SpringMVC/4_SpringMVC%E7%9A%84%E5%B8%B8%E7%94%A8%E6%B3%A8%E8%A7%A3/image-20200304183432289.png" alt="image-20200304183432289" style="zoom:80%;">
+
+<p>提交表单的时候，user和date两个属性没有提交，则通过这个注解可以将空缺的字段置为指定值（比如从数据库中查询）。</p>
+<h2 id="例子-5"><a href="#例子-5" class="headerlink" title="例子"></a>例子</h2><p>在jsp中提交一个表单，这个表单是不完整的，例如下面：</p>
+<pre><code class="jsp">&lt;form action=&quot;anno/testModelAttribute&quot; method=&quot;post&quot;&gt;
+    姓名：&lt;input type=&quot;text&quot; name=&quot;uname&quot; /&gt; &lt;br/&gt;
+    年龄：&lt;input type=&quot;text&quot; name=&quot;age&quot; /&gt; &lt;br/&gt;
+
+    &lt;input type=&quot;submit&quot; value=&quot;提交&quot;/&gt; &lt;br/&gt;
+&lt;/form&gt;</code></pre>
+<p>在Controller里面增加的内容有两种：带返回值的和不带返回值的</p>
+<p><strong>第一种：带返回值的</strong></p>
+<pre><code class="java">@RequestMapping(&quot;/testModelAttribute&quot;)
+public String testModelAttribute(User user) {
+    System.out.println(user);
+    return &quot;success&quot;;
+}
+
+// 该方法先执行
+@ModelAttribute
+public User showUser(String uname) {
+    System.out.println(&quot;执行了ModelAttribute&quot; + uname);
+    User user = new User();
+    user.setDate(new Date());
+    // 通过数据库查询
+    // ... 省略查询代码
+    return user;
+}</code></pre>
+<p>最终的执行结果：</p>
+<img src="/2020/03/03/3-SpringMVC/4_SpringMVC%E7%9A%84%E5%B8%B8%E7%94%A8%E6%B3%A8%E8%A7%A3/image-20200304183406762.png" alt="image-20200304183406762" style="zoom:80%;">
+
+<p>可以看出，是限制性了ModelAttribute里面的方法，才转交给指定方法的，并且，这里只能对null数据进行补全，比如表单中提交了age=4，方法中虽然可以设置setAge=5，但是最终提供给方法的User对象里面age值仍然是4，不能被修改。</p>
+<p><strong>第二种：不带返回值的</strong></p>
+<pre><code class="java">@RequestMapping(&quot;/testModelAttribute&quot;)
+public String testModelAttribute(@ModelAttribute(&quot;abc&quot;) User user) {
+    System.out.println(user);
+    return &quot;success&quot;;
+}
+
+// 该方法先执行
+@ModelAttribute
+public void showUser(String uname, Map&lt;String, User&gt; map) {
+    System.out.println(&quot;执行了ModelAttribute&quot; + uname);
+    User user = new User();
+    user.setDate(new Date());
+    // 通过数据库查询
+    // ... 省略查询代码
+    map.put(&quot;abc&quot;, user);
+}</code></pre>
+<p>执行结果为：</p>
+<img src="/2020/03/03/3-SpringMVC/4_SpringMVC%E7%9A%84%E5%B8%B8%E7%94%A8%E6%B3%A8%E8%A7%A3/image-20200304184022882.png" alt="image-20200304184022882" style="zoom:80%;">
+
+<h1 id="SessionAttributes"><a href="#SessionAttributes" class="headerlink" title="SessionAttributes"></a>SessionAttributes</h1><h2 id="作用-7"><a href="#作用-7" class="headerlink" title="作用"></a>作用</h2><p>用于多次执行控制器方法间的<strong>参数共享</strong>。</p>
+<p>session域是会话域，如果有多次请求，可以多次使用。注意这个注解需要在类上面使用。</p>
+<h2 id="属性-7"><a href="#属性-7" class="headerlink" title="属性"></a>属性</h2><p>value：用于指定存入的属性名称</p>
+<p>type：用于指定存入的数据类型。  </p>
+<h2 id="例子-6"><a href="#例子-6" class="headerlink" title="例子"></a>例子</h2><p>可以在success页面上面打印下面的域信息，通过这些信息，进行测试</p>
+<pre><code class="jsp">&lt;%@ page contentType=&quot;text/html;charset=UTF-8&quot; language=&quot;java&quot; isELIgnored=&quot;false&quot; %&gt;
+&lt;html&gt;
+    &lt;head&gt;
+
+    &lt;/head&gt;
+    &lt;body&gt;
+        &lt;h3&gt;入门成功&lt;/h3&gt;
+        &lt;b/&gt;
+        ${msg}
+        ${sessionScope}
+    &lt;/body&gt;
+&lt;/html&gt;</code></pre>
+<p>调用的jsp</p>
+<pre><code class="jsp">&lt;a href=&quot;anno/setSessionAttributes&quot;&gt;testsetSessionAttributes&lt;/a&gt;
+
+&lt;a href=&quot;anno/getSessionAttributes&quot;&gt;testGetSessionAttributes&lt;/a&gt;</code></pre>
+<p>然后在相应的Controller中进行如下定义：</p>
+<pre><code class="java">@Controller
+@RequestMapping(&quot;/anno&quot;)
+@SessionAttributes(value = {&quot;msg&quot;}) // 把msg存入到session域对中
+public class AnnoController {
+
+    // 向session中存入值
+    @RequestMapping(&quot;/setSessionAttributes&quot;)
+    public String setSessionAttributes(ModelMap modelMap) {
+        System.out.println(&quot;setSessionAttributes执行了&quot;);
+        modelMap.addAttribute(&quot;msg&quot;, &quot;哈哈&quot;);
+        return &quot;success&quot;;
+    }
+
+    // 从session域中获取值
+    @RequestMapping(&quot;/getSessionAttributes&quot;)
+    public String getSessionAttributes(ModelMap modelMap) {
+        String msg = (String) modelMap.get(&quot;msg&quot;);
+        System.out.println(&quot;getSessionAttributes执行了&quot;);
+        System.out.println(msg);
+        return &quot;success&quot;;
+    }
+    // 删除
+    // 会将session域删除
+    @RequestMapping(&quot;/delSessionAttributes&quot;)
+    public String delSessionAttributes(SessionStatus status) {
+        status.setComplete();
+        return &quot;success&quot;;
+    }
+}</code></pre>
+<p>在控制台运行之后，可以发现两次请求能够共享本次session的数据：</p>
+<img src="/2020/03/03/3-SpringMVC/4_SpringMVC%E7%9A%84%E5%B8%B8%E7%94%A8%E6%B3%A8%E8%A7%A3/image-20200304205938554.png" alt="image-20200304205938554" style="zoom:80%;">
+
+
+
+
+
+
+
+
+      
+       
+    </div>
+</article>
+
+
+
+
+
+
+
+    
+
+
+
+
+    </div>
+    <div class="copyright">
+        <p class="footer-entry">©2019-2020 POWDER SNOW</p>
+
+    </div>
+    <div class="full-toc">
+        <button class="full"><span class="min "></span></button>
+<button class="post-toc-menu"><span class="post-toc-menu-icons"></span></button>
+<div class="post-toc"><span class="post-toc-title">目录</span>
+    <div class="post-toc-content">
+
+    </div>
+</div>
+<a class="" id="rocket" ></a>
+
+    </div>
+</div>
+<div class="acParent"></div>
+
+</body>
+<script src="/js/jquery.pjax.js?v=1.0.1" ></script>
+
+<script src="/js/script.js?v=1.0.1" ></script>
+<script>
+    var img_resize = 'default';
+    /*作者、标签的自动补全*/
+    $(function () {
+        $('.search').AutoComplete({
+            'data': ['#HTTP','#protobuf','#MySQL SQL','#Spring','#java','#QT','#区块链','#分布式','#大数据','#前端','#MyBatis','#SpringBoot','#网络编程','#Redis','#多线程','#数据库',],
+            'itemHeight': 20,
+            'width': 418
+        }).AutoComplete('show');
+    })
+    function initArticle() {
+        /*渲染对应的表格样式*/
+        
+            $(".post .pjax table").addClass("green_title");
+        
+
+        /*渲染打赏样式*/
+        
+
+        /*高亮代码块行号*/
+        
+
+        /*访问数量*/
+        
+
+        /*代码高亮，行号对齐*/
+        $('.pre-numbering').css('line-height',$('.has-numbering').css('line-height'));
+
+        
+        
+    }
+
+    /*打赏页面隐藏与展示*/
+    
+
+</script>
+
+<!--加入行号的高亮代码块样式-->
+
+<!--自定义样式设置-->
+<style>
+    
+    
+    .nav {
+        width: 544px;
+    }
+    .nav.fullscreen {
+        margin-left: -544px;
+    }
+    .nav-left {
+        width: 122px;
+    }
+    
+    
+    @media screen and (max-width: 1468px) {
+        .nav {
+            width: 492px;
+        }
+        .nav.fullscreen {
+            margin-left: -492px;
+        }
+        .nav-left {
+            width: 100px;
+        }
+    }
+    
+    
+    @media screen and (max-width: 1024px) {
+        .nav {
+            width: 492px;
+            margin-left: -492px
+        }
+        .nav.fullscreen {
+            margin-left: 0;
+        }
+        .nav .hide-list.fullscreen {
+            left: 492px
+        }
+    }
+    
+    @media screen and (max-width: 426px) {
+        .nav {
+            width: 100%;
+        }
+        .nav-left {
+            width: 100%;
+        }
+    }
+    
+    
+    .nav-right .title-list nav a .post-title, .nav-right .title-list #local-search-result a .post-title {
+        color: #383636;
+    }
+    
+    
+    .nav-right .title-list nav a .post-date, .nav-right .title-list #local-search-result a .post-date {
+        color: #5e5e5f;
+    }
+    
+    
+    .nav-right nav a.hover, #local-search-result a.hover{
+        background-color: #fbf4a8;
+    }
+    
+    
+
+    /*列表样式*/
+    
+    .post .pjax article .article-entry>ol, .post .pjax article .article-entry>ul, .post .pjax article>ol, .post .pjax article>ul{
+        border: #e2dede solid 1px;
+        border-radius: 10px;
+        padding: 10px 32px 10px 56px;
+    }
+    .post .pjax article .article-entry li>ol, .post .pjax article .article-entry li>ul,.post .pjax article li>ol, .post .pjax article li>ul{
+        padding-top: 5px;
+        padding-bottom: 5px;
+    }
+    .post .pjax article .article-entry>ol>li, .post .pjax article .article-entry>ul>li,.post .pjax article>ol>li, .post .pjax article>ul>li{
+        margin-bottom: auto;
+        margin-left: auto;
+    }
+    .post .pjax article .article-entry li>ol>li, .post .pjax article .article-entry li>ul>li,.post .pjax article li>ol>li, .post .pjax article li>ul>li{
+        margin-bottom: auto;
+        margin-left: auto;
+    }
+    
+
+    /* 背景图样式 */
+    
+    .post {
+        background: url(/img/bck.jpg);
+    }
+    
+    
+    .post.index {
+        background: url(/img/background.jpg);
+    }
+    
+
+
+    /*引用块样式*/
+    
+
+    /*文章列表背景图*/
+    
+    .nav-right:before {
+        content: ' ';
+        display: block;
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        opacity: 0.3;
+        background: url("/img/123.jpg");
+        background-repeat: no-repeat;
+        background-position: 50% 0;
+        -ms-background-size: cover;
+        -o-background-size: cover;
+        -moz-background-size: cover;
+        -webkit-background-size: cover;
+        background-size: cover;
+    }
+    
+
+    
+</style>
+
+
+
+
+
+
+
+</html>

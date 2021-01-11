@@ -1,0 +1,1453 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>闪电网络（四）比特币闪电网络：The Bitcoin Lightning Network | POWDER SNOW</title>
+  <meta name="keywords" content=" 区块链 ">
+  <meta name="description" content="闪电网络（四）比特币闪电网络：The Bitcoin Lightning Network | POWDER SNOW">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<meta property="og:type" content="website">
+<meta property="og:title" content="categories">
+<meta property="og:url" content="http://yoursite.com/categories/index.html">
+<meta property="og:site_name" content="POWDER SNOW">
+<meta property="article:published_time" content="2018-03-02T04:33:16.000Z">
+<meta property="article:modified_time" content="2020-03-05T13:28:59.839Z">
+<meta property="article:author" content="冯冠雄">
+<meta name="twitter:card" content="summary">
+
+
+<link rel="icon" href="/img/avatar.jpg">
+
+<link href="/css/style.css?v=1.0.1" rel="stylesheet">
+
+<link href="/css/hl_theme/atom-light.css?v=1.0.1" rel="stylesheet">
+
+<link href="//cdn.bootcss.com/animate.css/3.5.2/animate.min.css" rel="stylesheet">
+<link href="//cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+
+<script src="//cdn.bootcss.com/jquery/2.2.4/jquery.min.js"></script>
+<script src="/js/jquery.autocomplete.min.js?v=1.0.1" ></script>
+
+<script src="//cdn.bootcss.com/highlight.js/9.12.0/highlight.min.js"></script>
+<script>
+    hljs.initHighlightingOnLoad();
+</script>
+
+<script src="//cdn.bootcss.com/nprogress/0.2.0/nprogress.min.js"></script>
+
+
+
+<script src="//cdn.bootcss.com/jquery-cookie/1.4.1/jquery.cookie.min.js" ></script>
+
+<script src="/js/iconfont.js?v=1.0.1" ></script>
+
+<meta name="generator" content="Hexo 4.2.0"></head>
+<div style="display: none">
+  <input class="theme_disqus_on" value="false">
+  <input class="theme_preload_comment" value="false">
+  <input class="theme_blog_path" value="">
+</div>
+
+<body>
+<aside class="nav">
+    <div class="nav-left">
+        <a href="/" class="avatar_target">
+    <img class="avatar" src="/img/avatar.jpg" />
+</a>
+<div class="author">
+    <span>冯冠雄</span>
+</div>
+
+<div class="icon">
+    
+        
+        <a title="github" href="https://github.com/xiong-Fgx" target="_blank">
+            
+                <svg class="iconfont-svg" aria-hidden="true">
+                    <use xlink:href="#icon-github"></use>
+                </svg>
+            
+        </a>
+        
+    
+        
+        <a title="linkedin" href="https://www.linkedin.com/in/guanxiong-feng-8b6aa8179" target="_blank">
+            
+                <svg class="iconfont-svg" aria-hidden="true">
+                    <use xlink:href="#icon-linkedin"></use>
+                </svg>
+            
+        </a>
+        
+    
+        
+        <a title="email" href="mailto:guanxiongf@gmail.com" target="_blank">
+            
+                <svg class="iconfont-svg" aria-hidden="true">
+                    <use xlink:href="#icon-email"></use>
+                </svg>
+            
+        </a>
+        
+    
+</div>
+
+
+
+
+<ul>
+    <li><div class="all active">全部文章</div></li>
+    
+        
+            
+            <li><div data-rel="网络"><i class="fold iconfont icon-right"></i>网络</div>
+                
+                    <ul class="sub hide">
+                        
+                        <li><div data-rel="HTTP">HTTP</div>
+                            
+                        </li>
+                            
+                        <li><div data-rel="protobuf">protobuf</div>
+                            
+                        </li>
+                            
+                        <li><div data-rel="网络编程">网络编程</div>
+                            
+                        </li>
+                            
+                    </ul>
+                
+            </li>
+            
+        
+    
+        
+            
+            <li><div data-rel="数据库">数据库</div>
+                
+            </li>
+            
+        
+    
+        
+            
+        
+    
+        
+            
+            <li><div data-rel="SSM"><i class="fold iconfont icon-right"></i>SSM</div>
+                
+                    <ul class="sub hide">
+                        
+                        <li><div data-rel="SSM整合">SSM整合</div>
+                            
+                        </li>
+                            
+                        <li><div data-rel="Spring">Spring</div>
+                            
+                        </li>
+                            
+                        <li><div data-rel="SpringMVC">SpringMVC</div>
+                            
+                        </li>
+                            
+                        <li><div data-rel="MyBatis">MyBatis</div>
+                            
+                        </li>
+                            
+                        <li><div data-rel="SpringBoot">SpringBoot</div>
+                            
+                        </li>
+                            
+                    </ul>
+                
+            </li>
+            
+        
+    
+        
+            
+        
+    
+        
+            
+        
+    
+        
+            
+        
+    
+        
+            
+        
+    
+        
+            
+            <li><div data-rel="客户端"><i class="fold iconfont icon-right"></i>客户端</div>
+                
+                    <ul class="sub hide">
+                        
+                        <li><div data-rel="QT">QT</div>
+                            
+                        </li>
+                            
+                    </ul>
+                
+            </li>
+            
+        
+    
+        
+            
+            <li><div data-rel="区块链"><i class="fold iconfont icon-right"></i>区块链</div>
+                
+                    <ul class="sub hide">
+                        
+                        <li><div data-rel="论文">论文</div>
+                            
+                        </li>
+                            
+                        <li><div data-rel="Fabric">Fabric</div>
+                            
+                        </li>
+                            
+                        <li><div data-rel="fabric">fabric</div>
+                            
+                        </li>
+                            
+                    </ul>
+                
+            </li>
+            
+        
+    
+        
+            
+            <li><div data-rel="分布式">分布式</div>
+                
+            </li>
+            
+        
+    
+        
+            
+            <li><div data-rel="大数据"><i class="fold iconfont icon-right"></i>大数据</div>
+                
+                    <ul class="sub hide">
+                        
+                        <li><div data-rel="hadoop">hadoop</div>
+                            
+                        </li>
+                            
+                    </ul>
+                
+            </li>
+            
+        
+    
+        
+            
+            <li><div data-rel="前端"><i class="fold iconfont icon-right"></i>前端</div>
+                
+                    <ul class="sub hide">
+                        
+                        <li><div data-rel="HTML">HTML</div>
+                            
+                        </li>
+                            
+                        <li><div data-rel="CSS">CSS</div>
+                            
+                        </li>
+                            
+                    </ul>
+                
+            </li>
+            
+        
+    
+        
+            
+        
+    
+        
+            
+        
+    
+        
+            
+        
+    
+        
+            
+        
+    
+        
+            
+        
+    
+        
+            
+            <li><div data-rel="笔记">笔记</div>
+                
+            </li>
+            
+        
+    
+        
+            
+        
+    
+        
+            
+        
+    
+        
+            
+        
+    
+        
+            
+        
+    
+        
+            
+        
+    
+</ul>
+<div class="left-bottom">
+    <div class="menus">
+    
+    
+    
+    
+    </div>
+    <div></div>
+</div>
+<input type="hidden" id="yelog_site_posts_number" value="71">
+
+<div style="display: none">
+    <span id="busuanzi_value_site_uv"></span>
+    <span id="busuanzi_value_site_pv"></span>
+</div>
+
+    </div>
+    <div class="nav-right">
+        <div class="friends-area">
+    <div class="friends-title">
+        友情链接
+        <i class="back-title-list"></i>
+    </div>
+    <div class="friends-content">
+        <ul>
+            
+            <li><a target="_blank" href="http://yelog.org/">叶落阁</a></li>
+            
+        </ul>
+    </div>
+</div>
+        <div class="title-list">
+    <form onkeydown="if(event.keyCode === 13){return false;}">
+        <input id="local-search-input" class="search" type="text" placeholder="Search..." />
+        <i class="cross"></i>
+        <span>
+            <label for="tagswitch">Tags:</label>
+            <input id="tagswitch" type="checkbox" style="display: none" />
+            <i id="tagsWitchIcon"></i>
+        </span>
+    </form>
+    <div class="tags-list">
+    
+    <li class="article-tag-list-item">
+        <a class="color5">HTTP</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a class="color4">protobuf</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a class="color5">MySQL SQL</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a class="color2">Spring</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a class="color5">java</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a class="color3">QT</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a class="color4">区块链</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a class="color4">分布式</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a class="color4">大数据</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a class="color3">前端</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a class="color3">MyBatis</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a class="color1">SpringBoot</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a class="color5">网络编程</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a class="color1">Redis</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a class="color4">多线程</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a class="color4">数据库</a>
+    </li>
+    
+    <div class="clearfix"></div>
+</div>
+
+    
+    <nav id="title-list-nav">
+        
+        <a  class="前端 CSS "
+           href="/2021/01/11/html/4_%E7%9B%92%E5%AD%90%E6%A8%A1%E5%9E%8B/"
+           data-tag="前端"
+           data-author="" >
+            <span class="post-title" title="【前端 4】盒子模型">【前端 4】盒子模型</span>
+            <span class="post-date" title="2021-01-11 09:41:10">2021/01/11</span>
+        </a>
+        
+        <a  class="前端 CSS "
+           href="/2021/01/09/html/3_CSS%E8%BF%9B%E9%98%B6/"
+           data-tag="前端"
+           data-author="" >
+            <span class="post-title" title="【前端 3】CSS进阶">【前端 3】CSS进阶</span>
+            <span class="post-date" title="2021-01-09 09:43:10">2021/01/09</span>
+        </a>
+        
+        <a  class="前端 CSS "
+           href="/2021/01/05/html/2_CSS/"
+           data-tag="前端"
+           data-author="" >
+            <span class="post-title" title="【前端 2】CSS">【前端 2】CSS</span>
+            <span class="post-date" title="2021-01-05 16:22:10">2021/01/05</span>
+        </a>
+        
+        <a  class="前端 HTML "
+           href="/2021/01/04/html/1_html/"
+           data-tag="前端"
+           data-author="" >
+            <span class="post-title" title="【前端 1】HTML">【前端 1】HTML</span>
+            <span class="post-date" title="2021-01-04 10:46:10">2021/01/04</span>
+        </a>
+        
+        <a  class="区块链 fabric "
+           href="/2020/12/12/fabric/08_%E9%93%BE%E7%A0%81/"
+           data-tag="区块链"
+           data-author="" >
+            <span class="post-title" title="07_链码接口使用">07_链码接口使用</span>
+            <span class="post-date" title="2020-12-12 11:43:23">2020/12/12</span>
+        </a>
+        
+        <a  class="区块链 fabric "
+           href="/2020/12/12/fabric/02_%E9%83%A8%E7%BD%B2%E8%B0%83%E7%94%A8%E9%93%BE%E7%A0%81/"
+           data-tag="区块链"
+           data-author="" >
+            <span class="post-title" title="02_部署调用链码">02_部署调用链码</span>
+            <span class="post-date" title="2020-12-12 10:56:23">2020/12/12</span>
+        </a>
+        
+        <a  class="区块链 fabric "
+           href="/2020/12/09/fabric/07_dockerCompose%E5%90%AF%E5%8A%A8fabric/"
+           data-tag="区块链"
+           data-author="" >
+            <span class="post-title" title="06_docker compose启动节点">06_docker compose启动节点</span>
+            <span class="post-date" title="2020-12-09 11:35:23">2020/12/09</span>
+        </a>
+        
+        <a  class="区块链 fabric "
+           href="/2020/12/09/fabric/03_%E7%BD%91%E7%BB%9C%E7%BB%93%E6%9E%84%E5%8F%98%E5%8A%A8/"
+           data-tag="区块链"
+           data-author="" >
+            <span class="post-title" title="03_用户结构变动">03_用户结构变动</span>
+            <span class="post-date" title="2020-12-09 10:35:23">2020/12/09</span>
+        </a>
+        
+        <a  class="区块链 fabric "
+           href="/2020/12/02/fabric/01_%E6%90%AD%E5%BB%BA%E5%9F%BA%E7%A1%80%E7%BD%91%E7%BB%9C/"
+           data-tag="区块链"
+           data-author="" >
+            <span class="post-title" title="01_搭建基础网络">01_搭建基础网络</span>
+            <span class="post-date" title="2020-12-02 11:05:23">2020/12/02</span>
+        </a>
+        
+        <a  class="区块链 fabric "
+           href="/2020/12/01/fabric/05_java%20SDK%E4%BD%BF%E7%94%A8/"
+           data-tag="区块链"
+           data-author="" >
+            <span class="post-title" title="05_javaSDK使用">05_javaSDK使用</span>
+            <span class="post-date" title="2020-12-01 15:04:23">2020/12/01</span>
+        </a>
+        
+        <a  class="区块链 fabric "
+           href="/2020/12/01/fabric/04_%E7%94%A8%E6%88%B7%E4%BD%BF%E7%94%A8%E9%93%BE%E7%A0%81/"
+           data-tag="区块链"
+           data-author="" >
+            <span class="post-title" title="04_用户使用链码">04_用户使用链码</span>
+            <span class="post-date" title="2020-12-01 10:55:23">2020/12/01</span>
+        </a>
+        
+        <a  class="大数据 hadoop "
+           href="/2020/11/26/hadoop/%E5%AE%89%E8%A3%85/"
+           data-tag="大数据"
+           data-author="" >
+            <span class="post-title" title="【hadoop 3】hadoop分布式安装总结">【hadoop 3】hadoop分布式安装总结</span>
+            <span class="post-date" title="2020-11-26 17:50:09">2020/11/26</span>
+        </a>
+        
+        <a  class="客户端 QT "
+           href="/2020/10/29/QT/4_%E6%A8%A1%E5%9E%8B%20%E8%A7%86%E5%9B%BE%E7%BB%93%E6%9E%84/"
+           data-tag="QT"
+           data-author="" >
+            <span class="post-title" title="【QT 3】模型-视图结构">【QT 3】模型-视图结构</span>
+            <span class="post-date" title="2020-10-29 16:49:10">2020/10/29</span>
+        </a>
+        
+        <a  class="客户端 QT "
+           href="/2020/10/28/QT/3_%E6%8E%A7%E4%BB%B6/"
+           data-tag="QT"
+           data-author="" >
+            <span class="post-title" title="【QT 2】控件">【QT 2】控件</span>
+            <span class="post-date" title="2020-10-28 16:55:10">2020/10/28</span>
+        </a>
+        
+        <a  class="客户端 QT "
+           href="/2020/10/28/QT/2_%E5%B8%83%E5%B1%80%E7%AE%A1%E7%90%86/"
+           data-tag="QT"
+           data-author="" >
+            <span class="post-title" title="【QT 1】布局管理">【QT 1】布局管理</span>
+            <span class="post-date" title="2020-10-28 14:37:10">2020/10/28</span>
+        </a>
+        
+        <a  class="客户端 QT "
+           href="/2020/10/20/QT/QT%E7%95%8C%E9%9D%A2%E7%BC%96%E8%BE%91%E5%99%A8/"
+           data-tag="QT"
+           data-author="" >
+            <span class="post-title" title="【QT 4】QT界面编辑器">【QT 4】QT界面编辑器</span>
+            <span class="post-date" title="2020-10-20 15:52:10">2020/10/20</span>
+        </a>
+        
+        <a  class="SSM Spring "
+           href="/2020/06/01/%E7%AC%94%E8%AE%B0/spring/"
+           data-tag="Spring"
+           data-author="" >
+            <span class="post-title" title="【笔记】Spring总结">【笔记】Spring总结</span>
+            <span class="post-date" title="2020-06-01 03:57:17">2020/06/01</span>
+        </a>
+        
+        <a  class="笔记 "
+           href="/2020/05/12/%E7%AC%94%E8%AE%B0/%E6%95%B0%E6%8D%AE%E5%BA%93/"
+           data-tag="数据库"
+           data-author="" >
+            <span class="post-title" title="【笔记】数据库与MySQL">【笔记】数据库与MySQL</span>
+            <span class="post-date" title="2020-05-12 21:38:05">2020/05/12</span>
+        </a>
+        
+        <a  class="笔记 "
+           href="/2020/05/07/%E7%AC%94%E8%AE%B0/redis/"
+           data-tag="Redis"
+           data-author="" >
+            <span class="post-title" title="【笔记】Redis">【笔记】Redis</span>
+            <span class="post-date" title="2020-05-07 18:38:05">2020/05/07</span>
+        </a>
+        
+        <a  class="笔记 "
+           href="/2020/04/25/%E7%AC%94%E8%AE%B0/%E5%A4%9A%E7%BA%BF%E7%A8%8B/"
+           data-tag="多线程"
+           data-author="" >
+            <span class="post-title" title="【笔记】java并发">【笔记】java并发</span>
+            <span class="post-date" title="2020-04-25 15:38:01">2020/04/25</span>
+        </a>
+        
+        <a  class="大数据 hadoop "
+           href="/2020/03/18/hadoop/2_%E4%BD%BF%E7%94%A8hadoop/"
+           data-tag="大数据"
+           data-author="" >
+            <span class="post-title" title="【hadoop 2】hadoop三种模式使用">【hadoop 2】hadoop三种模式使用</span>
+            <span class="post-date" title="2020-03-18 17:49:04">2020/03/18</span>
+        </a>
+        
+        <a  class="SSM SpringBoot "
+           href="/2020/03/18/springboot/3_springboot%E7%9A%84%E9%85%8D%E7%BD%AE/"
+           data-tag="SpringBoot"
+           data-author="" >
+            <span class="post-title" title="【SpringBoot 02】配置文件">【SpringBoot 02】配置文件</span>
+            <span class="post-date" title="2020-03-18 12:58:23">2020/03/18</span>
+        </a>
+        
+        <a  class="SSM SpringBoot "
+           href="/2020/03/17/springboot/2_springboot%E7%9A%84helloworld/"
+           data-tag="SpringBoot"
+           data-author="" >
+            <span class="post-title" title="【SpringBoot 01】HelloWorld">【SpringBoot 01】HelloWorld</span>
+            <span class="post-date" title="2020-03-17 19:58:23">2020/03/17</span>
+        </a>
+        
+        <a  class="SSM SSM整合 "
+           href="/2020/03/05/3-SpringMVC/1_%E6%90%AD%E5%BB%BAspring/"
+           data-tag="java"
+           data-author="" >
+            <span class="post-title" title="【SSM实战】SSM框架整合">【SSM实战】SSM框架整合</span>
+            <span class="post-date" title="2020-03-05 20:37:01">2020/03/05</span>
+        </a>
+        
+        <a  class="SSM SpringMVC "
+           href="/2020/03/05/3-SpringMVC/7_SpringMVC%E5%BC%82%E5%B8%B8%E5%A4%84%E7%90%86%E4%B8%8E%E6%8B%A6%E6%88%AA%E5%99%A8/"
+           data-tag="java"
+           data-author="" >
+            <span class="post-title" title="【SpringMVC实战6】异常处理与拦截器">【SpringMVC实战6】异常处理与拦截器</span>
+            <span class="post-date" title="2020-03-05 13:06:19">2020/03/05</span>
+        </a>
+        
+        <a  class="SSM SpringMVC "
+           href="/2020/03/04/3-SpringMVC/6_SpringMVC%E5%93%8D%E5%BA%94/"
+           data-tag="java"
+           data-author="" >
+            <span class="post-title" title="【SpringMVC实战5】响应">【SpringMVC实战5】响应</span>
+            <span class="post-date" title="2020-03-04 19:26:39">2020/03/04</span>
+        </a>
+        
+        <a  class="SSM SpringMVC "
+           href="/2020/03/03/3-SpringMVC/4_SpringMVC%E7%9A%84%E5%B8%B8%E7%94%A8%E6%B3%A8%E8%A7%A3/"
+           data-tag="java"
+           data-author="" >
+            <span class="post-title" title="【SpringMVC实战3】常用注解">【SpringMVC实战3】常用注解</span>
+            <span class="post-date" title="2020-03-03 15:26:29">2020/03/03</span>
+        </a>
+        
+        <a  class="SSM SpringMVC "
+           href="/2020/03/03/3-SpringMVC/5_%E8%AF%B7%E6%B1%82%E5%8F%82%E6%95%B0%E7%BB%91%E5%AE%9A/"
+           data-tag="java"
+           data-author="" >
+            <span class="post-title" title="【SpringMVC实战4】请求参数绑定">【SpringMVC实战4】请求参数绑定</span>
+            <span class="post-date" title="2020-03-03 09:13:23">2020/03/03</span>
+        </a>
+        
+        <a  class="SSM SpringMVC "
+           href="/2020/03/02/3-SpringMVC/3_SpringMVC%E7%9A%84%E6%89%A7%E8%A1%8C%E6%B5%81%E7%A8%8B/"
+           data-tag="java"
+           data-author="" >
+            <span class="post-title" title="【SpringMVC实战2】执行流程">【SpringMVC实战2】执行流程</span>
+            <span class="post-date" title="2020-03-02 18:26:39">2020/03/02</span>
+        </a>
+        
+        <a  class="SSM SpringMVC "
+           href="/2020/03/02/3-SpringMVC/2_%E5%85%A5%E9%97%A8%E6%A1%88%E4%BE%8B/"
+           data-tag="java"
+           data-author="" >
+            <span class="post-title" title="【SpringMVC实战1】入门案例">【SpringMVC实战1】入门案例</span>
+            <span class="post-date" title="2020-03-02 14:26:39">2020/03/02</span>
+        </a>
+        
+        <a  class="SSM Spring "
+           href="/2020/02/21/13-Spring/8_%E4%BA%8B%E5%8A%A1%E6%8E%A7%E5%88%B6/"
+           data-tag="Spring"
+           data-author="" >
+            <span class="post-title" title="【Spring实战8】事务控制">【Spring实战8】事务控制</span>
+            <span class="post-date" title="2020-02-21 15:23:48">2020/02/21</span>
+        </a>
+        
+        <a  class="SSM Spring "
+           href="/2020/02/20/13-Spring/7_JdbcTemplate/"
+           data-tag="Spring"
+           data-author="" >
+            <span class="post-title" title="【Spring实战7】JdbcTemplate">【Spring实战7】JdbcTemplate</span>
+            <span class="post-date" title="2020-02-20 09:32:29">2020/02/20</span>
+        </a>
+        
+        <a  class="SSM Spring "
+           href="/2020/02/19/13-Spring/6_%E5%9F%BA%E4%BA%8Exml%E5%92%8C%E6%B3%A8%E8%A7%A3%E7%9A%84AOP%E9%85%8D%E7%BD%AE/"
+           data-tag="Spring"
+           data-author="" >
+            <span class="post-title" title="【Spring实战6】基于xml和注解的AOP配置">【Spring实战6】基于xml和注解的AOP配置</span>
+            <span class="post-date" title="2020-02-19 21:31:44">2020/02/19</span>
+        </a>
+        
+        <a  class="SSM Spring "
+           href="/2020/02/19/13-Spring/5_AOP/"
+           data-tag="Spring"
+           data-author="" >
+            <span class="post-title" title="【Spring实战5】AOP">【Spring实战5】AOP</span>
+            <span class="post-date" title="2020-02-19 18:56:47">2020/02/19</span>
+        </a>
+        
+        <a  class="SSM Spring "
+           href="/2020/02/18/13-Spring/4_%E5%8A%A8%E6%80%81%E4%BB%A3%E7%90%86/"
+           data-tag="Spring"
+           data-author="" >
+            <span class="post-title" title="【Spring实战4】动态代理">【Spring实战4】动态代理</span>
+            <span class="post-date" title="2020-02-18 17:15:32">2020/02/18</span>
+        </a>
+        
+        <a  class="SSM Spring "
+           href="/2020/02/14/13-Spring/3_%E5%9F%BA%E4%BA%8E%E6%B3%A8%E8%A7%A3%E7%9A%84IOC/"
+           data-tag="Spring"
+           data-author="" >
+            <span class="post-title" title="【Spring实战3】IoC注解">【Spring实战3】IoC注解</span>
+            <span class="post-date" title="2020-02-14 20:57:17">2020/02/14</span>
+        </a>
+        
+        <a  class="SSM Spring "
+           href="/2020/02/13/13-Spring/2_IOC/"
+           data-tag="Spring"
+           data-author="" >
+            <span class="post-title" title="【Spring实战2】IoC与DI">【Spring实战2】IoC与DI</span>
+            <span class="post-date" title="2020-02-13 20:56:03">2020/02/13</span>
+        </a>
+        
+        <a  class="SSM Spring "
+           href="/2020/02/13/13-Spring/1_%E7%A8%8B%E5%BA%8F%E8%80%A6%E5%90%88%E4%B8%8E%E8%A7%A3%E8%80%A6/"
+           data-tag="Spring"
+           data-author="" >
+            <span class="post-title" title="【Spring实战1】程序的耦合与解耦">【Spring实战1】程序的耦合与解耦</span>
+            <span class="post-date" title="2020-02-13 13:17:03">2020/02/13</span>
+        </a>
+        
+        <a  class="SSM MyBatis "
+           href="/2020/02/07/mybatis/10_%E6%B3%A8%E8%A7%A3%E5%BC%80%E5%8F%91/"
+           data-tag="MyBatis"
+           data-author="" >
+            <span class="post-title" title="【Mybatis实战5】注解开发">【Mybatis实战5】注解开发</span>
+            <span class="post-date" title="2020-02-07 16:18:37">2020/02/07</span>
+        </a>
+        
+        <a  class="SSM MyBatis "
+           href="/2020/02/06/mybatis/9_%E7%BC%93%E5%AD%98/"
+           data-tag="MyBatis"
+           data-author="" >
+            <span class="post-title" title="【Mybatis实战4】加载与缓存">【Mybatis实战4】加载与缓存</span>
+            <span class="post-date" title="2020-02-06 18:29:03">2020/02/06</span>
+        </a>
+        
+        <a  class="SSM MyBatis "
+           href="/2020/02/06/mybatis/8_%E5%8A%A8%E6%80%81SQL%E4%B8%8E%E5%A4%9A%E8%A1%A8%E6%93%8D%E4%BD%9C/"
+           data-tag="MyBatis"
+           data-author="" >
+            <span class="post-title" title="【Mybatis实战3】动态SQL与多表操作">【Mybatis实战3】动态SQL与多表操作</span>
+            <span class="post-date" title="2020-02-06 18:08:29">2020/02/06</span>
+        </a>
+        
+        <a  class="SSM MyBatis "
+           href="/2020/02/06/mybatis/6_mybatis%E8%BF%9B%E8%A1%8CCRUD/"
+           data-tag="MyBatis"
+           data-author="" >
+            <span class="post-title" title="【Mybatis实战2】CRUD操作">【Mybatis实战2】CRUD操作</span>
+            <span class="post-date" title="2020-02-06 13:21:03">2020/02/06</span>
+        </a>
+        
+        <a  class="SSM MyBatis "
+           href="/2020/02/05/mybatis/2_%E5%9F%BA%E4%BA%8Exml%E7%9A%84%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/"
+           data-tag="MyBatis"
+           data-author="" >
+            <span class="post-title" title="【Mybatis实战1】两种环境搭建方法及示例">【Mybatis实战1】两种环境搭建方法及示例</span>
+            <span class="post-date" title="2020-02-05 10:21:01">2020/02/05</span>
+        </a>
+        
+        <a  class="数据库 "
+           href="/2020/01/29/11-MySQL/3_%E5%A4%9A%E8%A1%A8%E6%9F%A5%E8%AF%A2%E4%B8%8E%E4%BA%8B%E5%8A%A1/"
+           data-tag="MySQL SQL"
+           data-author="" >
+            <span class="post-title" title="多表查询与事务">多表查询与事务</span>
+            <span class="post-date" title="2020-01-29 13:52:00">2020/01/29</span>
+        </a>
+        
+        <a  class="数据库 "
+           href="/2020/01/26/11-MySQL/2_SQL%E9%AB%98%E7%BA%A7/"
+           data-tag="MySQL SQL"
+           data-author="" >
+            <span class="post-title" title="数据库高级知识及SQL实现">数据库高级知识及SQL实现</span>
+            <span class="post-date" title="2020-01-26 23:01:52">2020/01/26</span>
+        </a>
+        
+        <a  class="数据库 "
+           href="/2020/01/23/11-MySQL/1_SQL%E8%AF%AD%E8%A8%80%E5%9F%BA%E6%9C%AC%E6%93%8D%E4%BD%9C/"
+           data-tag="MySQL SQL"
+           data-author="" >
+            <span class="post-title" title="SQL语言基础">SQL语言基础</span>
+            <span class="post-date" title="2020-01-23 20:06:39">2020/01/23</span>
+        </a>
+        
+        <a  class="网络 protobuf "
+           href="/2020/01/16/10-java%E7%BD%91%E7%BB%9C/2_protobuf/"
+           data-tag="protobuf"
+           data-author="" >
+            <span class="post-title" title="java使用protobuf">java使用protobuf</span>
+            <span class="post-date" title="2020-01-16 17:57:52">2020/01/16</span>
+        </a>
+        
+        <a  class="网络 HTTP "
+           href="/2020/01/15/10-java%E7%BD%91%E7%BB%9C/1_HTTP/"
+           data-tag="HTTP"
+           data-author="" >
+            <span class="post-title" title="java实现简单的HTTP">java实现简单的HTTP</span>
+            <span class="post-date" title="2020-01-15 18:03:21">2020/01/15</span>
+        </a>
+        
+        <a  class="大数据 hadoop "
+           href="/2020/01/06/hadoop/1_hadoop/"
+           data-tag="大数据"
+           data-author="" >
+            <span class="post-title" title="【hadoop 1】hadoop环境搭建">【hadoop 1】hadoop环境搭建</span>
+            <span class="post-date" title="2020-01-06 14:55:10">2020/01/06</span>
+        </a>
+        
+        <a  class="区块链 Fabric "
+           href="/2019/11/24/blockchain/09/"
+           data-tag="区块链"
+           data-author="" >
+            <span class="post-title" title="Hyperledger Fabric系统框架笔记">Hyperledger Fabric系统框架笔记</span>
+            <span class="post-date" title="2019-11-24 12:43:08">2019/11/24</span>
+        </a>
+        
+        <a  class="区块链 论文 "
+           href="/2019/11/21/blockchain/08/"
+           data-tag="区块链"
+           data-author="" >
+            <span class="post-title" title="闪电网络（四）比特币闪电网络：The Bitcoin Lightning Network">闪电网络（四）比特币闪电网络：The Bitcoin Lightning Network</span>
+            <span class="post-date" title="2019-11-21 21:31:53">2019/11/21</span>
+        </a>
+        
+        <a  class="区块链 论文 "
+           href="/2019/11/20/blockchain/07/"
+           data-tag="区块链"
+           data-author="" >
+            <span class="post-title" title="闪电网络（三）哈希时间锁合约：Hashed Timelock Contract (HTLC)">闪电网络（三）哈希时间锁合约：Hashed Timelock Contract (HTLC)</span>
+            <span class="post-date" title="2019-11-20 10:51:23">2019/11/20</span>
+        </a>
+        
+        <a  class="区块链 论文 "
+           href="/2019/11/20/blockchain/05/"
+           data-tag="区块链"
+           data-author="" >
+            <span class="post-title" title="闪电网络（二）双向支付通道：Bidirectional Payment Channels + RSMC">闪电网络（二）双向支付通道：Bidirectional Payment Channels + RSMC</span>
+            <span class="post-date" title="2019-11-20 10:51:23">2019/11/20</span>
+        </a>
+        
+        <a  class="区块链 论文 "
+           href="/2019/11/19/blockchain/06/"
+           data-tag="区块链"
+           data-author="" >
+            <span class="post-title" title="闪电网络（一）微支付通道">闪电网络（一）微支付通道</span>
+            <span class="post-date" title="2019-11-19 10:07:02">2019/11/19</span>
+        </a>
+        
+        <a  class="区块链 论文 "
+           href="/2019/11/15/blockchain/03/"
+           data-tag="区块链"
+           data-author="" >
+            <span class="post-title" title="论文翻译 OmniLedger">论文翻译 OmniLedger</span>
+            <span class="post-date" title="2019-11-15 16:15:33">2019/11/15</span>
+        </a>
+        
+        <a  class="网络 网络编程 "
+           href="/2019/11/03/networkProgram/%E7%BD%91%E7%BB%9C%E7%BC%96%E7%A8%8B10UDP%E8%BF%9E%E6%8E%A5/"
+           data-tag="网络编程"
+           data-author="" >
+            <span class="post-title" title="网络编程10：UDP连接">网络编程10：UDP连接</span>
+            <span class="post-date" title="2019-11-03 16:15:07">2019/11/03</span>
+        </a>
+        
+        <a  class="网络 网络编程 "
+           href="/2019/11/02/networkProgram/%E7%BD%91%E7%BB%9C%E7%BC%96%E7%A8%8B9TCP%E7%9A%84%E5%BC%82%E5%B8%B8/"
+           data-tag="网络编程"
+           data-author="" >
+            <span class="post-title" title="网络编程9：TCP的异常">网络编程9：TCP的异常</span>
+            <span class="post-date" title="2019-11-02 13:57:10">2019/11/02</span>
+        </a>
+        
+        <a  class="网络 网络编程 "
+           href="/2019/11/01/networkProgram/%E7%BD%91%E7%BB%9C%E7%BC%96%E7%A8%8B8TCP%E6%95%B0%E6%8D%AE%E4%BC%A0%E8%BE%93/"
+           data-tag="网络编程"
+           data-author="" >
+            <span class="post-title" title="网络编程8：TCP数据传输">网络编程8：TCP数据传输</span>
+            <span class="post-date" title="2019-11-01 18:34:10">2019/11/01</span>
+        </a>
+        
+        <a  class="网络 网络编程 "
+           href="/2019/10/31/networkProgram/%E7%BD%91%E7%BB%9C%E7%BC%96%E7%A8%8B7TCP%E8%BF%9E%E6%8E%A5%E7%8A%B6%E6%80%81/"
+           data-tag="网络编程"
+           data-author="" >
+            <span class="post-title" title="网络编程7：TCP连接状态">网络编程7：TCP连接状态</span>
+            <span class="post-date" title="2019-10-31 17:14:55">2019/10/31</span>
+        </a>
+        
+        <a  class="网络 网络编程 "
+           href="/2019/10/30/networkProgram/%E7%BD%91%E7%BB%9C%E7%BC%96%E7%A8%8B6%E5%85%B3%E9%97%AD%E8%BF%9E%E6%8E%A5/"
+           data-tag="网络编程"
+           data-author="" >
+            <span class="post-title" title="网络编程6：关闭连接">网络编程6：关闭连接</span>
+            <span class="post-date" title="2019-10-30 18:34:12">2019/10/30</span>
+        </a>
+        
+        <a  class="网络 网络编程 "
+           href="/2019/10/29/networkProgram/%E7%BD%91%E7%BB%9C%E7%BC%96%E7%A8%8B5%E7%BD%91%E7%BB%9C%E5%B7%A5%E5%85%B7/"
+           data-tag="网络编程"
+           data-author="" >
+            <span class="post-title" title="网络编程5：网络工具">网络编程5：网络工具</span>
+            <span class="post-date" title="2019-10-29 14:24:11">2019/10/29</span>
+        </a>
+        
+        <a  class="网络 网络编程 "
+           href="/2019/10/28/networkProgram/%E7%BD%91%E7%BB%9C%E7%BC%96%E7%A8%8B3UDP%E5%8D%8F%E8%AE%AE%E4%BD%BF%E7%94%A8socket/"
+           data-tag="网络编程"
+           data-author="" >
+            <span class="post-title" title="网络编程3：UDP协议使用socket">网络编程3：UDP协议使用socket</span>
+            <span class="post-date" title="2019-10-28 10:11:10">2019/10/28</span>
+        </a>
+        
+        <a  class="网络 网络编程 "
+           href="/2019/10/28/networkProgram/%E7%BD%91%E7%BB%9C%E7%BC%96%E7%A8%8B4%E6%9C%AC%E5%9C%B0socket/"
+           data-tag="网络编程"
+           data-author="" >
+            <span class="post-title" title="网络编程4：本地套接字">网络编程4：本地套接字</span>
+            <span class="post-date" title="2019-10-28 10:11:10">2019/10/28</span>
+        </a>
+        
+        <a  class="网络 网络编程 "
+           href="/2019/10/27/networkProgram/%E7%BD%91%E7%BB%9C%E7%BC%96%E7%A8%8B2TCP%E5%8D%8F%E8%AE%AE%E4%BD%BF%E7%94%A8socket/"
+           data-tag="网络编程"
+           data-author="" >
+            <span class="post-title" title="网络编程2：TCP协议使用socket">网络编程2：TCP协议使用socket</span>
+            <span class="post-date" title="2019-10-27 17:59:09">2019/10/27</span>
+        </a>
+        
+        <a  class="网络 网络编程 "
+           href="/2019/10/26/networkProgram/%E7%BD%91%E7%BB%9C%E7%BC%96%E7%A8%8B1/"
+           data-tag="网络编程"
+           data-author="" >
+            <span class="post-title" title="网络编程1：基础部分">网络编程1：基础部分</span>
+            <span class="post-date" title="2019-10-26 16:54:02">2019/10/26</span>
+        </a>
+        
+        <a  class="分布式 "
+           href="/2019/09/12/distribute/01/"
+           data-tag="分布式"
+           data-author="" >
+            <span class="post-title" title="分布式系统的一致性与共识">分布式系统的一致性与共识</span>
+            <span class="post-date" title="2019-09-12 13:47:52">2019/09/12</span>
+        </a>
+        
+        <a  class="网络 HTTP "
+           href="/2019/08/05/http/030205/"
+           data-tag="HTTP"
+           data-author="" >
+            <span class="post-title" title="HTTP协议学习（五）HTTPS与安全">HTTP协议学习（五）HTTPS与安全</span>
+            <span class="post-date" title="2019-08-05 20:46:07">2019/08/05</span>
+        </a>
+        
+        <a  class="网络 HTTP "
+           href="/2019/07/20/http/030204/"
+           data-tag="HTTP"
+           data-author="" >
+            <span class="post-title" title="HTTP协议学习（四）cookie、缓存、代理机制">HTTP协议学习（四）cookie、缓存、代理机制</span>
+            <span class="post-date" title="2019-07-20 13:15:07">2019/07/20</span>
+        </a>
+        
+        <a  class="网络 HTTP "
+           href="/2019/07/10/http/030203/"
+           data-tag="HTTP"
+           data-author="" >
+            <span class="post-title" title="HTTP协议学习（三）数据传输与连接">HTTP协议学习（三）数据传输与连接</span>
+            <span class="post-date" title="2019-07-10 14:36:55">2019/07/10</span>
+        </a>
+        
+        <a  class="网络 HTTP "
+           href="/2019/07/01/http/030202/"
+           data-tag="HTTP"
+           data-author="" >
+            <span class="post-title" title="HTTP协议学习（二）基础">HTTP协议学习（二）基础</span>
+            <span class="post-date" title="2019-07-01 14:05:51">2019/07/01</span>
+        </a>
+        
+        <a  class="网络 HTTP "
+           href="/2019/06/14/http/030201/"
+           data-tag="HTTP"
+           data-author="" >
+            <span class="post-title" title="HTTP协议学习（一）概念">HTTP协议学习（一）概念</span>
+            <span class="post-date" title="2019-06-14 16:08:25">2019/06/14</span>
+        </a>
+        
+    </nav>
+</div>
+    </div>
+    <div class="hide-list">
+        <div class="semicircle">
+            <div class="brackets first"><</div>
+            <div class="brackets">&gt;</div>
+        </div>
+    </div>
+</aside>
+<div class="post">
+    <div class="pjax">
+        <article id="post-blockchain/08" class="article article-type-post" itemscope itemprop="blogPost">
+    
+        <h1 class="article-title">闪电网络（四）比特币闪电网络：The Bitcoin Lightning Network</h1>
+    
+    <div class="article-meta">
+        
+        
+        
+        <span class="book">
+            
+                <a  data-rel="区块链">区块链</a>/
+            
+                <a  data-rel="论文">论文</a>
+            
+        </span>
+        
+        
+        <span class="tag">
+            
+            <a class="color4">区块链</a>
+            
+        </span>
+        
+    </div>
+    <div class="article-meta">
+        
+        创建时间:<time class="date" title='更新时间: 2020-03-06 06:45:55'>2019-11-21 21:31</time>
+        
+    </div>
+    <div class="article-meta">
+        
+        
+        
+    </div>
+    
+    <div class="toc-ref">
+    
+        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#8-The-Bitcoin-Lightning-Network"><span class="toc-text">8. The Bitcoin Lightning Network</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#8-1-递减时间锁"><span class="toc-text">8.1 递减时间锁</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#8-2-支付金额"><span class="toc-text">8.2 支付金额</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#8-3-Clearing-Failure-and-Rerouting"><span class="toc-text">8.3 Clearing Failure and Rerouting</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#8-4-支付路径"><span class="toc-text">8.4 支付路径</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#8-5-Fees"><span class="toc-text">8.5 Fees</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#9-风险"><span class="toc-text">9. 风险</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#9-1-不当的时间锁"><span class="toc-text">9.1 不当的时间锁</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#9-2-Forced-Expiration-Spam"><span class="toc-text">9.2 Forced Expiration Spam</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#9-3-碰撞导致财产窃取"><span class="toc-text">9.3 碰撞导致财产窃取</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#9-4-数据丢失"><span class="toc-text">9.4 数据丢失</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#9-5-忘记及时广播交易"><span class="toc-text">9.5 忘记及时广播交易</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#9-6-无法制作必要的软分叉"><span class="toc-text">9.6 无法制作必要的软分叉</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#9-7-勾结矿工攻击"><span class="toc-text">9.7 勾结矿工攻击</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#10-区块大小增长与共识"><span class="toc-text">10. 区块大小增长与共识</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#11-Use-Cases"><span class="toc-text">11. Use Cases</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#12-Conclusion"><span class="toc-text">12 Conclusion</span></a></li></ol>
+    
+<style>
+    .left-col .switch-btn,
+    .left-col .switch-area {
+        display: none;
+    }
+    .toc-level-3 i,
+    .toc-level-3 ol {
+        display: none !important;
+    }
+</style>
+</div>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p><div class='inner-toc'><h2>目录</h2><ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#8-The-Bitcoin-Lightning-Network"><span class="toc-text">8. The Bitcoin Lightning Network</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#8-1-递减时间锁"><span class="toc-text">8.1 递减时间锁</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#8-2-支付金额"><span class="toc-text">8.2 支付金额</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#8-3-Clearing-Failure-and-Rerouting"><span class="toc-text">8.3 Clearing Failure and Rerouting</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#8-4-支付路径"><span class="toc-text">8.4 支付路径</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#8-5-Fees"><span class="toc-text">8.5 Fees</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#9-风险"><span class="toc-text">9. 风险</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#9-1-不当的时间锁"><span class="toc-text">9.1 不当的时间锁</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#9-2-Forced-Expiration-Spam"><span class="toc-text">9.2 Forced Expiration Spam</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#9-3-碰撞导致财产窃取"><span class="toc-text">9.3 碰撞导致财产窃取</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#9-4-数据丢失"><span class="toc-text">9.4 数据丢失</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#9-5-忘记及时广播交易"><span class="toc-text">9.5 忘记及时广播交易</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#9-6-无法制作必要的软分叉"><span class="toc-text">9.6 无法制作必要的软分叉</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#9-7-勾结矿工攻击"><span class="toc-text">9.7 勾结矿工攻击</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#10-区块大小增长与共识"><span class="toc-text">10. 区块大小增长与共识</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#11-Use-Cases"><span class="toc-text">11. Use Cases</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#12-Conclusion"><span class="toc-text">12 Conclusion</span></a></li></ol></div></p>
+<p>PS：这篇文章的英语表述特别native，而且全篇59页，写的非常详细，是一片不可多得的佳作。由于原文内容非常长，所以这里将原文拆成4个部分，分别为：</p>
+<ul>
+<li>（一）微支付通道</li>
+<li>（二）双向支付通道：Bidirectional Payment Channels + RSMC</li>
+<li>（三）哈希时间锁合约：Hashed Timelock Contract (HTLC) </li>
+<li>（四）比特币闪电网络：The Bitcoin Lightning Network</li>
+</ul>
+<p><strong>本文为本系列的第四篇，文中的标题序号均按照原论文中顺序进行编号</strong></p>
+<h2 id="8-The-Bitcoin-Lightning-Network"><a href="#8-The-Bitcoin-Lightning-Network" class="headerlink" title="8. The Bitcoin Lightning Network"></a>8. The Bitcoin Lightning Network</h2><p>By having a micropayment channel with contracts encumbered by hashlocks and timelocks, it is possible to clear transactions over a multi-hop payment network using a series of decrementing timelocks without additional central clearinghouses.</p>
+<p> 通过使用带有hashlocks和timelocks合约的微支付通道，可以<strong>使用一系列不断减少的timelocks在多跳支付网络上清除交易</strong>，而不需要额外的中央清算所（clearinghouses）。 </p>
+<p>Traditionally, financial markets clear transactions by transferring the obligation for delivery at a central point and settle by transferring ownership through this central hub. Bank wire and fund transfer systems (such as ACH and the Visa card network), or equities clearinghouses (such as the DTCC) operate in this manner.</p>
+<p>传统上，金融市场通过在中心点转移交付义务来结算交易，并通过该中心枢纽转移所有权来进行结算。 银行电汇和资金转帐系统（例如ACH和Visa卡网络）或股票票据交换所（例如DTCC）以这种方式运行。</p>
+<p>As Bitcoin enables programmatic money, it is possible to create transactions without contacting a central clearinghouse. Transactions can execute off-chain with no third party which collects all funds before disbursing it only transactions with uncooperative channel counterparties become automatically adjudicated on the blockchain.  </p>
+<p>由于比特币启用程序化资金，因此<strong>无需联系中央票据交换所就可以创建交易</strong>。 交易可以在没有第三方的情况下进行链下执行，而第三方不会收集所有资金，只有在与不合作的通道交易方进行交易时才自动裁定区块链上的交易。</p>
+<p>The obligation to deliver funds to an end-recipient is achieved through a process of chained delegation. Each participant along the path assumes the obligation to deliver to a particular recipient. Each participant passes on this obligation to the next participant in the path. The obligation of each subsequent participant along the path, defined in their respective HTLCs, has a shorter time to completion compared to the prior participant. This way each participant is sure that they will be able to claim funds when the obligation is sent along the path.</p>
+<p>通过<strong>链式授权的过程</strong>来实现向最终接收者提供资金的义务。 沿途的每个参与者都承担着向特定收件人交付的义务。 <strong>每个参与者都将这一义务传递给路径中的下一个参与者</strong>。 与先前参与者相比，每个后续参与者在其各自的HTLC中定义的沿路径的义务具有较短的完成时间。 这样，每个参与者都可以确保在沿路径发送义务时能够索取资金。</p>
+<p>Bitcoin Transaction Scripting, a form of what some call an implementation of “Smart Contracts”[19], enables systems without trusted custodial clearinghouses or escrow services.</p>
+<p>比特币交易脚本（一种称为“智能合约” [19]的实现形式）使系统无需受信任的保管清算所或托管服务。</p>
+<h3 id="8-1-递减时间锁"><a href="#8-1-递减时间锁" class="headerlink" title="8.1 递减时间锁"></a>8.1 递减时间锁</h3><p>Decrementing Timelocks</p>
+<p>Presume Alice wishes to send 0.001 BTC to Dave. She locates a route through Bob and Carol. The transfer path would be Alice to Bob to Carol to Dave</p>
+<p>假设Alice希望向Dave发送0.001 BTC。 她找到了一条通过Bob和Carol的路线。 传输路径将是Alice到Bob到Carol到Dave</p>
+<p><img src="/2019/11/21/blockchain/08/1574342962451.png" alt="1574342962451"></p>
+<p>Figure 15: Payment over the Lightning Network using HTLCs.</p>
+<p>图15：使用HTLC通过闪电网络付款。</p>
+<p>When Alice sends payment to Dave through Bob and Carol, she requests from Dave hash(R) to use for this payment. Alice then counts the amount of hops until the recipient and uses that as the HTLC expiry. In this case, she sets the HTLC expiry at 3 days. Bob then creates an HTLC with Carol with an expiry of 2 days, and Carol does the same with Dave with an expiry of 1 day. Dave is now free to disclose R to Carol, and both parties will likely agree to immediate settlement via novation with a replacement Commitment Transaction. This then occurs step-by-step back to Alice. Note that this occurs off-chain, and nothing is broadcast to the blockchain when all parties are cooperative.</p>
+<p>当Alice通过Bob和Carol向Dave发送付款时，她向Dave请求使用该付款。 然后，<strong>Alice计算从他开始到接收者的hop数，并将其视为HTLC的<code>Timeout</code></strong>。 在这种情况下，她将HTLC设置为3天。 然后，Bob与Carol创建了一个HTLC，有效期为2天，而Carol为Dave创建了HTLC，其有效期为1天。 Dave现在可以自由地将R透露给Carol，并且双方都可能同意通过换新的<code>Commitment Tx</code>立即进行结算。 然后这一步一步地回到Alice。 请注意，<strong>这发生在链下，并且当各方合作时，不会向区块链广播任何内容</strong>。</p>
+<p><img src="/2019/11/21/blockchain/08/1574342973867.png" alt="1574342973867"></p>
+<p>Figure 16: Settlement of HTLC, Alice’s funds get sent to Dave.</p>
+<p>图16：HTLC的结算，Alice的资金被发送给了Dave。</p>
+<p>Decrementing timelocks are used so that all parties along the path know that the disclosure of R will allow the disclosing party to pull funds, since they will at worst be pulling funds after the date whereby they must receive R. If Dave does not produce R within 1 day to Carol, then Carol will be able to close out the HTLC. If Dave broadcasts R after 1 day, then he will not be able to pull funds from Carol. Carol’s responsibility to Bob occurs on day 2, so Carol will never be responsible for payment to Dave without an ability to pull funds from Bob provided that she updates her transaction with Dave via transmission to the blockchain or via novation.</p>
+<p>使用<strong>递减的时间锁</strong>，以便<strong>沿途的所有各方都知道R的公开将允许披露方提取资金</strong>，因为最坏的情况是他们将在必须收到R的日期之后提取资金。 Carol 在1天后，便可以关闭HTLC。 如果Dave在1天后播放R，那么他将无法从Carol提取资金。 Carol对Bob的责任发生在第2天，因此如果没有通过Bob提取资金的能力，只要Carol通过传输到区块链或通过更新与Dave进行交易来更新，则Carol将永远不负责支付给Dave。</p>
+<p>In the event that R gets disclosed to the participants halfway through expiry along the path (e.g. day 2), then it is possible for some parties along the path to be enriched. The sender will be able to know R, so due to Pay to Contract, the payment will have been fulfilled even though the receiver did not receive the funds. Therefore, the receiver must never disclose R unless they have received an HTLC from their channel counterparty; they are guaranteed to receive payment from one of their channel counterparties upon disclosure of the preimage.</p>
+<p>如果R在沿路径到期（例如第2天）的中途向参与者披露，则沿该路径的某些参与方有可能变得更加丰富。 <strong>发送者将能够知道R，因此由于按合同付款，即使接收者未收到资金，付款也已完成。</strong> 因此，<strong>除非接收者已经从其信道对方接收到HTLC，否则它绝不能透露R</strong>； 他们保证在公开原像后会从其通道交易方之一收到付款。</p>
+<p>In the event a party outright disconnects, the counterparty will be responsible for broadcasting the current Commitment Transaction state in the channel to the blockchain. Only the failed non-responsive channel state gets closed out on the blockchain, all other channels should continue to update their Commitment Transactions via novation inside the channel. Therefore, counterparty risk for transaction fees are only exposed to direct channel counterparties. If a node along the path decides to become unresponsive, the participants not directly connected to that node suffer only decreased timevalue of their funds by not conducting early settlement before the HTLC close.</p>
+<p><strong>如果一方直接断开连接，则交易对手将负责在通道中向区块链广播当前的<code>Commitment Tx</code>状态。</strong> 只有失败的无响应通道状态在区块链上被关闭，所有其他通道应继续通过通道内的更新来更新其<code>Commitment Tx</code>。 因此，交易费用的交易对手风险仅暴露于直接通道交易对手。 如果沿路径的某个节点决定不响应，则不直接连接到该节点的参与者通过在HTLC关闭之前不进行早期结算，只会遭受其资金时间价值下降的困扰。</p>
+<p><img src="/2019/11/21/blockchain/08/1574342985884.png" alt="1574342985884"></p>
+<p>Figure 17: Only the non-responsive channels get broadcast on the blockchain, all others are settled off-chain via novation.</p>
+<p>图17：只有无响应的通道才在区块链上广播，所有其他通道都通过创新在链下解决。</p>
+<h3 id="8-2-支付金额"><a href="#8-2-支付金额" class="headerlink" title="8.2 支付金额"></a>8.2 支付金额</h3><p>Payment Amount</p>
+<p>It is preferable to use a small payment per HTLC. One should not use an extremely high payment, in case the payment does not fully route to its destination. If the payment does not reach its destination and one of the participants along the path is uncooperative, it is possible that the sender must wait until the expiry before receiving a refund. Delivery may be lossy, similar to packets on the internet, but the network cannot outright steal funds in transit. Since transactions don’t hit the blockchain with cooperative channel counterparties, it is recommended to use as small of a payment as possible. A tradeoff exists between locking up transaction fees on each hop versus the desire to use as small a transaction amount as possible (the latter of which may incur higher total fees). Smaller transfers with more intermediaries imply a higher percentage paid as Lightning Network fees to the intermediaries.  </p>
+<p>每个HTLC最好使用少量付款。 如果付款未完全汇到其目的地，则不应使用极高的付款。 <strong>如果付款没有到达目的地，并且路径上的参与者之一不合作，则发件人可能必须等到到期后才能收到退款</strong>。 传递可能是有损的，类似于Internet上的数据包，但网络无法彻底窃取传输中的资金。 由于交易不会通过合作通道交易对手进入区块链，因此建议使用尽可能少的付款方式。 在锁定每一跳的交易费用与使用尽可能小的交易金额（后者可能会产生更高的总费用）的愿望之间存在权衡。 与更多中介机构的较小转移意味着闪电网络向中介机构支付的百分比更高。</p>
+<h3 id="8-3-Clearing-Failure-and-Rerouting"><a href="#8-3-Clearing-Failure-and-Rerouting" class="headerlink" title="8.3 Clearing Failure and Rerouting"></a>8.3 Clearing Failure and Rerouting</h3><p>If a transaction fails to reach its final destination, the receiver should send an equal payment to the sender with the same hash, but not disclose R. This will net out the disclosure of the hash for the sender, but may not for the receiver. The receiver, who generated the hash, should discard R and never broadcast it. If one channel along the path cannot be contacted, then the channels may elect to wait until the path expires, which all participants will likely close out the HTLC as unsettled without any payment with a new Commitment Transaction.</p>
+<p>如果交易未能到达其最终目的地，则接收方应使用相同的散列向发送方发送同等付款，但不披露R。这将消除对发送方的散列披露，但对于接收方而言则不然。 产生散列的接收者应该丢弃R，并且永远不要广播它。 如果无法联系沿路径的一个通道，则这些通道可以选择等待直到路径到期为止，所有参与者都可能会因为尚未结算而关闭HTLC，而无需通过新的<code>Commitment Tx</code>付款。</p>
+<p><img src="/2019/11/21/blockchain/08/1574246226758.png" alt="1574246226758"></p>
+<p>Figure 18: Dave creates a path back to Alice after Alice fails to send funds to Dave, because Carol is uncooperative. The input R from hash(R) is never brodcast by Dave, because Carol did not complete her actions. If R was broadcast, Alice will break-even. Dave, who controls R should never broadcast R because he may not receive funds from Carol, he should let the contracts expire. Alice and Bob have the option to net out and close the contract early, as well, in this diagram.</p>
+<p>图18：由于Carol不合作，<strong>在Alice未能向Dave汇款后，Dave创建了一条返回Alice的路径</strong>。 Dave从不对hash（R）的输入R广播，因为Carol没有完成她的动作。 如果播放R，Alice将收支平衡。 控制R的Dave永远不要广播R，因为他可能不会从Carol那里收到资金，他应该让合同到期。 在此图中，Alice和Bob也可以选择提前清算并关闭合约。</p>
+<p>If the refund route is the same as the payment route, and there are no half-signed contracts whereby one party may be able to steal funds, it is possible to outright cancel the transaction by replacing it with a new Commitment Transaction starting with the most recent node who participated in the HTLC.</p>
+<p>如果退款途径与付款途径相同，并且没有一方可以窃取资金的半签合同，则可以通过以最高 最近参加HTLC的节点。</p>
+<p>It is also possible to clear out a channel by creating an alternate route path in which payment will occur in the opposite direction (netting out to zero) and/or creating an entirely alternate route for the payment path. This will create a time-value of money for disclosing inputs to hashes on the Lightning Network. Participants may specialize in high connectivity between nodes and offering to offload contract hashlocks from other nodes for a fee. These participants will agree to payments which net out to zero (plus fees), but are loaning bitcoins for a set time period. Most likely, these entities with low demand for channel resources will be end-users who are already connected to multiple well-connected nodes. When an end-user connects to a node, the node may ask the client to lock up their funds for several days to another channel the client has established for a fee. This can be achieved by having the new transactions require a new hash(Y) from input Y in addition to the existing hash which may be generated by any participant, but must disclose Y only after a full circle is established. The new participant has the same responsibility as well as the same timelocks as the old participant being replaced. It is also possible that the one new participant replaces multiple hops.</p>
+<p>还可以通过创建一条备用路由路径来清理通道，在该路径中，支付将沿相反的方向发生（净额为零）和/或为支付路径创建一条完全备用的路径。这将创建一个货币时间值，用于将输入信息公开给闪电网络上的哈希。参与者可能会专门研究节点之间的高连接性，并愿意从其他节点上卸载合约哈希锁（收费）。这些参与者将同意支付净额为零（加上费用）的付款，但是在设定的时间段内借入比特币。这些对通道资源需求低的实体很可能是已经连接到多个连接良好的节点的最终用户。当最终用户连接到某个节点时，该节点可能会要求客户将其资金锁定到客户已建立的另一收费通道的几天。这可以通过让新交易除了可以由任何参与者生成的现有哈希值之外，还需要输入Y的新哈希值（Y）来实现，但必须在建立完整圆圈后才公开Y。<strong>新的参与者与被替换的老参与者具有相同的责任和相同的时间锁定</strong>。一个新的参与者也有可能替换多个跃点。</p>
+<p><img src="/2019/11/21/blockchain/08/1574246295380.png" alt="1574246295380"></p>
+<p>Figure 19: Erin is connected to both Bob and Dave. If Bob wishes to free up his channel with Carol, since that channel is active and very profitable, Bob can offload the payment to Dave via Erin. Since Erin has extra bitcoin available, she will be able to collect some fee for offloading the channel between Bob and Carol as well as between Carol and Dave. The channels between Bob and Carol as well as Carol and Dave are undone and no longer have the HTLC, nor has payment occurred on that path. Payment will occur on the path involving Erin. This is achieved by creating a new payment from Dave to Carol to Bob contingent upon Erin constructing an HTLC. The payment in dashed lines (red) are netted out to zero and settled via a new Commitment Contract.</p>
+<p>图19：Erin连接到Bob和Dave。 <strong>如果Bob希望与Carol释放通道，因为该通道活跃并且非常有利可图，Bob可以通过Erin将付款转给Dave。</strong> 由于Erin有额外的可用比特币，因此她可以收取卸载Bob和Carol之间以及Carol和Dave之间的通道的费用。 Bob和Carol之间的通道以及Carol和Dave之间的通道都已撤消，不再具有HTLC，在该路径上也没有发生付款。 付款将在涉及Erin的道路上进行。 这是通过根据Erin构建HTLC的方式从Dave到Carol到Bob的新付款来实现的。 虚线（红色）中的付款净额清零，并通过新的承诺合同进行结算。</p>
+<h3 id="8-4-支付路径"><a href="#8-4-支付路径" class="headerlink" title="8.4 支付路径"></a>8.4 支付路径</h3><p>Payment Routing</p>
+<p>It is theoretically possible to build a route map implicitly from observing 2-of-2 multisigs on the blockchain to build a routing table. Note, however, this is not feasible with pay-to-script-hash transaction outputs, which can be resolved out-of-band from the bitcoin protocol via a third party routing service. Building a routing table will become necessary for large operators (e.g. BGP, Cjdns). Eventually, with optimizations, the network will look a lot like the correspondent banking network, or Tier-1 ISPs. Similar to how packets still reach their destination on your home network connection, not all participants need to have a full routing table. The core Tier-1 routes can be online all the time - while nodes at the edges, such as average users, would be connected intermittently. </p>
+<p>从理论上讲，有可能通过观察区块链上的2之2多重信号隐式地构建路由图，以构建路由表。 但是请注意，这对于按脚本哈希支付交易输出是不可行的，可以通过第三方路由服务从比特币协议进行带外解析。 对于大型运营商（例如BGP，Cjdns），建立路由表将变得非常必要。 最终，通过优化，该网络将看起来非常类似于代理银行网络或Tier-1 ISP。 与数据包仍通过家庭网络连接到达目的地的方式类似，并非所有参与者都需要具有完整的路由表。 第一层的核心路由可以一直保持在线状态，而边缘节点（例如普通用户）将断续连接。</p>
+<p>Node discovery can occur along the edges by pre-selecting and offering partial routes to well-known nodes.  </p>
+<p>通过预选并提供通往知名节点的部分路由，可以沿边缘进行节点发现。</p>
+<h3 id="8-5-Fees"><a href="#8-5-Fees" class="headerlink" title="8.5 Fees"></a>8.5 Fees</h3><p>Lightning Network fees, which differ from blockchain fees, are paid directly between participants within the channel. The fees pay for the time-value of money for consuming the channel for a determined maximum period of time, and for counterparty risk of non-communication. </p>
+<p>与区块链费用不同的闪电网络费用直接在通道内的参与者之间支付。 费用用于支付在确定的最大时间段内占用通道的金钱时间价值，以及交易对方未进行通信的风险。</p>
+<p>Counterparty risk for fees only exist with one’s direct channel counterparty. If a node two hops away decides to disconnect and their transaction gets broadcast on the blockchain, one’s direct counterparties should not broadcast on the blockchain, but continue to update via novation with a new Commitment Transaction. See the Decrementing Timelocks entry in the HTLC section for more information about counterparty risk. </p>
+<p>交易对手的费用风险仅存在于直接通道交易对手中。 如果两跳远的节点决定断开连接，并且其交易在区块链上进行广播，则直接交易对手不应在区块链上进行广播，而应通过新的<code>Commitment Tx</code>继续更新。 有关交易对手风险的更多信息，请参见HTLC部分中的递减时间锁定条目。</p>
+<p>The time-value of fees pays for consuming time (e.g. 3 days) and is conceptually equivalent to a gold lease rate without custodial risk; it is the time-value for using up the access to money for a very short duration. Since certain paths may become very profitable in one direction, it is possible for fees to be negative to encourage the channel to be available for those profitable paths.</p>
+<p>费用的时间价值是消耗时间（例如3天）的费用，在概念上等同于没有保管风险的黄金租赁率； 这是在很短的时间内用尽金钱的时间价值。 由于某些路径可能会在一个方向上变得非常有利可图，因此收费可能为负数，以鼓励该通道可用于那些有利可图的路径。</p>
+<h2 id="9-风险"><a href="#9-风险" class="headerlink" title="9. 风险"></a>9. 风险</h2><p>The primary risks relate to timelock expiration. Additionally, for core nodes and possibly some merchants to be able to route funds, the keys must be held online for lower latency. However, end-users and nodes are able to keep their private keys firewalled off in cold storage. </p>
+<p>主要风险与时间锁到期有关。 另外，为了使核心节点以及可能的某些商人能够路由资金，必须将密钥保持在线以降低延迟。 但是，最终用户和节点能够将其私钥保留在冷存储中。</p>
+<h3 id="9-1-不当的时间锁"><a href="#9-1-不当的时间锁" class="headerlink" title="9.1 不当的时间锁"></a>9.1 不当的时间锁</h3><p>Improper Timelocks</p>
+<p>Participants must choose timelocks with sufficient amounts of time. If insufficient time is given, it is possible that timelocked transactions believed to be invalid will become valid, enabling coin theft by the counterparty. There is a trade-off between longer timelocks and the time-value of money. When writing wallet and Lightning Network application software, it is necessary to ensure that sufficient time is given and users are able to have their transactions enter into the blockchain when interacting with non-cooperative or malicious channel counterparties.</p>
+<p>参与者必须选择有足够时间的时间锁。 <strong>如果给定的时间不足，则被认为无效的时间锁定交易可能会变为有效，从而使交易对手盗窃硬币。 在较长的时间锁定和金钱的时间价值之间需要权衡</strong>。 在编写钱包和Lightning Network应用程序软件时，有必要确保有足够的时间，并且在与非合作或恶意通道交易对手进行交互时，用户能够使其交易进入区块链。</p>
+<h3 id="9-2-Forced-Expiration-Spam"><a href="#9-2-Forced-Expiration-Spam" class="headerlink" title="9.2 Forced Expiration Spam"></a>9.2 Forced Expiration Spam</h3><p>Forced expiration of many transactions may be the greatest systemic risk when using the Lightning Network. If a malicious participant creates many channels and forces them all to expire at once, these may overwhelm block data capacity, forcing expiration and broadcast to the blockchain. The result would be mass spam on the bitcoin network. The spam may delay transactions to the point where other locktimed transactions become valid.</p>
+<p>使用闪电网络时，<strong>许多交易的强制到期可能是最大的系统风险</strong>。 如果恶意参与者创建了许多通道并强迫所有通道立即失效，则这些通道可能会使块数据容量不堪重负，从而迫使其失效并广播到区块链。 结果将是比特币网络上的大量垃圾邮件。 垃圾邮件可能会将交易延迟到其他锁定时间的交易变为有效的程度。</p>
+<p>This may be mitigated by permitting one transaction replacement on all pending transactions. Anti-spam can be used by permitting only one transaction replacement of a higher sequence number by the inverse of an even or odd number. For example, if an odd sequence number was broadcast, permit a replacement to a higher even number only once. Transactions would use the sequence number in an orderly way to replace other transactions. This mitigates the risk assuming honest miners. This attack is extremely high risk, as incorrect broadcast of Commitment Transactions entail a full penalty of all funds in the channel.</p>
+<p>可以通过允许所有未决交易替换一次交易来缓解这种情况。 通过仅允许一个交易用偶数或奇数的倒数替换较高序号，可以使用反垃圾邮件。 例如，如果广播了奇数序号，则只允许一次替换为更高的偶数。 交易将有序地使用序号来替换其他交易。 这减轻了假设诚实矿工的风险。 此攻击的风险极高，因为<code>Commitment Tx</code>的不正确广播会导致通道中所有资金的全部损失。</p>
+<p>Additionally, one may attempt to steal HTLC transactions by forcing a timeout transaction to go through when it should not. This can be easily mitigated by having each transfer inside the channel be lower than the total transaction fees used. Since transactions are extremely cheap and do not hit the blockchain with cooperative channel counterparties, large transfers of value can be split into many small transfers. This attempt can only work if the blocks are completely full for a long time. While it is possible to mitigate it using a longer HTLC timeout duration, variable block sizes may become common, which may need mitigations.</p>
+<p>此外，可能会通过迫使超时交易在不应该进行的超时交易中进行尝试来窃取HTLC交易。 通过使通道内的每次传输都低于所使用的总交易费用，可以轻松地缓解这种情况。 由于交易非常便宜，并且不会与合作通道交易对手打中区块链，因此大笔价值转移可以分为许多小额转移。 仅当块长时间完全充满时，此尝试才能起作用。 尽管可以使用更长的HTLC超时持续时间来缓解它，但可变块大小可能变得很常见，这可能需要缓解。</p>
+<p>If this type of transaction becomes the dominant form of transactions which are included on the blockchain, it may become necessary to increase the block size and run a variable blocksize structure and timestop flags as described in the section below. This can create sufficient penalties and disincentives to be highly unprofitable and unsuccessful for attackers, as attackers lose all their funds from broadcasting the wrong transaction, to the point where it will never occur.</p>
+<p>如果这种类型的交易成为区块链中包含的主要交易形式，则可能有必要增加块大小并运行可变的块大小结构和时间停止标志，如以下部分所述。 由于攻击者由于广播错误的交易而损失了所有资金，甚至可能永远不会发生，因此这可能会导致足够的惩罚和惩罚措施，使攻击者极不获利且无法成功。</p>
+<h3 id="9-3-碰撞导致财产窃取"><a href="#9-3-碰撞导致财产窃取" class="headerlink" title="9.3 碰撞导致财产窃取"></a>9.3 碰撞导致财产窃取</h3><p>Coin Theft via Cracking</p>
+<p>As parties must be online and using private keys to sign, there is a possibility that, if the computer where the private keys are stored is compromised, coins will be stolen by the attacker. While there may be methods to mitigate the threat for the sender and the receiver, the intermediary nodes must be online and will likely be processing the transaction automatically. For this reason, the intermediary nodes will be at risk and should not be holding a substantial amount of money in this “hot wallet.” Intermediary nodes which have better security will likely be able to out-compete others in the long run and be able to conduct greater transaction volume due to lower fees. Historically, one of the largest component of fees and interest in the financial system are from various forms of counterparty risk in Bitcoin it is possible that the largest component in fees will be derived from security risk premiums.</p>
+<p>由于各方必须在线并且使用私钥进行签名，因此，如果存储私钥的计算机受到威胁，攻击者可能会窃取硬币。 尽管可能存在减轻发送方和接收方威胁的方法，但中间节点必须处于联机状态，并且很可能会自动处理交易。 因此，中间节点将处于危险之中，不应在此“热钱包”中持有大量资金。 从长远来看，具有更高安全性的中间节点将有可能超过其他节点，并且由于费用较低而能够进行更大的交易量。 从历史上看，金融系统中费用和利息的最大组成部分之一来自比特币中各种形式的交易对手风险，费用中最大的部分可能来自安全风险溢价。</p>
+<p>A Funding Transaction may have multiple outputs with multiple Commitment Transactions, with the Funding Transaction key and some Commitment Transactions keys stored offline. It is possible to create an equivalent of a “Checking Account” and “Savings Account” by moving funds between outputs from a Funding Transaction, with the “Savings Account” stored offline and requiring additional signatures from security services.</p>
+<p>资金交易可以具有多个输出和多个<code>Commitment Tx</code>，其中资金交易密钥和一些<code>Commitment Tx</code>密钥离线存储。 可以通过在资金交易的输出之间移动资金来创建等价于“支票帐户”和“储蓄帐户”，而“储蓄帐户”是离线存储的，并且需要安全服务的附加签名。</p>
+<h3 id="9-4-数据丢失"><a href="#9-4-数据丢失" class="headerlink" title="9.4 数据丢失"></a>9.4 数据丢失</h3><p>Data Loss</p>
+<p>When one party loses data, it is possible for the counterparty to steal funds. This can be mitigated by having a third party data storage service where encrypted data gets sent to this third party service which the party cannot decrypt. Additionally, one should choose channel counterparties who are responsible and willing to provide the current state, with some periodic tests of honesty  </p>
+<p>当一方丢失数据时，对方可能会窃取资金。 可以通过拥有第三方数据存储服务来缓解这种情况，其中加密数据被发送到该第三方不能解密的第三方服务。 此外，应该选择负责并愿意提供当前状态的通道交易对手，并定期进行一些诚实测试。</p>
+<h3 id="9-5-忘记及时广播交易"><a href="#9-5-忘记及时广播交易" class="headerlink" title="9.5 忘记及时广播交易"></a>9.5 忘记及时广播交易</h3><p>Forgetting to Broadcast the Transaction in Time</p>
+<p>If one does not broadcast a transaction at the correct time, the counterparty may steal funds. This can be mitigated by having a designated third party to send funds. An output fee can be added to create an incentive for this third party to watch the network. Further, this can also be mitigated by implementing OP CHECKSEQUENCEVERIFY.  </p>
+<p>如果未在正确的时间广播交易，则对方可能会窃取资金。 可以通过指定第三方汇款来缓解这种情况。 可以增加输出费用，以激励该第三方观看网络。 此外，这也可以通过实现OP CHECKSEQUENCEVERIFY来缓解。</p>
+<h3 id="9-6-无法制作必要的软分叉"><a href="#9-6-无法制作必要的软分叉" class="headerlink" title="9.6 无法制作必要的软分叉"></a>9.6 无法制作必要的软分叉</h3><p>Inability to Make Necessary Soft-Forks</p>
+<p>Changes are necessary to bitcoin, such as the malleability soft-fork. Additionally, if this system becomes popular, it will be necessary for the system to securely transact with many users and some kind of structure like a blockheight timestop will be desirable. This system assumes such changes to enable Lightning Network to exist entirely, as well as soft-forks ensuring the security is robust against attackers will occur. While the system may continue to operate with only some time lock and malleability soft-forks, there will be necessary soft-forks regarding systemic risks. Without proper community foresight, an inability to establish a timestop or similar function will allow systemic attacks to take place and may not be recognized as imperative until an attack actually occurs.</p>
+<p>比特币必须进行更改，例如可延展性软叉。 另外，如果该系统变得流行，则该系统必须与许多用户安全地进行交易，并且诸如块高限时器之类的某种结构将是期望的。 该系统假设进行了此类更改，以使Lightning Network能够完全存在，并采用了软分叉来确保对攻击者的鲁棒性。 尽管系统可能仅在一定时间锁定和延展性软叉的情况下继续运行，但对于系统性风险仍将存在必要的软叉。 如果没有适当的社区先见之明，则无法建立时间停止或类似功能将导致系统性攻击，并且可能直到真正发生攻击时才被认为是当务之急。</p>
+<h3 id="9-7-勾结矿工攻击"><a href="#9-7-勾结矿工攻击" class="headerlink" title="9.7 勾结矿工攻击"></a>9.7 勾结矿工攻击</h3><p>Colluding Miner Attacks</p>
+<p>Miners may elect to refuse to enter in particular transactions (e.g. Breach Remedy transactions) in order to assist in timeout coin theft. An attacker can pay off all miners to refuse to include certain transactions in their mempool and blocks. The miners can identify their own blocks in an attempt to prove their behavior to the paying attacker. </p>
+<p>矿工可以选择拒绝参加特定交易（例如违约救济交易），以协助超时盗窃硬币。 攻击者可以还清所有矿工的款项，以拒绝将某些交易包括在其内存池和区块中。 矿工可以识别自己的区块，以向付费攻击者证明自己的行为。</p>
+<p>This can be mitigated by encouraging miners to avoid identifying their own blocks. Further, it should be expected that this kind of payment to miners is malicious activity and the contract is unenforcible. Miners may then take payment and surreptitiously mine a block without identifying the block to the attacker. Since the attacker is paying for this, they will quickly run out of money by losing the fee to the miner, as well as losing all their money in the channel. This attack is unlikely and fairly unattractive as it is far too difficult and requires a high degree of collusion with extreme risk. </p>
+<p>可以通过鼓励矿工避免识别自己的区块来缓解这种情况。 此外，应该预料到，这种对矿工的付款是恶意活动，合同是不可执行的。 然后，矿工可以付款并秘密开采一个区块，而不会向攻击者识别该区块。 由于攻击者为此付出了代价，因此他们会很快损失掉矿工的费用，并在通道中损失所有金钱，从而很快耗尽金钱。 这种攻击是不太可能的，并且没有吸引力，因为它太困难了，需要高度勾结并具有极大的风险。</p>
+<p>The risk model of this attack occurirng is similar to that of miners colluding to do reorg attacks: Extremely unlikely with many uncoordinated miners.</p>
+<p>发生这种攻击的风险模型类似于串谋进行重组攻击的矿工的模型：对于许多不协调的矿工来说，这种可能性极小。</p>
+<h2 id="10-区块大小增长与共识"><a href="#10-区块大小增长与共识" class="headerlink" title="10. 区块大小增长与共识"></a>10. 区块大小增长与共识</h2><p>Block Size Increases and Consensus</p>
+<p>If we presume that a decentralized payment network exists and one user will make 3 blockchain transactions per year on average, Bitcoin will be able  to support over 35 million users with 1MB blocks in ideal circumstances (assuming 2000 transactions/MB, or 500 bytes/Tx). This is quite limited, and an increase of the block size may be necessary to support everyone in the world using Bitcoin. A simple increase of the block size would be a hard fork, meaning all nodes will need to update their wallets if they wish to participate in the network with the larger blocks.</p>
+<p>如果我们假设存在去中心化支付网络，并且一个用户平均每年进行3次区块链交易，那么在理想情况下，比特币将能够以1MB的块数支持超过3500万用户（假设2000个交易/ MB或500字节/ Tx ）。 这是非常有限的，为了支持世界上每个使用比特币的人，可能需要增加区块大小。 块大小的简单增加将是硬分叉，这意味着如果所有节点都希望使用更大的块参与网络，则需要更新其钱包。</p>
+<p>While it may appear as though this system will mitigate the block size increases in the short term, if it achieves global scale, it will necessitate a block size increase in the long term. Creating a credible tool to help prevent blockchain spam designed to encourage transactions to timeout becomes imperative.</p>
+<p>尽管该系统看起来似乎将在短期内缓解块大小的增加，但如果要达到全局规模，则从长远来看将有必要增加块大小。 创建一个可靠的工具来帮助防止旨在鼓励交易超时的区块链垃圾邮件变得势在必行。</p>
+<p>To mitigate timelock spam vulnerabilities, non-miner and miners’ consensus rules may also differ if the miners’ consensus rules are more restrictive. Non-miners may accept blocks over 1MB, while miners may have different soft-caps on block sizes. If a block size is above that cap, then that is viewed as an invalid block by other miners, but not by non-miners. The miners will only build the chain on blocks which are valid according to the agreed-upon soft-cap. This permits miners to agree on raising the block size limit without requiring frequent hard-forks from clients, so long as the amount raised by miners does not go over the clients’ hard limit. This mitigates the risk of mass expiry of transactions at once. All transactions which are not redeemed via Exercise Settlement (ES) may have a very high fee attached, and miners may use a consensus rule whereby those transactions are exempted from the soft-cap, making it very likely the correct transactions will enter the blockchain.</p>
+<p>为了缓解时间锁定的垃圾邮件漏洞，如果矿工的共识规则更具限制性，则非矿工和矿工的共识规则也可能会有所不同。 非矿工可以接受超过1MB的块，而矿工可能对块大小具有不同的软上限。 如果区块大小超过该上限，则其他矿工将其视为无效块，而非非矿工则视为无效块。 矿工将只在根据商定的软上限有效的区块上建立链。 只要矿工筹集的资金不超过客户的硬性限制，这便允许矿工同意提高区块大小限制而无需客户频繁进行分叉。 这降低了一次交易大量到期的风险。 所有未通过演习和解（ES）赎回的交易可能会收取很高的费用，矿工可能会使用共识规则，即免于软上限，从而使正确的交易很有可能进入区块链。</p>
+<p>When transactions are viewed as circuits and contracts instead of transaction packets, the consensus risks can be measured by the amount of time available to cover the UTXO set controlled by hostile parties. In effect, the upper bound of the UTXO size is determined by transaction fees and the standard minimum transaction output value. If the bitcoin miners have a deterministic mempool which prioritizes transactions respecting a “weak” local time order of transactions, it could become extremely unprofitable and unlikely for an attack to succeed. Any transaction spam time attack by broadcasting the incorrect Commitment Transaction is extremely high risk for the attacker, as it requires an immense amount of bitcoin and all funds committed in those transactions will be lost if the attacker fails.</p>
+<p>当将交易视为电路和合同而不是交易数据包时，共识风险可以通过覆盖敌对方控制的UTXO集的可用时间来衡量。 实际上，UTXO大小的上限由交易费用和标准最小交易输出值确定。 如果比特币矿工拥有确定性的内存池，该内存池优先考虑“弱”本地交易时间顺序的交易，则它可能变得极其无利可图，并且攻击成功的可能性很小。 通过广播不正确的<code>Commitment Tx</code>而进行的任何垃圾邮件时间攻击，对于攻击者来说都是极高的风险，因为它需要大量的比特币，并且如果攻击者失败，在这些交易中投入的所有资金都将丢失。</p>
+<h2 id="11-Use-Cases"><a href="#11-Use-Cases" class="headerlink" title="11. Use Cases"></a>11. Use Cases</h2><p>In addition to helping bitcoin scale, there are many uses for transactions on the Lightning Network:</p>
+<p>除了帮助扩大比特币规模外，Lightning Network上的交易还有很多用途：</p>
+<ul>
+<li><p>Instant Transactions. Using Lightning, Bitcoin transactions are now nearly instant with any party. It is possible to pay for a cup of coffee with direct non-revocable payment in milliseconds to seconds.</p>
+<p>即时交易。 使用闪电，比特币交易现在几乎可以与任何一方进行。 您可以在毫秒到秒之间直接支付不可撤销的费用来支付一杯咖啡的费用。</p>
+</li>
+<li><p>Exchange Arbitrage. There is presently incentive to hold funds on exchanges to be ready for large market moves due to 3-6 block confirmation times. It is possible for the exchange to participate in this network and for clients to move their funds on and off the exchange for orders nearly instantly. If the exchange does not have deep market depth and commits to only permitting limit orders close to the top of the order book, then the risk of coin theft becomes much lower. The exchange, in effect, would no longer have any need for a cold storage wallet. This may substantially reduce thefts and the need for trusted third party custodians. </p>
+<p>外汇套利。 由于存在3到6个区块的确认时间，目前有激励将资金保留在交易所上，以准备进行大规模的市场交易。 交易所可以参与该网络，客户可以几乎立即将其资金用于交易所的内外交易。 如果交易所没有很深的市场深度，并承诺只允许限价订单接近订单簿的顶部，那么硬币被盗的风险就会大大降低。 实际上，该交换将不再需要冷藏钱包。 这可以大大减少盗窃和对可信第三方保管人的需求。</p>
+</li>
+<li><p>Micropayments. Bitcoin blockchain fees are far too high to accept micropayments, especially with the smallest of values. With this system, near-instant micropayments using Bitcoin without a 3rd party custodian would be possible. It would enable, for example, paying per-megabyte for internet service or per-article to read a newspaper.</p>
+<p>小额付款。 比特币区块链费用太高，无法接受小额付款，尤其是价值最小的小额付款。 有了这个系统，就可以在没有第三者保管人的情况下使用比特币进行近乎即时的小额支付。 例如，它将使每兆字节的互联网服务费用或每篇文章的阅读费用增加。</p>
+</li>
+<li><p>Financial Smart Contracts and Escrow. Financial contracts are especially time-sensitive and have higher demands on blockchain computation. By moving the overwhelming majority of trustless transactions off-chain, it is possible to have highly complex transaction contract terms without ever hitting the blockchain.</p>
+<p>金融智能合约和托管。 金融合同对时间特别敏感，并且对区块链计算有更高的要求。 通过将绝大多数的无信任交易移出链下，可以在不触及区块链的情况下拥有高度复杂的交易合同条款。</p>
+</li>
+<li><p>Cross-Chain Payments. So long as there are similar hash-functions across chains, it’s possible for transactions to be routed over multiple chains with different consensus rules. The sender does not have to trust or even know about the other chains – even the destination chain. Simiarly, the receiver does not have to know anything about the sender’s chain or any other chain. All the receiver cares about is a conditional payment upon knowledge of a secret on their chain.  Payment can be routed by participants in both chains in the hop. E.g. Alice is on Bitcoin, Bob is on both Bitcoin and X-Coin and Carol is on a hypothetical X-Coin, Alice can pay Carol without understanding the X-Coin consensus rules.</p>
+<p>跨链支付。 只要跨链具有类似的哈希函数，就可以通过具有不同共识规则的多条链对交易进行路由。 发送者不必信任甚至不了解其他链，甚至不必知道目的地链。 同样，接收者不必了解发送者链或任何其他链。 接收者所关心的只是根据对链上秘密的了解有条件地付款。 跃点中两个链中的参与者都可以路由付款。 例如。 Alice使用比特币，Bob使用比特币和X-Coin，而Carol使用假设的X-Coin，Alice可以在不了解X-Coin共识规则的情况下向Carol付款。</p>
+</li>
+</ul>
+<h2 id="12-Conclusion"><a href="#12-Conclusion" class="headerlink" title="12 Conclusion"></a>12 Conclusion</h2><p>Creating a network of micropayment channels enables bitcoin scalability, micropayments down to the satoshi, and near-instant transactions. These channels represent real Bitcoin transactions, using the Bitcoin scripting opcodes to enable the transfer of funds without risk of counterparty theft, especially with long-term miner risk mitigations.</p>
+<p>创建小额支付通道网络可实现比特币的可扩展性，小巧的小额支付以及近乎即时的交易。 这些通道代表了真实的比特币交易，使用比特币脚本操作码来实现资金转移，而没有交易对手被盗的风险，尤其是在长期减轻矿工风险的情况下。</p>
+<p>If all transactions using Bitcoin were on the blockchain, to enable 7 billion people to make two transactions per day, it would require 24GB blocks every ten minutes at best (presuming 250 bytes per transaction and 144 blocks per day). Conducting all global payment transactions on the blockchain today implies miners will need to do an incredible amount of computation, severely limiting bitcoin scalability and full nodes to a few centralized processors.</p>
+<p>如果所有使用比特币的交易都在区块链上，要使70亿人每天能够进行两次交易，则每十分钟最多需要24GB块（假设每笔交易250个字节，每天144个块）。 今天，在区块链上进行所有全球支付交易意味着，矿工将需要进行大量的计算，从而将比特币的可扩展性和完整的节点严格限制在少数中央处理器中。</p>
+<p>If all transactions using Bitcoin were conducted inside a network of micropayment channels, to enable 7 billion people to make two channels per year with unlimited transactions inside the channel, it would require 133 MB blocks (presuming 500 bytes per transaction and 52560 blocks per year). Current generation desktop computers will be able to run a full node with old blocks pruned out on 2TB of storage.</p>
+<p>如果所有使用比特币的交易都是在小额支付通道网络内进行的，则要使70亿人每年创建两个通道，且通道内无限制交易，则将需要133 MB块（假设每笔交易500字节，每年52560块） 。 当前一代的台式计算机将能够运行完整节点，并在2TB的存储空间上删除旧块。</p>
+<p>With a network of instantly confirmed micropayment channels whose payments are encumbered by timelocks and hashlock outputs, Bitcoin can scale to billions of users without custodial risk or blockchain centralization when transactions are conducted securely off-chain using bitcoin scripting, with enforcement of non-cooperation by broadcasting signed multisignature transactions on the blockchain.</p>
+<p>通过即时确认的小额支付通道网络，其支付受到时间锁和哈希锁输出的阻碍，当使用比特币脚本安全地在链外进行交易并强制执行不合作时，比特币可以扩展到数十亿用户，而无托管风险或区块链集中化 在区块链上广播已签名的多重签名交易。</p>
+
+      
+       
+    </div>
+</article>
+
+
+
+
+
+
+
+    
+        <!-- MathJax配置，可通过单美元符号书写行内公式等 -->
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+    "HTML-CSS": {
+        preferredFont: "TeX",
+        availableFonts: ["STIX","TeX"],
+        linebreaks: { automatic:true },
+        EqnChunk: (MathJax.Hub.Browser.isMobile ? 10 : 50)
+    },
+    tex2jax: {
+        inlineMath: [ ["$", "$"], ["\\(","\\)"] ],
+        processEscapes: true,
+        ignoreClass: "tex2jax_ignore|dno",
+        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+    },
+    TeX: {
+        equationNumbers: { autoNumber: "AMS" },
+        noUndefined: { attributes: { mathcolor: "red", mathbackground: "#FFEEEE", mathsize: "90%" } },
+        Macros: { href: "{}" }
+    },
+    messageStyle: "none"
+    });
+</script>
+<!-- 给MathJax元素添加has-jax class -->
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax(), i;
+        for(i=0; i < all.length; i += 1) {
+            all[i].SourceElement().parentNode.className += ' has-jax';
+        }
+    });
+</script>
+<!-- 通过连接CDN加载MathJax的js代码 -->
+<script type="text/javascript" async
+        src="//cdn.bootcss.com/mathjax/2.7.2/MathJax.js?config=TeX-MML-AM_CHTML">
+</script>
+<input type="hidden" id="MathJax-js"
+        value="//cdn.bootcss.com/mathjax/2.7.2/MathJax.js?config=TeX-MML-AM_CHTML">
+</input>
+    
+
+
+
+
+    </div>
+    <div class="copyright">
+        <p class="footer-entry">©2019-2020 POWDER SNOW</p>
+
+    </div>
+    <div class="full-toc">
+        <button class="full"><span class="min "></span></button>
+<button class="post-toc-menu"><span class="post-toc-menu-icons"></span></button>
+<div class="post-toc"><span class="post-toc-title">目录</span>
+    <div class="post-toc-content">
+
+    </div>
+</div>
+<a class="" id="rocket" ></a>
+
+    </div>
+</div>
+<div class="acParent"></div>
+
+</body>
+<script src="/js/jquery.pjax.js?v=1.0.1" ></script>
+
+<script src="/js/script.js?v=1.0.1" ></script>
+<script>
+    var img_resize = 'default';
+    /*作者、标签的自动补全*/
+    $(function () {
+        $('.search').AutoComplete({
+            'data': ['#HTTP','#protobuf','#MySQL SQL','#Spring','#java','#QT','#区块链','#分布式','#大数据','#前端','#MyBatis','#SpringBoot','#网络编程','#Redis','#多线程','#数据库',],
+            'itemHeight': 20,
+            'width': 418
+        }).AutoComplete('show');
+    })
+    function initArticle() {
+        /*渲染对应的表格样式*/
+        
+            $(".post .pjax table").addClass("green_title");
+        
+
+        /*渲染打赏样式*/
+        
+
+        /*高亮代码块行号*/
+        
+
+        /*访问数量*/
+        
+
+        /*代码高亮，行号对齐*/
+        $('.pre-numbering').css('line-height',$('.has-numbering').css('line-height'));
+
+        
+        
+    }
+
+    /*打赏页面隐藏与展示*/
+    
+
+</script>
+
+<!--加入行号的高亮代码块样式-->
+
+<!--自定义样式设置-->
+<style>
+    
+    
+    .nav {
+        width: 544px;
+    }
+    .nav.fullscreen {
+        margin-left: -544px;
+    }
+    .nav-left {
+        width: 122px;
+    }
+    
+    
+    @media screen and (max-width: 1468px) {
+        .nav {
+            width: 492px;
+        }
+        .nav.fullscreen {
+            margin-left: -492px;
+        }
+        .nav-left {
+            width: 100px;
+        }
+    }
+    
+    
+    @media screen and (max-width: 1024px) {
+        .nav {
+            width: 492px;
+            margin-left: -492px
+        }
+        .nav.fullscreen {
+            margin-left: 0;
+        }
+        .nav .hide-list.fullscreen {
+            left: 492px
+        }
+    }
+    
+    @media screen and (max-width: 426px) {
+        .nav {
+            width: 100%;
+        }
+        .nav-left {
+            width: 100%;
+        }
+    }
+    
+    
+    .nav-right .title-list nav a .post-title, .nav-right .title-list #local-search-result a .post-title {
+        color: #383636;
+    }
+    
+    
+    .nav-right .title-list nav a .post-date, .nav-right .title-list #local-search-result a .post-date {
+        color: #5e5e5f;
+    }
+    
+    
+    .nav-right nav a.hover, #local-search-result a.hover{
+        background-color: #fbf4a8;
+    }
+    
+    
+
+    /*列表样式*/
+    
+    .post .pjax article .article-entry>ol, .post .pjax article .article-entry>ul, .post .pjax article>ol, .post .pjax article>ul{
+        border: #e2dede solid 1px;
+        border-radius: 10px;
+        padding: 10px 32px 10px 56px;
+    }
+    .post .pjax article .article-entry li>ol, .post .pjax article .article-entry li>ul,.post .pjax article li>ol, .post .pjax article li>ul{
+        padding-top: 5px;
+        padding-bottom: 5px;
+    }
+    .post .pjax article .article-entry>ol>li, .post .pjax article .article-entry>ul>li,.post .pjax article>ol>li, .post .pjax article>ul>li{
+        margin-bottom: auto;
+        margin-left: auto;
+    }
+    .post .pjax article .article-entry li>ol>li, .post .pjax article .article-entry li>ul>li,.post .pjax article li>ol>li, .post .pjax article li>ul>li{
+        margin-bottom: auto;
+        margin-left: auto;
+    }
+    
+
+    /* 背景图样式 */
+    
+    .post {
+        background: url(/img/bck.jpg);
+    }
+    
+    
+    .post.index {
+        background: url(/img/background.jpg);
+    }
+    
+
+
+    /*引用块样式*/
+    
+
+    /*文章列表背景图*/
+    
+    .nav-right:before {
+        content: ' ';
+        display: block;
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        opacity: 0.3;
+        background: url("/img/123.jpg");
+        background-repeat: no-repeat;
+        background-position: 50% 0;
+        -ms-background-size: cover;
+        -o-background-size: cover;
+        -moz-background-size: cover;
+        -webkit-background-size: cover;
+        background-size: cover;
+    }
+    
+
+    
+</style>
+
+
+
+
+
+
+
+</html>

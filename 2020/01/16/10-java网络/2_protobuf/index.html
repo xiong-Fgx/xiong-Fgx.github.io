@@ -1,0 +1,1890 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>java使用protobuf | POWDER SNOW</title>
+  <meta name="keywords" content=" protobuf ">
+  <meta name="description" content="java使用protobuf | POWDER SNOW">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<meta property="og:type" content="website">
+<meta property="og:title" content="categories">
+<meta property="og:url" content="http://yoursite.com/categories/index.html">
+<meta property="og:site_name" content="POWDER SNOW">
+<meta property="article:published_time" content="2018-03-02T04:33:16.000Z">
+<meta property="article:modified_time" content="2020-03-05T13:28:59.839Z">
+<meta property="article:author" content="冯冠雄">
+<meta name="twitter:card" content="summary">
+
+
+<link rel="icon" href="/img/avatar.jpg">
+
+<link href="/css/style.css?v=1.0.1" rel="stylesheet">
+
+<link href="/css/hl_theme/atom-light.css?v=1.0.1" rel="stylesheet">
+
+<link href="//cdn.bootcss.com/animate.css/3.5.2/animate.min.css" rel="stylesheet">
+<link href="//cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+
+<script src="//cdn.bootcss.com/jquery/2.2.4/jquery.min.js"></script>
+<script src="/js/jquery.autocomplete.min.js?v=1.0.1" ></script>
+
+<script src="//cdn.bootcss.com/highlight.js/9.12.0/highlight.min.js"></script>
+<script>
+    hljs.initHighlightingOnLoad();
+</script>
+
+<script src="//cdn.bootcss.com/nprogress/0.2.0/nprogress.min.js"></script>
+
+
+
+<script src="//cdn.bootcss.com/jquery-cookie/1.4.1/jquery.cookie.min.js" ></script>
+
+<script src="/js/iconfont.js?v=1.0.1" ></script>
+
+<meta name="generator" content="Hexo 4.2.0"></head>
+<div style="display: none">
+  <input class="theme_disqus_on" value="false">
+  <input class="theme_preload_comment" value="false">
+  <input class="theme_blog_path" value="">
+</div>
+
+<body>
+<aside class="nav">
+    <div class="nav-left">
+        <a href="/" class="avatar_target">
+    <img class="avatar" src="/img/avatar.jpg" />
+</a>
+<div class="author">
+    <span>冯冠雄</span>
+</div>
+
+<div class="icon">
+    
+        
+        <a title="github" href="https://github.com/xiong-Fgx" target="_blank">
+            
+                <svg class="iconfont-svg" aria-hidden="true">
+                    <use xlink:href="#icon-github"></use>
+                </svg>
+            
+        </a>
+        
+    
+        
+        <a title="linkedin" href="https://www.linkedin.com/in/guanxiong-feng-8b6aa8179" target="_blank">
+            
+                <svg class="iconfont-svg" aria-hidden="true">
+                    <use xlink:href="#icon-linkedin"></use>
+                </svg>
+            
+        </a>
+        
+    
+        
+        <a title="email" href="mailto:guanxiongf@gmail.com" target="_blank">
+            
+                <svg class="iconfont-svg" aria-hidden="true">
+                    <use xlink:href="#icon-email"></use>
+                </svg>
+            
+        </a>
+        
+    
+</div>
+
+
+
+
+<ul>
+    <li><div class="all active">全部文章</div></li>
+    
+        
+            
+            <li><div data-rel="网络"><i class="fold iconfont icon-right"></i>网络</div>
+                
+                    <ul class="sub hide">
+                        
+                        <li><div data-rel="HTTP">HTTP</div>
+                            
+                        </li>
+                            
+                        <li><div data-rel="protobuf">protobuf</div>
+                            
+                        </li>
+                            
+                        <li><div data-rel="网络编程">网络编程</div>
+                            
+                        </li>
+                            
+                    </ul>
+                
+            </li>
+            
+        
+    
+        
+            
+            <li><div data-rel="数据库">数据库</div>
+                
+            </li>
+            
+        
+    
+        
+            
+        
+    
+        
+            
+            <li><div data-rel="SSM"><i class="fold iconfont icon-right"></i>SSM</div>
+                
+                    <ul class="sub hide">
+                        
+                        <li><div data-rel="SSM整合">SSM整合</div>
+                            
+                        </li>
+                            
+                        <li><div data-rel="Spring">Spring</div>
+                            
+                        </li>
+                            
+                        <li><div data-rel="SpringMVC">SpringMVC</div>
+                            
+                        </li>
+                            
+                        <li><div data-rel="MyBatis">MyBatis</div>
+                            
+                        </li>
+                            
+                        <li><div data-rel="SpringBoot">SpringBoot</div>
+                            
+                        </li>
+                            
+                    </ul>
+                
+            </li>
+            
+        
+    
+        
+            
+        
+    
+        
+            
+        
+    
+        
+            
+        
+    
+        
+            
+        
+    
+        
+            
+            <li><div data-rel="客户端"><i class="fold iconfont icon-right"></i>客户端</div>
+                
+                    <ul class="sub hide">
+                        
+                        <li><div data-rel="QT">QT</div>
+                            
+                        </li>
+                            
+                    </ul>
+                
+            </li>
+            
+        
+    
+        
+            
+            <li><div data-rel="区块链"><i class="fold iconfont icon-right"></i>区块链</div>
+                
+                    <ul class="sub hide">
+                        
+                        <li><div data-rel="论文">论文</div>
+                            
+                        </li>
+                            
+                        <li><div data-rel="Fabric">Fabric</div>
+                            
+                        </li>
+                            
+                        <li><div data-rel="fabric">fabric</div>
+                            
+                        </li>
+                            
+                    </ul>
+                
+            </li>
+            
+        
+    
+        
+            
+            <li><div data-rel="分布式">分布式</div>
+                
+            </li>
+            
+        
+    
+        
+            
+            <li><div data-rel="大数据"><i class="fold iconfont icon-right"></i>大数据</div>
+                
+                    <ul class="sub hide">
+                        
+                        <li><div data-rel="hadoop">hadoop</div>
+                            
+                        </li>
+                            
+                    </ul>
+                
+            </li>
+            
+        
+    
+        
+            
+            <li><div data-rel="前端"><i class="fold iconfont icon-right"></i>前端</div>
+                
+                    <ul class="sub hide">
+                        
+                        <li><div data-rel="HTML">HTML</div>
+                            
+                        </li>
+                            
+                        <li><div data-rel="CSS">CSS</div>
+                            
+                        </li>
+                            
+                    </ul>
+                
+            </li>
+            
+        
+    
+        
+            
+        
+    
+        
+            
+        
+    
+        
+            
+        
+    
+        
+            
+        
+    
+        
+            
+        
+    
+        
+            
+            <li><div data-rel="笔记">笔记</div>
+                
+            </li>
+            
+        
+    
+        
+            
+        
+    
+        
+            
+        
+    
+        
+            
+        
+    
+        
+            
+        
+    
+        
+            
+        
+    
+</ul>
+<div class="left-bottom">
+    <div class="menus">
+    
+    
+    
+    
+    </div>
+    <div></div>
+</div>
+<input type="hidden" id="yelog_site_posts_number" value="71">
+
+<div style="display: none">
+    <span id="busuanzi_value_site_uv"></span>
+    <span id="busuanzi_value_site_pv"></span>
+</div>
+
+    </div>
+    <div class="nav-right">
+        <div class="friends-area">
+    <div class="friends-title">
+        友情链接
+        <i class="back-title-list"></i>
+    </div>
+    <div class="friends-content">
+        <ul>
+            
+            <li><a target="_blank" href="http://yelog.org/">叶落阁</a></li>
+            
+        </ul>
+    </div>
+</div>
+        <div class="title-list">
+    <form onkeydown="if(event.keyCode === 13){return false;}">
+        <input id="local-search-input" class="search" type="text" placeholder="Search..." />
+        <i class="cross"></i>
+        <span>
+            <label for="tagswitch">Tags:</label>
+            <input id="tagswitch" type="checkbox" style="display: none" />
+            <i id="tagsWitchIcon"></i>
+        </span>
+    </form>
+    <div class="tags-list">
+    
+    <li class="article-tag-list-item">
+        <a class="color5">HTTP</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a class="color4">protobuf</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a class="color5">MySQL SQL</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a class="color2">Spring</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a class="color5">java</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a class="color3">QT</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a class="color4">区块链</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a class="color4">分布式</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a class="color4">大数据</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a class="color3">前端</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a class="color3">MyBatis</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a class="color1">SpringBoot</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a class="color5">网络编程</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a class="color1">Redis</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a class="color4">多线程</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a class="color4">数据库</a>
+    </li>
+    
+    <div class="clearfix"></div>
+</div>
+
+    
+    <nav id="title-list-nav">
+        
+        <a  class="前端 CSS "
+           href="/2021/01/11/html/4_%E7%9B%92%E5%AD%90%E6%A8%A1%E5%9E%8B/"
+           data-tag="前端"
+           data-author="" >
+            <span class="post-title" title="【前端 4】盒子模型">【前端 4】盒子模型</span>
+            <span class="post-date" title="2021-01-11 09:41:10">2021/01/11</span>
+        </a>
+        
+        <a  class="前端 CSS "
+           href="/2021/01/09/html/3_CSS%E8%BF%9B%E9%98%B6/"
+           data-tag="前端"
+           data-author="" >
+            <span class="post-title" title="【前端 3】CSS进阶">【前端 3】CSS进阶</span>
+            <span class="post-date" title="2021-01-09 09:43:10">2021/01/09</span>
+        </a>
+        
+        <a  class="前端 CSS "
+           href="/2021/01/05/html/2_CSS/"
+           data-tag="前端"
+           data-author="" >
+            <span class="post-title" title="【前端 2】CSS">【前端 2】CSS</span>
+            <span class="post-date" title="2021-01-05 16:22:10">2021/01/05</span>
+        </a>
+        
+        <a  class="前端 HTML "
+           href="/2021/01/04/html/1_html/"
+           data-tag="前端"
+           data-author="" >
+            <span class="post-title" title="【前端 1】HTML">【前端 1】HTML</span>
+            <span class="post-date" title="2021-01-04 10:46:10">2021/01/04</span>
+        </a>
+        
+        <a  class="区块链 fabric "
+           href="/2020/12/12/fabric/08_%E9%93%BE%E7%A0%81/"
+           data-tag="区块链"
+           data-author="" >
+            <span class="post-title" title="07_链码接口使用">07_链码接口使用</span>
+            <span class="post-date" title="2020-12-12 11:43:23">2020/12/12</span>
+        </a>
+        
+        <a  class="区块链 fabric "
+           href="/2020/12/12/fabric/02_%E9%83%A8%E7%BD%B2%E8%B0%83%E7%94%A8%E9%93%BE%E7%A0%81/"
+           data-tag="区块链"
+           data-author="" >
+            <span class="post-title" title="02_部署调用链码">02_部署调用链码</span>
+            <span class="post-date" title="2020-12-12 10:56:23">2020/12/12</span>
+        </a>
+        
+        <a  class="区块链 fabric "
+           href="/2020/12/09/fabric/07_dockerCompose%E5%90%AF%E5%8A%A8fabric/"
+           data-tag="区块链"
+           data-author="" >
+            <span class="post-title" title="06_docker compose启动节点">06_docker compose启动节点</span>
+            <span class="post-date" title="2020-12-09 11:35:23">2020/12/09</span>
+        </a>
+        
+        <a  class="区块链 fabric "
+           href="/2020/12/09/fabric/03_%E7%BD%91%E7%BB%9C%E7%BB%93%E6%9E%84%E5%8F%98%E5%8A%A8/"
+           data-tag="区块链"
+           data-author="" >
+            <span class="post-title" title="03_用户结构变动">03_用户结构变动</span>
+            <span class="post-date" title="2020-12-09 10:35:23">2020/12/09</span>
+        </a>
+        
+        <a  class="区块链 fabric "
+           href="/2020/12/02/fabric/01_%E6%90%AD%E5%BB%BA%E5%9F%BA%E7%A1%80%E7%BD%91%E7%BB%9C/"
+           data-tag="区块链"
+           data-author="" >
+            <span class="post-title" title="01_搭建基础网络">01_搭建基础网络</span>
+            <span class="post-date" title="2020-12-02 11:05:23">2020/12/02</span>
+        </a>
+        
+        <a  class="区块链 fabric "
+           href="/2020/12/01/fabric/05_java%20SDK%E4%BD%BF%E7%94%A8/"
+           data-tag="区块链"
+           data-author="" >
+            <span class="post-title" title="05_javaSDK使用">05_javaSDK使用</span>
+            <span class="post-date" title="2020-12-01 15:04:23">2020/12/01</span>
+        </a>
+        
+        <a  class="区块链 fabric "
+           href="/2020/12/01/fabric/04_%E7%94%A8%E6%88%B7%E4%BD%BF%E7%94%A8%E9%93%BE%E7%A0%81/"
+           data-tag="区块链"
+           data-author="" >
+            <span class="post-title" title="04_用户使用链码">04_用户使用链码</span>
+            <span class="post-date" title="2020-12-01 10:55:23">2020/12/01</span>
+        </a>
+        
+        <a  class="大数据 hadoop "
+           href="/2020/11/26/hadoop/%E5%AE%89%E8%A3%85/"
+           data-tag="大数据"
+           data-author="" >
+            <span class="post-title" title="【hadoop 3】hadoop分布式安装总结">【hadoop 3】hadoop分布式安装总结</span>
+            <span class="post-date" title="2020-11-26 17:50:09">2020/11/26</span>
+        </a>
+        
+        <a  class="客户端 QT "
+           href="/2020/10/29/QT/4_%E6%A8%A1%E5%9E%8B%20%E8%A7%86%E5%9B%BE%E7%BB%93%E6%9E%84/"
+           data-tag="QT"
+           data-author="" >
+            <span class="post-title" title="【QT 3】模型-视图结构">【QT 3】模型-视图结构</span>
+            <span class="post-date" title="2020-10-29 16:49:10">2020/10/29</span>
+        </a>
+        
+        <a  class="客户端 QT "
+           href="/2020/10/28/QT/3_%E6%8E%A7%E4%BB%B6/"
+           data-tag="QT"
+           data-author="" >
+            <span class="post-title" title="【QT 2】控件">【QT 2】控件</span>
+            <span class="post-date" title="2020-10-28 16:55:10">2020/10/28</span>
+        </a>
+        
+        <a  class="客户端 QT "
+           href="/2020/10/28/QT/2_%E5%B8%83%E5%B1%80%E7%AE%A1%E7%90%86/"
+           data-tag="QT"
+           data-author="" >
+            <span class="post-title" title="【QT 1】布局管理">【QT 1】布局管理</span>
+            <span class="post-date" title="2020-10-28 14:37:10">2020/10/28</span>
+        </a>
+        
+        <a  class="客户端 QT "
+           href="/2020/10/20/QT/QT%E7%95%8C%E9%9D%A2%E7%BC%96%E8%BE%91%E5%99%A8/"
+           data-tag="QT"
+           data-author="" >
+            <span class="post-title" title="【QT 4】QT界面编辑器">【QT 4】QT界面编辑器</span>
+            <span class="post-date" title="2020-10-20 15:52:10">2020/10/20</span>
+        </a>
+        
+        <a  class="SSM Spring "
+           href="/2020/06/01/%E7%AC%94%E8%AE%B0/spring/"
+           data-tag="Spring"
+           data-author="" >
+            <span class="post-title" title="【笔记】Spring总结">【笔记】Spring总结</span>
+            <span class="post-date" title="2020-06-01 03:57:17">2020/06/01</span>
+        </a>
+        
+        <a  class="笔记 "
+           href="/2020/05/12/%E7%AC%94%E8%AE%B0/%E6%95%B0%E6%8D%AE%E5%BA%93/"
+           data-tag="数据库"
+           data-author="" >
+            <span class="post-title" title="【笔记】数据库与MySQL">【笔记】数据库与MySQL</span>
+            <span class="post-date" title="2020-05-12 21:38:05">2020/05/12</span>
+        </a>
+        
+        <a  class="笔记 "
+           href="/2020/05/07/%E7%AC%94%E8%AE%B0/redis/"
+           data-tag="Redis"
+           data-author="" >
+            <span class="post-title" title="【笔记】Redis">【笔记】Redis</span>
+            <span class="post-date" title="2020-05-07 18:38:05">2020/05/07</span>
+        </a>
+        
+        <a  class="笔记 "
+           href="/2020/04/25/%E7%AC%94%E8%AE%B0/%E5%A4%9A%E7%BA%BF%E7%A8%8B/"
+           data-tag="多线程"
+           data-author="" >
+            <span class="post-title" title="【笔记】java并发">【笔记】java并发</span>
+            <span class="post-date" title="2020-04-25 15:38:01">2020/04/25</span>
+        </a>
+        
+        <a  class="大数据 hadoop "
+           href="/2020/03/18/hadoop/2_%E4%BD%BF%E7%94%A8hadoop/"
+           data-tag="大数据"
+           data-author="" >
+            <span class="post-title" title="【hadoop 2】hadoop三种模式使用">【hadoop 2】hadoop三种模式使用</span>
+            <span class="post-date" title="2020-03-18 17:49:04">2020/03/18</span>
+        </a>
+        
+        <a  class="SSM SpringBoot "
+           href="/2020/03/18/springboot/3_springboot%E7%9A%84%E9%85%8D%E7%BD%AE/"
+           data-tag="SpringBoot"
+           data-author="" >
+            <span class="post-title" title="【SpringBoot 02】配置文件">【SpringBoot 02】配置文件</span>
+            <span class="post-date" title="2020-03-18 12:58:23">2020/03/18</span>
+        </a>
+        
+        <a  class="SSM SpringBoot "
+           href="/2020/03/17/springboot/2_springboot%E7%9A%84helloworld/"
+           data-tag="SpringBoot"
+           data-author="" >
+            <span class="post-title" title="【SpringBoot 01】HelloWorld">【SpringBoot 01】HelloWorld</span>
+            <span class="post-date" title="2020-03-17 19:58:23">2020/03/17</span>
+        </a>
+        
+        <a  class="SSM SSM整合 "
+           href="/2020/03/05/3-SpringMVC/1_%E6%90%AD%E5%BB%BAspring/"
+           data-tag="java"
+           data-author="" >
+            <span class="post-title" title="【SSM实战】SSM框架整合">【SSM实战】SSM框架整合</span>
+            <span class="post-date" title="2020-03-05 20:37:01">2020/03/05</span>
+        </a>
+        
+        <a  class="SSM SpringMVC "
+           href="/2020/03/05/3-SpringMVC/7_SpringMVC%E5%BC%82%E5%B8%B8%E5%A4%84%E7%90%86%E4%B8%8E%E6%8B%A6%E6%88%AA%E5%99%A8/"
+           data-tag="java"
+           data-author="" >
+            <span class="post-title" title="【SpringMVC实战6】异常处理与拦截器">【SpringMVC实战6】异常处理与拦截器</span>
+            <span class="post-date" title="2020-03-05 13:06:19">2020/03/05</span>
+        </a>
+        
+        <a  class="SSM SpringMVC "
+           href="/2020/03/04/3-SpringMVC/6_SpringMVC%E5%93%8D%E5%BA%94/"
+           data-tag="java"
+           data-author="" >
+            <span class="post-title" title="【SpringMVC实战5】响应">【SpringMVC实战5】响应</span>
+            <span class="post-date" title="2020-03-04 19:26:39">2020/03/04</span>
+        </a>
+        
+        <a  class="SSM SpringMVC "
+           href="/2020/03/03/3-SpringMVC/4_SpringMVC%E7%9A%84%E5%B8%B8%E7%94%A8%E6%B3%A8%E8%A7%A3/"
+           data-tag="java"
+           data-author="" >
+            <span class="post-title" title="【SpringMVC实战3】常用注解">【SpringMVC实战3】常用注解</span>
+            <span class="post-date" title="2020-03-03 15:26:29">2020/03/03</span>
+        </a>
+        
+        <a  class="SSM SpringMVC "
+           href="/2020/03/03/3-SpringMVC/5_%E8%AF%B7%E6%B1%82%E5%8F%82%E6%95%B0%E7%BB%91%E5%AE%9A/"
+           data-tag="java"
+           data-author="" >
+            <span class="post-title" title="【SpringMVC实战4】请求参数绑定">【SpringMVC实战4】请求参数绑定</span>
+            <span class="post-date" title="2020-03-03 09:13:23">2020/03/03</span>
+        </a>
+        
+        <a  class="SSM SpringMVC "
+           href="/2020/03/02/3-SpringMVC/3_SpringMVC%E7%9A%84%E6%89%A7%E8%A1%8C%E6%B5%81%E7%A8%8B/"
+           data-tag="java"
+           data-author="" >
+            <span class="post-title" title="【SpringMVC实战2】执行流程">【SpringMVC实战2】执行流程</span>
+            <span class="post-date" title="2020-03-02 18:26:39">2020/03/02</span>
+        </a>
+        
+        <a  class="SSM SpringMVC "
+           href="/2020/03/02/3-SpringMVC/2_%E5%85%A5%E9%97%A8%E6%A1%88%E4%BE%8B/"
+           data-tag="java"
+           data-author="" >
+            <span class="post-title" title="【SpringMVC实战1】入门案例">【SpringMVC实战1】入门案例</span>
+            <span class="post-date" title="2020-03-02 14:26:39">2020/03/02</span>
+        </a>
+        
+        <a  class="SSM Spring "
+           href="/2020/02/21/13-Spring/8_%E4%BA%8B%E5%8A%A1%E6%8E%A7%E5%88%B6/"
+           data-tag="Spring"
+           data-author="" >
+            <span class="post-title" title="【Spring实战8】事务控制">【Spring实战8】事务控制</span>
+            <span class="post-date" title="2020-02-21 15:23:48">2020/02/21</span>
+        </a>
+        
+        <a  class="SSM Spring "
+           href="/2020/02/20/13-Spring/7_JdbcTemplate/"
+           data-tag="Spring"
+           data-author="" >
+            <span class="post-title" title="【Spring实战7】JdbcTemplate">【Spring实战7】JdbcTemplate</span>
+            <span class="post-date" title="2020-02-20 09:32:29">2020/02/20</span>
+        </a>
+        
+        <a  class="SSM Spring "
+           href="/2020/02/19/13-Spring/6_%E5%9F%BA%E4%BA%8Exml%E5%92%8C%E6%B3%A8%E8%A7%A3%E7%9A%84AOP%E9%85%8D%E7%BD%AE/"
+           data-tag="Spring"
+           data-author="" >
+            <span class="post-title" title="【Spring实战6】基于xml和注解的AOP配置">【Spring实战6】基于xml和注解的AOP配置</span>
+            <span class="post-date" title="2020-02-19 21:31:44">2020/02/19</span>
+        </a>
+        
+        <a  class="SSM Spring "
+           href="/2020/02/19/13-Spring/5_AOP/"
+           data-tag="Spring"
+           data-author="" >
+            <span class="post-title" title="【Spring实战5】AOP">【Spring实战5】AOP</span>
+            <span class="post-date" title="2020-02-19 18:56:47">2020/02/19</span>
+        </a>
+        
+        <a  class="SSM Spring "
+           href="/2020/02/18/13-Spring/4_%E5%8A%A8%E6%80%81%E4%BB%A3%E7%90%86/"
+           data-tag="Spring"
+           data-author="" >
+            <span class="post-title" title="【Spring实战4】动态代理">【Spring实战4】动态代理</span>
+            <span class="post-date" title="2020-02-18 17:15:32">2020/02/18</span>
+        </a>
+        
+        <a  class="SSM Spring "
+           href="/2020/02/14/13-Spring/3_%E5%9F%BA%E4%BA%8E%E6%B3%A8%E8%A7%A3%E7%9A%84IOC/"
+           data-tag="Spring"
+           data-author="" >
+            <span class="post-title" title="【Spring实战3】IoC注解">【Spring实战3】IoC注解</span>
+            <span class="post-date" title="2020-02-14 20:57:17">2020/02/14</span>
+        </a>
+        
+        <a  class="SSM Spring "
+           href="/2020/02/13/13-Spring/2_IOC/"
+           data-tag="Spring"
+           data-author="" >
+            <span class="post-title" title="【Spring实战2】IoC与DI">【Spring实战2】IoC与DI</span>
+            <span class="post-date" title="2020-02-13 20:56:03">2020/02/13</span>
+        </a>
+        
+        <a  class="SSM Spring "
+           href="/2020/02/13/13-Spring/1_%E7%A8%8B%E5%BA%8F%E8%80%A6%E5%90%88%E4%B8%8E%E8%A7%A3%E8%80%A6/"
+           data-tag="Spring"
+           data-author="" >
+            <span class="post-title" title="【Spring实战1】程序的耦合与解耦">【Spring实战1】程序的耦合与解耦</span>
+            <span class="post-date" title="2020-02-13 13:17:03">2020/02/13</span>
+        </a>
+        
+        <a  class="SSM MyBatis "
+           href="/2020/02/07/mybatis/10_%E6%B3%A8%E8%A7%A3%E5%BC%80%E5%8F%91/"
+           data-tag="MyBatis"
+           data-author="" >
+            <span class="post-title" title="【Mybatis实战5】注解开发">【Mybatis实战5】注解开发</span>
+            <span class="post-date" title="2020-02-07 16:18:37">2020/02/07</span>
+        </a>
+        
+        <a  class="SSM MyBatis "
+           href="/2020/02/06/mybatis/9_%E7%BC%93%E5%AD%98/"
+           data-tag="MyBatis"
+           data-author="" >
+            <span class="post-title" title="【Mybatis实战4】加载与缓存">【Mybatis实战4】加载与缓存</span>
+            <span class="post-date" title="2020-02-06 18:29:03">2020/02/06</span>
+        </a>
+        
+        <a  class="SSM MyBatis "
+           href="/2020/02/06/mybatis/8_%E5%8A%A8%E6%80%81SQL%E4%B8%8E%E5%A4%9A%E8%A1%A8%E6%93%8D%E4%BD%9C/"
+           data-tag="MyBatis"
+           data-author="" >
+            <span class="post-title" title="【Mybatis实战3】动态SQL与多表操作">【Mybatis实战3】动态SQL与多表操作</span>
+            <span class="post-date" title="2020-02-06 18:08:29">2020/02/06</span>
+        </a>
+        
+        <a  class="SSM MyBatis "
+           href="/2020/02/06/mybatis/6_mybatis%E8%BF%9B%E8%A1%8CCRUD/"
+           data-tag="MyBatis"
+           data-author="" >
+            <span class="post-title" title="【Mybatis实战2】CRUD操作">【Mybatis实战2】CRUD操作</span>
+            <span class="post-date" title="2020-02-06 13:21:03">2020/02/06</span>
+        </a>
+        
+        <a  class="SSM MyBatis "
+           href="/2020/02/05/mybatis/2_%E5%9F%BA%E4%BA%8Exml%E7%9A%84%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/"
+           data-tag="MyBatis"
+           data-author="" >
+            <span class="post-title" title="【Mybatis实战1】两种环境搭建方法及示例">【Mybatis实战1】两种环境搭建方法及示例</span>
+            <span class="post-date" title="2020-02-05 10:21:01">2020/02/05</span>
+        </a>
+        
+        <a  class="数据库 "
+           href="/2020/01/29/11-MySQL/3_%E5%A4%9A%E8%A1%A8%E6%9F%A5%E8%AF%A2%E4%B8%8E%E4%BA%8B%E5%8A%A1/"
+           data-tag="MySQL SQL"
+           data-author="" >
+            <span class="post-title" title="多表查询与事务">多表查询与事务</span>
+            <span class="post-date" title="2020-01-29 13:52:00">2020/01/29</span>
+        </a>
+        
+        <a  class="数据库 "
+           href="/2020/01/26/11-MySQL/2_SQL%E9%AB%98%E7%BA%A7/"
+           data-tag="MySQL SQL"
+           data-author="" >
+            <span class="post-title" title="数据库高级知识及SQL实现">数据库高级知识及SQL实现</span>
+            <span class="post-date" title="2020-01-26 23:01:52">2020/01/26</span>
+        </a>
+        
+        <a  class="数据库 "
+           href="/2020/01/23/11-MySQL/1_SQL%E8%AF%AD%E8%A8%80%E5%9F%BA%E6%9C%AC%E6%93%8D%E4%BD%9C/"
+           data-tag="MySQL SQL"
+           data-author="" >
+            <span class="post-title" title="SQL语言基础">SQL语言基础</span>
+            <span class="post-date" title="2020-01-23 20:06:39">2020/01/23</span>
+        </a>
+        
+        <a  class="网络 protobuf "
+           href="/2020/01/16/10-java%E7%BD%91%E7%BB%9C/2_protobuf/"
+           data-tag="protobuf"
+           data-author="" >
+            <span class="post-title" title="java使用protobuf">java使用protobuf</span>
+            <span class="post-date" title="2020-01-16 17:57:52">2020/01/16</span>
+        </a>
+        
+        <a  class="网络 HTTP "
+           href="/2020/01/15/10-java%E7%BD%91%E7%BB%9C/1_HTTP/"
+           data-tag="HTTP"
+           data-author="" >
+            <span class="post-title" title="java实现简单的HTTP">java实现简单的HTTP</span>
+            <span class="post-date" title="2020-01-15 18:03:21">2020/01/15</span>
+        </a>
+        
+        <a  class="大数据 hadoop "
+           href="/2020/01/06/hadoop/1_hadoop/"
+           data-tag="大数据"
+           data-author="" >
+            <span class="post-title" title="【hadoop 1】hadoop环境搭建">【hadoop 1】hadoop环境搭建</span>
+            <span class="post-date" title="2020-01-06 14:55:10">2020/01/06</span>
+        </a>
+        
+        <a  class="区块链 Fabric "
+           href="/2019/11/24/blockchain/09/"
+           data-tag="区块链"
+           data-author="" >
+            <span class="post-title" title="Hyperledger Fabric系统框架笔记">Hyperledger Fabric系统框架笔记</span>
+            <span class="post-date" title="2019-11-24 12:43:08">2019/11/24</span>
+        </a>
+        
+        <a  class="区块链 论文 "
+           href="/2019/11/21/blockchain/08/"
+           data-tag="区块链"
+           data-author="" >
+            <span class="post-title" title="闪电网络（四）比特币闪电网络：The Bitcoin Lightning Network">闪电网络（四）比特币闪电网络：The Bitcoin Lightning Network</span>
+            <span class="post-date" title="2019-11-21 21:31:53">2019/11/21</span>
+        </a>
+        
+        <a  class="区块链 论文 "
+           href="/2019/11/20/blockchain/07/"
+           data-tag="区块链"
+           data-author="" >
+            <span class="post-title" title="闪电网络（三）哈希时间锁合约：Hashed Timelock Contract (HTLC)">闪电网络（三）哈希时间锁合约：Hashed Timelock Contract (HTLC)</span>
+            <span class="post-date" title="2019-11-20 10:51:23">2019/11/20</span>
+        </a>
+        
+        <a  class="区块链 论文 "
+           href="/2019/11/20/blockchain/05/"
+           data-tag="区块链"
+           data-author="" >
+            <span class="post-title" title="闪电网络（二）双向支付通道：Bidirectional Payment Channels + RSMC">闪电网络（二）双向支付通道：Bidirectional Payment Channels + RSMC</span>
+            <span class="post-date" title="2019-11-20 10:51:23">2019/11/20</span>
+        </a>
+        
+        <a  class="区块链 论文 "
+           href="/2019/11/19/blockchain/06/"
+           data-tag="区块链"
+           data-author="" >
+            <span class="post-title" title="闪电网络（一）微支付通道">闪电网络（一）微支付通道</span>
+            <span class="post-date" title="2019-11-19 10:07:02">2019/11/19</span>
+        </a>
+        
+        <a  class="区块链 论文 "
+           href="/2019/11/15/blockchain/03/"
+           data-tag="区块链"
+           data-author="" >
+            <span class="post-title" title="论文翻译 OmniLedger">论文翻译 OmniLedger</span>
+            <span class="post-date" title="2019-11-15 16:15:33">2019/11/15</span>
+        </a>
+        
+        <a  class="网络 网络编程 "
+           href="/2019/11/03/networkProgram/%E7%BD%91%E7%BB%9C%E7%BC%96%E7%A8%8B10UDP%E8%BF%9E%E6%8E%A5/"
+           data-tag="网络编程"
+           data-author="" >
+            <span class="post-title" title="网络编程10：UDP连接">网络编程10：UDP连接</span>
+            <span class="post-date" title="2019-11-03 16:15:07">2019/11/03</span>
+        </a>
+        
+        <a  class="网络 网络编程 "
+           href="/2019/11/02/networkProgram/%E7%BD%91%E7%BB%9C%E7%BC%96%E7%A8%8B9TCP%E7%9A%84%E5%BC%82%E5%B8%B8/"
+           data-tag="网络编程"
+           data-author="" >
+            <span class="post-title" title="网络编程9：TCP的异常">网络编程9：TCP的异常</span>
+            <span class="post-date" title="2019-11-02 13:57:10">2019/11/02</span>
+        </a>
+        
+        <a  class="网络 网络编程 "
+           href="/2019/11/01/networkProgram/%E7%BD%91%E7%BB%9C%E7%BC%96%E7%A8%8B8TCP%E6%95%B0%E6%8D%AE%E4%BC%A0%E8%BE%93/"
+           data-tag="网络编程"
+           data-author="" >
+            <span class="post-title" title="网络编程8：TCP数据传输">网络编程8：TCP数据传输</span>
+            <span class="post-date" title="2019-11-01 18:34:10">2019/11/01</span>
+        </a>
+        
+        <a  class="网络 网络编程 "
+           href="/2019/10/31/networkProgram/%E7%BD%91%E7%BB%9C%E7%BC%96%E7%A8%8B7TCP%E8%BF%9E%E6%8E%A5%E7%8A%B6%E6%80%81/"
+           data-tag="网络编程"
+           data-author="" >
+            <span class="post-title" title="网络编程7：TCP连接状态">网络编程7：TCP连接状态</span>
+            <span class="post-date" title="2019-10-31 17:14:55">2019/10/31</span>
+        </a>
+        
+        <a  class="网络 网络编程 "
+           href="/2019/10/30/networkProgram/%E7%BD%91%E7%BB%9C%E7%BC%96%E7%A8%8B6%E5%85%B3%E9%97%AD%E8%BF%9E%E6%8E%A5/"
+           data-tag="网络编程"
+           data-author="" >
+            <span class="post-title" title="网络编程6：关闭连接">网络编程6：关闭连接</span>
+            <span class="post-date" title="2019-10-30 18:34:12">2019/10/30</span>
+        </a>
+        
+        <a  class="网络 网络编程 "
+           href="/2019/10/29/networkProgram/%E7%BD%91%E7%BB%9C%E7%BC%96%E7%A8%8B5%E7%BD%91%E7%BB%9C%E5%B7%A5%E5%85%B7/"
+           data-tag="网络编程"
+           data-author="" >
+            <span class="post-title" title="网络编程5：网络工具">网络编程5：网络工具</span>
+            <span class="post-date" title="2019-10-29 14:24:11">2019/10/29</span>
+        </a>
+        
+        <a  class="网络 网络编程 "
+           href="/2019/10/28/networkProgram/%E7%BD%91%E7%BB%9C%E7%BC%96%E7%A8%8B3UDP%E5%8D%8F%E8%AE%AE%E4%BD%BF%E7%94%A8socket/"
+           data-tag="网络编程"
+           data-author="" >
+            <span class="post-title" title="网络编程3：UDP协议使用socket">网络编程3：UDP协议使用socket</span>
+            <span class="post-date" title="2019-10-28 10:11:10">2019/10/28</span>
+        </a>
+        
+        <a  class="网络 网络编程 "
+           href="/2019/10/28/networkProgram/%E7%BD%91%E7%BB%9C%E7%BC%96%E7%A8%8B4%E6%9C%AC%E5%9C%B0socket/"
+           data-tag="网络编程"
+           data-author="" >
+            <span class="post-title" title="网络编程4：本地套接字">网络编程4：本地套接字</span>
+            <span class="post-date" title="2019-10-28 10:11:10">2019/10/28</span>
+        </a>
+        
+        <a  class="网络 网络编程 "
+           href="/2019/10/27/networkProgram/%E7%BD%91%E7%BB%9C%E7%BC%96%E7%A8%8B2TCP%E5%8D%8F%E8%AE%AE%E4%BD%BF%E7%94%A8socket/"
+           data-tag="网络编程"
+           data-author="" >
+            <span class="post-title" title="网络编程2：TCP协议使用socket">网络编程2：TCP协议使用socket</span>
+            <span class="post-date" title="2019-10-27 17:59:09">2019/10/27</span>
+        </a>
+        
+        <a  class="网络 网络编程 "
+           href="/2019/10/26/networkProgram/%E7%BD%91%E7%BB%9C%E7%BC%96%E7%A8%8B1/"
+           data-tag="网络编程"
+           data-author="" >
+            <span class="post-title" title="网络编程1：基础部分">网络编程1：基础部分</span>
+            <span class="post-date" title="2019-10-26 16:54:02">2019/10/26</span>
+        </a>
+        
+        <a  class="分布式 "
+           href="/2019/09/12/distribute/01/"
+           data-tag="分布式"
+           data-author="" >
+            <span class="post-title" title="分布式系统的一致性与共识">分布式系统的一致性与共识</span>
+            <span class="post-date" title="2019-09-12 13:47:52">2019/09/12</span>
+        </a>
+        
+        <a  class="网络 HTTP "
+           href="/2019/08/05/http/030205/"
+           data-tag="HTTP"
+           data-author="" >
+            <span class="post-title" title="HTTP协议学习（五）HTTPS与安全">HTTP协议学习（五）HTTPS与安全</span>
+            <span class="post-date" title="2019-08-05 20:46:07">2019/08/05</span>
+        </a>
+        
+        <a  class="网络 HTTP "
+           href="/2019/07/20/http/030204/"
+           data-tag="HTTP"
+           data-author="" >
+            <span class="post-title" title="HTTP协议学习（四）cookie、缓存、代理机制">HTTP协议学习（四）cookie、缓存、代理机制</span>
+            <span class="post-date" title="2019-07-20 13:15:07">2019/07/20</span>
+        </a>
+        
+        <a  class="网络 HTTP "
+           href="/2019/07/10/http/030203/"
+           data-tag="HTTP"
+           data-author="" >
+            <span class="post-title" title="HTTP协议学习（三）数据传输与连接">HTTP协议学习（三）数据传输与连接</span>
+            <span class="post-date" title="2019-07-10 14:36:55">2019/07/10</span>
+        </a>
+        
+        <a  class="网络 HTTP "
+           href="/2019/07/01/http/030202/"
+           data-tag="HTTP"
+           data-author="" >
+            <span class="post-title" title="HTTP协议学习（二）基础">HTTP协议学习（二）基础</span>
+            <span class="post-date" title="2019-07-01 14:05:51">2019/07/01</span>
+        </a>
+        
+        <a  class="网络 HTTP "
+           href="/2019/06/14/http/030201/"
+           data-tag="HTTP"
+           data-author="" >
+            <span class="post-title" title="HTTP协议学习（一）概念">HTTP协议学习（一）概念</span>
+            <span class="post-date" title="2019-06-14 16:08:25">2019/06/14</span>
+        </a>
+        
+    </nav>
+</div>
+    </div>
+    <div class="hide-list">
+        <div class="semicircle">
+            <div class="brackets first"><</div>
+            <div class="brackets">&gt;</div>
+        </div>
+    </div>
+</aside>
+<div class="post">
+    <div class="pjax">
+        <article id="post-10-java网络/2_protobuf" class="article article-type-post" itemscope itemprop="blogPost">
+    
+        <h1 class="article-title">java使用protobuf</h1>
+    
+    <div class="article-meta">
+        
+        
+        
+        <span class="book">
+            
+                <a  data-rel="网络">网络</a>/
+            
+                <a  data-rel="protobuf">protobuf</a>
+            
+        </span>
+        
+        
+        <span class="tag">
+            
+            <a class="color4">protobuf</a>
+            
+        </span>
+        
+    </div>
+    <div class="article-meta">
+        
+        创建时间:<time class="date" title='更新时间: 2020-03-06 06:09:51'>2020-01-16 17:57</time>
+        
+    </div>
+    <div class="article-meta">
+        
+        
+        
+    </div>
+    
+    <div class="toc-ref">
+    
+        <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#protobuf"><span class="toc-text">protobuf</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#1-定义与概念"><span class="toc-text">1. 定义与概念</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-对比xml"><span class="toc-text">2. 对比xml</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#2-1-定义"><span class="toc-text">2.1 定义</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-2-二进制大小"><span class="toc-text">2.2 二进制大小</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-3-使用便捷性"><span class="toc-text">2.3 使用便捷性</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-4-局限性"><span class="toc-text">2.4 局限性</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3-在maven中配置"><span class="toc-text">3. 在maven中配置</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#4-语法"><span class="toc-text">4. 语法</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#4-1-指定版本与包"><span class="toc-text">4.1 指定版本与包</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4-2-消息内容"><span class="toc-text">4.2 消息内容</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4-3-数据类型"><span class="toc-text">4.3 数据类型</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4-4-service"><span class="toc-text">4.4 service</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4-5-option"><span class="toc-text">4.5 option</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#5-使用"><span class="toc-text">5. 使用</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#5-1-proto文件定义"><span class="toc-text">5.1 proto文件定义</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#5-2-访问message中的各个字段"><span class="toc-text">5.2 访问message中的各个字段</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#5-3-Builder"><span class="toc-text">5.3 Builder</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#5-3-1-读取、设置字段"><span class="toc-text">5.3.1 读取、设置字段</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#5-3-2-标准化方法"><span class="toc-text">5.3.2 标准化方法</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#5-3-3-解析与序列化"><span class="toc-text">5.3.3 解析与序列化</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#5-4-创建实例"><span class="toc-text">5.4 创建实例</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#5-5-实际使用"><span class="toc-text">5.5 实际使用</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#5-5-1-生成消息"><span class="toc-text">5.5.1 生成消息</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#5-5-2-读取消息"><span class="toc-text">5.5.2 读取消息</span></a></li></ol></li></ol></li></ol></li></ol>
+    
+<style>
+    .left-col .switch-btn,
+    .left-col .switch-area {
+        display: none;
+    }
+    .toc-level-3 i,
+    .toc-level-3 ol {
+        display: none !important;
+    }
+</style>
+</div>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="protobuf"><a href="#protobuf" class="headerlink" title="protobuf"></a>protobuf</h1><h2 id="1-定义与概念"><a href="#1-定义与概念" class="headerlink" title="1. 定义与概念"></a>1. 定义与概念</h2><p>文档中给出的定义为：protobuf是一种用于序列化结构化数据的灵活，高效，自动化的机制。</p>
+<p>您只需要定义数据结构一次，然后可以使用生成的特殊源代码轻松地使用各种语言在各种数据流中写入和读取结构化数据。 您甚至可以更新数据结构，而不会破坏已针对“旧”格式编译的已部署程序。</p>
+<p>通过在.proto文件中定义protobuf的消息类型，指定要序列化的信息的结构。 每个protobuf消息都是一个小的逻辑信息记录，其中包含一系列名称/值对。 这是.proto文件的一个非常基本的示例，该文件定义了一条包含有关Person的信息的消息：</p>
+<pre><code class="protobuf">message Person {
+    required string name = 1;
+    required int32 id = 2;
+    optional string email = 3;
+
+    enum PhoneType {
+        MOBILE = 0;
+        HOME = 1;
+        WORK = 2;
+    }
+
+    message PhoneNumber {
+        required string number = 1;
+        optional PhoneType type = 2 [default = HOME];
+    }
+
+    repeated PhoneNumber phone = 4;
+}</code></pre>
+<p>每个消息类型都有一个或多个唯一编号的字段，每个字段都有一个名称和一个值类型，其中值类型可以是数字（int或float），bool，string ，byte，其他protobuf消息类型。</p>
+<p>定义消息后，就可以在.proto文件上为应用程序的语言运行protobuf编译器，以生成数据访问类。 这些为每个字段提供了简单的访问器（例如<code>name()</code>和<code>set_name()</code>），以及将整个结构序列化为原始字节或从原始字节中解析出整个结构的方法，例如使用C++可以通过下面的方式来使用：</p>
+<pre><code class="c++">Person person;
+person.set_name(&quot;John Doe&quot;);
+person.set_id(1234);
+person.set_email(&quot;jdoe@example.com&quot;);
+
+fstream output(&quot;myfile&quot;, ios::out | ios::binary);
+person.SerializeToOstream(&amp;output);</code></pre>
+<h2 id="2-对比xml"><a href="#2-对比xml" class="headerlink" title="2. 对比xml"></a>2. 对比xml</h2><p>protobuf相比于xml，它的优势如下：</p>
+<ul>
+<li>更简单</li>
+<li>小3到10倍</li>
+<li>快20到100倍</li>
+<li>不那么模棱两可</li>
+<li>生成易于通过编程使用的数据访问类</li>
+</ul>
+<h3 id="2-1-定义"><a href="#2-1-定义" class="headerlink" title="2.1 定义"></a>2.1 定义</h3><p>例如，如果要定义一个Person类，如果使用xml，则需要这样写：</p>
+<pre><code class="xml">&lt;person&gt;
+    &lt;name&gt;John Doe&lt;/name&gt;
+    &lt;email&gt;jdoe@example.com&lt;/email&gt;
+&lt;/person&gt;</code></pre>
+<p>如果是protobuf，则可以写成这样：</p>
+<pre><code class="protobuf">person {
+    name: &quot;John Doe&quot;
+    email: &quot;jdoe@example.com&quot;
+}</code></pre>
+<h3 id="2-2-二进制大小"><a href="#2-2-二进制大小" class="headerlink" title="2.2 二进制大小"></a>2.2 二进制大小</h3><p>当上面的内容被编写为二进制格式时，其占用的空间大小为：</p>
+<ul>
+<li>protobuf：28字节，解析时间为100-200ns</li>
+<li>xml：69字节，解析时间为5000-10000ns</li>
+</ul>
+<h3 id="2-3-使用便捷性"><a href="#2-3-使用便捷性" class="headerlink" title="2.3 使用便捷性"></a>2.3 使用便捷性</h3><ul>
+<li><p>protobuf：</p>
+<pre><code class="c++">cout &lt;&lt; &quot;Name: &quot; 
+     &lt;&lt; person.name()
+     &lt;&lt; endl;
+cout &lt;&lt; &quot;E-mail: &quot; 
+     &lt;&lt; person.email() 
+     &lt;&lt; endl;</code></pre>
+</li>
+<li><p>xml：</p>
+<pre><code class="c++">cout &lt;&lt; &quot;Name: &quot;
+     &lt;&lt; person.getElementsByTagName(&quot;name&quot;)-&gt;item(0)-&gt;innerText()
+     &lt;&lt; endl;
+cout &lt;&lt; &quot;E-mail: &quot;
+     &lt;&lt; person.getElementsByTagName(&quot;email&quot;)-&gt;item(0)-&gt;innerText()
+     &lt;&lt; endl;</code></pre>
+</li>
+</ul>
+<h3 id="2-4-局限性"><a href="#2-4-局限性" class="headerlink" title="2.4 局限性"></a>2.4 局限性</h3><p>但是，protobuf并不总是比XML更好的解决方案</p>
+<ul>
+<li>protobuf不是用标记（例如HTML）为基于文本的文档建模的好方法，不能轻易地使结构与文本交错。 </li>
+<li>另外，XML是人类可读和可编辑的。 protobuf（至少以其本机格式）不是。 </li>
+<li>XML在某种程度上也是<strong>自描述</strong>的。 仅当您具有消息定义（.proto文件）时，protobuf才有意义。</li>
+</ul>
+<h2 id="3-在maven中配置"><a href="#3-在maven中配置" class="headerlink" title="3. 在maven中配置"></a>3. 在maven中配置</h2><p>要在maven中使用protobuf，则需要做的有以下几件事情：</p>
+<ul>
+<li><p>在pom文件中添加配置</p>
+<pre><code class="xml">&lt;dependencies&gt;
+    &lt;dependency&gt;
+        &lt;groupId&gt;com.google.protobuf&lt;/groupId&gt;
+        &lt;artifactId&gt;protobuf-java&lt;/artifactId&gt;
+        &lt;version&gt;3.2.0&lt;/version&gt;
+    &lt;/dependency&gt;
+&lt;/dependencies&gt;
+
+&lt;build&gt;
+    &lt;defaultGoal&gt;package&lt;/defaultGoal&gt;
+    &lt;extensions&gt;
+        &lt;extension&gt;
+            &lt;groupId&gt;kr.motd.maven&lt;/groupId&gt;
+            &lt;artifactId&gt;os-maven-plugin&lt;/artifactId&gt;
+            &lt;version&gt;1.5.0.Final&lt;/version&gt;
+        &lt;/extension&gt;
+    &lt;/extensions&gt;
+
+    &lt;plugins&gt;
+        &lt;!-- protobuf 编译组件 --&gt;
+        &lt;plugin&gt;
+            &lt;groupId&gt;org.xolstice.maven.plugins&lt;/groupId&gt;
+            &lt;artifactId&gt;protobuf-maven-plugin&lt;/artifactId&gt;
+            &lt;version&gt;0.5.1&lt;/version&gt;
+            &lt;extensions&gt;true&lt;/extensions&gt;
+            &lt;configuration&gt;
+                &lt;protoSourceRoot&gt;${project.basedir}/src/main/proto&lt;/protoSourceRoot&gt;
+                &lt;protocArtifact&gt;com.google.protobuf:protoc:3.2.0:exe:${os.detected.classifier}&lt;/protocArtifact&gt;
+            &lt;/configuration&gt;
+            &lt;executions&gt;
+                &lt;execution&gt;
+                    &lt;goals&gt;
+                        &lt;goal&gt;compile&lt;/goal&gt;
+                    &lt;/goals&gt;
+                &lt;/execution&gt;
+            &lt;/executions&gt;
+        &lt;/plugin&gt;
+
+        &lt;!-- 编译jar包的jdk版本 --&gt;
+        &lt;plugin&gt;
+            &lt;groupId&gt;org.apache.maven.plugins&lt;/groupId&gt;
+            &lt;artifactId&gt;maven-compiler-plugin&lt;/artifactId&gt;
+            &lt;version&gt;3.1&lt;/version&gt;
+            &lt;configuration&gt;
+                &lt;source&gt;${java.version}&lt;/source&gt;
+                &lt;target&gt;${java.version}&lt;/target&gt;
+            &lt;/configuration&gt;
+        &lt;/plugin&gt;
+    &lt;/plugins&gt;
+&lt;/build&gt;</code></pre>
+</li>
+</ul>
+<ul>
+<li><p>在idea中添加插件，在商店中搜索protobuf support即可</p>
+<img src="/2020/01/16/10-java%E7%BD%91%E7%BB%9C/2_protobuf/image-20200115172522009.png" alt="image-20200115172522009" style="zoom:80%;">
+</li>
+<li><p>更改识别后缀名，可以在编辑proto文件的时候能够高亮显示。</p>
+<img src="/2020/01/16/10-java%E7%BD%91%E7%BB%9C/2_protobuf/image-20200115172452881.png" alt="image-20200115172452881" style="zoom:80%;">
+
+</li>
+</ul>
+<p>以上三步配置完成之后，就可以在maven中看到下面这些操作了！</p>
+<img src="/2020/01/16/10-java%E7%BD%91%E7%BB%9C/2_protobuf/image-20200115172714689.png" alt="image-20200115172714689" style="zoom:80%;">
+
+<p>写完proto文件后，可以通过这一个操作来编译proto文件，并生成java。此后就可以正常使用了！！</p>
+<h2 id="4-语法"><a href="#4-语法" class="headerlink" title="4. 语法"></a>4. 语法</h2><h3 id="4-1-指定版本与包"><a href="#4-1-指定版本与包" class="headerlink" title="4.1 指定版本与包"></a>4.1 指定版本与包</h3><p>在proto文件的第一行添加下面一条语句表示使用protobuf3版本，如果没有本行语句，则默认使用protobuf2。</p>
+<p>同时，使用package可以指定包名，类似于namespace，解决不同消息的命名冲突问题。</p>
+<pre><code class="protobuf">syntax = &quot;proto3&quot;;
+package test; //声明了一个包名，用来防止不同的消息类型命名冲突，类似于 namespace </code></pre>
+<h3 id="4-2-消息内容"><a href="#4-2-消息内容" class="headerlink" title="4.2 消息内容"></a>4.2 消息内容</h3><p>消息由至少一个字段组合而成，类似于C语言中的结构，使用message关键字作为开头，每个字段都有一定的格式。</p>
+<p><strong>字段格式</strong>：</p>
+<p><strong>限定修饰符① | 数据类型② | 字段名称③ | = | 标识号④ | [默认值⑤]</strong></p>
+<p>例如下面的一个消息定义</p>
+<pre><code class="protobuf">message SearchRequest {
+    required string query = 1 [default = &quot;空&quot;];
+    repeated int32 page_number = 2;
+    optional int32 result_per_page = 3;
+    string requestID;
+}</code></pre>
+<p>字段中有以下三个要素：</p>
+<ul>
+<li><p><strong>① 限定修饰符</strong></p>
+<p><strong>在protobuf3中，限定修饰符只有两种：不写或者为repeated</strong>，但是在protobuf2中，限定修饰符有以下四种</p>
+<ul>
+<li><p>空：被修饰的字段有0个或者1个这种字段（不能超过1个）</p>
+</li>
+<li><p>repeated：被修饰的字段可以重复任意多次（包括0次）。重复值的顺序会被保留。</p>
+</li>
+<li><p>required：表示是一个必须字段，必须相对于发送方，在发送消息之前必须设置该字段的值，对于接收方，必须能够识别该字段的意思。发送之前没有设置required字段或者无法识别required字段都会引发编解码异常，导致消息被丢弃。</p>
+</li>
+<li><p>optional：表示是一个可选字段，可选对于发送方，在发送消息时，可以有选择性的设置或者不设置该字段的值。对于接收方，如果能够识别可选字段就进行相应的处理，如果无法识别，则忽略该字段，消息中的其它字段正常处理。</p>
+<blockquote>
+<p>因为optional字段的特性，很多接口在升级版本中都把后来添加的字段都统一的设置为optional字段，这样老的版本无需升级程序也可以正常的与新的软件进行通信，只不过新的字段无法识别而已，因为并不是每个节点都需要新的功能，因此可以做到按需升级和平滑过渡。</p>
+</blockquote>
+</li>
+</ul>
+</li>
+<li><p><strong>② 数据类型</strong></p>
+<p>例如query的字段类型就是string，page_number的字段类型是int32，result_per_page的字段类型是int32。</p>
+<p>关于具体的数据类型在4.3中详细列出</p>
+</li>
+<li><p><strong>④ 标识号</strong></p>
+<p><strong>每个字段</strong>都有唯一的一个数字标识符。这些标识符是用来在消息的二进制格式中识别各个字段的，一旦开始使用就不能够再改变。</p>
+<blockquote>
+<p>注：[1,15]之内的标识号在编码的时候会占用1个字节。[16,2047]之内的标识号则占用2个字节。</p>
+<p>所以应该为那些频繁出现的消息元素保留 [1,15]之内的标识号。</p>
+<p>切记：要为将来有可能添加的、频繁出现的标识号预留一些标识号。 </p>
+</blockquote>
+</li>
+<li><p><strong>⑤ 默认值</strong></p>
+<p>只有proto2中使用默认值，在proto3中的默认值是不可以使用的。</p>
+</li>
+</ul>
+<h3 id="4-3-数据类型"><a href="#4-3-数据类型" class="headerlink" title="4.3 数据类型"></a>4.3 数据类型</h3><ul>
+<li><p>基础类型：</p>
+<table>
+<thead>
+<tr>
+<th align="center">proto</th>
+<th align="center">java</th>
+<th align="center">C++</th>
+<th>备注</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">double</td>
+<td align="center">double</td>
+<td align="center">double</td>
+<td></td>
+</tr>
+<tr>
+<td align="center">float</td>
+<td align="center">float</td>
+<td align="center">float</td>
+<td></td>
+</tr>
+<tr>
+<td align="center">int32</td>
+<td align="center">int</td>
+<td align="center">int32</td>
+<td>使用可变长编码方式。编码负数时不够高效——如果你的字段可能含有负数，那么请使用sint32。</td>
+</tr>
+<tr>
+<td align="center">int64</td>
+<td align="center">long</td>
+<td align="center">int64</td>
+<td>使用可变长编码方式。编码负数时不够高效——如果你的字段可能含有负数，那么请使用sint64。</td>
+</tr>
+<tr>
+<td align="center">unit32</td>
+<td align="center">int[1]</td>
+<td align="center">unit32</td>
+<td>总是4个字节。如果数值总是比总是比228大的话，这个类型会比uint32高效。</td>
+</tr>
+<tr>
+<td align="center">unit64</td>
+<td align="center">long[1]</td>
+<td align="center">unit64</td>
+<td>总是8个字节。如果数值总是比总是比256大的话，这个类型会比uint64高效。</td>
+</tr>
+<tr>
+<td align="center">sint32</td>
+<td align="center">int</td>
+<td align="center">int32</td>
+<td>使用可变长编码方式。有符号的整型值。编码时比通常的int32高效。</td>
+</tr>
+<tr>
+<td align="center">sint64</td>
+<td align="center">long</td>
+<td align="center">int64</td>
+<td>使用可变长编码方式。有符号的整型值。编码时比通常的int64高效。</td>
+</tr>
+<tr>
+<td align="center">fixed32</td>
+<td align="center">int[1]</td>
+<td align="center">unit32</td>
+<td></td>
+</tr>
+<tr>
+<td align="center">fixed64</td>
+<td align="center">long[1]</td>
+<td align="center">unit64</td>
+<td>总是8个字节。如果数值总是比总是比256大的话，这个类型会比uint64高效。</td>
+</tr>
+<tr>
+<td align="center">sfixed32</td>
+<td align="center">int</td>
+<td align="center">int32</td>
+<td>总是4个字节。</td>
+</tr>
+<tr>
+<td align="center">sfixed64</td>
+<td align="center">long</td>
+<td align="center">int64</td>
+<td>总是8个字节。</td>
+</tr>
+<tr>
+<td align="center">bool</td>
+<td align="center">boolean</td>
+<td align="center">bool</td>
+<td></td>
+</tr>
+<tr>
+<td align="center">string</td>
+<td align="center">String</td>
+<td align="center">string</td>
+<td>一个字符串必须是UTF-8编码或者7-bit ASCII编码的文本。</td>
+</tr>
+<tr>
+<td align="center">bytes</td>
+<td align="center">ByteString</td>
+<td align="center">string</td>
+<td>可能包含任意顺序的字节数据</td>
+</tr>
+</tbody></table>
+</li>
+<li><p>特殊字段</p>
+<table>
+<thead>
+<tr>
+<th>英文</th>
+<th>中文</th>
+<th>备注</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>enum</td>
+<td>枚举(数字从零开始) 作用是为字段指定某”预定义值序列”</td>
+<td>enum Type {MAN = 0;WOMAN = 1; OTHER= 3;}</td>
+</tr>
+<tr>
+<td>message</td>
+<td>消息体</td>
+<td>message User{}</td>
+</tr>
+<tr>
+<td>repeated</td>
+<td>数组/集合</td>
+<td>repeated User users = 1</td>
+</tr>
+<tr>
+<td>import</td>
+<td>导入定义</td>
+<td>import “protos/other_protos.proto”</td>
+</tr>
+<tr>
+<td>//</td>
+<td>注释</td>
+<td>//用于注释</td>
+</tr>
+<tr>
+<td>extend</td>
+<td>扩展</td>
+<td>extend User {}</td>
+</tr>
+<tr>
+<td>package</td>
+<td>包名</td>
+<td>相当于命名空间，用来防止不同消息类型的明明冲突</td>
+</tr>
+</tbody></table>
+</li>
+</ul>
+<h3 id="4-4-service"><a href="#4-4-service" class="headerlink" title="4.4 service"></a>4.4 service</h3><ul>
+<li><p>定义服务</p>
+<p>如果想要将消息类型用在RPC(远程方法调用)系统中，可以在.proto文件中定义一个RPC服务接口，protocol buffer编译器将会根据所选择的不同语言生成服务接口代码及存根。如，想要定义一个RPC服务并具有一个方法，该方法能够接收 SearchRequest并返回一个SearchResponse，此时可以在.proto文件中进行如下定义：</p>
+<pre><code class="protobuf">service SearchService {
+
+  rpc Search (SearchRequest) returns (SearchResponse);
+
+}</code></pre>
+</li>
+</ul>
+<h3 id="4-5-option"><a href="#4-5-option" class="headerlink" title="4.5 option"></a>4.5 option</h3><p>在proto文件开始的时候使用option来定义的值表示一些可选项，有以下这些：</p>
+<ul>
+<li><p><code>option java_multiple_files = true;</code></p>
+</li>
+<li><p><code>option java_package = &quot;test.package1&quot;;</code></p>
+<p>表明生成java类所在的包。如果在.proto文件中没有明确的声明java_package，就采用默认的包名。 </p>
+<p>例如 <code>option java_package = &quot;com.example.foo&quot;;</code>后面proto编译生成的java类就属于这个包。</p>
+<blockquote>
+<p>java_package指定生成的类应该以什么样的java包名存在。如果没有明确指定，它只是与包声明中给出的包名相匹配，但是这些名称通常不是合适的Java包名(因为它们通常不以域名开头)。java_outer_classname选项定义了应该包含该文件中所有类的类名。如果没有明确给出java_outer_classname，它将通过将文件名转换为camel大小写来生成。例如，默认情况下，“my_proto.proto”将使用“MyProto”作为外部类名。</p>
+</blockquote>
+</li>
+<li><p><code>option java_outer_classname = &quot;TestClass1&quot;;</code></p>
+<p>是文件级别的选项，表明<strong>想要生成Java类的名称</strong>。如果在.proto文件中没有明确的java_outer_classname定义，生成的class名称将会根据.proto文件的名称采用驼峰式的命名方式进行生成。如（foo_bar.proto生成的java类名为FooBar.java）,如果不生成java代码，则该选项不起任何作用。</p>
+</li>
+</ul>
+<p>前面提到的java_package和java_outer_classname和生成的java文件之间的关系如下：箭头指向的java文件就是通过proto文件生成的java类</p>
+<p><img src="/2020/01/16/10-java%E7%BD%91%E7%BB%9C/2_protobuf/image-20200116103419529.png" alt="image-20200116103419529"></p>
+<h2 id="5-使用"><a href="#5-使用" class="headerlink" title="5. 使用"></a>5. 使用</h2><p>在编译生成java类之后，在需要使用的地方直接将其import进来就可以了。</p>
+<p>下面是一个例子：</p>
+<h3 id="5-1-proto文件定义"><a href="#5-1-proto文件定义" class="headerlink" title="5.1 proto文件定义"></a>5.1 proto文件定义</h3><pre><code class="protobuf">syntax = &quot;proto3&quot;;     // 指定protobuf的版本为3
+package tutorial;      // 指定命名空间为tutorial
+
+option java_package = &quot;com.example.tutorial&quot;;        // 生成的java类的package名字
+option java_outer_classname = &quot;AddressBookProtos&quot;;    // 生成的java类名称
+
+message Person {
+    string name = 1;
+    int32 id = 2;
+    string email = 3;
+
+    enum PhoneType {
+        MOBILE = 0;
+        HOME = 1;
+        WORK = 2;
+    }
+
+    message PhoneNumber {
+        string number = 1;
+        PhoneType type = 2;
+    }
+
+    repeated PhoneNumber phones = 4;
+}
+
+message AddressBook {
+    repeated Person people = 1;
+}</code></pre>
+<p>通过这个proto文件生成的java类实际上是一个标准的javabean风格的类，可以访问其中的各个字段，并且可以对各个字段进行读写操作。</p>
+<h3 id="5-2-访问message中的各个字段"><a href="#5-2-访问message中的各个字段" class="headerlink" title="5.2 访问message中的各个字段"></a>5.2 访问message中的各个字段</h3><p>对于Person类，会生成以下这些方法来对message中的各个字段进行访问：</p>
+<pre><code class="java">// string name = 1;
+public boolean hasName();
+public String getName();
+
+// int32 id = 2;
+public boolean hasId();
+public int getId();
+
+// string email = 3;
+public boolean hasEmail();
+public String getEmail();
+
+// repeated .tutorial.Person.PhoneNumber phones = 4;
+public List&lt;PhoneNumber&gt; getPhonesList();
+public int getPhonesCount();
+public PhoneNumber getPhones(int index);</code></pre>
+<h3 id="5-3-Builder"><a href="#5-3-Builder" class="headerlink" title="5.3 Builder"></a>5.3 Builder</h3><h4 id="5-3-1-读取、设置字段"><a href="#5-3-1-读取、设置字段" class="headerlink" title="5.3.1 读取、设置字段"></a>5.3.1 读取、设置字段</h4><p>builder中可以对各个字段进行判断有无、读取、设置，并且可以使用clear进行清除。</p>
+<pre><code class="java">// required string name = 1;
+public boolean hasName();
+public java.lang.String getName();
+public Builder setName(String value);
+public Builder clearName();
+
+// required int32 id = 2;
+public boolean hasId();
+public int getId();
+public Builder setId(int value);
+public Builder clearId();
+
+// optional string email = 3;
+public boolean hasEmail();
+public String getEmail();
+public Builder setEmail(String value);
+public Builder clearEmail();
+
+// repeated .tutorial.Person.PhoneNumber phones = 4;
+public List&lt;PhoneNumber&gt; getPhonesList();
+public int getPhonesCount();
+public PhoneNumber getPhones(int index);
+public Builder setPhones(int index, PhoneNumber value);
+public Builder addPhones(PhoneNumber value);
+public Builder addAllPhones(Iterable&lt;PhoneNumber&gt; value);
+public Builder clearPhones();</code></pre>
+<h4 id="5-3-2-标准化方法"><a href="#5-3-2-标准化方法" class="headerlink" title="5.3.2 标准化方法"></a>5.3.2 标准化方法</h4><p>Builder中还有一些处理标准化的方法，如下所示：</p>
+<pre><code class="java">isInitialized();             // 检查是否所有必填字段都已设置。
+
+toString();                    // 返回字符串消息。
+
+mergeFrom(Message other);     // (仅Builder) 将其他的内容合并到此消息中，
+                           //覆盖单个标量字段，合并复合字段，并连接重复的字段。
+
+clear();                    // (仅Builder) 将所有字段清除回空状态。</code></pre>
+<h4 id="5-3-3-解析与序列化"><a href="#5-3-3-解析与序列化" class="headerlink" title="5.3.3 解析与序列化"></a>5.3.3 解析与序列化</h4><pre><code class="java">byte[] toByteArray();    //序列化消息并返回包含原始字节的字节数组。
+
+static Person parseFrom(byte[] data);    //解析给定字节数组中的消息。
+
+void writeTo(OutputStream output);    //序列化消息并将其写入输出流。
+
+static Person parseFrom(InputStream input);    //读取并解析来自输入流的消息。</code></pre>
+<h3 id="5-4-创建实例"><a href="#5-4-创建实例" class="headerlink" title="5.4 创建实例"></a>5.4 创建实例</h3><pre><code class="java">Person john =
+    Person.newBuilder()
+        .setId(1234)
+        .setName(&quot;John&quot;)
+        .setEmail(&quot;jdoe@example.com&quot;)
+        .addPhones( // 注意，对于repeated的类型，需要使用add而不是set
+            Person.PhoneNumber.newBuilder()
+                .setNumber(&quot;555-4321&quot;)
+                .setType(Person.PhoneType.HOME)
+        )
+        .build();</code></pre>
+<h3 id="5-5-实际使用"><a href="#5-5-实际使用" class="headerlink" title="5.5 实际使用"></a>5.5 实际使用</h3><h4 id="5-5-1-生成消息"><a href="#5-5-1-生成消息" class="headerlink" title="5.5.1 生成消息"></a>5.5.1 生成消息</h4><p>下面这些代码的作用就是将输入的内容转换为protobuf类型的消息类型，并且将其写入文件，文件名为argv[0]。</p>
+<pre><code class="java">package com.example.tutorial;
+
+import com.example.tutorial.AddressBookProtos.Person;
+
+import com.example.tutorial.AddressBookProtos.AddressBook;
+import com.example.tutorial.AddressBookProtos.Person;
+import java.io.BufferedReader;
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
+import java.io.FileOutputStream;
+import java.io.InputStreamReader;
+import java.io.IOException;
+import java.io.PrintStream;
+
+public class HelloWorld {
+    // This function fills in a Person message based on user input.
+    static Person PromptForAddress(BufferedReader stdin,
+                                   PrintStream stdout) throws IOException {
+        // 创建一个Person消息的Builder
+        Person.Builder person = Person.newBuilder();
+        // 通过builder对消息的各个字段进行填充
+        stdout.print(&quot;Enter person ID: &quot;);
+        person.setId(Integer.valueOf(stdin.readLine()));
+
+        stdout.print(&quot;Enter name: &quot;);
+        person.setName(stdin.readLine());
+
+        stdout.print(&quot;Enter email address (blank for none): &quot;);
+        String email = stdin.readLine();
+        if (email.length() &gt; 0) {
+            person.setEmail(email);
+        }
+
+        while (true) {
+            stdout.print(&quot;Enter a phone number (or leave blank to finish): &quot;);
+            String number = stdin.readLine();
+            if (number.length() == 0) {
+                break;
+            }
+
+            Person.PhoneNumber.Builder phoneNumber =
+                    Person.PhoneNumber.newBuilder().setNumber(number);
+
+            stdout.print(&quot;Is this a mobile, home, or work phone? &quot;);
+            String type = stdin.readLine();
+            if (type.equals(&quot;mobile&quot;)) {
+                phoneNumber.setType(Person.PhoneType.MOBILE);
+            } else if (type.equals(&quot;home&quot;)) {
+                phoneNumber.setType(Person.PhoneType.HOME);
+            } else if (type.equals(&quot;work&quot;)) {
+                phoneNumber.setType(Person.PhoneType.WORK);
+            } else {
+                stdout.println(&quot;Unknown phone type.  Using default.&quot;);
+            }
+
+            person.addPhones(phoneNumber);
+        }
+        // 最终通过build方法将builder生成一个实际的对象。
+        return person.build();
+    }
+
+    // Main function:  Reads the entire address book from a file,
+    //   adds one person based on user input, then writes it back out to the same
+    //   file.
+    public static void main(String[] args) throws Exception {
+        if (args.length != 1) {
+            System.err.println(&quot;Usage:  AddPerson ADDRESS_BOOK_FILE&quot;);
+            System.exit(-1);
+        }
+
+        AddressBook.Builder addressBook = AddressBook.newBuilder();
+
+        // Read the existing address book.
+        try {
+            addressBook.mergeFrom(new FileInputStream(args[0]));
+        } catch (FileNotFoundException e) {
+            System.out.println(args[0] + &quot;: File not found.  Creating a new file.&quot;);
+        }
+
+        // Add an address.
+        addressBook.addPeople(
+                PromptForAddress(new BufferedReader(new InputStreamReader(System.in)),
+                        System.out));
+
+        // Write the new address book back to disk.
+        FileOutputStream output = new FileOutputStream(args[0]);
+        addressBook.build().writeTo(output);
+        output.close();
+    }
+}</code></pre>
+<h4 id="5-5-2-读取消息"><a href="#5-5-2-读取消息" class="headerlink" title="5.5.2 读取消息"></a>5.5.2 读取消息</h4><p>上面一节生成的相关消息是写在指定的文件中的，如果想要读取刚才写的数据，则需要使用下面的方法从文件中进行读取。</p>
+<pre><code class="java">import com.example.tutorial.AddressBookProtos.AddressBook;
+import com.example.tutorial.AddressBookProtos.Person;
+import java.io.FileInputStream;
+import java.io.IOException;
+import java.io.PrintStream;
+
+class ListPeople {
+  // Iterates though all people in the AddressBook and prints info about them.
+  static void Print(AddressBook addressBook) {
+    for (Person person: addressBook.getPeopleList()) {
+      System.out.println(&quot;Person ID: &quot; + person.getId());
+      System.out.println(&quot;  Name: &quot; + person.getName());
+      if (person.hasEmail()) {
+        System.out.println(&quot;  E-mail address: &quot; + person.getEmail());
+      }
+
+      for (Person.PhoneNumber phoneNumber : person.getPhonesList()) {
+        switch (phoneNumber.getType()) {
+          case MOBILE:
+            System.out.print(&quot;  Mobile phone #: &quot;);
+            break;
+          case HOME:
+            System.out.print(&quot;  Home phone #: &quot;);
+            break;
+          case WORK:
+            System.out.print(&quot;  Work phone #: &quot;);
+            break;
+        }
+        System.out.println(phoneNumber.getNumber());
+      }
+    }
+  }
+
+  // Main function:  Reads the entire address book from a file and prints all
+  //   the information inside.
+  public static void main(String[] args) throws Exception {
+    if (args.length != 1) {
+      System.err.println(&quot;Usage:  ListPeople ADDRESS_BOOK_FILE&quot;);
+      System.exit(-1);
+    }
+
+    // Read the existing address book.
+    AddressBook addressBook =
+      AddressBook.parseFrom(new FileInputStream(args[0]));
+
+    Print(addressBook);
+  }
+}</code></pre>
+
+      
+       
+    </div>
+</article>
+
+
+
+
+
+
+
+    
+
+
+
+
+    </div>
+    <div class="copyright">
+        <p class="footer-entry">©2019-2020 POWDER SNOW</p>
+
+    </div>
+    <div class="full-toc">
+        <button class="full"><span class="min "></span></button>
+<button class="post-toc-menu"><span class="post-toc-menu-icons"></span></button>
+<div class="post-toc"><span class="post-toc-title">目录</span>
+    <div class="post-toc-content">
+
+    </div>
+</div>
+<a class="" id="rocket" ></a>
+
+    </div>
+</div>
+<div class="acParent"></div>
+
+</body>
+<script src="/js/jquery.pjax.js?v=1.0.1" ></script>
+
+<script src="/js/script.js?v=1.0.1" ></script>
+<script>
+    var img_resize = 'default';
+    /*作者、标签的自动补全*/
+    $(function () {
+        $('.search').AutoComplete({
+            'data': ['#HTTP','#protobuf','#MySQL SQL','#Spring','#java','#QT','#区块链','#分布式','#大数据','#前端','#MyBatis','#SpringBoot','#网络编程','#Redis','#多线程','#数据库',],
+            'itemHeight': 20,
+            'width': 418
+        }).AutoComplete('show');
+    })
+    function initArticle() {
+        /*渲染对应的表格样式*/
+        
+            $(".post .pjax table").addClass("green_title");
+        
+
+        /*渲染打赏样式*/
+        
+
+        /*高亮代码块行号*/
+        
+
+        /*访问数量*/
+        
+
+        /*代码高亮，行号对齐*/
+        $('.pre-numbering').css('line-height',$('.has-numbering').css('line-height'));
+
+        
+        
+    }
+
+    /*打赏页面隐藏与展示*/
+    
+
+</script>
+
+<!--加入行号的高亮代码块样式-->
+
+<!--自定义样式设置-->
+<style>
+    
+    
+    .nav {
+        width: 544px;
+    }
+    .nav.fullscreen {
+        margin-left: -544px;
+    }
+    .nav-left {
+        width: 122px;
+    }
+    
+    
+    @media screen and (max-width: 1468px) {
+        .nav {
+            width: 492px;
+        }
+        .nav.fullscreen {
+            margin-left: -492px;
+        }
+        .nav-left {
+            width: 100px;
+        }
+    }
+    
+    
+    @media screen and (max-width: 1024px) {
+        .nav {
+            width: 492px;
+            margin-left: -492px
+        }
+        .nav.fullscreen {
+            margin-left: 0;
+        }
+        .nav .hide-list.fullscreen {
+            left: 492px
+        }
+    }
+    
+    @media screen and (max-width: 426px) {
+        .nav {
+            width: 100%;
+        }
+        .nav-left {
+            width: 100%;
+        }
+    }
+    
+    
+    .nav-right .title-list nav a .post-title, .nav-right .title-list #local-search-result a .post-title {
+        color: #383636;
+    }
+    
+    
+    .nav-right .title-list nav a .post-date, .nav-right .title-list #local-search-result a .post-date {
+        color: #5e5e5f;
+    }
+    
+    
+    .nav-right nav a.hover, #local-search-result a.hover{
+        background-color: #fbf4a8;
+    }
+    
+    
+
+    /*列表样式*/
+    
+    .post .pjax article .article-entry>ol, .post .pjax article .article-entry>ul, .post .pjax article>ol, .post .pjax article>ul{
+        border: #e2dede solid 1px;
+        border-radius: 10px;
+        padding: 10px 32px 10px 56px;
+    }
+    .post .pjax article .article-entry li>ol, .post .pjax article .article-entry li>ul,.post .pjax article li>ol, .post .pjax article li>ul{
+        padding-top: 5px;
+        padding-bottom: 5px;
+    }
+    .post .pjax article .article-entry>ol>li, .post .pjax article .article-entry>ul>li,.post .pjax article>ol>li, .post .pjax article>ul>li{
+        margin-bottom: auto;
+        margin-left: auto;
+    }
+    .post .pjax article .article-entry li>ol>li, .post .pjax article .article-entry li>ul>li,.post .pjax article li>ol>li, .post .pjax article li>ul>li{
+        margin-bottom: auto;
+        margin-left: auto;
+    }
+    
+
+    /* 背景图样式 */
+    
+    .post {
+        background: url(/img/bck.jpg);
+    }
+    
+    
+    .post.index {
+        background: url(/img/background.jpg);
+    }
+    
+
+
+    /*引用块样式*/
+    
+
+    /*文章列表背景图*/
+    
+    .nav-right:before {
+        content: ' ';
+        display: block;
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        opacity: 0.3;
+        background: url("/img/123.jpg");
+        background-repeat: no-repeat;
+        background-position: 50% 0;
+        -ms-background-size: cover;
+        -o-background-size: cover;
+        -moz-background-size: cover;
+        -webkit-background-size: cover;
+        background-size: cover;
+    }
+    
+
+    
+</style>
+
+
+
+
+
+
+
+</html>

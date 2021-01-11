@@ -1,0 +1,1814 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>【hadoop 2】hadoop三种模式使用 | POWDER SNOW</title>
+  <meta name="keywords" content=" 大数据 ">
+  <meta name="description" content="【hadoop 2】hadoop三种模式使用 | POWDER SNOW">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<meta property="og:type" content="website">
+<meta property="og:title" content="categories">
+<meta property="og:url" content="http://yoursite.com/categories/index.html">
+<meta property="og:site_name" content="POWDER SNOW">
+<meta property="article:published_time" content="2018-03-02T04:33:16.000Z">
+<meta property="article:modified_time" content="2020-03-05T13:28:59.839Z">
+<meta property="article:author" content="冯冠雄">
+<meta name="twitter:card" content="summary">
+
+
+<link rel="icon" href="/img/avatar.jpg">
+
+<link href="/css/style.css?v=1.0.1" rel="stylesheet">
+
+<link href="/css/hl_theme/atom-light.css?v=1.0.1" rel="stylesheet">
+
+<link href="//cdn.bootcss.com/animate.css/3.5.2/animate.min.css" rel="stylesheet">
+<link href="//cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+
+<script src="//cdn.bootcss.com/jquery/2.2.4/jquery.min.js"></script>
+<script src="/js/jquery.autocomplete.min.js?v=1.0.1" ></script>
+
+<script src="//cdn.bootcss.com/highlight.js/9.12.0/highlight.min.js"></script>
+<script>
+    hljs.initHighlightingOnLoad();
+</script>
+
+<script src="//cdn.bootcss.com/nprogress/0.2.0/nprogress.min.js"></script>
+
+
+
+<script src="//cdn.bootcss.com/jquery-cookie/1.4.1/jquery.cookie.min.js" ></script>
+
+<script src="/js/iconfont.js?v=1.0.1" ></script>
+
+<meta name="generator" content="Hexo 4.2.0"></head>
+<div style="display: none">
+  <input class="theme_disqus_on" value="false">
+  <input class="theme_preload_comment" value="false">
+  <input class="theme_blog_path" value="">
+</div>
+
+<body>
+<aside class="nav">
+    <div class="nav-left">
+        <a href="/" class="avatar_target">
+    <img class="avatar" src="/img/avatar.jpg" />
+</a>
+<div class="author">
+    <span>冯冠雄</span>
+</div>
+
+<div class="icon">
+    
+        
+        <a title="github" href="https://github.com/xiong-Fgx" target="_blank">
+            
+                <svg class="iconfont-svg" aria-hidden="true">
+                    <use xlink:href="#icon-github"></use>
+                </svg>
+            
+        </a>
+        
+    
+        
+        <a title="linkedin" href="https://www.linkedin.com/in/guanxiong-feng-8b6aa8179" target="_blank">
+            
+                <svg class="iconfont-svg" aria-hidden="true">
+                    <use xlink:href="#icon-linkedin"></use>
+                </svg>
+            
+        </a>
+        
+    
+        
+        <a title="email" href="mailto:guanxiongf@gmail.com" target="_blank">
+            
+                <svg class="iconfont-svg" aria-hidden="true">
+                    <use xlink:href="#icon-email"></use>
+                </svg>
+            
+        </a>
+        
+    
+</div>
+
+
+
+
+<ul>
+    <li><div class="all active">全部文章</div></li>
+    
+        
+            
+            <li><div data-rel="网络"><i class="fold iconfont icon-right"></i>网络</div>
+                
+                    <ul class="sub hide">
+                        
+                        <li><div data-rel="HTTP">HTTP</div>
+                            
+                        </li>
+                            
+                        <li><div data-rel="protobuf">protobuf</div>
+                            
+                        </li>
+                            
+                        <li><div data-rel="网络编程">网络编程</div>
+                            
+                        </li>
+                            
+                    </ul>
+                
+            </li>
+            
+        
+    
+        
+            
+            <li><div data-rel="数据库">数据库</div>
+                
+            </li>
+            
+        
+    
+        
+            
+        
+    
+        
+            
+            <li><div data-rel="SSM"><i class="fold iconfont icon-right"></i>SSM</div>
+                
+                    <ul class="sub hide">
+                        
+                        <li><div data-rel="SSM整合">SSM整合</div>
+                            
+                        </li>
+                            
+                        <li><div data-rel="Spring">Spring</div>
+                            
+                        </li>
+                            
+                        <li><div data-rel="SpringMVC">SpringMVC</div>
+                            
+                        </li>
+                            
+                        <li><div data-rel="MyBatis">MyBatis</div>
+                            
+                        </li>
+                            
+                        <li><div data-rel="SpringBoot">SpringBoot</div>
+                            
+                        </li>
+                            
+                    </ul>
+                
+            </li>
+            
+        
+    
+        
+            
+        
+    
+        
+            
+        
+    
+        
+            
+        
+    
+        
+            
+        
+    
+        
+            
+            <li><div data-rel="客户端"><i class="fold iconfont icon-right"></i>客户端</div>
+                
+                    <ul class="sub hide">
+                        
+                        <li><div data-rel="QT">QT</div>
+                            
+                        </li>
+                            
+                    </ul>
+                
+            </li>
+            
+        
+    
+        
+            
+            <li><div data-rel="区块链"><i class="fold iconfont icon-right"></i>区块链</div>
+                
+                    <ul class="sub hide">
+                        
+                        <li><div data-rel="论文">论文</div>
+                            
+                        </li>
+                            
+                        <li><div data-rel="Fabric">Fabric</div>
+                            
+                        </li>
+                            
+                        <li><div data-rel="fabric">fabric</div>
+                            
+                        </li>
+                            
+                    </ul>
+                
+            </li>
+            
+        
+    
+        
+            
+            <li><div data-rel="分布式">分布式</div>
+                
+            </li>
+            
+        
+    
+        
+            
+            <li><div data-rel="大数据"><i class="fold iconfont icon-right"></i>大数据</div>
+                
+                    <ul class="sub hide">
+                        
+                        <li><div data-rel="hadoop">hadoop</div>
+                            
+                        </li>
+                            
+                    </ul>
+                
+            </li>
+            
+        
+    
+        
+            
+            <li><div data-rel="前端"><i class="fold iconfont icon-right"></i>前端</div>
+                
+                    <ul class="sub hide">
+                        
+                        <li><div data-rel="HTML">HTML</div>
+                            
+                        </li>
+                            
+                        <li><div data-rel="CSS">CSS</div>
+                            
+                        </li>
+                            
+                    </ul>
+                
+            </li>
+            
+        
+    
+        
+            
+        
+    
+        
+            
+        
+    
+        
+            
+        
+    
+        
+            
+        
+    
+        
+            
+        
+    
+        
+            
+            <li><div data-rel="笔记">笔记</div>
+                
+            </li>
+            
+        
+    
+        
+            
+        
+    
+        
+            
+        
+    
+        
+            
+        
+    
+        
+            
+        
+    
+        
+            
+        
+    
+</ul>
+<div class="left-bottom">
+    <div class="menus">
+    
+    
+    
+    
+    </div>
+    <div></div>
+</div>
+<input type="hidden" id="yelog_site_posts_number" value="71">
+
+<div style="display: none">
+    <span id="busuanzi_value_site_uv"></span>
+    <span id="busuanzi_value_site_pv"></span>
+</div>
+
+    </div>
+    <div class="nav-right">
+        <div class="friends-area">
+    <div class="friends-title">
+        友情链接
+        <i class="back-title-list"></i>
+    </div>
+    <div class="friends-content">
+        <ul>
+            
+            <li><a target="_blank" href="http://yelog.org/">叶落阁</a></li>
+            
+        </ul>
+    </div>
+</div>
+        <div class="title-list">
+    <form onkeydown="if(event.keyCode === 13){return false;}">
+        <input id="local-search-input" class="search" type="text" placeholder="Search..." />
+        <i class="cross"></i>
+        <span>
+            <label for="tagswitch">Tags:</label>
+            <input id="tagswitch" type="checkbox" style="display: none" />
+            <i id="tagsWitchIcon"></i>
+        </span>
+    </form>
+    <div class="tags-list">
+    
+    <li class="article-tag-list-item">
+        <a class="color5">HTTP</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a class="color4">protobuf</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a class="color5">MySQL SQL</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a class="color2">Spring</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a class="color5">java</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a class="color3">QT</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a class="color4">区块链</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a class="color4">分布式</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a class="color4">大数据</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a class="color3">前端</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a class="color3">MyBatis</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a class="color1">SpringBoot</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a class="color5">网络编程</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a class="color1">Redis</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a class="color4">多线程</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a class="color4">数据库</a>
+    </li>
+    
+    <div class="clearfix"></div>
+</div>
+
+    
+    <nav id="title-list-nav">
+        
+        <a  class="前端 CSS "
+           href="/2021/01/11/html/4_%E7%9B%92%E5%AD%90%E6%A8%A1%E5%9E%8B/"
+           data-tag="前端"
+           data-author="" >
+            <span class="post-title" title="【前端 4】盒子模型">【前端 4】盒子模型</span>
+            <span class="post-date" title="2021-01-11 09:41:10">2021/01/11</span>
+        </a>
+        
+        <a  class="前端 CSS "
+           href="/2021/01/09/html/3_CSS%E8%BF%9B%E9%98%B6/"
+           data-tag="前端"
+           data-author="" >
+            <span class="post-title" title="【前端 3】CSS进阶">【前端 3】CSS进阶</span>
+            <span class="post-date" title="2021-01-09 09:43:10">2021/01/09</span>
+        </a>
+        
+        <a  class="前端 CSS "
+           href="/2021/01/05/html/2_CSS/"
+           data-tag="前端"
+           data-author="" >
+            <span class="post-title" title="【前端 2】CSS">【前端 2】CSS</span>
+            <span class="post-date" title="2021-01-05 16:22:10">2021/01/05</span>
+        </a>
+        
+        <a  class="前端 HTML "
+           href="/2021/01/04/html/1_html/"
+           data-tag="前端"
+           data-author="" >
+            <span class="post-title" title="【前端 1】HTML">【前端 1】HTML</span>
+            <span class="post-date" title="2021-01-04 10:46:10">2021/01/04</span>
+        </a>
+        
+        <a  class="区块链 fabric "
+           href="/2020/12/12/fabric/08_%E9%93%BE%E7%A0%81/"
+           data-tag="区块链"
+           data-author="" >
+            <span class="post-title" title="07_链码接口使用">07_链码接口使用</span>
+            <span class="post-date" title="2020-12-12 11:43:23">2020/12/12</span>
+        </a>
+        
+        <a  class="区块链 fabric "
+           href="/2020/12/12/fabric/02_%E9%83%A8%E7%BD%B2%E8%B0%83%E7%94%A8%E9%93%BE%E7%A0%81/"
+           data-tag="区块链"
+           data-author="" >
+            <span class="post-title" title="02_部署调用链码">02_部署调用链码</span>
+            <span class="post-date" title="2020-12-12 10:56:23">2020/12/12</span>
+        </a>
+        
+        <a  class="区块链 fabric "
+           href="/2020/12/09/fabric/07_dockerCompose%E5%90%AF%E5%8A%A8fabric/"
+           data-tag="区块链"
+           data-author="" >
+            <span class="post-title" title="06_docker compose启动节点">06_docker compose启动节点</span>
+            <span class="post-date" title="2020-12-09 11:35:23">2020/12/09</span>
+        </a>
+        
+        <a  class="区块链 fabric "
+           href="/2020/12/09/fabric/03_%E7%BD%91%E7%BB%9C%E7%BB%93%E6%9E%84%E5%8F%98%E5%8A%A8/"
+           data-tag="区块链"
+           data-author="" >
+            <span class="post-title" title="03_用户结构变动">03_用户结构变动</span>
+            <span class="post-date" title="2020-12-09 10:35:23">2020/12/09</span>
+        </a>
+        
+        <a  class="区块链 fabric "
+           href="/2020/12/02/fabric/01_%E6%90%AD%E5%BB%BA%E5%9F%BA%E7%A1%80%E7%BD%91%E7%BB%9C/"
+           data-tag="区块链"
+           data-author="" >
+            <span class="post-title" title="01_搭建基础网络">01_搭建基础网络</span>
+            <span class="post-date" title="2020-12-02 11:05:23">2020/12/02</span>
+        </a>
+        
+        <a  class="区块链 fabric "
+           href="/2020/12/01/fabric/05_java%20SDK%E4%BD%BF%E7%94%A8/"
+           data-tag="区块链"
+           data-author="" >
+            <span class="post-title" title="05_javaSDK使用">05_javaSDK使用</span>
+            <span class="post-date" title="2020-12-01 15:04:23">2020/12/01</span>
+        </a>
+        
+        <a  class="区块链 fabric "
+           href="/2020/12/01/fabric/04_%E7%94%A8%E6%88%B7%E4%BD%BF%E7%94%A8%E9%93%BE%E7%A0%81/"
+           data-tag="区块链"
+           data-author="" >
+            <span class="post-title" title="04_用户使用链码">04_用户使用链码</span>
+            <span class="post-date" title="2020-12-01 10:55:23">2020/12/01</span>
+        </a>
+        
+        <a  class="大数据 hadoop "
+           href="/2020/11/26/hadoop/%E5%AE%89%E8%A3%85/"
+           data-tag="大数据"
+           data-author="" >
+            <span class="post-title" title="【hadoop 3】hadoop分布式安装总结">【hadoop 3】hadoop分布式安装总结</span>
+            <span class="post-date" title="2020-11-26 17:50:09">2020/11/26</span>
+        </a>
+        
+        <a  class="客户端 QT "
+           href="/2020/10/29/QT/4_%E6%A8%A1%E5%9E%8B%20%E8%A7%86%E5%9B%BE%E7%BB%93%E6%9E%84/"
+           data-tag="QT"
+           data-author="" >
+            <span class="post-title" title="【QT 3】模型-视图结构">【QT 3】模型-视图结构</span>
+            <span class="post-date" title="2020-10-29 16:49:10">2020/10/29</span>
+        </a>
+        
+        <a  class="客户端 QT "
+           href="/2020/10/28/QT/3_%E6%8E%A7%E4%BB%B6/"
+           data-tag="QT"
+           data-author="" >
+            <span class="post-title" title="【QT 2】控件">【QT 2】控件</span>
+            <span class="post-date" title="2020-10-28 16:55:10">2020/10/28</span>
+        </a>
+        
+        <a  class="客户端 QT "
+           href="/2020/10/28/QT/2_%E5%B8%83%E5%B1%80%E7%AE%A1%E7%90%86/"
+           data-tag="QT"
+           data-author="" >
+            <span class="post-title" title="【QT 1】布局管理">【QT 1】布局管理</span>
+            <span class="post-date" title="2020-10-28 14:37:10">2020/10/28</span>
+        </a>
+        
+        <a  class="客户端 QT "
+           href="/2020/10/20/QT/QT%E7%95%8C%E9%9D%A2%E7%BC%96%E8%BE%91%E5%99%A8/"
+           data-tag="QT"
+           data-author="" >
+            <span class="post-title" title="【QT 4】QT界面编辑器">【QT 4】QT界面编辑器</span>
+            <span class="post-date" title="2020-10-20 15:52:10">2020/10/20</span>
+        </a>
+        
+        <a  class="SSM Spring "
+           href="/2020/06/01/%E7%AC%94%E8%AE%B0/spring/"
+           data-tag="Spring"
+           data-author="" >
+            <span class="post-title" title="【笔记】Spring总结">【笔记】Spring总结</span>
+            <span class="post-date" title="2020-06-01 03:57:17">2020/06/01</span>
+        </a>
+        
+        <a  class="笔记 "
+           href="/2020/05/12/%E7%AC%94%E8%AE%B0/%E6%95%B0%E6%8D%AE%E5%BA%93/"
+           data-tag="数据库"
+           data-author="" >
+            <span class="post-title" title="【笔记】数据库与MySQL">【笔记】数据库与MySQL</span>
+            <span class="post-date" title="2020-05-12 21:38:05">2020/05/12</span>
+        </a>
+        
+        <a  class="笔记 "
+           href="/2020/05/07/%E7%AC%94%E8%AE%B0/redis/"
+           data-tag="Redis"
+           data-author="" >
+            <span class="post-title" title="【笔记】Redis">【笔记】Redis</span>
+            <span class="post-date" title="2020-05-07 18:38:05">2020/05/07</span>
+        </a>
+        
+        <a  class="笔记 "
+           href="/2020/04/25/%E7%AC%94%E8%AE%B0/%E5%A4%9A%E7%BA%BF%E7%A8%8B/"
+           data-tag="多线程"
+           data-author="" >
+            <span class="post-title" title="【笔记】java并发">【笔记】java并发</span>
+            <span class="post-date" title="2020-04-25 15:38:01">2020/04/25</span>
+        </a>
+        
+        <a  class="大数据 hadoop "
+           href="/2020/03/18/hadoop/2_%E4%BD%BF%E7%94%A8hadoop/"
+           data-tag="大数据"
+           data-author="" >
+            <span class="post-title" title="【hadoop 2】hadoop三种模式使用">【hadoop 2】hadoop三种模式使用</span>
+            <span class="post-date" title="2020-03-18 17:49:04">2020/03/18</span>
+        </a>
+        
+        <a  class="SSM SpringBoot "
+           href="/2020/03/18/springboot/3_springboot%E7%9A%84%E9%85%8D%E7%BD%AE/"
+           data-tag="SpringBoot"
+           data-author="" >
+            <span class="post-title" title="【SpringBoot 02】配置文件">【SpringBoot 02】配置文件</span>
+            <span class="post-date" title="2020-03-18 12:58:23">2020/03/18</span>
+        </a>
+        
+        <a  class="SSM SpringBoot "
+           href="/2020/03/17/springboot/2_springboot%E7%9A%84helloworld/"
+           data-tag="SpringBoot"
+           data-author="" >
+            <span class="post-title" title="【SpringBoot 01】HelloWorld">【SpringBoot 01】HelloWorld</span>
+            <span class="post-date" title="2020-03-17 19:58:23">2020/03/17</span>
+        </a>
+        
+        <a  class="SSM SSM整合 "
+           href="/2020/03/05/3-SpringMVC/1_%E6%90%AD%E5%BB%BAspring/"
+           data-tag="java"
+           data-author="" >
+            <span class="post-title" title="【SSM实战】SSM框架整合">【SSM实战】SSM框架整合</span>
+            <span class="post-date" title="2020-03-05 20:37:01">2020/03/05</span>
+        </a>
+        
+        <a  class="SSM SpringMVC "
+           href="/2020/03/05/3-SpringMVC/7_SpringMVC%E5%BC%82%E5%B8%B8%E5%A4%84%E7%90%86%E4%B8%8E%E6%8B%A6%E6%88%AA%E5%99%A8/"
+           data-tag="java"
+           data-author="" >
+            <span class="post-title" title="【SpringMVC实战6】异常处理与拦截器">【SpringMVC实战6】异常处理与拦截器</span>
+            <span class="post-date" title="2020-03-05 13:06:19">2020/03/05</span>
+        </a>
+        
+        <a  class="SSM SpringMVC "
+           href="/2020/03/04/3-SpringMVC/6_SpringMVC%E5%93%8D%E5%BA%94/"
+           data-tag="java"
+           data-author="" >
+            <span class="post-title" title="【SpringMVC实战5】响应">【SpringMVC实战5】响应</span>
+            <span class="post-date" title="2020-03-04 19:26:39">2020/03/04</span>
+        </a>
+        
+        <a  class="SSM SpringMVC "
+           href="/2020/03/03/3-SpringMVC/4_SpringMVC%E7%9A%84%E5%B8%B8%E7%94%A8%E6%B3%A8%E8%A7%A3/"
+           data-tag="java"
+           data-author="" >
+            <span class="post-title" title="【SpringMVC实战3】常用注解">【SpringMVC实战3】常用注解</span>
+            <span class="post-date" title="2020-03-03 15:26:29">2020/03/03</span>
+        </a>
+        
+        <a  class="SSM SpringMVC "
+           href="/2020/03/03/3-SpringMVC/5_%E8%AF%B7%E6%B1%82%E5%8F%82%E6%95%B0%E7%BB%91%E5%AE%9A/"
+           data-tag="java"
+           data-author="" >
+            <span class="post-title" title="【SpringMVC实战4】请求参数绑定">【SpringMVC实战4】请求参数绑定</span>
+            <span class="post-date" title="2020-03-03 09:13:23">2020/03/03</span>
+        </a>
+        
+        <a  class="SSM SpringMVC "
+           href="/2020/03/02/3-SpringMVC/3_SpringMVC%E7%9A%84%E6%89%A7%E8%A1%8C%E6%B5%81%E7%A8%8B/"
+           data-tag="java"
+           data-author="" >
+            <span class="post-title" title="【SpringMVC实战2】执行流程">【SpringMVC实战2】执行流程</span>
+            <span class="post-date" title="2020-03-02 18:26:39">2020/03/02</span>
+        </a>
+        
+        <a  class="SSM SpringMVC "
+           href="/2020/03/02/3-SpringMVC/2_%E5%85%A5%E9%97%A8%E6%A1%88%E4%BE%8B/"
+           data-tag="java"
+           data-author="" >
+            <span class="post-title" title="【SpringMVC实战1】入门案例">【SpringMVC实战1】入门案例</span>
+            <span class="post-date" title="2020-03-02 14:26:39">2020/03/02</span>
+        </a>
+        
+        <a  class="SSM Spring "
+           href="/2020/02/21/13-Spring/8_%E4%BA%8B%E5%8A%A1%E6%8E%A7%E5%88%B6/"
+           data-tag="Spring"
+           data-author="" >
+            <span class="post-title" title="【Spring实战8】事务控制">【Spring实战8】事务控制</span>
+            <span class="post-date" title="2020-02-21 15:23:48">2020/02/21</span>
+        </a>
+        
+        <a  class="SSM Spring "
+           href="/2020/02/20/13-Spring/7_JdbcTemplate/"
+           data-tag="Spring"
+           data-author="" >
+            <span class="post-title" title="【Spring实战7】JdbcTemplate">【Spring实战7】JdbcTemplate</span>
+            <span class="post-date" title="2020-02-20 09:32:29">2020/02/20</span>
+        </a>
+        
+        <a  class="SSM Spring "
+           href="/2020/02/19/13-Spring/6_%E5%9F%BA%E4%BA%8Exml%E5%92%8C%E6%B3%A8%E8%A7%A3%E7%9A%84AOP%E9%85%8D%E7%BD%AE/"
+           data-tag="Spring"
+           data-author="" >
+            <span class="post-title" title="【Spring实战6】基于xml和注解的AOP配置">【Spring实战6】基于xml和注解的AOP配置</span>
+            <span class="post-date" title="2020-02-19 21:31:44">2020/02/19</span>
+        </a>
+        
+        <a  class="SSM Spring "
+           href="/2020/02/19/13-Spring/5_AOP/"
+           data-tag="Spring"
+           data-author="" >
+            <span class="post-title" title="【Spring实战5】AOP">【Spring实战5】AOP</span>
+            <span class="post-date" title="2020-02-19 18:56:47">2020/02/19</span>
+        </a>
+        
+        <a  class="SSM Spring "
+           href="/2020/02/18/13-Spring/4_%E5%8A%A8%E6%80%81%E4%BB%A3%E7%90%86/"
+           data-tag="Spring"
+           data-author="" >
+            <span class="post-title" title="【Spring实战4】动态代理">【Spring实战4】动态代理</span>
+            <span class="post-date" title="2020-02-18 17:15:32">2020/02/18</span>
+        </a>
+        
+        <a  class="SSM Spring "
+           href="/2020/02/14/13-Spring/3_%E5%9F%BA%E4%BA%8E%E6%B3%A8%E8%A7%A3%E7%9A%84IOC/"
+           data-tag="Spring"
+           data-author="" >
+            <span class="post-title" title="【Spring实战3】IoC注解">【Spring实战3】IoC注解</span>
+            <span class="post-date" title="2020-02-14 20:57:17">2020/02/14</span>
+        </a>
+        
+        <a  class="SSM Spring "
+           href="/2020/02/13/13-Spring/2_IOC/"
+           data-tag="Spring"
+           data-author="" >
+            <span class="post-title" title="【Spring实战2】IoC与DI">【Spring实战2】IoC与DI</span>
+            <span class="post-date" title="2020-02-13 20:56:03">2020/02/13</span>
+        </a>
+        
+        <a  class="SSM Spring "
+           href="/2020/02/13/13-Spring/1_%E7%A8%8B%E5%BA%8F%E8%80%A6%E5%90%88%E4%B8%8E%E8%A7%A3%E8%80%A6/"
+           data-tag="Spring"
+           data-author="" >
+            <span class="post-title" title="【Spring实战1】程序的耦合与解耦">【Spring实战1】程序的耦合与解耦</span>
+            <span class="post-date" title="2020-02-13 13:17:03">2020/02/13</span>
+        </a>
+        
+        <a  class="SSM MyBatis "
+           href="/2020/02/07/mybatis/10_%E6%B3%A8%E8%A7%A3%E5%BC%80%E5%8F%91/"
+           data-tag="MyBatis"
+           data-author="" >
+            <span class="post-title" title="【Mybatis实战5】注解开发">【Mybatis实战5】注解开发</span>
+            <span class="post-date" title="2020-02-07 16:18:37">2020/02/07</span>
+        </a>
+        
+        <a  class="SSM MyBatis "
+           href="/2020/02/06/mybatis/9_%E7%BC%93%E5%AD%98/"
+           data-tag="MyBatis"
+           data-author="" >
+            <span class="post-title" title="【Mybatis实战4】加载与缓存">【Mybatis实战4】加载与缓存</span>
+            <span class="post-date" title="2020-02-06 18:29:03">2020/02/06</span>
+        </a>
+        
+        <a  class="SSM MyBatis "
+           href="/2020/02/06/mybatis/8_%E5%8A%A8%E6%80%81SQL%E4%B8%8E%E5%A4%9A%E8%A1%A8%E6%93%8D%E4%BD%9C/"
+           data-tag="MyBatis"
+           data-author="" >
+            <span class="post-title" title="【Mybatis实战3】动态SQL与多表操作">【Mybatis实战3】动态SQL与多表操作</span>
+            <span class="post-date" title="2020-02-06 18:08:29">2020/02/06</span>
+        </a>
+        
+        <a  class="SSM MyBatis "
+           href="/2020/02/06/mybatis/6_mybatis%E8%BF%9B%E8%A1%8CCRUD/"
+           data-tag="MyBatis"
+           data-author="" >
+            <span class="post-title" title="【Mybatis实战2】CRUD操作">【Mybatis实战2】CRUD操作</span>
+            <span class="post-date" title="2020-02-06 13:21:03">2020/02/06</span>
+        </a>
+        
+        <a  class="SSM MyBatis "
+           href="/2020/02/05/mybatis/2_%E5%9F%BA%E4%BA%8Exml%E7%9A%84%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/"
+           data-tag="MyBatis"
+           data-author="" >
+            <span class="post-title" title="【Mybatis实战1】两种环境搭建方法及示例">【Mybatis实战1】两种环境搭建方法及示例</span>
+            <span class="post-date" title="2020-02-05 10:21:01">2020/02/05</span>
+        </a>
+        
+        <a  class="数据库 "
+           href="/2020/01/29/11-MySQL/3_%E5%A4%9A%E8%A1%A8%E6%9F%A5%E8%AF%A2%E4%B8%8E%E4%BA%8B%E5%8A%A1/"
+           data-tag="MySQL SQL"
+           data-author="" >
+            <span class="post-title" title="多表查询与事务">多表查询与事务</span>
+            <span class="post-date" title="2020-01-29 13:52:00">2020/01/29</span>
+        </a>
+        
+        <a  class="数据库 "
+           href="/2020/01/26/11-MySQL/2_SQL%E9%AB%98%E7%BA%A7/"
+           data-tag="MySQL SQL"
+           data-author="" >
+            <span class="post-title" title="数据库高级知识及SQL实现">数据库高级知识及SQL实现</span>
+            <span class="post-date" title="2020-01-26 23:01:52">2020/01/26</span>
+        </a>
+        
+        <a  class="数据库 "
+           href="/2020/01/23/11-MySQL/1_SQL%E8%AF%AD%E8%A8%80%E5%9F%BA%E6%9C%AC%E6%93%8D%E4%BD%9C/"
+           data-tag="MySQL SQL"
+           data-author="" >
+            <span class="post-title" title="SQL语言基础">SQL语言基础</span>
+            <span class="post-date" title="2020-01-23 20:06:39">2020/01/23</span>
+        </a>
+        
+        <a  class="网络 protobuf "
+           href="/2020/01/16/10-java%E7%BD%91%E7%BB%9C/2_protobuf/"
+           data-tag="protobuf"
+           data-author="" >
+            <span class="post-title" title="java使用protobuf">java使用protobuf</span>
+            <span class="post-date" title="2020-01-16 17:57:52">2020/01/16</span>
+        </a>
+        
+        <a  class="网络 HTTP "
+           href="/2020/01/15/10-java%E7%BD%91%E7%BB%9C/1_HTTP/"
+           data-tag="HTTP"
+           data-author="" >
+            <span class="post-title" title="java实现简单的HTTP">java实现简单的HTTP</span>
+            <span class="post-date" title="2020-01-15 18:03:21">2020/01/15</span>
+        </a>
+        
+        <a  class="大数据 hadoop "
+           href="/2020/01/06/hadoop/1_hadoop/"
+           data-tag="大数据"
+           data-author="" >
+            <span class="post-title" title="【hadoop 1】hadoop环境搭建">【hadoop 1】hadoop环境搭建</span>
+            <span class="post-date" title="2020-01-06 14:55:10">2020/01/06</span>
+        </a>
+        
+        <a  class="区块链 Fabric "
+           href="/2019/11/24/blockchain/09/"
+           data-tag="区块链"
+           data-author="" >
+            <span class="post-title" title="Hyperledger Fabric系统框架笔记">Hyperledger Fabric系统框架笔记</span>
+            <span class="post-date" title="2019-11-24 12:43:08">2019/11/24</span>
+        </a>
+        
+        <a  class="区块链 论文 "
+           href="/2019/11/21/blockchain/08/"
+           data-tag="区块链"
+           data-author="" >
+            <span class="post-title" title="闪电网络（四）比特币闪电网络：The Bitcoin Lightning Network">闪电网络（四）比特币闪电网络：The Bitcoin Lightning Network</span>
+            <span class="post-date" title="2019-11-21 21:31:53">2019/11/21</span>
+        </a>
+        
+        <a  class="区块链 论文 "
+           href="/2019/11/20/blockchain/07/"
+           data-tag="区块链"
+           data-author="" >
+            <span class="post-title" title="闪电网络（三）哈希时间锁合约：Hashed Timelock Contract (HTLC)">闪电网络（三）哈希时间锁合约：Hashed Timelock Contract (HTLC)</span>
+            <span class="post-date" title="2019-11-20 10:51:23">2019/11/20</span>
+        </a>
+        
+        <a  class="区块链 论文 "
+           href="/2019/11/20/blockchain/05/"
+           data-tag="区块链"
+           data-author="" >
+            <span class="post-title" title="闪电网络（二）双向支付通道：Bidirectional Payment Channels + RSMC">闪电网络（二）双向支付通道：Bidirectional Payment Channels + RSMC</span>
+            <span class="post-date" title="2019-11-20 10:51:23">2019/11/20</span>
+        </a>
+        
+        <a  class="区块链 论文 "
+           href="/2019/11/19/blockchain/06/"
+           data-tag="区块链"
+           data-author="" >
+            <span class="post-title" title="闪电网络（一）微支付通道">闪电网络（一）微支付通道</span>
+            <span class="post-date" title="2019-11-19 10:07:02">2019/11/19</span>
+        </a>
+        
+        <a  class="区块链 论文 "
+           href="/2019/11/15/blockchain/03/"
+           data-tag="区块链"
+           data-author="" >
+            <span class="post-title" title="论文翻译 OmniLedger">论文翻译 OmniLedger</span>
+            <span class="post-date" title="2019-11-15 16:15:33">2019/11/15</span>
+        </a>
+        
+        <a  class="网络 网络编程 "
+           href="/2019/11/03/networkProgram/%E7%BD%91%E7%BB%9C%E7%BC%96%E7%A8%8B10UDP%E8%BF%9E%E6%8E%A5/"
+           data-tag="网络编程"
+           data-author="" >
+            <span class="post-title" title="网络编程10：UDP连接">网络编程10：UDP连接</span>
+            <span class="post-date" title="2019-11-03 16:15:07">2019/11/03</span>
+        </a>
+        
+        <a  class="网络 网络编程 "
+           href="/2019/11/02/networkProgram/%E7%BD%91%E7%BB%9C%E7%BC%96%E7%A8%8B9TCP%E7%9A%84%E5%BC%82%E5%B8%B8/"
+           data-tag="网络编程"
+           data-author="" >
+            <span class="post-title" title="网络编程9：TCP的异常">网络编程9：TCP的异常</span>
+            <span class="post-date" title="2019-11-02 13:57:10">2019/11/02</span>
+        </a>
+        
+        <a  class="网络 网络编程 "
+           href="/2019/11/01/networkProgram/%E7%BD%91%E7%BB%9C%E7%BC%96%E7%A8%8B8TCP%E6%95%B0%E6%8D%AE%E4%BC%A0%E8%BE%93/"
+           data-tag="网络编程"
+           data-author="" >
+            <span class="post-title" title="网络编程8：TCP数据传输">网络编程8：TCP数据传输</span>
+            <span class="post-date" title="2019-11-01 18:34:10">2019/11/01</span>
+        </a>
+        
+        <a  class="网络 网络编程 "
+           href="/2019/10/31/networkProgram/%E7%BD%91%E7%BB%9C%E7%BC%96%E7%A8%8B7TCP%E8%BF%9E%E6%8E%A5%E7%8A%B6%E6%80%81/"
+           data-tag="网络编程"
+           data-author="" >
+            <span class="post-title" title="网络编程7：TCP连接状态">网络编程7：TCP连接状态</span>
+            <span class="post-date" title="2019-10-31 17:14:55">2019/10/31</span>
+        </a>
+        
+        <a  class="网络 网络编程 "
+           href="/2019/10/30/networkProgram/%E7%BD%91%E7%BB%9C%E7%BC%96%E7%A8%8B6%E5%85%B3%E9%97%AD%E8%BF%9E%E6%8E%A5/"
+           data-tag="网络编程"
+           data-author="" >
+            <span class="post-title" title="网络编程6：关闭连接">网络编程6：关闭连接</span>
+            <span class="post-date" title="2019-10-30 18:34:12">2019/10/30</span>
+        </a>
+        
+        <a  class="网络 网络编程 "
+           href="/2019/10/29/networkProgram/%E7%BD%91%E7%BB%9C%E7%BC%96%E7%A8%8B5%E7%BD%91%E7%BB%9C%E5%B7%A5%E5%85%B7/"
+           data-tag="网络编程"
+           data-author="" >
+            <span class="post-title" title="网络编程5：网络工具">网络编程5：网络工具</span>
+            <span class="post-date" title="2019-10-29 14:24:11">2019/10/29</span>
+        </a>
+        
+        <a  class="网络 网络编程 "
+           href="/2019/10/28/networkProgram/%E7%BD%91%E7%BB%9C%E7%BC%96%E7%A8%8B3UDP%E5%8D%8F%E8%AE%AE%E4%BD%BF%E7%94%A8socket/"
+           data-tag="网络编程"
+           data-author="" >
+            <span class="post-title" title="网络编程3：UDP协议使用socket">网络编程3：UDP协议使用socket</span>
+            <span class="post-date" title="2019-10-28 10:11:10">2019/10/28</span>
+        </a>
+        
+        <a  class="网络 网络编程 "
+           href="/2019/10/28/networkProgram/%E7%BD%91%E7%BB%9C%E7%BC%96%E7%A8%8B4%E6%9C%AC%E5%9C%B0socket/"
+           data-tag="网络编程"
+           data-author="" >
+            <span class="post-title" title="网络编程4：本地套接字">网络编程4：本地套接字</span>
+            <span class="post-date" title="2019-10-28 10:11:10">2019/10/28</span>
+        </a>
+        
+        <a  class="网络 网络编程 "
+           href="/2019/10/27/networkProgram/%E7%BD%91%E7%BB%9C%E7%BC%96%E7%A8%8B2TCP%E5%8D%8F%E8%AE%AE%E4%BD%BF%E7%94%A8socket/"
+           data-tag="网络编程"
+           data-author="" >
+            <span class="post-title" title="网络编程2：TCP协议使用socket">网络编程2：TCP协议使用socket</span>
+            <span class="post-date" title="2019-10-27 17:59:09">2019/10/27</span>
+        </a>
+        
+        <a  class="网络 网络编程 "
+           href="/2019/10/26/networkProgram/%E7%BD%91%E7%BB%9C%E7%BC%96%E7%A8%8B1/"
+           data-tag="网络编程"
+           data-author="" >
+            <span class="post-title" title="网络编程1：基础部分">网络编程1：基础部分</span>
+            <span class="post-date" title="2019-10-26 16:54:02">2019/10/26</span>
+        </a>
+        
+        <a  class="分布式 "
+           href="/2019/09/12/distribute/01/"
+           data-tag="分布式"
+           data-author="" >
+            <span class="post-title" title="分布式系统的一致性与共识">分布式系统的一致性与共识</span>
+            <span class="post-date" title="2019-09-12 13:47:52">2019/09/12</span>
+        </a>
+        
+        <a  class="网络 HTTP "
+           href="/2019/08/05/http/030205/"
+           data-tag="HTTP"
+           data-author="" >
+            <span class="post-title" title="HTTP协议学习（五）HTTPS与安全">HTTP协议学习（五）HTTPS与安全</span>
+            <span class="post-date" title="2019-08-05 20:46:07">2019/08/05</span>
+        </a>
+        
+        <a  class="网络 HTTP "
+           href="/2019/07/20/http/030204/"
+           data-tag="HTTP"
+           data-author="" >
+            <span class="post-title" title="HTTP协议学习（四）cookie、缓存、代理机制">HTTP协议学习（四）cookie、缓存、代理机制</span>
+            <span class="post-date" title="2019-07-20 13:15:07">2019/07/20</span>
+        </a>
+        
+        <a  class="网络 HTTP "
+           href="/2019/07/10/http/030203/"
+           data-tag="HTTP"
+           data-author="" >
+            <span class="post-title" title="HTTP协议学习（三）数据传输与连接">HTTP协议学习（三）数据传输与连接</span>
+            <span class="post-date" title="2019-07-10 14:36:55">2019/07/10</span>
+        </a>
+        
+        <a  class="网络 HTTP "
+           href="/2019/07/01/http/030202/"
+           data-tag="HTTP"
+           data-author="" >
+            <span class="post-title" title="HTTP协议学习（二）基础">HTTP协议学习（二）基础</span>
+            <span class="post-date" title="2019-07-01 14:05:51">2019/07/01</span>
+        </a>
+        
+        <a  class="网络 HTTP "
+           href="/2019/06/14/http/030201/"
+           data-tag="HTTP"
+           data-author="" >
+            <span class="post-title" title="HTTP协议学习（一）概念">HTTP协议学习（一）概念</span>
+            <span class="post-date" title="2019-06-14 16:08:25">2019/06/14</span>
+        </a>
+        
+    </nav>
+</div>
+    </div>
+    <div class="hide-list">
+        <div class="semicircle">
+            <div class="brackets first"><</div>
+            <div class="brackets">&gt;</div>
+        </div>
+    </div>
+</aside>
+<div class="post">
+    <div class="pjax">
+        <article id="post-hadoop/2_使用hadoop" class="article article-type-post" itemscope itemprop="blogPost">
+    
+        <h1 class="article-title">【hadoop 2】hadoop三种模式使用</h1>
+    
+    <div class="article-meta">
+        
+        
+        
+        <span class="book">
+            
+                <a  data-rel="大数据">大数据</a>/
+            
+                <a  data-rel="hadoop">hadoop</a>
+            
+        </span>
+        
+        
+        <span class="tag">
+            
+            <a class="color4">大数据</a>
+            
+        </span>
+        
+    </div>
+    <div class="article-meta">
+        
+        创建时间:<time class="date" title='更新时间: 2020-03-18 17:50:20'>2020-03-18 17:49</time>
+        
+    </div>
+    <div class="article-meta">
+        
+        
+        
+    </div>
+    
+    <div class="toc-ref">
+    
+        <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#1-单机模式"><span class="toc-text">1. 单机模式</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#2-伪分布式模式"><span class="toc-text">2. 伪分布式模式</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#2-1-启动HDFS并运行MapReduce程序"><span class="toc-text">2.1 启动HDFS并运行MapReduce程序</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-2-启动YARN并运行MapReduce"><span class="toc-text">2.2 启动YARN并运行MapReduce</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-3-配置历史服务器"><span class="toc-text">2.3 配置历史服务器</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-4-配置日志的聚集"><span class="toc-text">2.4 配置日志的聚集</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-5-配置文件说明"><span class="toc-text">2.5 配置文件说明</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#3-全分布式模式"><span class="toc-text">3. 全分布式模式</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#3-1-scp实现集群安全拷贝"><span class="toc-text">3.1 scp实现集群安全拷贝</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3-2-rsync-远程同步工具"><span class="toc-text">3.2 rsync 远程同步工具</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3-3-xsync集群分发脚本"><span class="toc-text">3.3 xsync集群分发脚本</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3-4-集群配置"><span class="toc-text">3.4 集群配置</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3-5-集群单点启动"><span class="toc-text">3.5 集群单点启动</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3-6-群起集群"><span class="toc-text">3.6 群起集群</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3-7-测试集群"><span class="toc-text">3.7 测试集群</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3-8-停止集群"><span class="toc-text">3.8 停止集群</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#使用notepad-的插件访问虚拟机"><span class="toc-text">使用notepad++的插件访问虚拟机</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#无密登录配置"><span class="toc-text">无密登录配置</span></a></li></ol>
+    
+<style>
+    .left-col .switch-btn,
+    .left-col .switch-area {
+        display: none;
+    }
+    .toc-level-3 i,
+    .toc-level-3 ol {
+        display: none !important;
+    }
+</style>
+</div>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p><div class='inner-toc'><h2>目录</h2><ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#1-单机模式"><span class="toc-text">1. 单机模式</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#2-伪分布式模式"><span class="toc-text">2. 伪分布式模式</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#2-1-启动HDFS并运行MapReduce程序"><span class="toc-text">2.1 启动HDFS并运行MapReduce程序</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-2-启动YARN并运行MapReduce"><span class="toc-text">2.2 启动YARN并运行MapReduce</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-3-配置历史服务器"><span class="toc-text">2.3 配置历史服务器</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-4-配置日志的聚集"><span class="toc-text">2.4 配置日志的聚集</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-5-配置文件说明"><span class="toc-text">2.5 配置文件说明</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#3-全分布式模式"><span class="toc-text">3. 全分布式模式</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#3-1-scp实现集群安全拷贝"><span class="toc-text">3.1 scp实现集群安全拷贝</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3-2-rsync-远程同步工具"><span class="toc-text">3.2 rsync 远程同步工具</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3-3-xsync集群分发脚本"><span class="toc-text">3.3 xsync集群分发脚本</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3-4-集群配置"><span class="toc-text">3.4 集群配置</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3-5-集群单点启动"><span class="toc-text">3.5 集群单点启动</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3-6-群起集群"><span class="toc-text">3.6 群起集群</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3-7-测试集群"><span class="toc-text">3.7 测试集群</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3-8-停止集群"><span class="toc-text">3.8 停止集群</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#使用notepad-的插件访问虚拟机"><span class="toc-text">使用notepad++的插件访问虚拟机</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#无密登录配置"><span class="toc-text">无密登录配置</span></a></li></ol></div></p>
+<h1 id="1-单机模式"><a href="#1-单机模式" class="headerlink" title="1. 单机模式"></a>1. 单机模式</h1><p>默认情况下，hadoop的配置是运行在非分布式的模式（单机模式），可以用一个例程来试一试：</p>
+<pre><code class="bash">mkdir input
+cp etc/hadoop/*.xml input
+bin/hadoop jar share/hadoop/mapreduce/hadoop-mapreduce-examples-2.7.2.jar grep input output &#39;dfs[a-z.]+&#39;
+cat output/*</code></pre>
+<ul>
+<li>也就是使用hadoop这个应用程序</li>
+<li>执行一个jar包</li>
+<li>被执行的jar包的名字叫做<code>share/hadoop/mapreduce/hadoop-mapreduce-examples-2.7.2.jar</code></li>
+<li>此时的主类叫做<code>grep</code>，同时这里主类也可以是<code>wordcount</code></li>
+<li>后面的input和output分别是输入输出文件夹，其中<strong>输出文件夹必须是一个不存在的目录</strong>。</li>
+<li><code>&#39;dfs[a-z.]+&#39;</code>这个是正则表达式，查询dfs开头的，后面跟1个或1个以上的字母，比如 dfsa dfsb dfsc </li>
+</ul>
+<p>该模式一般只用于调试测试，在实际的生产环境中不会使用本模式。</p>
+<p>下面测试一下wordcount</p>
+<pre><code class="bash">bin/hadoop jar share/hadoop/mapreduce/hadoop-mapreduce-examples-2.7.2.jar wordcount wcinput wcoutput
+
+# 然后使用cat查看结果
+cat wcoutput/*</code></pre>
+<h1 id="2-伪分布式模式"><a href="#2-伪分布式模式" class="headerlink" title="2. 伪分布式模式"></a>2. 伪分布式模式</h1><h2 id="2-1-启动HDFS并运行MapReduce程序"><a href="#2-1-启动HDFS并运行MapReduce程序" class="headerlink" title="2.1 启动HDFS并运行MapReduce程序"></a>2.1 启动HDFS并运行MapReduce程序</h2><p>只有一个节点的分布式，叫做伪分布式，将所有节点运行在同一个机器上面。</p>
+<ol>
+<li><p><strong>配置集群</strong></p>
+<ol>
+<li><p><code>etc/hadoop/core-site.xml</code>:指定HDFS中namenode的地址</p>
+<p>注意，这里默认是没有配置的，默认表示使用本地模式，如果这里配置了，就使用指定的地址。</p>
+<p>下面的那个配置指定临时数据存储的位置</p>
+</li>
+</ol>
+<pre><code class="xml">&lt;!-- 指定HDFS中NameNode的地址 --&gt;
+&lt;property&gt;
+    &lt;name&gt;fs.defaultFS&lt;/name&gt;
+    &lt;value&gt;hdfs://hadoop001:9000&lt;/value&gt;
+&lt;/property&gt;
+
+&lt;!-- 指定Hadoop运行时产生文件的存储目录 --&gt;
+&lt;property&gt;
+    &lt;name&gt;hadoop.tmp.dir&lt;/name&gt;
+    &lt;value&gt;/opt/module/hadoop-2.7.2/data/tmp&lt;/value&gt;
+&lt;/property&gt;</code></pre>
+<ol start="2">
+<li><code>etc/hadoop/hdfs-site.xml</code>:  指定HDFS中副本的数量为1，因为只在一个节点上运行，虽然Hadoop是多副本机制，但是单一节点至多存储一个副本。</li>
+</ol>
+<pre><code class="xml">&lt;!-- 指定HDFS副本的数量 --&gt;
+&lt;property&gt;
+    &lt;name&gt;dfs.replication&lt;/name&gt;
+    &lt;value&gt;1&lt;/value&gt;
+&lt;/property&gt;</code></pre>
+</li>
+<li><p>检查是否可以在没有密码的情况下SSH到本地主机</p>
+<pre><code class="bash">ssh localhost</code></pre>
+</li>
+<li><p><strong>格式化namenode</strong></p>
+<p>这个格式化只能在首次启动之前格式化</p>
+<pre><code class="bash">bin/hdfs namenode -format</code></pre>
+<p>要注意，不能多次格式化namenode。因为格式化NameNode会产生新的集群id,导致NameNode和DataNode的集群id不一致，集群找不到以往数据。所以，格式NameNode时，<strong>一定要先删除data数据和log日志</strong>，然后再格式化NameNode。</p>
+<pre><code class="bash">sudo rm -rf logs
+sudo rm -rf data</code></pre>
+</li>
+<li><p><strong>启动namenode和datanode</strong></p>
+<pre><code class="bash">sbin/start-dfs.sh
+
+# 也可以通过下面两句分别启动
+sbin/hadoop-daemon.sh start namenode
+sbin/hadoop-daemon.sh start datanode</code></pre>
+<p>此时使用jps就可以看到namenode和datanode都已经启动了</p>
+</li>
+</ol>
+<p><strong>查看HDFS文件系统</strong></p>
+<p>首先需要在windows的host里面改一下映射</p>
+<pre><code>192.168.186.130 hadoop001
+192.168.186.131 hadoop002
+192.168.186.132 hadoop003</code></pre><p>然后在浏览器里面查看</p>
+<pre><code>hadoop001:50070</code></pre><p><strong>操作集群</strong></p>
+<ol>
+<li><p>在HDFS文件系统上<strong>创建</strong>一个input文件夹</p>
+<pre><code class="bash">bin/hdfs dfs -mkdir -p /user/hadoopUser/input</code></pre>
+</li>
+<li><p>将测试文件内容<strong>上传</strong>到文件系统上</p>
+<pre><code class="bash">bin/hdfs dfs -put wcinput/wc.input /user/hadoopUser/input/</code></pre>
+</li>
+<li><p><strong>查看</strong>上传的文件是否正确</p>
+<pre><code class="bash">bin/hdfs dfs -ls /user/hadoopUser/input/
+bin/hdfs dfs -cat /user/hadoopUser/input/wc.input</code></pre>
+</li>
+<li><p>运行MapReduce程序</p>
+<pre><code class="bash">bin/hadoop jar share/hadoop/mapreduce/hadoop-mapreduce-examples-2.7.2.jar wordcount /user/hadoopUser/input/ /user/hadoopUser/output</code></pre>
+</li>
+<li><p>查看输出结果</p>
+<pre><code>bin/hdfs dfs -cat /user/atguigu/output/*</code></pre></li>
+</ol>
+<h2 id="2-2-启动YARN并运行MapReduce"><a href="#2-2-启动YARN并运行MapReduce" class="headerlink" title="2.2 启动YARN并运行MapReduce"></a>2.2 启动YARN并运行MapReduce</h2><ol>
+<li><p><strong>配置集群</strong></p>
+<ol>
+<li><p><strong>配置yarn</strong>：<code>etc/hadoop/yarn-env.sh</code></p>
+<p>在下面的位置将 <code>JAVA_HOME</code> 给换掉</p>
+<pre><code class="bash"># some Java parameters
+export JAVA_HOME=/opt/module/jdk1.8.0_144</code></pre>
+</li>
+<li><p><strong>配置 <code>yarn-site.xml</code></strong></p>
+<pre><code class="xml">&lt;!-- Reducer获取数据的方式 --&gt;
+&lt;property&gt;
+    &lt;name&gt;yarn.nodemanager.aux-services&lt;/name&gt;
+    &lt;value&gt;mapreduce_shuffle&lt;/value&gt;
+&lt;/property&gt;
+
+&lt;!-- 指定YARN的ResourceManager的地址 --&gt;
+&lt;property&gt;
+    &lt;name&gt;yarn.resourcemanager.hostname&lt;/name&gt;
+    &lt;value&gt;hadoop001&lt;/value&gt;
+&lt;/property&gt;</code></pre>
+</li>
+<li><p><strong>配置 <code>mapred-env.sh</code></strong></p>
+<p>配置 <code>JAVA_HOME</code></p>
+<pre><code class="bash">export JAVA_HOME=/opt/module/jdk1.8.0_144</code></pre>
+</li>
+<li><p><strong>配置 <code>mapred-site.xml</code></strong> (将 <code>mapred-site.xml.template</code> 重新命名为该文件) </p>
+<pre><code class="bash">mv mapred-site.xml.template mapred-site.xml</code></pre>
+<p>然后添加配置：</p>
+<pre><code class="xml">&lt;!-- 指定MR运行在YARN上 --&gt;
+&lt;property&gt;
+    &lt;name&gt;mapreduce.framework.name&lt;/name&gt;
+    &lt;value&gt;yarn&lt;/value&gt;
+&lt;/property&gt;</code></pre>
+</li>
+</ol>
+</li>
+<li><p><strong>启动集群</strong></p>
+<ol>
+<li><p>启动前必须保证NameNode和DataNode已经启动</p>
+</li>
+<li><p>启动ResourceManager</p>
+<pre><code class="bash">sbin/yarn-daemon.sh start resourcemanager</code></pre>
+</li>
+<li><p>启动NodeManager</p>
+<pre><code class="bash">sbin/yarn-daemon.sh start nodemanager</code></pre>
+</li>
+</ol>
+</li>
+<li><p><strong>集群操作</strong></p>
+<ul>
+<li>使用浏览器访问下面地址可以查看集群</li>
+</ul>
+<pre><code>hadoop001:8088/cluster</code></pre><ul>
+<li><p>删除文件系统上的output文件</p>
+<pre><code class="bash">bin/hdfs dfs -rm -R /user/hadoopUser/output</code></pre>
+</li>
+<li><p>执行MapReduce程序</p>
+<pre><code class="bash">bin/hadoop jar share/hadoop/mapreduce/hadoop-mapreduce-examples-2.7.2.jar wordcount /user/hadoopUser/input  /user/hadoopUser/output</code></pre>
+</li>
+<li><p>查看运行结果</p>
+<pre><code class="bash">bin/hdfs dfs -cat /user/hadoopUser/output/*</code></pre>
+</li>
+</ul>
+</li>
+</ol>
+<h2 id="2-3-配置历史服务器"><a href="#2-3-配置历史服务器" class="headerlink" title="2.3 配置历史服务器"></a>2.3 配置历史服务器</h2><p>为了查看程序的历史运行情况，需要配置一下历史服务器。</p>
+<ol>
+<li><p>配置 <code>etc/hadoop/mapred-site.xml</code></p>
+<pre><code class="xml">&lt;!-- 历史服务器端地址 --&gt;
+&lt;property&gt;
+    &lt;name&gt;mapreduce.jobhistory.address&lt;/name&gt;
+    &lt;value&gt;hadoop101:10020&lt;/value&gt;
+&lt;/property&gt;
+&lt;!-- 历史服务器web端地址 --&gt;
+&lt;property&gt;
+    &lt;name&gt;mapreduce.jobhistory.webapp.address&lt;/name&gt;
+    &lt;value&gt;hadoop101:19888&lt;/value&gt;
+&lt;/property&gt;</code></pre>
+</li>
+<li><p>启动历史服务器</p>
+<pre><code class="bash">sbin/mr-jobhistory-daemon.sh start historyserver</code></pre>
+</li>
+<li><p>查看历史服务器是否启动</p>
+<pre><code class="bash">jps</code></pre>
+</li>
+<li><p>查看JobHistory</p>
+<pre><code>http://hadoop001:19888/jobhistory</code></pre></li>
+</ol>
+<h2 id="2-4-配置日志的聚集"><a href="#2-4-配置日志的聚集" class="headerlink" title="2.4 配置日志的聚集"></a>2.4 配置日志的聚集</h2><p>日志聚集概念：应用运行完成以后，将<strong>程序运行日志信息</strong>上传到HDFS系统上。</p>
+<p>日志聚集功能好处：可以方便的查看到程序运行详情，方便开发调试。</p>
+<p>注意：开启日志聚集功能，需要重新启动NodeManager 、ResourceManager和HistoryManager。</p>
+<ol>
+<li><p>配置yarn-site.xml</p>
+<pre><code class="xml">&lt;!-- 日志聚集功能使能 --&gt;
+&lt;property&gt;
+    &lt;name&gt;yarn.log-aggregation-enable&lt;/name&gt;
+    &lt;value&gt;true&lt;/value&gt;
+&lt;/property&gt;
+
+&lt;!-- 日志保留时间设置7天 --&gt;
+&lt;property&gt;
+    &lt;name&gt;yarn.log-aggregation.retain-seconds&lt;/name&gt;
+    &lt;value&gt;604800&lt;/value&gt;
+&lt;/property&gt;</code></pre>
+</li>
+<li><p>关闭NodeManager 、ResourceManager和HistoryManager</p>
+<pre><code class="bash">sbin/yarn-daemon.sh stop resourcemanager
+sbin/yarn-daemon.sh stop nodemanager
+sbin/mr-jobhistory-daemon.sh stop historyserver</code></pre>
+</li>
+<li><p>启动NodeManager 、ResourceManager和HistoryManager</p>
+<pre><code class="bash">sbin/yarn-daemon.sh start resourcemanager
+sbin/yarn-daemon.sh start nodemanager
+sbin/mr-jobhistory-daemon.sh start historyserver</code></pre>
+</li>
+<li><p>删除HDFS上已经存在的输出文件</p>
+<pre><code class="bash">bin/hdfs dfs -rm -R /user/hadoopUser/output</code></pre>
+</li>
+<li><p>执行WordCount程序</p>
+<pre><code class="bash">hadoop jar share/hadoop/mapreduce/hadoop-mapreduce-examples-2.7.2.jar wordcount /user/hadoopUser/input /user/hadoopUser/output</code></pre>
+</li>
+<li><p>查看日志</p>
+<pre><code>http://hadoop001:19888/jobhistory</code></pre></li>
+</ol>
+<h2 id="2-5-配置文件说明"><a href="#2-5-配置文件说明" class="headerlink" title="2.5 配置文件说明"></a>2.5 配置文件说明</h2><p>Hadoop配置文件分两类：默认配置文件和自定义配置文件，只有用户想修改某一默认配置值时，才需要修改自定义配置文件，更改相应属性值。</p>
+<ol>
+<li><p><strong>默认配置文件</strong></p>
+<table>
+<thead>
+<tr>
+<th>要获取的默认文件</th>
+<th>文件存放在Hadoop的jar包中的位置</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>[core-default.xml]</td>
+<td>hadoop-common-2.7.2.jar/  core-default.xml</td>
+</tr>
+<tr>
+<td>[hdfs-default.xml]</td>
+<td>hadoop-hdfs-2.7.2.jar/  hdfs-default.xml</td>
+</tr>
+<tr>
+<td>[yarn-default.xml]</td>
+<td>hadoop-yarn-common-2.7.2.jar/  yarn-default.xml</td>
+</tr>
+<tr>
+<td>[mapred-default.xml]</td>
+<td>hadoop-mapreduce-client-core-2.7.2.jar/  mapred-default.xml</td>
+</tr>
+</tbody></table>
+</li>
+<li><p><strong>自定义配置文件</strong></p>
+<ul>
+<li>core-site.xml</li>
+<li>hdfs-site.xml</li>
+<li>yarn-site.xml</li>
+<li>mapred-site.xml</li>
+</ul>
+<p>四个配置文件存放在$HADOOP_HOME/etc/hadoop这个路径上，用户可以根据项目需求重新进行修改配置。</p>
+</li>
+</ol>
+<h1 id="3-全分布式模式"><a href="#3-全分布式模式" class="headerlink" title="3. 全分布式模式"></a>3. 全分布式模式</h1><h2 id="3-1-scp实现集群安全拷贝"><a href="#3-1-scp实现集群安全拷贝" class="headerlink" title="3.1 scp实现集群安全拷贝"></a>3.1 scp实现集群安全拷贝</h2><p>scp可以实现服务器与服务器之间的数据拷贝。</p>
+<p>命令：</p>
+<pre><code class="bash">scp    -r        $pdir/$fname            $user@hadoop$host:$pdir/$fname
+命令   递归       要拷贝的文件路径/名称    目的用户@主机:目的路径/名称</code></pre>
+<ol>
+<li><p>在hadoop001上，将hadoop001中/opt/module目录下的软件拷贝到hadoop002上。</p>
+<pre><code class="bash">scp -r /opt/module  root@hadoop002:/opt</code></pre>
+</li>
+<li><p>在hadoop003上，将hadoop001服务器上的/opt/module目录下的软件拷贝到hadoop003上。</p>
+<pre><code class="bash">sudo scp -r hadoopUser@hadoop001:/opt/module root@hadoop003:/opt</code></pre>
+</li>
+<li><p>在hadoop004上，将hadoop001服务器上的/opt/module目录下的软件拷贝到hadoop003上。</p>
+<pre><code class="bash">sudo scp -r hadoopUser@hadoop001:/opt/module root@hadoop004:/opt</code></pre>
+</li>
+<li><p>将hadoop001中/etc/profile文件拷贝到hadoop002的/etc/profile上。</p>
+<pre><code class="bash">sudo scp /etc/profile root@hadoop002:/etc/profile</code></pre>
+</li>
+<li><p>将hadoop001中/etc/profile文件拷贝到hadoop003的/etc/profile上。</p>
+<pre><code class="bash">sudo scp /etc/profile root@hadoop003:/etc/profile</code></pre>
+</li>
+<li><p>将hadoop001中/etc/profile文件拷贝到hadoop004的/etc/profile上。</p>
+<pre><code class="bash">sudo scp /etc/profile root@hadoop004:/etc/profile</code></pre>
+</li>
+</ol>
+<p>移动完成之后，要source一下/etc/profile</p>
+<h2 id="3-2-rsync-远程同步工具"><a href="#3-2-rsync-远程同步工具" class="headerlink" title="3.2 rsync 远程同步工具"></a>3.2 rsync 远程同步工具</h2><p>rsync主要用于备份和镜像。具有速度快、避免复制相同内容和支持符号链接的优点。</p>
+<p>rsync和scp区别：用rsync做文件的复制要比scp的速度快，rsync只对差异文件做更新。scp是把所有文件都复制过去。</p>
+<p>命令：</p>
+<pre><code class="bash">rsync    -rvl       $pdir/$fname              $user@hadoop$host:$pdir/$fname
+命令     选项参数    要拷贝的文件路径/名称       目的用户@主机:目的路径/名称</code></pre>
+<table>
+<thead>
+<tr>
+<th>选项</th>
+<th>功能</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>-r</td>
+<td>递归</td>
+</tr>
+<tr>
+<td>-v</td>
+<td>显示复制过程</td>
+</tr>
+<tr>
+<td>-l</td>
+<td>拷贝符号连接</td>
+</tr>
+</tbody></table>
+<ol>
+<li><p>把hadoop001机器上的/opt/software目录同步到hadoop002服务器的root用户下的/opt/目录</p>
+<pre><code class="bash">rsync -rvl /opt/software/ root@hadoop002:/opt/software</code></pre>
+</li>
+</ol>
+<h2 id="3-3-xsync集群分发脚本"><a href="#3-3-xsync集群分发脚本" class="headerlink" title="3.3 xsync集群分发脚本"></a>3.3 xsync集群分发脚本</h2><p>需求：循环复制文件到所有节点的相同目录</p>
+<ol>
+<li><p>rsync命令原始拷贝：</p>
+<pre><code class="bash">rsync -rvl   /opt/module        root@hadoop003:/opt/</code></pre>
+</li>
+<li><p>期望脚本：</p>
+<pre><code>xsync 要同步的文件名称</code></pre><p>说明：在/home/hadoopUser/bin这个目录下存放的脚本，hadoopUser用户可以在系统任何地方直接执行。</p>
+<pre><code class="bash">mkdir bin
+cd bin/
+touch xsync
+vim xsync</code></pre>
+</li>
+<li><p>在xsync中添加bash脚本：</p>
+<pre><code class="bash">#!/bin/bash
+#1 获取输入参数个数，如果没有参数，直接退出
+pcount=$#
+if((pcount==0)); then
+    echo no args;
+    exit;
+fi
+
+#2 获取文件名称
+p1=$1
+fname=`basename $p1`
+echo fname=$fname
+
+#3 获取上级目录到绝对路径
+pdir=`cd -P $(dirname $p1); pwd`
+echo pdir=$pdir
+
+#4 获取当前用户名称
+user=`whoami`
+
+#5 循环
+for((host=1; host&lt;5; host++)); do
+    echo ------------------- hadoop$host --------------
+    rsync -rvl $pdir/$fname $user@hadoop00$host:$pdir
+done</code></pre>
+</li>
+<li><p>修改脚本 xsync 具有执行权限</p>
+<pre><code class="bash">chmod 777 xsync</code></pre>
+</li>
+<li><p>调用脚本形式：xsync 文件名称</p>
+<pre><code class="bash">xsync /home/hadoopUser/bin</code></pre>
+</li>
+</ol>
+<p>在hadoop002上面进行如上操作，可以测试一下</p>
+<h2 id="3-4-集群配置"><a href="#3-4-集群配置" class="headerlink" title="3.4 集群配置"></a>3.4 集群配置</h2><p>集群配置计划：</p>
+<table>
+<thead>
+<tr>
+<th></th>
+<th>hadoop002</th>
+<th>hadoop003</th>
+<th>hadoop004</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><strong>HDFS</strong></td>
+<td>NameNode 、 DataNode</td>
+<td>DataNode</td>
+<td>SecondaryNameNode、DataNode</td>
+</tr>
+<tr>
+<td><strong>YARN</strong></td>
+<td>NodeManager</td>
+<td>ResourceManager  NodeManager</td>
+<td>NodeManager</td>
+</tr>
+</tbody></table>
+<ol>
+<li><p>核心配置文件</p>
+<pre><code class="bash">sudo vim etc/hadoop/core-site.xml</code></pre>
+<p>编写以下指定配置：</p>
+<pre><code class="xml">&lt;!-- 指定HDFS中NameNode的地址 --&gt;
+&lt;property&gt;
+    &lt;name&gt;fs.defaultFS&lt;/name&gt;
+    &lt;value&gt;hdfs://hadoop002:9000&lt;/value&gt;
+&lt;/property&gt;
+
+&lt;!-- 指定Hadoop运行时产生文件的存储目录 --&gt;
+&lt;property&gt;
+    &lt;name&gt;hadoop.tmp.dir&lt;/name&gt;
+    &lt;value&gt;/opt/module/hadoop-2.7.2/data/tmp&lt;/value&gt;
+&lt;/property&gt;</code></pre>
+</li>
+<li><p>HDFS配置文件</p>
+<p>设置java版本</p>
+<pre><code class="bash">sudo vim etc/hadoop/hadoop-env.sh
+# 修改JAVA_HOME为如下内容
+export JAVA_HOME=/opt/module/jdk1.8.0_144</code></pre>
+<p>配置hdfs-site.xml</p>
+<pre><code class="bash">sudo vim etc/hadoop/hdfs-site.xml</code></pre>
+<p>然后在配置文件中添加以下内容</p>
+<pre><code class="xml">&lt;property&gt;
+    &lt;name&gt;dfs.replication&lt;/name&gt;
+    &lt;value&gt;3&lt;/value&gt;
+&lt;/property&gt;
+
+&lt;!-- 指定Hadoop辅助名称节点主机配置 --&gt;
+&lt;property&gt;
+    &lt;name&gt;dfs.namenode.secondary.http-address&lt;/name&gt;
+    &lt;value&gt;hadoop004:50090&lt;/value&gt;
+&lt;/property&gt;</code></pre>
+</li>
+<li><p>YARN配置文件</p>
+<p>配置yarn-env.sh</p>
+<pre><code class="bash">sudo vim etc/hadoop/yarn-env.sh
+export JAVA_HOME=/opt/module/jdk1.8.0_144</code></pre>
+<p>配置yarn-site.xm</p>
+<pre><code class="bash">sudo vim etc/hadoop/yarn-site.xml</code></pre>
+<p>然后在配置文件中添加以下内容</p>
+<pre><code class="xml">&lt;!-- Reducer获取数据的方式 --&gt;
+&lt;property&gt;
+        &lt;name&gt;yarn.nodemanager.aux-services&lt;/name&gt;
+        &lt;value&gt;mapreduce_shuffle&lt;/value&gt;
+&lt;/property&gt;
+
+&lt;!-- 指定YARN的ResourceManager的地址 --&gt;
+&lt;property&gt;
+        &lt;name&gt;yarn.resourcemanager.hostname&lt;/name&gt;
+        &lt;value&gt;hadoop003&lt;/value&gt;
+&lt;/property&gt;</code></pre>
+</li>
+<li><p>MapReduce配置文件</p>
+<p>配置mapred-env.sh</p>
+<pre><code class="bash">sudo vim etc/hadoop/mapred-env.sh
+export JAVA_HOME=/opt/module/jdk1.8.0_144</code></pre>
+<p>配置mapred-site.xml</p>
+<pre><code class="bash"># 从临时文件中拷贝出来修改后使用
+cp mapred-site.xml.template mapred-site.xml
+sudo vim etc/hadoop/mapred-site.xml</code></pre>
+<p>配置mapred-site.xml</p>
+<pre><code class="xml">&lt;!-- 指定MR运行在Yarn上 --&gt;
+&lt;property&gt;
+        &lt;name&gt;mapreduce.framework.name&lt;/name&gt;
+        &lt;value&gt;yarn&lt;/value&gt;
+&lt;/property&gt;</code></pre>
+</li>
+<li><p>分发配置文件</p>
+<pre><code class="bash">xsync /opt/module/hadoop-2.7.2/</code></pre>
+</li>
+<li><p>检查配置文件是否分发成功</p>
+<pre><code class="bash">cat /opt/module/hadoop-2.7.2/etc/hadoop/core-site.xml</code></pre>
+<p>查看文件是否修改成功了。</p>
+<p>注意这里分发失败的原因可能是没有权限修改文件，需要通过chmod来加权限。</p>
+</li>
+</ol>
+<h2 id="3-5-集群单点启动"><a href="#3-5-集群单点启动" class="headerlink" title="3.5 集群单点启动"></a>3.5 集群单点启动</h2><ol>
+<li><p>如果集群是第一次启动，需要<strong>格式化NameNode</strong></p>
+<pre><code class="bash">[hadoopUser@hadoop002 hadoop-2.7.2]$ hadoop namenode -format</code></pre>
+</li>
+<li><p>启动namenode</p>
+<pre><code class="bash">[hadoopUser@hadoop002 hadoop-2.7.2]$ hadoop-daemon.sh start namenode</code></pre>
+</li>
+<li><p>在hadoop002、003和004上面都启动datanode</p>
+<pre><code class="bash">[hadoopUser@hadoop002 hadoop-2.7.2]$ hadoop-daemon.sh start datanode</code></pre>
+</li>
+</ol>
+<p>注意，如果单点启动失败，则需要删除 logs文件夹和data文件夹，然后重新格式化namenode</p>
+<h2 id="3-6-群起集群"><a href="#3-6-群起集群" class="headerlink" title="3.6 群起集群"></a>3.6 群起集群</h2><p>在etc/hadoop/slaves文件中编辑如下内容：（也就是将这些主机名记录在该文件中）</p>
+<img src="/2020/03/18/hadoop/2_%E4%BD%BF%E7%94%A8hadoop/image-20200318165520919.png" alt="image-20200318165520919" style="zoom:80%;">
+
+<p>然后通过xsync将这个文件同步到各个主机中</p>
+<pre><code class="bash">xsync /opt/module/hadoopxxx/etc/hadoop/slave</code></pre>
+<ol>
+<li><p><strong>启动HDFS（hadoop002）</strong></p>
+<pre><code class="bash">sbin/start-dfs.sh</code></pre>
+</li>
+<li><p><strong>启动YARN</strong></p>
+<pre><code class="bash">sbin/start-yarn.sh</code></pre>
+</li>
+</ol>
+<p>通过执行上面的两个sh，就可以按照配置中指定的主机来启动对应的namenode、datanode和secondary namenode。</p>
+<h2 id="3-7-测试集群"><a href="#3-7-测试集群" class="headerlink" title="3.7 测试集群"></a>3.7 测试集群</h2><ol>
+<li><p>上传文件到集群</p>
+<p>上传小文件</p>
+<pre><code class="bash">hdfs dfs -mkdir -p /user/hadoopUser/input
+hdfs dfs -put wcinput/wc.input /user/hadoopUser/input</code></pre>
+<p>上传大文件</p>
+<pre><code class="bash">bin/hadoop fs -put /opt/software/hadoop-2.7.2.tar.gz  /user/hadoopUser/input</code></pre>
+</li>
+<li><p>下载</p>
+<pre><code class="bash">bin/hadoop fs -get /user/hadoopUser/input/hadoop-2.7.2.tar.gz ./</code></pre>
+</li>
+</ol>
+<h2 id="3-8-停止集群"><a href="#3-8-停止集群" class="headerlink" title="3.8 停止集群"></a>3.8 停止集群</h2><p>以下指令如果不存在，说明环境没配好，需要添加sbin，或者直接在指令前面加上sbin也可以。</p>
+<ol>
+<li><p>单点停止</p>
+<ul>
+<li><p>HDFS</p>
+<pre><code class="bash">hadoop-daemon.sh  start / stop  namenode / datanode / secondarynamenode</code></pre>
+</li>
+<li><p>YARN</p>
+<pre><code class="bash">yarn-daemon.sh  start / stop  resourcemanager / nodemanager</code></pre>
+</li>
+</ul>
+</li>
+<li><p>群起群停</p>
+<ul>
+<li><p>HDFS</p>
+<pre><code class="bash">start-dfs.sh   /  stop-dfs.sh</code></pre>
+</li>
+<li><p>YARN</p>
+<pre><code class="bash">start-yarn.sh  /  stop-yarn.sh</code></pre>
+</li>
+</ul>
+</li>
+</ol>
+<h1 id="使用notepad-的插件访问虚拟机"><a href="#使用notepad-的插件访问虚拟机" class="headerlink" title="使用notepad++的插件访问虚拟机"></a>使用notepad++的插件访问虚拟机</h1><p>可以使用notepad++的插件NPPFTP，配置完成后，可以直接以更清晰的方式来访问虚拟机。</p>
+<img src="/2020/03/18/hadoop/2_%E4%BD%BF%E7%94%A8hadoop/image-20200318163040777.png" alt="image-20200318163040777" style="zoom:80%;">
+
+<h1 id="无密登录配置"><a href="#无密登录配置" class="headerlink" title="无密登录配置"></a>无密登录配置</h1><ol>
+<li><p>生成公钥和私钥</p>
+<pre><code class="bash">[hadoopUser@hadoop002 .ssh]$ ssh-keygen -t rsa</code></pre>
+</li>
+<li><p>将公钥拷贝到要免密登录的目标机器上</p>
+<pre><code class="bash">ssh-copy-id hadoop002
+ssh-copy-id hadoop003
+ssh-copy-id hadoop004</code></pre>
+<p>此后可以实现hadoop002到hadoop002 003 004的无密访问</p>
+<p>可以通过下面的方式来测试</p>
+<pre><code class="bash">ssh hadoop003
+ssh hadoop004</code></pre>
+</li>
+<li><p>对hadoop003和004重新执行以上两个操作即可。</p>
+</li>
+</ol>
+
+      
+       
+    </div>
+</article>
+
+
+
+
+
+
+
+    
+
+
+
+
+    </div>
+    <div class="copyright">
+        <p class="footer-entry">©2019-2020 POWDER SNOW</p>
+
+    </div>
+    <div class="full-toc">
+        <button class="full"><span class="min "></span></button>
+<button class="post-toc-menu"><span class="post-toc-menu-icons"></span></button>
+<div class="post-toc"><span class="post-toc-title">目录</span>
+    <div class="post-toc-content">
+
+    </div>
+</div>
+<a class="" id="rocket" ></a>
+
+    </div>
+</div>
+<div class="acParent"></div>
+
+</body>
+<script src="/js/jquery.pjax.js?v=1.0.1" ></script>
+
+<script src="/js/script.js?v=1.0.1" ></script>
+<script>
+    var img_resize = 'default';
+    /*作者、标签的自动补全*/
+    $(function () {
+        $('.search').AutoComplete({
+            'data': ['#HTTP','#protobuf','#MySQL SQL','#Spring','#java','#QT','#区块链','#分布式','#大数据','#前端','#MyBatis','#SpringBoot','#网络编程','#Redis','#多线程','#数据库',],
+            'itemHeight': 20,
+            'width': 418
+        }).AutoComplete('show');
+    })
+    function initArticle() {
+        /*渲染对应的表格样式*/
+        
+            $(".post .pjax table").addClass("green_title");
+        
+
+        /*渲染打赏样式*/
+        
+
+        /*高亮代码块行号*/
+        
+
+        /*访问数量*/
+        
+
+        /*代码高亮，行号对齐*/
+        $('.pre-numbering').css('line-height',$('.has-numbering').css('line-height'));
+
+        
+        
+    }
+
+    /*打赏页面隐藏与展示*/
+    
+
+</script>
+
+<!--加入行号的高亮代码块样式-->
+
+<!--自定义样式设置-->
+<style>
+    
+    
+    .nav {
+        width: 544px;
+    }
+    .nav.fullscreen {
+        margin-left: -544px;
+    }
+    .nav-left {
+        width: 122px;
+    }
+    
+    
+    @media screen and (max-width: 1468px) {
+        .nav {
+            width: 492px;
+        }
+        .nav.fullscreen {
+            margin-left: -492px;
+        }
+        .nav-left {
+            width: 100px;
+        }
+    }
+    
+    
+    @media screen and (max-width: 1024px) {
+        .nav {
+            width: 492px;
+            margin-left: -492px
+        }
+        .nav.fullscreen {
+            margin-left: 0;
+        }
+        .nav .hide-list.fullscreen {
+            left: 492px
+        }
+    }
+    
+    @media screen and (max-width: 426px) {
+        .nav {
+            width: 100%;
+        }
+        .nav-left {
+            width: 100%;
+        }
+    }
+    
+    
+    .nav-right .title-list nav a .post-title, .nav-right .title-list #local-search-result a .post-title {
+        color: #383636;
+    }
+    
+    
+    .nav-right .title-list nav a .post-date, .nav-right .title-list #local-search-result a .post-date {
+        color: #5e5e5f;
+    }
+    
+    
+    .nav-right nav a.hover, #local-search-result a.hover{
+        background-color: #fbf4a8;
+    }
+    
+    
+
+    /*列表样式*/
+    
+    .post .pjax article .article-entry>ol, .post .pjax article .article-entry>ul, .post .pjax article>ol, .post .pjax article>ul{
+        border: #e2dede solid 1px;
+        border-radius: 10px;
+        padding: 10px 32px 10px 56px;
+    }
+    .post .pjax article .article-entry li>ol, .post .pjax article .article-entry li>ul,.post .pjax article li>ol, .post .pjax article li>ul{
+        padding-top: 5px;
+        padding-bottom: 5px;
+    }
+    .post .pjax article .article-entry>ol>li, .post .pjax article .article-entry>ul>li,.post .pjax article>ol>li, .post .pjax article>ul>li{
+        margin-bottom: auto;
+        margin-left: auto;
+    }
+    .post .pjax article .article-entry li>ol>li, .post .pjax article .article-entry li>ul>li,.post .pjax article li>ol>li, .post .pjax article li>ul>li{
+        margin-bottom: auto;
+        margin-left: auto;
+    }
+    
+
+    /* 背景图样式 */
+    
+    .post {
+        background: url(/img/bck.jpg);
+    }
+    
+    
+    .post.index {
+        background: url(/img/background.jpg);
+    }
+    
+
+
+    /*引用块样式*/
+    
+
+    /*文章列表背景图*/
+    
+    .nav-right:before {
+        content: ' ';
+        display: block;
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        opacity: 0.3;
+        background: url("/img/123.jpg");
+        background-repeat: no-repeat;
+        background-position: 50% 0;
+        -ms-background-size: cover;
+        -o-background-size: cover;
+        -moz-background-size: cover;
+        -webkit-background-size: cover;
+        background-size: cover;
+    }
+    
+
+    
+</style>
+
+
+
+
+
+
+
+</html>

@@ -1,0 +1,1673 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>【前端 4】盒子模型 | POWDER SNOW</title>
+  <meta name="keywords" content=" 前端 ">
+  <meta name="description" content="【前端 4】盒子模型 | POWDER SNOW">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<meta property="og:type" content="website">
+<meta property="og:title" content="categories">
+<meta property="og:url" content="http://yoursite.com/categories/index.html">
+<meta property="og:site_name" content="POWDER SNOW">
+<meta property="article:published_time" content="2018-03-02T04:33:16.000Z">
+<meta property="article:modified_time" content="2020-03-05T13:28:59.839Z">
+<meta property="article:author" content="冯冠雄">
+<meta name="twitter:card" content="summary">
+
+
+<link rel="icon" href="/img/avatar.jpg">
+
+<link href="/css/style.css?v=1.0.1" rel="stylesheet">
+
+<link href="/css/hl_theme/atom-light.css?v=1.0.1" rel="stylesheet">
+
+<link href="//cdn.bootcss.com/animate.css/3.5.2/animate.min.css" rel="stylesheet">
+<link href="//cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+
+<script src="//cdn.bootcss.com/jquery/2.2.4/jquery.min.js"></script>
+<script src="/js/jquery.autocomplete.min.js?v=1.0.1" ></script>
+
+<script src="//cdn.bootcss.com/highlight.js/9.12.0/highlight.min.js"></script>
+<script>
+    hljs.initHighlightingOnLoad();
+</script>
+
+<script src="//cdn.bootcss.com/nprogress/0.2.0/nprogress.min.js"></script>
+
+
+
+<script src="//cdn.bootcss.com/jquery-cookie/1.4.1/jquery.cookie.min.js" ></script>
+
+<script src="/js/iconfont.js?v=1.0.1" ></script>
+
+<meta name="generator" content="Hexo 4.2.0"></head>
+<div style="display: none">
+  <input class="theme_disqus_on" value="false">
+  <input class="theme_preload_comment" value="false">
+  <input class="theme_blog_path" value="">
+</div>
+
+<body>
+<aside class="nav">
+    <div class="nav-left">
+        <a href="/" class="avatar_target">
+    <img class="avatar" src="/img/avatar.jpg" />
+</a>
+<div class="author">
+    <span>冯冠雄</span>
+</div>
+
+<div class="icon">
+    
+        
+        <a title="github" href="https://github.com/xiong-Fgx" target="_blank">
+            
+                <svg class="iconfont-svg" aria-hidden="true">
+                    <use xlink:href="#icon-github"></use>
+                </svg>
+            
+        </a>
+        
+    
+        
+        <a title="linkedin" href="https://www.linkedin.com/in/guanxiong-feng-8b6aa8179" target="_blank">
+            
+                <svg class="iconfont-svg" aria-hidden="true">
+                    <use xlink:href="#icon-linkedin"></use>
+                </svg>
+            
+        </a>
+        
+    
+        
+        <a title="email" href="mailto:guanxiongf@gmail.com" target="_blank">
+            
+                <svg class="iconfont-svg" aria-hidden="true">
+                    <use xlink:href="#icon-email"></use>
+                </svg>
+            
+        </a>
+        
+    
+</div>
+
+
+
+
+<ul>
+    <li><div class="all active">全部文章</div></li>
+    
+        
+            
+            <li><div data-rel="网络"><i class="fold iconfont icon-right"></i>网络</div>
+                
+                    <ul class="sub hide">
+                        
+                        <li><div data-rel="HTTP">HTTP</div>
+                            
+                        </li>
+                            
+                        <li><div data-rel="protobuf">protobuf</div>
+                            
+                        </li>
+                            
+                        <li><div data-rel="网络编程">网络编程</div>
+                            
+                        </li>
+                            
+                    </ul>
+                
+            </li>
+            
+        
+    
+        
+            
+            <li><div data-rel="数据库">数据库</div>
+                
+            </li>
+            
+        
+    
+        
+            
+        
+    
+        
+            
+            <li><div data-rel="SSM"><i class="fold iconfont icon-right"></i>SSM</div>
+                
+                    <ul class="sub hide">
+                        
+                        <li><div data-rel="SSM整合">SSM整合</div>
+                            
+                        </li>
+                            
+                        <li><div data-rel="Spring">Spring</div>
+                            
+                        </li>
+                            
+                        <li><div data-rel="SpringMVC">SpringMVC</div>
+                            
+                        </li>
+                            
+                        <li><div data-rel="MyBatis">MyBatis</div>
+                            
+                        </li>
+                            
+                        <li><div data-rel="SpringBoot">SpringBoot</div>
+                            
+                        </li>
+                            
+                    </ul>
+                
+            </li>
+            
+        
+    
+        
+            
+        
+    
+        
+            
+        
+    
+        
+            
+        
+    
+        
+            
+        
+    
+        
+            
+            <li><div data-rel="客户端"><i class="fold iconfont icon-right"></i>客户端</div>
+                
+                    <ul class="sub hide">
+                        
+                        <li><div data-rel="QT">QT</div>
+                            
+                        </li>
+                            
+                    </ul>
+                
+            </li>
+            
+        
+    
+        
+            
+            <li><div data-rel="区块链"><i class="fold iconfont icon-right"></i>区块链</div>
+                
+                    <ul class="sub hide">
+                        
+                        <li><div data-rel="论文">论文</div>
+                            
+                        </li>
+                            
+                        <li><div data-rel="Fabric">Fabric</div>
+                            
+                        </li>
+                            
+                        <li><div data-rel="fabric">fabric</div>
+                            
+                        </li>
+                            
+                    </ul>
+                
+            </li>
+            
+        
+    
+        
+            
+            <li><div data-rel="分布式">分布式</div>
+                
+            </li>
+            
+        
+    
+        
+            
+            <li><div data-rel="大数据"><i class="fold iconfont icon-right"></i>大数据</div>
+                
+                    <ul class="sub hide">
+                        
+                        <li><div data-rel="hadoop">hadoop</div>
+                            
+                        </li>
+                            
+                    </ul>
+                
+            </li>
+            
+        
+    
+        
+            
+            <li><div data-rel="前端"><i class="fold iconfont icon-right"></i>前端</div>
+                
+                    <ul class="sub hide">
+                        
+                        <li><div data-rel="HTML">HTML</div>
+                            
+                        </li>
+                            
+                        <li><div data-rel="CSS">CSS</div>
+                            
+                        </li>
+                            
+                    </ul>
+                
+            </li>
+            
+        
+    
+        
+            
+        
+    
+        
+            
+        
+    
+        
+            
+        
+    
+        
+            
+        
+    
+        
+            
+        
+    
+        
+            
+            <li><div data-rel="笔记">笔记</div>
+                
+            </li>
+            
+        
+    
+        
+            
+        
+    
+        
+            
+        
+    
+        
+            
+        
+    
+        
+            
+        
+    
+        
+            
+        
+    
+</ul>
+<div class="left-bottom">
+    <div class="menus">
+    
+    
+    
+    
+    </div>
+    <div></div>
+</div>
+<input type="hidden" id="yelog_site_posts_number" value="71">
+
+<div style="display: none">
+    <span id="busuanzi_value_site_uv"></span>
+    <span id="busuanzi_value_site_pv"></span>
+</div>
+
+    </div>
+    <div class="nav-right">
+        <div class="friends-area">
+    <div class="friends-title">
+        友情链接
+        <i class="back-title-list"></i>
+    </div>
+    <div class="friends-content">
+        <ul>
+            
+            <li><a target="_blank" href="http://yelog.org/">叶落阁</a></li>
+            
+        </ul>
+    </div>
+</div>
+        <div class="title-list">
+    <form onkeydown="if(event.keyCode === 13){return false;}">
+        <input id="local-search-input" class="search" type="text" placeholder="Search..." />
+        <i class="cross"></i>
+        <span>
+            <label for="tagswitch">Tags:</label>
+            <input id="tagswitch" type="checkbox" style="display: none" />
+            <i id="tagsWitchIcon"></i>
+        </span>
+    </form>
+    <div class="tags-list">
+    
+    <li class="article-tag-list-item">
+        <a class="color5">HTTP</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a class="color4">protobuf</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a class="color5">MySQL SQL</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a class="color2">Spring</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a class="color5">java</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a class="color3">QT</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a class="color4">区块链</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a class="color4">分布式</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a class="color4">大数据</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a class="color3">前端</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a class="color3">MyBatis</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a class="color1">SpringBoot</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a class="color5">网络编程</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a class="color1">Redis</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a class="color4">多线程</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a class="color4">数据库</a>
+    </li>
+    
+    <div class="clearfix"></div>
+</div>
+
+    
+    <nav id="title-list-nav">
+        
+        <a  class="前端 CSS "
+           href="/2021/01/11/html/4_%E7%9B%92%E5%AD%90%E6%A8%A1%E5%9E%8B/"
+           data-tag="前端"
+           data-author="" >
+            <span class="post-title" title="【前端 4】盒子模型">【前端 4】盒子模型</span>
+            <span class="post-date" title="2021-01-11 09:41:10">2021/01/11</span>
+        </a>
+        
+        <a  class="前端 CSS "
+           href="/2021/01/09/html/3_CSS%E8%BF%9B%E9%98%B6/"
+           data-tag="前端"
+           data-author="" >
+            <span class="post-title" title="【前端 3】CSS进阶">【前端 3】CSS进阶</span>
+            <span class="post-date" title="2021-01-09 09:43:10">2021/01/09</span>
+        </a>
+        
+        <a  class="前端 CSS "
+           href="/2021/01/05/html/2_CSS/"
+           data-tag="前端"
+           data-author="" >
+            <span class="post-title" title="【前端 2】CSS">【前端 2】CSS</span>
+            <span class="post-date" title="2021-01-05 16:22:10">2021/01/05</span>
+        </a>
+        
+        <a  class="前端 HTML "
+           href="/2021/01/04/html/1_html/"
+           data-tag="前端"
+           data-author="" >
+            <span class="post-title" title="【前端 1】HTML">【前端 1】HTML</span>
+            <span class="post-date" title="2021-01-04 10:46:10">2021/01/04</span>
+        </a>
+        
+        <a  class="区块链 fabric "
+           href="/2020/12/12/fabric/08_%E9%93%BE%E7%A0%81/"
+           data-tag="区块链"
+           data-author="" >
+            <span class="post-title" title="07_链码接口使用">07_链码接口使用</span>
+            <span class="post-date" title="2020-12-12 11:43:23">2020/12/12</span>
+        </a>
+        
+        <a  class="区块链 fabric "
+           href="/2020/12/12/fabric/02_%E9%83%A8%E7%BD%B2%E8%B0%83%E7%94%A8%E9%93%BE%E7%A0%81/"
+           data-tag="区块链"
+           data-author="" >
+            <span class="post-title" title="02_部署调用链码">02_部署调用链码</span>
+            <span class="post-date" title="2020-12-12 10:56:23">2020/12/12</span>
+        </a>
+        
+        <a  class="区块链 fabric "
+           href="/2020/12/09/fabric/07_dockerCompose%E5%90%AF%E5%8A%A8fabric/"
+           data-tag="区块链"
+           data-author="" >
+            <span class="post-title" title="06_docker compose启动节点">06_docker compose启动节点</span>
+            <span class="post-date" title="2020-12-09 11:35:23">2020/12/09</span>
+        </a>
+        
+        <a  class="区块链 fabric "
+           href="/2020/12/09/fabric/03_%E7%BD%91%E7%BB%9C%E7%BB%93%E6%9E%84%E5%8F%98%E5%8A%A8/"
+           data-tag="区块链"
+           data-author="" >
+            <span class="post-title" title="03_用户结构变动">03_用户结构变动</span>
+            <span class="post-date" title="2020-12-09 10:35:23">2020/12/09</span>
+        </a>
+        
+        <a  class="区块链 fabric "
+           href="/2020/12/02/fabric/01_%E6%90%AD%E5%BB%BA%E5%9F%BA%E7%A1%80%E7%BD%91%E7%BB%9C/"
+           data-tag="区块链"
+           data-author="" >
+            <span class="post-title" title="01_搭建基础网络">01_搭建基础网络</span>
+            <span class="post-date" title="2020-12-02 11:05:23">2020/12/02</span>
+        </a>
+        
+        <a  class="区块链 fabric "
+           href="/2020/12/01/fabric/05_java%20SDK%E4%BD%BF%E7%94%A8/"
+           data-tag="区块链"
+           data-author="" >
+            <span class="post-title" title="05_javaSDK使用">05_javaSDK使用</span>
+            <span class="post-date" title="2020-12-01 15:04:23">2020/12/01</span>
+        </a>
+        
+        <a  class="区块链 fabric "
+           href="/2020/12/01/fabric/04_%E7%94%A8%E6%88%B7%E4%BD%BF%E7%94%A8%E9%93%BE%E7%A0%81/"
+           data-tag="区块链"
+           data-author="" >
+            <span class="post-title" title="04_用户使用链码">04_用户使用链码</span>
+            <span class="post-date" title="2020-12-01 10:55:23">2020/12/01</span>
+        </a>
+        
+        <a  class="大数据 hadoop "
+           href="/2020/11/26/hadoop/%E5%AE%89%E8%A3%85/"
+           data-tag="大数据"
+           data-author="" >
+            <span class="post-title" title="【hadoop 3】hadoop分布式安装总结">【hadoop 3】hadoop分布式安装总结</span>
+            <span class="post-date" title="2020-11-26 17:50:09">2020/11/26</span>
+        </a>
+        
+        <a  class="客户端 QT "
+           href="/2020/10/29/QT/4_%E6%A8%A1%E5%9E%8B%20%E8%A7%86%E5%9B%BE%E7%BB%93%E6%9E%84/"
+           data-tag="QT"
+           data-author="" >
+            <span class="post-title" title="【QT 3】模型-视图结构">【QT 3】模型-视图结构</span>
+            <span class="post-date" title="2020-10-29 16:49:10">2020/10/29</span>
+        </a>
+        
+        <a  class="客户端 QT "
+           href="/2020/10/28/QT/3_%E6%8E%A7%E4%BB%B6/"
+           data-tag="QT"
+           data-author="" >
+            <span class="post-title" title="【QT 2】控件">【QT 2】控件</span>
+            <span class="post-date" title="2020-10-28 16:55:10">2020/10/28</span>
+        </a>
+        
+        <a  class="客户端 QT "
+           href="/2020/10/28/QT/2_%E5%B8%83%E5%B1%80%E7%AE%A1%E7%90%86/"
+           data-tag="QT"
+           data-author="" >
+            <span class="post-title" title="【QT 1】布局管理">【QT 1】布局管理</span>
+            <span class="post-date" title="2020-10-28 14:37:10">2020/10/28</span>
+        </a>
+        
+        <a  class="客户端 QT "
+           href="/2020/10/20/QT/QT%E7%95%8C%E9%9D%A2%E7%BC%96%E8%BE%91%E5%99%A8/"
+           data-tag="QT"
+           data-author="" >
+            <span class="post-title" title="【QT 4】QT界面编辑器">【QT 4】QT界面编辑器</span>
+            <span class="post-date" title="2020-10-20 15:52:10">2020/10/20</span>
+        </a>
+        
+        <a  class="SSM Spring "
+           href="/2020/06/01/%E7%AC%94%E8%AE%B0/spring/"
+           data-tag="Spring"
+           data-author="" >
+            <span class="post-title" title="【笔记】Spring总结">【笔记】Spring总结</span>
+            <span class="post-date" title="2020-06-01 03:57:17">2020/06/01</span>
+        </a>
+        
+        <a  class="笔记 "
+           href="/2020/05/12/%E7%AC%94%E8%AE%B0/%E6%95%B0%E6%8D%AE%E5%BA%93/"
+           data-tag="数据库"
+           data-author="" >
+            <span class="post-title" title="【笔记】数据库与MySQL">【笔记】数据库与MySQL</span>
+            <span class="post-date" title="2020-05-12 21:38:05">2020/05/12</span>
+        </a>
+        
+        <a  class="笔记 "
+           href="/2020/05/07/%E7%AC%94%E8%AE%B0/redis/"
+           data-tag="Redis"
+           data-author="" >
+            <span class="post-title" title="【笔记】Redis">【笔记】Redis</span>
+            <span class="post-date" title="2020-05-07 18:38:05">2020/05/07</span>
+        </a>
+        
+        <a  class="笔记 "
+           href="/2020/04/25/%E7%AC%94%E8%AE%B0/%E5%A4%9A%E7%BA%BF%E7%A8%8B/"
+           data-tag="多线程"
+           data-author="" >
+            <span class="post-title" title="【笔记】java并发">【笔记】java并发</span>
+            <span class="post-date" title="2020-04-25 15:38:01">2020/04/25</span>
+        </a>
+        
+        <a  class="大数据 hadoop "
+           href="/2020/03/18/hadoop/2_%E4%BD%BF%E7%94%A8hadoop/"
+           data-tag="大数据"
+           data-author="" >
+            <span class="post-title" title="【hadoop 2】hadoop三种模式使用">【hadoop 2】hadoop三种模式使用</span>
+            <span class="post-date" title="2020-03-18 17:49:04">2020/03/18</span>
+        </a>
+        
+        <a  class="SSM SpringBoot "
+           href="/2020/03/18/springboot/3_springboot%E7%9A%84%E9%85%8D%E7%BD%AE/"
+           data-tag="SpringBoot"
+           data-author="" >
+            <span class="post-title" title="【SpringBoot 02】配置文件">【SpringBoot 02】配置文件</span>
+            <span class="post-date" title="2020-03-18 12:58:23">2020/03/18</span>
+        </a>
+        
+        <a  class="SSM SpringBoot "
+           href="/2020/03/17/springboot/2_springboot%E7%9A%84helloworld/"
+           data-tag="SpringBoot"
+           data-author="" >
+            <span class="post-title" title="【SpringBoot 01】HelloWorld">【SpringBoot 01】HelloWorld</span>
+            <span class="post-date" title="2020-03-17 19:58:23">2020/03/17</span>
+        </a>
+        
+        <a  class="SSM SSM整合 "
+           href="/2020/03/05/3-SpringMVC/1_%E6%90%AD%E5%BB%BAspring/"
+           data-tag="java"
+           data-author="" >
+            <span class="post-title" title="【SSM实战】SSM框架整合">【SSM实战】SSM框架整合</span>
+            <span class="post-date" title="2020-03-05 20:37:01">2020/03/05</span>
+        </a>
+        
+        <a  class="SSM SpringMVC "
+           href="/2020/03/05/3-SpringMVC/7_SpringMVC%E5%BC%82%E5%B8%B8%E5%A4%84%E7%90%86%E4%B8%8E%E6%8B%A6%E6%88%AA%E5%99%A8/"
+           data-tag="java"
+           data-author="" >
+            <span class="post-title" title="【SpringMVC实战6】异常处理与拦截器">【SpringMVC实战6】异常处理与拦截器</span>
+            <span class="post-date" title="2020-03-05 13:06:19">2020/03/05</span>
+        </a>
+        
+        <a  class="SSM SpringMVC "
+           href="/2020/03/04/3-SpringMVC/6_SpringMVC%E5%93%8D%E5%BA%94/"
+           data-tag="java"
+           data-author="" >
+            <span class="post-title" title="【SpringMVC实战5】响应">【SpringMVC实战5】响应</span>
+            <span class="post-date" title="2020-03-04 19:26:39">2020/03/04</span>
+        </a>
+        
+        <a  class="SSM SpringMVC "
+           href="/2020/03/03/3-SpringMVC/4_SpringMVC%E7%9A%84%E5%B8%B8%E7%94%A8%E6%B3%A8%E8%A7%A3/"
+           data-tag="java"
+           data-author="" >
+            <span class="post-title" title="【SpringMVC实战3】常用注解">【SpringMVC实战3】常用注解</span>
+            <span class="post-date" title="2020-03-03 15:26:29">2020/03/03</span>
+        </a>
+        
+        <a  class="SSM SpringMVC "
+           href="/2020/03/03/3-SpringMVC/5_%E8%AF%B7%E6%B1%82%E5%8F%82%E6%95%B0%E7%BB%91%E5%AE%9A/"
+           data-tag="java"
+           data-author="" >
+            <span class="post-title" title="【SpringMVC实战4】请求参数绑定">【SpringMVC实战4】请求参数绑定</span>
+            <span class="post-date" title="2020-03-03 09:13:23">2020/03/03</span>
+        </a>
+        
+        <a  class="SSM SpringMVC "
+           href="/2020/03/02/3-SpringMVC/3_SpringMVC%E7%9A%84%E6%89%A7%E8%A1%8C%E6%B5%81%E7%A8%8B/"
+           data-tag="java"
+           data-author="" >
+            <span class="post-title" title="【SpringMVC实战2】执行流程">【SpringMVC实战2】执行流程</span>
+            <span class="post-date" title="2020-03-02 18:26:39">2020/03/02</span>
+        </a>
+        
+        <a  class="SSM SpringMVC "
+           href="/2020/03/02/3-SpringMVC/2_%E5%85%A5%E9%97%A8%E6%A1%88%E4%BE%8B/"
+           data-tag="java"
+           data-author="" >
+            <span class="post-title" title="【SpringMVC实战1】入门案例">【SpringMVC实战1】入门案例</span>
+            <span class="post-date" title="2020-03-02 14:26:39">2020/03/02</span>
+        </a>
+        
+        <a  class="SSM Spring "
+           href="/2020/02/21/13-Spring/8_%E4%BA%8B%E5%8A%A1%E6%8E%A7%E5%88%B6/"
+           data-tag="Spring"
+           data-author="" >
+            <span class="post-title" title="【Spring实战8】事务控制">【Spring实战8】事务控制</span>
+            <span class="post-date" title="2020-02-21 15:23:48">2020/02/21</span>
+        </a>
+        
+        <a  class="SSM Spring "
+           href="/2020/02/20/13-Spring/7_JdbcTemplate/"
+           data-tag="Spring"
+           data-author="" >
+            <span class="post-title" title="【Spring实战7】JdbcTemplate">【Spring实战7】JdbcTemplate</span>
+            <span class="post-date" title="2020-02-20 09:32:29">2020/02/20</span>
+        </a>
+        
+        <a  class="SSM Spring "
+           href="/2020/02/19/13-Spring/6_%E5%9F%BA%E4%BA%8Exml%E5%92%8C%E6%B3%A8%E8%A7%A3%E7%9A%84AOP%E9%85%8D%E7%BD%AE/"
+           data-tag="Spring"
+           data-author="" >
+            <span class="post-title" title="【Spring实战6】基于xml和注解的AOP配置">【Spring实战6】基于xml和注解的AOP配置</span>
+            <span class="post-date" title="2020-02-19 21:31:44">2020/02/19</span>
+        </a>
+        
+        <a  class="SSM Spring "
+           href="/2020/02/19/13-Spring/5_AOP/"
+           data-tag="Spring"
+           data-author="" >
+            <span class="post-title" title="【Spring实战5】AOP">【Spring实战5】AOP</span>
+            <span class="post-date" title="2020-02-19 18:56:47">2020/02/19</span>
+        </a>
+        
+        <a  class="SSM Spring "
+           href="/2020/02/18/13-Spring/4_%E5%8A%A8%E6%80%81%E4%BB%A3%E7%90%86/"
+           data-tag="Spring"
+           data-author="" >
+            <span class="post-title" title="【Spring实战4】动态代理">【Spring实战4】动态代理</span>
+            <span class="post-date" title="2020-02-18 17:15:32">2020/02/18</span>
+        </a>
+        
+        <a  class="SSM Spring "
+           href="/2020/02/14/13-Spring/3_%E5%9F%BA%E4%BA%8E%E6%B3%A8%E8%A7%A3%E7%9A%84IOC/"
+           data-tag="Spring"
+           data-author="" >
+            <span class="post-title" title="【Spring实战3】IoC注解">【Spring实战3】IoC注解</span>
+            <span class="post-date" title="2020-02-14 20:57:17">2020/02/14</span>
+        </a>
+        
+        <a  class="SSM Spring "
+           href="/2020/02/13/13-Spring/2_IOC/"
+           data-tag="Spring"
+           data-author="" >
+            <span class="post-title" title="【Spring实战2】IoC与DI">【Spring实战2】IoC与DI</span>
+            <span class="post-date" title="2020-02-13 20:56:03">2020/02/13</span>
+        </a>
+        
+        <a  class="SSM Spring "
+           href="/2020/02/13/13-Spring/1_%E7%A8%8B%E5%BA%8F%E8%80%A6%E5%90%88%E4%B8%8E%E8%A7%A3%E8%80%A6/"
+           data-tag="Spring"
+           data-author="" >
+            <span class="post-title" title="【Spring实战1】程序的耦合与解耦">【Spring实战1】程序的耦合与解耦</span>
+            <span class="post-date" title="2020-02-13 13:17:03">2020/02/13</span>
+        </a>
+        
+        <a  class="SSM MyBatis "
+           href="/2020/02/07/mybatis/10_%E6%B3%A8%E8%A7%A3%E5%BC%80%E5%8F%91/"
+           data-tag="MyBatis"
+           data-author="" >
+            <span class="post-title" title="【Mybatis实战5】注解开发">【Mybatis实战5】注解开发</span>
+            <span class="post-date" title="2020-02-07 16:18:37">2020/02/07</span>
+        </a>
+        
+        <a  class="SSM MyBatis "
+           href="/2020/02/06/mybatis/9_%E7%BC%93%E5%AD%98/"
+           data-tag="MyBatis"
+           data-author="" >
+            <span class="post-title" title="【Mybatis实战4】加载与缓存">【Mybatis实战4】加载与缓存</span>
+            <span class="post-date" title="2020-02-06 18:29:03">2020/02/06</span>
+        </a>
+        
+        <a  class="SSM MyBatis "
+           href="/2020/02/06/mybatis/8_%E5%8A%A8%E6%80%81SQL%E4%B8%8E%E5%A4%9A%E8%A1%A8%E6%93%8D%E4%BD%9C/"
+           data-tag="MyBatis"
+           data-author="" >
+            <span class="post-title" title="【Mybatis实战3】动态SQL与多表操作">【Mybatis实战3】动态SQL与多表操作</span>
+            <span class="post-date" title="2020-02-06 18:08:29">2020/02/06</span>
+        </a>
+        
+        <a  class="SSM MyBatis "
+           href="/2020/02/06/mybatis/6_mybatis%E8%BF%9B%E8%A1%8CCRUD/"
+           data-tag="MyBatis"
+           data-author="" >
+            <span class="post-title" title="【Mybatis实战2】CRUD操作">【Mybatis实战2】CRUD操作</span>
+            <span class="post-date" title="2020-02-06 13:21:03">2020/02/06</span>
+        </a>
+        
+        <a  class="SSM MyBatis "
+           href="/2020/02/05/mybatis/2_%E5%9F%BA%E4%BA%8Exml%E7%9A%84%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/"
+           data-tag="MyBatis"
+           data-author="" >
+            <span class="post-title" title="【Mybatis实战1】两种环境搭建方法及示例">【Mybatis实战1】两种环境搭建方法及示例</span>
+            <span class="post-date" title="2020-02-05 10:21:01">2020/02/05</span>
+        </a>
+        
+        <a  class="数据库 "
+           href="/2020/01/29/11-MySQL/3_%E5%A4%9A%E8%A1%A8%E6%9F%A5%E8%AF%A2%E4%B8%8E%E4%BA%8B%E5%8A%A1/"
+           data-tag="MySQL SQL"
+           data-author="" >
+            <span class="post-title" title="多表查询与事务">多表查询与事务</span>
+            <span class="post-date" title="2020-01-29 13:52:00">2020/01/29</span>
+        </a>
+        
+        <a  class="数据库 "
+           href="/2020/01/26/11-MySQL/2_SQL%E9%AB%98%E7%BA%A7/"
+           data-tag="MySQL SQL"
+           data-author="" >
+            <span class="post-title" title="数据库高级知识及SQL实现">数据库高级知识及SQL实现</span>
+            <span class="post-date" title="2020-01-26 23:01:52">2020/01/26</span>
+        </a>
+        
+        <a  class="数据库 "
+           href="/2020/01/23/11-MySQL/1_SQL%E8%AF%AD%E8%A8%80%E5%9F%BA%E6%9C%AC%E6%93%8D%E4%BD%9C/"
+           data-tag="MySQL SQL"
+           data-author="" >
+            <span class="post-title" title="SQL语言基础">SQL语言基础</span>
+            <span class="post-date" title="2020-01-23 20:06:39">2020/01/23</span>
+        </a>
+        
+        <a  class="网络 protobuf "
+           href="/2020/01/16/10-java%E7%BD%91%E7%BB%9C/2_protobuf/"
+           data-tag="protobuf"
+           data-author="" >
+            <span class="post-title" title="java使用protobuf">java使用protobuf</span>
+            <span class="post-date" title="2020-01-16 17:57:52">2020/01/16</span>
+        </a>
+        
+        <a  class="网络 HTTP "
+           href="/2020/01/15/10-java%E7%BD%91%E7%BB%9C/1_HTTP/"
+           data-tag="HTTP"
+           data-author="" >
+            <span class="post-title" title="java实现简单的HTTP">java实现简单的HTTP</span>
+            <span class="post-date" title="2020-01-15 18:03:21">2020/01/15</span>
+        </a>
+        
+        <a  class="大数据 hadoop "
+           href="/2020/01/06/hadoop/1_hadoop/"
+           data-tag="大数据"
+           data-author="" >
+            <span class="post-title" title="【hadoop 1】hadoop环境搭建">【hadoop 1】hadoop环境搭建</span>
+            <span class="post-date" title="2020-01-06 14:55:10">2020/01/06</span>
+        </a>
+        
+        <a  class="区块链 Fabric "
+           href="/2019/11/24/blockchain/09/"
+           data-tag="区块链"
+           data-author="" >
+            <span class="post-title" title="Hyperledger Fabric系统框架笔记">Hyperledger Fabric系统框架笔记</span>
+            <span class="post-date" title="2019-11-24 12:43:08">2019/11/24</span>
+        </a>
+        
+        <a  class="区块链 论文 "
+           href="/2019/11/21/blockchain/08/"
+           data-tag="区块链"
+           data-author="" >
+            <span class="post-title" title="闪电网络（四）比特币闪电网络：The Bitcoin Lightning Network">闪电网络（四）比特币闪电网络：The Bitcoin Lightning Network</span>
+            <span class="post-date" title="2019-11-21 21:31:53">2019/11/21</span>
+        </a>
+        
+        <a  class="区块链 论文 "
+           href="/2019/11/20/blockchain/07/"
+           data-tag="区块链"
+           data-author="" >
+            <span class="post-title" title="闪电网络（三）哈希时间锁合约：Hashed Timelock Contract (HTLC)">闪电网络（三）哈希时间锁合约：Hashed Timelock Contract (HTLC)</span>
+            <span class="post-date" title="2019-11-20 10:51:23">2019/11/20</span>
+        </a>
+        
+        <a  class="区块链 论文 "
+           href="/2019/11/20/blockchain/05/"
+           data-tag="区块链"
+           data-author="" >
+            <span class="post-title" title="闪电网络（二）双向支付通道：Bidirectional Payment Channels + RSMC">闪电网络（二）双向支付通道：Bidirectional Payment Channels + RSMC</span>
+            <span class="post-date" title="2019-11-20 10:51:23">2019/11/20</span>
+        </a>
+        
+        <a  class="区块链 论文 "
+           href="/2019/11/19/blockchain/06/"
+           data-tag="区块链"
+           data-author="" >
+            <span class="post-title" title="闪电网络（一）微支付通道">闪电网络（一）微支付通道</span>
+            <span class="post-date" title="2019-11-19 10:07:02">2019/11/19</span>
+        </a>
+        
+        <a  class="区块链 论文 "
+           href="/2019/11/15/blockchain/03/"
+           data-tag="区块链"
+           data-author="" >
+            <span class="post-title" title="论文翻译 OmniLedger">论文翻译 OmniLedger</span>
+            <span class="post-date" title="2019-11-15 16:15:33">2019/11/15</span>
+        </a>
+        
+        <a  class="网络 网络编程 "
+           href="/2019/11/03/networkProgram/%E7%BD%91%E7%BB%9C%E7%BC%96%E7%A8%8B10UDP%E8%BF%9E%E6%8E%A5/"
+           data-tag="网络编程"
+           data-author="" >
+            <span class="post-title" title="网络编程10：UDP连接">网络编程10：UDP连接</span>
+            <span class="post-date" title="2019-11-03 16:15:07">2019/11/03</span>
+        </a>
+        
+        <a  class="网络 网络编程 "
+           href="/2019/11/02/networkProgram/%E7%BD%91%E7%BB%9C%E7%BC%96%E7%A8%8B9TCP%E7%9A%84%E5%BC%82%E5%B8%B8/"
+           data-tag="网络编程"
+           data-author="" >
+            <span class="post-title" title="网络编程9：TCP的异常">网络编程9：TCP的异常</span>
+            <span class="post-date" title="2019-11-02 13:57:10">2019/11/02</span>
+        </a>
+        
+        <a  class="网络 网络编程 "
+           href="/2019/11/01/networkProgram/%E7%BD%91%E7%BB%9C%E7%BC%96%E7%A8%8B8TCP%E6%95%B0%E6%8D%AE%E4%BC%A0%E8%BE%93/"
+           data-tag="网络编程"
+           data-author="" >
+            <span class="post-title" title="网络编程8：TCP数据传输">网络编程8：TCP数据传输</span>
+            <span class="post-date" title="2019-11-01 18:34:10">2019/11/01</span>
+        </a>
+        
+        <a  class="网络 网络编程 "
+           href="/2019/10/31/networkProgram/%E7%BD%91%E7%BB%9C%E7%BC%96%E7%A8%8B7TCP%E8%BF%9E%E6%8E%A5%E7%8A%B6%E6%80%81/"
+           data-tag="网络编程"
+           data-author="" >
+            <span class="post-title" title="网络编程7：TCP连接状态">网络编程7：TCP连接状态</span>
+            <span class="post-date" title="2019-10-31 17:14:55">2019/10/31</span>
+        </a>
+        
+        <a  class="网络 网络编程 "
+           href="/2019/10/30/networkProgram/%E7%BD%91%E7%BB%9C%E7%BC%96%E7%A8%8B6%E5%85%B3%E9%97%AD%E8%BF%9E%E6%8E%A5/"
+           data-tag="网络编程"
+           data-author="" >
+            <span class="post-title" title="网络编程6：关闭连接">网络编程6：关闭连接</span>
+            <span class="post-date" title="2019-10-30 18:34:12">2019/10/30</span>
+        </a>
+        
+        <a  class="网络 网络编程 "
+           href="/2019/10/29/networkProgram/%E7%BD%91%E7%BB%9C%E7%BC%96%E7%A8%8B5%E7%BD%91%E7%BB%9C%E5%B7%A5%E5%85%B7/"
+           data-tag="网络编程"
+           data-author="" >
+            <span class="post-title" title="网络编程5：网络工具">网络编程5：网络工具</span>
+            <span class="post-date" title="2019-10-29 14:24:11">2019/10/29</span>
+        </a>
+        
+        <a  class="网络 网络编程 "
+           href="/2019/10/28/networkProgram/%E7%BD%91%E7%BB%9C%E7%BC%96%E7%A8%8B3UDP%E5%8D%8F%E8%AE%AE%E4%BD%BF%E7%94%A8socket/"
+           data-tag="网络编程"
+           data-author="" >
+            <span class="post-title" title="网络编程3：UDP协议使用socket">网络编程3：UDP协议使用socket</span>
+            <span class="post-date" title="2019-10-28 10:11:10">2019/10/28</span>
+        </a>
+        
+        <a  class="网络 网络编程 "
+           href="/2019/10/28/networkProgram/%E7%BD%91%E7%BB%9C%E7%BC%96%E7%A8%8B4%E6%9C%AC%E5%9C%B0socket/"
+           data-tag="网络编程"
+           data-author="" >
+            <span class="post-title" title="网络编程4：本地套接字">网络编程4：本地套接字</span>
+            <span class="post-date" title="2019-10-28 10:11:10">2019/10/28</span>
+        </a>
+        
+        <a  class="网络 网络编程 "
+           href="/2019/10/27/networkProgram/%E7%BD%91%E7%BB%9C%E7%BC%96%E7%A8%8B2TCP%E5%8D%8F%E8%AE%AE%E4%BD%BF%E7%94%A8socket/"
+           data-tag="网络编程"
+           data-author="" >
+            <span class="post-title" title="网络编程2：TCP协议使用socket">网络编程2：TCP协议使用socket</span>
+            <span class="post-date" title="2019-10-27 17:59:09">2019/10/27</span>
+        </a>
+        
+        <a  class="网络 网络编程 "
+           href="/2019/10/26/networkProgram/%E7%BD%91%E7%BB%9C%E7%BC%96%E7%A8%8B1/"
+           data-tag="网络编程"
+           data-author="" >
+            <span class="post-title" title="网络编程1：基础部分">网络编程1：基础部分</span>
+            <span class="post-date" title="2019-10-26 16:54:02">2019/10/26</span>
+        </a>
+        
+        <a  class="分布式 "
+           href="/2019/09/12/distribute/01/"
+           data-tag="分布式"
+           data-author="" >
+            <span class="post-title" title="分布式系统的一致性与共识">分布式系统的一致性与共识</span>
+            <span class="post-date" title="2019-09-12 13:47:52">2019/09/12</span>
+        </a>
+        
+        <a  class="网络 HTTP "
+           href="/2019/08/05/http/030205/"
+           data-tag="HTTP"
+           data-author="" >
+            <span class="post-title" title="HTTP协议学习（五）HTTPS与安全">HTTP协议学习（五）HTTPS与安全</span>
+            <span class="post-date" title="2019-08-05 20:46:07">2019/08/05</span>
+        </a>
+        
+        <a  class="网络 HTTP "
+           href="/2019/07/20/http/030204/"
+           data-tag="HTTP"
+           data-author="" >
+            <span class="post-title" title="HTTP协议学习（四）cookie、缓存、代理机制">HTTP协议学习（四）cookie、缓存、代理机制</span>
+            <span class="post-date" title="2019-07-20 13:15:07">2019/07/20</span>
+        </a>
+        
+        <a  class="网络 HTTP "
+           href="/2019/07/10/http/030203/"
+           data-tag="HTTP"
+           data-author="" >
+            <span class="post-title" title="HTTP协议学习（三）数据传输与连接">HTTP协议学习（三）数据传输与连接</span>
+            <span class="post-date" title="2019-07-10 14:36:55">2019/07/10</span>
+        </a>
+        
+        <a  class="网络 HTTP "
+           href="/2019/07/01/http/030202/"
+           data-tag="HTTP"
+           data-author="" >
+            <span class="post-title" title="HTTP协议学习（二）基础">HTTP协议学习（二）基础</span>
+            <span class="post-date" title="2019-07-01 14:05:51">2019/07/01</span>
+        </a>
+        
+        <a  class="网络 HTTP "
+           href="/2019/06/14/http/030201/"
+           data-tag="HTTP"
+           data-author="" >
+            <span class="post-title" title="HTTP协议学习（一）概念">HTTP协议学习（一）概念</span>
+            <span class="post-date" title="2019-06-14 16:08:25">2019/06/14</span>
+        </a>
+        
+    </nav>
+</div>
+    </div>
+    <div class="hide-list">
+        <div class="semicircle">
+            <div class="brackets first"><</div>
+            <div class="brackets">&gt;</div>
+        </div>
+    </div>
+</aside>
+<div class="post">
+    <div class="pjax">
+        <article id="post-html/4_盒子模型" class="article article-type-post" itemscope itemprop="blogPost">
+    
+        <h1 class="article-title">【前端 4】盒子模型</h1>
+    
+    <div class="article-meta">
+        
+        
+        
+        <span class="book">
+            
+                <a  data-rel="前端">前端</a>/
+            
+                <a  data-rel="CSS">CSS</a>
+            
+        </span>
+        
+        
+        <span class="tag">
+            
+            <a class="color3">前端</a>
+            
+        </span>
+        
+    </div>
+    <div class="article-meta">
+        
+        创建时间:<time class="date" title='更新时间: 2021-01-11 11:10:05'>2021-01-11 09:41</time>
+        
+    </div>
+    <div class="article-meta">
+        
+        
+        
+    </div>
+    
+    <div class="toc-ref">
+    
+        <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#盒子模型的组成部分"><span class="toc-text">盒子模型的组成部分</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#1-border"><span class="toc-text">1. border</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-1-基础写法"><span class="toc-text">1.1 基础写法</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#1-2-三大基本属性"><span class="toc-text">1.2 三大基本属性</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#1-3-设置边框合并"><span class="toc-text">1.3 设置边框合并</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#1-4-边框大小不包含在盒子内"><span class="toc-text">1.4 边框大小不包含在盒子内</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-padding"><span class="toc-text">2. padding</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3-margin"><span class="toc-text">3. margin</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#3-1-块级盒子水平居中"><span class="toc-text">3.1 块级盒子水平居中</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-2-外边距合并"><span class="toc-text">3.2 外边距合并</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-3-清除内外边距"><span class="toc-text">3.3 清除内外边距</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#4-margin与padding"><span class="toc-text">4. margin与padding</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#圆角边框"><span class="toc-text">圆角边框</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#盒子阴影"><span class="toc-text">盒子阴影</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#文字阴影"><span class="toc-text">文字阴影</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#浮动"><span class="toc-text">浮动</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#1-传统网页布局的三种方式（PC网页）"><span class="toc-text">1. 传统网页布局的三种方式（PC网页）</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-浮动的相关概念"><span class="toc-text">2. 浮动的相关概念</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3-浮动的特点"><span class="toc-text">3. 浮动的特点</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#3-1-浮动元素会脱离标准流"><span class="toc-text">3.1 浮动元素会脱离标准流</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-2-浮动的元素会在一行内显示并且元素顶部对齐"><span class="toc-text">3.2 浮动的元素会在一行内显示并且元素顶部对齐</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-3-浮动的元素会具有行内块元素的特性"><span class="toc-text">3.3 浮动的元素会具有行内块元素的特性</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#4-浮动元素位置约束"><span class="toc-text">4. 浮动元素位置约束</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#5-注意事项"><span class="toc-text">5. 注意事项</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#6-清除浮动"><span class="toc-text">6. 清除浮动</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#6-1-问题引入"><span class="toc-text">6.1 问题引入</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#6-2-清除浮动本质"><span class="toc-text">6.2 清除浮动本质</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#6-3-方法1：额外标签法"><span class="toc-text">6.3 方法1：额外标签法</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#6-4-方法2：父元素overflow"><span class="toc-text">6.4 方法2：父元素overflow</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#6-5-方法3：after伪元素"><span class="toc-text">6.5 方法3：after伪元素</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#6-6-方法4：双伪元素"><span class="toc-text">6.6 方法4：双伪元素</span></a></li></ol></li></ol></li></ol>
+    
+<style>
+    .left-col .switch-btn,
+    .left-col .switch-area {
+        display: none;
+    }
+    .toc-level-3 i,
+    .toc-level-3 ol {
+        display: none !important;
+    }
+</style>
+</div>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>页面布局的三大核心：盒子模型、浮动、定位</p>
+<p>布局的过程：</p>
+<ol>
+<li>先准备好相关的网页元素，其中元素基本上都是盒子Box</li>
+</ol>
+<h1 id="盒子模型的组成部分"><a href="#盒子模型的组成部分" class="headerlink" title="盒子模型的组成部分"></a>盒子模型的组成部分</h1><p>盒子模型就是将HTML页面中的布局元素看作是一个矩阵的盒子，即装内容的盒子。</p>
+<p>CSS盒子模型封装周围的HTML元素，包括：边框、外边距、内边距、实际内容。</p>
+<ul>
+<li>margin（外边距）</li>
+<li>border（边框）</li>
+<li>padding（内边距）</li>
+<li>content（实际内容）</li>
+</ul>
+<img src="/2021/01/11/html/4_%E7%9B%92%E5%AD%90%E6%A8%A1%E5%9E%8B/无标题.png" alt="盒子模型示意图" style="zoom:75%;">
+
+<h2 id="1-border"><a href="#1-border" class="headerlink" title="1. border"></a>1. border</h2><h3 id="1-1-基础写法"><a href="#1-1-基础写法" class="headerlink" title="1.1 基础写法"></a>1.1 基础写法</h3><pre><code class="css">div {
+    border-color: #00ffff;
+    border-style: double;
+    border-width: 5px;
+}</code></pre>
+<p>可以看出，边框可以设置的属性有三个，这三个属性可以进行简写，并且三个属性的顺序没有要求。</p>
+<pre><code class="css">div {
+    border: 5px solid red;
+}</code></pre>
+<p>此外，还可以只设置单个边框的属性，比如上下左右这四个边框的属性可以分别设置。</p>
+<pre><code class="css">div {
+    border-top: 1px solid red;
+}</code></pre>
+<h3 id="1-2-三大基本属性"><a href="#1-2-三大基本属性" class="headerlink" title="1.2 三大基本属性"></a>1.2 三大基本属性</h3><ul>
+<li><p>粗细 <code>border-width</code></p>
+<p>一般使用精确的像素值来设置</p>
+</li>
+<li><p>样式 <code>border-style</code></p>
+<p>有多种设置的值</p>
+<table>
+<thead>
+<tr>
+<th>参数</th>
+<th>类型</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>none</td>
+<td>无边框，此时指定border-width无效</td>
+</tr>
+<tr>
+<td>hidden</td>
+<td>隐藏边框</td>
+</tr>
+<tr>
+<td>dotted</td>
+<td>点线</td>
+</tr>
+<tr>
+<td>dashed</td>
+<td>虚线</td>
+</tr>
+<tr>
+<td>solid</td>
+<td>实线</td>
+</tr>
+<tr>
+<td>double</td>
+<td>双线</td>
+</tr>
+<tr>
+<td>groove</td>
+<td>3D凹槽</td>
+</tr>
+<tr>
+<td>ridge</td>
+<td>菱形边框</td>
+</tr>
+<tr>
+<td>inset</td>
+<td>3D凹边</td>
+</tr>
+<tr>
+<td>outset</td>
+<td>3D凸边</td>
+</tr>
+</tbody></table>
+</li>
+<li><p>颜色 <code>border-color</code></p>
+</li>
+</ul>
+<h3 id="1-3-设置边框合并"><a href="#1-3-设置边框合并" class="headerlink" title="1.3 设置边框合并"></a>1.3 设置边框合并</h3><p>如果是两个边框靠在一起，那么他们的边框将不会重叠显示，而是分别显示，因此相邻位置的边框宽度会变成原来的2倍。所以需要通过一个属性来设置边框相关的信息。其中的collapse表示合并的意思。</p>
+<pre><code class="css">div {
+    border-collapse: collapse;
+}</code></pre>
+<h3 id="1-4-边框大小不包含在盒子内"><a href="#1-4-边框大小不包含在盒子内" class="headerlink" title="1.4 边框大小不包含在盒子内"></a>1.4 边框大小不包含在盒子内</h3><p>默认情况下：</p>
+<p>设置了盒子大小为 <code>200*200</code> ，此时在设置边框大小为10px，最终展示出来包含边框的盒子的宽高为 <code>220*220</code>。</p>
+<h2 id="2-padding"><a href="#2-padding" class="headerlink" title="2. padding"></a>2. padding</h2><p>padding在设置的时候可以只设定1个数字，也可以指定两个数字。</p>
+<ul>
+<li>如果只设定一个数字，表示上下左右的距离都是这个值</li>
+<li>如果设置两个数字，则其中第一个数字表示上下的padding高度，第二个数字表示左右的padding宽度。</li>
+</ul>
+<pre><code class="css">div {
+    padding: 0 20px;
+}</code></pre>
+<p>此外，如果设定了padding，那么盒子的大小也是会受到影响的。</p>
+<p>但是如果盒子本身没有指定宽高属性，则此时的padding不会影响盒子的大小。</p>
+<p>即使是设置宽度为100%，加上padding之后也是会影响大小的。</p>
+<h2 id="3-margin"><a href="#3-margin" class="headerlink" title="3. margin"></a>3. margin</h2><p>该属性用于设置外边距，控制盒子与盒子之间的距离。</p>
+<p>关于margin可以设置上下左右四个位置的边距，因此在设置的时候需要注意给哪个盒子设置。</p>
+<ul>
+<li><code>margin-top</code></li>
+<li><code>margin-bottom</code></li>
+<li><code>margin-left</code></li>
+<li><code>margin-right</code></li>
+</ul>
+<p>如果使用2个数值来设定，则为上下、左右边距</p>
+<p>如果使用4个数值来设定，则4个值的顺序为：上右下左（从上面开始顺时针转）</p>
+<h3 id="3-1-块级盒子水平居中"><a href="#3-1-块级盒子水平居中" class="headerlink" title="3.1 块级盒子水平居中"></a>3.1 块级盒子水平居中</h3><p>外边距可以让块级盒子水平居中，但是必须要满足两个条件</p>
+<ol>
+<li>盒子必须指定宽度（width）</li>
+<li>盒子左右的外边距设置为auto</li>
+</ol>
+<p>例如下面这个图中，将div设置为绿色，并且让其居中显示。</p>
+<p><img src="/2021/01/11/html/4_%E7%9B%92%E5%AD%90%E6%A8%A1%E5%9E%8B/image-20210109145027990.png" alt="块级盒子水平居中显示"></p>
+<pre><code class="css">div {
+    background-color: green;
+    width: 300px;
+    margin: 0 auto;
+}</code></pre>
+<p>对于行内元素、行内块水平居中，需要对其父元素添加 <code>text-align: center</code> 属性。</p>
+<h3 id="3-2-外边距合并"><a href="#3-2-外边距合并" class="headerlink" title="3.2 外边距合并"></a>3.2 外边距合并</h3><p>外边距合并有下面的两种情况：</p>
+<ul>
+<li><p><strong>相邻块元素垂直外边距的合并</strong></p>
+<p>对于两个垂直放置的块元素，其上下边界会发生合并，只保留值较大的一个。比如设置下面的CSS样式：</p>
+<pre><code class="css">div {
+    background-color: blue;
+    height: 100px;
+}
+.shang {
+    margin-bottom: 100px;
+}
+.xia {
+    margin-top: 200px;
+}</code></pre>
+<p>在HTML页面中设置</p>
+<pre><code class="html">&lt;div class=&quot;shang&quot;&gt;&lt;/div&gt;
+&lt;div class=&quot;xia&quot;&gt;&lt;/div&gt;</code></pre>
+<p>会得到：</p>
+<p><img src="/2021/01/11/html/4_%E7%9B%92%E5%AD%90%E6%A8%A1%E5%9E%8B/image-20210109150916158.png" alt="外边距和并"></p>
+<p>两个div之间的距离是200px，也就是只取了较大值。</p>
+<p>解决方法：在相邻的情况下尽量只给一个盒子添加margin值</p>
+</li>
+<li><p><strong>嵌套块元素垂直外边距的塌陷</strong></p>
+<p>对于两个有嵌套关系（父子元素）的块元素，父子元素都有<strong>上外边距</strong>，此时父元素会塌陷较大的外边距值。只要给子元素添加margin-top值，就一定会出现塌陷的现象。</p>
+<p>示意图如下：</p>
+<p><img src="/2021/01/11/html/4_%E7%9B%92%E5%AD%90%E6%A8%A1%E5%9E%8B/image-20210109155219349.png" alt="垂直外边距塌陷"></p>
+<pre><code class="css">.father {
+    width: 400px;
+    height: 400px;
+    background-color: purple;
+    margin-top: 50px;
+    /* padding: 1px; */
+}
+.son {
+    width: 200px;
+    height: 200px;
+    background-color: pink;
+    margin-top: 100px;
+}</code></pre>
+<pre><code class="html">    &lt;div class=&quot;father&quot;&gt;
+        &lt;div class=&quot;son&quot;&gt;&lt;/div&gt;
+    &lt;/div&gt;</code></pre>
+<p>这里上边距变成了100</p>
+<p><img src="/2021/01/11/html/4_%E7%9B%92%E5%AD%90%E6%A8%A1%E5%9E%8B/image-20210109154426978.png" alt="垂直外边距塌陷示意图"></p>
+<p>解决方法：</p>
+<ol>
+<li>为父元素定义上边框</li>
+<li>为父元素定义上内边距</li>
+<li>为父元素添加：<code>overflow:hidden</code></li>
+</ol>
+<p>加上之后显示就恢复正常了，此时外盒子的上边距为50，恢复正常</p>
+<p><img src="/2021/01/11/html/4_%E7%9B%92%E5%AD%90%E6%A8%A1%E5%9E%8B/image-20210109154500870.png" alt="垂直外边距塌陷恢复"></p>
+</li>
+</ul>
+<h3 id="3-3-清除内外边距"><a href="#3-3-清除内外边距" class="headerlink" title="3.3 清除内外边距"></a>3.3 清除内外边距</h3><p>对于网页元素来说，大多都是具有外边距的，因此可以通过设置通配符选择器的方式将默认内外边距给清除掉。</p>
+<pre><code class="css">* {
+    padding: 0;
+    margin: 0;
+}</code></pre>
+<p>对于行内元素而言，为了照顾兼容性，尽量只设置左右内外边距，不要设置上下内外边距。但是转换为块级和行内块元素就可以了。</p>
+<h2 id="4-margin与padding"><a href="#4-margin与padding" class="headerlink" title="4. margin与padding"></a>4. margin与padding</h2><p>一般而言，设置左右的边距使用padding，设置上面的边距使用margin-top。</p>
+<p>因为padding是算在盒子内部的，margin不算在盒子内部，需要占据额外的空间。</p>
+<h1 id="圆角边框"><a href="#圆角边框" class="headerlink" title="圆角边框"></a>圆角边框</h1><p>CSS3之后新增的3个样式：圆角边框、盒子阴影、文字阴影</p>
+<p>使用方式：设置 <code>border-radius: length</code> 属性即可。其中的length可以是精确的px也可以是百分比。</p>
+<p>通过这种方式可以设置圆角矩形，也可以设置圆形。</p>
+<p>该参数可以设置为1个值，2个值，4个值，分别表示左上、右上、右下、左下四个角（从左上角开始顺时针转动）</p>
+<h1 id="盒子阴影"><a href="#盒子阴影" class="headerlink" title="盒子阴影"></a>盒子阴影</h1><p>CSS3版本之后出现的新特性，作用是给盒子加上阴影。通过 <code>box-shadow</code> 属性进行设置。</p>
+<p><strong>注意：盒子阴影不会占用空间，不会影响其他盒子的排列</strong></p>
+<p>该属性需要设置的参数为：</p>
+<ul>
+<li><code>h-shadow</code>：（必须）水平偏移距离</li>
+<li><code>v-shadow</code>：（必须）垂直偏移距离</li>
+<li><code>blur</code>：（选）模糊的距离</li>
+<li><code>spread</code>：（选）阴影的尺寸</li>
+<li><code>color</code>：（选）阴影颜色</li>
+<li><code>inset</code>：（选）阴影外置或者内置，默认情况下是外置的，但是不能写outset，否则会出错</li>
+</ul>
+<p>例如下面这样：</p>
+<p><img src="/2021/01/11/html/4_%E7%9B%92%E5%AD%90%E6%A8%A1%E5%9E%8B/1610248530950.png" alt="盒子阴影"></p>
+<pre><code class="css">div {
+    width: 50px;
+    height: 50px;
+    background-color: pink;
+    box-shadow: 10px 10px 10px 10px #C3C3C3;
+}</code></pre>
+<p>如果想要做成从中间往外发散的形式，则应该将前两个属性改为0</p>
+<p><img src="/2021/01/11/html/4_%E7%9B%92%E5%AD%90%E6%A8%A1%E5%9E%8B/1610248645928.png" alt="盒子阴影从中间发散"></p>
+<pre><code class="css">div {
+    width: 50px;
+    height: 50px;
+    background-color: pink;
+    box-shadow: 0 0 10px 10px #C3C3C3;
+}</code></pre>
+<h1 id="文字阴影"><a href="#文字阴影" class="headerlink" title="文字阴影"></a>文字阴影</h1><p>文字阴影通过 <code>text-shadow</code> 属性进行设置。</p>
+<ul>
+<li><code>h-shadow</code>：水平偏移量</li>
+<li><code>v-shadow</code>：垂直偏移量</li>
+<li><code>blur</code>：模糊距离</li>
+<li><code>color</code>：颜色</li>
+</ul>
+<p>例如对下面的文字进行阴影设置</p>
+<p><img src="/2021/01/11/html/4_%E7%9B%92%E5%AD%90%E6%A8%A1%E5%9E%8B/1610249132849.png" alt="文字阴影"></p>
+<pre><code class="css">div {
+    text-shadow: 5px 5px 5px black;
+}</code></pre>
+<h1 id="浮动"><a href="#浮动" class="headerlink" title="浮动"></a>浮动</h1><h2 id="1-传统网页布局的三种方式（PC网页）"><a href="#1-传统网页布局的三种方式（PC网页）" class="headerlink" title="1. 传统网页布局的三种方式（PC网页）"></a>1. 传统网页布局的三种方式（PC网页）</h2><p>网页布局的本质：使用CSS摆放盒子。网页布局方式有以下三种，实际开发的时候， 一个网页基本上都包含了这三种布局方式，移动端则会使用新的布局方式。</p>
+<ol>
+<li><p><strong>普通流（标准流/文档流）</strong></p>
+<p>将标签按照默认规定好的方式排列，比如：</p>
+<ul>
+<li>块级元素独占一行，从上到下排列</li>
+<li>行内元素按照顺序从左到右排列，碰到父元素的边缘后会自动换行</li>
+</ul>
+</li>
+<li><p><strong>浮动</strong></p>
+</li>
+<li><p><strong>定位</strong></p>
+</li>
+</ol>
+<p>通过标准流方式来实现某些效果是比较复杂的，比如：</p>
+<ul>
+<li>一行内显示多个块元素</li>
+<li>两个盒子实现左右对齐</li>
+</ul>
+<p>浮动可以<strong>改变元素默认的排列方式</strong>。</p>
+<p>网页排列第一准则：<strong>多个块级元素纵向排列使用标准流实现，多个块级元素横向排列使用浮动实现</strong>。</p>
+<h2 id="2-浮动的相关概念"><a href="#2-浮动的相关概念" class="headerlink" title="2. 浮动的相关概念"></a>2. 浮动的相关概念</h2><p>浮动：float属性用于创建浮动框，将其移动到一遍，直到<strong>左边缘</strong>或者<strong>右边缘</strong>触及包含<strong>块或另一个浮动框的边缘</strong>。</p>
+<p>float属性的取值有3个：</p>
+<ul>
+<li><code>none</code>：元素不浮动</li>
+<li><code>left</code>：元素向左浮动</li>
+<li><code>right</code>：元素向右浮动</li>
+</ul>
+<p>需要注意的是：浮动默认情况下是<strong>紧紧贴在一起的，中间没有间隙</strong>。</p>
+<pre><code class="css">div {
+    float: 属性值;
+}</code></pre>
+<img src="/2021/01/11/html/4_%E7%9B%92%E5%AD%90%E6%A8%A1%E5%9E%8B/../css/t.assets/1610251138035.png" alt="左右浮动" style="zoom:80%;">
+
+<pre><code class="css">.zuo {
+    float: left;
+}
+
+.you {
+    float: right;
+}</code></pre>
+<p>设置完css之后，再定义两个相对应的盒子，即可将盒子左右放置。</p>
+<pre><code class="html">&lt;div class=&quot;zuo&quot;&gt;文字&lt;/div&gt;
+&lt;div class=&quot;you&quot;&gt;文字&lt;/div&gt;</code></pre>
+<h2 id="3-浮动的特点"><a href="#3-浮动的特点" class="headerlink" title="3. 浮动的特点"></a>3. 浮动的特点</h2><h3 id="3-1-浮动元素会脱离标准流"><a href="#3-1-浮动元素会脱离标准流" class="headerlink" title="3.1 浮动元素会脱离标准流"></a>3.1 浮动元素会脱离标准流</h3><p>也就是说：浮动的盒子不再保留原先的位置。这样，这个盒子原来的位置就会空出来，其他的元素就会占据它原来的位置。</p>
+<p>举例说明，如果在同一个父亲下的两个盒子一个浮动一个未浮动，则<strong>浮动的盒子会压住未浮动的盒子</strong>。</p>
+<p>比如下面这个效果图，浮动的红色div会压住下面标准的粉色div</p>
+<p><img src="/2021/01/11/html/4_%E7%9B%92%E5%AD%90%E6%A8%A1%E5%9E%8B/1610252213394.png" alt="浮动脱标"></p>
+<pre><code class="css">div {
+    width: 200px;
+    height: 250px;
+    background-color: pink;
+    font-size: 20px;
+    line-height: 50px;
+}
+
+.zuo {
+    float: left;
+    width: 100px;
+    height: 100px;
+    background-color: red;
+}</code></pre>
+<h3 id="3-2-浮动的元素会在一行内显示并且元素顶部对齐"><a href="#3-2-浮动的元素会在一行内显示并且元素顶部对齐" class="headerlink" title="3.2 浮动的元素会在一行内显示并且元素顶部对齐"></a>3.2 浮动的元素会在一行内显示并且元素顶部对齐</h3><p>如果多个盒子都设置了浮动，那么他们会显示在一行内，并且其顶端与顶部对齐，如果一行内装不下这些盒子，则会<strong>另起一行进行对齐</strong>。</p>
+<h3 id="3-3-浮动的元素会具有行内块元素的特性"><a href="#3-3-浮动的元素会具有行内块元素的特性" class="headerlink" title="3.3 浮动的元素会具有行内块元素的特性"></a>3.3 浮动的元素会具有行内块元素的特性</h3><p>对于一些行内元素而言，是不能设置宽高的，但是如果加了float属性之后，将其设置为浮动元素，此时宽高的设置就会生效，该元素就具有了行内块元素的特性。</p>
+<p>即：<strong>如果行内元素有了浮动，就不需要将其转换为行级、行内块元素就可以直接设置宽度和高度</strong>。</p>
+<p>同样，对于块级元素，设置了浮动之后也会具有行内块元素的特征。对于宽高的实际情况，需要经过行内块元素的实际情况决定。</p>
+<h2 id="4-浮动元素位置约束"><a href="#4-浮动元素位置约束" class="headerlink" title="4. 浮动元素位置约束"></a>4. 浮动元素位置约束</h2><p>为了约束浮动元素的位置，经常采用的策略为：</p>
+<p><strong>先用标准流的父元素排列上下位置，之后内部子元素采取浮动排列左右位置</strong>，符合网页布局第一准则。</p>
+<p>也就是用一个父盒子框柱，子元素在父盒子内部浮动。</p>
+<h2 id="5-注意事项"><a href="#5-注意事项" class="headerlink" title="5. 注意事项"></a>5. 注意事项</h2><ol>
+<li><p>一般来说是将浮动和标准流的父盒子进行搭配使用</p>
+</li>
+<li><p>一个元素浮动，那么他的兄弟元素也应当浮动。（一浮全浮）</p>
+<p>注意，浮动的盒子只会影响浮动盒子后面的标准流，不会影响其前面的标准流，也就是说：</p>
+<ul>
+<li>标准流写在前面，浮动盒子写在后面：此时浮动不会压住标准流</li>
+<li>浮动盒子写在前面，标准流写在后面：此时浮动会压住标准流</li>
+</ul>
+</li>
+</ol>
+<h2 id="6-清除浮动"><a href="#6-清除浮动" class="headerlink" title="6. 清除浮动"></a>6. 清除浮动</h2><h3 id="6-1-问题引入"><a href="#6-1-问题引入" class="headerlink" title="6.1 问题引入"></a>6.1 问题引入</h3><p>先看一个应用场景，由于在父元素盒子里面的内容不确定有多少，因此无法准确指定盒子大小。</p>
+<p>比如对于长度不确定的新闻，无法准确指定装新闻的盒子的大小。</p>
+<p>如果不指定父盒子的高度，并且将浮动的元素加入到父盒子之中，此时的<strong>父盒子高度</strong>会出现问题。比如下面：</p>
+<p><img src="/2021/01/11/html/4_%E7%9B%92%E5%AD%90%E6%A8%A1%E5%9E%8B/1610256435165.png" alt="父盒子高度问题"></p>
+<pre><code class="css">.father{
+    width: 500px;
+    border: 1px solid black;
+
+}
+
+.son1 {
+    background-color: red;
+    float: left;
+    height: 50px;
+    width: 100px;
+}
+
+.son2 {
+    background-color: blue;
+    float: left;
+    height: 60px;
+    width: 150px;
+}</code></pre>
+<p>总结一下，清除浮动的原因：</p>
+<ol>
+<li>父级没有高度</li>
+<li>子盒子浮动</li>
+<li>影响下面的布局</li>
+</ol>
+<h3 id="6-2-清除浮动本质"><a href="#6-2-清除浮动本质" class="headerlink" title="6.2 清除浮动本质"></a>6.2 清除浮动本质</h3><p>清除浮动的本质就是清除浮动元素造成的影响。</p>
+<p>如果父盒子本身有高度，则不需要清除浮动。</p>
+<p><strong>清除完浮动之后，父亲就会根据浮动的子盒子自动检测高度</strong>，此时由于父亲有了高度，下面的标准流就不会出现显示位置异常的问题了。</p>
+<p>清除浮动使用 <code>clear</code> 属性设置</p>
+<ul>
+<li>left：清除左侧浮动的影响</li>
+<li>right：清除右侧浮动的影响</li>
+<li>both：同时清除两侧浮动的影响（开发中常用）</li>
+</ul>
+<p>清除浮动的策略：闭合浮动</p>
+<h3 id="6-3-方法1：额外标签法"><a href="#6-3-方法1：额外标签法" class="headerlink" title="6.3 方法1：额外标签法"></a>6.3 方法1：额外标签法</h3><p>额外标签法也称为隔墙法，做法是在<strong>浮动元素末尾加一个空标签</strong>，比如：</p>
+<pre><code class="html">&lt;div style=&quot; clear: both &quot;&gt;&lt;/div&gt;</code></pre>
+<p>也可以加一个其他标签，比如：</p>
+<pre><code class="html">&lt;br/&gt;</code></pre>
+<p>也就相当于是在浮动元素的底下再加一个<strong>标准的块级元素</strong>，此时这个标签会被放在浮动元素下面。</p>
+<p>优点：通俗易懂，书写方便</p>
+<p>缺点：会添加很多无意义的标签，结构化较差</p>
+<h3 id="6-4-方法2：父元素overflow"><a href="#6-4-方法2：父元素overflow" class="headerlink" title="6.4 方法2：父元素overflow"></a>6.4 方法2：父元素overflow</h3><p>给父元素添加一个overflow属性，将其属性值设置为以下三种均可：</p>
+<ul>
+<li>hidden（常用）</li>
+<li>auto</li>
+<li>scroll</li>
+</ul>
+<pre><code class="css">.father {
+    overflow: hidden;
+}</code></pre>
+<p>优点：代码简洁</p>
+<p>缺点：无法显示溢出的部分</p>
+<h3 id="6-5-方法3：after伪元素"><a href="#6-5-方法3：after伪元素" class="headerlink" title="6.5 方法3：after伪元素"></a>6.5 方法3：after伪元素</h3><p>给父元素添加相关的属性：</p>
+<pre><code class="css">.clearfix:after { /* :after 是伪元素 */
+    content: &quot;&quot;;
+    display: block; /* 转成块元素 */
+    height: 0;
+    clear: both;
+    visibility: hidden;
+}
+
+/* IE6 7专有 */
+.clearfix {
+    *zoom: 1;
+}</code></pre>
+<h3 id="6-6-方法4：双伪元素"><a href="#6-6-方法4：双伪元素" class="headerlink" title="6.6 方法4：双伪元素"></a>6.6 方法4：双伪元素</h3><p>也是给父元素添加相关属性。只不过这里用了两个伪元素</p>
+<pre><code class="css">.clearfix:before, 
+.clearfix:after {
+    content: &quot;&quot;;
+    display: table;
+}
+
+.clearfix:after {
+    clear: both;
+}
+
+.clearfix {
+    *zoom: 1;
+}</code></pre>
+
+      
+       
+    </div>
+</article>
+
+
+
+
+
+
+
+    
+
+
+
+
+    </div>
+    <div class="copyright">
+        <p class="footer-entry">©2019-2020 POWDER SNOW</p>
+
+    </div>
+    <div class="full-toc">
+        <button class="full"><span class="min "></span></button>
+<button class="post-toc-menu"><span class="post-toc-menu-icons"></span></button>
+<div class="post-toc"><span class="post-toc-title">目录</span>
+    <div class="post-toc-content">
+
+    </div>
+</div>
+<a class="" id="rocket" ></a>
+
+    </div>
+</div>
+<div class="acParent"></div>
+
+</body>
+<script src="/js/jquery.pjax.js?v=1.0.1" ></script>
+
+<script src="/js/script.js?v=1.0.1" ></script>
+<script>
+    var img_resize = 'default';
+    /*作者、标签的自动补全*/
+    $(function () {
+        $('.search').AutoComplete({
+            'data': ['#HTTP','#protobuf','#MySQL SQL','#Spring','#java','#QT','#区块链','#分布式','#大数据','#前端','#MyBatis','#SpringBoot','#网络编程','#Redis','#多线程','#数据库',],
+            'itemHeight': 20,
+            'width': 418
+        }).AutoComplete('show');
+    })
+    function initArticle() {
+        /*渲染对应的表格样式*/
+        
+            $(".post .pjax table").addClass("green_title");
+        
+
+        /*渲染打赏样式*/
+        
+
+        /*高亮代码块行号*/
+        
+
+        /*访问数量*/
+        
+
+        /*代码高亮，行号对齐*/
+        $('.pre-numbering').css('line-height',$('.has-numbering').css('line-height'));
+
+        
+        
+    }
+
+    /*打赏页面隐藏与展示*/
+    
+
+</script>
+
+<!--加入行号的高亮代码块样式-->
+
+<!--自定义样式设置-->
+<style>
+    
+    
+    .nav {
+        width: 544px;
+    }
+    .nav.fullscreen {
+        margin-left: -544px;
+    }
+    .nav-left {
+        width: 122px;
+    }
+    
+    
+    @media screen and (max-width: 1468px) {
+        .nav {
+            width: 492px;
+        }
+        .nav.fullscreen {
+            margin-left: -492px;
+        }
+        .nav-left {
+            width: 100px;
+        }
+    }
+    
+    
+    @media screen and (max-width: 1024px) {
+        .nav {
+            width: 492px;
+            margin-left: -492px
+        }
+        .nav.fullscreen {
+            margin-left: 0;
+        }
+        .nav .hide-list.fullscreen {
+            left: 492px
+        }
+    }
+    
+    @media screen and (max-width: 426px) {
+        .nav {
+            width: 100%;
+        }
+        .nav-left {
+            width: 100%;
+        }
+    }
+    
+    
+    .nav-right .title-list nav a .post-title, .nav-right .title-list #local-search-result a .post-title {
+        color: #383636;
+    }
+    
+    
+    .nav-right .title-list nav a .post-date, .nav-right .title-list #local-search-result a .post-date {
+        color: #5e5e5f;
+    }
+    
+    
+    .nav-right nav a.hover, #local-search-result a.hover{
+        background-color: #fbf4a8;
+    }
+    
+    
+
+    /*列表样式*/
+    
+    .post .pjax article .article-entry>ol, .post .pjax article .article-entry>ul, .post .pjax article>ol, .post .pjax article>ul{
+        border: #e2dede solid 1px;
+        border-radius: 10px;
+        padding: 10px 32px 10px 56px;
+    }
+    .post .pjax article .article-entry li>ol, .post .pjax article .article-entry li>ul,.post .pjax article li>ol, .post .pjax article li>ul{
+        padding-top: 5px;
+        padding-bottom: 5px;
+    }
+    .post .pjax article .article-entry>ol>li, .post .pjax article .article-entry>ul>li,.post .pjax article>ol>li, .post .pjax article>ul>li{
+        margin-bottom: auto;
+        margin-left: auto;
+    }
+    .post .pjax article .article-entry li>ol>li, .post .pjax article .article-entry li>ul>li,.post .pjax article li>ol>li, .post .pjax article li>ul>li{
+        margin-bottom: auto;
+        margin-left: auto;
+    }
+    
+
+    /* 背景图样式 */
+    
+    .post {
+        background: url(/img/bck.jpg);
+    }
+    
+    
+    .post.index {
+        background: url(/img/background.jpg);
+    }
+    
+
+
+    /*引用块样式*/
+    
+
+    /*文章列表背景图*/
+    
+    .nav-right:before {
+        content: ' ';
+        display: block;
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        opacity: 0.3;
+        background: url("/img/123.jpg");
+        background-repeat: no-repeat;
+        background-position: 50% 0;
+        -ms-background-size: cover;
+        -o-background-size: cover;
+        -moz-background-size: cover;
+        -webkit-background-size: cover;
+        background-size: cover;
+    }
+    
+
+    
+</style>
+
+
+
+
+
+
+
+</html>

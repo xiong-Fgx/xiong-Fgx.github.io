@@ -1,0 +1,1556 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Hyperledger Fabric系统框架笔记 | POWDER SNOW</title>
+  <meta name="keywords" content=" 区块链 ">
+  <meta name="description" content="Hyperledger Fabric系统框架笔记 | POWDER SNOW">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<meta property="og:type" content="website">
+<meta property="og:title" content="categories">
+<meta property="og:url" content="http://yoursite.com/categories/index.html">
+<meta property="og:site_name" content="POWDER SNOW">
+<meta property="article:published_time" content="2018-03-02T04:33:16.000Z">
+<meta property="article:modified_time" content="2020-03-05T13:28:59.839Z">
+<meta property="article:author" content="冯冠雄">
+<meta name="twitter:card" content="summary">
+
+
+<link rel="icon" href="/img/avatar.jpg">
+
+<link href="/css/style.css?v=1.0.1" rel="stylesheet">
+
+<link href="/css/hl_theme/atom-light.css?v=1.0.1" rel="stylesheet">
+
+<link href="//cdn.bootcss.com/animate.css/3.5.2/animate.min.css" rel="stylesheet">
+<link href="//cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+
+<script src="//cdn.bootcss.com/jquery/2.2.4/jquery.min.js"></script>
+<script src="/js/jquery.autocomplete.min.js?v=1.0.1" ></script>
+
+<script src="//cdn.bootcss.com/highlight.js/9.12.0/highlight.min.js"></script>
+<script>
+    hljs.initHighlightingOnLoad();
+</script>
+
+<script src="//cdn.bootcss.com/nprogress/0.2.0/nprogress.min.js"></script>
+
+
+
+<script src="//cdn.bootcss.com/jquery-cookie/1.4.1/jquery.cookie.min.js" ></script>
+
+<script src="/js/iconfont.js?v=1.0.1" ></script>
+
+<meta name="generator" content="Hexo 4.2.0"></head>
+<div style="display: none">
+  <input class="theme_disqus_on" value="false">
+  <input class="theme_preload_comment" value="false">
+  <input class="theme_blog_path" value="">
+</div>
+
+<body>
+<aside class="nav">
+    <div class="nav-left">
+        <a href="/" class="avatar_target">
+    <img class="avatar" src="/img/avatar.jpg" />
+</a>
+<div class="author">
+    <span>冯冠雄</span>
+</div>
+
+<div class="icon">
+    
+        
+        <a title="github" href="https://github.com/xiong-Fgx" target="_blank">
+            
+                <svg class="iconfont-svg" aria-hidden="true">
+                    <use xlink:href="#icon-github"></use>
+                </svg>
+            
+        </a>
+        
+    
+        
+        <a title="linkedin" href="https://www.linkedin.com/in/guanxiong-feng-8b6aa8179" target="_blank">
+            
+                <svg class="iconfont-svg" aria-hidden="true">
+                    <use xlink:href="#icon-linkedin"></use>
+                </svg>
+            
+        </a>
+        
+    
+        
+        <a title="email" href="mailto:guanxiongf@gmail.com" target="_blank">
+            
+                <svg class="iconfont-svg" aria-hidden="true">
+                    <use xlink:href="#icon-email"></use>
+                </svg>
+            
+        </a>
+        
+    
+</div>
+
+
+
+
+<ul>
+    <li><div class="all active">全部文章</div></li>
+    
+        
+            
+            <li><div data-rel="网络"><i class="fold iconfont icon-right"></i>网络</div>
+                
+                    <ul class="sub hide">
+                        
+                        <li><div data-rel="HTTP">HTTP</div>
+                            
+                        </li>
+                            
+                        <li><div data-rel="protobuf">protobuf</div>
+                            
+                        </li>
+                            
+                        <li><div data-rel="网络编程">网络编程</div>
+                            
+                        </li>
+                            
+                    </ul>
+                
+            </li>
+            
+        
+    
+        
+            
+            <li><div data-rel="数据库">数据库</div>
+                
+            </li>
+            
+        
+    
+        
+            
+        
+    
+        
+            
+            <li><div data-rel="SSM"><i class="fold iconfont icon-right"></i>SSM</div>
+                
+                    <ul class="sub hide">
+                        
+                        <li><div data-rel="SSM整合">SSM整合</div>
+                            
+                        </li>
+                            
+                        <li><div data-rel="Spring">Spring</div>
+                            
+                        </li>
+                            
+                        <li><div data-rel="SpringMVC">SpringMVC</div>
+                            
+                        </li>
+                            
+                        <li><div data-rel="MyBatis">MyBatis</div>
+                            
+                        </li>
+                            
+                        <li><div data-rel="SpringBoot">SpringBoot</div>
+                            
+                        </li>
+                            
+                    </ul>
+                
+            </li>
+            
+        
+    
+        
+            
+        
+    
+        
+            
+        
+    
+        
+            
+        
+    
+        
+            
+        
+    
+        
+            
+            <li><div data-rel="客户端"><i class="fold iconfont icon-right"></i>客户端</div>
+                
+                    <ul class="sub hide">
+                        
+                        <li><div data-rel="QT">QT</div>
+                            
+                        </li>
+                            
+                    </ul>
+                
+            </li>
+            
+        
+    
+        
+            
+            <li><div data-rel="区块链"><i class="fold iconfont icon-right"></i>区块链</div>
+                
+                    <ul class="sub hide">
+                        
+                        <li><div data-rel="论文">论文</div>
+                            
+                        </li>
+                            
+                        <li><div data-rel="Fabric">Fabric</div>
+                            
+                        </li>
+                            
+                        <li><div data-rel="fabric">fabric</div>
+                            
+                        </li>
+                            
+                    </ul>
+                
+            </li>
+            
+        
+    
+        
+            
+            <li><div data-rel="分布式">分布式</div>
+                
+            </li>
+            
+        
+    
+        
+            
+            <li><div data-rel="大数据"><i class="fold iconfont icon-right"></i>大数据</div>
+                
+                    <ul class="sub hide">
+                        
+                        <li><div data-rel="hadoop">hadoop</div>
+                            
+                        </li>
+                            
+                    </ul>
+                
+            </li>
+            
+        
+    
+        
+            
+            <li><div data-rel="前端"><i class="fold iconfont icon-right"></i>前端</div>
+                
+                    <ul class="sub hide">
+                        
+                        <li><div data-rel="HTML">HTML</div>
+                            
+                        </li>
+                            
+                        <li><div data-rel="CSS">CSS</div>
+                            
+                        </li>
+                            
+                    </ul>
+                
+            </li>
+            
+        
+    
+        
+            
+        
+    
+        
+            
+        
+    
+        
+            
+        
+    
+        
+            
+        
+    
+        
+            
+        
+    
+        
+            
+            <li><div data-rel="笔记">笔记</div>
+                
+            </li>
+            
+        
+    
+        
+            
+        
+    
+        
+            
+        
+    
+        
+            
+        
+    
+        
+            
+        
+    
+        
+            
+        
+    
+</ul>
+<div class="left-bottom">
+    <div class="menus">
+    
+    
+    
+    
+    </div>
+    <div></div>
+</div>
+<input type="hidden" id="yelog_site_posts_number" value="71">
+
+<div style="display: none">
+    <span id="busuanzi_value_site_uv"></span>
+    <span id="busuanzi_value_site_pv"></span>
+</div>
+
+    </div>
+    <div class="nav-right">
+        <div class="friends-area">
+    <div class="friends-title">
+        友情链接
+        <i class="back-title-list"></i>
+    </div>
+    <div class="friends-content">
+        <ul>
+            
+            <li><a target="_blank" href="http://yelog.org/">叶落阁</a></li>
+            
+        </ul>
+    </div>
+</div>
+        <div class="title-list">
+    <form onkeydown="if(event.keyCode === 13){return false;}">
+        <input id="local-search-input" class="search" type="text" placeholder="Search..." />
+        <i class="cross"></i>
+        <span>
+            <label for="tagswitch">Tags:</label>
+            <input id="tagswitch" type="checkbox" style="display: none" />
+            <i id="tagsWitchIcon"></i>
+        </span>
+    </form>
+    <div class="tags-list">
+    
+    <li class="article-tag-list-item">
+        <a class="color5">HTTP</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a class="color4">protobuf</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a class="color5">MySQL SQL</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a class="color2">Spring</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a class="color5">java</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a class="color3">QT</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a class="color4">区块链</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a class="color4">分布式</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a class="color4">大数据</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a class="color3">前端</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a class="color3">MyBatis</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a class="color1">SpringBoot</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a class="color5">网络编程</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a class="color1">Redis</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a class="color4">多线程</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a class="color4">数据库</a>
+    </li>
+    
+    <div class="clearfix"></div>
+</div>
+
+    
+    <nav id="title-list-nav">
+        
+        <a  class="前端 CSS "
+           href="/2021/01/11/html/4_%E7%9B%92%E5%AD%90%E6%A8%A1%E5%9E%8B/"
+           data-tag="前端"
+           data-author="" >
+            <span class="post-title" title="【前端 4】盒子模型">【前端 4】盒子模型</span>
+            <span class="post-date" title="2021-01-11 09:41:10">2021/01/11</span>
+        </a>
+        
+        <a  class="前端 CSS "
+           href="/2021/01/09/html/3_CSS%E8%BF%9B%E9%98%B6/"
+           data-tag="前端"
+           data-author="" >
+            <span class="post-title" title="【前端 3】CSS进阶">【前端 3】CSS进阶</span>
+            <span class="post-date" title="2021-01-09 09:43:10">2021/01/09</span>
+        </a>
+        
+        <a  class="前端 CSS "
+           href="/2021/01/05/html/2_CSS/"
+           data-tag="前端"
+           data-author="" >
+            <span class="post-title" title="【前端 2】CSS">【前端 2】CSS</span>
+            <span class="post-date" title="2021-01-05 16:22:10">2021/01/05</span>
+        </a>
+        
+        <a  class="前端 HTML "
+           href="/2021/01/04/html/1_html/"
+           data-tag="前端"
+           data-author="" >
+            <span class="post-title" title="【前端 1】HTML">【前端 1】HTML</span>
+            <span class="post-date" title="2021-01-04 10:46:10">2021/01/04</span>
+        </a>
+        
+        <a  class="区块链 fabric "
+           href="/2020/12/12/fabric/08_%E9%93%BE%E7%A0%81/"
+           data-tag="区块链"
+           data-author="" >
+            <span class="post-title" title="07_链码接口使用">07_链码接口使用</span>
+            <span class="post-date" title="2020-12-12 11:43:23">2020/12/12</span>
+        </a>
+        
+        <a  class="区块链 fabric "
+           href="/2020/12/12/fabric/02_%E9%83%A8%E7%BD%B2%E8%B0%83%E7%94%A8%E9%93%BE%E7%A0%81/"
+           data-tag="区块链"
+           data-author="" >
+            <span class="post-title" title="02_部署调用链码">02_部署调用链码</span>
+            <span class="post-date" title="2020-12-12 10:56:23">2020/12/12</span>
+        </a>
+        
+        <a  class="区块链 fabric "
+           href="/2020/12/09/fabric/07_dockerCompose%E5%90%AF%E5%8A%A8fabric/"
+           data-tag="区块链"
+           data-author="" >
+            <span class="post-title" title="06_docker compose启动节点">06_docker compose启动节点</span>
+            <span class="post-date" title="2020-12-09 11:35:23">2020/12/09</span>
+        </a>
+        
+        <a  class="区块链 fabric "
+           href="/2020/12/09/fabric/03_%E7%BD%91%E7%BB%9C%E7%BB%93%E6%9E%84%E5%8F%98%E5%8A%A8/"
+           data-tag="区块链"
+           data-author="" >
+            <span class="post-title" title="03_用户结构变动">03_用户结构变动</span>
+            <span class="post-date" title="2020-12-09 10:35:23">2020/12/09</span>
+        </a>
+        
+        <a  class="区块链 fabric "
+           href="/2020/12/02/fabric/01_%E6%90%AD%E5%BB%BA%E5%9F%BA%E7%A1%80%E7%BD%91%E7%BB%9C/"
+           data-tag="区块链"
+           data-author="" >
+            <span class="post-title" title="01_搭建基础网络">01_搭建基础网络</span>
+            <span class="post-date" title="2020-12-02 11:05:23">2020/12/02</span>
+        </a>
+        
+        <a  class="区块链 fabric "
+           href="/2020/12/01/fabric/05_java%20SDK%E4%BD%BF%E7%94%A8/"
+           data-tag="区块链"
+           data-author="" >
+            <span class="post-title" title="05_javaSDK使用">05_javaSDK使用</span>
+            <span class="post-date" title="2020-12-01 15:04:23">2020/12/01</span>
+        </a>
+        
+        <a  class="区块链 fabric "
+           href="/2020/12/01/fabric/04_%E7%94%A8%E6%88%B7%E4%BD%BF%E7%94%A8%E9%93%BE%E7%A0%81/"
+           data-tag="区块链"
+           data-author="" >
+            <span class="post-title" title="04_用户使用链码">04_用户使用链码</span>
+            <span class="post-date" title="2020-12-01 10:55:23">2020/12/01</span>
+        </a>
+        
+        <a  class="大数据 hadoop "
+           href="/2020/11/26/hadoop/%E5%AE%89%E8%A3%85/"
+           data-tag="大数据"
+           data-author="" >
+            <span class="post-title" title="【hadoop 3】hadoop分布式安装总结">【hadoop 3】hadoop分布式安装总结</span>
+            <span class="post-date" title="2020-11-26 17:50:09">2020/11/26</span>
+        </a>
+        
+        <a  class="客户端 QT "
+           href="/2020/10/29/QT/4_%E6%A8%A1%E5%9E%8B%20%E8%A7%86%E5%9B%BE%E7%BB%93%E6%9E%84/"
+           data-tag="QT"
+           data-author="" >
+            <span class="post-title" title="【QT 3】模型-视图结构">【QT 3】模型-视图结构</span>
+            <span class="post-date" title="2020-10-29 16:49:10">2020/10/29</span>
+        </a>
+        
+        <a  class="客户端 QT "
+           href="/2020/10/28/QT/3_%E6%8E%A7%E4%BB%B6/"
+           data-tag="QT"
+           data-author="" >
+            <span class="post-title" title="【QT 2】控件">【QT 2】控件</span>
+            <span class="post-date" title="2020-10-28 16:55:10">2020/10/28</span>
+        </a>
+        
+        <a  class="客户端 QT "
+           href="/2020/10/28/QT/2_%E5%B8%83%E5%B1%80%E7%AE%A1%E7%90%86/"
+           data-tag="QT"
+           data-author="" >
+            <span class="post-title" title="【QT 1】布局管理">【QT 1】布局管理</span>
+            <span class="post-date" title="2020-10-28 14:37:10">2020/10/28</span>
+        </a>
+        
+        <a  class="客户端 QT "
+           href="/2020/10/20/QT/QT%E7%95%8C%E9%9D%A2%E7%BC%96%E8%BE%91%E5%99%A8/"
+           data-tag="QT"
+           data-author="" >
+            <span class="post-title" title="【QT 4】QT界面编辑器">【QT 4】QT界面编辑器</span>
+            <span class="post-date" title="2020-10-20 15:52:10">2020/10/20</span>
+        </a>
+        
+        <a  class="SSM Spring "
+           href="/2020/06/01/%E7%AC%94%E8%AE%B0/spring/"
+           data-tag="Spring"
+           data-author="" >
+            <span class="post-title" title="【笔记】Spring总结">【笔记】Spring总结</span>
+            <span class="post-date" title="2020-06-01 03:57:17">2020/06/01</span>
+        </a>
+        
+        <a  class="笔记 "
+           href="/2020/05/12/%E7%AC%94%E8%AE%B0/%E6%95%B0%E6%8D%AE%E5%BA%93/"
+           data-tag="数据库"
+           data-author="" >
+            <span class="post-title" title="【笔记】数据库与MySQL">【笔记】数据库与MySQL</span>
+            <span class="post-date" title="2020-05-12 21:38:05">2020/05/12</span>
+        </a>
+        
+        <a  class="笔记 "
+           href="/2020/05/07/%E7%AC%94%E8%AE%B0/redis/"
+           data-tag="Redis"
+           data-author="" >
+            <span class="post-title" title="【笔记】Redis">【笔记】Redis</span>
+            <span class="post-date" title="2020-05-07 18:38:05">2020/05/07</span>
+        </a>
+        
+        <a  class="笔记 "
+           href="/2020/04/25/%E7%AC%94%E8%AE%B0/%E5%A4%9A%E7%BA%BF%E7%A8%8B/"
+           data-tag="多线程"
+           data-author="" >
+            <span class="post-title" title="【笔记】java并发">【笔记】java并发</span>
+            <span class="post-date" title="2020-04-25 15:38:01">2020/04/25</span>
+        </a>
+        
+        <a  class="大数据 hadoop "
+           href="/2020/03/18/hadoop/2_%E4%BD%BF%E7%94%A8hadoop/"
+           data-tag="大数据"
+           data-author="" >
+            <span class="post-title" title="【hadoop 2】hadoop三种模式使用">【hadoop 2】hadoop三种模式使用</span>
+            <span class="post-date" title="2020-03-18 17:49:04">2020/03/18</span>
+        </a>
+        
+        <a  class="SSM SpringBoot "
+           href="/2020/03/18/springboot/3_springboot%E7%9A%84%E9%85%8D%E7%BD%AE/"
+           data-tag="SpringBoot"
+           data-author="" >
+            <span class="post-title" title="【SpringBoot 02】配置文件">【SpringBoot 02】配置文件</span>
+            <span class="post-date" title="2020-03-18 12:58:23">2020/03/18</span>
+        </a>
+        
+        <a  class="SSM SpringBoot "
+           href="/2020/03/17/springboot/2_springboot%E7%9A%84helloworld/"
+           data-tag="SpringBoot"
+           data-author="" >
+            <span class="post-title" title="【SpringBoot 01】HelloWorld">【SpringBoot 01】HelloWorld</span>
+            <span class="post-date" title="2020-03-17 19:58:23">2020/03/17</span>
+        </a>
+        
+        <a  class="SSM SSM整合 "
+           href="/2020/03/05/3-SpringMVC/1_%E6%90%AD%E5%BB%BAspring/"
+           data-tag="java"
+           data-author="" >
+            <span class="post-title" title="【SSM实战】SSM框架整合">【SSM实战】SSM框架整合</span>
+            <span class="post-date" title="2020-03-05 20:37:01">2020/03/05</span>
+        </a>
+        
+        <a  class="SSM SpringMVC "
+           href="/2020/03/05/3-SpringMVC/7_SpringMVC%E5%BC%82%E5%B8%B8%E5%A4%84%E7%90%86%E4%B8%8E%E6%8B%A6%E6%88%AA%E5%99%A8/"
+           data-tag="java"
+           data-author="" >
+            <span class="post-title" title="【SpringMVC实战6】异常处理与拦截器">【SpringMVC实战6】异常处理与拦截器</span>
+            <span class="post-date" title="2020-03-05 13:06:19">2020/03/05</span>
+        </a>
+        
+        <a  class="SSM SpringMVC "
+           href="/2020/03/04/3-SpringMVC/6_SpringMVC%E5%93%8D%E5%BA%94/"
+           data-tag="java"
+           data-author="" >
+            <span class="post-title" title="【SpringMVC实战5】响应">【SpringMVC实战5】响应</span>
+            <span class="post-date" title="2020-03-04 19:26:39">2020/03/04</span>
+        </a>
+        
+        <a  class="SSM SpringMVC "
+           href="/2020/03/03/3-SpringMVC/4_SpringMVC%E7%9A%84%E5%B8%B8%E7%94%A8%E6%B3%A8%E8%A7%A3/"
+           data-tag="java"
+           data-author="" >
+            <span class="post-title" title="【SpringMVC实战3】常用注解">【SpringMVC实战3】常用注解</span>
+            <span class="post-date" title="2020-03-03 15:26:29">2020/03/03</span>
+        </a>
+        
+        <a  class="SSM SpringMVC "
+           href="/2020/03/03/3-SpringMVC/5_%E8%AF%B7%E6%B1%82%E5%8F%82%E6%95%B0%E7%BB%91%E5%AE%9A/"
+           data-tag="java"
+           data-author="" >
+            <span class="post-title" title="【SpringMVC实战4】请求参数绑定">【SpringMVC实战4】请求参数绑定</span>
+            <span class="post-date" title="2020-03-03 09:13:23">2020/03/03</span>
+        </a>
+        
+        <a  class="SSM SpringMVC "
+           href="/2020/03/02/3-SpringMVC/3_SpringMVC%E7%9A%84%E6%89%A7%E8%A1%8C%E6%B5%81%E7%A8%8B/"
+           data-tag="java"
+           data-author="" >
+            <span class="post-title" title="【SpringMVC实战2】执行流程">【SpringMVC实战2】执行流程</span>
+            <span class="post-date" title="2020-03-02 18:26:39">2020/03/02</span>
+        </a>
+        
+        <a  class="SSM SpringMVC "
+           href="/2020/03/02/3-SpringMVC/2_%E5%85%A5%E9%97%A8%E6%A1%88%E4%BE%8B/"
+           data-tag="java"
+           data-author="" >
+            <span class="post-title" title="【SpringMVC实战1】入门案例">【SpringMVC实战1】入门案例</span>
+            <span class="post-date" title="2020-03-02 14:26:39">2020/03/02</span>
+        </a>
+        
+        <a  class="SSM Spring "
+           href="/2020/02/21/13-Spring/8_%E4%BA%8B%E5%8A%A1%E6%8E%A7%E5%88%B6/"
+           data-tag="Spring"
+           data-author="" >
+            <span class="post-title" title="【Spring实战8】事务控制">【Spring实战8】事务控制</span>
+            <span class="post-date" title="2020-02-21 15:23:48">2020/02/21</span>
+        </a>
+        
+        <a  class="SSM Spring "
+           href="/2020/02/20/13-Spring/7_JdbcTemplate/"
+           data-tag="Spring"
+           data-author="" >
+            <span class="post-title" title="【Spring实战7】JdbcTemplate">【Spring实战7】JdbcTemplate</span>
+            <span class="post-date" title="2020-02-20 09:32:29">2020/02/20</span>
+        </a>
+        
+        <a  class="SSM Spring "
+           href="/2020/02/19/13-Spring/6_%E5%9F%BA%E4%BA%8Exml%E5%92%8C%E6%B3%A8%E8%A7%A3%E7%9A%84AOP%E9%85%8D%E7%BD%AE/"
+           data-tag="Spring"
+           data-author="" >
+            <span class="post-title" title="【Spring实战6】基于xml和注解的AOP配置">【Spring实战6】基于xml和注解的AOP配置</span>
+            <span class="post-date" title="2020-02-19 21:31:44">2020/02/19</span>
+        </a>
+        
+        <a  class="SSM Spring "
+           href="/2020/02/19/13-Spring/5_AOP/"
+           data-tag="Spring"
+           data-author="" >
+            <span class="post-title" title="【Spring实战5】AOP">【Spring实战5】AOP</span>
+            <span class="post-date" title="2020-02-19 18:56:47">2020/02/19</span>
+        </a>
+        
+        <a  class="SSM Spring "
+           href="/2020/02/18/13-Spring/4_%E5%8A%A8%E6%80%81%E4%BB%A3%E7%90%86/"
+           data-tag="Spring"
+           data-author="" >
+            <span class="post-title" title="【Spring实战4】动态代理">【Spring实战4】动态代理</span>
+            <span class="post-date" title="2020-02-18 17:15:32">2020/02/18</span>
+        </a>
+        
+        <a  class="SSM Spring "
+           href="/2020/02/14/13-Spring/3_%E5%9F%BA%E4%BA%8E%E6%B3%A8%E8%A7%A3%E7%9A%84IOC/"
+           data-tag="Spring"
+           data-author="" >
+            <span class="post-title" title="【Spring实战3】IoC注解">【Spring实战3】IoC注解</span>
+            <span class="post-date" title="2020-02-14 20:57:17">2020/02/14</span>
+        </a>
+        
+        <a  class="SSM Spring "
+           href="/2020/02/13/13-Spring/2_IOC/"
+           data-tag="Spring"
+           data-author="" >
+            <span class="post-title" title="【Spring实战2】IoC与DI">【Spring实战2】IoC与DI</span>
+            <span class="post-date" title="2020-02-13 20:56:03">2020/02/13</span>
+        </a>
+        
+        <a  class="SSM Spring "
+           href="/2020/02/13/13-Spring/1_%E7%A8%8B%E5%BA%8F%E8%80%A6%E5%90%88%E4%B8%8E%E8%A7%A3%E8%80%A6/"
+           data-tag="Spring"
+           data-author="" >
+            <span class="post-title" title="【Spring实战1】程序的耦合与解耦">【Spring实战1】程序的耦合与解耦</span>
+            <span class="post-date" title="2020-02-13 13:17:03">2020/02/13</span>
+        </a>
+        
+        <a  class="SSM MyBatis "
+           href="/2020/02/07/mybatis/10_%E6%B3%A8%E8%A7%A3%E5%BC%80%E5%8F%91/"
+           data-tag="MyBatis"
+           data-author="" >
+            <span class="post-title" title="【Mybatis实战5】注解开发">【Mybatis实战5】注解开发</span>
+            <span class="post-date" title="2020-02-07 16:18:37">2020/02/07</span>
+        </a>
+        
+        <a  class="SSM MyBatis "
+           href="/2020/02/06/mybatis/9_%E7%BC%93%E5%AD%98/"
+           data-tag="MyBatis"
+           data-author="" >
+            <span class="post-title" title="【Mybatis实战4】加载与缓存">【Mybatis实战4】加载与缓存</span>
+            <span class="post-date" title="2020-02-06 18:29:03">2020/02/06</span>
+        </a>
+        
+        <a  class="SSM MyBatis "
+           href="/2020/02/06/mybatis/8_%E5%8A%A8%E6%80%81SQL%E4%B8%8E%E5%A4%9A%E8%A1%A8%E6%93%8D%E4%BD%9C/"
+           data-tag="MyBatis"
+           data-author="" >
+            <span class="post-title" title="【Mybatis实战3】动态SQL与多表操作">【Mybatis实战3】动态SQL与多表操作</span>
+            <span class="post-date" title="2020-02-06 18:08:29">2020/02/06</span>
+        </a>
+        
+        <a  class="SSM MyBatis "
+           href="/2020/02/06/mybatis/6_mybatis%E8%BF%9B%E8%A1%8CCRUD/"
+           data-tag="MyBatis"
+           data-author="" >
+            <span class="post-title" title="【Mybatis实战2】CRUD操作">【Mybatis实战2】CRUD操作</span>
+            <span class="post-date" title="2020-02-06 13:21:03">2020/02/06</span>
+        </a>
+        
+        <a  class="SSM MyBatis "
+           href="/2020/02/05/mybatis/2_%E5%9F%BA%E4%BA%8Exml%E7%9A%84%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/"
+           data-tag="MyBatis"
+           data-author="" >
+            <span class="post-title" title="【Mybatis实战1】两种环境搭建方法及示例">【Mybatis实战1】两种环境搭建方法及示例</span>
+            <span class="post-date" title="2020-02-05 10:21:01">2020/02/05</span>
+        </a>
+        
+        <a  class="数据库 "
+           href="/2020/01/29/11-MySQL/3_%E5%A4%9A%E8%A1%A8%E6%9F%A5%E8%AF%A2%E4%B8%8E%E4%BA%8B%E5%8A%A1/"
+           data-tag="MySQL SQL"
+           data-author="" >
+            <span class="post-title" title="多表查询与事务">多表查询与事务</span>
+            <span class="post-date" title="2020-01-29 13:52:00">2020/01/29</span>
+        </a>
+        
+        <a  class="数据库 "
+           href="/2020/01/26/11-MySQL/2_SQL%E9%AB%98%E7%BA%A7/"
+           data-tag="MySQL SQL"
+           data-author="" >
+            <span class="post-title" title="数据库高级知识及SQL实现">数据库高级知识及SQL实现</span>
+            <span class="post-date" title="2020-01-26 23:01:52">2020/01/26</span>
+        </a>
+        
+        <a  class="数据库 "
+           href="/2020/01/23/11-MySQL/1_SQL%E8%AF%AD%E8%A8%80%E5%9F%BA%E6%9C%AC%E6%93%8D%E4%BD%9C/"
+           data-tag="MySQL SQL"
+           data-author="" >
+            <span class="post-title" title="SQL语言基础">SQL语言基础</span>
+            <span class="post-date" title="2020-01-23 20:06:39">2020/01/23</span>
+        </a>
+        
+        <a  class="网络 protobuf "
+           href="/2020/01/16/10-java%E7%BD%91%E7%BB%9C/2_protobuf/"
+           data-tag="protobuf"
+           data-author="" >
+            <span class="post-title" title="java使用protobuf">java使用protobuf</span>
+            <span class="post-date" title="2020-01-16 17:57:52">2020/01/16</span>
+        </a>
+        
+        <a  class="网络 HTTP "
+           href="/2020/01/15/10-java%E7%BD%91%E7%BB%9C/1_HTTP/"
+           data-tag="HTTP"
+           data-author="" >
+            <span class="post-title" title="java实现简单的HTTP">java实现简单的HTTP</span>
+            <span class="post-date" title="2020-01-15 18:03:21">2020/01/15</span>
+        </a>
+        
+        <a  class="大数据 hadoop "
+           href="/2020/01/06/hadoop/1_hadoop/"
+           data-tag="大数据"
+           data-author="" >
+            <span class="post-title" title="【hadoop 1】hadoop环境搭建">【hadoop 1】hadoop环境搭建</span>
+            <span class="post-date" title="2020-01-06 14:55:10">2020/01/06</span>
+        </a>
+        
+        <a  class="区块链 Fabric "
+           href="/2019/11/24/blockchain/09/"
+           data-tag="区块链"
+           data-author="" >
+            <span class="post-title" title="Hyperledger Fabric系统框架笔记">Hyperledger Fabric系统框架笔记</span>
+            <span class="post-date" title="2019-11-24 12:43:08">2019/11/24</span>
+        </a>
+        
+        <a  class="区块链 论文 "
+           href="/2019/11/21/blockchain/08/"
+           data-tag="区块链"
+           data-author="" >
+            <span class="post-title" title="闪电网络（四）比特币闪电网络：The Bitcoin Lightning Network">闪电网络（四）比特币闪电网络：The Bitcoin Lightning Network</span>
+            <span class="post-date" title="2019-11-21 21:31:53">2019/11/21</span>
+        </a>
+        
+        <a  class="区块链 论文 "
+           href="/2019/11/20/blockchain/07/"
+           data-tag="区块链"
+           data-author="" >
+            <span class="post-title" title="闪电网络（三）哈希时间锁合约：Hashed Timelock Contract (HTLC)">闪电网络（三）哈希时间锁合约：Hashed Timelock Contract (HTLC)</span>
+            <span class="post-date" title="2019-11-20 10:51:23">2019/11/20</span>
+        </a>
+        
+        <a  class="区块链 论文 "
+           href="/2019/11/20/blockchain/05/"
+           data-tag="区块链"
+           data-author="" >
+            <span class="post-title" title="闪电网络（二）双向支付通道：Bidirectional Payment Channels + RSMC">闪电网络（二）双向支付通道：Bidirectional Payment Channels + RSMC</span>
+            <span class="post-date" title="2019-11-20 10:51:23">2019/11/20</span>
+        </a>
+        
+        <a  class="区块链 论文 "
+           href="/2019/11/19/blockchain/06/"
+           data-tag="区块链"
+           data-author="" >
+            <span class="post-title" title="闪电网络（一）微支付通道">闪电网络（一）微支付通道</span>
+            <span class="post-date" title="2019-11-19 10:07:02">2019/11/19</span>
+        </a>
+        
+        <a  class="区块链 论文 "
+           href="/2019/11/15/blockchain/03/"
+           data-tag="区块链"
+           data-author="" >
+            <span class="post-title" title="论文翻译 OmniLedger">论文翻译 OmniLedger</span>
+            <span class="post-date" title="2019-11-15 16:15:33">2019/11/15</span>
+        </a>
+        
+        <a  class="网络 网络编程 "
+           href="/2019/11/03/networkProgram/%E7%BD%91%E7%BB%9C%E7%BC%96%E7%A8%8B10UDP%E8%BF%9E%E6%8E%A5/"
+           data-tag="网络编程"
+           data-author="" >
+            <span class="post-title" title="网络编程10：UDP连接">网络编程10：UDP连接</span>
+            <span class="post-date" title="2019-11-03 16:15:07">2019/11/03</span>
+        </a>
+        
+        <a  class="网络 网络编程 "
+           href="/2019/11/02/networkProgram/%E7%BD%91%E7%BB%9C%E7%BC%96%E7%A8%8B9TCP%E7%9A%84%E5%BC%82%E5%B8%B8/"
+           data-tag="网络编程"
+           data-author="" >
+            <span class="post-title" title="网络编程9：TCP的异常">网络编程9：TCP的异常</span>
+            <span class="post-date" title="2019-11-02 13:57:10">2019/11/02</span>
+        </a>
+        
+        <a  class="网络 网络编程 "
+           href="/2019/11/01/networkProgram/%E7%BD%91%E7%BB%9C%E7%BC%96%E7%A8%8B8TCP%E6%95%B0%E6%8D%AE%E4%BC%A0%E8%BE%93/"
+           data-tag="网络编程"
+           data-author="" >
+            <span class="post-title" title="网络编程8：TCP数据传输">网络编程8：TCP数据传输</span>
+            <span class="post-date" title="2019-11-01 18:34:10">2019/11/01</span>
+        </a>
+        
+        <a  class="网络 网络编程 "
+           href="/2019/10/31/networkProgram/%E7%BD%91%E7%BB%9C%E7%BC%96%E7%A8%8B7TCP%E8%BF%9E%E6%8E%A5%E7%8A%B6%E6%80%81/"
+           data-tag="网络编程"
+           data-author="" >
+            <span class="post-title" title="网络编程7：TCP连接状态">网络编程7：TCP连接状态</span>
+            <span class="post-date" title="2019-10-31 17:14:55">2019/10/31</span>
+        </a>
+        
+        <a  class="网络 网络编程 "
+           href="/2019/10/30/networkProgram/%E7%BD%91%E7%BB%9C%E7%BC%96%E7%A8%8B6%E5%85%B3%E9%97%AD%E8%BF%9E%E6%8E%A5/"
+           data-tag="网络编程"
+           data-author="" >
+            <span class="post-title" title="网络编程6：关闭连接">网络编程6：关闭连接</span>
+            <span class="post-date" title="2019-10-30 18:34:12">2019/10/30</span>
+        </a>
+        
+        <a  class="网络 网络编程 "
+           href="/2019/10/29/networkProgram/%E7%BD%91%E7%BB%9C%E7%BC%96%E7%A8%8B5%E7%BD%91%E7%BB%9C%E5%B7%A5%E5%85%B7/"
+           data-tag="网络编程"
+           data-author="" >
+            <span class="post-title" title="网络编程5：网络工具">网络编程5：网络工具</span>
+            <span class="post-date" title="2019-10-29 14:24:11">2019/10/29</span>
+        </a>
+        
+        <a  class="网络 网络编程 "
+           href="/2019/10/28/networkProgram/%E7%BD%91%E7%BB%9C%E7%BC%96%E7%A8%8B3UDP%E5%8D%8F%E8%AE%AE%E4%BD%BF%E7%94%A8socket/"
+           data-tag="网络编程"
+           data-author="" >
+            <span class="post-title" title="网络编程3：UDP协议使用socket">网络编程3：UDP协议使用socket</span>
+            <span class="post-date" title="2019-10-28 10:11:10">2019/10/28</span>
+        </a>
+        
+        <a  class="网络 网络编程 "
+           href="/2019/10/28/networkProgram/%E7%BD%91%E7%BB%9C%E7%BC%96%E7%A8%8B4%E6%9C%AC%E5%9C%B0socket/"
+           data-tag="网络编程"
+           data-author="" >
+            <span class="post-title" title="网络编程4：本地套接字">网络编程4：本地套接字</span>
+            <span class="post-date" title="2019-10-28 10:11:10">2019/10/28</span>
+        </a>
+        
+        <a  class="网络 网络编程 "
+           href="/2019/10/27/networkProgram/%E7%BD%91%E7%BB%9C%E7%BC%96%E7%A8%8B2TCP%E5%8D%8F%E8%AE%AE%E4%BD%BF%E7%94%A8socket/"
+           data-tag="网络编程"
+           data-author="" >
+            <span class="post-title" title="网络编程2：TCP协议使用socket">网络编程2：TCP协议使用socket</span>
+            <span class="post-date" title="2019-10-27 17:59:09">2019/10/27</span>
+        </a>
+        
+        <a  class="网络 网络编程 "
+           href="/2019/10/26/networkProgram/%E7%BD%91%E7%BB%9C%E7%BC%96%E7%A8%8B1/"
+           data-tag="网络编程"
+           data-author="" >
+            <span class="post-title" title="网络编程1：基础部分">网络编程1：基础部分</span>
+            <span class="post-date" title="2019-10-26 16:54:02">2019/10/26</span>
+        </a>
+        
+        <a  class="分布式 "
+           href="/2019/09/12/distribute/01/"
+           data-tag="分布式"
+           data-author="" >
+            <span class="post-title" title="分布式系统的一致性与共识">分布式系统的一致性与共识</span>
+            <span class="post-date" title="2019-09-12 13:47:52">2019/09/12</span>
+        </a>
+        
+        <a  class="网络 HTTP "
+           href="/2019/08/05/http/030205/"
+           data-tag="HTTP"
+           data-author="" >
+            <span class="post-title" title="HTTP协议学习（五）HTTPS与安全">HTTP协议学习（五）HTTPS与安全</span>
+            <span class="post-date" title="2019-08-05 20:46:07">2019/08/05</span>
+        </a>
+        
+        <a  class="网络 HTTP "
+           href="/2019/07/20/http/030204/"
+           data-tag="HTTP"
+           data-author="" >
+            <span class="post-title" title="HTTP协议学习（四）cookie、缓存、代理机制">HTTP协议学习（四）cookie、缓存、代理机制</span>
+            <span class="post-date" title="2019-07-20 13:15:07">2019/07/20</span>
+        </a>
+        
+        <a  class="网络 HTTP "
+           href="/2019/07/10/http/030203/"
+           data-tag="HTTP"
+           data-author="" >
+            <span class="post-title" title="HTTP协议学习（三）数据传输与连接">HTTP协议学习（三）数据传输与连接</span>
+            <span class="post-date" title="2019-07-10 14:36:55">2019/07/10</span>
+        </a>
+        
+        <a  class="网络 HTTP "
+           href="/2019/07/01/http/030202/"
+           data-tag="HTTP"
+           data-author="" >
+            <span class="post-title" title="HTTP协议学习（二）基础">HTTP协议学习（二）基础</span>
+            <span class="post-date" title="2019-07-01 14:05:51">2019/07/01</span>
+        </a>
+        
+        <a  class="网络 HTTP "
+           href="/2019/06/14/http/030201/"
+           data-tag="HTTP"
+           data-author="" >
+            <span class="post-title" title="HTTP协议学习（一）概念">HTTP协议学习（一）概念</span>
+            <span class="post-date" title="2019-06-14 16:08:25">2019/06/14</span>
+        </a>
+        
+    </nav>
+</div>
+    </div>
+    <div class="hide-list">
+        <div class="semicircle">
+            <div class="brackets first"><</div>
+            <div class="brackets">&gt;</div>
+        </div>
+    </div>
+</aside>
+<div class="post">
+    <div class="pjax">
+        <article id="post-blockchain/09" class="article article-type-post" itemscope itemprop="blogPost">
+    
+        <h1 class="article-title">Hyperledger Fabric系统框架笔记</h1>
+    
+    <div class="article-meta">
+        
+        
+        
+        <span class="book">
+            
+                <a  data-rel="区块链">区块链</a>/
+            
+                <a  data-rel="Fabric">Fabric</a>
+            
+        </span>
+        
+        
+        <span class="tag">
+            
+            <a class="color4">区块链</a>
+            
+        </span>
+        
+    </div>
+    <div class="article-meta">
+        
+        创建时间:<time class="date" title='更新时间: 2020-03-06 06:45:59'>2019-11-24 12:43</time>
+        
+    </div>
+    <div class="article-meta">
+        
+        
+        
+    </div>
+    
+    <div class="toc-ref">
+    
+        <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#fabric网络框架"><span class="toc-text">fabric网络框架</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#1-创建网络"><span class="toc-text">1. 创建网络</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-1-CA"><span class="toc-text">1.1 CA</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-向网络中添加管理员"><span class="toc-text">2. 向网络中添加管理员</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3-定义一个联盟"><span class="toc-text">3. 定义一个联盟</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#4-为一个联盟创建一个通道"><span class="toc-text">4. 为一个联盟创建一个通道</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#5-对等节点与账本"><span class="toc-text">5. 对等节点与账本</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#6-应用与智能合约链码"><span class="toc-text">6. 应用与智能合约链码</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#6-1-安装链码"><span class="toc-text">6.1 安装链码</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#6-2-定义链码"><span class="toc-text">6.2 定义链码</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#6-3-背书策略"><span class="toc-text">6.3 背书策略</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#6-4-调用智能合约"><span class="toc-text">6.4 调用智能合约</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#7-网络完成"><span class="toc-text">7. 网络完成</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#7-1-生成并接受交易"><span class="toc-text">7.1 生成并接受交易</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#7-2-对等节点的类型"><span class="toc-text">7.2 对等节点的类型</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#7-3-添加组织或节点到通道中"><span class="toc-text">7.3 添加组织或节点到通道中</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#8-简化视图"><span class="toc-text">8. 简化视图</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#9-添加另一个联盟"><span class="toc-text">9. 添加另一个联盟</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#10-添加新通道"><span class="toc-text">10. 添加新通道</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#10-1-网络与通道配置"><span class="toc-text">10.1 网络与通道配置</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#11-添加另一个对等体（peer）"><span class="toc-text">11. 添加另一个对等体（peer）</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#12-将一个peer加入多个通道"><span class="toc-text">12. 将一个peer加入多个通道</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#12-1-排序服务"><span class="toc-text">12.1 排序服务</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#12-2-去中心化交易分布"><span class="toc-text">12.2 去中心化交易分布</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#12-3-改变策略"><span class="toc-text">12.3 改变策略</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#13-完整的网络"><span class="toc-text">13. 完整的网络</span></a></li></ol></li></ol>
+    
+<style>
+    .left-col .switch-btn,
+    .left-col .switch-area {
+        display: none;
+    }
+    .toc-level-3 i,
+    .toc-level-3 ol {
+        display: none !important;
+    }
+</style>
+</div>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="fabric网络框架"><a href="#fabric网络框架" class="headerlink" title="fabric网络框架"></a>fabric网络框架</h1><p><div class='inner-toc'><h2>目录</h2><ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#fabric网络框架"><span class="toc-text">fabric网络框架</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#1-创建网络"><span class="toc-text">1. 创建网络</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-1-CA"><span class="toc-text">1.1 CA</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-向网络中添加管理员"><span class="toc-text">2. 向网络中添加管理员</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3-定义一个联盟"><span class="toc-text">3. 定义一个联盟</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#4-为一个联盟创建一个通道"><span class="toc-text">4. 为一个联盟创建一个通道</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#5-对等节点与账本"><span class="toc-text">5. 对等节点与账本</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#6-应用与智能合约链码"><span class="toc-text">6. 应用与智能合约链码</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#6-1-安装链码"><span class="toc-text">6.1 安装链码</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#6-2-定义链码"><span class="toc-text">6.2 定义链码</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#6-3-背书策略"><span class="toc-text">6.3 背书策略</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#6-4-调用智能合约"><span class="toc-text">6.4 调用智能合约</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#7-网络完成"><span class="toc-text">7. 网络完成</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#7-1-生成并接受交易"><span class="toc-text">7.1 生成并接受交易</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#7-2-对等节点的类型"><span class="toc-text">7.2 对等节点的类型</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#7-3-添加组织或节点到通道中"><span class="toc-text">7.3 添加组织或节点到通道中</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#8-简化视图"><span class="toc-text">8. 简化视图</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#9-添加另一个联盟"><span class="toc-text">9. 添加另一个联盟</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#10-添加新通道"><span class="toc-text">10. 添加新通道</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#10-1-网络与通道配置"><span class="toc-text">10.1 网络与通道配置</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#11-添加另一个对等体（peer）"><span class="toc-text">11. 添加另一个对等体（peer）</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#12-将一个peer加入多个通道"><span class="toc-text">12. 将一个peer加入多个通道</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#12-1-排序服务"><span class="toc-text">12.1 排序服务</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#12-2-去中心化交易分布"><span class="toc-text">12.2 去中心化交易分布</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#12-3-改变策略"><span class="toc-text">12.3 改变策略</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#13-完整的网络"><span class="toc-text">13. 完整的网络</span></a></li></ol></li></ol></div></p>
+<p>区块链网络是一种技术基础架构，可为应用程序提供账本和智能合约（链码）服务。 首先，智能合约用于生成交易，随后将交易分配到网络中的每个对等节点，在该对等节点中，它们一成不变地记录在账本副本中。 应用程序的用户可能是使用客户端应用程序或区块链网络管理员的最终用户。</p>
+<p>在大多数情况下，多个组织会作为一个联盟聚集在一起以形成网络，并且<strong>它们的权限由最初配置网络时联盟所规定的一组策略确定</strong>。当然这个策略也是可以被修改的。</p>
+<p>下面将按构造一个网络的顺序来讲述fabric的结构</p>
+<h2 id="1-创建网络"><a href="#1-创建网络" class="headerlink" title="1. 创建网络"></a>1. 创建网络</h2><p><img src="/2019/11/24/blockchain/09/network.diagram.2.png" alt="network.creation"></p>
+<p>上图中，各个元素的含义：</p>
+<ul>
+<li><p>N：网络</p>
+</li>
+<li><p>O4：排序服务（ordering service），这里由单个节点组成，但是也可以由多个节点组成。在网络中，它是最早被定义的东西，因此可以<strong>被视为初始的管理节点</strong>。</p>
+</li>
+<li><p>NC4：网络配置（network configuration），其中包含了描述<strong>网络管理功能</strong>的初始集合的策略。一开始的时候由于R4是网络中唯一的组织，因此NC4一开始只能授权给他。</p>
+</li>
+<li><p>R4：组织（organization）</p>
+</li>
+<li><p>CA4：证书颁发机构（certification authority），用于向R4组织的管理员和网络节点分配身份。</p>
+</li>
+</ul>
+<h3 id="1-1-CA"><a href="#1-1-CA" class="headerlink" title="1.1 CA"></a>1.1 CA</h3><p>CA4是用于为管理员和网络节点解决认证问题的，<strong>使用X.509来为属于组织R4的成员提供身份认证。</strong>由CA颁发的证书还可以用于签署交易，以<strong>表明组织认可交易结果</strong>——这是将交易写到账本中的前提。</p>
+<p>首先，区块链网络中的各个成员<strong>用证书（certificates）来彼此证明其属于特定的组织中</strong>，因此<strong>不同的组织使用不同的CA</strong>。</p>
+<p>证书到组织成员的映射是通过<strong>成员服务提供者（MSP）</strong>的结构来提供的，网络配置NC4使用一个MSP来识别CA4颁发的证书的属性，CA4将证书持有者与组织R4关联起来。然后，NC4可以<strong>在策略中</strong>使用这个MSP名称来授予来自R4的成员对网络资源的特殊权限。这种策略的一个功能是识别R4中可以向网络添加新成员组织的管理员。</p>
+<p>X.509证书用于客户端应用程序交易提出（transaction proposals）和智能合约交易响应，以便对交易进行数字签名。</p>
+<h2 id="2-向网络中添加管理员"><a href="#2-向网络中添加管理员" class="headerlink" title="2. 向网络中添加管理员"></a>2. 向网络中添加管理员</h2><p>最初将NC4配置为网络中仅允许R4用户进行管理。本章将添加允许组织R1用户管理网络。 </p>
+<p><img src="/2019/11/24/blockchain/09/network.diagram.2.1.png" alt="network.admins"></p>
+<p><strong>组织R4更新网络配置来让组织R1也成为管理员。此后R1和R4将在网络配置中具有相同的权限。</strong>CA1同时也被添加了，它被用于认证组织R1中的成员的身份。</p>
+<p>虽然排序服务O4运行在R4的基础设施上，但是只要R1能够获得网络访问，它对R4就能够共享管理权限。即<strong>R1或R4可以更新网络配置NC4</strong>，使R2组织成为网络操作的子集。通过这种方式，即使R4正在运行排序服务，并且R1对其拥有完全的管理权限，R2创建新联盟的权限也是有限的。</p>
+<p><strong>排序服务通常是多节点的</strong>，可以将其配置为<strong>在不同的组织中具有不同的排序服务节点</strong>。例如，我们可以在R4中运行O4并将其连接到R1中的排序节点O2。这样，我们就有了一个多站点（sites）、多组织的管理结构。</p>
+<h2 id="3-定义一个联盟"><a href="#3-定义一个联盟" class="headerlink" title="3. 定义一个联盟"></a>3. 定义一个联盟</h2><p> <img src="/2019/11/24/blockchain/09/network.diagram.3.png" alt="network.consortium"> </p>
+<p>我们需要做的第一件事是<strong>定义一个联盟</strong>。这个词的字面意思是“有着共同命运的一群人”。</p>
+<p>网络管理员定义了一个联盟X1，该联盟包含两个成员，组织R1和R2。 <strong>该联盟定义存储在网络配置NC4中，并将在网络开发的下一阶段使用。 CA1和CA2是这些组织的各自的证书颁发机构。</strong></p>
+<p>由于NC4的配置方式，只有R1或R4可以创建新的联盟。这里新联盟X1将R1和R2定义为其组成组织。</p>
+<p><strong>一个联盟可以有任意数量的组织成员</strong>。</p>
+<p>联盟为什么重要？ 我们可以看到，一个联盟定义了<strong>网络中彼此共享交易需求的组织集合</strong>。</p>
+<h2 id="4-为一个联盟创建一个通道"><a href="#4-为一个联盟创建一个通道" class="headerlink" title="4. 为一个联盟创建一个通道"></a>4. 为一个联盟创建一个通道</h2><p>通道是主要的<strong>通信机制</strong>，联盟的成员可以通过该机制相互通信。在一个网络中网络中可以有多个通道。</p>
+<p><img src="/2019/11/24/blockchain/09/network.diagram.4.png" alt="network.channel"> </p>
+<ul>
+<li>CC1：通道配置（channel configuration），这个配置与NC4具有相同的权限。</li>
+</ul>
+<p>联盟X1为R1和R2创建了通道C1。<strong>通道由完全独立于网络配置NC4的通道配置CC1控制。CC1由对C1拥有同等权利的R1和R2管理。R4在CC1中没有任何权利，因此，通道C1仅用于R1和R2之间的交易处理。</strong></p>
+<p>客户端应用程序和对等节点等组件的连接也是通过通道完成的。</p>
+<p>因为当初添加权限的时候，R1与R4的权限是相同的，因此R1也是可以创建通道的！所以在上图中，通道C1可能是由组织R1创建的，也可能是组织R4创建的。</p>
+<p><strong>通道C1的通道配置CC1与网络配置NC4应当是完全独立的</strong>。CC1包含用于控制R1和R2在通道C1上的权限的策略，<strong>R3和R4在此通道上没有权限</strong>。如果R3和R4是由通道配置CC1中通过适当的策略被R1或R2添加到C1中的，则R3和R4只能与C1交互。特别要注意的是，<strong>R4不能将自己添加到通道C1中，它必须并且只能由R1或R2授权。</strong></p>
+<blockquote>
+<p>从后文中可以知道，NC4是一个用于网络配置的配置文件，它可以生成新的联盟或新的通道，但是<strong>在新的通道或联盟中， R1和R4不一定有成为通道管理员的权限</strong>。</p>
+</blockquote>
+<p>一旦创建了一个通道，只有<strong>在通道配置中明确指定的组织才能对其进行控制</strong>。也就是说，从此时开始对网络配置NC4的任何更新都不会直接影响通道配置CC1；例如，<strong>如果联盟X1更改，它将不会影响通道C1的成员</strong>。 通道之所以有用，是因为<strong>它们允许构成通道的组织之间进行私密通信</strong>。通道中的数据与网络的其余部分（包括其他通道）完全隔离。</p>
+<p>还有一个<strong>特殊的系统通道，供排序服务使用</strong>。它的行为与常规通道完全相同，因此有时会称为<strong>应用程序通道</strong>。</p>
+<h2 id="5-对等节点与账本"><a href="#5-对等节点与账本" class="headerlink" title="5. 对等节点与账本"></a>5. 对等节点与账本</h2><p><img src="/2019/11/24/blockchain/09/network.diagram.5.png" alt="network.peersledger"> </p>
+<ul>
+<li>P1：对等节点，是<strong>托管区块链账本副本的网络组件</strong>。在本例中，P1上存放账本L1的副本，P1与O4可以通过通道C1相互通信。P1在网络中的目的纯粹是为了托管账本L1的副本，以供其他人访问。</li>
+<li>L1：账本</li>
+</ul>
+<p>因此，可以认为<strong>L1物理上托管在P1上，但逻辑上托管在通道C1上。</strong></p>
+<p>P1配置的关键部分是CA1发出的X.509身份，该身份<strong>将P1与组织R1相关联</strong>。<strong>一旦P1启动，它就可以使用排序服务O4加入通道C1。</strong>O4收到此加入请求后，会使用通道配置CC1来确定P1在 此通道上的权限。 例如，CC1确定P1是否可以向账本L1读取和/或写入信息。</p>
+<h2 id="6-应用与智能合约链码"><a href="#6-应用与智能合约链码" class="headerlink" title="6. 应用与智能合约链码"></a>6. 应用与智能合约链码</h2><p>现在，通道C1上有一个账本，我们可以开始<strong>连接客户端应用程序</strong>，以使用账本的主要对象（对等节点）提供的某些服务！</p>
+<p><img src="/2019/11/24/blockchain/09/network.diagram.6.png" alt="network.appsmartcontract"> </p>
+<ul>
+<li>A1：客户端应用程序，它与组织有一一对应的关系，在本例中，A1属于组织R1，同时它与P1、O4一样，也是连接在通道C1上的。因此，尽管A1位于区块链网络之外，但是仍然可以通过通道C1来访问账本L1。</li>
+<li>S5：智能合约，被安装在P1上，组织R1中的客户端应用程序<strong>A1可以而且必须通过智能合约S5才能访问账本L1</strong>。</li>
+</ul>
+<p><strong>智能合约用于生成交易，随后可以将交易分配到网络中的每个节点。</strong>智能合约上需要执行以下两个操作</p>
+<ol>
+<li>必须已安装在对等节点上（物理安装）</li>
+<li>在通道上定义（逻辑安装）</li>
+</ol>
+<p><strong>智能合约和链码的关系：</strong></p>
+<ul>
+<li><p><strong>智能合约</strong>：定义了控制全局状态中包含的业务对象生命周期的交易逻辑。</p>
+</li>
+<li><p><strong>链码</strong>：需要将智能合约进行打包，然后才能将其部署到区块链网络上的。</p>
+</li>
+</ul>
+<p>其实这两个关系是很接近的，从某种意义上来说，将智能合约成为链码也无可厚非。</p>
+<h3 id="6-1-安装链码"><a href="#6-1-安装链码" class="headerlink" title="6.1 安装链码"></a>6.1 安装链码</h3><p>一旦R1将智能合约打包成链码并将其安装到它对应的P1上，P1就完全了解S5。即，<strong>P1可以看到S5的实现逻辑</strong>（访问L1的程序代码）。 </p>
+<p><strong>当某个组织在一个通道中有多个对等节点时，它可以在指定的对等节点上安装智能合约。不需要在每个对等节点上都安装智能合约。</strong></p>
+<h3 id="6-2-定义链码"><a href="#6-2-定义链码" class="headerlink" title="6.2 定义链码"></a>6.2 定义链码</h3><p>在将chaincode定义提交给通道并用于与通道账本交互之前，<strong>需要有足够多的组织批准chaincode定义</strong>(默认情况下是大多数组织)。由于通道只有一个成员，因此<strong>R1的管理员可以将S5的链码定义提交给通道C1</strong>。 提交定义后，现在可以由客户端应用程序A1调用S5！</p>
+<p>请注意，尽管通道上的每个组件现在都<strong>可以访问S5</strong>，但它们<strong>无法看到其程序逻辑</strong>。 <strong>对于已安装它的那些节点，它仍然是私有的</strong>（这里指的是对于P1是公开的，但是对于通道上的其他组件而言，则是私密的）； 在我们的示例中，这意味着P1。从概念上讲，这意味着<strong>定义并提交给通道上各个组件的是智能合约的接口，而不是智能合约的实现。</strong> </p>
+<ul>
+<li><p>安装到peer上：将智能合约其物理托管在对等节点上</p>
+</li>
+<li><p>定义到通道上：将智能合约在逻辑上托管到通道上</p>
+</li>
+</ul>
+<h3 id="6-3-背书策略"><a href="#6-3-背书策略" class="headerlink" title="6.3 背书策略"></a>6.3 背书策略</h3><p>链码定义中提供的最重要的信息是<strong>背书策略</strong>。 它描述了<strong>交易必须经过哪些组织批准，其他组织才能将写到他们的账本上</strong>。 在本例中，<strong>只有R1或R2认可交易，才可以将交易接受到账本L1上</strong>。</p>
+<p>将链码定义提交给通道会将背书策略放置在通道账本上。 它使通道的任何成员都可以访问它。</p>
+<h3 id="6-4-调用智能合约"><a href="#6-4-调用智能合约" class="headerlink" title="6.4 调用智能合约"></a>6.4 调用智能合约</h3><p>将智能合约安装在对等节点上并在通道上定义后，即可由客户端应用程序调用。<strong>客户端应用程序通过向智能合约认可策略指定的组织所拥有的对等节点发送交易提案来完成此任务。</strong>交易提案<strong>用作智能合约的输入</strong>，智能合约使用它来生成认可的交易响应，<strong>该响应由对等节点返回到客户端应用程序</strong>。</p>
+<p>这些交易响应与交易提案打包在一起，形成一个完全认可的交易，并可以广播到整个网络。</p>
+<p>目前，组织R1正在完全参与网络。A1通过智能合约S5访问账本L1，以生成将由组织R1认可的交易，因此由于它们符合认可策略而被接受到分类帐中。</p>
+<h2 id="7-网络完成"><a href="#7-网络完成" class="headerlink" title="7. 网络完成"></a>7. 网络完成</h2><p><img src="/2019/11/24/blockchain/09/network.diagram.7.png" alt="network.grow"> </p>
+<p>上图中的信息如下：</p>
+<ul>
+<li>R2添加了对等节点P2，该对等节点<strong>托管账本L1和链码S5的副本</strong>。</li>
+<li>R2中的管理员必须批准R2与R1具有相同的链码定义。 </li>
+<li>P2也与应用程序A2一样加入了通道C1。</li>
+<li><strong>A2和P2使用来自CA2的证书进行认证。</strong></li>
+</ul>
+<p>所有这些意味着应用程序A1和A2都可以使用对等节点P1或P2在C1上调用S5。</p>
+<p>现在，组织R1和R2可以进行交易。 具体来说，<strong>应用程序A1和A2可以使用智能合约S5和账本L1在通道C1上生成交易</strong>。</p>
+<h3 id="7-1-生成并接受交易"><a href="#7-1-生成并接受交易" class="headerlink" title="7.1 生成并接受交易"></a>7.1 生成并接受交易</h3><p>与始终承载账本副本的对等节点相反，存在两种不同类型的对等节点。</p>
+<ul>
+<li>拥有智能合约的节点：这种节点可以帮助生成交易（can help generate tx）。因为安装了智能合约的对等节点才能够参与交易背书的过程。</li>
+<li>没有智能合约的节点。虽然没有存放智能合约，但是<strong>它可以通过连接到通道，而感知到智能合约的接口</strong>。在大型网络中，其实是有很多节点都不存放智能合约副本的。</li>
+</ul>
+<p>不管节点中是否存了智能合约，<strong>所有对等节点都可以验证并随后接受或拒绝将交易添加到其账本L1的副本上</strong>。</p>
+<h3 id="7-2-对等节点的类型"><a href="#7-2-对等节点的类型" class="headerlink" title="7.2 对等节点的类型"></a>7.2 对等节点的类型</h3><p>在Hyperledger Fabric中，<strong>尽管所有对等体都相同，但是它们可以根据网络的配置方式承担多个角色</strong>。</p>
+<ul>
+<li><p><strong>committing peer（提交节点）</strong>： 通道中的<strong>每个对等节点都是提交节点</strong>。它接收生成的交易区块，随后将这些交易进行验证，然后根据验证结果决定同意/拒绝将它们添加到对等节点的账本副本。</p>
+</li>
+<li><p><strong>endorsing peer（背书节点）</strong>：如果安装了智能合约，则该节点就是背书节点。但是，实际上要成为背书节点，客户端应用程序必须使用节点上的智能合约来生成数字签名的事务响应。背书节点一词是对此事实的明确引用。</p>
+<p>智能合约的背书策略<strong>可确定组织</strong>，<strong>先对生成的交易进行数字签名，然后才能将其接受到提交的对等节点的账本副本中</strong>。</p>
+</li>
+<li><p><strong>leader peer（主节点）</strong>：当组织在一个通道中有多个节点时，主节点负责<strong>将交易从排序节点分发到组织中其他提交节点</strong>。同伴可以选择参与静态或动态的leader选择。</p>
+<p>因此，从leader的角度考虑两组同伴是有帮助的-那些具有静态leader选举和动态leader选举。对于静态集，<strong>可以将零个或多个对等节点配置为leader</strong>。对于动态集，将由该集<strong>选出一个对等节点作为leader</strong>。此外，在动态集中，如果leader节点挂掉，则其余对等节点将重新选举领导者。</p>
+<p>这意味着组织<strong>可以让一个或多个主节点连接到排序服务节点</strong>。这可以帮助提高处理大量事务的大型网络的弹性和可伸缩性。</p>
+</li>
+<li><p><strong>anchor peer（锚节点）</strong>：如果<strong>对等节点需要与另一个组织中的对等节点进行通信</strong>，则可以使用该组织的通道配置中定义的锚节点之一。一个组织可以为其定义零个或多个锚节点，并且锚节点可以<strong>跨组织通信</strong>场景。</p>
+</li>
+</ul>
+<p>注意，<strong>一个对等体可以同时是一个提交节点，背书节点，主节点和锚节点</strong>！（其中，锚节点是可选的）</p>
+<blockquote>
+<p>这里描述的不是特别清楚，不过可以猜测他说的应该指的是一个组织中应该至少有一个leader、一个背书节点、一个提交节点。</p>
+</blockquote>
+<h3 id="7-3-添加组织或节点到通道中"><a href="#7-3-添加组织或节点到通道中" class="headerlink" title="7.3 添加组织或节点到通道中"></a>7.3 添加组织或节点到通道中</h3><p><strong>当R2加入通道时，组织必须将智能合约S5安装到其对等节点P2上</strong>。这很明显–如果应用程序A1或A2希望在对等节点P2上使用S5来生成事务，则必须首先存在它；安装是发生这种情况的机制。此时，对等节点P2具有智能合约和账本的物理副本；像P1一样，它可以在其账本L1的副本上生成并接受交易。</p>
+<p>为了使用智能合约S5，<strong>R2必须与R1有的相同的链码定义。由于链码定义已由组织R1提交给通道，因此，只要组织批准链码定义并安装链码软件包，R2就可以使用链码</strong>。提交事务只需发生一次。新组织批准通道其他成员同意的链码参数后，便可以使用链码。<strong>由于链码定义的批准是在组织级别进行的，因此R2可以批准链码定义一次，并将安装了链码包的多个对等方加入到通道中。</strong>但是，如果R2想要更改链码定义，则R1和R2都需要为其组织批准新的定义，然后其中一个组织需要将该定义提交给通道。</p>
+<p>通道C1连接了两个客户端应用程序，两个对等节点和一个排序服务。由于只有一个通道，<strong>因此只有一个逻辑账本可以与这些组件进行交互</strong>。对等节点P1和P2中存储的账本是账本L1的副本。智能合约S5的副本通常将使用相同的编程语言完全相同地实现，但如果不同，则它们在语义上必须等效。</p>
+<p>我们可以看到，将对等体（节点）添加到网络可以帮助支持增加的吞吐量，稳定性和弹性。例如，<strong>网络中更多的对等点将允许更多的应用程序连接到它</strong>；如果计划内或计划外的停机，组织中的多个对等方将提供额外的弹性。</p>
+<p>网络可以达到的规模没有理论上的限制。此外，单个组织内的对等方有效地发现并彼此通信的技术机制（gossip协议）将容纳大量对等节点，以支持此类拓扑。</p>
+<p>使用网络和通道策略可以使大型网络得到良好管理。<strong>组织可以自由地将对等节点添加到网络，只要它们符合网络约定的策略即可。</strong>网络和通道策略在自治和控制之间建立了平衡，这是分散网络的特征。</p>
+<h2 id="8-简化视图"><a href="#8-简化视图" class="headerlink" title="8. 简化视图"></a>8. 简化视图</h2><p>用<strong>连接点</strong>替换通道线来简化网络图，显示为蓝色圆圈，其中写的是通道号。</p>
+<p><img src="/2019/11/24/blockchain/09/network.diagram.8.png" alt="network.vocabulary"> </p>
+<p>该图显示了如下的结构：</p>
+<ul>
+<li>客户端应用程序A1和A2可以使用通道C1与对等端P1和P2以及排序服务节点O4进行通信。 </li>
+<li>对等节点P1和P2可以使用通道C1的通信服务。 </li>
+<li>排序服务服务O4可以利用通道C1的通信服务。 </li>
+<li>通道配置CC1适用于通道C1。</li>
+</ul>
+<h2 id="9-添加另一个联盟"><a href="#9-添加另一个联盟" class="headerlink" title="9. 添加另一个联盟"></a>9. 添加另一个联盟</h2><p><img src="/2019/11/24/blockchain/09/network.diagram.9.png" alt="network.consortium2"> </p>
+<p>组织R1或R4的网络管理员添加了新的联盟定义X2（包括组织R2和R3）。 这将用于为X2定义一个新通道。</p>
+<p>此时的网络中有两个联盟：R1和R2组成的联盟X1以及R2和R3组成的联盟X2。</p>
+<p>只有<strong>网络配置（NC4）专门定义的组织（R1, R4）</strong>才能够创建新的通道。它将可以在网络级别管理资源的组织与可以在通道级别管理资源的组织分开。</p>
+<h2 id="10-添加新通道"><a href="#10-添加新通道" class="headerlink" title="10. 添加新通道"></a>10. 添加新通道</h2><p><img src="/2019/11/24/blockchain/09/network.diagram.10.png" alt="network.channel2"> </p>
+<ul>
+<li>联盟X2为R2和R3创建了一个新的通道C2。 </li>
+<li>通道C2具有完全独立于网络配置NC4和通道配置CC1的通道配置CC2。</li>
+<li>通道C2由R2和R3管理，它们具有CC2中策略定义的对C2相同的权限。</li>
+<li>R1和R4在CC2中均未定义任何权限。</li>
+</ul>
+<p><strong>X2为C2通道中的节点提供了私密交流</strong>。通道配置CC2现在包含管理通道资源的策略，并<strong>通过通道C2向组织R2和R3分配管理权限</strong>。它仅由R2和R3管理，而R1和R4在通道C2中没有权限。例如，随后可以更新通道配置CC2以添加组织来支持网络增长，但这只能由R2或R3完成。</p>
+<p>请注意，<strong>通道配置CC1和CC2彼此完全独立，并与网络配置NC4完全独立</strong>。 再次，我们看到了Hyperledger Fabric网络的去中心化性质； 创建通道C2后，组织R2和R3会独立于其他网络元素来管理它。 <strong>通道策略始终保持彼此独立，并且只能由有权在通道中这样做的组织进行更改</strong>。</p>
+<h3 id="10-1-网络与通道配置"><a href="#10-1-网络与通道配置" class="headerlink" title="10.1 网络与通道配置"></a>10.1 网络与通道配置</h3><p>在整个示例网络中，我们看到了<strong>网络和通道配置封装了网络成员同意的策略</strong>，这些策略为控制对网络资源的访问提供了共享的参考。网络和通道配置还包含有关网络和通道组成的事实，例如联盟名称及其组织。</p>
+<ul>
+<li>当首先使用排序服务节点O4形成网络时，其行为由网络配置NC4控制。</li>
+<li>NC4的初始配置仅包含允许组织R4管理网络资源的策略。</li>
+<li>随后将NC4更新为还允许R1管理网络资源。进行此更改后，组织R1或R4中连接到O4的任何管理员都将具有网络管理权限，因为这是NC4网络配置中允许的策略。</li>
+<li>在内部，排序服务中的每个节点都会记录网络配置中的每个通道，以便在网络级别上记录每个创建的通道。</li>
+</ul>
+<p>这意味着尽管排序服务节点O4创建了联盟X1和X2以及通道C1和C2，但网络的智能（the intelligence of the network）包含在O4遵循的网络配置NC4中。<strong>只要O4表现良好，并且在处理网络资源时正确执行NC4中定义的策略，我们的网络就会按照所有组织的同意行事。</strong>在许多方面，NC4比O4更重要，因为它最终控制了网络访问。</p>
+<p>相同的原则适用于有关节点的通道配置。在我们的网络中，当对等节点P1和P2与客户端应用程序A1或A2交互时，它们每个都使用在通道配置CC1中定义的策略来控制对通道C1资源的访问。</p>
+<p>例如，如果A1要访问对等节点P1或P2上的智能合约链码S5，则<strong>每个对等节点都使用其CC1副本确定A1可以执行的操作</strong>。例如，可以根据CC1中定义的策略允许A1从分类账L1读取或写入数据。再次，我们可以看到，尽管对等方和应用程序是网络中的关键角色，<strong>但它们在通道中的行为更多地由通道配置策略决定。</strong></p>
+<p>每个网络中只有一个网络配置，同样，一个通道也只有一个通道配置。访问网络或通道的每个组件都必须对授予不同组织的权限有共同的了解。</p>
+<p>即使从逻辑上讲只有一个配置，但实际上它被构成网络或通道的每个节点复制并保持一致。例如，在我们的网络中，<strong>对等节点P1和P2都具有通道配置CC1的副本，而到网络完全完成时，对等节点P2和P3都将具有通道配置CC2的副本。</strong>类似地，排序服务节点O4具有网络配置的副本，但是<strong>如果有多个排序节点，则每个排序服务节点将具有其自己的网络配置副本</strong>。</p>
+<p>使用用于用户交易（但用于配置交易）的相同区块链技术，可以<strong>使网络和通道配置保持一致</strong>。要更改网络或通道配置，管理员必须提交配置事务以更改网络或通道配置。必须<strong>由适当策略中确定负责配置更改的组织签名。这项策略称为mod_policy</strong>，我们将在后面讨论。</p>
+<p>的确，<strong>排序服务节点运行着一个微型区块链</strong>，通过我们前面提到的系统通道连接。使用系统通道排序服务节点可以分发网络配置事务。这些事务用于在每个排序服务节点上合作维护网络配置的一致副本。以类似的方式，应用程序通道中的对等节点可以分发通道配置事务。同样，这些事务用于在每个对等节点上维护通道配置的一致副本。</p>
+<p>这种逻辑上的个体间的平衡，通过物理上的分布，是超级账本结构中常见的模式。例如，<strong>逻辑上单一的对象（如网络配置）实际上是在一组排序服务节点之间进行物理复制的</strong>。我们还会<strong>在通道配置，账本以及某种程度上将智能合约安装在多个位置</strong>，但它们的接口逻辑上存在于通道级别的情况下看到它。</p>
+<h2 id="11-添加另一个对等体（peer）"><a href="#11-添加另一个对等体（peer）" class="headerlink" title="11. 添加另一个对等体（peer）"></a>11. 添加另一个对等体（peer）</h2><p>现在，组织R3可以完全参与通道C2了，让我们将其基础结构组件添加到通道中。 我们不会一次添加一个组件，而是一次添加一个对等方，其分类帐的本地副本，智能合约和客户端应用程序！</p>
+<p><img src="/2019/11/24/blockchain/09/network.diagram.11.png" alt="network.peer2"> </p>
+<ul>
+<li>客户端应用程序A1和A2可以使用通道C1与P1、P2、O4进行通信。</li>
+<li>客户端应用程序A3可以使用通道C2与P3、O4进行通信。</li>
+<li>排序服务O4可以利用通道C1和C2的通信服务。</li>
+<li>通道配置CC1适用于通道C1，CC2适用于通道C2。</li>
+</ul>
+<p>由于对等节点P3连接到通道C2，因此它对使用通道C1的那些对等节点具有不同的账本L2。账本L2有效地限定在通道C2上。<strong>因此，通道提供了私密性，可以用于隐私保护</strong>、</p>
+<blockquote>
+<p>每个通道都有不同的账本</p>
+</blockquote>
+<p>以类似的方式，安装在对等节点P3上（物理）并在通道C2上定义（逻辑）的智能合约S6用于提供对分类帐L2的受控访问。应用程序A3可以<strong>使用通道C2调用由智能合约S6提供的服务</strong>，以生成可以接受到网络中账本L2的每个副本上的交易。</p>
+<h2 id="12-将一个peer加入多个通道"><a href="#12-将一个peer加入多个通道" class="headerlink" title="12. 将一个peer加入多个通道"></a>12. 将一个peer加入多个通道</h2><p><img src="/2019/11/24/blockchain/09/network.diagram.12.png" alt="network.multichannel"> </p>
+<ul>
+<li>客户端应用程序A1可以使用通道C1与P1、P2、O4进行通信。</li>
+<li>客户端应用程序A2可以使用通道C1与对等端P1和P2进行通信，并使用通道C2与P2、P3、O4进行通信。</li>
+<li>客户端应用程序A3可以使用通道C2与对等端P3和P2以及排序服务O4进行通信。</li>
+<li>排序服务O4可以利用通道C1和C2的通信服务。</li>
+<li>通道配置CC1适用于通道C1</li>
+<li>通道配置CC2适用于通道C2。</li>
+</ul>
+<p>我们可以看到R2是网络中唯一一个连接两个通道的组织，它能够与通道C1上的组织R1进行交易，同时它还可以与其他通道C2上的组织R3进行交易。</p>
+<p>请注意，对等节点P2为通道C1安装了智能合约S5，并为通道C2安装了智能合约S6。<strong>对等节点P2通过不同账本的不同智能合约同时是两个通道的正式成员。</strong></p>
+<p>这是一个非常强大的概念-渠道既提供了组织分离的机制，又提供了组织之间协作的机制。一直以来，此基础结构是由一组独立的组织提供并在它们之间共享的。</p>
+<p>同样重要的是要注意，对等节点P2的行为受其进行交易的通道的控制非常不同。</p>
+<ul>
+<li><p>通道配置CC1中的策略规定了P2在通道C1中的行为</p>
+</li>
+<li><p>通道配置CC2中的策略规定了P2在通道C2中的行为</p>
+<p>R2和R1同意了通道C1的规则，而R2和R3同意了通道C2的规则。<strong>这些规则是在各自的通道策略中捕获的-通道中的每个组件都可以并且必须使用它们来强制执行正确的行为，这已经达成共识。</strong></p>
+</li>
+</ul>
+<p><strong>客户端应用程序A2现在能够在通道C1和C2上进行交易。同样，它也将由适当通道配置中的策略控制</strong>。</p>
+<h3 id="12-1-排序服务"><a href="#12-1-排序服务" class="headerlink" title="12.1 排序服务"></a>12.1 排序服务</h3><p><strong>排序服务本身也可以完全分散</strong>！ 因为排序服务可能<strong>由不同组织拥有的许多单个节点组成</strong>。</p>
+<p>下面是一个更现实的排序服务节点配置：</p>
+<p><img src="/2019/11/24/blockchain/09/1574412510685.png" alt="1574412510685"> </p>
+<p>图中所示的就是一个<strong>多组织的排序服务</strong>。排序服务节点包括了节点O1和O4。 O1由组织R1提供，节点O4由组织R4提供。网络配置NC4为组织R1和R4的参与者定义了网络资源权限。</p>
+<p>网络配置策略<strong>NC4允许R1和R4在网络资源上享有同等的权利</strong>。 来自R1和R4的客户端应用程序和对等节点可以通过<strong>连接到节点O1或节点O4来管理网络资源</strong>，因为这两个节点的行为方式相同，如网络配置NC4中的策略所定义。 实际上，<strong>来自特定组织的参与者往往会使用其上级组织提供的基础架构，但是并非总是如此</strong>。</p>
+<h3 id="12-2-去中心化交易分布"><a href="#12-2-去中心化交易分布" class="headerlink" title="12.2 去中心化交易分布"></a>12.2 去中心化交易分布</h3><p><strong>排序服务不仅是网络的管理点，而且还是交易的分发点。</strong>排序服务是一个组件，它<strong>从应用程序中收集已认可的交易并将其排序到交易块中，然后将其分发到通道中的每个对等节点</strong>。在这些提交对等方的每个对等方，记录交易（有效或无效），并适当更新其本地账本副本。</p>
+<p>请注意，根据排序服务节点O4的角色不同，其作用也是不同的。</p>
+<ul>
+<li>在<strong>通道级别</strong>，O4的作用是在通道C1内收集交易并分配区块。它根据通道配置CC1中定义的策略执行此操作。</li>
+<li>在<strong>网络级别</strong>，O4的作用是根据网络配置NC4中定义的策略为网络资源提供管理点。</li>
+</ul>
+<p>再次注意，这些作用分别由通道和网络配置中的不同策略定义的。也就是说，<strong>策略既定义了联盟的每个成员，又用于控制联盟的每个成员的行为。</strong></p>
+<p>我们可以看到，<strong>排序服务是完全去中心化的组件</strong>。</p>
+<h3 id="12-3-改变策略"><a href="#12-3-改变策略" class="headerlink" title="12.3 改变策略"></a>12.3 改变策略</h3><p>Hyperledger Fabric允许<strong>网络和通道管理员自行管理策略更改</strong>！也就是说会经常发生变化。例如：</p>
+<ul>
+<li>新组织可以加入通道</li>
+<li>现有组织的权限可以增加或减少</li>
+</ul>
+<p>让我们举两个简单的例子，说明我们如何使用mod_policy来进行管理策略的更改！</p>
+<p>最初建立网络时，仅组织R4被允许管理网络。实际上，这是通过<strong>使R4成为网络配置NC4中定义的唯一拥有网络资源许可的组织来实现的</strong>。此外，NC4的mod_policy仅允许R4更改此配置。</p>
+<ol>
+<li><p>然后，<strong>新增允许组织R1来管理网络</strong>。做法是：<strong>R4将R1添加到用于通道创建和联盟创建的策略中</strong>。由于此更改，R1能够定义联盟X1和X2，并创建通道C1和C2。R1对网络配置中的通道和联盟策略具有同等的管理权限。</p>
+</li>
+<li><p><strong>R4可以将R1添加到mod_policy中，此后R1也能够管理网络策略的更改</strong>。这意味着R1原则上与R4具有相同的权限。</p>
+</li>
+</ol>
+<p>第二个比第一个强大得多，因为<strong>R1现在可以完全控制网络配置NC4</strong>！R4可以配置mod_policy，使得修改需要经过自己（或者mod_policy中的所有组织）批准。</p>
+<p>mod_policy使基本配置可以优雅地演变为复杂的配置。<strong>在所有相关组织的同意下，这种改变一直存在。</strong> mod_policy的行为类似于网络或通道配置中的其他所有策略；<strong>它定义了一组允许更改mod_policy本身的组织。</strong></p>
+<h2 id="13-完整的网络"><a href="#13-完整的网络" class="headerlink" title="13. 完整的网络"></a>13. 完整的网络</h2><p><img src="/2019/11/24/blockchain/09/network.diagram.14.png" alt="network.finalnetwork2"> </p>
+<p>在此图中，我们看到Fabric区块链网络<strong>由两个应用程序通道和一个排序通道组成</strong>。</p>
+<ul>
+<li>组织R1和R4负责排序通道</li>
+<li>组织R1和R2负责蓝色应用程序通道</li>
+<li>组织R2和R3负责红色应用程序通道。</li>
+<li>客户端应用程序A1是组织R1的成员，CA1是该组织的证书颁发机构。</li>
+<li>组织R2的<strong>P2可以使用蓝色和红色应用程序通道的通信设施</strong>。</li>
+<li>每个应用程序通道都有自己的通道配置（这里是CC1和CC2）。</li>
+<li>系统通道的通道配置是网络配置NC4的一部分。</li>
+</ul>
+
+      
+       
+    </div>
+</article>
+
+
+
+
+
+
+
+    
+        <!-- MathJax配置，可通过单美元符号书写行内公式等 -->
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+    "HTML-CSS": {
+        preferredFont: "TeX",
+        availableFonts: ["STIX","TeX"],
+        linebreaks: { automatic:true },
+        EqnChunk: (MathJax.Hub.Browser.isMobile ? 10 : 50)
+    },
+    tex2jax: {
+        inlineMath: [ ["$", "$"], ["\\(","\\)"] ],
+        processEscapes: true,
+        ignoreClass: "tex2jax_ignore|dno",
+        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+    },
+    TeX: {
+        equationNumbers: { autoNumber: "AMS" },
+        noUndefined: { attributes: { mathcolor: "red", mathbackground: "#FFEEEE", mathsize: "90%" } },
+        Macros: { href: "{}" }
+    },
+    messageStyle: "none"
+    });
+</script>
+<!-- 给MathJax元素添加has-jax class -->
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax(), i;
+        for(i=0; i < all.length; i += 1) {
+            all[i].SourceElement().parentNode.className += ' has-jax';
+        }
+    });
+</script>
+<!-- 通过连接CDN加载MathJax的js代码 -->
+<script type="text/javascript" async
+        src="//cdn.bootcss.com/mathjax/2.7.2/MathJax.js?config=TeX-MML-AM_CHTML">
+</script>
+<input type="hidden" id="MathJax-js"
+        value="//cdn.bootcss.com/mathjax/2.7.2/MathJax.js?config=TeX-MML-AM_CHTML">
+</input>
+    
+
+
+
+
+    </div>
+    <div class="copyright">
+        <p class="footer-entry">©2019-2020 POWDER SNOW</p>
+
+    </div>
+    <div class="full-toc">
+        <button class="full"><span class="min "></span></button>
+<button class="post-toc-menu"><span class="post-toc-menu-icons"></span></button>
+<div class="post-toc"><span class="post-toc-title">目录</span>
+    <div class="post-toc-content">
+
+    </div>
+</div>
+<a class="" id="rocket" ></a>
+
+    </div>
+</div>
+<div class="acParent"></div>
+
+</body>
+<script src="/js/jquery.pjax.js?v=1.0.1" ></script>
+
+<script src="/js/script.js?v=1.0.1" ></script>
+<script>
+    var img_resize = 'default';
+    /*作者、标签的自动补全*/
+    $(function () {
+        $('.search').AutoComplete({
+            'data': ['#HTTP','#protobuf','#MySQL SQL','#Spring','#java','#QT','#区块链','#分布式','#大数据','#前端','#MyBatis','#SpringBoot','#网络编程','#Redis','#多线程','#数据库',],
+            'itemHeight': 20,
+            'width': 418
+        }).AutoComplete('show');
+    })
+    function initArticle() {
+        /*渲染对应的表格样式*/
+        
+            $(".post .pjax table").addClass("green_title");
+        
+
+        /*渲染打赏样式*/
+        
+
+        /*高亮代码块行号*/
+        
+
+        /*访问数量*/
+        
+
+        /*代码高亮，行号对齐*/
+        $('.pre-numbering').css('line-height',$('.has-numbering').css('line-height'));
+
+        
+        
+    }
+
+    /*打赏页面隐藏与展示*/
+    
+
+</script>
+
+<!--加入行号的高亮代码块样式-->
+
+<!--自定义样式设置-->
+<style>
+    
+    
+    .nav {
+        width: 544px;
+    }
+    .nav.fullscreen {
+        margin-left: -544px;
+    }
+    .nav-left {
+        width: 122px;
+    }
+    
+    
+    @media screen and (max-width: 1468px) {
+        .nav {
+            width: 492px;
+        }
+        .nav.fullscreen {
+            margin-left: -492px;
+        }
+        .nav-left {
+            width: 100px;
+        }
+    }
+    
+    
+    @media screen and (max-width: 1024px) {
+        .nav {
+            width: 492px;
+            margin-left: -492px
+        }
+        .nav.fullscreen {
+            margin-left: 0;
+        }
+        .nav .hide-list.fullscreen {
+            left: 492px
+        }
+    }
+    
+    @media screen and (max-width: 426px) {
+        .nav {
+            width: 100%;
+        }
+        .nav-left {
+            width: 100%;
+        }
+    }
+    
+    
+    .nav-right .title-list nav a .post-title, .nav-right .title-list #local-search-result a .post-title {
+        color: #383636;
+    }
+    
+    
+    .nav-right .title-list nav a .post-date, .nav-right .title-list #local-search-result a .post-date {
+        color: #5e5e5f;
+    }
+    
+    
+    .nav-right nav a.hover, #local-search-result a.hover{
+        background-color: #fbf4a8;
+    }
+    
+    
+
+    /*列表样式*/
+    
+    .post .pjax article .article-entry>ol, .post .pjax article .article-entry>ul, .post .pjax article>ol, .post .pjax article>ul{
+        border: #e2dede solid 1px;
+        border-radius: 10px;
+        padding: 10px 32px 10px 56px;
+    }
+    .post .pjax article .article-entry li>ol, .post .pjax article .article-entry li>ul,.post .pjax article li>ol, .post .pjax article li>ul{
+        padding-top: 5px;
+        padding-bottom: 5px;
+    }
+    .post .pjax article .article-entry>ol>li, .post .pjax article .article-entry>ul>li,.post .pjax article>ol>li, .post .pjax article>ul>li{
+        margin-bottom: auto;
+        margin-left: auto;
+    }
+    .post .pjax article .article-entry li>ol>li, .post .pjax article .article-entry li>ul>li,.post .pjax article li>ol>li, .post .pjax article li>ul>li{
+        margin-bottom: auto;
+        margin-left: auto;
+    }
+    
+
+    /* 背景图样式 */
+    
+    .post {
+        background: url(/img/bck.jpg);
+    }
+    
+    
+    .post.index {
+        background: url(/img/background.jpg);
+    }
+    
+
+
+    /*引用块样式*/
+    
+
+    /*文章列表背景图*/
+    
+    .nav-right:before {
+        content: ' ';
+        display: block;
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        opacity: 0.3;
+        background: url("/img/123.jpg");
+        background-repeat: no-repeat;
+        background-position: 50% 0;
+        -ms-background-size: cover;
+        -o-background-size: cover;
+        -moz-background-size: cover;
+        -webkit-background-size: cover;
+        background-size: cover;
+    }
+    
+
+    
+</style>
+
+
+
+
+
+
+
+</html>

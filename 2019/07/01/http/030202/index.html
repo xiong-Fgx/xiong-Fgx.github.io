@@ -1,0 +1,1657 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>HTTP协议学习（二）基础 | POWDER SNOW</title>
+  <meta name="keywords" content=" HTTP ">
+  <meta name="description" content="HTTP协议学习（二）基础 | POWDER SNOW">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<meta property="og:type" content="website">
+<meta property="og:title" content="categories">
+<meta property="og:url" content="http://yoursite.com/categories/index.html">
+<meta property="og:site_name" content="POWDER SNOW">
+<meta property="article:published_time" content="2018-03-02T04:33:16.000Z">
+<meta property="article:modified_time" content="2020-03-05T13:28:59.839Z">
+<meta property="article:author" content="冯冠雄">
+<meta name="twitter:card" content="summary">
+
+
+<link rel="icon" href="/img/avatar.jpg">
+
+<link href="/css/style.css?v=1.0.1" rel="stylesheet">
+
+<link href="/css/hl_theme/atom-light.css?v=1.0.1" rel="stylesheet">
+
+<link href="//cdn.bootcss.com/animate.css/3.5.2/animate.min.css" rel="stylesheet">
+<link href="//cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+
+<script src="//cdn.bootcss.com/jquery/2.2.4/jquery.min.js"></script>
+<script src="/js/jquery.autocomplete.min.js?v=1.0.1" ></script>
+
+<script src="//cdn.bootcss.com/highlight.js/9.12.0/highlight.min.js"></script>
+<script>
+    hljs.initHighlightingOnLoad();
+</script>
+
+<script src="//cdn.bootcss.com/nprogress/0.2.0/nprogress.min.js"></script>
+
+
+
+<script src="//cdn.bootcss.com/jquery-cookie/1.4.1/jquery.cookie.min.js" ></script>
+
+<script src="/js/iconfont.js?v=1.0.1" ></script>
+
+<meta name="generator" content="Hexo 4.2.0"></head>
+<div style="display: none">
+  <input class="theme_disqus_on" value="false">
+  <input class="theme_preload_comment" value="false">
+  <input class="theme_blog_path" value="">
+</div>
+
+<body>
+<aside class="nav">
+    <div class="nav-left">
+        <a href="/" class="avatar_target">
+    <img class="avatar" src="/img/avatar.jpg" />
+</a>
+<div class="author">
+    <span>冯冠雄</span>
+</div>
+
+<div class="icon">
+    
+        
+        <a title="github" href="https://github.com/xiong-Fgx" target="_blank">
+            
+                <svg class="iconfont-svg" aria-hidden="true">
+                    <use xlink:href="#icon-github"></use>
+                </svg>
+            
+        </a>
+        
+    
+        
+        <a title="linkedin" href="https://www.linkedin.com/in/guanxiong-feng-8b6aa8179" target="_blank">
+            
+                <svg class="iconfont-svg" aria-hidden="true">
+                    <use xlink:href="#icon-linkedin"></use>
+                </svg>
+            
+        </a>
+        
+    
+        
+        <a title="email" href="mailto:guanxiongf@gmail.com" target="_blank">
+            
+                <svg class="iconfont-svg" aria-hidden="true">
+                    <use xlink:href="#icon-email"></use>
+                </svg>
+            
+        </a>
+        
+    
+</div>
+
+
+
+
+<ul>
+    <li><div class="all active">全部文章</div></li>
+    
+        
+            
+            <li><div data-rel="网络"><i class="fold iconfont icon-right"></i>网络</div>
+                
+                    <ul class="sub hide">
+                        
+                        <li><div data-rel="HTTP">HTTP</div>
+                            
+                        </li>
+                            
+                        <li><div data-rel="protobuf">protobuf</div>
+                            
+                        </li>
+                            
+                        <li><div data-rel="网络编程">网络编程</div>
+                            
+                        </li>
+                            
+                    </ul>
+                
+            </li>
+            
+        
+    
+        
+            
+            <li><div data-rel="数据库">数据库</div>
+                
+            </li>
+            
+        
+    
+        
+            
+        
+    
+        
+            
+            <li><div data-rel="SSM"><i class="fold iconfont icon-right"></i>SSM</div>
+                
+                    <ul class="sub hide">
+                        
+                        <li><div data-rel="SSM整合">SSM整合</div>
+                            
+                        </li>
+                            
+                        <li><div data-rel="Spring">Spring</div>
+                            
+                        </li>
+                            
+                        <li><div data-rel="SpringMVC">SpringMVC</div>
+                            
+                        </li>
+                            
+                        <li><div data-rel="MyBatis">MyBatis</div>
+                            
+                        </li>
+                            
+                        <li><div data-rel="SpringBoot">SpringBoot</div>
+                            
+                        </li>
+                            
+                    </ul>
+                
+            </li>
+            
+        
+    
+        
+            
+        
+    
+        
+            
+        
+    
+        
+            
+        
+    
+        
+            
+        
+    
+        
+            
+            <li><div data-rel="客户端"><i class="fold iconfont icon-right"></i>客户端</div>
+                
+                    <ul class="sub hide">
+                        
+                        <li><div data-rel="QT">QT</div>
+                            
+                        </li>
+                            
+                    </ul>
+                
+            </li>
+            
+        
+    
+        
+            
+            <li><div data-rel="区块链"><i class="fold iconfont icon-right"></i>区块链</div>
+                
+                    <ul class="sub hide">
+                        
+                        <li><div data-rel="论文">论文</div>
+                            
+                        </li>
+                            
+                        <li><div data-rel="Fabric">Fabric</div>
+                            
+                        </li>
+                            
+                        <li><div data-rel="fabric">fabric</div>
+                            
+                        </li>
+                            
+                    </ul>
+                
+            </li>
+            
+        
+    
+        
+            
+            <li><div data-rel="分布式">分布式</div>
+                
+            </li>
+            
+        
+    
+        
+            
+            <li><div data-rel="大数据"><i class="fold iconfont icon-right"></i>大数据</div>
+                
+                    <ul class="sub hide">
+                        
+                        <li><div data-rel="hadoop">hadoop</div>
+                            
+                        </li>
+                            
+                    </ul>
+                
+            </li>
+            
+        
+    
+        
+            
+            <li><div data-rel="前端"><i class="fold iconfont icon-right"></i>前端</div>
+                
+                    <ul class="sub hide">
+                        
+                        <li><div data-rel="HTML">HTML</div>
+                            
+                        </li>
+                            
+                        <li><div data-rel="CSS">CSS</div>
+                            
+                        </li>
+                            
+                    </ul>
+                
+            </li>
+            
+        
+    
+        
+            
+        
+    
+        
+            
+        
+    
+        
+            
+        
+    
+        
+            
+        
+    
+        
+            
+        
+    
+        
+            
+            <li><div data-rel="笔记">笔记</div>
+                
+            </li>
+            
+        
+    
+        
+            
+        
+    
+        
+            
+        
+    
+        
+            
+        
+    
+        
+            
+        
+    
+        
+            
+        
+    
+</ul>
+<div class="left-bottom">
+    <div class="menus">
+    
+    
+    
+    
+    </div>
+    <div></div>
+</div>
+<input type="hidden" id="yelog_site_posts_number" value="71">
+
+<div style="display: none">
+    <span id="busuanzi_value_site_uv"></span>
+    <span id="busuanzi_value_site_pv"></span>
+</div>
+
+    </div>
+    <div class="nav-right">
+        <div class="friends-area">
+    <div class="friends-title">
+        友情链接
+        <i class="back-title-list"></i>
+    </div>
+    <div class="friends-content">
+        <ul>
+            
+            <li><a target="_blank" href="http://yelog.org/">叶落阁</a></li>
+            
+        </ul>
+    </div>
+</div>
+        <div class="title-list">
+    <form onkeydown="if(event.keyCode === 13){return false;}">
+        <input id="local-search-input" class="search" type="text" placeholder="Search..." />
+        <i class="cross"></i>
+        <span>
+            <label for="tagswitch">Tags:</label>
+            <input id="tagswitch" type="checkbox" style="display: none" />
+            <i id="tagsWitchIcon"></i>
+        </span>
+    </form>
+    <div class="tags-list">
+    
+    <li class="article-tag-list-item">
+        <a class="color5">HTTP</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a class="color4">protobuf</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a class="color5">MySQL SQL</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a class="color2">Spring</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a class="color5">java</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a class="color3">QT</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a class="color4">区块链</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a class="color4">分布式</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a class="color4">大数据</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a class="color3">前端</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a class="color3">MyBatis</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a class="color1">SpringBoot</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a class="color5">网络编程</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a class="color1">Redis</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a class="color4">多线程</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a class="color4">数据库</a>
+    </li>
+    
+    <div class="clearfix"></div>
+</div>
+
+    
+    <nav id="title-list-nav">
+        
+        <a  class="前端 CSS "
+           href="/2021/01/11/html/4_%E7%9B%92%E5%AD%90%E6%A8%A1%E5%9E%8B/"
+           data-tag="前端"
+           data-author="" >
+            <span class="post-title" title="【前端 4】盒子模型">【前端 4】盒子模型</span>
+            <span class="post-date" title="2021-01-11 09:41:10">2021/01/11</span>
+        </a>
+        
+        <a  class="前端 CSS "
+           href="/2021/01/09/html/3_CSS%E8%BF%9B%E9%98%B6/"
+           data-tag="前端"
+           data-author="" >
+            <span class="post-title" title="【前端 3】CSS进阶">【前端 3】CSS进阶</span>
+            <span class="post-date" title="2021-01-09 09:43:10">2021/01/09</span>
+        </a>
+        
+        <a  class="前端 CSS "
+           href="/2021/01/05/html/2_CSS/"
+           data-tag="前端"
+           data-author="" >
+            <span class="post-title" title="【前端 2】CSS">【前端 2】CSS</span>
+            <span class="post-date" title="2021-01-05 16:22:10">2021/01/05</span>
+        </a>
+        
+        <a  class="前端 HTML "
+           href="/2021/01/04/html/1_html/"
+           data-tag="前端"
+           data-author="" >
+            <span class="post-title" title="【前端 1】HTML">【前端 1】HTML</span>
+            <span class="post-date" title="2021-01-04 10:46:10">2021/01/04</span>
+        </a>
+        
+        <a  class="区块链 fabric "
+           href="/2020/12/12/fabric/08_%E9%93%BE%E7%A0%81/"
+           data-tag="区块链"
+           data-author="" >
+            <span class="post-title" title="07_链码接口使用">07_链码接口使用</span>
+            <span class="post-date" title="2020-12-12 11:43:23">2020/12/12</span>
+        </a>
+        
+        <a  class="区块链 fabric "
+           href="/2020/12/12/fabric/02_%E9%83%A8%E7%BD%B2%E8%B0%83%E7%94%A8%E9%93%BE%E7%A0%81/"
+           data-tag="区块链"
+           data-author="" >
+            <span class="post-title" title="02_部署调用链码">02_部署调用链码</span>
+            <span class="post-date" title="2020-12-12 10:56:23">2020/12/12</span>
+        </a>
+        
+        <a  class="区块链 fabric "
+           href="/2020/12/09/fabric/07_dockerCompose%E5%90%AF%E5%8A%A8fabric/"
+           data-tag="区块链"
+           data-author="" >
+            <span class="post-title" title="06_docker compose启动节点">06_docker compose启动节点</span>
+            <span class="post-date" title="2020-12-09 11:35:23">2020/12/09</span>
+        </a>
+        
+        <a  class="区块链 fabric "
+           href="/2020/12/09/fabric/03_%E7%BD%91%E7%BB%9C%E7%BB%93%E6%9E%84%E5%8F%98%E5%8A%A8/"
+           data-tag="区块链"
+           data-author="" >
+            <span class="post-title" title="03_用户结构变动">03_用户结构变动</span>
+            <span class="post-date" title="2020-12-09 10:35:23">2020/12/09</span>
+        </a>
+        
+        <a  class="区块链 fabric "
+           href="/2020/12/02/fabric/01_%E6%90%AD%E5%BB%BA%E5%9F%BA%E7%A1%80%E7%BD%91%E7%BB%9C/"
+           data-tag="区块链"
+           data-author="" >
+            <span class="post-title" title="01_搭建基础网络">01_搭建基础网络</span>
+            <span class="post-date" title="2020-12-02 11:05:23">2020/12/02</span>
+        </a>
+        
+        <a  class="区块链 fabric "
+           href="/2020/12/01/fabric/05_java%20SDK%E4%BD%BF%E7%94%A8/"
+           data-tag="区块链"
+           data-author="" >
+            <span class="post-title" title="05_javaSDK使用">05_javaSDK使用</span>
+            <span class="post-date" title="2020-12-01 15:04:23">2020/12/01</span>
+        </a>
+        
+        <a  class="区块链 fabric "
+           href="/2020/12/01/fabric/04_%E7%94%A8%E6%88%B7%E4%BD%BF%E7%94%A8%E9%93%BE%E7%A0%81/"
+           data-tag="区块链"
+           data-author="" >
+            <span class="post-title" title="04_用户使用链码">04_用户使用链码</span>
+            <span class="post-date" title="2020-12-01 10:55:23">2020/12/01</span>
+        </a>
+        
+        <a  class="大数据 hadoop "
+           href="/2020/11/26/hadoop/%E5%AE%89%E8%A3%85/"
+           data-tag="大数据"
+           data-author="" >
+            <span class="post-title" title="【hadoop 3】hadoop分布式安装总结">【hadoop 3】hadoop分布式安装总结</span>
+            <span class="post-date" title="2020-11-26 17:50:09">2020/11/26</span>
+        </a>
+        
+        <a  class="客户端 QT "
+           href="/2020/10/29/QT/4_%E6%A8%A1%E5%9E%8B%20%E8%A7%86%E5%9B%BE%E7%BB%93%E6%9E%84/"
+           data-tag="QT"
+           data-author="" >
+            <span class="post-title" title="【QT 3】模型-视图结构">【QT 3】模型-视图结构</span>
+            <span class="post-date" title="2020-10-29 16:49:10">2020/10/29</span>
+        </a>
+        
+        <a  class="客户端 QT "
+           href="/2020/10/28/QT/3_%E6%8E%A7%E4%BB%B6/"
+           data-tag="QT"
+           data-author="" >
+            <span class="post-title" title="【QT 2】控件">【QT 2】控件</span>
+            <span class="post-date" title="2020-10-28 16:55:10">2020/10/28</span>
+        </a>
+        
+        <a  class="客户端 QT "
+           href="/2020/10/28/QT/2_%E5%B8%83%E5%B1%80%E7%AE%A1%E7%90%86/"
+           data-tag="QT"
+           data-author="" >
+            <span class="post-title" title="【QT 1】布局管理">【QT 1】布局管理</span>
+            <span class="post-date" title="2020-10-28 14:37:10">2020/10/28</span>
+        </a>
+        
+        <a  class="客户端 QT "
+           href="/2020/10/20/QT/QT%E7%95%8C%E9%9D%A2%E7%BC%96%E8%BE%91%E5%99%A8/"
+           data-tag="QT"
+           data-author="" >
+            <span class="post-title" title="【QT 4】QT界面编辑器">【QT 4】QT界面编辑器</span>
+            <span class="post-date" title="2020-10-20 15:52:10">2020/10/20</span>
+        </a>
+        
+        <a  class="SSM Spring "
+           href="/2020/06/01/%E7%AC%94%E8%AE%B0/spring/"
+           data-tag="Spring"
+           data-author="" >
+            <span class="post-title" title="【笔记】Spring总结">【笔记】Spring总结</span>
+            <span class="post-date" title="2020-06-01 03:57:17">2020/06/01</span>
+        </a>
+        
+        <a  class="笔记 "
+           href="/2020/05/12/%E7%AC%94%E8%AE%B0/%E6%95%B0%E6%8D%AE%E5%BA%93/"
+           data-tag="数据库"
+           data-author="" >
+            <span class="post-title" title="【笔记】数据库与MySQL">【笔记】数据库与MySQL</span>
+            <span class="post-date" title="2020-05-12 21:38:05">2020/05/12</span>
+        </a>
+        
+        <a  class="笔记 "
+           href="/2020/05/07/%E7%AC%94%E8%AE%B0/redis/"
+           data-tag="Redis"
+           data-author="" >
+            <span class="post-title" title="【笔记】Redis">【笔记】Redis</span>
+            <span class="post-date" title="2020-05-07 18:38:05">2020/05/07</span>
+        </a>
+        
+        <a  class="笔记 "
+           href="/2020/04/25/%E7%AC%94%E8%AE%B0/%E5%A4%9A%E7%BA%BF%E7%A8%8B/"
+           data-tag="多线程"
+           data-author="" >
+            <span class="post-title" title="【笔记】java并发">【笔记】java并发</span>
+            <span class="post-date" title="2020-04-25 15:38:01">2020/04/25</span>
+        </a>
+        
+        <a  class="大数据 hadoop "
+           href="/2020/03/18/hadoop/2_%E4%BD%BF%E7%94%A8hadoop/"
+           data-tag="大数据"
+           data-author="" >
+            <span class="post-title" title="【hadoop 2】hadoop三种模式使用">【hadoop 2】hadoop三种模式使用</span>
+            <span class="post-date" title="2020-03-18 17:49:04">2020/03/18</span>
+        </a>
+        
+        <a  class="SSM SpringBoot "
+           href="/2020/03/18/springboot/3_springboot%E7%9A%84%E9%85%8D%E7%BD%AE/"
+           data-tag="SpringBoot"
+           data-author="" >
+            <span class="post-title" title="【SpringBoot 02】配置文件">【SpringBoot 02】配置文件</span>
+            <span class="post-date" title="2020-03-18 12:58:23">2020/03/18</span>
+        </a>
+        
+        <a  class="SSM SpringBoot "
+           href="/2020/03/17/springboot/2_springboot%E7%9A%84helloworld/"
+           data-tag="SpringBoot"
+           data-author="" >
+            <span class="post-title" title="【SpringBoot 01】HelloWorld">【SpringBoot 01】HelloWorld</span>
+            <span class="post-date" title="2020-03-17 19:58:23">2020/03/17</span>
+        </a>
+        
+        <a  class="SSM SSM整合 "
+           href="/2020/03/05/3-SpringMVC/1_%E6%90%AD%E5%BB%BAspring/"
+           data-tag="java"
+           data-author="" >
+            <span class="post-title" title="【SSM实战】SSM框架整合">【SSM实战】SSM框架整合</span>
+            <span class="post-date" title="2020-03-05 20:37:01">2020/03/05</span>
+        </a>
+        
+        <a  class="SSM SpringMVC "
+           href="/2020/03/05/3-SpringMVC/7_SpringMVC%E5%BC%82%E5%B8%B8%E5%A4%84%E7%90%86%E4%B8%8E%E6%8B%A6%E6%88%AA%E5%99%A8/"
+           data-tag="java"
+           data-author="" >
+            <span class="post-title" title="【SpringMVC实战6】异常处理与拦截器">【SpringMVC实战6】异常处理与拦截器</span>
+            <span class="post-date" title="2020-03-05 13:06:19">2020/03/05</span>
+        </a>
+        
+        <a  class="SSM SpringMVC "
+           href="/2020/03/04/3-SpringMVC/6_SpringMVC%E5%93%8D%E5%BA%94/"
+           data-tag="java"
+           data-author="" >
+            <span class="post-title" title="【SpringMVC实战5】响应">【SpringMVC实战5】响应</span>
+            <span class="post-date" title="2020-03-04 19:26:39">2020/03/04</span>
+        </a>
+        
+        <a  class="SSM SpringMVC "
+           href="/2020/03/03/3-SpringMVC/4_SpringMVC%E7%9A%84%E5%B8%B8%E7%94%A8%E6%B3%A8%E8%A7%A3/"
+           data-tag="java"
+           data-author="" >
+            <span class="post-title" title="【SpringMVC实战3】常用注解">【SpringMVC实战3】常用注解</span>
+            <span class="post-date" title="2020-03-03 15:26:29">2020/03/03</span>
+        </a>
+        
+        <a  class="SSM SpringMVC "
+           href="/2020/03/03/3-SpringMVC/5_%E8%AF%B7%E6%B1%82%E5%8F%82%E6%95%B0%E7%BB%91%E5%AE%9A/"
+           data-tag="java"
+           data-author="" >
+            <span class="post-title" title="【SpringMVC实战4】请求参数绑定">【SpringMVC实战4】请求参数绑定</span>
+            <span class="post-date" title="2020-03-03 09:13:23">2020/03/03</span>
+        </a>
+        
+        <a  class="SSM SpringMVC "
+           href="/2020/03/02/3-SpringMVC/3_SpringMVC%E7%9A%84%E6%89%A7%E8%A1%8C%E6%B5%81%E7%A8%8B/"
+           data-tag="java"
+           data-author="" >
+            <span class="post-title" title="【SpringMVC实战2】执行流程">【SpringMVC实战2】执行流程</span>
+            <span class="post-date" title="2020-03-02 18:26:39">2020/03/02</span>
+        </a>
+        
+        <a  class="SSM SpringMVC "
+           href="/2020/03/02/3-SpringMVC/2_%E5%85%A5%E9%97%A8%E6%A1%88%E4%BE%8B/"
+           data-tag="java"
+           data-author="" >
+            <span class="post-title" title="【SpringMVC实战1】入门案例">【SpringMVC实战1】入门案例</span>
+            <span class="post-date" title="2020-03-02 14:26:39">2020/03/02</span>
+        </a>
+        
+        <a  class="SSM Spring "
+           href="/2020/02/21/13-Spring/8_%E4%BA%8B%E5%8A%A1%E6%8E%A7%E5%88%B6/"
+           data-tag="Spring"
+           data-author="" >
+            <span class="post-title" title="【Spring实战8】事务控制">【Spring实战8】事务控制</span>
+            <span class="post-date" title="2020-02-21 15:23:48">2020/02/21</span>
+        </a>
+        
+        <a  class="SSM Spring "
+           href="/2020/02/20/13-Spring/7_JdbcTemplate/"
+           data-tag="Spring"
+           data-author="" >
+            <span class="post-title" title="【Spring实战7】JdbcTemplate">【Spring实战7】JdbcTemplate</span>
+            <span class="post-date" title="2020-02-20 09:32:29">2020/02/20</span>
+        </a>
+        
+        <a  class="SSM Spring "
+           href="/2020/02/19/13-Spring/6_%E5%9F%BA%E4%BA%8Exml%E5%92%8C%E6%B3%A8%E8%A7%A3%E7%9A%84AOP%E9%85%8D%E7%BD%AE/"
+           data-tag="Spring"
+           data-author="" >
+            <span class="post-title" title="【Spring实战6】基于xml和注解的AOP配置">【Spring实战6】基于xml和注解的AOP配置</span>
+            <span class="post-date" title="2020-02-19 21:31:44">2020/02/19</span>
+        </a>
+        
+        <a  class="SSM Spring "
+           href="/2020/02/19/13-Spring/5_AOP/"
+           data-tag="Spring"
+           data-author="" >
+            <span class="post-title" title="【Spring实战5】AOP">【Spring实战5】AOP</span>
+            <span class="post-date" title="2020-02-19 18:56:47">2020/02/19</span>
+        </a>
+        
+        <a  class="SSM Spring "
+           href="/2020/02/18/13-Spring/4_%E5%8A%A8%E6%80%81%E4%BB%A3%E7%90%86/"
+           data-tag="Spring"
+           data-author="" >
+            <span class="post-title" title="【Spring实战4】动态代理">【Spring实战4】动态代理</span>
+            <span class="post-date" title="2020-02-18 17:15:32">2020/02/18</span>
+        </a>
+        
+        <a  class="SSM Spring "
+           href="/2020/02/14/13-Spring/3_%E5%9F%BA%E4%BA%8E%E6%B3%A8%E8%A7%A3%E7%9A%84IOC/"
+           data-tag="Spring"
+           data-author="" >
+            <span class="post-title" title="【Spring实战3】IoC注解">【Spring实战3】IoC注解</span>
+            <span class="post-date" title="2020-02-14 20:57:17">2020/02/14</span>
+        </a>
+        
+        <a  class="SSM Spring "
+           href="/2020/02/13/13-Spring/2_IOC/"
+           data-tag="Spring"
+           data-author="" >
+            <span class="post-title" title="【Spring实战2】IoC与DI">【Spring实战2】IoC与DI</span>
+            <span class="post-date" title="2020-02-13 20:56:03">2020/02/13</span>
+        </a>
+        
+        <a  class="SSM Spring "
+           href="/2020/02/13/13-Spring/1_%E7%A8%8B%E5%BA%8F%E8%80%A6%E5%90%88%E4%B8%8E%E8%A7%A3%E8%80%A6/"
+           data-tag="Spring"
+           data-author="" >
+            <span class="post-title" title="【Spring实战1】程序的耦合与解耦">【Spring实战1】程序的耦合与解耦</span>
+            <span class="post-date" title="2020-02-13 13:17:03">2020/02/13</span>
+        </a>
+        
+        <a  class="SSM MyBatis "
+           href="/2020/02/07/mybatis/10_%E6%B3%A8%E8%A7%A3%E5%BC%80%E5%8F%91/"
+           data-tag="MyBatis"
+           data-author="" >
+            <span class="post-title" title="【Mybatis实战5】注解开发">【Mybatis实战5】注解开发</span>
+            <span class="post-date" title="2020-02-07 16:18:37">2020/02/07</span>
+        </a>
+        
+        <a  class="SSM MyBatis "
+           href="/2020/02/06/mybatis/9_%E7%BC%93%E5%AD%98/"
+           data-tag="MyBatis"
+           data-author="" >
+            <span class="post-title" title="【Mybatis实战4】加载与缓存">【Mybatis实战4】加载与缓存</span>
+            <span class="post-date" title="2020-02-06 18:29:03">2020/02/06</span>
+        </a>
+        
+        <a  class="SSM MyBatis "
+           href="/2020/02/06/mybatis/8_%E5%8A%A8%E6%80%81SQL%E4%B8%8E%E5%A4%9A%E8%A1%A8%E6%93%8D%E4%BD%9C/"
+           data-tag="MyBatis"
+           data-author="" >
+            <span class="post-title" title="【Mybatis实战3】动态SQL与多表操作">【Mybatis实战3】动态SQL与多表操作</span>
+            <span class="post-date" title="2020-02-06 18:08:29">2020/02/06</span>
+        </a>
+        
+        <a  class="SSM MyBatis "
+           href="/2020/02/06/mybatis/6_mybatis%E8%BF%9B%E8%A1%8CCRUD/"
+           data-tag="MyBatis"
+           data-author="" >
+            <span class="post-title" title="【Mybatis实战2】CRUD操作">【Mybatis实战2】CRUD操作</span>
+            <span class="post-date" title="2020-02-06 13:21:03">2020/02/06</span>
+        </a>
+        
+        <a  class="SSM MyBatis "
+           href="/2020/02/05/mybatis/2_%E5%9F%BA%E4%BA%8Exml%E7%9A%84%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/"
+           data-tag="MyBatis"
+           data-author="" >
+            <span class="post-title" title="【Mybatis实战1】两种环境搭建方法及示例">【Mybatis实战1】两种环境搭建方法及示例</span>
+            <span class="post-date" title="2020-02-05 10:21:01">2020/02/05</span>
+        </a>
+        
+        <a  class="数据库 "
+           href="/2020/01/29/11-MySQL/3_%E5%A4%9A%E8%A1%A8%E6%9F%A5%E8%AF%A2%E4%B8%8E%E4%BA%8B%E5%8A%A1/"
+           data-tag="MySQL SQL"
+           data-author="" >
+            <span class="post-title" title="多表查询与事务">多表查询与事务</span>
+            <span class="post-date" title="2020-01-29 13:52:00">2020/01/29</span>
+        </a>
+        
+        <a  class="数据库 "
+           href="/2020/01/26/11-MySQL/2_SQL%E9%AB%98%E7%BA%A7/"
+           data-tag="MySQL SQL"
+           data-author="" >
+            <span class="post-title" title="数据库高级知识及SQL实现">数据库高级知识及SQL实现</span>
+            <span class="post-date" title="2020-01-26 23:01:52">2020/01/26</span>
+        </a>
+        
+        <a  class="数据库 "
+           href="/2020/01/23/11-MySQL/1_SQL%E8%AF%AD%E8%A8%80%E5%9F%BA%E6%9C%AC%E6%93%8D%E4%BD%9C/"
+           data-tag="MySQL SQL"
+           data-author="" >
+            <span class="post-title" title="SQL语言基础">SQL语言基础</span>
+            <span class="post-date" title="2020-01-23 20:06:39">2020/01/23</span>
+        </a>
+        
+        <a  class="网络 protobuf "
+           href="/2020/01/16/10-java%E7%BD%91%E7%BB%9C/2_protobuf/"
+           data-tag="protobuf"
+           data-author="" >
+            <span class="post-title" title="java使用protobuf">java使用protobuf</span>
+            <span class="post-date" title="2020-01-16 17:57:52">2020/01/16</span>
+        </a>
+        
+        <a  class="网络 HTTP "
+           href="/2020/01/15/10-java%E7%BD%91%E7%BB%9C/1_HTTP/"
+           data-tag="HTTP"
+           data-author="" >
+            <span class="post-title" title="java实现简单的HTTP">java实现简单的HTTP</span>
+            <span class="post-date" title="2020-01-15 18:03:21">2020/01/15</span>
+        </a>
+        
+        <a  class="大数据 hadoop "
+           href="/2020/01/06/hadoop/1_hadoop/"
+           data-tag="大数据"
+           data-author="" >
+            <span class="post-title" title="【hadoop 1】hadoop环境搭建">【hadoop 1】hadoop环境搭建</span>
+            <span class="post-date" title="2020-01-06 14:55:10">2020/01/06</span>
+        </a>
+        
+        <a  class="区块链 Fabric "
+           href="/2019/11/24/blockchain/09/"
+           data-tag="区块链"
+           data-author="" >
+            <span class="post-title" title="Hyperledger Fabric系统框架笔记">Hyperledger Fabric系统框架笔记</span>
+            <span class="post-date" title="2019-11-24 12:43:08">2019/11/24</span>
+        </a>
+        
+        <a  class="区块链 论文 "
+           href="/2019/11/21/blockchain/08/"
+           data-tag="区块链"
+           data-author="" >
+            <span class="post-title" title="闪电网络（四）比特币闪电网络：The Bitcoin Lightning Network">闪电网络（四）比特币闪电网络：The Bitcoin Lightning Network</span>
+            <span class="post-date" title="2019-11-21 21:31:53">2019/11/21</span>
+        </a>
+        
+        <a  class="区块链 论文 "
+           href="/2019/11/20/blockchain/07/"
+           data-tag="区块链"
+           data-author="" >
+            <span class="post-title" title="闪电网络（三）哈希时间锁合约：Hashed Timelock Contract (HTLC)">闪电网络（三）哈希时间锁合约：Hashed Timelock Contract (HTLC)</span>
+            <span class="post-date" title="2019-11-20 10:51:23">2019/11/20</span>
+        </a>
+        
+        <a  class="区块链 论文 "
+           href="/2019/11/20/blockchain/05/"
+           data-tag="区块链"
+           data-author="" >
+            <span class="post-title" title="闪电网络（二）双向支付通道：Bidirectional Payment Channels + RSMC">闪电网络（二）双向支付通道：Bidirectional Payment Channels + RSMC</span>
+            <span class="post-date" title="2019-11-20 10:51:23">2019/11/20</span>
+        </a>
+        
+        <a  class="区块链 论文 "
+           href="/2019/11/19/blockchain/06/"
+           data-tag="区块链"
+           data-author="" >
+            <span class="post-title" title="闪电网络（一）微支付通道">闪电网络（一）微支付通道</span>
+            <span class="post-date" title="2019-11-19 10:07:02">2019/11/19</span>
+        </a>
+        
+        <a  class="区块链 论文 "
+           href="/2019/11/15/blockchain/03/"
+           data-tag="区块链"
+           data-author="" >
+            <span class="post-title" title="论文翻译 OmniLedger">论文翻译 OmniLedger</span>
+            <span class="post-date" title="2019-11-15 16:15:33">2019/11/15</span>
+        </a>
+        
+        <a  class="网络 网络编程 "
+           href="/2019/11/03/networkProgram/%E7%BD%91%E7%BB%9C%E7%BC%96%E7%A8%8B10UDP%E8%BF%9E%E6%8E%A5/"
+           data-tag="网络编程"
+           data-author="" >
+            <span class="post-title" title="网络编程10：UDP连接">网络编程10：UDP连接</span>
+            <span class="post-date" title="2019-11-03 16:15:07">2019/11/03</span>
+        </a>
+        
+        <a  class="网络 网络编程 "
+           href="/2019/11/02/networkProgram/%E7%BD%91%E7%BB%9C%E7%BC%96%E7%A8%8B9TCP%E7%9A%84%E5%BC%82%E5%B8%B8/"
+           data-tag="网络编程"
+           data-author="" >
+            <span class="post-title" title="网络编程9：TCP的异常">网络编程9：TCP的异常</span>
+            <span class="post-date" title="2019-11-02 13:57:10">2019/11/02</span>
+        </a>
+        
+        <a  class="网络 网络编程 "
+           href="/2019/11/01/networkProgram/%E7%BD%91%E7%BB%9C%E7%BC%96%E7%A8%8B8TCP%E6%95%B0%E6%8D%AE%E4%BC%A0%E8%BE%93/"
+           data-tag="网络编程"
+           data-author="" >
+            <span class="post-title" title="网络编程8：TCP数据传输">网络编程8：TCP数据传输</span>
+            <span class="post-date" title="2019-11-01 18:34:10">2019/11/01</span>
+        </a>
+        
+        <a  class="网络 网络编程 "
+           href="/2019/10/31/networkProgram/%E7%BD%91%E7%BB%9C%E7%BC%96%E7%A8%8B7TCP%E8%BF%9E%E6%8E%A5%E7%8A%B6%E6%80%81/"
+           data-tag="网络编程"
+           data-author="" >
+            <span class="post-title" title="网络编程7：TCP连接状态">网络编程7：TCP连接状态</span>
+            <span class="post-date" title="2019-10-31 17:14:55">2019/10/31</span>
+        </a>
+        
+        <a  class="网络 网络编程 "
+           href="/2019/10/30/networkProgram/%E7%BD%91%E7%BB%9C%E7%BC%96%E7%A8%8B6%E5%85%B3%E9%97%AD%E8%BF%9E%E6%8E%A5/"
+           data-tag="网络编程"
+           data-author="" >
+            <span class="post-title" title="网络编程6：关闭连接">网络编程6：关闭连接</span>
+            <span class="post-date" title="2019-10-30 18:34:12">2019/10/30</span>
+        </a>
+        
+        <a  class="网络 网络编程 "
+           href="/2019/10/29/networkProgram/%E7%BD%91%E7%BB%9C%E7%BC%96%E7%A8%8B5%E7%BD%91%E7%BB%9C%E5%B7%A5%E5%85%B7/"
+           data-tag="网络编程"
+           data-author="" >
+            <span class="post-title" title="网络编程5：网络工具">网络编程5：网络工具</span>
+            <span class="post-date" title="2019-10-29 14:24:11">2019/10/29</span>
+        </a>
+        
+        <a  class="网络 网络编程 "
+           href="/2019/10/28/networkProgram/%E7%BD%91%E7%BB%9C%E7%BC%96%E7%A8%8B3UDP%E5%8D%8F%E8%AE%AE%E4%BD%BF%E7%94%A8socket/"
+           data-tag="网络编程"
+           data-author="" >
+            <span class="post-title" title="网络编程3：UDP协议使用socket">网络编程3：UDP协议使用socket</span>
+            <span class="post-date" title="2019-10-28 10:11:10">2019/10/28</span>
+        </a>
+        
+        <a  class="网络 网络编程 "
+           href="/2019/10/28/networkProgram/%E7%BD%91%E7%BB%9C%E7%BC%96%E7%A8%8B4%E6%9C%AC%E5%9C%B0socket/"
+           data-tag="网络编程"
+           data-author="" >
+            <span class="post-title" title="网络编程4：本地套接字">网络编程4：本地套接字</span>
+            <span class="post-date" title="2019-10-28 10:11:10">2019/10/28</span>
+        </a>
+        
+        <a  class="网络 网络编程 "
+           href="/2019/10/27/networkProgram/%E7%BD%91%E7%BB%9C%E7%BC%96%E7%A8%8B2TCP%E5%8D%8F%E8%AE%AE%E4%BD%BF%E7%94%A8socket/"
+           data-tag="网络编程"
+           data-author="" >
+            <span class="post-title" title="网络编程2：TCP协议使用socket">网络编程2：TCP协议使用socket</span>
+            <span class="post-date" title="2019-10-27 17:59:09">2019/10/27</span>
+        </a>
+        
+        <a  class="网络 网络编程 "
+           href="/2019/10/26/networkProgram/%E7%BD%91%E7%BB%9C%E7%BC%96%E7%A8%8B1/"
+           data-tag="网络编程"
+           data-author="" >
+            <span class="post-title" title="网络编程1：基础部分">网络编程1：基础部分</span>
+            <span class="post-date" title="2019-10-26 16:54:02">2019/10/26</span>
+        </a>
+        
+        <a  class="分布式 "
+           href="/2019/09/12/distribute/01/"
+           data-tag="分布式"
+           data-author="" >
+            <span class="post-title" title="分布式系统的一致性与共识">分布式系统的一致性与共识</span>
+            <span class="post-date" title="2019-09-12 13:47:52">2019/09/12</span>
+        </a>
+        
+        <a  class="网络 HTTP "
+           href="/2019/08/05/http/030205/"
+           data-tag="HTTP"
+           data-author="" >
+            <span class="post-title" title="HTTP协议学习（五）HTTPS与安全">HTTP协议学习（五）HTTPS与安全</span>
+            <span class="post-date" title="2019-08-05 20:46:07">2019/08/05</span>
+        </a>
+        
+        <a  class="网络 HTTP "
+           href="/2019/07/20/http/030204/"
+           data-tag="HTTP"
+           data-author="" >
+            <span class="post-title" title="HTTP协议学习（四）cookie、缓存、代理机制">HTTP协议学习（四）cookie、缓存、代理机制</span>
+            <span class="post-date" title="2019-07-20 13:15:07">2019/07/20</span>
+        </a>
+        
+        <a  class="网络 HTTP "
+           href="/2019/07/10/http/030203/"
+           data-tag="HTTP"
+           data-author="" >
+            <span class="post-title" title="HTTP协议学习（三）数据传输与连接">HTTP协议学习（三）数据传输与连接</span>
+            <span class="post-date" title="2019-07-10 14:36:55">2019/07/10</span>
+        </a>
+        
+        <a  class="网络 HTTP "
+           href="/2019/07/01/http/030202/"
+           data-tag="HTTP"
+           data-author="" >
+            <span class="post-title" title="HTTP协议学习（二）基础">HTTP协议学习（二）基础</span>
+            <span class="post-date" title="2019-07-01 14:05:51">2019/07/01</span>
+        </a>
+        
+        <a  class="网络 HTTP "
+           href="/2019/06/14/http/030201/"
+           data-tag="HTTP"
+           data-author="" >
+            <span class="post-title" title="HTTP协议学习（一）概念">HTTP协议学习（一）概念</span>
+            <span class="post-date" title="2019-06-14 16:08:25">2019/06/14</span>
+        </a>
+        
+    </nav>
+</div>
+    </div>
+    <div class="hide-list">
+        <div class="semicircle">
+            <div class="brackets first"><</div>
+            <div class="brackets">&gt;</div>
+        </div>
+    </div>
+</aside>
+<div class="post">
+    <div class="pjax">
+        <article id="post-http/030202" class="article article-type-post" itemscope itemprop="blogPost">
+    
+        <h1 class="article-title">HTTP协议学习（二）基础</h1>
+    
+    <div class="article-meta">
+        
+        
+        
+        <span class="book">
+            
+                <a  data-rel="网络">网络</a>/
+            
+                <a  data-rel="HTTP">HTTP</a>
+            
+        </span>
+        
+        
+        <span class="tag">
+            
+            <a class="color5">HTTP</a>
+            
+        </span>
+        
+    </div>
+    <div class="article-meta">
+        
+        创建时间:<time class="date" title='更新时间: 2020-03-06 06:46:14'>2019-07-01 14:05</time>
+        
+    </div>
+    <div class="article-meta">
+        
+        
+        
+    </div>
+    
+    <div class="toc-ref">
+    
+        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#1-使用HTTP收发数据的流程"><span class="toc-text">1. 使用HTTP收发数据的流程</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-1-使用IP地址访问web服务器"><span class="toc-text">1.1 使用IP地址访问web服务器</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#1-2-使用域名访问web服务器"><span class="toc-text">1.2 使用域名访问web服务器</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-HTTP报文结构"><span class="toc-text">2. HTTP报文结构</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#2-1-一个例子"><span class="toc-text">2.1 一个例子</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-2-请求行"><span class="toc-text">2.2 请求行</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-3-状态行"><span class="toc-text">2.3 状态行</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-4-头部字段"><span class="toc-text">2.4 头部字段</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3-请求方法"><span class="toc-text">3. 请求方法</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#3-1-GET-HEAD"><span class="toc-text">3.1 GET &#x2F; HEAD</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-2-POST-PUT"><span class="toc-text">3.2 POST &#x2F; PUT</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-3-DELETE"><span class="toc-text">3.3 DELETE</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-4-CONNECT"><span class="toc-text">3.4 CONNECT</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-5-OPTIONS"><span class="toc-text">3.5 OPTIONS</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-6-TRACE"><span class="toc-text">3.6 TRACE</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-7-安全与幂等"><span class="toc-text">3.7 安全与幂等</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#4-URI"><span class="toc-text">4. URI</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#4-1-基本组成"><span class="toc-text">4.1 基本组成</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4-2-URI的查询参数"><span class="toc-text">4.2 URI的查询参数</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4-3-URI完整组成"><span class="toc-text">4.3 URI完整组成</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4-4-URI的编码"><span class="toc-text">4.4 URI的编码</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#5-响应状态码"><span class="toc-text">5. 响应状态码</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#5-1-提示信息：1××"><span class="toc-text">5.1 提示信息：1××</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#5-2-成功：2××"><span class="toc-text">5.2 成功：2××</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#5-3-重定向：3××"><span class="toc-text">5.3 重定向：3××</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#5-4-客户端错误：4××"><span class="toc-text">5.4 客户端错误：4××</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#5-5-服务器错误：5××"><span class="toc-text">5.5 服务器错误：5××</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#6-特点"><span class="toc-text">6. 特点</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#6-1-灵活可扩展"><span class="toc-text">6.1 灵活可扩展</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#6-2-可靠传输"><span class="toc-text">6.2 可靠传输</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#6-3-应用层协议"><span class="toc-text">6.3 应用层协议</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#6-4-请求-应答"><span class="toc-text">6.4 请求-应答</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#6-5-无状态"><span class="toc-text">6.5 无状态</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#7-优缺点总结"><span class="toc-text">7. 优缺点总结</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#7-1-简单灵活易扩展"><span class="toc-text">7.1 简单灵活易扩展</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#7-2-应用广泛、环境成熟"><span class="toc-text">7.2 应用广泛、环境成熟</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#7-3-无状态"><span class="toc-text">7.3 无状态</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#7-4-明文"><span class="toc-text">7.4 明文</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#7-5-不安全"><span class="toc-text">7.5 不安全</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#7-6-性能"><span class="toc-text">7.6 性能</span></a></li></ol></li></ol>
+    
+<style>
+    .left-col .switch-btn,
+    .left-col .switch-area {
+        display: none;
+    }
+    .toc-level-3 i,
+    .toc-level-3 ol {
+        display: none !important;
+    }
+</style>
+</div>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>注：本系列的所有内容均为极客时间《透视HTTP协议》的内容总结！</p>
+<p><div class='inner-toc'><h2>目录</h2><ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#1-使用HTTP收发数据的流程"><span class="toc-text">1. 使用HTTP收发数据的流程</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-1-使用IP地址访问web服务器"><span class="toc-text">1.1 使用IP地址访问web服务器</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#1-2-使用域名访问web服务器"><span class="toc-text">1.2 使用域名访问web服务器</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-HTTP报文结构"><span class="toc-text">2. HTTP报文结构</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#2-1-一个例子"><span class="toc-text">2.1 一个例子</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-2-请求行"><span class="toc-text">2.2 请求行</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-3-状态行"><span class="toc-text">2.3 状态行</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-4-头部字段"><span class="toc-text">2.4 头部字段</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3-请求方法"><span class="toc-text">3. 请求方法</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#3-1-GET-HEAD"><span class="toc-text">3.1 GET &#x2F; HEAD</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-2-POST-PUT"><span class="toc-text">3.2 POST &#x2F; PUT</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-3-DELETE"><span class="toc-text">3.3 DELETE</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-4-CONNECT"><span class="toc-text">3.4 CONNECT</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-5-OPTIONS"><span class="toc-text">3.5 OPTIONS</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-6-TRACE"><span class="toc-text">3.6 TRACE</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-7-安全与幂等"><span class="toc-text">3.7 安全与幂等</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#4-URI"><span class="toc-text">4. URI</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#4-1-基本组成"><span class="toc-text">4.1 基本组成</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4-2-URI的查询参数"><span class="toc-text">4.2 URI的查询参数</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4-3-URI完整组成"><span class="toc-text">4.3 URI完整组成</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4-4-URI的编码"><span class="toc-text">4.4 URI的编码</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#5-响应状态码"><span class="toc-text">5. 响应状态码</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#5-1-提示信息：1××"><span class="toc-text">5.1 提示信息：1××</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#5-2-成功：2××"><span class="toc-text">5.2 成功：2××</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#5-3-重定向：3××"><span class="toc-text">5.3 重定向：3××</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#5-4-客户端错误：4××"><span class="toc-text">5.4 客户端错误：4××</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#5-5-服务器错误：5××"><span class="toc-text">5.5 服务器错误：5××</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#6-特点"><span class="toc-text">6. 特点</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#6-1-灵活可扩展"><span class="toc-text">6.1 灵活可扩展</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#6-2-可靠传输"><span class="toc-text">6.2 可靠传输</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#6-3-应用层协议"><span class="toc-text">6.3 应用层协议</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#6-4-请求-应答"><span class="toc-text">6.4 请求-应答</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#6-5-无状态"><span class="toc-text">6.5 无状态</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#7-优缺点总结"><span class="toc-text">7. 优缺点总结</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#7-1-简单灵活易扩展"><span class="toc-text">7.1 简单灵活易扩展</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#7-2-应用广泛、环境成熟"><span class="toc-text">7.2 应用广泛、环境成熟</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#7-3-无状态"><span class="toc-text">7.3 无状态</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#7-4-明文"><span class="toc-text">7.4 明文</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#7-5-不安全"><span class="toc-text">7.5 不安全</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#7-6-性能"><span class="toc-text">7.6 性能</span></a></li></ol></li></ol></div></p>
+<h2 id="1-使用HTTP收发数据的流程"><a href="#1-使用HTTP收发数据的流程" class="headerlink" title="1. 使用HTTP收发数据的流程"></a>1. 使用HTTP收发数据的流程</h2><h3 id="1-1-使用IP地址访问web服务器"><a href="#1-1-使用IP地址访问web服务器" class="headerlink" title="1.1 使用IP地址访问web服务器"></a>1.1 使用IP地址访问web服务器</h3><ul>
+<li>浏览器从地址栏的输入中获得服务器的 IP 地址和端口号；</li>
+<li>浏览器用 TCP 的三次握手与服务器建立连接；</li>
+<li>浏览器向服务器发送拼好的报文；</li>
+<li>服务器收到报文后处理请求，同样拼好报文再发给浏览器；</li>
+<li>浏览器解析报文，渲染输出页面。</li>
+</ul>
+<h3 id="1-2-使用域名访问web服务器"><a href="#1-2-使用域名访问web服务器" class="headerlink" title="1.2 使用域名访问web服务器"></a>1.2 使用域名访问web服务器</h3><p>在进行上面的操作之前，首先需要使用DNS将域名解析成IP地址，正常情况下的域名解析流程如下：</p>
+<ul>
+<li>先查询<strong>浏览器的域名缓存</strong></li>
+<li>再查询<strong>本机</strong>的域名解析文件hosts</li>
+<li>如果还没有，则请求DNS服务器进行IP解析，如果某个DNS服务器解析失败则会使用其他DNS服务器解析，<strong>DNS解析返回的IP可能是一个CDN的地址</strong>。如果都没有办法解析则会返回错误。</li>
+</ul>
+<h2 id="2-HTTP报文结构"><a href="#2-HTTP报文结构" class="headerlink" title="2. HTTP报文结构"></a>2. HTTP报文结构</h2><p>TCP报文在实际要传输的数据之前添加了一个20字节的头部数据，这个头部数据用来存储TCP协议的额外信息。有了这个附加的头部信息，消息才能够被传递，消息到达目的地后，将头部去掉，就可以拿到真正的数据了。</p>
+<p><img src="/2019/07/01/http/030202/174bb72bad50127ac84427a72327f095.png" alt="img"> </p>
+<p><img src="/2019/07/01/http/030202/1574913191928.png" alt="1574913191928"></p>
+<h3 id="2-1-一个例子"><a href="#2-1-一个例子" class="headerlink" title="2.1 一个例子"></a>2.1 一个例子</h3><p><img src="/2019/07/01/http/030202/1574933498674.png" alt="1574933498674"></p>
+<ul>
+<li><p>第一行“GET / HTTP/1.1”就是<strong>请求行</strong></p>
+</li>
+<li><p>后面的“Host”“Connection”等等都属于 <strong>header</strong></p>
+</li>
+<li><p>报文的最后是一个空白行结束</p>
+</li>
+<li><p>没有 body。</p>
+</li>
+</ul>
+<p>下面对下面这些内容进行详细的介绍</p>
+<h3 id="2-2-请求行"><a href="#2-2-请求行" class="headerlink" title="2.2 请求行"></a>2.2 请求行</h3><p>它简要地描述了<strong>客户端想要如何操作服务器端的资源</strong>。</p>
+<p>请求行由三部分构成：</p>
+<ul>
+<li><strong>请求方法</strong>（Method）：是一个动词，如 GET/POST，表示对资源的操作；</li>
+<li><strong>请求目标</strong>（URI）：通常是一个 URI，标记了请求方法要操作的资源；</li>
+<li><strong>版本号</strong>（Version）：表示报文使用的 HTTP 协议版本。</li>
+</ul>
+<p>这三个部分通常使用空格（SP）来分隔，最后要用 CRLF 换行表示结束。</p>
+<p><img src="/2019/07/01/http/030202/36108959084392065f36dff3e12967b9.png" alt="img"> </p>
+<p>以下面这个请求行的例子来看：</p>
+<pre><code>GET / HTTP/1.1</code></pre><ul>
+<li><code>GET</code>：请求方法</li>
+<li><code>/</code>：请求目标</li>
+<li><code>HTTP/1.1</code>：版本号</li>
+</ul>
+<p>把这三部分连起来，意思就是“服务器你好，我想获取网站根目录下的默认文件，我用的协议版本号是 1.1，请不要用 1.0 或者 2.0 回复我。”</p>
+<h3 id="2-3-状态行"><a href="#2-3-状态行" class="headerlink" title="2.3 状态行"></a>2.3 状态行</h3><p>状态行是服务器返回给客户端的响应报文中的内容</p>
+<p>状态行要简单一些，由以下三部分组成</p>
+<ul>
+<li><strong>版本号</strong>（Version）：表示报文使用的 HTTP 协议版本；</li>
+<li><strong>状态码</strong>（Status Code）：一个三位数，用代码的形式表示处理的结果，比如 200 是成功；</li>
+<li><strong>原因</strong>（Reason）：作为数字状态码补充，是更详细的解释文字，帮助人理解原因。</li>
+</ul>
+<p>这三个部分也是用空格（SP）分隔开，最后是一个换行CRLF</p>
+<p><img src="/2019/07/01/http/030202/a1477b903cd4d5a69686683c0dbc3300.png" alt="img"> </p>
+<p>下面是一个例子：</p>
+<pre><code>HTTP/1.1 200 OK
+
+HTTP/1.1 404 Not Found</code></pre><ul>
+<li><code>HTTP/1.1</code>：版本号</li>
+<li><code>200</code>和<code>404</code>：状态码</li>
+<li><code>OK</code>和<code>Not Found</code>：原因</li>
+</ul>
+<h3 id="2-4-头部字段"><a href="#2-4-头部字段" class="headerlink" title="2.4 头部字段"></a>2.4 头部字段</h3><p>请求行或状态行加上头部字段就构成了HTTP报文中完整的请求头或响应头。这两者之间的区别只有请求行和响应行不同，其他部分的内容都是一样的。</p>
+<ul>
+<li>请求头的结构：</li>
+</ul>
+<p><img src="/2019/07/01/http/030202/1fe4c1121c50abcf571cebd677a8bdea.png" alt="img"> </p>
+<ul>
+<li>响应头结构：</li>
+</ul>
+<p><img src="/2019/07/01/http/030202/cb0d1d2c56400fe9c9988ee32842b175.png" alt="img"> </p>
+<p>头部字段是 key-value 的形式，key 和 value 之间用“:”分隔，最后用 CRLF 换行表示字段结束。</p>
+<p>比如在“Host: 127.0.0.1”这一行里 key 就是“Host”，value 就是“127.0.0.1”。</p>
+<p>不过使用头字段需要注意下面几点：</p>
+<ul>
+<li><p>字段名不区分大小写，例如“Host”也可以写成“host”，但首字母大写的可读性更好；</p>
+</li>
+<li><p>字段名里不允许出现空格，可以使用连字符“-”，但<strong>不能使用下划线“_”</strong>。</p>
+<p>例如，“test-name”是合法的字段名，而“test name”“test_name”是不正确的字段名；</p>
+</li>
+<li><p>字段名后面必须紧接着“:”，不能有空格，而“:”后的字段值前可以有多个空格；</p>
+<p>例如下面这两种写法，只有第一种是对的。</p>
+<pre><code>GET /09-1 HTTP/1.1
+Host:   www.chrono.com
+
+GET /09-1 HTTP/1.1
+Host : www.chrono.com（错误，host后面必须直接跟冒号，不能加空格）</code></pre></li>
+<li><p>字段的顺序是没有意义的，可以任意排列不影响语义；</p>
+</li>
+<li><p>字段原则上不能重复，除非这个字段本身的语义允许，例如 Set-Cookie。</p>
+</li>
+</ul>
+<p>HTTP的头部字段是很多的，但是基本上可以分为以下几类：</p>
+<ol>
+<li><strong>通用字段</strong>：在请求头和响应头里都可以出现；</li>
+<li><strong>请求字段</strong>：仅能出现在请求头里，进一步说明请求信息或者额外的附加条件；</li>
+<li><strong>响应字段</strong>：仅能出现在响应头里，补充说明响应报文的信息；</li>
+<li><strong>实体字段</strong>：它实际上属于通用字段，但专门描述 body 的额外信息。</li>
+</ol>
+<p>其中有几个比较特殊的字段：</p>
+<ul>
+<li><p><strong>Host 字段</strong>，它属于<strong>请求字段</strong>，只能出现在<strong>请求头</strong>里，它同时也是唯一一个 HTTP/1.1 规范里要求<strong>必须出现的字段</strong>，也就是说，如果请求头里没有 Host，那这就是一个错误的报文。</p>
+<p>Host 字段告诉服务器这个请求应该由哪个主机来处理，当一台计算机上托管了多个虚拟主机的时候，服务器端就需要用 Host 字段来选择，有点像是一个简单的“路由重定向”。例如在 127.0.0.1 上有三个虚拟主机：<code>www.chrono.com, www.metroid.net, origin.io</code>。那么当使用域名的方式访问时，就必须要用 Host 字段来区分这三个 IP 相同但域名不同的网站，否则服务器就会找不到合适的虚拟主机，无法处理。</p>
+</li>
+<li><p><strong>User-Agent</strong>，属于<strong>请求字段</strong>，只出现在<strong>请求头</strong>里。它使用一个字符串来描述发起 HTTP 请求的客户端，<strong>服务器可以依据它来返回最合适此浏览器显示的页面</strong>。但由于历史的原因，User-Agent 非常混乱，每个浏览器都自称是“Mozilla”“Chrome”“Safari”，企图使用这个字段来互相“伪装”，导致 User-Agent 变得越来越长，最终变得毫无意义。不过有的比较“诚实”的爬虫会在 User-Agent 里用“spider”标明自己是爬虫，所以可以利用这个字段实现简单的反爬虫策略。</p>
+</li>
+<li><p><strong>Date 字段</strong>，是一个<strong>通用字段</strong>，但<strong>通常出现在响应头里</strong>，表示 HTTP 报文创建的时间，客户端可以使用这个时间再搭配其他字段决定缓存策略。 </p>
+</li>
+<li><p><strong>Server 字段</strong>，是<strong>响应字段</strong>，只能出现在<strong>响应头</strong>里。它告诉客户端当前正在提供 Web 服务的软件名称和版本号。Server 字段也<strong>不是必须要出现的</strong>，因为这会把服务器的一部分信息暴露给外界，如果这个版本恰好存在 bug，那么黑客就有可能利用 bug 攻陷服务器。所以，有的网站响应头里要么没有这个字段，要么就给出一个完全无关的描述信息。</p>
+<p>比如 GitHub，它的 Server 字段里就看不出是使用了 Apache 还是 Nginx，只是显示为“GitHub.com”。</p>
+<img src="/2019/07/01/http/030202/f1970aaecad58fb18938e262ea7f311c.png" alt="img" style="zoom: 25%;"> 
+</li>
+<li><p><strong>Content-Length</strong>，属于<strong>实体字段</strong>，它表示报文里 body 的长度，也就是请求头或响应头空行后面数据的长度。服务器看到这个字段，就知道了后续有多少数据，可以直接接收。如果没有这个字段，那么 body 就是不定长的，需要使用 chunked 方式分段传输。</p>
+</li>
+</ul>
+<h2 id="3-请求方法"><a href="#3-请求方法" class="headerlink" title="3. 请求方法"></a>3. 请求方法</h2><p>目前 HTTP/1.1 规定了八种方法，单词都必须是大写的形式。</p>
+<ul>
+<li>GET：获取资源，可以理解为读取或者下载数据；</li>
+<li>HEAD：获取资源的元信息；</li>
+<li>POST：向资源提交数据，相当于写入或上传数据；</li>
+<li>PUT：类似 POST；</li>
+<li>DELETE：删除资源；</li>
+<li>CONNECT：建立特殊的连接隧道；</li>
+<li>OPTIONS：列出可对资源实行的方法；</li>
+<li>TRACE：追踪请求 - 响应的传输路径。</li>
+</ul>
+<p><img src="/2019/07/01/http/030202/3cdc8ac71b80929f4a94dfeb9ffe4b6d.jpg" alt="img"> </p>
+<h3 id="3-1-GET-HEAD"><a href="#3-1-GET-HEAD" class="headerlink" title="3.1 GET / HEAD"></a>3.1 GET / HEAD</h3><p>GET的含义是从服务器获取资源，搭配其他的头字段就可以对资源进行更加精细的操作，比如：</p>
+<ul>
+<li>在 URI 后使用“#”，就可以在获取页面后直接定位到某个标签所在的位置；</li>
+<li>使用 If-Modified-Since 字段就变成了“有条件的请求”，仅当资源被修改时才会执行获取动作；</li>
+<li>使用 Range 字段就是“范围请求”，只获取资源的一部分数据。</li>
+</ul>
+<p>HEAD的方法与处理机制与GET是一样的，只不过不返回实体数据，只会传回响应头，也就是只传回元数据。可以将HEAD方法看成是GET方法的一个轻量级版本。它的响应头与GET方法的响应头是完全一样的。比如说有时候只需要查看一个资源是否存在，只需要使用HEAD就可以了，不需要使用GET来实际获取这个资源。</p>
+<h3 id="3-2-POST-PUT"><a href="#3-2-POST-PUT" class="headerlink" title="3.2 POST / PUT"></a>3.2 POST / PUT</h3><p>GET 和 HEAD 方法是从服务器获取数据，而 POST 和 PUT 方法则是相反操作，<strong>向 URI 指定的资源提交数据，数据就放在报文的 body 里</strong>。</p>
+<p>PUT 的作用与 POST 类似，也可以向服务器提交数据，但与 POST 存在微妙的不同：</p>
+<ul>
+<li>POST 表示的是“新建”“create”的含义，</li>
+<li>PUT 是“修改”“update”的含义。</li>
+</ul>
+<p>在实际应用中，PUT 用到的比较少。而且，因为它与 POST 的语义、功能太过近似，有的服务器甚至就直接禁止使用 PUT 方法，只用 POST 方法上传数据。</p>
+<h3 id="3-3-DELETE"><a href="#3-3-DELETE" class="headerlink" title="3.3 DELETE"></a>3.3 DELETE</h3><p>该方法指示服务器删除资源，因为这个动作危险性太大，所以通常服务器不会执行真正的删除操作，而是对资源做一个删除标记。当然，更多的时候服务器就直接不处理 DELETE 请求。</p>
+<h3 id="3-4-CONNECT"><a href="#3-4-CONNECT" class="headerlink" title="3.4 CONNECT"></a>3.4 CONNECT</h3><p>是一个比较特殊的方法，要求服务器为客户端和另一台远程服务器建立一条特殊的连接隧道，这时 Web 服务器在中间充当了代理的角色。</p>
+<h3 id="3-5-OPTIONS"><a href="#3-5-OPTIONS" class="headerlink" title="3.5 OPTIONS"></a>3.5 OPTIONS</h3><p>要求服务器列出可对资源实行的操作方法，在响应头的 Allow 字段里返回。它的功能很有限，用处也不大，有的服务器（例如 Nginx）干脆就没有实现对它的支持。</p>
+<h3 id="3-6-TRACE"><a href="#3-6-TRACE" class="headerlink" title="3.6 TRACE"></a>3.6 TRACE</h3><p>多用于对 HTTP 链路的测试或诊断，可以显示出请求 - 响应的传输路径。它的本意是好的，但存在漏洞，会泄漏网站的信息，所以 Web 服务器通常也是禁止使用。</p>
+<h3 id="3-7-安全与幂等"><a href="#3-7-安全与幂等" class="headerlink" title="3.7 安全与幂等"></a>3.7 安全与幂等</h3><p><strong>安全</strong></p>
+<p>在 HTTP 协议里，所谓的“<strong>安全</strong>”是指<strong>请求方法不会“破坏”服务器上的资源，即不会对服务器上的资源造成实质的修改</strong>。</p>
+<p>只有 GET 和 HEAD 方法是“安全”的，因为它们是“只读”操作，只要服务器不故意曲解请求方法的处理方式，无论 GET 和 HEAD 操作多少次，服务器上的数据都是“安全的”。而 POST/PUT/DELETE 操作会修改服务器上的资源，增加或删除数据，所以是“不安全”的。</p>
+<p><strong>幂等</strong></p>
+<p>所谓的“<strong>幂等</strong>”实际上是一个数学用语，被借用到了 HTTP 协议里，意思是<strong>多次执行相同的操作，结果也都是相同的，即多次“幂”后结果“相等”。</strong></p>
+<h2 id="4-URI"><a href="#4-URI" class="headerlink" title="4. URI"></a>4. URI</h2><p>URI 本质上是一个字符串，这个字符串的作用是<strong>唯一地标记资源的位置或者名字</strong>。</p>
+<h3 id="4-1-基本组成"><a href="#4-1-基本组成" class="headerlink" title="4.1 基本组成"></a>4.1 基本组成</h3><p><img src="/2019/07/01/http/030202/46581d7e1058558d8e12c1bf37d30d2a.png" alt="img"> </p>
+<ul>
+<li><p><code>scheme</code>，翻译成中文叫“方案名”或者“协议名”，表示资源应该使用哪种协议来访问。</p>
+<p>常用的scheme为<strong>http</strong>或者<strong>https</strong>，此外还有其他不是很常见的 scheme，例如 <strong>ftp</strong>、<strong>ldap</strong>、<strong>file</strong>、<strong>news</strong> 等。</p>
+</li>
+<li><p><code>://</code>，将scheme与后面的部分分隔开，相当于一个分隔符</p>
+</li>
+<li><p><code>host:port</code>，这部分被称为“<strong>authority</strong>”，表示资源所在的主机名，通常的形式是“host:port”，即<strong>主机名加端口号</strong>。</p>
+<p>其中，主机名必须要有，其形式可以是IP地址或者域名。端口号则有时候可以省略，此时浏览器根据scheme使用的默认端口号。</p>
+<blockquote>
+<p>HTTP 的默认端口号是 80</p>
+<p>HTTPS 的默认端口号是 443</p>
+</blockquote>
+</li>
+<li><p><code>path</code>，URI 里 path 采用了类似文件系统“目录”“路径”的表示方式，因为早期互联网上的计算机多是 UNIX 系统，所以采用了 UNIX 的“/”风格。其实也比较好理解，它与 scheme 后面的“://”是一致的。</p>
+<blockquote>
+<p>URI 的 path 部分必须以“/”开始，也就是必须包含“/”，不要把“/”误认为属于前面 authority。</p>
+<p>例如下面的这些</p>
+<pre><code>http://nginx.org
+http://www.chrono.com:8080/11-1
+https://tools.ietf.org/html/rfc7230
+file:///D:/http_study/www/</code></pre><ul>
+<li>第一个，使用http协议，主机名为<code>nginx.org</code>，端口号省略，默认为80，资源路径path省略了，这里默认是根目录<code>/</code></li>
+<li>第二个，使用http协议，主机名为<code>www.chrono.com</code>，端口为8080，目录为根目录下的11-1</li>
+<li>第三个，使用https协议，主机名为<code>ttols.ietf.org</code>，端口省略，默认为443，目录为根目录下的<code>html/rfc7230</code></li>
+<li>第四个，使用file协议，表示是本地文件，这里有三个<code>/</code>，实际上并不是真的就用了三。这三个斜杠里的前两个属于 URI 特殊分隔符<code>://</code>，然后后面的<code>/D:/http_study/www/</code>是路径，而中间的主机名被“省略”了。这实际上<strong>是 file 类型 URI 的“特例”，它允许省略主机名</strong>，默认是本机 <code>localhost</code>。</li>
+</ul>
+</blockquote>
+</li>
+<li><p><code>?query</code>，这部分实际上就是扩展的功能了。表示的是查询参数，这部分在4.2中详细说明</p>
+<p><img src="/2019/07/01/http/030202/20ac5ee55b8ee30527492c8abb60ff9f.png" alt="img"> </p>
+</li>
+</ul>
+<p>在 HTTP 报文里的 URI“/11-1”与浏览器里输入的<code>http://www.chrono.com/11-1</code>有很大的不同，协议名和主机名都不见了，只剩下了后面的部分。</p>
+<p>这是因为<strong>协议名和主机名已经分别出现在了请求行的版本号和请求头的 Host 字段里</strong>，没有必要再重复。</p>
+<p><strong>结论</strong>：客户端和服务器看到的 URI 是不一样的。客户端看到的必须是完整的 URI，使用特定的协议去连接特定的主机，而服务器看到的只是报文请求行里被删除了协议名和主机名的 URI。</p>
+<h3 id="4-2-URI的查询参数"><a href="#4-2-URI的查询参数" class="headerlink" title="4.2 URI的查询参数"></a>4.2 URI的查询参数</h3><p>如果不加查询参数，只用<code>协议+主机名+端口号+路径</code>的方式，其实是可以精确的定位到任意资源的，不过对于这些资源，如果有一些附加的请求，则是没有办法实现的，这里就需要用到查询参数。</p>
+<p>查询参数在 path 之后，用一个<code>?</code>开始，但不包含<code>?</code>，表示对资源附加的额外要求。这是个很形象的符号，比<code>://</code>要好的多，很明显地表示了“查询”的含义。</p>
+<p>查询参数 query 有一套自己的格式，是多个<code>key=value</code>的字符串，这些 KV 值用字符<code>&amp;</code>连接，浏览器和客户端都可以按照这个格式把长串的查询参数解析成可理解的字典或关联数组形式。</p>
+<pre><code>http://www.chrono.com:8080/11-1?uid=1234&amp;name=mario&amp;referer=xxx</code></pre><p>下面是一个实际使用的例子：</p>
+<pre><code>https://search.jd.com/Search?keyword=openresty&amp;enc=utf-8&amp;qrst=1&amp;rt=1&amp;stop=1&amp;vt=2&amp;wq=openresty&amp;psort=3&amp;click=0</code></pre><p><img src="/2019/07/01/http/030202/1574994316629.png" alt="1574994316629"></p>
+<h3 id="4-3-URI完整组成"><a href="#4-3-URI完整组成" class="headerlink" title="4.3 URI完整组成"></a>4.3 URI完整组成</h3><p><img src="/2019/07/01/http/030202/ff41d020c7a27d1e8191057f0e658b38.png" alt="img"> </p>
+<p>可以看出这里的URI完整组成比前面多了两部分</p>
+<ul>
+<li><p><code>user:passwd@</code>，<strong>身份信息</strong>，位于协议名之后、主机名之前。表示<strong>登录主机时的用户名和密码</strong>，但现在已经不推荐使用这种形式了（RFC7230），因为它把敏感信息以明文形式暴露出来，存在严重的安全隐患。</p>
+</li>
+<li><p><code>#fragment</code>，<strong>片段标识符</strong>，位于查询参数后，它是 URI 所定位的资源内部的一个“锚点”或者说是“标签”，浏览器可以<strong>在获取资源后直接跳转到它指示的位置</strong>。</p>
+<p>但片段标识符仅能由浏览器这样的客户端使用，服务器是看不到的。也就是说，<strong>浏览器永远不会把带“#fragment”的 URI 发送给服务器，服务器也永远不会用这种方式去处理资源的片段。</strong></p>
+</li>
+</ul>
+<h3 id="4-4-URI的编码"><a href="#4-4-URI的编码" class="headerlink" title="4.4 URI的编码"></a>4.4 URI的编码</h3><p>在 URI 里只能使用 ASCII 码，但如果想要在 URI 里使用汉语、日语、“@&amp;?”等起界定符作用的字符，就需要引入<strong>编码机制</strong>，<strong>对于 ASCII 码以外的字符集和特殊字符做一个特殊的操作，把它们转换成与 URI 语义不冲突的形式。</strong>这在 RFC 规范里称为“escape”和“unescape”，俗称“转义”。</p>
+<p>URI 转义的规则有点“简单粗暴”，直接<strong>把非 ASCII 码或特殊字符转换成十六进制字节值，然后前面再加上一个“%”</strong>。例如：</p>
+<ul>
+<li><p>空格被转义成“%20”</p>
+</li>
+<li><p>“?”被转义成“%3F”</p>
+</li>
+<li><p>中文、日文等则通常使用 UTF-8 编码后再转义</p>
+<p>例如“银河”会被转义成“%E9%93%B6%E6%B2%B3”。</p>
+</li>
+</ul>
+<p>有了这个编码规则后，URI 就可以支持任意的字符集用任何语言来标记资源。不过我们在浏览器的地址栏里通常是不会看到这些转义后的“乱码”的，这实际上是浏览器一种“友好”表现，隐藏了 URI 编码后的“丑陋一面”。</p>
+<h2 id="5-响应状态码"><a href="#5-响应状态码" class="headerlink" title="5. 响应状态码"></a>5. 响应状态码</h2><p>HTTP 报文里请求行的组成部分，包括请求方法和 URI。有了请求行，加上后面的头字段就形成了请求头，可以通过 TCP/IP 协议发送给服务器。</p>
+<p>服务器收到请求报文，解析后需要进行处理，具体的业务逻辑多种多样，但最后必定是拼出一个响应报文发回客户端。</p>
+<p>下图是状态行的结构：</p>
+<p><img src="/2019/07/01/http/030202/a1477b903cd4d5a69686683c0dbc3300-1574996961973.png" alt="img"> </p>
+<p>目前 RFC 标准里规定的状态码是三位数，所以取值范围就是从 000 到 999。</p>
+<p>RFC 标准把状态码分成了五类，用数字的第一位表示分类，而 0<del>99 不用，这样状态码的实际可用范围就大大缩小了，由 000</del>999 变成了 100~599。</p>
+<ul>
+<li>1××：<strong>提示信息</strong>，表示目前是协议处理的中间状态，还需要后续的操作；</li>
+<li>2××：<strong>成功</strong>，报文已经收到并被正确处理；</li>
+<li>3××：<strong>重定向</strong>，资源位置发生变动，需要客户端重新发送请求；</li>
+<li>4××：<strong>客户端错误</strong>，请求报文有误，服务器无法处理；</li>
+<li>5××：<strong>服务器错误</strong>，服务器在处理请求时内部发生了错误。</li>
+</ul>
+<p>客户端作为请求的发起方，获取响应报文后，需要通过状态码知道请求是否被正确处理，是否要再次发送请求，如果出错了原因又是什么。这样才能进行下一步的动作，要么发送新请求，要么改正错误重发请求。</p>
+<p>服务器端作为请求的接收方，也应该很好地运用状态码。在处理请求时，选择最恰当的状态码回复客户端，告知客户端处理的结果，指示客户端下一步应该如何行动。特别是在出错的时候，尽量不要简单地返 400、500 这样意思含糊不清的状态码。</p>
+<h3 id="5-1-提示信息：1××"><a href="#5-1-提示信息：1××" class="headerlink" title="5.1 提示信息：1××"></a>5.1 提示信息：1××</h3><p>1××类状态码属于提示信息，是协议处理的中间状态，实际能够用到的时候很少。</p>
+<ul>
+<li><p><code>101 Switching Protocols</code></p>
+<p>它的意思是客户端使用 Upgrade 头字段，要求<strong>在 HTTP 协议的基础上改成其他的协议继续通信</strong>，比如 WebSocket。而如果服务器也同意变更协议，就会发送状态码 101，但这之后的数据传输就不会再使用 HTTP 了。</p>
+</li>
+</ul>
+<h3 id="5-2-成功：2××"><a href="#5-2-成功：2××" class="headerlink" title="5.2 成功：2××"></a>5.2 成功：2××</h3><p>2××类状态码表示服务器收到并成功处理了客户端的请求，这也是客户端最愿意看到的状态码。</p>
+<ul>
+<li><p><code>200 OK</code></p>
+<p>是最常见的成功状态码，表示一切正常，服务器如客户端所期望的那样返回了处理结果，<strong>如果是非 HEAD 请求，通常在响应头后都会有 body 数据。</strong></p>
+</li>
+<li><p><code>204 No Content</code></p>
+<p>是另一个很常见的成功状态码，它的含义与“200 OK”基本相同，但<strong>响应头后没有 body 数据</strong>。所以对于 Web 服务器来说，正确地区分 200 和 204 是很必要的。</p>
+</li>
+<li><p><code>206 Partial Content</code></p>
+<p>是 HTTP 分块下载或断点续传的基础，在客户端发送“范围请求”、要求获取资源的部分数据时出现，它与 200 一样，也是服务器成功处理了请求，但 body 里的数据不是资源的全部，而是其中的一部分。</p>
+<p>状态码 206 通常还会伴随着头字段<code>Content-Range</code>，表示<strong>响应报文里 body 数据的具体范围</strong>，供客户端确认，例如“Content-Range: bytes 0-99/2000”，意思是此次获取的是总计 2000 个字节的前 100 个字节。</p>
+</li>
+</ul>
+<h3 id="5-3-重定向：3××"><a href="#5-3-重定向：3××" class="headerlink" title="5.3 重定向：3××"></a>5.3 重定向：3××</h3><p>3××类状态码表示客户端请求的资源发生了变动，客户端必须用新的 URI 重新发送请求获取资源，也就是通常所说的“重定向”，包括著名的 301、302 跳转。</p>
+<ul>
+<li><p><code>301 Moved Permanently</code></p>
+<p>俗称“<strong>永久重定向</strong>”，含义是此次请求的资源已经不存在了，需要改用改用新的 URI 再次访问。</p>
+</li>
+<li><p><code>302 Found</code></p>
+<p>俗称“<strong>临时重定向</strong>”，意思是请求的资源还在，但需要暂时用另一个 URI 来访问。</p>
+<p>301 和 302 都会在<strong>响应头里使用字段 Location 指明后续要跳转的 URI</strong>，最终的效果很相似，浏览器都会重定向到新的 URI。两者的根本区别在于语义，一个是“永久”，一个是“临时”，所以在场景、用法上差距很大。</p>
+<blockquote>
+<ul>
+<li>比如，你的网站升级到了 HTTPS，原来的 HTTP 不打算用了，这就是“永久”的，所以要配置 301 跳转，把所有的 HTTP 流量都切换到 HTTPS。</li>
+<li>再比如，今天夜里网站后台要系统维护，服务暂时不可用，这就属于“临时”的，可以配置成 302 跳转，把流量临时切换到一个静态通知页面，浏览器看到这个 302 就知道这只是暂时的情况，不会做缓存优化，第二天还会访问原来的地址。</li>
+</ul>
+</blockquote>
+</li>
+<li><p><code>304 Not Modified</code></p>
+<p>是一个比较有意思的状态码，它用于 If-Modified-Since 等条件请求，<strong>表示资源未修改，用于缓存控制</strong>。它不具有通常的跳转含义，但可以理解成“重定向已到缓存的文件”（即“缓存重定向”）。301、302 和 304 分别涉及了 HTTP 协议里重要的“<strong>重定向跳转</strong>”和“<strong>缓存控制</strong>”。</p>
+</li>
+</ul>
+<h3 id="5-4-客户端错误：4××"><a href="#5-4-客户端错误：4××" class="headerlink" title="5.4 客户端错误：4××"></a>5.4 客户端错误：4××</h3><p>4××类状态码表示客户端发送的请求报文有误，服务器无法处理，它就是真正的“错误码”含义了。 </p>
+<ul>
+<li><p><code>400 Bad Request</code></p>
+<p>是一个通用的错误码，表示<strong>请求报文有错误，但具体错误未知。</strong>是数据格式错误、缺少请求头还是 URI 超长它没有明确说，只是一个笼统的错误，客户端看到 400 只会是“一头雾水”“不知所措”。所以，在开发 Web 应用时应当尽量避免给客户端返回 400，而是要用其他更有明确含义的状态码。</p>
+</li>
+<li><p><code>403 Forbidden</code></p>
+<p>实际上不是客户端的请求出错，而是<strong>表示服务器禁止访问资源</strong>。原因可能多种多样，例如信息敏感、法律禁止等，如果服务器友好一点，可以在 body 里详细说明拒绝请求的原因，不过现实中通常都是直接给一个“闭门羹”。</p>
+</li>
+<li><p><code>404 Not Found</code></p>
+<p>原意是<strong>资源在本服务器上未找到，所以无法提供给客户端</strong>。但现在已经被“用滥了”，只要服务器“不高兴”就可以给出个 404，而我们也无从得知后面到底是真的未找到，还是有什么别的原因，某种程度上它比 403 还要令人讨厌。</p>
+</li>
+</ul>
+<p>4××里剩下的一些代码较明确地说明了错误的原因，都很好理解，开发中常用的有：</p>
+<ul>
+<li><code>405 Method Not Allowed</code>：不允许使用某些方法操作资源，例如不允许 POST 只能 GET；</li>
+<li><code>406 Not Acceptable</code>：资源无法满足客户端请求的条件，例如请求中文但只有英文；</li>
+<li><code>408 Request Timeout</code>：请求超时，服务器等待了过长的时间；</li>
+<li><code>409 Conflict</code>：多个请求发生了冲突，可以理解为多线程并发时的竞态；</li>
+<li><code>413 Request Entity Too Large</code>：请求报文里的 body 太大；</li>
+<li><code>414 Request-URI Too Long</code>：请求行里的 URI 太大；</li>
+<li><code>429 Too Many Requests</code>：客户端发送了太多的请求，通常是由于服务器的限连策略；</li>
+<li><code>431 Request Header Fields Too Large</code>：请求头某个字段或总体太大；</li>
+</ul>
+<h3 id="5-5-服务器错误：5××"><a href="#5-5-服务器错误：5××" class="headerlink" title="5.5 服务器错误：5××"></a>5.5 服务器错误：5××</h3><p>5××类状态码表示<strong>客户端请求报文正确，但服务器在处理时内部发生了错误，无法返回应有的响应数据</strong>，是服务器端的“错误码”。</p>
+<ul>
+<li><p><code>500 Internal Server Error</code></p>
+<p>与 400 类似，也是一个<strong>通用的错误码</strong>，服务器究竟发生了什么错误我们是不知道的。不过对于服务器来说这应该算是好事，通常不应该把服务器内部的详细信息，例如出错的函数调用栈告诉外界。虽然不利于调试，但能够防止黑客的窥探或者分析。</p>
+</li>
+<li><p><code>501 Not Implemented</code></p>
+<p>表示<strong>客户端请求的功能还不支持</strong>，这个错误码比 500 要“温和”一些，和“即将开业，敬请期待”的意思差不多，不过具体什么时候“开业”就不好说了。</p>
+</li>
+<li><p><code>502 Bad Gateway</code></p>
+<p>通常是服务器作为网关或者代理时返回的错误码，表示<strong>服务器自身工作正常，访问后端服务器时发生了错误</strong>，但具体的错误原因也是不知道的。</p>
+</li>
+<li><p><code>503 Service Unavailable</code></p>
+<p>表示<strong>服务器当前很忙，暂时无法响应服务</strong>，我们上网时有时候遇到的“网络服务正忙，请稍后重试”的提示信息就是状态码 503。503 是一个“临时”的状态，很可能过几秒钟后服务器就不那么忙了，可以继续提供服务，所以 503 响应报文里通常还会有一个“Retry-After”字段，指示客户端可以在多久以后再次尝试发送请求。</p>
+</li>
+</ul>
+<h2 id="6-特点"><a href="#6-特点" class="headerlink" title="6. 特点"></a>6. 特点</h2><h3 id="6-1-灵活可扩展"><a href="#6-1-灵活可扩展" class="headerlink" title="6.1 灵活可扩展"></a>6.1 灵活可扩展</h3><p>首先， HTTP 协议是一个“<strong>灵活可扩展</strong>”的<strong>传输协议</strong>。</p>
+<p>HTTP 协议最初诞生的时候就比较简单，本着开放的精神只规定了报文的基本格式，比如用空格分隔单词，用换行分隔字段，“header+body”等，报文里的各个组成部分都没有做严格的语法语义限制，可以由开发者任意定制。所以，HTTP 协议就随着互联网的发展一同成长起来了。</p>
+<p>在这个过程中，HTTP 协议逐渐增加了请求方法、版本号、状态码、头字段等特性。而 body 也不再限于文本形式的 TXT 或 HTML，而是能够传输图片、音频视频等任意数据，这些都是源于它的“灵活可扩展”的特点。</p>
+<p>总的来说，HTTP 是灵活可扩展的，可以任意添加头字段实现任意功能； </p>
+<h3 id="6-2-可靠传输"><a href="#6-2-可靠传输" class="headerlink" title="6.2 可靠传输"></a>6.2 可靠传输</h3><p>第二个特点， HTTP 协议是一个“可靠”的传输协议。</p>
+<p><strong>因为 HTTP 协议是基于 TCP/IP 的，而 TCP 本身是一个“可靠”的传输协议，所以 HTTP 自然也就继承了这个特性，能够在请求方和应答方之间“可靠”地传输数据。</strong></p>
+<p>HTTP 是可靠传输协议，基于 TCP/IP 协议“尽量”保证数据的送达；</p>
+<h3 id="6-3-应用层协议"><a href="#6-3-应用层协议" class="headerlink" title="6.3 应用层协议"></a>6.3 应用层协议</h3><p>第三个特点，HTTP 协议是一个应用层的协议。</p>
+<p>在 TCP/IP 诞生后的几十年里，虽然出现了许多的应用层协议，但它们都仅关注很小的应用领域，局限在很少的应用场景。</p>
+<p>例如 FTP 只能传输文件、SMTP 只能发送邮件、SSH 只能远程登录等，在通用的数据传输方面“完全不能打”。</p>
+<p>因此总结就是，HTTP 是应用层协议，比 FTP、SSH 等更通用功能更多，能够传输任意数据；</p>
+<h3 id="6-4-请求-应答"><a href="#6-4-请求-应答" class="headerlink" title="6.4 请求-应答"></a>6.4 请求-应答</h3><p>请求 - 应答模式也明确了 HTTP 协议里通信双方的定位，永远是<strong>请求方先发起连接和请求，是主动的，而应答方只有在收到请求后才能答复，是被动的，如果没有请求时不会有任何动作</strong>。</p>
+<p>HTTP 使用了请求 - 应答模式，<strong>客户端主动发起请求，服务器被动回复请求</strong>；</p>
+<h3 id="6-5-无状态"><a href="#6-5-无状态" class="headerlink" title="6.5 无状态"></a>6.5 无状态</h3><p>“无状态”形象地来说就是“<strong>没有记忆能力</strong>”。</p>
+<p>每个请求都是互相独立、毫无关联的，协议不要求客户端或服务器记录请求相关的信息。</p>
+<h2 id="7-优缺点总结"><a href="#7-优缺点总结" class="headerlink" title="7. 优缺点总结"></a>7. 优缺点总结</h2><h3 id="7-1-简单灵活易扩展"><a href="#7-1-简单灵活易扩展" class="headerlink" title="7.1 简单灵活易扩展"></a>7.1 简单灵活易扩展</h3><p>HTTP 最大的优点是简单、灵活和易于扩展；</p>
+<h3 id="7-2-应用广泛、环境成熟"><a href="#7-2-应用广泛、环境成熟" class="headerlink" title="7.2 应用广泛、环境成熟"></a>7.2 应用广泛、环境成熟</h3><p>HTTP 拥有成熟的软硬件环境，应用的非常广泛，是互联网的基础设施；</p>
+<h3 id="7-3-无状态"><a href="#7-3-无状态" class="headerlink" title="7.3 无状态"></a>7.3 无状态</h3><ul>
+<li><p><strong>无状态的好处</strong></p>
+<p>因为服务器没有“记忆能力”，所以就<strong>不需要额外的资源来记录状态信息</strong>，不仅实现上会简单一些，而且还能<strong>减轻服务器的负担</strong>，能够把更多的 CPU 和内存用来对外提供服务。</p>
+<p>而且，“无状态”也表示服务器都是相同的，没有“状态”的差异，所以可以<strong>很容易地组成集群</strong>，让负载均衡把请求转发到任意一台服务器，不会因为状态不一致导致处理出错，使用“堆机器”的“笨办法”轻松实现高并发高可用。</p>
+</li>
+<li><p><strong>无状态的缺点</strong></p>
+<p><strong>无法支持需要连续多个步骤的“事务”操作</strong>。例如电商购物，首先要登录，然后添加购物车，再下单、结算、支付，这一系列操作都需要知道用户的身份才行，但“无状态”服务器是不知道这些请求是相互关联的，每次都得问一遍身份信息，不仅麻烦，而且还增加了不必要的数据传输量。</p>
+</li>
+</ul>
+<p>HTTP 是无状态的，可以轻松实现集群化，扩展性能，但有时也需要用 Cookie 技术来实现“有状态”；</p>
+<h3 id="7-4-明文"><a href="#7-4-明文" class="headerlink" title="7.4 明文"></a>7.4 明文</h3><p>“明文”意思就是协议里的报文（准确地说是 header 部分）不使用二进制数据，而是用简单可阅读的文本形式。</p>
+<p>对比 TCP、UDP 这样的二进制协议，它的优点显而易见，不需要借助任何外部工具，用浏览器、Wireshark 或者 tcpdump 抓包后，直接用肉眼就可以很容易地查看或者修改，为我们的开发调试工作带来极大的便利。</p>
+<p>HTTP 是明文传输，数据完全肉眼可见，能够方便地研究分析，但也容易被窃听；</p>
+<h3 id="7-5-不安全"><a href="#7-5-不安全" class="headerlink" title="7.5 不安全"></a>7.5 不安全</h3><p>HTTP 是不安全的，无法验证通信双方的身份，也不能判断报文是否被篡改；</p>
+<h3 id="7-6-性能"><a href="#7-6-性能" class="headerlink" title="7.6 性能"></a>7.6 性能</h3><p>现在互联网的特点是移动和高并发，不能保证稳定的连接质量，所以在 TCP 层面上 HTTP 协议有时候就会表现的不够好。而“请求 - 应答”模式则加剧了 HTTP 的性能问题，这就是著名的“<strong>队头阻塞</strong>”（Head-of-line blocking），当顺序发送的请求序列中的一个请求因为某种原因被阻塞时，在后面排队的所有请求也一并被阻塞，会导致客户端迟迟收不到数据。</p>
+<p>为了解决这个问题，就诞生出了一个专门的研究课题“Web 性能优化”，HTTP 官方标准里就有“缓存”一章（RFC7234），非官方的“花招”就更多了，例如切图、数据内嵌与合并，域名分片、JavaScript“黑科技”等等。</p>
+<p>HTTP 的性能不算差，但不完全适应现在的互联网，还有很大的提升空间。</p>
+
+      
+       
+    </div>
+</article>
+
+
+
+
+
+
+
+    
+        <!-- MathJax配置，可通过单美元符号书写行内公式等 -->
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+    "HTML-CSS": {
+        preferredFont: "TeX",
+        availableFonts: ["STIX","TeX"],
+        linebreaks: { automatic:true },
+        EqnChunk: (MathJax.Hub.Browser.isMobile ? 10 : 50)
+    },
+    tex2jax: {
+        inlineMath: [ ["$", "$"], ["\\(","\\)"] ],
+        processEscapes: true,
+        ignoreClass: "tex2jax_ignore|dno",
+        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+    },
+    TeX: {
+        equationNumbers: { autoNumber: "AMS" },
+        noUndefined: { attributes: { mathcolor: "red", mathbackground: "#FFEEEE", mathsize: "90%" } },
+        Macros: { href: "{}" }
+    },
+    messageStyle: "none"
+    });
+</script>
+<!-- 给MathJax元素添加has-jax class -->
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax(), i;
+        for(i=0; i < all.length; i += 1) {
+            all[i].SourceElement().parentNode.className += ' has-jax';
+        }
+    });
+</script>
+<!-- 通过连接CDN加载MathJax的js代码 -->
+<script type="text/javascript" async
+        src="//cdn.bootcss.com/mathjax/2.7.2/MathJax.js?config=TeX-MML-AM_CHTML">
+</script>
+<input type="hidden" id="MathJax-js"
+        value="//cdn.bootcss.com/mathjax/2.7.2/MathJax.js?config=TeX-MML-AM_CHTML">
+</input>
+    
+
+
+
+
+    </div>
+    <div class="copyright">
+        <p class="footer-entry">©2019-2020 POWDER SNOW</p>
+
+    </div>
+    <div class="full-toc">
+        <button class="full"><span class="min "></span></button>
+<button class="post-toc-menu"><span class="post-toc-menu-icons"></span></button>
+<div class="post-toc"><span class="post-toc-title">目录</span>
+    <div class="post-toc-content">
+
+    </div>
+</div>
+<a class="" id="rocket" ></a>
+
+    </div>
+</div>
+<div class="acParent"></div>
+
+</body>
+<script src="/js/jquery.pjax.js?v=1.0.1" ></script>
+
+<script src="/js/script.js?v=1.0.1" ></script>
+<script>
+    var img_resize = 'default';
+    /*作者、标签的自动补全*/
+    $(function () {
+        $('.search').AutoComplete({
+            'data': ['#HTTP','#protobuf','#MySQL SQL','#Spring','#java','#QT','#区块链','#分布式','#大数据','#前端','#MyBatis','#SpringBoot','#网络编程','#Redis','#多线程','#数据库',],
+            'itemHeight': 20,
+            'width': 418
+        }).AutoComplete('show');
+    })
+    function initArticle() {
+        /*渲染对应的表格样式*/
+        
+            $(".post .pjax table").addClass("green_title");
+        
+
+        /*渲染打赏样式*/
+        
+
+        /*高亮代码块行号*/
+        
+
+        /*访问数量*/
+        
+
+        /*代码高亮，行号对齐*/
+        $('.pre-numbering').css('line-height',$('.has-numbering').css('line-height'));
+
+        
+        
+    }
+
+    /*打赏页面隐藏与展示*/
+    
+
+</script>
+
+<!--加入行号的高亮代码块样式-->
+
+<!--自定义样式设置-->
+<style>
+    
+    
+    .nav {
+        width: 544px;
+    }
+    .nav.fullscreen {
+        margin-left: -544px;
+    }
+    .nav-left {
+        width: 122px;
+    }
+    
+    
+    @media screen and (max-width: 1468px) {
+        .nav {
+            width: 492px;
+        }
+        .nav.fullscreen {
+            margin-left: -492px;
+        }
+        .nav-left {
+            width: 100px;
+        }
+    }
+    
+    
+    @media screen and (max-width: 1024px) {
+        .nav {
+            width: 492px;
+            margin-left: -492px
+        }
+        .nav.fullscreen {
+            margin-left: 0;
+        }
+        .nav .hide-list.fullscreen {
+            left: 492px
+        }
+    }
+    
+    @media screen and (max-width: 426px) {
+        .nav {
+            width: 100%;
+        }
+        .nav-left {
+            width: 100%;
+        }
+    }
+    
+    
+    .nav-right .title-list nav a .post-title, .nav-right .title-list #local-search-result a .post-title {
+        color: #383636;
+    }
+    
+    
+    .nav-right .title-list nav a .post-date, .nav-right .title-list #local-search-result a .post-date {
+        color: #5e5e5f;
+    }
+    
+    
+    .nav-right nav a.hover, #local-search-result a.hover{
+        background-color: #fbf4a8;
+    }
+    
+    
+
+    /*列表样式*/
+    
+    .post .pjax article .article-entry>ol, .post .pjax article .article-entry>ul, .post .pjax article>ol, .post .pjax article>ul{
+        border: #e2dede solid 1px;
+        border-radius: 10px;
+        padding: 10px 32px 10px 56px;
+    }
+    .post .pjax article .article-entry li>ol, .post .pjax article .article-entry li>ul,.post .pjax article li>ol, .post .pjax article li>ul{
+        padding-top: 5px;
+        padding-bottom: 5px;
+    }
+    .post .pjax article .article-entry>ol>li, .post .pjax article .article-entry>ul>li,.post .pjax article>ol>li, .post .pjax article>ul>li{
+        margin-bottom: auto;
+        margin-left: auto;
+    }
+    .post .pjax article .article-entry li>ol>li, .post .pjax article .article-entry li>ul>li,.post .pjax article li>ol>li, .post .pjax article li>ul>li{
+        margin-bottom: auto;
+        margin-left: auto;
+    }
+    
+
+    /* 背景图样式 */
+    
+    .post {
+        background: url(/img/bck.jpg);
+    }
+    
+    
+    .post.index {
+        background: url(/img/background.jpg);
+    }
+    
+
+
+    /*引用块样式*/
+    
+
+    /*文章列表背景图*/
+    
+    .nav-right:before {
+        content: ' ';
+        display: block;
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        opacity: 0.3;
+        background: url("/img/123.jpg");
+        background-repeat: no-repeat;
+        background-position: 50% 0;
+        -ms-background-size: cover;
+        -o-background-size: cover;
+        -moz-background-size: cover;
+        -webkit-background-size: cover;
+        background-size: cover;
+    }
+    
+
+    
+</style>
+
+
+
+
+
+
+
+</html>

@@ -1,0 +1,1501 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>闪电网络（三）哈希时间锁合约：Hashed Timelock Contract (HTLC) | POWDER SNOW</title>
+  <meta name="keywords" content=" 区块链 ">
+  <meta name="description" content="闪电网络（三）哈希时间锁合约：Hashed Timelock Contract (HTLC) | POWDER SNOW">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<meta property="og:type" content="website">
+<meta property="og:title" content="categories">
+<meta property="og:url" content="http://yoursite.com/categories/index.html">
+<meta property="og:site_name" content="POWDER SNOW">
+<meta property="article:published_time" content="2018-03-02T04:33:16.000Z">
+<meta property="article:modified_time" content="2020-03-05T13:28:59.839Z">
+<meta property="article:author" content="冯冠雄">
+<meta name="twitter:card" content="summary">
+
+
+<link rel="icon" href="/img/avatar.jpg">
+
+<link href="/css/style.css?v=1.0.1" rel="stylesheet">
+
+<link href="/css/hl_theme/atom-light.css?v=1.0.1" rel="stylesheet">
+
+<link href="//cdn.bootcss.com/animate.css/3.5.2/animate.min.css" rel="stylesheet">
+<link href="//cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+
+<script src="//cdn.bootcss.com/jquery/2.2.4/jquery.min.js"></script>
+<script src="/js/jquery.autocomplete.min.js?v=1.0.1" ></script>
+
+<script src="//cdn.bootcss.com/highlight.js/9.12.0/highlight.min.js"></script>
+<script>
+    hljs.initHighlightingOnLoad();
+</script>
+
+<script src="//cdn.bootcss.com/nprogress/0.2.0/nprogress.min.js"></script>
+
+
+
+<script src="//cdn.bootcss.com/jquery-cookie/1.4.1/jquery.cookie.min.js" ></script>
+
+<script src="/js/iconfont.js?v=1.0.1" ></script>
+
+<meta name="generator" content="Hexo 4.2.0"></head>
+<div style="display: none">
+  <input class="theme_disqus_on" value="false">
+  <input class="theme_preload_comment" value="false">
+  <input class="theme_blog_path" value="">
+</div>
+
+<body>
+<aside class="nav">
+    <div class="nav-left">
+        <a href="/" class="avatar_target">
+    <img class="avatar" src="/img/avatar.jpg" />
+</a>
+<div class="author">
+    <span>冯冠雄</span>
+</div>
+
+<div class="icon">
+    
+        
+        <a title="github" href="https://github.com/xiong-Fgx" target="_blank">
+            
+                <svg class="iconfont-svg" aria-hidden="true">
+                    <use xlink:href="#icon-github"></use>
+                </svg>
+            
+        </a>
+        
+    
+        
+        <a title="linkedin" href="https://www.linkedin.com/in/guanxiong-feng-8b6aa8179" target="_blank">
+            
+                <svg class="iconfont-svg" aria-hidden="true">
+                    <use xlink:href="#icon-linkedin"></use>
+                </svg>
+            
+        </a>
+        
+    
+        
+        <a title="email" href="mailto:guanxiongf@gmail.com" target="_blank">
+            
+                <svg class="iconfont-svg" aria-hidden="true">
+                    <use xlink:href="#icon-email"></use>
+                </svg>
+            
+        </a>
+        
+    
+</div>
+
+
+
+
+<ul>
+    <li><div class="all active">全部文章</div></li>
+    
+        
+            
+            <li><div data-rel="网络"><i class="fold iconfont icon-right"></i>网络</div>
+                
+                    <ul class="sub hide">
+                        
+                        <li><div data-rel="HTTP">HTTP</div>
+                            
+                        </li>
+                            
+                        <li><div data-rel="protobuf">protobuf</div>
+                            
+                        </li>
+                            
+                        <li><div data-rel="网络编程">网络编程</div>
+                            
+                        </li>
+                            
+                    </ul>
+                
+            </li>
+            
+        
+    
+        
+            
+            <li><div data-rel="数据库">数据库</div>
+                
+            </li>
+            
+        
+    
+        
+            
+        
+    
+        
+            
+            <li><div data-rel="SSM"><i class="fold iconfont icon-right"></i>SSM</div>
+                
+                    <ul class="sub hide">
+                        
+                        <li><div data-rel="SSM整合">SSM整合</div>
+                            
+                        </li>
+                            
+                        <li><div data-rel="Spring">Spring</div>
+                            
+                        </li>
+                            
+                        <li><div data-rel="SpringMVC">SpringMVC</div>
+                            
+                        </li>
+                            
+                        <li><div data-rel="MyBatis">MyBatis</div>
+                            
+                        </li>
+                            
+                        <li><div data-rel="SpringBoot">SpringBoot</div>
+                            
+                        </li>
+                            
+                    </ul>
+                
+            </li>
+            
+        
+    
+        
+            
+        
+    
+        
+            
+        
+    
+        
+            
+        
+    
+        
+            
+        
+    
+        
+            
+            <li><div data-rel="客户端"><i class="fold iconfont icon-right"></i>客户端</div>
+                
+                    <ul class="sub hide">
+                        
+                        <li><div data-rel="QT">QT</div>
+                            
+                        </li>
+                            
+                    </ul>
+                
+            </li>
+            
+        
+    
+        
+            
+            <li><div data-rel="区块链"><i class="fold iconfont icon-right"></i>区块链</div>
+                
+                    <ul class="sub hide">
+                        
+                        <li><div data-rel="论文">论文</div>
+                            
+                        </li>
+                            
+                        <li><div data-rel="Fabric">Fabric</div>
+                            
+                        </li>
+                            
+                        <li><div data-rel="fabric">fabric</div>
+                            
+                        </li>
+                            
+                    </ul>
+                
+            </li>
+            
+        
+    
+        
+            
+            <li><div data-rel="分布式">分布式</div>
+                
+            </li>
+            
+        
+    
+        
+            
+            <li><div data-rel="大数据"><i class="fold iconfont icon-right"></i>大数据</div>
+                
+                    <ul class="sub hide">
+                        
+                        <li><div data-rel="hadoop">hadoop</div>
+                            
+                        </li>
+                            
+                    </ul>
+                
+            </li>
+            
+        
+    
+        
+            
+            <li><div data-rel="前端"><i class="fold iconfont icon-right"></i>前端</div>
+                
+                    <ul class="sub hide">
+                        
+                        <li><div data-rel="HTML">HTML</div>
+                            
+                        </li>
+                            
+                        <li><div data-rel="CSS">CSS</div>
+                            
+                        </li>
+                            
+                    </ul>
+                
+            </li>
+            
+        
+    
+        
+            
+        
+    
+        
+            
+        
+    
+        
+            
+        
+    
+        
+            
+        
+    
+        
+            
+        
+    
+        
+            
+            <li><div data-rel="笔记">笔记</div>
+                
+            </li>
+            
+        
+    
+        
+            
+        
+    
+        
+            
+        
+    
+        
+            
+        
+    
+        
+            
+        
+    
+        
+            
+        
+    
+</ul>
+<div class="left-bottom">
+    <div class="menus">
+    
+    
+    
+    
+    </div>
+    <div></div>
+</div>
+<input type="hidden" id="yelog_site_posts_number" value="71">
+
+<div style="display: none">
+    <span id="busuanzi_value_site_uv"></span>
+    <span id="busuanzi_value_site_pv"></span>
+</div>
+
+    </div>
+    <div class="nav-right">
+        <div class="friends-area">
+    <div class="friends-title">
+        友情链接
+        <i class="back-title-list"></i>
+    </div>
+    <div class="friends-content">
+        <ul>
+            
+            <li><a target="_blank" href="http://yelog.org/">叶落阁</a></li>
+            
+        </ul>
+    </div>
+</div>
+        <div class="title-list">
+    <form onkeydown="if(event.keyCode === 13){return false;}">
+        <input id="local-search-input" class="search" type="text" placeholder="Search..." />
+        <i class="cross"></i>
+        <span>
+            <label for="tagswitch">Tags:</label>
+            <input id="tagswitch" type="checkbox" style="display: none" />
+            <i id="tagsWitchIcon"></i>
+        </span>
+    </form>
+    <div class="tags-list">
+    
+    <li class="article-tag-list-item">
+        <a class="color5">HTTP</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a class="color4">protobuf</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a class="color5">MySQL SQL</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a class="color2">Spring</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a class="color5">java</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a class="color3">QT</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a class="color4">区块链</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a class="color4">分布式</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a class="color4">大数据</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a class="color3">前端</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a class="color3">MyBatis</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a class="color1">SpringBoot</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a class="color5">网络编程</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a class="color1">Redis</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a class="color4">多线程</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a class="color4">数据库</a>
+    </li>
+    
+    <div class="clearfix"></div>
+</div>
+
+    
+    <nav id="title-list-nav">
+        
+        <a  class="前端 CSS "
+           href="/2021/01/11/html/4_%E7%9B%92%E5%AD%90%E6%A8%A1%E5%9E%8B/"
+           data-tag="前端"
+           data-author="" >
+            <span class="post-title" title="【前端 4】盒子模型">【前端 4】盒子模型</span>
+            <span class="post-date" title="2021-01-11 09:41:10">2021/01/11</span>
+        </a>
+        
+        <a  class="前端 CSS "
+           href="/2021/01/09/html/3_CSS%E8%BF%9B%E9%98%B6/"
+           data-tag="前端"
+           data-author="" >
+            <span class="post-title" title="【前端 3】CSS进阶">【前端 3】CSS进阶</span>
+            <span class="post-date" title="2021-01-09 09:43:10">2021/01/09</span>
+        </a>
+        
+        <a  class="前端 CSS "
+           href="/2021/01/05/html/2_CSS/"
+           data-tag="前端"
+           data-author="" >
+            <span class="post-title" title="【前端 2】CSS">【前端 2】CSS</span>
+            <span class="post-date" title="2021-01-05 16:22:10">2021/01/05</span>
+        </a>
+        
+        <a  class="前端 HTML "
+           href="/2021/01/04/html/1_html/"
+           data-tag="前端"
+           data-author="" >
+            <span class="post-title" title="【前端 1】HTML">【前端 1】HTML</span>
+            <span class="post-date" title="2021-01-04 10:46:10">2021/01/04</span>
+        </a>
+        
+        <a  class="区块链 fabric "
+           href="/2020/12/12/fabric/08_%E9%93%BE%E7%A0%81/"
+           data-tag="区块链"
+           data-author="" >
+            <span class="post-title" title="07_链码接口使用">07_链码接口使用</span>
+            <span class="post-date" title="2020-12-12 11:43:23">2020/12/12</span>
+        </a>
+        
+        <a  class="区块链 fabric "
+           href="/2020/12/12/fabric/02_%E9%83%A8%E7%BD%B2%E8%B0%83%E7%94%A8%E9%93%BE%E7%A0%81/"
+           data-tag="区块链"
+           data-author="" >
+            <span class="post-title" title="02_部署调用链码">02_部署调用链码</span>
+            <span class="post-date" title="2020-12-12 10:56:23">2020/12/12</span>
+        </a>
+        
+        <a  class="区块链 fabric "
+           href="/2020/12/09/fabric/07_dockerCompose%E5%90%AF%E5%8A%A8fabric/"
+           data-tag="区块链"
+           data-author="" >
+            <span class="post-title" title="06_docker compose启动节点">06_docker compose启动节点</span>
+            <span class="post-date" title="2020-12-09 11:35:23">2020/12/09</span>
+        </a>
+        
+        <a  class="区块链 fabric "
+           href="/2020/12/09/fabric/03_%E7%BD%91%E7%BB%9C%E7%BB%93%E6%9E%84%E5%8F%98%E5%8A%A8/"
+           data-tag="区块链"
+           data-author="" >
+            <span class="post-title" title="03_用户结构变动">03_用户结构变动</span>
+            <span class="post-date" title="2020-12-09 10:35:23">2020/12/09</span>
+        </a>
+        
+        <a  class="区块链 fabric "
+           href="/2020/12/02/fabric/01_%E6%90%AD%E5%BB%BA%E5%9F%BA%E7%A1%80%E7%BD%91%E7%BB%9C/"
+           data-tag="区块链"
+           data-author="" >
+            <span class="post-title" title="01_搭建基础网络">01_搭建基础网络</span>
+            <span class="post-date" title="2020-12-02 11:05:23">2020/12/02</span>
+        </a>
+        
+        <a  class="区块链 fabric "
+           href="/2020/12/01/fabric/05_java%20SDK%E4%BD%BF%E7%94%A8/"
+           data-tag="区块链"
+           data-author="" >
+            <span class="post-title" title="05_javaSDK使用">05_javaSDK使用</span>
+            <span class="post-date" title="2020-12-01 15:04:23">2020/12/01</span>
+        </a>
+        
+        <a  class="区块链 fabric "
+           href="/2020/12/01/fabric/04_%E7%94%A8%E6%88%B7%E4%BD%BF%E7%94%A8%E9%93%BE%E7%A0%81/"
+           data-tag="区块链"
+           data-author="" >
+            <span class="post-title" title="04_用户使用链码">04_用户使用链码</span>
+            <span class="post-date" title="2020-12-01 10:55:23">2020/12/01</span>
+        </a>
+        
+        <a  class="大数据 hadoop "
+           href="/2020/11/26/hadoop/%E5%AE%89%E8%A3%85/"
+           data-tag="大数据"
+           data-author="" >
+            <span class="post-title" title="【hadoop 3】hadoop分布式安装总结">【hadoop 3】hadoop分布式安装总结</span>
+            <span class="post-date" title="2020-11-26 17:50:09">2020/11/26</span>
+        </a>
+        
+        <a  class="客户端 QT "
+           href="/2020/10/29/QT/4_%E6%A8%A1%E5%9E%8B%20%E8%A7%86%E5%9B%BE%E7%BB%93%E6%9E%84/"
+           data-tag="QT"
+           data-author="" >
+            <span class="post-title" title="【QT 3】模型-视图结构">【QT 3】模型-视图结构</span>
+            <span class="post-date" title="2020-10-29 16:49:10">2020/10/29</span>
+        </a>
+        
+        <a  class="客户端 QT "
+           href="/2020/10/28/QT/3_%E6%8E%A7%E4%BB%B6/"
+           data-tag="QT"
+           data-author="" >
+            <span class="post-title" title="【QT 2】控件">【QT 2】控件</span>
+            <span class="post-date" title="2020-10-28 16:55:10">2020/10/28</span>
+        </a>
+        
+        <a  class="客户端 QT "
+           href="/2020/10/28/QT/2_%E5%B8%83%E5%B1%80%E7%AE%A1%E7%90%86/"
+           data-tag="QT"
+           data-author="" >
+            <span class="post-title" title="【QT 1】布局管理">【QT 1】布局管理</span>
+            <span class="post-date" title="2020-10-28 14:37:10">2020/10/28</span>
+        </a>
+        
+        <a  class="客户端 QT "
+           href="/2020/10/20/QT/QT%E7%95%8C%E9%9D%A2%E7%BC%96%E8%BE%91%E5%99%A8/"
+           data-tag="QT"
+           data-author="" >
+            <span class="post-title" title="【QT 4】QT界面编辑器">【QT 4】QT界面编辑器</span>
+            <span class="post-date" title="2020-10-20 15:52:10">2020/10/20</span>
+        </a>
+        
+        <a  class="SSM Spring "
+           href="/2020/06/01/%E7%AC%94%E8%AE%B0/spring/"
+           data-tag="Spring"
+           data-author="" >
+            <span class="post-title" title="【笔记】Spring总结">【笔记】Spring总结</span>
+            <span class="post-date" title="2020-06-01 03:57:17">2020/06/01</span>
+        </a>
+        
+        <a  class="笔记 "
+           href="/2020/05/12/%E7%AC%94%E8%AE%B0/%E6%95%B0%E6%8D%AE%E5%BA%93/"
+           data-tag="数据库"
+           data-author="" >
+            <span class="post-title" title="【笔记】数据库与MySQL">【笔记】数据库与MySQL</span>
+            <span class="post-date" title="2020-05-12 21:38:05">2020/05/12</span>
+        </a>
+        
+        <a  class="笔记 "
+           href="/2020/05/07/%E7%AC%94%E8%AE%B0/redis/"
+           data-tag="Redis"
+           data-author="" >
+            <span class="post-title" title="【笔记】Redis">【笔记】Redis</span>
+            <span class="post-date" title="2020-05-07 18:38:05">2020/05/07</span>
+        </a>
+        
+        <a  class="笔记 "
+           href="/2020/04/25/%E7%AC%94%E8%AE%B0/%E5%A4%9A%E7%BA%BF%E7%A8%8B/"
+           data-tag="多线程"
+           data-author="" >
+            <span class="post-title" title="【笔记】java并发">【笔记】java并发</span>
+            <span class="post-date" title="2020-04-25 15:38:01">2020/04/25</span>
+        </a>
+        
+        <a  class="大数据 hadoop "
+           href="/2020/03/18/hadoop/2_%E4%BD%BF%E7%94%A8hadoop/"
+           data-tag="大数据"
+           data-author="" >
+            <span class="post-title" title="【hadoop 2】hadoop三种模式使用">【hadoop 2】hadoop三种模式使用</span>
+            <span class="post-date" title="2020-03-18 17:49:04">2020/03/18</span>
+        </a>
+        
+        <a  class="SSM SpringBoot "
+           href="/2020/03/18/springboot/3_springboot%E7%9A%84%E9%85%8D%E7%BD%AE/"
+           data-tag="SpringBoot"
+           data-author="" >
+            <span class="post-title" title="【SpringBoot 02】配置文件">【SpringBoot 02】配置文件</span>
+            <span class="post-date" title="2020-03-18 12:58:23">2020/03/18</span>
+        </a>
+        
+        <a  class="SSM SpringBoot "
+           href="/2020/03/17/springboot/2_springboot%E7%9A%84helloworld/"
+           data-tag="SpringBoot"
+           data-author="" >
+            <span class="post-title" title="【SpringBoot 01】HelloWorld">【SpringBoot 01】HelloWorld</span>
+            <span class="post-date" title="2020-03-17 19:58:23">2020/03/17</span>
+        </a>
+        
+        <a  class="SSM SSM整合 "
+           href="/2020/03/05/3-SpringMVC/1_%E6%90%AD%E5%BB%BAspring/"
+           data-tag="java"
+           data-author="" >
+            <span class="post-title" title="【SSM实战】SSM框架整合">【SSM实战】SSM框架整合</span>
+            <span class="post-date" title="2020-03-05 20:37:01">2020/03/05</span>
+        </a>
+        
+        <a  class="SSM SpringMVC "
+           href="/2020/03/05/3-SpringMVC/7_SpringMVC%E5%BC%82%E5%B8%B8%E5%A4%84%E7%90%86%E4%B8%8E%E6%8B%A6%E6%88%AA%E5%99%A8/"
+           data-tag="java"
+           data-author="" >
+            <span class="post-title" title="【SpringMVC实战6】异常处理与拦截器">【SpringMVC实战6】异常处理与拦截器</span>
+            <span class="post-date" title="2020-03-05 13:06:19">2020/03/05</span>
+        </a>
+        
+        <a  class="SSM SpringMVC "
+           href="/2020/03/04/3-SpringMVC/6_SpringMVC%E5%93%8D%E5%BA%94/"
+           data-tag="java"
+           data-author="" >
+            <span class="post-title" title="【SpringMVC实战5】响应">【SpringMVC实战5】响应</span>
+            <span class="post-date" title="2020-03-04 19:26:39">2020/03/04</span>
+        </a>
+        
+        <a  class="SSM SpringMVC "
+           href="/2020/03/03/3-SpringMVC/4_SpringMVC%E7%9A%84%E5%B8%B8%E7%94%A8%E6%B3%A8%E8%A7%A3/"
+           data-tag="java"
+           data-author="" >
+            <span class="post-title" title="【SpringMVC实战3】常用注解">【SpringMVC实战3】常用注解</span>
+            <span class="post-date" title="2020-03-03 15:26:29">2020/03/03</span>
+        </a>
+        
+        <a  class="SSM SpringMVC "
+           href="/2020/03/03/3-SpringMVC/5_%E8%AF%B7%E6%B1%82%E5%8F%82%E6%95%B0%E7%BB%91%E5%AE%9A/"
+           data-tag="java"
+           data-author="" >
+            <span class="post-title" title="【SpringMVC实战4】请求参数绑定">【SpringMVC实战4】请求参数绑定</span>
+            <span class="post-date" title="2020-03-03 09:13:23">2020/03/03</span>
+        </a>
+        
+        <a  class="SSM SpringMVC "
+           href="/2020/03/02/3-SpringMVC/3_SpringMVC%E7%9A%84%E6%89%A7%E8%A1%8C%E6%B5%81%E7%A8%8B/"
+           data-tag="java"
+           data-author="" >
+            <span class="post-title" title="【SpringMVC实战2】执行流程">【SpringMVC实战2】执行流程</span>
+            <span class="post-date" title="2020-03-02 18:26:39">2020/03/02</span>
+        </a>
+        
+        <a  class="SSM SpringMVC "
+           href="/2020/03/02/3-SpringMVC/2_%E5%85%A5%E9%97%A8%E6%A1%88%E4%BE%8B/"
+           data-tag="java"
+           data-author="" >
+            <span class="post-title" title="【SpringMVC实战1】入门案例">【SpringMVC实战1】入门案例</span>
+            <span class="post-date" title="2020-03-02 14:26:39">2020/03/02</span>
+        </a>
+        
+        <a  class="SSM Spring "
+           href="/2020/02/21/13-Spring/8_%E4%BA%8B%E5%8A%A1%E6%8E%A7%E5%88%B6/"
+           data-tag="Spring"
+           data-author="" >
+            <span class="post-title" title="【Spring实战8】事务控制">【Spring实战8】事务控制</span>
+            <span class="post-date" title="2020-02-21 15:23:48">2020/02/21</span>
+        </a>
+        
+        <a  class="SSM Spring "
+           href="/2020/02/20/13-Spring/7_JdbcTemplate/"
+           data-tag="Spring"
+           data-author="" >
+            <span class="post-title" title="【Spring实战7】JdbcTemplate">【Spring实战7】JdbcTemplate</span>
+            <span class="post-date" title="2020-02-20 09:32:29">2020/02/20</span>
+        </a>
+        
+        <a  class="SSM Spring "
+           href="/2020/02/19/13-Spring/6_%E5%9F%BA%E4%BA%8Exml%E5%92%8C%E6%B3%A8%E8%A7%A3%E7%9A%84AOP%E9%85%8D%E7%BD%AE/"
+           data-tag="Spring"
+           data-author="" >
+            <span class="post-title" title="【Spring实战6】基于xml和注解的AOP配置">【Spring实战6】基于xml和注解的AOP配置</span>
+            <span class="post-date" title="2020-02-19 21:31:44">2020/02/19</span>
+        </a>
+        
+        <a  class="SSM Spring "
+           href="/2020/02/19/13-Spring/5_AOP/"
+           data-tag="Spring"
+           data-author="" >
+            <span class="post-title" title="【Spring实战5】AOP">【Spring实战5】AOP</span>
+            <span class="post-date" title="2020-02-19 18:56:47">2020/02/19</span>
+        </a>
+        
+        <a  class="SSM Spring "
+           href="/2020/02/18/13-Spring/4_%E5%8A%A8%E6%80%81%E4%BB%A3%E7%90%86/"
+           data-tag="Spring"
+           data-author="" >
+            <span class="post-title" title="【Spring实战4】动态代理">【Spring实战4】动态代理</span>
+            <span class="post-date" title="2020-02-18 17:15:32">2020/02/18</span>
+        </a>
+        
+        <a  class="SSM Spring "
+           href="/2020/02/14/13-Spring/3_%E5%9F%BA%E4%BA%8E%E6%B3%A8%E8%A7%A3%E7%9A%84IOC/"
+           data-tag="Spring"
+           data-author="" >
+            <span class="post-title" title="【Spring实战3】IoC注解">【Spring实战3】IoC注解</span>
+            <span class="post-date" title="2020-02-14 20:57:17">2020/02/14</span>
+        </a>
+        
+        <a  class="SSM Spring "
+           href="/2020/02/13/13-Spring/2_IOC/"
+           data-tag="Spring"
+           data-author="" >
+            <span class="post-title" title="【Spring实战2】IoC与DI">【Spring实战2】IoC与DI</span>
+            <span class="post-date" title="2020-02-13 20:56:03">2020/02/13</span>
+        </a>
+        
+        <a  class="SSM Spring "
+           href="/2020/02/13/13-Spring/1_%E7%A8%8B%E5%BA%8F%E8%80%A6%E5%90%88%E4%B8%8E%E8%A7%A3%E8%80%A6/"
+           data-tag="Spring"
+           data-author="" >
+            <span class="post-title" title="【Spring实战1】程序的耦合与解耦">【Spring实战1】程序的耦合与解耦</span>
+            <span class="post-date" title="2020-02-13 13:17:03">2020/02/13</span>
+        </a>
+        
+        <a  class="SSM MyBatis "
+           href="/2020/02/07/mybatis/10_%E6%B3%A8%E8%A7%A3%E5%BC%80%E5%8F%91/"
+           data-tag="MyBatis"
+           data-author="" >
+            <span class="post-title" title="【Mybatis实战5】注解开发">【Mybatis实战5】注解开发</span>
+            <span class="post-date" title="2020-02-07 16:18:37">2020/02/07</span>
+        </a>
+        
+        <a  class="SSM MyBatis "
+           href="/2020/02/06/mybatis/9_%E7%BC%93%E5%AD%98/"
+           data-tag="MyBatis"
+           data-author="" >
+            <span class="post-title" title="【Mybatis实战4】加载与缓存">【Mybatis实战4】加载与缓存</span>
+            <span class="post-date" title="2020-02-06 18:29:03">2020/02/06</span>
+        </a>
+        
+        <a  class="SSM MyBatis "
+           href="/2020/02/06/mybatis/8_%E5%8A%A8%E6%80%81SQL%E4%B8%8E%E5%A4%9A%E8%A1%A8%E6%93%8D%E4%BD%9C/"
+           data-tag="MyBatis"
+           data-author="" >
+            <span class="post-title" title="【Mybatis实战3】动态SQL与多表操作">【Mybatis实战3】动态SQL与多表操作</span>
+            <span class="post-date" title="2020-02-06 18:08:29">2020/02/06</span>
+        </a>
+        
+        <a  class="SSM MyBatis "
+           href="/2020/02/06/mybatis/6_mybatis%E8%BF%9B%E8%A1%8CCRUD/"
+           data-tag="MyBatis"
+           data-author="" >
+            <span class="post-title" title="【Mybatis实战2】CRUD操作">【Mybatis实战2】CRUD操作</span>
+            <span class="post-date" title="2020-02-06 13:21:03">2020/02/06</span>
+        </a>
+        
+        <a  class="SSM MyBatis "
+           href="/2020/02/05/mybatis/2_%E5%9F%BA%E4%BA%8Exml%E7%9A%84%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/"
+           data-tag="MyBatis"
+           data-author="" >
+            <span class="post-title" title="【Mybatis实战1】两种环境搭建方法及示例">【Mybatis实战1】两种环境搭建方法及示例</span>
+            <span class="post-date" title="2020-02-05 10:21:01">2020/02/05</span>
+        </a>
+        
+        <a  class="数据库 "
+           href="/2020/01/29/11-MySQL/3_%E5%A4%9A%E8%A1%A8%E6%9F%A5%E8%AF%A2%E4%B8%8E%E4%BA%8B%E5%8A%A1/"
+           data-tag="MySQL SQL"
+           data-author="" >
+            <span class="post-title" title="多表查询与事务">多表查询与事务</span>
+            <span class="post-date" title="2020-01-29 13:52:00">2020/01/29</span>
+        </a>
+        
+        <a  class="数据库 "
+           href="/2020/01/26/11-MySQL/2_SQL%E9%AB%98%E7%BA%A7/"
+           data-tag="MySQL SQL"
+           data-author="" >
+            <span class="post-title" title="数据库高级知识及SQL实现">数据库高级知识及SQL实现</span>
+            <span class="post-date" title="2020-01-26 23:01:52">2020/01/26</span>
+        </a>
+        
+        <a  class="数据库 "
+           href="/2020/01/23/11-MySQL/1_SQL%E8%AF%AD%E8%A8%80%E5%9F%BA%E6%9C%AC%E6%93%8D%E4%BD%9C/"
+           data-tag="MySQL SQL"
+           data-author="" >
+            <span class="post-title" title="SQL语言基础">SQL语言基础</span>
+            <span class="post-date" title="2020-01-23 20:06:39">2020/01/23</span>
+        </a>
+        
+        <a  class="网络 protobuf "
+           href="/2020/01/16/10-java%E7%BD%91%E7%BB%9C/2_protobuf/"
+           data-tag="protobuf"
+           data-author="" >
+            <span class="post-title" title="java使用protobuf">java使用protobuf</span>
+            <span class="post-date" title="2020-01-16 17:57:52">2020/01/16</span>
+        </a>
+        
+        <a  class="网络 HTTP "
+           href="/2020/01/15/10-java%E7%BD%91%E7%BB%9C/1_HTTP/"
+           data-tag="HTTP"
+           data-author="" >
+            <span class="post-title" title="java实现简单的HTTP">java实现简单的HTTP</span>
+            <span class="post-date" title="2020-01-15 18:03:21">2020/01/15</span>
+        </a>
+        
+        <a  class="大数据 hadoop "
+           href="/2020/01/06/hadoop/1_hadoop/"
+           data-tag="大数据"
+           data-author="" >
+            <span class="post-title" title="【hadoop 1】hadoop环境搭建">【hadoop 1】hadoop环境搭建</span>
+            <span class="post-date" title="2020-01-06 14:55:10">2020/01/06</span>
+        </a>
+        
+        <a  class="区块链 Fabric "
+           href="/2019/11/24/blockchain/09/"
+           data-tag="区块链"
+           data-author="" >
+            <span class="post-title" title="Hyperledger Fabric系统框架笔记">Hyperledger Fabric系统框架笔记</span>
+            <span class="post-date" title="2019-11-24 12:43:08">2019/11/24</span>
+        </a>
+        
+        <a  class="区块链 论文 "
+           href="/2019/11/21/blockchain/08/"
+           data-tag="区块链"
+           data-author="" >
+            <span class="post-title" title="闪电网络（四）比特币闪电网络：The Bitcoin Lightning Network">闪电网络（四）比特币闪电网络：The Bitcoin Lightning Network</span>
+            <span class="post-date" title="2019-11-21 21:31:53">2019/11/21</span>
+        </a>
+        
+        <a  class="区块链 论文 "
+           href="/2019/11/20/blockchain/07/"
+           data-tag="区块链"
+           data-author="" >
+            <span class="post-title" title="闪电网络（三）哈希时间锁合约：Hashed Timelock Contract (HTLC)">闪电网络（三）哈希时间锁合约：Hashed Timelock Contract (HTLC)</span>
+            <span class="post-date" title="2019-11-20 10:51:23">2019/11/20</span>
+        </a>
+        
+        <a  class="区块链 论文 "
+           href="/2019/11/20/blockchain/05/"
+           data-tag="区块链"
+           data-author="" >
+            <span class="post-title" title="闪电网络（二）双向支付通道：Bidirectional Payment Channels + RSMC">闪电网络（二）双向支付通道：Bidirectional Payment Channels + RSMC</span>
+            <span class="post-date" title="2019-11-20 10:51:23">2019/11/20</span>
+        </a>
+        
+        <a  class="区块链 论文 "
+           href="/2019/11/19/blockchain/06/"
+           data-tag="区块链"
+           data-author="" >
+            <span class="post-title" title="闪电网络（一）微支付通道">闪电网络（一）微支付通道</span>
+            <span class="post-date" title="2019-11-19 10:07:02">2019/11/19</span>
+        </a>
+        
+        <a  class="区块链 论文 "
+           href="/2019/11/15/blockchain/03/"
+           data-tag="区块链"
+           data-author="" >
+            <span class="post-title" title="论文翻译 OmniLedger">论文翻译 OmniLedger</span>
+            <span class="post-date" title="2019-11-15 16:15:33">2019/11/15</span>
+        </a>
+        
+        <a  class="网络 网络编程 "
+           href="/2019/11/03/networkProgram/%E7%BD%91%E7%BB%9C%E7%BC%96%E7%A8%8B10UDP%E8%BF%9E%E6%8E%A5/"
+           data-tag="网络编程"
+           data-author="" >
+            <span class="post-title" title="网络编程10：UDP连接">网络编程10：UDP连接</span>
+            <span class="post-date" title="2019-11-03 16:15:07">2019/11/03</span>
+        </a>
+        
+        <a  class="网络 网络编程 "
+           href="/2019/11/02/networkProgram/%E7%BD%91%E7%BB%9C%E7%BC%96%E7%A8%8B9TCP%E7%9A%84%E5%BC%82%E5%B8%B8/"
+           data-tag="网络编程"
+           data-author="" >
+            <span class="post-title" title="网络编程9：TCP的异常">网络编程9：TCP的异常</span>
+            <span class="post-date" title="2019-11-02 13:57:10">2019/11/02</span>
+        </a>
+        
+        <a  class="网络 网络编程 "
+           href="/2019/11/01/networkProgram/%E7%BD%91%E7%BB%9C%E7%BC%96%E7%A8%8B8TCP%E6%95%B0%E6%8D%AE%E4%BC%A0%E8%BE%93/"
+           data-tag="网络编程"
+           data-author="" >
+            <span class="post-title" title="网络编程8：TCP数据传输">网络编程8：TCP数据传输</span>
+            <span class="post-date" title="2019-11-01 18:34:10">2019/11/01</span>
+        </a>
+        
+        <a  class="网络 网络编程 "
+           href="/2019/10/31/networkProgram/%E7%BD%91%E7%BB%9C%E7%BC%96%E7%A8%8B7TCP%E8%BF%9E%E6%8E%A5%E7%8A%B6%E6%80%81/"
+           data-tag="网络编程"
+           data-author="" >
+            <span class="post-title" title="网络编程7：TCP连接状态">网络编程7：TCP连接状态</span>
+            <span class="post-date" title="2019-10-31 17:14:55">2019/10/31</span>
+        </a>
+        
+        <a  class="网络 网络编程 "
+           href="/2019/10/30/networkProgram/%E7%BD%91%E7%BB%9C%E7%BC%96%E7%A8%8B6%E5%85%B3%E9%97%AD%E8%BF%9E%E6%8E%A5/"
+           data-tag="网络编程"
+           data-author="" >
+            <span class="post-title" title="网络编程6：关闭连接">网络编程6：关闭连接</span>
+            <span class="post-date" title="2019-10-30 18:34:12">2019/10/30</span>
+        </a>
+        
+        <a  class="网络 网络编程 "
+           href="/2019/10/29/networkProgram/%E7%BD%91%E7%BB%9C%E7%BC%96%E7%A8%8B5%E7%BD%91%E7%BB%9C%E5%B7%A5%E5%85%B7/"
+           data-tag="网络编程"
+           data-author="" >
+            <span class="post-title" title="网络编程5：网络工具">网络编程5：网络工具</span>
+            <span class="post-date" title="2019-10-29 14:24:11">2019/10/29</span>
+        </a>
+        
+        <a  class="网络 网络编程 "
+           href="/2019/10/28/networkProgram/%E7%BD%91%E7%BB%9C%E7%BC%96%E7%A8%8B3UDP%E5%8D%8F%E8%AE%AE%E4%BD%BF%E7%94%A8socket/"
+           data-tag="网络编程"
+           data-author="" >
+            <span class="post-title" title="网络编程3：UDP协议使用socket">网络编程3：UDP协议使用socket</span>
+            <span class="post-date" title="2019-10-28 10:11:10">2019/10/28</span>
+        </a>
+        
+        <a  class="网络 网络编程 "
+           href="/2019/10/28/networkProgram/%E7%BD%91%E7%BB%9C%E7%BC%96%E7%A8%8B4%E6%9C%AC%E5%9C%B0socket/"
+           data-tag="网络编程"
+           data-author="" >
+            <span class="post-title" title="网络编程4：本地套接字">网络编程4：本地套接字</span>
+            <span class="post-date" title="2019-10-28 10:11:10">2019/10/28</span>
+        </a>
+        
+        <a  class="网络 网络编程 "
+           href="/2019/10/27/networkProgram/%E7%BD%91%E7%BB%9C%E7%BC%96%E7%A8%8B2TCP%E5%8D%8F%E8%AE%AE%E4%BD%BF%E7%94%A8socket/"
+           data-tag="网络编程"
+           data-author="" >
+            <span class="post-title" title="网络编程2：TCP协议使用socket">网络编程2：TCP协议使用socket</span>
+            <span class="post-date" title="2019-10-27 17:59:09">2019/10/27</span>
+        </a>
+        
+        <a  class="网络 网络编程 "
+           href="/2019/10/26/networkProgram/%E7%BD%91%E7%BB%9C%E7%BC%96%E7%A8%8B1/"
+           data-tag="网络编程"
+           data-author="" >
+            <span class="post-title" title="网络编程1：基础部分">网络编程1：基础部分</span>
+            <span class="post-date" title="2019-10-26 16:54:02">2019/10/26</span>
+        </a>
+        
+        <a  class="分布式 "
+           href="/2019/09/12/distribute/01/"
+           data-tag="分布式"
+           data-author="" >
+            <span class="post-title" title="分布式系统的一致性与共识">分布式系统的一致性与共识</span>
+            <span class="post-date" title="2019-09-12 13:47:52">2019/09/12</span>
+        </a>
+        
+        <a  class="网络 HTTP "
+           href="/2019/08/05/http/030205/"
+           data-tag="HTTP"
+           data-author="" >
+            <span class="post-title" title="HTTP协议学习（五）HTTPS与安全">HTTP协议学习（五）HTTPS与安全</span>
+            <span class="post-date" title="2019-08-05 20:46:07">2019/08/05</span>
+        </a>
+        
+        <a  class="网络 HTTP "
+           href="/2019/07/20/http/030204/"
+           data-tag="HTTP"
+           data-author="" >
+            <span class="post-title" title="HTTP协议学习（四）cookie、缓存、代理机制">HTTP协议学习（四）cookie、缓存、代理机制</span>
+            <span class="post-date" title="2019-07-20 13:15:07">2019/07/20</span>
+        </a>
+        
+        <a  class="网络 HTTP "
+           href="/2019/07/10/http/030203/"
+           data-tag="HTTP"
+           data-author="" >
+            <span class="post-title" title="HTTP协议学习（三）数据传输与连接">HTTP协议学习（三）数据传输与连接</span>
+            <span class="post-date" title="2019-07-10 14:36:55">2019/07/10</span>
+        </a>
+        
+        <a  class="网络 HTTP "
+           href="/2019/07/01/http/030202/"
+           data-tag="HTTP"
+           data-author="" >
+            <span class="post-title" title="HTTP协议学习（二）基础">HTTP协议学习（二）基础</span>
+            <span class="post-date" title="2019-07-01 14:05:51">2019/07/01</span>
+        </a>
+        
+        <a  class="网络 HTTP "
+           href="/2019/06/14/http/030201/"
+           data-tag="HTTP"
+           data-author="" >
+            <span class="post-title" title="HTTP协议学习（一）概念">HTTP协议学习（一）概念</span>
+            <span class="post-date" title="2019-06-14 16:08:25">2019/06/14</span>
+        </a>
+        
+    </nav>
+</div>
+    </div>
+    <div class="hide-list">
+        <div class="semicircle">
+            <div class="brackets first"><</div>
+            <div class="brackets">&gt;</div>
+        </div>
+    </div>
+</aside>
+<div class="post">
+    <div class="pjax">
+        <article id="post-blockchain/07" class="article article-type-post" itemscope itemprop="blogPost">
+    
+        <h1 class="article-title">闪电网络（三）哈希时间锁合约：Hashed Timelock Contract (HTLC)</h1>
+    
+    <div class="article-meta">
+        
+        
+        
+        <span class="book">
+            
+                <a  data-rel="区块链">区块链</a>/
+            
+                <a  data-rel="论文">论文</a>
+            
+        </span>
+        
+        
+        <span class="tag">
+            
+            <a class="color4">区块链</a>
+            
+        </span>
+        
+    </div>
+    <div class="article-meta">
+        
+        创建时间:<time class="date" title='更新时间: 2020-03-06 06:45:50'>2019-11-20 10:51</time>
+        
+    </div>
+    <div class="article-meta">
+        
+        
+        
+    </div>
+    
+    <div class="toc-ref">
+    
+        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#4-Hashed-Timelock-Contract-HTLC"><span class="toc-text">4. Hashed Timelock Contract (HTLC)</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#4-1-不可撤销的HTLC"><span class="toc-text">4.1 不可撤销的HTLC</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4-2-离线可撤销的HTLC"><span class="toc-text">4.2 离线可撤销的HTLC</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#4-2-1-发送方广播Commitment-Tx时的HTLC"><span class="toc-text">4.2.1 发送方广播Commitment Tx时的HTLC</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#4-2-2-接收方广播Commitment-Tx时的HTLC"><span class="toc-text">4.2.2 接收方广播Commitment Tx时的HTLC</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4-3-HTLC-off-line终止"><span class="toc-text">4.3 HTLC off-line终止</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4-4-HTLC-建立与关闭次序"><span class="toc-text">4.4 HTLC 建立与关闭次序</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#5-密钥存储"><span class="toc-text">5. 密钥存储</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#6-双向通道的区块链交易费"><span class="toc-text">6. 双向通道的区块链交易费</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#7-为合约付款"><span class="toc-text">7. 为合约付款</span></a></li></ol>
+    
+<style>
+    .left-col .switch-btn,
+    .left-col .switch-area {
+        display: none;
+    }
+    .toc-level-3 i,
+    .toc-level-3 ol {
+        display: none !important;
+    }
+</style>
+</div>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p><div class='inner-toc'><h2>目录</h2><ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#4-Hashed-Timelock-Contract-HTLC"><span class="toc-text">4. Hashed Timelock Contract (HTLC)</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#4-1-不可撤销的HTLC"><span class="toc-text">4.1 不可撤销的HTLC</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4-2-离线可撤销的HTLC"><span class="toc-text">4.2 离线可撤销的HTLC</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#4-2-1-发送方广播Commitment-Tx时的HTLC"><span class="toc-text">4.2.1 发送方广播Commitment Tx时的HTLC</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#4-2-2-接收方广播Commitment-Tx时的HTLC"><span class="toc-text">4.2.2 接收方广播Commitment Tx时的HTLC</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4-3-HTLC-off-line终止"><span class="toc-text">4.3 HTLC off-line终止</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4-4-HTLC-建立与关闭次序"><span class="toc-text">4.4 HTLC 建立与关闭次序</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#5-密钥存储"><span class="toc-text">5. 密钥存储</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#6-双向通道的区块链交易费"><span class="toc-text">6. 双向通道的区块链交易费</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#7-为合约付款"><span class="toc-text">7. 为合约付款</span></a></li></ol></div></p>
+<p>PS：这篇文章的英语表述特别native，而且全篇59页，写的非常详细，是一片不可多得的佳作。由于原文内容非常长，所以这里将原文拆成4个部分，分别为：</p>
+<ul>
+<li>（一）微支付通道</li>
+<li>（二）双向支付通道：Bidirectional Payment Channels + RSMC</li>
+<li>（三）哈希时间锁合约：Hashed Timelock Contract (HTLC) </li>
+<li>（四）比特币闪电网络：The Bitcoin Lightning Network</li>
+</ul>
+<p><strong>本文为本系列的第三篇，文中的标题序号均按照原论文中顺序进行编号</strong></p>
+<h2 id="4-Hashed-Timelock-Contract-HTLC"><a href="#4-Hashed-Timelock-Contract-HTLC" class="headerlink" title="4. Hashed Timelock Contract (HTLC)"></a>4. Hashed Timelock Contract (HTLC)</h2><p>A bidirectional payment channel only permits secure transfer of funds inside a channel. To be able to construct secure transfers using a network of channels across multiple hops to the final destination requires an additional construction, a Hashed Timelock Contract (HTLC). </p>
+<p>双向支付通道仅允许在<strong>一个</strong>通道内安全转移资金。为了能够使用跨多跳的信道网络构造到最终目的地的安全传输，需要进行额外的构造，即哈希时间锁定合约（HTLC）。也就是说，在（二）中讲到的那种双向支付通道需要被扩展，而HTLC就是这个强化版。</p>
+<p>The purpose of an HTLC is to allow for global state across multiple nodes via hashes. This global state is ensured by time commitments and time-based unencumbering of resources via disclosure of preimages. Transactional “locking” occurs globally via commitments, at any point in time a single participant is responsible for disclosing to the next participant whether they have knowledge of the preimage R. This construction does not require custodial trust in one’s channel counterparty, nor any other participant in the network.</p>
+<p>HTLC的目的是能够使得<strong>通过散列跨越多个节点的全局状态</strong>成立。<strong>这种全局状态由commitment的时间和基于时间的资源无阻碍(通过公开预映像)来保证。</strong>交易性“锁定”是通过<code>Commitment</code> 在全局范围内发生的，在任何时间点，单个参与者负责<strong>向下一个参与者公开他们是否了解原像R</strong>。这种构造不需要对通道对手方的托管信任，也不需要对网络中的任何其他参与者的托管信任。 </p>
+<blockquote>
+<p>这里的描述看的云里雾里的，其实可以这样理解，借助架构之道与术公众号的一张图</p>
+<p><img src="/2019/11/20/blockchain/07/1574255741292.png" alt="1574255741292"></p>
+<p>其实就是Alice和Eric想要建立一个通道，二者之间的通道由多跳组成（A、B、C、D、E），因此就是一个<strong>多跳的信道网络</strong>。HTLC就是应用于这种场景的一种算法。</p>
+</blockquote>
+<p>In order to achieve this, an HTLC must be able to create certain transactions which are only valid after a certain date, using nLockTime, as well as information disclosure to one’s channel counterparty. Additionally, this data must be revocable, as one must be able to undo an HTLC.</p>
+<p>为了实现这一目标，HTLC必须能够<strong>使用nLockTime创建某些交易</strong>，这些交易<strong>仅在特定日期后才有效</strong>，并且<strong>必须向通道的另一方披露信息</strong>。 此外，此数据必须是可撤消的，即必须能够撤消HTLC。</p>
+<p>An HTLC is also a channel contract with one’s counterparty which is enforcible via the blockchain. The counterparties in a channel agree to the following terms for a Hashed Timelock Contract:</p>
+<p>HTLC也是与交易对手的通道合约，可以通过区块链强制执行。 通道中的交易对手同意以下有关HTLC的条款：</p>
+<ol>
+<li><p>If Bob can produce to Alice an unknown 20-byte random input data R from a known hash H, within three days, then Alice will settle the contract by paying Bob 0.1 BTC.</p>
+<p>如果Bob可以在三天内从已知哈希H向Alice生成未知的20字节随机输入数据R，则Alice将通过向Bob支付0.1 BTC来结算合约。</p>
+</li>
+<li><p>If three days have elapsed, then the above clause is null and void and the clearing process is invalidated, both parties must not attempt to settle and claim payment after three days.</p>
+<p>如果超过了三天，则以上条款无效，并且结算流程无效，双方不得在三天后尝试结算并要求付款。</p>
+</li>
+<li><p>Either party may (and should) pay out according to the terms of this contract in any method of the participants choosing and close out this contract early so long as both participants in this contract agree.</p>
+<p>只要本合约双方当事人同意，任何一方都可以(也应该)按照本合同的条款以任何方式并提前终止本合约。</p>
+</li>
+<li><p>Violation of the above terms will incur a maximum penalty of the funds locked up in this contract, to be paid to the non-violating counterparty as a fidelity bond.</p>
+<p>违反上述条款将对本合约中锁定的资金处以最高罚金，并将其作为忠诚保证金支付给非违约交易对手。</p>
+</li>
+</ol>
+<p>For clarity of examples, we use days for HTLCs and block height for RSMCs. In reality, the HTLC should also be defined as a block height (e.g. 3 days is equivalent to 432 blocks)</p>
+<p>为了使示例更清晰，我们使用days表示HTLCs，使用block height表示RSMCs。实际上，HTLC也应该被定义为一个block height（区块高度）(例如3天等于432个块)</p>
+<p>In effect, one desires to construct a payment which is contingent upon knowledge of R by the recipient within a certain timeframe. After this timeframe, the funds are refunded back to the sender.</p>
+<p>实际上，人们希望构建一种付款方式，<strong>该付款方式取决于接收者在特定时间范围内对R的了解</strong>。 在此时间段之后，资金将退还给发送者。</p>
+<p>Similar to RSMCs, these contract terms are programatically enforced on the Bitoin blockchain and do not require trust in the counterparty to adhere to the contract terms, as all violations are penalized via unilaterally enforced fidelity bonds, which are constructed using penalty transactions spending from commitment states. If Bob knows R within three days, then he can redeem the funds by broadcasting a transaction; Alice is unable to withhold the funds in any way, because the script returns as valid when the transaction is spent on the Bitcoin blockchain.</p>
+<p>与RSMC相似，这些合约条款在Bitoin区块链上以编程方式执行，并且不需要信任对方以遵守合约条款，因为所有违规行为均通过单方面强制执行的忠实保证金进行处罚，该保证金使用<code>Commitment</code> 状态的罚金交易支出构建 。 如果Bob在三天内知道了R，那么他可以通过广播一个交易来赎回资金； Alice无法以任何方式扣留资金，因为当交易花费在比特币区块链上时，脚本将返回为有效。</p>
+<p>An HTLC is an additional output in a Commitment Transaction with a unique output script:</p>
+<p>HTLC是<code>Commitment Tx</code>中的附加输出，具有唯一的输出脚本：</p>
+<pre><code>OP_IF OP_HASH160 &lt;Hash160 (R)&gt; OP_EQUALVERIFY
+    2 &lt;Alice2&gt; &lt;Bob2&gt; OP_CHECKMULTISIG
+OP_ELSE
+    2 &lt;Alice1&gt; &lt;Bob1&gt; OP_CHECKMULTISIG
+OP_ENDIF</code></pre><p>Conceptually, this script has two possible paths spending from a single HTLC output. The first path (defined in the OP IF) sends funds to Bob if Bob can produce R. The second path is redeemed using a 3-day timelocked refund to Alice. The 3-day timelock is enforced using nLockTime from the spending transaction.</p>
+<p>从概念上讲，此脚本从单个HTLC输出中花费具有两种可能（也就是成功和失败两种情况）</p>
+<ul>
+<li>如果Bob可以产生R，则第一条路径（在OP IF中定义）会将资金发送给Bob。</li>
+<li>3天定期退款给Alice。 使用支出交易中的nLockTime强制执行3天时间锁定。</li>
+</ul>
+<h3 id="4-1-不可撤销的HTLC"><a href="#4-1-不可撤销的HTLC" class="headerlink" title="4.1 不可撤销的HTLC"></a>4.1 不可撤销的HTLC</h3><p>Non-revocable HTLC Construction</p>
+<p><img src="/2019/11/20/blockchain/07/1574237935284.png" alt="1574237935284"></p>
+<p>Figure 11: This is a non-functional naive implementation of an HTLC. Only the HTLC path from the Commitment Transaction is displayed. Note that there are two possible spends from an HTLC output. If Bob can produce the preimage R within 3 days and he can redeem path 1. After three days, Alice is able to broadcast path 2. When 3 days have elapsed either is valid. This model, however, doesn’t work with multiple Commitment Transactions.</p>
+<p>图11：这是HTLC的非功能性的简单实现。 仅显示<code>Commitment Tx</code>中的HTLC路径。请注意，HTLC输出有两种可能的支出：</p>
+<ul>
+<li>如果Bob可以在3天内产生原像R，并且可以赎回path 1，并得到这0.1个btc。</li>
+<li>三天后，Alice可以广播path 2。</li>
+</ul>
+<p>三天后，上面两种情况肯定有一种会生效。但是，<strong>此模型不适用于多个<code>Commitment Tx</code>。</strong></p>
+<p>If R is produced within 3 days, then Bob can redeem the funds by broadcasting the “Delivery” transaction. A requirement for the “Delivery” transaction to be valid requires R to be included with the transaction. If R is not included, then the “Delivery” transaction is invalid. However, if 3 days have elapsed, the funds can be sent back to Alice by broadcasting transaction “Timeout”. When 3 days have elapsed and R has been disclosed, either transaction may be valid.</p>
+<p>如果在<strong>3天内产生了R，那么Bob可以通过广播<code>Delivery Tx</code>来赎回资金</strong>。让<code>Delivery Tx</code>有效的条件是R包含在该交易中。 如果不包括R，则<code>Delivery Tx</code>无效。 但是，<strong>如果3天过去了，Alice可以通过广播 <code>Timeout Tx</code> 将资金发送回Alice。</strong> 当3天过去且R已被披露时，任何一项交易都可能有效。</p>
+<p>It is within both parties individual responsibility to ensure that they can get their transaction into the blockchain in order to ensure the balances are correct. For Bob, in order to receive the funds, he must either broadcast the “Delivery” transaction on the Bitcoin blockchain, or otherwise settle with Alice (while cancelling the HTLC). For Alice, she must broadcast the “Timeout” 3 days from now to receive the refund, or cancel the HTLC entirely with Bob.</p>
+<p>双方都有各自的责任，以确保他们可以将其交易进入区块链，以确保余额正确。 对于Bob来说，为了接收资金，他<strong>必须要么在比特币区块链上广播<code>Delivery Tx</code>，要么以其他方式与Alice达成和解</strong>（即取消HTLC）。 对于Alice，<strong>她必须在3天后播出<code>Timeout Tx</code>，以获取退款，或者与Bob一起彻底取消HTLC。</strong></p>
+<p>Yet this kind of simplistic construction has similar problems as an incorrect bidirectional payment channel construction. When an old Commitment Transaction gets broadcast, either party may attempt to steal funds as both paths may be valid after the fact. For example, if R gets disclosed 1 year later, and an incorrect Commitment Transaction gets broadcast, both paths are valid and are redeemable by either party; the contract is not yet enforcible on the blockchain. Closing out the HTLC is absolutely necessary, because in order for Alice to get her refund, she must terminate the contract and receive her refund. Otherwise, when Bob discovers R after 3 days have elapsed, he may be able to steal the funds which should be going to Alice. With uncooperative counterparties it’s not possible to terminate an HTLC without broadcasting it to the bitcoin blockchain as the uncooperative party is unwilling to create a new Commitment Transaction.</p>
+<p>然而，这种简单的构造具有与不正确的双向支付通道构造类似的问题。 当旧的<code>Commitment Tx</code>被广播时，<strong>任何一方都可能会尝试窃取资金，因为事后两条路径都可能是有效的</strong>。 例如，如果Bob在一年后才披露R，并且错误的<code>Commitment Tx</code>被广播，那么这两个路径都是有效的，并且任何一方都可以赎回。 该合约尚未在区块链上强制执行。 关闭HTLC是绝对必要的，因为要使Alice获得退款，她必须在获得退款的同时彻底关掉HTLC。 否则，当Bob在三天后发现R时，他是可以窃取应归给Alice的资金的。 对于不合作的交易对手，由于不合作的一方不愿创建新的<code>Commitment Tx</code>，因此无法在不将HTLC广播到比特币区块链的情况下终止HTLC。</p>
+<blockquote>
+<p>总的来说是这样的：</p>
+<p>正常情况下，如果Bob在规定的期限内找到了这个R，他需要广播一个<code>Delivery Tx</code>，如果没找到需要和Alice一起将这个HTLC关掉。对于Alicce而言，如果规定的期限内没有认找到这个R（或者叫披露），则她需要广播一个<code>Timeout Tx</code>，这时她就可以拿回她的钱了。</p>
+<p>异常是这样的：Alice想取回它的钱。Bob没有在规定的时间内找到这个R，但也想拿钱，那么他们两个就都能够作弊。对于Alice而言，如果她在广播一个<code>Timeout Tx</code>之后没有关闭掉对应的HTLC，则Bob可能在非时限之内提交<code>Delivery Tx</code>，这样，双方都拿到了钱，这就是出错了的。</p>
+</blockquote>
+<h3 id="4-2-离线可撤销的HTLC"><a href="#4-2-离线可撤销的HTLC" class="headerlink" title="4.2 离线可撤销的HTLC"></a>4.2 离线可撤销的HTLC</h3><p>Off-chain Revocable HTLC</p>
+<p>To be able to terminate this contract off-chain without a broadcast to the Bitcoin blockchain requires embedding RSMCs in the output, which will have a similar construction to the bidirectional channel.</p>
+<p>为了能够在不向比特币区块链进行广播的情况下<strong>在链下终止HTLC合约</strong>，需要在输出中嵌入RSMC，其结构与双向通道类似。</p>
+<p><img src="/2019/11/20/blockchain/07/1574239927526.png" alt="1574239927526"></p>
+<p>Figure 12: If Alice broadcasts C2a, then the left half will execute. If Bob broadcasts C2b, then the right half will execute. Either party may broadcast their Commitment transaction at any time. HTLC Timeout is only valid after 3 days. HTLC Executions can only be broadcast if the preimage to the hash R is known. Prior Commitments (and their dependent transactions) are not displayed for brevity.</p>
+<p>图12：上图中的这么多情况可以总结一下：</p>
+<ul>
+<li>如果Alice广播C2a，则左半部分将执行。 </li>
+<li>如果Bob广播C2b，则将执行右半部分。 </li>
+<li>任何一方都可以<strong>随时广播其对应的<code>Commitment Tx</code></strong>（C2a / C2b）。</li>
+<li>HTLC <code>Timeout</code>（HT1a / HT1b）仅在3天后广播才是合法的。 </li>
+<li>仅当已知哈希R的原像时，才可以广播HTLC Execution（HED1a / HED1b）。 </li>
+</ul>
+<p>为简洁起见，不会显示先前的<code>Commitment</code> （及其相关交易）。</p>
+<p><strong>下面是对上面这张图的一个详细举例</strong></p>
+<p>Presume Alice and Bob wish to update their balance in the channel at Commitment 1 with a balance of 0.5 to Alice and 0.5 to Bob.</p>
+<p>假定Alice和Bob希望在<code>Commitment</code> 1的通道中更新其余额，Alice的余额为0.5，Bob的余额为0.5。</p>
+<p>Alice wishes to send 0.1 to Bob contingent upon knowledge of R within 3 days, after 3 days she wants her money back if Bob does not produce R. </p>
+<p>Alice希望在3天内根据对R的信息将0.1发送给Bob，如果3天内Bob不产生R，她就需要把钱再转回给自己。</p>
+<p>The new Commitment Transaction will have a full refund of the current balance to Alice and Bob (Outputs 0 and 1), with output 2 being the HTLC, which describes the funds in transit. As 0.1 will be encumbered in an HTLC, Alice’s balance is reduced to 0.4 and Bob’s remains the same at 0.5.</p>
+<p>新的<code>Commitment Tx</code>将把当前余额全额退还给Alice和Bob（在图中表示为<code>output 0</code>和<code>output 1</code>），<code>output 2</code>是HTLC，它描述了<strong>在途资金</strong>。 由于HTLC将负担0.1，Alice的余额减少到0.4，Bob的余额保持在0.5。</p>
+<p>This new Commitment Transaction (C2a/C2b) will have an HTLC output with two possible spends. Each spend is different depending on each counterparty’s version of the Commitment Transaction. Similar to the bidirectional payment channel, when one party broadcasts their Commitment, payments to the counterparty will be assumed to be valid and not invalidated. This can occur because when one broadcasts a Commitment Transaction, one is attesting this is the most recent Commitment Transaction. If it is the most recent, then one is also attesting that the HTLC exists and was not invalidated before, so potential payments to one’s counterparty should be valid.</p>
+<p>这项新的<code>Commitment Tx</code>（C2a / C2b）将具有两个可能花费的HTLC输出（也就是<code>output 2</code>会有两个分支）。 每个输出都不同，具体取决于对方的<code>Commitment Tx</code>版本。 与双向付款通道类似，<strong>当一方广播其<code>Commitment Tx</code>时，将假定对交易对手的付款有效。</strong> 之所以会发生这种情况，是因为当一个人广播<code>Commitment Tx</code>时，正在证明这是最新的<code>Commitment Tx</code>。 如果是最新的，则还可以证明HTLC存在并且之前没有失效，因此向交易对手的潜在付款应该是有效的。</p>
+<blockquote>
+<p>（因为先提出commitment Tx的那个人是可能作恶的，而没有提出的那个人没有作恶的动机，所以这里默认认为被动方不会作恶。）</p>
+</blockquote>
+<p>Note that HTLC transaction names (beginning with the letter H) will begin with the number 1, whose values do not correlate with Commitment Transactions. This is simply the first HTLC transaction. HTLC transactions may persist between Commitment Transactions. Each HTLC has 4 keys per side of the transaction (C2a and C2b) for a total of 8 keys per counterparty.</p>
+<p>注意，HTLC交易名称(以字母H开头)将以数字1开头，<strong>其值与<code>Commitment Tx</code>无关。这只是第一个HTLC交易。</strong>HTLC交易可能在<code>Commitment Txs</code>之间持续存在。每个HTLC在交易的每一端都有4个密钥(C2a和C2b)，每个交易对总共有8个密钥。（下面就说了是哪8个，也就是A和B每一边各有4个） </p>
+<p>The HTLC output in the Commitment Transaction has two sets of keys per counterparty in the output.</p>
+<p><strong><code>Commitment Tx</code>中的HTLC输出在output中为每个对手方提供两组密钥。</strong> 下面是对于Alice或者Bob的不同<code>Commitment Tx</code>所做的不同操作。</p>
+<ul>
+<li><p>For Alice’s Commitment Transaction (C2a), the HTLC output script requires multisig(PAlice2; PBob2) encumbered by disclosure of R, as well as multisig(PAlice1; PBob1) with no encumbering.</p>
+<p>对于Alice的<code>Commitment Tx</code>(C2a)，HTLC输出脚本需要通过公开R来阻碍的multisig（PAlice2; PBob2）以及没有阻碍的multisig（PAlice1; PBob1）。</p>
+</li>
+<li><p>For Bob’s Commitment Transaction (C2b), the HTLC output script requires multisig(PAlice6; PBob6) encumbered by disclosure of R, as well as multisig(PAlice5; PBob5) with no encumbering.</p>
+<p>对于Bob的<code>Commitment Tx</code>(C2b)，HTLC输出脚本需要通过公开R来阻碍的multisig（PAlice6; PBob6）以及没有阻碍的multisig（PAlice5; PBob5）。</p>
+</li>
+</ul>
+<p>The HTLC output states are different depending upon which Commitment Transaction is broadcast.</p>
+<p>根据广播的<code>Commitment Tx</code>，HTLC输出状态是不同的。</p>
+<h4 id="4-2-1-发送方广播Commitment-Tx时的HTLC"><a href="#4-2-1-发送方广播Commitment-Tx时的HTLC" class="headerlink" title="4.2.1 发送方广播Commitment Tx时的HTLC"></a>4.2.1 发送方广播Commitment Tx时的HTLC</h4><p><img src="/2019/11/20/blockchain/07/1574239927526.png" alt="1574239927526"></p>
+<p>For the sender (Alice), the “Delivery” transaction is sent as an HTLC Execution Delivery transaction (HED1a), which is not encumbered in an RSMC. It assumes that this HTLC has never been terminated off-chain, as Alice is attesting that the broadcasted Commitment Transaction is the most recent. If Bob can produce the preimage R, he will be able to redeem funds from the HTLC after the Commitment Transaction is broadcast on the blockchain. This transaction consumes multisig(PAlice2; PBob2) if Alice broadcasts her Commitment C2a. Only Bob can broadcast HED1a since only Alice gave her signature for HED1a to Bob.</p>
+<p><strong>对于发送人（Alice），<code>Delivery Tx</code>是作为HTLC执行传递交易（HED1a）发送的</strong>，该交易不受RSMC的约束。 假设该HTLC从未在链下终止，因为Alice证明广播的<code>Commitment Tx</code>是最新的。 如果Bob可以产生原像R，那么他将能够在区块链上广播<code>Commitment Tx</code>后从HTLC赎回资金。 如果Alice广播其<code>Commitment</code> C2a，则此交易将消耗multisig（PAlice2; PBob2）。 因为只有Alice将自己的HED1a签名交给了Bob，Bob才可以广播HED1a。</p>
+<p>However, if 3 days have elapsed since forming the HTLC, then Alice will be able broadcast a “Timeout” transaction, the HTLC Timeout transaction (HT1a). This transaction is an RSMC. It consumes the output multisig(PAlice1; PBob1) without requiring disclosure of R if Alice broadcasts C2a. This transaction cannot enter into the blockchain until 3 days have elapsed. The output for this transaction is an RSMC with multisig(PAlice3; PBob3) with relative maturity of 1000 blocks, and multisig(PAlice4; PBob4) with no requirement for confirmation maturity. Only Alice can broadcast HT1a since only Bob gave his signature for HT1a to Alice.</p>
+<p>但是，如果自形成HTLC以来已经过去了3天，那么Alice将能够广播<code>Timeout Tx</code>，即HTLC超时事务（HT1a）。 该交易是一个RSMC。 如果Alice广播C2a，它将消耗输出multisig（PAlice1; PBob1），而无需公开R。 直到3天后，该交易才能进入区块链。 此事务的输出是具有相对成熟度为1000块的multisig（PAlice3; PBob3）的RSMC，以及不需要确认成熟度的multisig（PAlice4; PBob4）。 因为只有Bob将自己的HT1a签名交给了Alice，所以只有Alice可以广播HT1a。</p>
+<p>After HT1a enters into the blockchain and 1000 block confirmations occur, an HTLC Timeout Revocable Delivery transaction (HTRD1a) may be broadcast by Alice which consumes multisig(PAlice3; PBob3). Only Alice can broadcast HTRD1a 1000 blocks after HT1a is broadcast since only Bob gave his signature for HTRD1a to Alice. This transaction can be revocable when another transaction supersedes HTRD1a using multisig(PAlice4; PBob4) which does not have any block maturity requirements.</p>
+<p><strong>在HT1a进入区块链并进行1000次块确认后，Alice可以广播HTLC <code>Timeout</code> 可撤销 <code>Delivery Tx</code> （HTRD1a）</strong>，该交易需要用到multisig（PAlice3; PBob3）。也就是说Alice想要广播HTRD1a，需要满足的条件是：<strong>Bob需要把HTRD1a的签名交给Alice，即Bob也认可了这条消息</strong>。 当另一笔交易使用multisig（PAlice4; PBob4）取代HTRD1a，而该笔交易没有任何区块成熟度要求时，该笔交易可以撤消。</p>
+<h4 id="4-2-2-接收方广播Commitment-Tx时的HTLC"><a href="#4-2-2-接收方广播Commitment-Tx时的HTLC" class="headerlink" title="4.2.2 接收方广播Commitment Tx时的HTLC"></a>4.2.2 接收方广播Commitment Tx时的HTLC</h4><p>HTLC when the Receiver Broadcasts the Commitment Transaction</p>
+<p>For the potential receiver (Bob), the “Timeout” of receipt is refunded as an HTLC Timeout Delivery transaction (HTD1b). This transaction directly refunds the funds to the original sender (Alice) and is not encumbered in an RSMC. It assumes that this HTLC has never been terminated off-chain, as Bob is attesting that the broadcasted Commitment Transaction (C2b) is the most recent. If 3 days have elapsed, Alice can broadcast HTD1b and take the refund. This transaction consumes multisig(PAlice5; PAlice5) if Bob broadcasts C2b. Only Alice can broadcast HTD1b since Bob gave his signature for HTD1b to Alice.</p>
+<p>对于潜在的接收者（Bob），<strong>收据的“ <code>Timeout</code> ”将作为HTLC <code>Timeout</code>  <code>Delivery Tx</code> （HTD1b）退还。 该交易将资金直接退还给原始发送人（Alice），并且不受RSMC的约束。</strong>它假定该HTLC从未在链下终止，因为Bob证明广播的<code>Commitment Tx</code>（C2b）是最新的。 如果3天过去了，Alice可以播放HTD1b并获得退款。 如果Bob广播C2b，此交易将消耗multisig（PAlice5; PAlice5）。 Bob将自己的HTD1b签名交给Alice之后，只有Alice才能广播HTD1b。</p>
+<p>However, if HTD1b is not broadcast (3 days have not elapsed) and Bob knows the preimage R, then Bob will be able to broadcast the HTLC Execution transaction (HE1b) if he can produce R. This transaction is an RSMC. It consumes the output multisig(PAlice6; PBob6) and requires disclosure of R if Bob broadcasts C2b. The output for this transaction is an RSMC with multisig(PAlice7; PBob7) with relative maturity of 1000 blocks, and multisig(PAlice8; PBob8) which does not have any block maturity requirements. Only Bob can broadcast HE1b since only Alice gave her signature for HE1b to Bob.</p>
+<p>但是，如果未广播HTD1b（尚未过去3天）并且Bob知道原映像R，则<strong>Bob可以广播HTLC执行交易（HE1b）</strong>。该交易是RSMC。 它消耗输出multisig（PAlice6; PBob6），并且如果Bob广播C2b，则要求公开R。 <strong>此交易的输出是具有相对成熟度为1000块的multisig（PAlice7; PBob7）和没有任何成熟度要求的multisig（PAlice8; PBob8）的RSMC。</strong> 因为只有当Alice将她的HE1b签名交给了Bob之后，Bob才可以广播HE1b。</p>
+<p>After HE1b enters into the blockchain and 1000 block confirmations occur, an HTLC Execution Revocable Delivery transaction (HERD1b) may be broadcast by Bob which consumes multisig(PAlice7; PBob7). Only Bob can broadcast HERD1b 1000 blocks after HE1b is broadcast since only Alice gave her signature for HERD1b to Bob. This transaction can be revocable when another transaction supersedes HERD1b using multisig(PAlice8; PBob8) which does not have any block maturity requirements.</p>
+<p>HE1b进入区块链并进行1000次块确认后，Bob可能会广播HTLC执行可撤销传递交易（HERD1b），它消耗了multisig（PAlice7; PBob7）。 广播HE1b之后，且经过了1000个块之后，只有，因为Alice将她的HERD1b签名提供给了Bob，Bob才可以在广播HERD1b。 当另一笔交易使用multisig（PAlice8; PBob8）取代HERD1b时，该笔交易是可撤销的，multisig（PAlice8; PBob8）没有任何块成熟度要求。</p>
+<h3 id="4-3-HTLC-off-line终止"><a href="#4-3-HTLC-off-line终止" class="headerlink" title="4.3 HTLC off-line终止"></a>4.3 HTLC off-line终止</h3><p>After an HTLC is constructed, to terminate an HTLC off-chain requires both parties to agree on the state of the channel. If the recipient can prove knowledge of R to the counterparty, the recipient is proving that they are able to immediately close out the channel on the Bitcoin blockchain and receive the funds. At this point, if both parties wish to keep the channel open, they should terminate the HTLC off-chain and create a new Commitment Transaction reflecting the new balance.</p>
+<p>在构建HTLC之后，要终止HTLC链外要求双方都同意通道状态。 如果接收者可以向交易对手证明R，则接收者证明他们能够<strong>立即关闭比特币区块链上的通道并接收资金</strong>。 此时，<strong>如果双方都希望保持通道畅通，则应终止HTLC链下交易并创建一个反映新余额的新<code>Commitment Tx</code></strong>。</p>
+<p><img src="/2019/11/20/blockchain/07/1574240246235.png" alt="1574240246235"></p>
+<p>Figure 13: Since Bob proved to Alice he knows R by telling Alice R, Alice is willing to update the balance with a new Commitment Transaction. The payout will be the same whether C2 or C3 is broadcast at this time.</p>
+<p>图13：由于Bob通过告诉Alice R向Alice证明了他对R的了解，所以Alice愿意通过新的Commitment Transaction更新余额。 不论此时广播C2还是C3，支出都是相同的。</p>
+<p>Similarly, if the recipient is not able to prove knowledge of R by disclosing R, both parties should agree to terminate the HTLC and create a new Commitment Transaction with the balance in the HTLC refunded to the sender.</p>
+<p>同样，如果接收者无法通过公开R来证明R的知识，则双方都应同意终止HTLC并创建新的<code>Commitment Tx</code>，并将HTLC中的余额退还给发送者。</p>
+<p>If the counterparties cannot come to an agreement or become otherwise unresponsive, they should close out the channel by broadcasting the necessary channel transactions on the Bitcoin blockchain.</p>
+<p>如果交易对手无法达成协议或以其他方式无响应，则他们应通过在比特币区块链上广播必要的通道交易来关闭通道。</p>
+<p>However, if they are cooperative, they can do so by first generating a new Commitment Transaction with the new balances, then invalidate the prior Commitment by exchanging Breach Remedy transactions (BR2a/BR2b). Additionally, if they are terminating a particular HTLC, they should also exchange some of their own private keys used in the HTLC transactions.</p>
+<p>但是，如果他们是合作的，则可以通过<strong>首先使用新的余额生成一个新的<code>Commitment Tx</code>，然后通过交换违约救济交易（BR2a / BR2b）使先前的<code>Commitment</code> 无效</strong>。 此外，如果它们要终止特定的HTLC，则它们还应该交换在HTLC交易中使用的一些自己的私钥。</p>
+<p>For example, Alice wishes to terminate the HTLC, Alice will disclose KAlice1 and KAlice4 to Bob. Correspondingly if Bob wishes to terminate the HTLC, Bob will disclose KBob6 and KBob8 to Alice. After the private keys are disclosed to the counterparty, if Alice broadcasts C2a, Bob will be able to take all the funds from the HTLC immediately. If Bob broadcasts C2b, Alice will be able to take all funds from the HTLC immediately. Note that when an HTLC is terminated, the older Commitment Transaction must be revoked as well.</p>
+<p>例如，Alice希望终止HTLC，Alice将向Bob公开KAlice1和KAlice4。 相应地，如果Bob希望终止HTLC，Bob将向Alice披露KBob6和KBob8。 在向交易对手披露私钥后，如果Alice广播C2a，则Bob将能够立即从HTLC中提取所有资金。 如果Bob广播C2b，Alice将能够立即从HTLC中提取所有资金。 请注意，当HTLC终止时，旧的<code>Commitment Tx</code>也必须被撤销。</p>
+<p><img src="/2019/11/20/blockchain/07/1574240572272.png" alt="1574240572272"></p>
+<p>Figure 14: A fully revoked Commitment Transaction and terminated HTLC. If either party broadcasts Commitment 2, they will lose all their money to the counterparty. Other commitments (e.g. if Commitment 3 is the current Commitment) are not displayed for brevity.</p>
+<p>图14：完全撤销的<code>Commitment Tx</code>和终止的HTLC。 如果任何一方广播<code>Commitment</code> 2，他们将把所有钱都输给对方。 为了简洁起见，其他<code>Commitment</code> （例如，如果<code>Commitment</code> 3是当前<code>Commitment</code> ）则不会显示。</p>
+<p>Since both parties are able to prove the current state to each other, they can come to agreement on the current balance inside the channel. Since they may broadcast the current state on the blockchain, they are able to come to agreement on netting out and terminating the HTLC with a new Commitment Transaction.</p>
+<p>由于双方都可以相互证明当前状态，因此他们可以就通道内部的当前余额达成协议。 由于他们可以在区块链上广播当前状态，因此他们能够就通过新的<code>Commitment Tx</code>净额结算和终止HTLC达成协议。</p>
+<h3 id="4-4-HTLC-建立与关闭次序"><a href="#4-4-HTLC-建立与关闭次序" class="headerlink" title="4.4 HTLC 建立与关闭次序"></a>4.4 HTLC 建立与关闭次序</h3><p>To create a new HTLC, it is the same process as creating a new Commitment Transaction, except the signatures for the HTLC are exchanged before the new Commitment Transaction’s signatures.</p>
+<p>创建新的HTLC的过程与创建新的<code>Commitment Tx</code>的过程相同，只是在新的<code>Commitment Tx</code>的签名之前交换HTLC的签名。</p>
+<p>To close out an HTLC, the process is as follows (from C2 to C3):</p>
+<p>要关闭HTLC，过程如下（从C2到C3）：</p>
+<ol>
+<li><p>Alice signs and sends her signature for RD3b and C3b. At this point Bob can elect to broadcast C3b or C2b (with the HTLC) with the same payout. Bob is willing after receiving C3b to close out C2b.</p>
+<p>Alice在RD3b和C3b上签名并发送她的签名。 此时，Bob可以选择以相同的付款方式广播C3b或C2b（使用HTLC）。 Bob在收到C3b之后愿意关闭C2b。</p>
+</li>
+<li><p>Bob signs and sends his signature for RD3a and C3a, as well as his private keys used for Commitment 2 and the HTLC being terminated; he sends Alice KBobRSMC2, KBob5, and KBob8. At this point Bob should only broadcast C3b and should not broadcast C2b as he will lose all his money if he does so. Bob has fully revoked C2b and the HTLC. Alice is willing after receiving C3a to close out C2b.</p>
+<p>Bob签名并发送RD3a和C3a的签名，以及用于<code>Commitment</code> 2和HTLC终止的私钥； 他发送了Alice KBobRSMC2，KBob5和KBob8。 此时，Bob应该只广播C3b，而不应该广播C2b，因为如果这样做，他将失去所有金钱。 Bob已完全撤销了C2b和HTLC。 Alice在收到C3a之后愿意关闭C2b。</p>
+</li>
+<li><p>Alice signs and sends her signature for RD3b and C3b, as well as her private keys used for Commitment 2 and the HTLC being terminated; she sends Bob KAliceRSMC2, KBob1, and KBob4. At this point neither party should broadcast Commitment 2, if they do so, their funds will be going to the counterparty. The old Commitment and old HTLC are now revoked and fully terminated. Only the new Commitment 3 remains, which does not have an HTLC.  </p>
+<p>Alice签署并发送她对RD3b和C3b的签名，以及她用于<code>Commitment</code> 2和HTLC终止的私钥； 她发送了Bob KAliceRSMC2，KBob1和KBob4。 此时，任何一方都不应广播<code>Commitment</code> 2，如果这样做，则其资金将流向交易对手。 旧的<code>Commitment Tx</code>和旧的HTLC现在被撤销并完全终止。 仅保留新的<code>Commitment</code> 3，它没有HTLC。</p>
+</li>
+</ol>
+<p>When the HTLC has been closed, the funds are updated so that the present balance in the channel is what would occur had the HTLC contract been completed and broadcast on the blockchain. Instead, both parties elect to do off-chain novation and update their payments inside the channel.</p>
+<p>关闭HTLC后，将更新资金，以便通道中的当前余额是HTLC合约完成并在区块链上广播时将发生的情况。 相反，双方都选择进行链外更新并在通道内更新其付款。</p>
+<p>It is absolutely necessary for both parties to complete off-chain novation within their designated time window. For the receiver (Bob), he must know R and update his balance with Alice within 3 days (or whatever time was selected), else Alice will be able to redeem it within 3 days. For Alice, very soon after her timeout becomes valid, she must novate or broadcast the HTLC Timeout transaction. She must also novate or broadcast the HTLC Timeout Revocable Delivery transaction as soon as it becomes valid. If the counterparty is unwilling to novate or is stalling, then one must broadcast the current channel state, including HTLC transactions) onto the Bitcoin blockchain.</p>
+<p>双方绝对有必要在其指定的时间范围内完成链下创新。 对于接收者（Bob），他必须知道R并在3天内（或选择的任何时间）与Alice更新其余额，否则Alice将能够在3天内赎回该余额。 对于Alice， <code>Timeout</code> 生效后不久，她必须更新或广播HTLC <code>Timeout Tx</code> 。 她还必须在HTLC <code>Timeout</code> 可撤销 <code>Delivery Tx</code> 生效后立即进行更新或广播。 如果交易对手不愿更新或停滞不前，则必须将当前频道状态（包括HTLC交易）广播到比特币区块链上。</p>
+<p>The amount of time flexibility with these offers to novate are dependent upon one’s contingent dependencies on the hashlock R. If one establishes a contract that the HTLC must be resolved within 1 day, then if the transaction times out Alice must resolve it by day 4 (3 days plus 1), else Alice risks losing funds.</p>
+<p>这些要约更新的时间灵活性<strong>取决于一个人对哈希锁R的或有依赖性。如果一个人建立了必须在1天之内解决HTLC的合约，那么如果交易 <code>Timeout</code> ，Alice必须在第4天解决（ 3天加1），否则Alice可能会亏损。</strong></p>
+<h2 id="5-密钥存储"><a href="#5-密钥存储" class="headerlink" title="5. 密钥存储"></a>5. 密钥存储</h2><p>Keys are generated using BIP 0032 Hierarchical Deterministic Wallets[17]. Keys are pre-generated by both parties. Keys are generated in a merkle tree and are very deep within the tree. For instance, Alice pre-generates one million keys, each key being a child of the previous key. Alice allocates which keys to use according to some deterministic manner. For example, she starts with the child deepest in the tree to generate many sub-keys for day 1. This key is used as a master key for all keys generated on day 1. She gives Bob the address she wishes to use for the next transaction, and discloses the private key to Bob when it becomes invalidated. When Alice discloses to Bob all private keys derived from the day 1 master key and does not wish to continue using that master key, she can disclose the day 1 master key to Bob. At this point, Bob does not need to store all the keys derived from the day 1 master key. Bob does the same for Alice and gives her his day 1 key.</p>
+<p>密钥是使用BIP 0032分层确定性钱包[17]生成的。 密钥由双方预先生成。 密钥在merkle树中生成，并且在树的深处。 例如，<strong>Alice预先生成一百万个密钥，每个密钥都是前一个密钥的子代</strong>。 Alice根据确定性的方式分配要使用的密钥。 例如，她从树上最深的孩子开始，为第1天生成许多子密钥。此密钥用作第1天生成的所有密钥的主密钥。她为Bob提供了她希望用于下一个地址的地址。 交易，并在无效时向Bob公开私钥。 当Alice向Bob透露从第一天主密钥派生的所有私钥并且不希望继续使用该主密钥时，她可以向Bob透露第一天主密钥。 此时，Bob不需要存储从第一天主密钥派生的所有密钥。 Bob（Bob）为Alice（Alice）做同样的事情，并给了他第一天的钥匙。</p>
+<p>When all Day 2 private keys have been exchanged, for example by day 5, Alice discloses her Day 2 key. Bob is able to generate the Day 1 key from the Day 2 key, as the Day 1 key is a child of the Day 2 key as well.</p>
+<p>当第二天的所有私钥都已交换时，例如到第五天时，Alice就会公开第二天的私钥。 Bob能够从Day 2密钥生成Day 1密钥，因为Day 1密钥也是Day 2密钥的子代。</p>
+<p>If a counterparty broadcasts the wrong Commitment Transaction, which private key to use in a transaction to recover funds can either be brute forced, or if both parties agree, they can use the sequence id number when creating the transaction to identify which sets of keys are used.</p>
+<p>如果交易对手广播了错误的“<code>Commitment Tx</code>”，则交易中用于收回资金的私钥可能被强行使用，或者如果双方都同意，则他们可以在创建交易时使用序列ID号来识别哪些密钥集是 用过的。</p>
+<p>This enables participants in a channel to have prior output states (transactions) invalidated by both parties without using much data at all. By disclosing private keys pre-arranged in a merkle-tree, it is possible to invalidate millions of old transactions with only a few kilobytes of data per channel. Core channels in the Lightning Network can conduct billions of transactions without a need for significant storage costs.</p>
+<p><strong>这使通道中的参与者可以在没有使用大量数据的情况下，由双方使先前的输出状态（交易）无效。 通过公开在merkle树中预先安排的私钥，可以使每个通道只有几千字节的数据而使数百万个旧交易无效。 闪电网络中的核心通道可以进行数十亿笔交易，而无需大量的存储成本。</strong></p>
+<h2 id="6-双向通道的区块链交易费"><a href="#6-双向通道的区块链交易费" class="headerlink" title="6. 双向通道的区块链交易费"></a>6. 双向通道的区块链交易费</h2><p>It is possible for each participant to generate different versions of transactions to ascribe blame as to who broadcast the transaction on the blockchain. By having knowledge of who broadcast a transaction and the ability to ascribe blame, a third party service can be used to hold fees in a 2-of-3 multisig escrow. If one wishes to broadcast the transaction chain instead of agreeing to do a Funding Close or replacement with a new Commitment Transaction, one would communicate with the third party and broadcast the chain to the blockchain. If the counterparty refuses the notice from the third party to cooperate, the penalty is rewarded to the non-cooperative party. In most instances, participants may be indifferent to the transaction fees in the event of an uncooperative counterparty.</p>
+<p>每个参与者都有可能生成不同版本的交易，以<strong>归咎于谁在区块链上广播了交易</strong>。 通过了解谁在广播交易以及归咎于责任的能力，可以使用第三方服务以2-of-3的多重代管托管费用。 如果有人希望广播<code>Tx</code>链而不是同意进行资金结清或用新的<code>Commitment Tx</code>代替，则可以与第三方进行通信并将链广播到区块链上。 如果交易对方拒绝了第三方的合作通知，则罚款将奖励给非合作方。 在大多数情况下，如果交易对手不合作，参与者可能对交易费用无动于衷。</p>
+<p>One should pick counterparties in the channel who will be cooperative, but is not an absolute necessity for the system to function. Note that this does not require trust among the rest of the network, and is only relevant for the comparatively minor transaction fees. The less trusted party may just be the one responsible for transaction fees.</p>
+<p>人们应该在通道中选择愿意合作的对手方，但这并不是该系统运行的绝对必要条件。注意，这并不需要网络其余部分之间的信任，并且只与相对较小的交易费用相关。较不受信任的一方可能只是负责交易费用的一方。</p>
+<p>The Lightning Network fees will likely be significantly lower than blockchain transaction fees. The fees are largely derived from the time-value of locking up funds for a particular route, as well as paying for the chance of channel close on the blockchain. These should be significantly lower than on-chain transactions, as many transactions on a Lightning Network channel can be settled into one single blockchain transaction. With a sufficiently robust and interconnected network, the fees should asymptotically approach negligibility for many types of transactions. With cheap fees and fast transactions, it will be possible to build scalable micropayments, even amongst high-frequency systems such as Internet of Things applications or per-unit micro-billing.</p>
+<p>闪电网络的费用可能会大大低于区块链交易费用。<strong>这些费用主要来自锁定特定线路资金的时间价值</strong>，以及支付区块链频道关闭的机会。这些交易应该比链上交易低得多，因为在一个Lightning网络通道上的许多交易可以被安排到一个单独的区块链交易中。有了一个足够健全和相互连接的网络，收费应该渐进地接近许多交易类型的可忽略性。有了低廉的费用和快速的交易，就有可能构建可扩展的微支付，即使是在物联网应用程序或单位微账单等高频系统之间。</p>
+<h2 id="7-为合约付款"><a href="#7-为合约付款" class="headerlink" title="7. 为合约付款"></a>7. 为合约付款</h2><p>It is possible construct a cryptographically provable “Delivery Versus Payment” contract, or pay-to-contract[18], as proof of payment. This proof can be established as knowledge of the input R from hash(R) as payment of a certain value. By embedding a clause into the contract between the buyer and seller stating that knowing R is proof of funds sent, the recipient of funds has no incentive to disclose R unless they have certainty that they will receive payment. When the funds eventually get pulled from the buyer by their counterparty in their micropayment channel, R is disclosed as part of that pull of funds. One can design paper legal documents that specify that knowledge or disclosure of R implies fulfillment of payment. The sender can then arrange a cryptographically signed contract with knowledge of inputs for hashes treated as fulfillment of the paper contract before payment occurs.  </p>
+<p>可以构造一个加密的可证明的“交付对付款”合约，或付款对合约[18]，作为付款的证明。这个证明可以建立为从哈希(R)中输入R的知识，即支付一定的值。通过在买卖双方之间的合约中嵌入一个条款，说明知道R是资金被发送的证据，资金的接收者没有动机去披露R，除非他们确信他们将收到款项。当资金最终从买方的小额支付通道的交易对手那里撤出时，R将作为资金撤出的一部分被披露。一个人可以设计出书面的法律文件，规定知道或披露R意味着支付的履行。然后，发送方可以安排一个密码签署的合约，该合约具有散列的输入知识，在付款之前将其视为纸质合约的履行。</p>
+
+      
+       
+    </div>
+</article>
+
+
+
+
+
+
+
+    
+        <!-- MathJax配置，可通过单美元符号书写行内公式等 -->
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+    "HTML-CSS": {
+        preferredFont: "TeX",
+        availableFonts: ["STIX","TeX"],
+        linebreaks: { automatic:true },
+        EqnChunk: (MathJax.Hub.Browser.isMobile ? 10 : 50)
+    },
+    tex2jax: {
+        inlineMath: [ ["$", "$"], ["\\(","\\)"] ],
+        processEscapes: true,
+        ignoreClass: "tex2jax_ignore|dno",
+        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+    },
+    TeX: {
+        equationNumbers: { autoNumber: "AMS" },
+        noUndefined: { attributes: { mathcolor: "red", mathbackground: "#FFEEEE", mathsize: "90%" } },
+        Macros: { href: "{}" }
+    },
+    messageStyle: "none"
+    });
+</script>
+<!-- 给MathJax元素添加has-jax class -->
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax(), i;
+        for(i=0; i < all.length; i += 1) {
+            all[i].SourceElement().parentNode.className += ' has-jax';
+        }
+    });
+</script>
+<!-- 通过连接CDN加载MathJax的js代码 -->
+<script type="text/javascript" async
+        src="//cdn.bootcss.com/mathjax/2.7.2/MathJax.js?config=TeX-MML-AM_CHTML">
+</script>
+<input type="hidden" id="MathJax-js"
+        value="//cdn.bootcss.com/mathjax/2.7.2/MathJax.js?config=TeX-MML-AM_CHTML">
+</input>
+    
+
+
+
+
+    </div>
+    <div class="copyright">
+        <p class="footer-entry">©2019-2020 POWDER SNOW</p>
+
+    </div>
+    <div class="full-toc">
+        <button class="full"><span class="min "></span></button>
+<button class="post-toc-menu"><span class="post-toc-menu-icons"></span></button>
+<div class="post-toc"><span class="post-toc-title">目录</span>
+    <div class="post-toc-content">
+
+    </div>
+</div>
+<a class="" id="rocket" ></a>
+
+    </div>
+</div>
+<div class="acParent"></div>
+
+</body>
+<script src="/js/jquery.pjax.js?v=1.0.1" ></script>
+
+<script src="/js/script.js?v=1.0.1" ></script>
+<script>
+    var img_resize = 'default';
+    /*作者、标签的自动补全*/
+    $(function () {
+        $('.search').AutoComplete({
+            'data': ['#HTTP','#protobuf','#MySQL SQL','#Spring','#java','#QT','#区块链','#分布式','#大数据','#前端','#MyBatis','#SpringBoot','#网络编程','#Redis','#多线程','#数据库',],
+            'itemHeight': 20,
+            'width': 418
+        }).AutoComplete('show');
+    })
+    function initArticle() {
+        /*渲染对应的表格样式*/
+        
+            $(".post .pjax table").addClass("green_title");
+        
+
+        /*渲染打赏样式*/
+        
+
+        /*高亮代码块行号*/
+        
+
+        /*访问数量*/
+        
+
+        /*代码高亮，行号对齐*/
+        $('.pre-numbering').css('line-height',$('.has-numbering').css('line-height'));
+
+        
+        
+    }
+
+    /*打赏页面隐藏与展示*/
+    
+
+</script>
+
+<!--加入行号的高亮代码块样式-->
+
+<!--自定义样式设置-->
+<style>
+    
+    
+    .nav {
+        width: 544px;
+    }
+    .nav.fullscreen {
+        margin-left: -544px;
+    }
+    .nav-left {
+        width: 122px;
+    }
+    
+    
+    @media screen and (max-width: 1468px) {
+        .nav {
+            width: 492px;
+        }
+        .nav.fullscreen {
+            margin-left: -492px;
+        }
+        .nav-left {
+            width: 100px;
+        }
+    }
+    
+    
+    @media screen and (max-width: 1024px) {
+        .nav {
+            width: 492px;
+            margin-left: -492px
+        }
+        .nav.fullscreen {
+            margin-left: 0;
+        }
+        .nav .hide-list.fullscreen {
+            left: 492px
+        }
+    }
+    
+    @media screen and (max-width: 426px) {
+        .nav {
+            width: 100%;
+        }
+        .nav-left {
+            width: 100%;
+        }
+    }
+    
+    
+    .nav-right .title-list nav a .post-title, .nav-right .title-list #local-search-result a .post-title {
+        color: #383636;
+    }
+    
+    
+    .nav-right .title-list nav a .post-date, .nav-right .title-list #local-search-result a .post-date {
+        color: #5e5e5f;
+    }
+    
+    
+    .nav-right nav a.hover, #local-search-result a.hover{
+        background-color: #fbf4a8;
+    }
+    
+    
+
+    /*列表样式*/
+    
+    .post .pjax article .article-entry>ol, .post .pjax article .article-entry>ul, .post .pjax article>ol, .post .pjax article>ul{
+        border: #e2dede solid 1px;
+        border-radius: 10px;
+        padding: 10px 32px 10px 56px;
+    }
+    .post .pjax article .article-entry li>ol, .post .pjax article .article-entry li>ul,.post .pjax article li>ol, .post .pjax article li>ul{
+        padding-top: 5px;
+        padding-bottom: 5px;
+    }
+    .post .pjax article .article-entry>ol>li, .post .pjax article .article-entry>ul>li,.post .pjax article>ol>li, .post .pjax article>ul>li{
+        margin-bottom: auto;
+        margin-left: auto;
+    }
+    .post .pjax article .article-entry li>ol>li, .post .pjax article .article-entry li>ul>li,.post .pjax article li>ol>li, .post .pjax article li>ul>li{
+        margin-bottom: auto;
+        margin-left: auto;
+    }
+    
+
+    /* 背景图样式 */
+    
+    .post {
+        background: url(/img/bck.jpg);
+    }
+    
+    
+    .post.index {
+        background: url(/img/background.jpg);
+    }
+    
+
+
+    /*引用块样式*/
+    
+
+    /*文章列表背景图*/
+    
+    .nav-right:before {
+        content: ' ';
+        display: block;
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        opacity: 0.3;
+        background: url("/img/123.jpg");
+        background-repeat: no-repeat;
+        background-position: 50% 0;
+        -ms-background-size: cover;
+        -o-background-size: cover;
+        -moz-background-size: cover;
+        -webkit-background-size: cover;
+        background-size: cover;
+    }
+    
+
+    
+</style>
+
+
+
+
+
+
+
+</html>

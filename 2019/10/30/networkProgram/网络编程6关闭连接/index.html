@@ -1,0 +1,1742 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>网络编程6：关闭连接 | POWDER SNOW</title>
+  <meta name="keywords" content=" 网络编程 ">
+  <meta name="description" content="网络编程6：关闭连接 | POWDER SNOW">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<meta property="og:type" content="website">
+<meta property="og:title" content="categories">
+<meta property="og:url" content="http://yoursite.com/categories/index.html">
+<meta property="og:site_name" content="POWDER SNOW">
+<meta property="article:published_time" content="2018-03-02T04:33:16.000Z">
+<meta property="article:modified_time" content="2020-03-05T13:28:59.839Z">
+<meta property="article:author" content="冯冠雄">
+<meta name="twitter:card" content="summary">
+
+
+<link rel="icon" href="/img/avatar.jpg">
+
+<link href="/css/style.css?v=1.0.1" rel="stylesheet">
+
+<link href="/css/hl_theme/atom-light.css?v=1.0.1" rel="stylesheet">
+
+<link href="//cdn.bootcss.com/animate.css/3.5.2/animate.min.css" rel="stylesheet">
+<link href="//cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+
+<script src="//cdn.bootcss.com/jquery/2.2.4/jquery.min.js"></script>
+<script src="/js/jquery.autocomplete.min.js?v=1.0.1" ></script>
+
+<script src="//cdn.bootcss.com/highlight.js/9.12.0/highlight.min.js"></script>
+<script>
+    hljs.initHighlightingOnLoad();
+</script>
+
+<script src="//cdn.bootcss.com/nprogress/0.2.0/nprogress.min.js"></script>
+
+
+
+<script src="//cdn.bootcss.com/jquery-cookie/1.4.1/jquery.cookie.min.js" ></script>
+
+<script src="/js/iconfont.js?v=1.0.1" ></script>
+
+<meta name="generator" content="Hexo 4.2.0"></head>
+<div style="display: none">
+  <input class="theme_disqus_on" value="false">
+  <input class="theme_preload_comment" value="false">
+  <input class="theme_blog_path" value="">
+</div>
+
+<body>
+<aside class="nav">
+    <div class="nav-left">
+        <a href="/" class="avatar_target">
+    <img class="avatar" src="/img/avatar.jpg" />
+</a>
+<div class="author">
+    <span>冯冠雄</span>
+</div>
+
+<div class="icon">
+    
+        
+        <a title="github" href="https://github.com/xiong-Fgx" target="_blank">
+            
+                <svg class="iconfont-svg" aria-hidden="true">
+                    <use xlink:href="#icon-github"></use>
+                </svg>
+            
+        </a>
+        
+    
+        
+        <a title="linkedin" href="https://www.linkedin.com/in/guanxiong-feng-8b6aa8179" target="_blank">
+            
+                <svg class="iconfont-svg" aria-hidden="true">
+                    <use xlink:href="#icon-linkedin"></use>
+                </svg>
+            
+        </a>
+        
+    
+        
+        <a title="email" href="mailto:guanxiongf@gmail.com" target="_blank">
+            
+                <svg class="iconfont-svg" aria-hidden="true">
+                    <use xlink:href="#icon-email"></use>
+                </svg>
+            
+        </a>
+        
+    
+</div>
+
+
+
+
+<ul>
+    <li><div class="all active">全部文章</div></li>
+    
+        
+            
+            <li><div data-rel="网络"><i class="fold iconfont icon-right"></i>网络</div>
+                
+                    <ul class="sub hide">
+                        
+                        <li><div data-rel="HTTP">HTTP</div>
+                            
+                        </li>
+                            
+                        <li><div data-rel="protobuf">protobuf</div>
+                            
+                        </li>
+                            
+                        <li><div data-rel="网络编程">网络编程</div>
+                            
+                        </li>
+                            
+                    </ul>
+                
+            </li>
+            
+        
+    
+        
+            
+            <li><div data-rel="数据库">数据库</div>
+                
+            </li>
+            
+        
+    
+        
+            
+        
+    
+        
+            
+            <li><div data-rel="SSM"><i class="fold iconfont icon-right"></i>SSM</div>
+                
+                    <ul class="sub hide">
+                        
+                        <li><div data-rel="SSM整合">SSM整合</div>
+                            
+                        </li>
+                            
+                        <li><div data-rel="Spring">Spring</div>
+                            
+                        </li>
+                            
+                        <li><div data-rel="SpringMVC">SpringMVC</div>
+                            
+                        </li>
+                            
+                        <li><div data-rel="MyBatis">MyBatis</div>
+                            
+                        </li>
+                            
+                        <li><div data-rel="SpringBoot">SpringBoot</div>
+                            
+                        </li>
+                            
+                    </ul>
+                
+            </li>
+            
+        
+    
+        
+            
+        
+    
+        
+            
+        
+    
+        
+            
+        
+    
+        
+            
+        
+    
+        
+            
+            <li><div data-rel="客户端"><i class="fold iconfont icon-right"></i>客户端</div>
+                
+                    <ul class="sub hide">
+                        
+                        <li><div data-rel="QT">QT</div>
+                            
+                        </li>
+                            
+                    </ul>
+                
+            </li>
+            
+        
+    
+        
+            
+            <li><div data-rel="区块链"><i class="fold iconfont icon-right"></i>区块链</div>
+                
+                    <ul class="sub hide">
+                        
+                        <li><div data-rel="论文">论文</div>
+                            
+                        </li>
+                            
+                        <li><div data-rel="Fabric">Fabric</div>
+                            
+                        </li>
+                            
+                        <li><div data-rel="fabric">fabric</div>
+                            
+                        </li>
+                            
+                    </ul>
+                
+            </li>
+            
+        
+    
+        
+            
+            <li><div data-rel="分布式">分布式</div>
+                
+            </li>
+            
+        
+    
+        
+            
+            <li><div data-rel="大数据"><i class="fold iconfont icon-right"></i>大数据</div>
+                
+                    <ul class="sub hide">
+                        
+                        <li><div data-rel="hadoop">hadoop</div>
+                            
+                        </li>
+                            
+                    </ul>
+                
+            </li>
+            
+        
+    
+        
+            
+            <li><div data-rel="前端"><i class="fold iconfont icon-right"></i>前端</div>
+                
+                    <ul class="sub hide">
+                        
+                        <li><div data-rel="HTML">HTML</div>
+                            
+                        </li>
+                            
+                        <li><div data-rel="CSS">CSS</div>
+                            
+                        </li>
+                            
+                    </ul>
+                
+            </li>
+            
+        
+    
+        
+            
+        
+    
+        
+            
+        
+    
+        
+            
+        
+    
+        
+            
+        
+    
+        
+            
+        
+    
+        
+            
+            <li><div data-rel="笔记">笔记</div>
+                
+            </li>
+            
+        
+    
+        
+            
+        
+    
+        
+            
+        
+    
+        
+            
+        
+    
+        
+            
+        
+    
+        
+            
+        
+    
+</ul>
+<div class="left-bottom">
+    <div class="menus">
+    
+    
+    
+    
+    </div>
+    <div></div>
+</div>
+<input type="hidden" id="yelog_site_posts_number" value="71">
+
+<div style="display: none">
+    <span id="busuanzi_value_site_uv"></span>
+    <span id="busuanzi_value_site_pv"></span>
+</div>
+
+    </div>
+    <div class="nav-right">
+        <div class="friends-area">
+    <div class="friends-title">
+        友情链接
+        <i class="back-title-list"></i>
+    </div>
+    <div class="friends-content">
+        <ul>
+            
+            <li><a target="_blank" href="http://yelog.org/">叶落阁</a></li>
+            
+        </ul>
+    </div>
+</div>
+        <div class="title-list">
+    <form onkeydown="if(event.keyCode === 13){return false;}">
+        <input id="local-search-input" class="search" type="text" placeholder="Search..." />
+        <i class="cross"></i>
+        <span>
+            <label for="tagswitch">Tags:</label>
+            <input id="tagswitch" type="checkbox" style="display: none" />
+            <i id="tagsWitchIcon"></i>
+        </span>
+    </form>
+    <div class="tags-list">
+    
+    <li class="article-tag-list-item">
+        <a class="color5">HTTP</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a class="color4">protobuf</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a class="color5">MySQL SQL</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a class="color2">Spring</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a class="color5">java</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a class="color3">QT</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a class="color4">区块链</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a class="color4">分布式</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a class="color4">大数据</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a class="color3">前端</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a class="color3">MyBatis</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a class="color1">SpringBoot</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a class="color5">网络编程</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a class="color1">Redis</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a class="color4">多线程</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a class="color4">数据库</a>
+    </li>
+    
+    <div class="clearfix"></div>
+</div>
+
+    
+    <nav id="title-list-nav">
+        
+        <a  class="前端 CSS "
+           href="/2021/01/11/html/4_%E7%9B%92%E5%AD%90%E6%A8%A1%E5%9E%8B/"
+           data-tag="前端"
+           data-author="" >
+            <span class="post-title" title="【前端 4】盒子模型">【前端 4】盒子模型</span>
+            <span class="post-date" title="2021-01-11 09:41:10">2021/01/11</span>
+        </a>
+        
+        <a  class="前端 CSS "
+           href="/2021/01/09/html/3_CSS%E8%BF%9B%E9%98%B6/"
+           data-tag="前端"
+           data-author="" >
+            <span class="post-title" title="【前端 3】CSS进阶">【前端 3】CSS进阶</span>
+            <span class="post-date" title="2021-01-09 09:43:10">2021/01/09</span>
+        </a>
+        
+        <a  class="前端 CSS "
+           href="/2021/01/05/html/2_CSS/"
+           data-tag="前端"
+           data-author="" >
+            <span class="post-title" title="【前端 2】CSS">【前端 2】CSS</span>
+            <span class="post-date" title="2021-01-05 16:22:10">2021/01/05</span>
+        </a>
+        
+        <a  class="前端 HTML "
+           href="/2021/01/04/html/1_html/"
+           data-tag="前端"
+           data-author="" >
+            <span class="post-title" title="【前端 1】HTML">【前端 1】HTML</span>
+            <span class="post-date" title="2021-01-04 10:46:10">2021/01/04</span>
+        </a>
+        
+        <a  class="区块链 fabric "
+           href="/2020/12/12/fabric/08_%E9%93%BE%E7%A0%81/"
+           data-tag="区块链"
+           data-author="" >
+            <span class="post-title" title="07_链码接口使用">07_链码接口使用</span>
+            <span class="post-date" title="2020-12-12 11:43:23">2020/12/12</span>
+        </a>
+        
+        <a  class="区块链 fabric "
+           href="/2020/12/12/fabric/02_%E9%83%A8%E7%BD%B2%E8%B0%83%E7%94%A8%E9%93%BE%E7%A0%81/"
+           data-tag="区块链"
+           data-author="" >
+            <span class="post-title" title="02_部署调用链码">02_部署调用链码</span>
+            <span class="post-date" title="2020-12-12 10:56:23">2020/12/12</span>
+        </a>
+        
+        <a  class="区块链 fabric "
+           href="/2020/12/09/fabric/07_dockerCompose%E5%90%AF%E5%8A%A8fabric/"
+           data-tag="区块链"
+           data-author="" >
+            <span class="post-title" title="06_docker compose启动节点">06_docker compose启动节点</span>
+            <span class="post-date" title="2020-12-09 11:35:23">2020/12/09</span>
+        </a>
+        
+        <a  class="区块链 fabric "
+           href="/2020/12/09/fabric/03_%E7%BD%91%E7%BB%9C%E7%BB%93%E6%9E%84%E5%8F%98%E5%8A%A8/"
+           data-tag="区块链"
+           data-author="" >
+            <span class="post-title" title="03_用户结构变动">03_用户结构变动</span>
+            <span class="post-date" title="2020-12-09 10:35:23">2020/12/09</span>
+        </a>
+        
+        <a  class="区块链 fabric "
+           href="/2020/12/02/fabric/01_%E6%90%AD%E5%BB%BA%E5%9F%BA%E7%A1%80%E7%BD%91%E7%BB%9C/"
+           data-tag="区块链"
+           data-author="" >
+            <span class="post-title" title="01_搭建基础网络">01_搭建基础网络</span>
+            <span class="post-date" title="2020-12-02 11:05:23">2020/12/02</span>
+        </a>
+        
+        <a  class="区块链 fabric "
+           href="/2020/12/01/fabric/05_java%20SDK%E4%BD%BF%E7%94%A8/"
+           data-tag="区块链"
+           data-author="" >
+            <span class="post-title" title="05_javaSDK使用">05_javaSDK使用</span>
+            <span class="post-date" title="2020-12-01 15:04:23">2020/12/01</span>
+        </a>
+        
+        <a  class="区块链 fabric "
+           href="/2020/12/01/fabric/04_%E7%94%A8%E6%88%B7%E4%BD%BF%E7%94%A8%E9%93%BE%E7%A0%81/"
+           data-tag="区块链"
+           data-author="" >
+            <span class="post-title" title="04_用户使用链码">04_用户使用链码</span>
+            <span class="post-date" title="2020-12-01 10:55:23">2020/12/01</span>
+        </a>
+        
+        <a  class="大数据 hadoop "
+           href="/2020/11/26/hadoop/%E5%AE%89%E8%A3%85/"
+           data-tag="大数据"
+           data-author="" >
+            <span class="post-title" title="【hadoop 3】hadoop分布式安装总结">【hadoop 3】hadoop分布式安装总结</span>
+            <span class="post-date" title="2020-11-26 17:50:09">2020/11/26</span>
+        </a>
+        
+        <a  class="客户端 QT "
+           href="/2020/10/29/QT/4_%E6%A8%A1%E5%9E%8B%20%E8%A7%86%E5%9B%BE%E7%BB%93%E6%9E%84/"
+           data-tag="QT"
+           data-author="" >
+            <span class="post-title" title="【QT 3】模型-视图结构">【QT 3】模型-视图结构</span>
+            <span class="post-date" title="2020-10-29 16:49:10">2020/10/29</span>
+        </a>
+        
+        <a  class="客户端 QT "
+           href="/2020/10/28/QT/3_%E6%8E%A7%E4%BB%B6/"
+           data-tag="QT"
+           data-author="" >
+            <span class="post-title" title="【QT 2】控件">【QT 2】控件</span>
+            <span class="post-date" title="2020-10-28 16:55:10">2020/10/28</span>
+        </a>
+        
+        <a  class="客户端 QT "
+           href="/2020/10/28/QT/2_%E5%B8%83%E5%B1%80%E7%AE%A1%E7%90%86/"
+           data-tag="QT"
+           data-author="" >
+            <span class="post-title" title="【QT 1】布局管理">【QT 1】布局管理</span>
+            <span class="post-date" title="2020-10-28 14:37:10">2020/10/28</span>
+        </a>
+        
+        <a  class="客户端 QT "
+           href="/2020/10/20/QT/QT%E7%95%8C%E9%9D%A2%E7%BC%96%E8%BE%91%E5%99%A8/"
+           data-tag="QT"
+           data-author="" >
+            <span class="post-title" title="【QT 4】QT界面编辑器">【QT 4】QT界面编辑器</span>
+            <span class="post-date" title="2020-10-20 15:52:10">2020/10/20</span>
+        </a>
+        
+        <a  class="SSM Spring "
+           href="/2020/06/01/%E7%AC%94%E8%AE%B0/spring/"
+           data-tag="Spring"
+           data-author="" >
+            <span class="post-title" title="【笔记】Spring总结">【笔记】Spring总结</span>
+            <span class="post-date" title="2020-06-01 03:57:17">2020/06/01</span>
+        </a>
+        
+        <a  class="笔记 "
+           href="/2020/05/12/%E7%AC%94%E8%AE%B0/%E6%95%B0%E6%8D%AE%E5%BA%93/"
+           data-tag="数据库"
+           data-author="" >
+            <span class="post-title" title="【笔记】数据库与MySQL">【笔记】数据库与MySQL</span>
+            <span class="post-date" title="2020-05-12 21:38:05">2020/05/12</span>
+        </a>
+        
+        <a  class="笔记 "
+           href="/2020/05/07/%E7%AC%94%E8%AE%B0/redis/"
+           data-tag="Redis"
+           data-author="" >
+            <span class="post-title" title="【笔记】Redis">【笔记】Redis</span>
+            <span class="post-date" title="2020-05-07 18:38:05">2020/05/07</span>
+        </a>
+        
+        <a  class="笔记 "
+           href="/2020/04/25/%E7%AC%94%E8%AE%B0/%E5%A4%9A%E7%BA%BF%E7%A8%8B/"
+           data-tag="多线程"
+           data-author="" >
+            <span class="post-title" title="【笔记】java并发">【笔记】java并发</span>
+            <span class="post-date" title="2020-04-25 15:38:01">2020/04/25</span>
+        </a>
+        
+        <a  class="大数据 hadoop "
+           href="/2020/03/18/hadoop/2_%E4%BD%BF%E7%94%A8hadoop/"
+           data-tag="大数据"
+           data-author="" >
+            <span class="post-title" title="【hadoop 2】hadoop三种模式使用">【hadoop 2】hadoop三种模式使用</span>
+            <span class="post-date" title="2020-03-18 17:49:04">2020/03/18</span>
+        </a>
+        
+        <a  class="SSM SpringBoot "
+           href="/2020/03/18/springboot/3_springboot%E7%9A%84%E9%85%8D%E7%BD%AE/"
+           data-tag="SpringBoot"
+           data-author="" >
+            <span class="post-title" title="【SpringBoot 02】配置文件">【SpringBoot 02】配置文件</span>
+            <span class="post-date" title="2020-03-18 12:58:23">2020/03/18</span>
+        </a>
+        
+        <a  class="SSM SpringBoot "
+           href="/2020/03/17/springboot/2_springboot%E7%9A%84helloworld/"
+           data-tag="SpringBoot"
+           data-author="" >
+            <span class="post-title" title="【SpringBoot 01】HelloWorld">【SpringBoot 01】HelloWorld</span>
+            <span class="post-date" title="2020-03-17 19:58:23">2020/03/17</span>
+        </a>
+        
+        <a  class="SSM SSM整合 "
+           href="/2020/03/05/3-SpringMVC/1_%E6%90%AD%E5%BB%BAspring/"
+           data-tag="java"
+           data-author="" >
+            <span class="post-title" title="【SSM实战】SSM框架整合">【SSM实战】SSM框架整合</span>
+            <span class="post-date" title="2020-03-05 20:37:01">2020/03/05</span>
+        </a>
+        
+        <a  class="SSM SpringMVC "
+           href="/2020/03/05/3-SpringMVC/7_SpringMVC%E5%BC%82%E5%B8%B8%E5%A4%84%E7%90%86%E4%B8%8E%E6%8B%A6%E6%88%AA%E5%99%A8/"
+           data-tag="java"
+           data-author="" >
+            <span class="post-title" title="【SpringMVC实战6】异常处理与拦截器">【SpringMVC实战6】异常处理与拦截器</span>
+            <span class="post-date" title="2020-03-05 13:06:19">2020/03/05</span>
+        </a>
+        
+        <a  class="SSM SpringMVC "
+           href="/2020/03/04/3-SpringMVC/6_SpringMVC%E5%93%8D%E5%BA%94/"
+           data-tag="java"
+           data-author="" >
+            <span class="post-title" title="【SpringMVC实战5】响应">【SpringMVC实战5】响应</span>
+            <span class="post-date" title="2020-03-04 19:26:39">2020/03/04</span>
+        </a>
+        
+        <a  class="SSM SpringMVC "
+           href="/2020/03/03/3-SpringMVC/4_SpringMVC%E7%9A%84%E5%B8%B8%E7%94%A8%E6%B3%A8%E8%A7%A3/"
+           data-tag="java"
+           data-author="" >
+            <span class="post-title" title="【SpringMVC实战3】常用注解">【SpringMVC实战3】常用注解</span>
+            <span class="post-date" title="2020-03-03 15:26:29">2020/03/03</span>
+        </a>
+        
+        <a  class="SSM SpringMVC "
+           href="/2020/03/03/3-SpringMVC/5_%E8%AF%B7%E6%B1%82%E5%8F%82%E6%95%B0%E7%BB%91%E5%AE%9A/"
+           data-tag="java"
+           data-author="" >
+            <span class="post-title" title="【SpringMVC实战4】请求参数绑定">【SpringMVC实战4】请求参数绑定</span>
+            <span class="post-date" title="2020-03-03 09:13:23">2020/03/03</span>
+        </a>
+        
+        <a  class="SSM SpringMVC "
+           href="/2020/03/02/3-SpringMVC/3_SpringMVC%E7%9A%84%E6%89%A7%E8%A1%8C%E6%B5%81%E7%A8%8B/"
+           data-tag="java"
+           data-author="" >
+            <span class="post-title" title="【SpringMVC实战2】执行流程">【SpringMVC实战2】执行流程</span>
+            <span class="post-date" title="2020-03-02 18:26:39">2020/03/02</span>
+        </a>
+        
+        <a  class="SSM SpringMVC "
+           href="/2020/03/02/3-SpringMVC/2_%E5%85%A5%E9%97%A8%E6%A1%88%E4%BE%8B/"
+           data-tag="java"
+           data-author="" >
+            <span class="post-title" title="【SpringMVC实战1】入门案例">【SpringMVC实战1】入门案例</span>
+            <span class="post-date" title="2020-03-02 14:26:39">2020/03/02</span>
+        </a>
+        
+        <a  class="SSM Spring "
+           href="/2020/02/21/13-Spring/8_%E4%BA%8B%E5%8A%A1%E6%8E%A7%E5%88%B6/"
+           data-tag="Spring"
+           data-author="" >
+            <span class="post-title" title="【Spring实战8】事务控制">【Spring实战8】事务控制</span>
+            <span class="post-date" title="2020-02-21 15:23:48">2020/02/21</span>
+        </a>
+        
+        <a  class="SSM Spring "
+           href="/2020/02/20/13-Spring/7_JdbcTemplate/"
+           data-tag="Spring"
+           data-author="" >
+            <span class="post-title" title="【Spring实战7】JdbcTemplate">【Spring实战7】JdbcTemplate</span>
+            <span class="post-date" title="2020-02-20 09:32:29">2020/02/20</span>
+        </a>
+        
+        <a  class="SSM Spring "
+           href="/2020/02/19/13-Spring/6_%E5%9F%BA%E4%BA%8Exml%E5%92%8C%E6%B3%A8%E8%A7%A3%E7%9A%84AOP%E9%85%8D%E7%BD%AE/"
+           data-tag="Spring"
+           data-author="" >
+            <span class="post-title" title="【Spring实战6】基于xml和注解的AOP配置">【Spring实战6】基于xml和注解的AOP配置</span>
+            <span class="post-date" title="2020-02-19 21:31:44">2020/02/19</span>
+        </a>
+        
+        <a  class="SSM Spring "
+           href="/2020/02/19/13-Spring/5_AOP/"
+           data-tag="Spring"
+           data-author="" >
+            <span class="post-title" title="【Spring实战5】AOP">【Spring实战5】AOP</span>
+            <span class="post-date" title="2020-02-19 18:56:47">2020/02/19</span>
+        </a>
+        
+        <a  class="SSM Spring "
+           href="/2020/02/18/13-Spring/4_%E5%8A%A8%E6%80%81%E4%BB%A3%E7%90%86/"
+           data-tag="Spring"
+           data-author="" >
+            <span class="post-title" title="【Spring实战4】动态代理">【Spring实战4】动态代理</span>
+            <span class="post-date" title="2020-02-18 17:15:32">2020/02/18</span>
+        </a>
+        
+        <a  class="SSM Spring "
+           href="/2020/02/14/13-Spring/3_%E5%9F%BA%E4%BA%8E%E6%B3%A8%E8%A7%A3%E7%9A%84IOC/"
+           data-tag="Spring"
+           data-author="" >
+            <span class="post-title" title="【Spring实战3】IoC注解">【Spring实战3】IoC注解</span>
+            <span class="post-date" title="2020-02-14 20:57:17">2020/02/14</span>
+        </a>
+        
+        <a  class="SSM Spring "
+           href="/2020/02/13/13-Spring/2_IOC/"
+           data-tag="Spring"
+           data-author="" >
+            <span class="post-title" title="【Spring实战2】IoC与DI">【Spring实战2】IoC与DI</span>
+            <span class="post-date" title="2020-02-13 20:56:03">2020/02/13</span>
+        </a>
+        
+        <a  class="SSM Spring "
+           href="/2020/02/13/13-Spring/1_%E7%A8%8B%E5%BA%8F%E8%80%A6%E5%90%88%E4%B8%8E%E8%A7%A3%E8%80%A6/"
+           data-tag="Spring"
+           data-author="" >
+            <span class="post-title" title="【Spring实战1】程序的耦合与解耦">【Spring实战1】程序的耦合与解耦</span>
+            <span class="post-date" title="2020-02-13 13:17:03">2020/02/13</span>
+        </a>
+        
+        <a  class="SSM MyBatis "
+           href="/2020/02/07/mybatis/10_%E6%B3%A8%E8%A7%A3%E5%BC%80%E5%8F%91/"
+           data-tag="MyBatis"
+           data-author="" >
+            <span class="post-title" title="【Mybatis实战5】注解开发">【Mybatis实战5】注解开发</span>
+            <span class="post-date" title="2020-02-07 16:18:37">2020/02/07</span>
+        </a>
+        
+        <a  class="SSM MyBatis "
+           href="/2020/02/06/mybatis/9_%E7%BC%93%E5%AD%98/"
+           data-tag="MyBatis"
+           data-author="" >
+            <span class="post-title" title="【Mybatis实战4】加载与缓存">【Mybatis实战4】加载与缓存</span>
+            <span class="post-date" title="2020-02-06 18:29:03">2020/02/06</span>
+        </a>
+        
+        <a  class="SSM MyBatis "
+           href="/2020/02/06/mybatis/8_%E5%8A%A8%E6%80%81SQL%E4%B8%8E%E5%A4%9A%E8%A1%A8%E6%93%8D%E4%BD%9C/"
+           data-tag="MyBatis"
+           data-author="" >
+            <span class="post-title" title="【Mybatis实战3】动态SQL与多表操作">【Mybatis实战3】动态SQL与多表操作</span>
+            <span class="post-date" title="2020-02-06 18:08:29">2020/02/06</span>
+        </a>
+        
+        <a  class="SSM MyBatis "
+           href="/2020/02/06/mybatis/6_mybatis%E8%BF%9B%E8%A1%8CCRUD/"
+           data-tag="MyBatis"
+           data-author="" >
+            <span class="post-title" title="【Mybatis实战2】CRUD操作">【Mybatis实战2】CRUD操作</span>
+            <span class="post-date" title="2020-02-06 13:21:03">2020/02/06</span>
+        </a>
+        
+        <a  class="SSM MyBatis "
+           href="/2020/02/05/mybatis/2_%E5%9F%BA%E4%BA%8Exml%E7%9A%84%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/"
+           data-tag="MyBatis"
+           data-author="" >
+            <span class="post-title" title="【Mybatis实战1】两种环境搭建方法及示例">【Mybatis实战1】两种环境搭建方法及示例</span>
+            <span class="post-date" title="2020-02-05 10:21:01">2020/02/05</span>
+        </a>
+        
+        <a  class="数据库 "
+           href="/2020/01/29/11-MySQL/3_%E5%A4%9A%E8%A1%A8%E6%9F%A5%E8%AF%A2%E4%B8%8E%E4%BA%8B%E5%8A%A1/"
+           data-tag="MySQL SQL"
+           data-author="" >
+            <span class="post-title" title="多表查询与事务">多表查询与事务</span>
+            <span class="post-date" title="2020-01-29 13:52:00">2020/01/29</span>
+        </a>
+        
+        <a  class="数据库 "
+           href="/2020/01/26/11-MySQL/2_SQL%E9%AB%98%E7%BA%A7/"
+           data-tag="MySQL SQL"
+           data-author="" >
+            <span class="post-title" title="数据库高级知识及SQL实现">数据库高级知识及SQL实现</span>
+            <span class="post-date" title="2020-01-26 23:01:52">2020/01/26</span>
+        </a>
+        
+        <a  class="数据库 "
+           href="/2020/01/23/11-MySQL/1_SQL%E8%AF%AD%E8%A8%80%E5%9F%BA%E6%9C%AC%E6%93%8D%E4%BD%9C/"
+           data-tag="MySQL SQL"
+           data-author="" >
+            <span class="post-title" title="SQL语言基础">SQL语言基础</span>
+            <span class="post-date" title="2020-01-23 20:06:39">2020/01/23</span>
+        </a>
+        
+        <a  class="网络 protobuf "
+           href="/2020/01/16/10-java%E7%BD%91%E7%BB%9C/2_protobuf/"
+           data-tag="protobuf"
+           data-author="" >
+            <span class="post-title" title="java使用protobuf">java使用protobuf</span>
+            <span class="post-date" title="2020-01-16 17:57:52">2020/01/16</span>
+        </a>
+        
+        <a  class="网络 HTTP "
+           href="/2020/01/15/10-java%E7%BD%91%E7%BB%9C/1_HTTP/"
+           data-tag="HTTP"
+           data-author="" >
+            <span class="post-title" title="java实现简单的HTTP">java实现简单的HTTP</span>
+            <span class="post-date" title="2020-01-15 18:03:21">2020/01/15</span>
+        </a>
+        
+        <a  class="大数据 hadoop "
+           href="/2020/01/06/hadoop/1_hadoop/"
+           data-tag="大数据"
+           data-author="" >
+            <span class="post-title" title="【hadoop 1】hadoop环境搭建">【hadoop 1】hadoop环境搭建</span>
+            <span class="post-date" title="2020-01-06 14:55:10">2020/01/06</span>
+        </a>
+        
+        <a  class="区块链 Fabric "
+           href="/2019/11/24/blockchain/09/"
+           data-tag="区块链"
+           data-author="" >
+            <span class="post-title" title="Hyperledger Fabric系统框架笔记">Hyperledger Fabric系统框架笔记</span>
+            <span class="post-date" title="2019-11-24 12:43:08">2019/11/24</span>
+        </a>
+        
+        <a  class="区块链 论文 "
+           href="/2019/11/21/blockchain/08/"
+           data-tag="区块链"
+           data-author="" >
+            <span class="post-title" title="闪电网络（四）比特币闪电网络：The Bitcoin Lightning Network">闪电网络（四）比特币闪电网络：The Bitcoin Lightning Network</span>
+            <span class="post-date" title="2019-11-21 21:31:53">2019/11/21</span>
+        </a>
+        
+        <a  class="区块链 论文 "
+           href="/2019/11/20/blockchain/07/"
+           data-tag="区块链"
+           data-author="" >
+            <span class="post-title" title="闪电网络（三）哈希时间锁合约：Hashed Timelock Contract (HTLC)">闪电网络（三）哈希时间锁合约：Hashed Timelock Contract (HTLC)</span>
+            <span class="post-date" title="2019-11-20 10:51:23">2019/11/20</span>
+        </a>
+        
+        <a  class="区块链 论文 "
+           href="/2019/11/20/blockchain/05/"
+           data-tag="区块链"
+           data-author="" >
+            <span class="post-title" title="闪电网络（二）双向支付通道：Bidirectional Payment Channels + RSMC">闪电网络（二）双向支付通道：Bidirectional Payment Channels + RSMC</span>
+            <span class="post-date" title="2019-11-20 10:51:23">2019/11/20</span>
+        </a>
+        
+        <a  class="区块链 论文 "
+           href="/2019/11/19/blockchain/06/"
+           data-tag="区块链"
+           data-author="" >
+            <span class="post-title" title="闪电网络（一）微支付通道">闪电网络（一）微支付通道</span>
+            <span class="post-date" title="2019-11-19 10:07:02">2019/11/19</span>
+        </a>
+        
+        <a  class="区块链 论文 "
+           href="/2019/11/15/blockchain/03/"
+           data-tag="区块链"
+           data-author="" >
+            <span class="post-title" title="论文翻译 OmniLedger">论文翻译 OmniLedger</span>
+            <span class="post-date" title="2019-11-15 16:15:33">2019/11/15</span>
+        </a>
+        
+        <a  class="网络 网络编程 "
+           href="/2019/11/03/networkProgram/%E7%BD%91%E7%BB%9C%E7%BC%96%E7%A8%8B10UDP%E8%BF%9E%E6%8E%A5/"
+           data-tag="网络编程"
+           data-author="" >
+            <span class="post-title" title="网络编程10：UDP连接">网络编程10：UDP连接</span>
+            <span class="post-date" title="2019-11-03 16:15:07">2019/11/03</span>
+        </a>
+        
+        <a  class="网络 网络编程 "
+           href="/2019/11/02/networkProgram/%E7%BD%91%E7%BB%9C%E7%BC%96%E7%A8%8B9TCP%E7%9A%84%E5%BC%82%E5%B8%B8/"
+           data-tag="网络编程"
+           data-author="" >
+            <span class="post-title" title="网络编程9：TCP的异常">网络编程9：TCP的异常</span>
+            <span class="post-date" title="2019-11-02 13:57:10">2019/11/02</span>
+        </a>
+        
+        <a  class="网络 网络编程 "
+           href="/2019/11/01/networkProgram/%E7%BD%91%E7%BB%9C%E7%BC%96%E7%A8%8B8TCP%E6%95%B0%E6%8D%AE%E4%BC%A0%E8%BE%93/"
+           data-tag="网络编程"
+           data-author="" >
+            <span class="post-title" title="网络编程8：TCP数据传输">网络编程8：TCP数据传输</span>
+            <span class="post-date" title="2019-11-01 18:34:10">2019/11/01</span>
+        </a>
+        
+        <a  class="网络 网络编程 "
+           href="/2019/10/31/networkProgram/%E7%BD%91%E7%BB%9C%E7%BC%96%E7%A8%8B7TCP%E8%BF%9E%E6%8E%A5%E7%8A%B6%E6%80%81/"
+           data-tag="网络编程"
+           data-author="" >
+            <span class="post-title" title="网络编程7：TCP连接状态">网络编程7：TCP连接状态</span>
+            <span class="post-date" title="2019-10-31 17:14:55">2019/10/31</span>
+        </a>
+        
+        <a  class="网络 网络编程 "
+           href="/2019/10/30/networkProgram/%E7%BD%91%E7%BB%9C%E7%BC%96%E7%A8%8B6%E5%85%B3%E9%97%AD%E8%BF%9E%E6%8E%A5/"
+           data-tag="网络编程"
+           data-author="" >
+            <span class="post-title" title="网络编程6：关闭连接">网络编程6：关闭连接</span>
+            <span class="post-date" title="2019-10-30 18:34:12">2019/10/30</span>
+        </a>
+        
+        <a  class="网络 网络编程 "
+           href="/2019/10/29/networkProgram/%E7%BD%91%E7%BB%9C%E7%BC%96%E7%A8%8B5%E7%BD%91%E7%BB%9C%E5%B7%A5%E5%85%B7/"
+           data-tag="网络编程"
+           data-author="" >
+            <span class="post-title" title="网络编程5：网络工具">网络编程5：网络工具</span>
+            <span class="post-date" title="2019-10-29 14:24:11">2019/10/29</span>
+        </a>
+        
+        <a  class="网络 网络编程 "
+           href="/2019/10/28/networkProgram/%E7%BD%91%E7%BB%9C%E7%BC%96%E7%A8%8B3UDP%E5%8D%8F%E8%AE%AE%E4%BD%BF%E7%94%A8socket/"
+           data-tag="网络编程"
+           data-author="" >
+            <span class="post-title" title="网络编程3：UDP协议使用socket">网络编程3：UDP协议使用socket</span>
+            <span class="post-date" title="2019-10-28 10:11:10">2019/10/28</span>
+        </a>
+        
+        <a  class="网络 网络编程 "
+           href="/2019/10/28/networkProgram/%E7%BD%91%E7%BB%9C%E7%BC%96%E7%A8%8B4%E6%9C%AC%E5%9C%B0socket/"
+           data-tag="网络编程"
+           data-author="" >
+            <span class="post-title" title="网络编程4：本地套接字">网络编程4：本地套接字</span>
+            <span class="post-date" title="2019-10-28 10:11:10">2019/10/28</span>
+        </a>
+        
+        <a  class="网络 网络编程 "
+           href="/2019/10/27/networkProgram/%E7%BD%91%E7%BB%9C%E7%BC%96%E7%A8%8B2TCP%E5%8D%8F%E8%AE%AE%E4%BD%BF%E7%94%A8socket/"
+           data-tag="网络编程"
+           data-author="" >
+            <span class="post-title" title="网络编程2：TCP协议使用socket">网络编程2：TCP协议使用socket</span>
+            <span class="post-date" title="2019-10-27 17:59:09">2019/10/27</span>
+        </a>
+        
+        <a  class="网络 网络编程 "
+           href="/2019/10/26/networkProgram/%E7%BD%91%E7%BB%9C%E7%BC%96%E7%A8%8B1/"
+           data-tag="网络编程"
+           data-author="" >
+            <span class="post-title" title="网络编程1：基础部分">网络编程1：基础部分</span>
+            <span class="post-date" title="2019-10-26 16:54:02">2019/10/26</span>
+        </a>
+        
+        <a  class="分布式 "
+           href="/2019/09/12/distribute/01/"
+           data-tag="分布式"
+           data-author="" >
+            <span class="post-title" title="分布式系统的一致性与共识">分布式系统的一致性与共识</span>
+            <span class="post-date" title="2019-09-12 13:47:52">2019/09/12</span>
+        </a>
+        
+        <a  class="网络 HTTP "
+           href="/2019/08/05/http/030205/"
+           data-tag="HTTP"
+           data-author="" >
+            <span class="post-title" title="HTTP协议学习（五）HTTPS与安全">HTTP协议学习（五）HTTPS与安全</span>
+            <span class="post-date" title="2019-08-05 20:46:07">2019/08/05</span>
+        </a>
+        
+        <a  class="网络 HTTP "
+           href="/2019/07/20/http/030204/"
+           data-tag="HTTP"
+           data-author="" >
+            <span class="post-title" title="HTTP协议学习（四）cookie、缓存、代理机制">HTTP协议学习（四）cookie、缓存、代理机制</span>
+            <span class="post-date" title="2019-07-20 13:15:07">2019/07/20</span>
+        </a>
+        
+        <a  class="网络 HTTP "
+           href="/2019/07/10/http/030203/"
+           data-tag="HTTP"
+           data-author="" >
+            <span class="post-title" title="HTTP协议学习（三）数据传输与连接">HTTP协议学习（三）数据传输与连接</span>
+            <span class="post-date" title="2019-07-10 14:36:55">2019/07/10</span>
+        </a>
+        
+        <a  class="网络 HTTP "
+           href="/2019/07/01/http/030202/"
+           data-tag="HTTP"
+           data-author="" >
+            <span class="post-title" title="HTTP协议学习（二）基础">HTTP协议学习（二）基础</span>
+            <span class="post-date" title="2019-07-01 14:05:51">2019/07/01</span>
+        </a>
+        
+        <a  class="网络 HTTP "
+           href="/2019/06/14/http/030201/"
+           data-tag="HTTP"
+           data-author="" >
+            <span class="post-title" title="HTTP协议学习（一）概念">HTTP协议学习（一）概念</span>
+            <span class="post-date" title="2019-06-14 16:08:25">2019/06/14</span>
+        </a>
+        
+    </nav>
+</div>
+    </div>
+    <div class="hide-list">
+        <div class="semicircle">
+            <div class="brackets first"><</div>
+            <div class="brackets">&gt;</div>
+        </div>
+    </div>
+</aside>
+<div class="post">
+    <div class="pjax">
+        <article id="post-networkProgram/网络编程6关闭连接" class="article article-type-post" itemscope itemprop="blogPost">
+    
+        <h1 class="article-title">网络编程6：关闭连接</h1>
+    
+    <div class="article-meta">
+        
+        
+        
+        <span class="book">
+            
+                <a  data-rel="网络">网络</a>/
+            
+                <a  data-rel="网络编程">网络编程</a>
+            
+        </span>
+        
+        
+        <span class="tag">
+            
+            <a class="color5">网络编程</a>
+            
+        </span>
+        
+    </div>
+    <div class="article-meta">
+        
+        创建时间:<time class="date" title='更新时间: 2020-03-06 06:19:41'>2019-10-30 18:34</time>
+        
+    </div>
+    <div class="article-meta">
+        
+        
+        
+    </div>
+    
+    <div class="toc-ref">
+    
+        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#1-四次挥手"><span class="toc-text">1. 四次挥手</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-TIME-WAIT"><span class="toc-text">2. TIME_WAIT</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#2-1-TIME-WAIT的时间"><span class="toc-text">2.1 TIME_WAIT的时间</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-2-TIME-WAIT的作用"><span class="toc-text">2.2 TIME_WAIT的作用</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-3-TIME-WAIT的危害"><span class="toc-text">2.3 TIME_WAIT的危害</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-4-Address-already-in-use错误"><span class="toc-text">2.4  Address already in use错误</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-5-优化TIME-WAIT"><span class="toc-text">2.5 优化TIME_WAIT</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3-四次挥手的总结"><span class="toc-text">3. 四次挥手的总结</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#4-发起关闭连接"><span class="toc-text">4. 发起关闭连接</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#4-1-close"><span class="toc-text">4.1 close</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4-2-shutdown"><span class="toc-text">4.2 shutdown</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4-3-两种方式对比及SIGPIPE"><span class="toc-text">4.3 两种方式对比及SIGPIPE</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4-4-资源问题"><span class="toc-text">4.4 资源问题</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#附录A-close和shutdown的编程"><span class="toc-text">附录A close和shutdown的编程</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#A-1-客户端"><span class="toc-text">A.1 客户端</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#A-2-服务器端"><span class="toc-text">A.2 服务器端</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#A-3-SIGPIPE问题"><span class="toc-text">A.3 SIGPIPE问题</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#A-4-SO-REUSEADDR"><span class="toc-text">A.4 SO_REUSEADDR</span></a></li></ol></li></ol>
+    
+<style>
+    .left-col .switch-btn,
+    .left-col .switch-area {
+        display: none;
+    }
+    .toc-level-3 i,
+    .toc-level-3 ol {
+        display: none !important;
+    }
+</style>
+</div>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>注：本系列的所有内容均为极客时间《网络编程实战》的内容总结！</p>
+<h2 id="1-四次挥手"><a href="#1-四次挥手" class="headerlink" title="1. 四次挥手"></a>1. 四次挥手</h2><p><img src="/2019/10/30/networkProgram/%E7%BD%91%E7%BB%9C%E7%BC%96%E7%A8%8B6%E5%85%B3%E9%97%AD%E8%BF%9E%E6%8E%A5/1572081082791.png" alt="1572081082791"></p>
+<p>CLOSED：无连接是活动的或正在进行</p>
+<p>FIN_WAIT1：应用说它已经完成</p>
+<p>FIN_WAIT2：另一边已同意释放</p>
+<p>ITMED_WAIT：等待所有分组死掉</p>
+<p>CLOSING：两边同时尝试关闭</p>
+<p>TIME_WAIT：另一边已初始化一个释放</p>
+<p>LAST_ACK：等待所有分组死掉</p>
+<p><strong>流程描述</strong>：</p>
+<ol>
+<li><p>主机 1 先发送 FIN 报文，并且进入FIN_WAIT_1状态</p>
+</li>
+<li><p>主机 2 接收到这个状态后进入 CLOSE_WAIT 状态，并发送一个 ACK 应答</p>
+</li>
+<li><p>同时，主机 2 通过 read 调用获得 EOF，并将此结果通知应用程序进行主动关闭操作，发送 FIN 报文。</p>
+</li>
+<li><p>主机 1 在接收到 FIN 报文后发送 ACK 应答，此时主机 1 进入 TIME_WAIT 状态。 </p>
+</li>
+</ol>
+<h2 id="2-TIME-WAIT"><a href="#2-TIME-WAIT" class="headerlink" title="2. TIME_WAIT"></a>2. TIME_WAIT</h2><blockquote>
+<p>让我们先从一例线上故障说起。在一次升级线上应用服务之后，我们发现该服务的可用性变得时好时坏，一段时间可以对外提供服务，一段时间突然又不可以，大家都百思不得其解。运维同学登录到服务所在的主机上，使用 netstat 命令查看后才发现，主机上有成千上万处于 TIME_WAIT 状态的连接。 </p>
+<p><strong>每个连接会占用一个本地端口</strong>，当在高并发的情况下，TIME_WAIT 状态的连接多到把<strong>本机可用的端口耗尽</strong>，应用服务对外表现的症状，就是不能正常工作了。当过了一段时间之后，处于 TIME_WAIT 的连接被系统回收并关闭后，释放出本地端口可供使用，应用服务对外表现为，可以正常工作。这样周而复始，便会出现了一会儿不可以，过一两分钟又可以正常工作的现象。 </p>
+</blockquote>
+<h3 id="2-1-TIME-WAIT的时间"><a href="#2-1-TIME-WAIT的时间" class="headerlink" title="2.1 TIME_WAIT的时间"></a>2.1 TIME_WAIT的时间</h3><p>主机 1 <strong>在 TIME_WAIT 停留持续时间是固定的</strong>，是最长分节生命期 MSL（maximum segment lifetime）的两倍，一般称之为 2MSL。和大多数 BSD 派生的系统一样，Linux 系统里有一个硬编码的字段，名称为TCP_TIMEWAIT_LEN，其值为 60 秒。<strong>也就是说，Linux 系统停留在 TIME_WAIT 的时间为固定的 60 秒。</strong> </p>
+<p>过了这个时间之后，主机 1 就进入 CLOSED 状态。一定要记住一点，<strong>只有发起连接终止的一方会进入 TIME_WAIT 状态</strong>。 </p>
+<h3 id="2-2-TIME-WAIT的作用"><a href="#2-2-TIME-WAIT的作用" class="headerlink" title="2.2 TIME_WAIT的作用"></a>2.2 TIME_WAIT的作用</h3><p><img src="/2019/10/30/networkProgram/%E7%BD%91%E7%BB%9C%E7%BC%96%E7%A8%8B6%E5%85%B3%E9%97%AD%E8%BF%9E%E6%8E%A5/1572081893007.png" alt="1572081893007"></p>
+<p>为什么不直接进入 CLOSED 状态，而要停留在 TIME_WAIT 这个状态？ </p>
+<ol>
+<li><p>首先，这样做是为了<strong>确保最后的 ACK 能让被动关闭方接收</strong>，从而帮助其正常关闭。</p>
+<p>TCP 在设计的时候，做了充分的容错性设计，比如，TCP 假设报文会出错，需要重传。</p>
+<p><strong>如果图中主机 1 的 ACK 报文没有传输成功，那么主机 2 就会重新发送 FIN 报文。</strong>如果主机 1 没有维护 TIME_WAIT 状态，而直接进入 CLOSED 状态，它就失去了当前状态的上下文，只能回复一个 RST 操作，从而导致被动关闭方出现错误。</p>
+<p>现在主机 1 知道自己处于 TIME_WAIT 的状态，就可以在接收到 FIN 报文之后，重新发出一个 ACK 报文，使得主机 2 可以进入正常的 CLOSED 状态。 </p>
+</li>
+<li><p>与<strong>连接“化身”</strong>和<strong>报文迷走</strong>有关系，为了让旧连接的重复分节在网络中自然消失。 </p>
+<p>在网络中，经常会发生报文经过一段时间才能到达目的地的情况（称为迷走）。如果迷走报文到达时，发现 TCP 连接四元组（源 IP，源端口，目的 IP，目的端口）所代表的连接不复存在，那么很简单，这个报文自然丢弃。 </p>
+<p>但是，如果在原连接中断后，又产生和一个原先的连接四元组完全相同的新连接（连接“化身”），如果迷失报文经过一段时间到达了这个端口，那么这个报文会被误认为是的新连接一个 TCP 分节，这样就会对 TCP 通信产生影响。 </p>
+</li>
+</ol>
+<p>所以，TCP 就设计出了这么一个机制，经过 2MSL 这个时间，<strong>足以让两个方向上的分组都被丢弃，使得原来连接的分组在网络中都自然消失，再出现的分组一定都是新化身所产生的</strong>。 </p>
+<h3 id="2-3-TIME-WAIT的危害"><a href="#2-3-TIME-WAIT的危害" class="headerlink" title="2.3 TIME_WAIT的危害"></a>2.3 TIME_WAIT的危害</h3><ol>
+<li><p>内存资源的占用</p>
+<p>这个目前看来不是太严重，基本可以忽略。 </p>
+</li>
+<li><p>对端口资源的占用 </p>
+<p>一个 TCP 连接至少消耗一个本地端口。要知道，端口资源也是有限的，一般可以开启的端口为 32768～61000 ，也可以通过net.ipv4.ip_local_port_range指定，如果 TIME_WAIT 状态过多，会导致无法创建新连接。 </p>
+</li>
+</ol>
+<h3 id="2-4-Address-already-in-use错误"><a href="#2-4-Address-already-in-use错误" class="headerlink" title="2.4  Address already in use错误"></a>2.4  Address already in use错误</h3><p><strong>每次用Ctrl+C来kill掉该服务器进程并重新启动的时候，都会出现bind错误：error:98，Address already in use。然而再kill掉该进程，再次重新启动的时候，就bind成功了</strong>。</p>
+<p><strong>原因</strong>：</p>
+<p>Linux下的TIME_WAIT大概是2分钟，服务器被kill掉之后没有释放掉的资源就是端口，这个端口会进入TIME_WAIT状态，可以使用<strong>SO_REUSEADDR</strong>来控制地址复用错误的情况</p>
+<ul>
+<li><p>SO_REUSEADDR允许启动一个监听服务器并捆绑其众所周知的端口，即使以前建立的将该端口用作他们的本地端口的连接仍存在。</p>
+</li>
+<li><p>允许在同一端口上启动同一服务器的多个实例，只要每个实例捆绑一个不同的本地IP地址即可。</p>
+</li>
+<li><p>O_REUSEADDR 允许单个进程捆绑同一端口到多个套接字上，只要每次捆绑指定不同的本地IP地址即可。</p>
+</li>
+<li><p>SO_REUSEADDR允许完全重复的捆绑：当一个IP地址和端口号已绑定到某个套接字上时，如果传输协议支持，同样的IP地址和端口还可以捆绑到另一个套接字上。一般来说本特性仅支持UDP套接字。</p>
+</li>
+</ul>
+<p>因此可以使用下面的代码来实现控制</p>
+<pre><code class="c">int on = 1;
+setsockopt(listenfd, SOL_SOCKET, SO_REUSEADDR, &amp;on, sizeof(on));</code></pre>
+<p><strong>服务器端程序，都应该设置 SO_REUSEADDR 套接字选项</strong>，以便服务端程序可以在<strong>极短时间内复用同一个端口</strong>启动。 同时要注意，<strong>SO_REUSEADDR是直接复用TIME_WAIT状态的连接，上一次连接的旧数据包会被忽略掉。</strong> </p>
+<p> TCP 连接是通过四元组唯一区分的，只要客户端不使用相同的源端口，连接服务器是没有问题的，即使使用了相同的端口，根据序列号或者时间戳，也是可以区分出新旧连接的。 </p>
+<p>而且，TCP 的机制绝对<strong>不允许在相同的地址和端口上绑定不同的服务器</strong>，即使我们设置 SO_REUSEADDR 套接字选项，也不可能在 ANY 通配符地址下和端口 9527 上重复启动两个服务器实例。如果我们启动第二个服务器实例，不出所料会得到Address already in use的报错，即使当前还没有任何一条有效 TCP 连接产生。 </p>
+<p>一个问题：对于UDP连接来说， 设置 SO_REUSEADDR 套接字选项有哪些场景和好处呢？ </p>
+<blockquote>
+<p>使用场景比较多的是组播网络，好处是，如我们在接收组播流的时候，比如用ffmpeg拉取了一个组播流，但是还想用ffmpeg拉取相同的组播流，这个时候就需要地址重用了 </p>
+</blockquote>
+<p>又一个问题：在服务器端程序中，设置 SO_REUSEADDR 套接字选项时，需要在 bind 函数之前对监听字进行设置，想一想，为什么不是对已连接的套接字进行设置呢？ </p>
+<h3 id="2-5-优化TIME-WAIT"><a href="#2-5-优化TIME-WAIT" class="headerlink" title="2.5 优化TIME_WAIT"></a>2.5 优化TIME_WAIT</h3><ol>
+<li><p>net.ipv4.tcp_max_tw_buckets </p>
+<p>表示系统同时保持TIME_WAIT套接字的最大数量，<strong>如果超过这个数字，TIME_WAIT套接字将立刻被清除并打印警告信息。</strong>默认为18000，改为5000。这个方法过于暴力，而且治标不治本，带来的问题远比解决的问题多，不推荐使用。 </p>
+</li>
+</ol>
+<ol start="2">
+<li><p>调低 TCP_TIMEWAIT_LEN，重新编译系统 </p>
+<p> 这个方法是一个不错的方法，就是将TIME_WAIT的时间长度缩小，缺点是需要“一点”内核方面的知识，能够重新编译内核。</p>
+</li>
+</ol>
+<ol start="3">
+<li><p>SO_LINGER 的设置 </p>
+<p>可以通过设置套接字选项，来设置调用 close 或者 shutdown 关闭连接时的行为。 </p>
+<pre><code class="c">int setsockopt(int sockfd, 
+               int level, 
+               int optname, 
+               const void *optval,
+               socklen_t optlen);</code></pre>
+<pre><code class="c">struct linger {　
+    int　 l_onoff;　　　　/* 0=off, nonzero=on */　
+    int　 l_linger;　　　　/* linger time, POSIX specifies units as seconds */
+}</code></pre>
+<ul>
+<li>如果l_onoff为 0，那么关闭本选项。l_linger的值被忽略，这对应了默认行为，close 或 shutdown 立即返回。如果在套接字发送缓冲区中有数据残留，系统会将试着把这些数据发送出去。</li>
+<li>如果l_onoff为非 0， 且l_linger值也为 0，那么调用 close 后，会立该发送一个 RST 标志给对端，该 TCP 连接将跳过四次挥手，也就跳过了 TIME_WAIT 状态，直接关闭。这种关闭的方式称为“强行关闭”。 在这种情况下，排队数据不会被发送，被动关闭方也不知道对端已经彻底断开。只有当被动关闭方正阻塞在recv()调用上时，接受到 RST 时，会立刻得到一个“connet reset by peer”的异常。 </li>
+</ul>
+<p>设置方法：</p>
+<pre><code class="c">struct linger so_linger;
+so_linger.l_onoff = 1;
+so_linger.l_linger = 0;
+setsockopt(s,SOL_SOCKET,SO_LINGER, &amp;so_linger,sizeof(so_linger));</code></pre>
+<ul>
+<li>如果l_onoff为非 0， 且l_linger的值也非 0，那么调用 close 后，调用 close 的线程就将阻塞，直到数据被发送出去，或者设置的l_linger计时时间到。 </li>
+</ul>
+<p>第二种可能为跨越 TIME_WAIT 状态提供了一个可能，不过是一个非常危险的行为，不值得提倡。 </p>
+</li>
+</ol>
+<ol start="4">
+<li><p>net.ipv4.tcp_tw_reuse：更安全的设置 </p>
+<p>表示开启重用。允许将TIME-WAIT sockets重新用于新的TCP连接，默认为0，表示关闭；</p>
+<pre><code class="c">net.ipv4.tcp_tw_reuse = 1</code></pre>
+<p>这个是重点，表示<strong>开启重用</strong>。允许将TIME-WAIT sockets重新用于新的TCP连接，默认为0，表示关闭；</p>
+<p>使用这个选项，需要<strong>打开对 TCP 时间戳的支持</strong>，即net.ipv4.tcp_timestamps=1（默认即为 1）。 </p>
+<p>由于引入了时间戳，我们在前面提到的 2MSL 问题就不复存在了，因为<strong>重复的数据包会因为时间戳过期被自然丢弃</strong>。 </p>
+</li>
+</ol>
+<h2 id="3-四次挥手的总结"><a href="#3-四次挥手的总结" class="headerlink" title="3. 四次挥手的总结"></a>3. 四次挥手的总结</h2><ol>
+<li>TIME_WAIT 的引入是为了让 TCP 报文得以自然消失，同时为了让被动关闭方能够正常关闭；</li>
+<li>不要试图使用SO_LINGER设置套接字选项，跳过 TIME_WAIT；</li>
+<li>现代 Linux 系统引入了更安全可控的方案，可以帮助我们尽可能地复用 TIME_WAIT 状态的连接。 </li>
+</ol>
+<h2 id="4-发起关闭连接"><a href="#4-发起关闭连接" class="headerlink" title="4. 发起关闭连接"></a>4. 发起关闭连接</h2><p>一个 TCP 连接需要经过三次握手进入数据传输阶段，最后来到连接关闭阶段。在最后的连接关闭阶段，我们需要重点关注的是“半连接”状态。因为 TCP 是双向的，这里说的方向，指的是数据流的写入 - 读出的方向。 </p>
+<ul>
+<li>客户端到服务器端的方向，指的是客户端通过套接字接口，向服务器端发送 TCP 报文；</li>
+<li>而服务器端到客户端方向则是另一个传输方向。</li>
+</ul>
+<p>在绝大数情况下，TCP 连接都是<strong>先关闭一个方向</strong>，此时<strong>另外一个方向还是可以正常进行数据传输</strong>。 </p>
+<p><strong>例子</strong></p>
+<p>客户端主动发起连接的中断，将自己到服务器端的数据流方向关闭，此时，客户端不再往服务器端写入数据，服务器端读完客户端数据后就不会再有新的报文到达。</p>
+<p>但这并不意味着，TCP 连接已经完全关闭，很有可能的是，服务器端正在对客户端的最后报文进行处理，比如去访问数据库，存入一些数据；或者是计算出某个客户端需要的值。当完成这些操作之后，服务器端把结果通过套接字写给客户端，我们说这个套接字的状态此时是“半关闭”的。最后，服务器端才有条不紊地关闭剩下的半个连接，结束这一段 TCP 连接的使命。 </p>
+<p>也就是说，<strong>客户端发起关闭连接请求之后可以保证自己不再向服务器发送数据，但是无法保证服务器不会再向客户端传输数据。</strong></p>
+<p>在socket编程中，关闭连接的请求有两种类型：close和shutdown</p>
+<h3 id="4-1-close"><a href="#4-1-close" class="headerlink" title="4.1 close"></a>4.1 close</h3><pre><code class="c">int close(int sockfd)</code></pre>
+<p>作用：对已连接的套接字执行 close 操作就可以，若成功则返回 0，若出错则返回 -1。</p>
+<p>这个函数会对套接字引用计数减1，一旦发现套接字引用计数到 0，就会对套接字进行彻底释放，并且会关闭<strong>TCP 两个方向的数据流</strong>。  </p>
+<blockquote>
+<p><strong>套接字引用计数</strong>：因为套接字可以被多个进程共享，每个套接字都有一个引用计数，如果通过 fork 的方式产生子进程，引用计数 +1， 如果调用一次 close 函数，引用计数就会 -1。</p>
+<p><strong>关闭两个方向的数据流</strong>：</p>
+<ul>
+<li><p>在输入方向：系统内核会将该套接字设置为不可读，任何读操作都会返回异常。 </p>
+</li>
+<li><p>在输出方向：系统内核尝试将发送缓冲区的数据发送给对端，并最后向对端发送一个 FIN 报文，接下来如果再对该套接字进行写操作会返回异常。 </p>
+<p>如果对端没有检测到套接字已关闭，还继续发送报文，就会收到一个 RST 报文，告诉对端：“Hi, 我已经关闭了，别再给我发数据了。” </p>
+</li>
+</ul>
+</blockquote>
+<p>close 函数并不能帮助我们关闭连接的一个方向，那么如何在需要的时候关闭一个方向呢？幸运的是，设计 TCP 协议的人帮我们想好了解决方案，这就是 shutdown 函数。 </p>
+<h3 id="4-2-shutdown"><a href="#4-2-shutdown" class="headerlink" title="4.2 shutdown"></a>4.2 shutdown</h3><pre><code class="c">int shutdown(int sockfd, int howto)</code></pre>
+<p>对已连接的套接字执行 shutdown 操作，若成功则返回 0，若出错则返回 -1。</p>
+<p>howto 是这个函数的设置选项，它的设置有三个主要选项：  </p>
+<ol>
+<li><p><strong>SHUT_RD(0)</strong>：</p>
+<p>关闭连接的“读”方向，对该套接字进行读操作直接返回 EOF。</p>
+<p>从数据角度来看，套接字上接收缓冲区已有的数据将被丢弃，如果再有新的数据流到达，会对数据进行 ACK，然后悄悄地丢弃。也就是说，对端还是会接收到 ACK，在这种情况下根本不知道数据已经被丢弃了。 </p>
+</li>
+<li><p><strong>SHUT_WR(1)</strong>：</p>
+<p>关闭连接的“写”方向，这就是常被称为”半关闭“的连接。</p>
+<p>此时，<strong>不管套接字引用计数的值是多少，都会直接关闭连接的写方向</strong>。套接字上<strong>发送缓冲区已有的数据将被立即发送出去，并发送一个 FIN 报文给对端</strong>。应用程序如果对该套接字进行写操作会报错。 </p>
+</li>
+<li><p><strong>SHUT_RDWR</strong>(2)：</p>
+<p>关闭套接字的读和写两个方向。 </p>
+<p>相当于 SHUT_RD 和 SHUT_WR 操作各一次。</p>
+</li>
+</ol>
+<h3 id="4-3-两种方式对比及SIGPIPE"><a href="#4-3-两种方式对比及SIGPIPE" class="headerlink" title="4.3 两种方式对比及SIGPIPE"></a>4.3 两种方式对比及SIGPIPE</h3><p><img src="/2019/10/30/networkProgram/%E7%BD%91%E7%BB%9C%E7%BC%96%E7%A8%8B6%E5%85%B3%E9%97%AD%E8%BF%9E%E6%8E%A5/f283b804c7e33e25a900fedc8c36f09a.png" alt="img"></p>
+<p><strong>第一个差别</strong>：</p>
+<ul>
+<li>close 会<strong>关闭连接，并释放所有连接对应的资源</strong>。</li>
+<li>shutdown 并<strong>不会释放掉套接字和所有的资源</strong>。</li>
+</ul>
+<p><strong>第二个差别</strong>：</p>
+<ul>
+<li>close 存在引用计数的概念，并不一定导致该套接字不可用；</li>
+<li>shutdown 则不管引用计数，<strong>直接使得该套接字不可用</strong>，如果有别的进程企图使用该套接字，将会受到影响。</li>
+</ul>
+<p><strong>第三个差别</strong>：</p>
+<ul>
+<li>close 的引用计数导致<strong>不一定会发出 FIN</strong> 结束报文，</li>
+<li>shutdown 则<strong>总是会发出 FIN</strong> 结束报文，这在我们打算关闭连接通知对端的时候，是非常重要的。 </li>
+</ul>
+<p><strong>SIGPIPE</strong></p>
+<p>假设server和client 已经建立了连接，客户端调用了close, 发送FIN 段给服务器（其实不一定会发送FIN段，close不能保证，只有当某个sockfd的<strong>引用计数为0，close 才会发送FIN段</strong>，否则只是将引用计数减1而已）。</p>
+<p>也就是说只有当所有进程（可能fork多个子进程都打开了这个套接字）都关闭了这个套接字，close 才会发送FIN 段），此时客户端不能再通过socket发送和接收数据，此时服务器调用read，如果接收到FIN 段会返回0。</p>
+<p>但服务器此时还是可以write 给客户端的，write调用只负责把数据交给TCP发送缓冲区就可以成功返回了，所以不会出错，而客户端收到数据后应答一个RST段，表示服务器已经不能接收数据，连接重置，<strong>服务器收到RST段后无法立刻通知应用层，只把这个状态保存在TCP协议层</strong>。如果服务器再次调用write发数据给客户端，由于TCP协议层已经处于RST状态了，因此<strong>不会将数据发出</strong>，而是<strong>发一个SIGPIPE信号</strong>给应用层，SIGPIPE信号的<strong>缺省处理动作是终止程序</strong>。</p>
+<p>简单地说，当客户端 close 一个连接时，若服务器继续向服务器发数据，服务器会收到一个 RST 响应，服务器再往这个客户端发送数据时，系统会发出一个 SIGPIPE 信号给服务器，导致服务器进程退出。</p>
+<p>（以上的客户端与服务器互换位置也是没有问题的）</p>
+<p><strong>在大多数情况下，会优选 shutdown 来完成对连接一个方向的关闭，待对端处理完之后，再完成另外一个方向的关闭。在很多情况下，连接的一端需要一直感知连接的状态，如果连接无效了，应用程序可能需要报错，或者重新发起连接等。</strong> </p>
+<h3 id="4-4-资源问题"><a href="#4-4-资源问题" class="headerlink" title="4.4 资源问题"></a>4.4 资源问题</h3><p>为什么调用exit以后不需要调用close，shutdown？</p>
+<p>因为在调用exit之后进程会退出，而进程相关的所有的资源，文件，内存，信号等内核分配的资源都会被释放，在linux中，一切皆文件，本身socket就是一种文件类型，内核会为每一个打开的文件创建file结构并维护指向改结构的引用计数，每一个进程结构中都会维护本进程打开的文件数组，数组下标就是fd，内容就指向上面的file结构，close本身就可以用来操作所有的文件，做的事就是，删除本进程打开的文件数组中指定的fd项，并把指向的file结构中的引用计数减一，等引用计数为0的时候，就会调用内部包含的文件操作close，针对于socket，它内部的实现应该就是调用shutdown，只是参数是关闭读写端，从而比较粗暴的关闭连接。 </p>
+<h2 id="附录A-close和shutdown的编程"><a href="#附录A-close和shutdown的编程" class="headerlink" title="附录A close和shutdown的编程"></a>附录A close和shutdown的编程</h2><h3 id="A-1-客户端"><a href="#A-1-客户端" class="headerlink" title="A.1 客户端"></a>A.1 客户端</h3><p>服务器端的程序相对较为复杂，在下面用代码实现</p>
+<pre><code class="c">
+# include &quot;lib/common.h&quot;
+# define    MAXLINE     4096
+
+int main(int argc, char **argv) {
+    if (argc != 2) {
+        error(1, 0, &quot;usage: graceclient &lt;IPaddress&gt;&quot;);
+    }
+
+    // 创建一个socket
+    int socket_fd;
+    socket_fd = socket(AF_INET, SOCK_STREAM, 0);
+
+    // 设置连接的目标服务器 IPv4 地址，绑定到指定的 IP 和端口；
+    struct sockaddr_in server_addr;
+    bzero(&amp;server_addr, sizeof(server_addr));
+    server_addr.sin_family = AF_INET;
+    server_addr.sin_port = htons(SERV_PORT);
+    inet_pton(AF_INET, argv[1], &amp;server_addr.sin_addr);
+
+    // 使用创建的套接字，向目标 IPv4 地址发起连接请求；
+    socklen_t server_len = sizeof(server_addr);
+    int connect_rt = connect(socket_fd, (struct sockaddr *) &amp;server_addr, server_len);
+    if (connect_rt &lt; 0) {
+        error(1, errno, &quot;connect failed &quot;);
+    }
+
+    char send_line[MAXLINE], recv_line[MAXLINE + 1];
+    int n;
+
+    fd_set readmask;
+    fd_set allreads;
+
+    // 为使用 select 做准备，初始化描述字集合
+    FD_ZERO(&amp;allreads);
+    FD_SET(0, &amp;allreads);
+    FD_SET(socket_fd, &amp;allreads);
+
+    // 主体部分，使用 select 多路复用观测在连接套接字和标准输入上的 I/O 事件
+    for (;;) {
+        readmask = allreads;
+        int rc = select(socket_fd + 1, &amp;readmask, NULL, NULL, NULL);
+        if (rc &lt;= 0)
+            error(1, errno, &quot;select failed&quot;);
+
+        // 当连接套接字上有数据可读，将数据读入到程序缓冲区中。
+        if (FD_ISSET(socket_fd, &amp;readmask)) {
+            n = read(socket_fd, recv_line, MAXLINE);
+            // 如果有异常则报错退出
+            if (n &lt; 0) {
+                error(1, errno, &quot;read error&quot;);
+            } else if (n == 0) { // 如果读到服务器端发送的 EOF 则正常退出
+                error(1, 0, &quot;server terminated \n&quot;);
+            }
+            recv_line[n] = 0;
+            fputs(recv_line, stdout);
+            fputs(&quot;\n&quot;, stdout);
+        }
+
+        // 当标准输入上有数据可读，读入后进行判断。
+        if (FD_ISSET(0, &amp;readmask)) {
+            if (fgets(send_line, MAXLINE, stdin) != NULL) {
+                // 如果输入的是“shutdown”，则关闭标准输入的 I/O 事件感知，
+                // 并调用 shutdown 函数关闭写方向；
+                if (strncmp(send_line, &quot;shutdown&quot;, 8) == 0) {
+                    FD_CLR(0, &amp;allreads);
+                    if (shutdown(socket_fd, 1)) {
+                        error(1, errno, &quot;shutdown failed&quot;);
+                    }
+                } 
+                // 如果输入的是”close“，则调用 close 函数关闭连接；
+                else if (strncmp(send_line, &quot;close&quot;, 5) == 0) {
+                    FD_CLR(0, &amp;allreads);
+                    if (close(socket_fd)) {
+                        error(1, errno, &quot;close failed&quot;);
+                    }
+                    sleep(6);
+                    exit(0);
+                } 
+                // 处理正常的输入
+                else {
+                    int i = strlen(send_line);
+                    // 将回车符截掉
+                    if (send_line[i - 1] == &#39;\n&#39;) {
+                        send_line[i - 1] = 0;
+                    }
+
+                    printf(&quot;now sending %s\n&quot;, send_line);
+                    // 调用 write 函数，通过套接字将数据发送给服务器端
+                    size_t rt = write(socket_fd, send_line, strlen(send_line));
+                    if (rt &lt; 0) {
+                        error(1, errno, &quot;write failed &quot;);
+                    }
+                    printf(&quot;send bytes: %zu \n&quot;, rt);
+                }
+
+            }
+        }
+
+    }
+
+}</code></pre>
+<h3 id="A-2-服务器端"><a href="#A-2-服务器端" class="headerlink" title="A.2 服务器端"></a>A.2 服务器端</h3><p>连接建立之后，打印出接收的字节，并重新格式化后，发送给客户端。 服务器端程序有一点需要注意，那就是对 SIGPIPE 这个信号的处理。</p>
+<pre><code class="c">
+#include &quot;lib/common.h&quot;
+
+static int count;
+
+static void sig_int(int signo) {
+    printf(&quot;\nreceived %d datagrams\n&quot;, count);
+    exit(0);
+}
+
+int main(int argc, char **argv) {
+    // 创建一个 TCP 套接字
+    int listenfd;
+    listenfd = socket(AF_INET, SOCK_STREAM, 0);
+
+    // 设置了本地服务器 IPv4 地址，绑定到了 ANY 地址和指定的端口
+    struct sockaddr_in server_addr;
+    bzero(&amp;server_addr, sizeof(server_addr));
+    server_addr.sin_family = AF_INET;
+    server_addr.sin_addr.s_addr = htonl(INADDR_ANY);
+    server_addr.sin_port = htons(SERV_PORT);
+
+    // 使用创建的套接字，对它执行 bind、listen 和 accept 操作，完成连接建立
+    int rt1 = bind(listenfd, (struct sockaddr *) &amp;server_addr, sizeof(server_addr));
+    if (rt1 &lt; 0) {
+        error(1, errno, &quot;bind failed &quot;);
+    }
+
+    int rt2 = listen(listenfd, LISTENQ);
+    if (rt2 &lt; 0) {
+        error(1, errno, &quot;listen failed &quot;);
+    }
+
+    signal(SIGINT, sig_int);
+    signal(SIGPIPE, SIG_IGN);
+
+    int connfd;
+    struct sockaddr_in client_addr;
+    socklen_t client_len = sizeof(client_addr);
+
+    if ((connfd = accept(listenfd, (struct sockaddr *) &amp;client_addr, &amp;client_len)) &lt; 0) {
+        error(1, errno, &quot;bind failed &quot;);
+    }
+
+    char message[MAXLINE];
+    count = 0;
+
+    for (;;) {
+        int n = read(connfd, message, MAXLINE);
+        if (n &lt; 0) {
+            error(1, errno, &quot;error read&quot;);
+        } else if (n == 0) {
+            error(1, 0, &quot;client closed \n&quot;);
+        }
+        // 显示收到的字符串
+        message[n] = 0;
+        printf(&quot;received %d bytes: %s\n&quot;, n, message);
+        count++;
+
+        // 对原字符串进行重新格式化
+        char send_line[MAXLINE];
+        sprintf(send_line, &quot;Hi, %s&quot;, message);
+
+        sleep(5);
+
+        int write_nc = send(connfd, send_line, strlen(send_line), 0);
+        printf(&quot;send bytes: %zu \n&quot;, write_nc);
+        if (write_nc &lt; 0) {
+            error(1, errno, &quot;error write&quot;);
+        }
+    }
+}</code></pre>
+<h3 id="A-3-SIGPIPE问题"><a href="#A-3-SIGPIPE问题" class="headerlink" title="A.3 SIGPIPE问题"></a>A.3 SIGPIPE问题</h3><p><img src="/2019/10/30/networkProgram/%E7%BD%91%E7%BB%9C%E7%BC%96%E7%A8%8B6%E5%85%B3%E9%97%AD%E8%BF%9E%E6%8E%A5/f283b804c7e33e25a900fedc8c36f09a.png" alt="img"></p>
+<p>在客户端 close 掉整个连接之后，服务器端接收到 SIGPIPE 信号，直接退出。客户端并没有收到服务器端的应答数据。  </p>
+<p>当服务器 close 一个连接时，若 client 继续向服务器发数据，根据 TCP 协议的规定，客户端会收到一个 RST 响应，client再往这个服务器发送数据时，系统会发出一个 SIGPIPE 信号给客户端进程，导致客户端进程退出。</p>
+<p>具体分析可以结合 TCP 的“四次握手”关闭。TCP 是全双工的信道，可以看作两条单双工的信道，TCP 连接两端的两个端点各负责一条。当对端调用 close 时，虽然默认行为是关闭整个两个信道，但本端只是收到 FIN 包，按照 TCP 协议的语义，表示对端只是关闭了其所负责的那一条单工信道，本端仍然可以接收数据。也就是说，因为 TCP 协议的限制，一个端点无法获知对端的 socket 是调用了 close 还是 shutdown。</p>
+<p>因为客户端调用 close 函数关闭了整个连接，当服务器端发送的“Hi, data1”分组到底时，客户端给回送一个 RST 分组；服务器端再次尝试发送“Hi, data2”第二个应答分组时，系统内核通知 SIGPIPE 信号。这是因为，在 RST 的套接字进行写操作，会直接触发 SIGPIPE 信号。 </p>
+<h3 id="A-4-SO-REUSEADDR"><a href="#A-4-SO-REUSEADDR" class="headerlink" title="A.4 SO_REUSEADDR"></a>A.4 SO_REUSEADDR</h3><p>服务器端发起的关闭连接操作，将会使得服务器对应的 TCP 连接变为 TME_WAIT 状态，从而导致两分钟内该端口不可使用</p>
+<p>下面是更改过后的服务器端代码</p>
+<pre><code class="c">
+nt main(int argc, char **argv) {
+    int listenfd;
+    listenfd = socket(AF_INET, SOCK_STREAM, 0);
+
+    struct sockaddr_in server_addr;
+    bzero(&amp;server_addr, sizeof(server_addr));
+    server_addr.sin_family = AF_INET;
+    server_addr.sin_addr.s_addr = htonl(INADDR_ANY);
+    server_addr.sin_port = htons(SERV_PORT);
+
+    // 在 bind 监听套接字之前，调用 setsockopt 方法，设置重用套接字选项：
+    int on = 1;
+    setsockopt(listenfd, SOL_SOCKET, SO_REUSEADDR, &amp;on, sizeof(on));
+
+    int rt1 = bind(listenfd, (struct sockaddr *) &amp;server_addr, sizeof(server_addr));
+    if (rt1 &lt; 0) {
+        error(1, errno, &quot;bind failed &quot;);
+    }
+
+    int rt2 = listen(listenfd, LISTENQ);
+    if (rt2 &lt; 0) {
+        error(1, errno, &quot;listen failed &quot;);
+    }
+
+    signal(SIGPIPE, SIG_IGN);
+
+    int connfd;
+    struct sockaddr_in client_addr;
+    socklen_t client_len = sizeof(client_addr);
+
+    if ((connfd = accept(listenfd, (struct sockaddr *) &amp;client_addr, &amp;client_len)) &lt; 0) {
+        error(1, errno, &quot;bind failed &quot;);
+    }
+
+    char message[MAXLINE];
+    count = 0;
+
+    for (;;) {
+        int n = read(connfd, message, MAXLINE);
+        if (n &lt; 0) {
+            error(1, errno, &quot;error read&quot;);
+        } else if (n == 0) {
+            error(1, 0, &quot;client closed \n&quot;);
+        }
+        message[n] = 0;
+        printf(&quot;received %d bytes: %s\n&quot;, n, message);
+        count++;
+    }
+}</code></pre>
+
+      
+       
+    </div>
+</article>
+
+
+
+
+
+
+
+    
+        <!-- MathJax配置，可通过单美元符号书写行内公式等 -->
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+    "HTML-CSS": {
+        preferredFont: "TeX",
+        availableFonts: ["STIX","TeX"],
+        linebreaks: { automatic:true },
+        EqnChunk: (MathJax.Hub.Browser.isMobile ? 10 : 50)
+    },
+    tex2jax: {
+        inlineMath: [ ["$", "$"], ["\\(","\\)"] ],
+        processEscapes: true,
+        ignoreClass: "tex2jax_ignore|dno",
+        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+    },
+    TeX: {
+        equationNumbers: { autoNumber: "AMS" },
+        noUndefined: { attributes: { mathcolor: "red", mathbackground: "#FFEEEE", mathsize: "90%" } },
+        Macros: { href: "{}" }
+    },
+    messageStyle: "none"
+    });
+</script>
+<!-- 给MathJax元素添加has-jax class -->
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax(), i;
+        for(i=0; i < all.length; i += 1) {
+            all[i].SourceElement().parentNode.className += ' has-jax';
+        }
+    });
+</script>
+<!-- 通过连接CDN加载MathJax的js代码 -->
+<script type="text/javascript" async
+        src="//cdn.bootcss.com/mathjax/2.7.2/MathJax.js?config=TeX-MML-AM_CHTML">
+</script>
+<input type="hidden" id="MathJax-js"
+        value="//cdn.bootcss.com/mathjax/2.7.2/MathJax.js?config=TeX-MML-AM_CHTML">
+</input>
+    
+
+
+
+
+    </div>
+    <div class="copyright">
+        <p class="footer-entry">©2019-2020 POWDER SNOW</p>
+
+    </div>
+    <div class="full-toc">
+        <button class="full"><span class="min "></span></button>
+<button class="post-toc-menu"><span class="post-toc-menu-icons"></span></button>
+<div class="post-toc"><span class="post-toc-title">目录</span>
+    <div class="post-toc-content">
+
+    </div>
+</div>
+<a class="" id="rocket" ></a>
+
+    </div>
+</div>
+<div class="acParent"></div>
+
+</body>
+<script src="/js/jquery.pjax.js?v=1.0.1" ></script>
+
+<script src="/js/script.js?v=1.0.1" ></script>
+<script>
+    var img_resize = 'default';
+    /*作者、标签的自动补全*/
+    $(function () {
+        $('.search').AutoComplete({
+            'data': ['#HTTP','#protobuf','#MySQL SQL','#Spring','#java','#QT','#区块链','#分布式','#大数据','#前端','#MyBatis','#SpringBoot','#网络编程','#Redis','#多线程','#数据库',],
+            'itemHeight': 20,
+            'width': 418
+        }).AutoComplete('show');
+    })
+    function initArticle() {
+        /*渲染对应的表格样式*/
+        
+            $(".post .pjax table").addClass("green_title");
+        
+
+        /*渲染打赏样式*/
+        
+
+        /*高亮代码块行号*/
+        
+
+        /*访问数量*/
+        
+
+        /*代码高亮，行号对齐*/
+        $('.pre-numbering').css('line-height',$('.has-numbering').css('line-height'));
+
+        
+        
+    }
+
+    /*打赏页面隐藏与展示*/
+    
+
+</script>
+
+<!--加入行号的高亮代码块样式-->
+
+<!--自定义样式设置-->
+<style>
+    
+    
+    .nav {
+        width: 544px;
+    }
+    .nav.fullscreen {
+        margin-left: -544px;
+    }
+    .nav-left {
+        width: 122px;
+    }
+    
+    
+    @media screen and (max-width: 1468px) {
+        .nav {
+            width: 492px;
+        }
+        .nav.fullscreen {
+            margin-left: -492px;
+        }
+        .nav-left {
+            width: 100px;
+        }
+    }
+    
+    
+    @media screen and (max-width: 1024px) {
+        .nav {
+            width: 492px;
+            margin-left: -492px
+        }
+        .nav.fullscreen {
+            margin-left: 0;
+        }
+        .nav .hide-list.fullscreen {
+            left: 492px
+        }
+    }
+    
+    @media screen and (max-width: 426px) {
+        .nav {
+            width: 100%;
+        }
+        .nav-left {
+            width: 100%;
+        }
+    }
+    
+    
+    .nav-right .title-list nav a .post-title, .nav-right .title-list #local-search-result a .post-title {
+        color: #383636;
+    }
+    
+    
+    .nav-right .title-list nav a .post-date, .nav-right .title-list #local-search-result a .post-date {
+        color: #5e5e5f;
+    }
+    
+    
+    .nav-right nav a.hover, #local-search-result a.hover{
+        background-color: #fbf4a8;
+    }
+    
+    
+
+    /*列表样式*/
+    
+    .post .pjax article .article-entry>ol, .post .pjax article .article-entry>ul, .post .pjax article>ol, .post .pjax article>ul{
+        border: #e2dede solid 1px;
+        border-radius: 10px;
+        padding: 10px 32px 10px 56px;
+    }
+    .post .pjax article .article-entry li>ol, .post .pjax article .article-entry li>ul,.post .pjax article li>ol, .post .pjax article li>ul{
+        padding-top: 5px;
+        padding-bottom: 5px;
+    }
+    .post .pjax article .article-entry>ol>li, .post .pjax article .article-entry>ul>li,.post .pjax article>ol>li, .post .pjax article>ul>li{
+        margin-bottom: auto;
+        margin-left: auto;
+    }
+    .post .pjax article .article-entry li>ol>li, .post .pjax article .article-entry li>ul>li,.post .pjax article li>ol>li, .post .pjax article li>ul>li{
+        margin-bottom: auto;
+        margin-left: auto;
+    }
+    
+
+    /* 背景图样式 */
+    
+    .post {
+        background: url(/img/bck.jpg);
+    }
+    
+    
+    .post.index {
+        background: url(/img/background.jpg);
+    }
+    
+
+
+    /*引用块样式*/
+    
+
+    /*文章列表背景图*/
+    
+    .nav-right:before {
+        content: ' ';
+        display: block;
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        opacity: 0.3;
+        background: url("/img/123.jpg");
+        background-repeat: no-repeat;
+        background-position: 50% 0;
+        -ms-background-size: cover;
+        -o-background-size: cover;
+        -moz-background-size: cover;
+        -webkit-background-size: cover;
+        background-size: cover;
+    }
+    
+
+    
+</style>
+
+
+
+
+
+
+
+</html>

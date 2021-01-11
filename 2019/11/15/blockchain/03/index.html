@@ -1,0 +1,1807 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>论文翻译 OmniLedger | POWDER SNOW</title>
+  <meta name="keywords" content=" 区块链 ">
+  <meta name="description" content="论文翻译 OmniLedger | POWDER SNOW">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<meta property="og:type" content="website">
+<meta property="og:title" content="categories">
+<meta property="og:url" content="http://yoursite.com/categories/index.html">
+<meta property="og:site_name" content="POWDER SNOW">
+<meta property="article:published_time" content="2018-03-02T04:33:16.000Z">
+<meta property="article:modified_time" content="2020-03-05T13:28:59.839Z">
+<meta property="article:author" content="冯冠雄">
+<meta name="twitter:card" content="summary">
+
+
+<link rel="icon" href="/img/avatar.jpg">
+
+<link href="/css/style.css?v=1.0.1" rel="stylesheet">
+
+<link href="/css/hl_theme/atom-light.css?v=1.0.1" rel="stylesheet">
+
+<link href="//cdn.bootcss.com/animate.css/3.5.2/animate.min.css" rel="stylesheet">
+<link href="//cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+
+<script src="//cdn.bootcss.com/jquery/2.2.4/jquery.min.js"></script>
+<script src="/js/jquery.autocomplete.min.js?v=1.0.1" ></script>
+
+<script src="//cdn.bootcss.com/highlight.js/9.12.0/highlight.min.js"></script>
+<script>
+    hljs.initHighlightingOnLoad();
+</script>
+
+<script src="//cdn.bootcss.com/nprogress/0.2.0/nprogress.min.js"></script>
+
+
+
+<script src="//cdn.bootcss.com/jquery-cookie/1.4.1/jquery.cookie.min.js" ></script>
+
+<script src="/js/iconfont.js?v=1.0.1" ></script>
+
+<meta name="generator" content="Hexo 4.2.0"></head>
+<div style="display: none">
+  <input class="theme_disqus_on" value="false">
+  <input class="theme_preload_comment" value="false">
+  <input class="theme_blog_path" value="">
+</div>
+
+<body>
+<aside class="nav">
+    <div class="nav-left">
+        <a href="/" class="avatar_target">
+    <img class="avatar" src="/img/avatar.jpg" />
+</a>
+<div class="author">
+    <span>冯冠雄</span>
+</div>
+
+<div class="icon">
+    
+        
+        <a title="github" href="https://github.com/xiong-Fgx" target="_blank">
+            
+                <svg class="iconfont-svg" aria-hidden="true">
+                    <use xlink:href="#icon-github"></use>
+                </svg>
+            
+        </a>
+        
+    
+        
+        <a title="linkedin" href="https://www.linkedin.com/in/guanxiong-feng-8b6aa8179" target="_blank">
+            
+                <svg class="iconfont-svg" aria-hidden="true">
+                    <use xlink:href="#icon-linkedin"></use>
+                </svg>
+            
+        </a>
+        
+    
+        
+        <a title="email" href="mailto:guanxiongf@gmail.com" target="_blank">
+            
+                <svg class="iconfont-svg" aria-hidden="true">
+                    <use xlink:href="#icon-email"></use>
+                </svg>
+            
+        </a>
+        
+    
+</div>
+
+
+
+
+<ul>
+    <li><div class="all active">全部文章</div></li>
+    
+        
+            
+            <li><div data-rel="网络"><i class="fold iconfont icon-right"></i>网络</div>
+                
+                    <ul class="sub hide">
+                        
+                        <li><div data-rel="HTTP">HTTP</div>
+                            
+                        </li>
+                            
+                        <li><div data-rel="protobuf">protobuf</div>
+                            
+                        </li>
+                            
+                        <li><div data-rel="网络编程">网络编程</div>
+                            
+                        </li>
+                            
+                    </ul>
+                
+            </li>
+            
+        
+    
+        
+            
+            <li><div data-rel="数据库">数据库</div>
+                
+            </li>
+            
+        
+    
+        
+            
+        
+    
+        
+            
+            <li><div data-rel="SSM"><i class="fold iconfont icon-right"></i>SSM</div>
+                
+                    <ul class="sub hide">
+                        
+                        <li><div data-rel="SSM整合">SSM整合</div>
+                            
+                        </li>
+                            
+                        <li><div data-rel="Spring">Spring</div>
+                            
+                        </li>
+                            
+                        <li><div data-rel="SpringMVC">SpringMVC</div>
+                            
+                        </li>
+                            
+                        <li><div data-rel="MyBatis">MyBatis</div>
+                            
+                        </li>
+                            
+                        <li><div data-rel="SpringBoot">SpringBoot</div>
+                            
+                        </li>
+                            
+                    </ul>
+                
+            </li>
+            
+        
+    
+        
+            
+        
+    
+        
+            
+        
+    
+        
+            
+        
+    
+        
+            
+        
+    
+        
+            
+            <li><div data-rel="客户端"><i class="fold iconfont icon-right"></i>客户端</div>
+                
+                    <ul class="sub hide">
+                        
+                        <li><div data-rel="QT">QT</div>
+                            
+                        </li>
+                            
+                    </ul>
+                
+            </li>
+            
+        
+    
+        
+            
+            <li><div data-rel="区块链"><i class="fold iconfont icon-right"></i>区块链</div>
+                
+                    <ul class="sub hide">
+                        
+                        <li><div data-rel="论文">论文</div>
+                            
+                        </li>
+                            
+                        <li><div data-rel="Fabric">Fabric</div>
+                            
+                        </li>
+                            
+                        <li><div data-rel="fabric">fabric</div>
+                            
+                        </li>
+                            
+                    </ul>
+                
+            </li>
+            
+        
+    
+        
+            
+            <li><div data-rel="分布式">分布式</div>
+                
+            </li>
+            
+        
+    
+        
+            
+            <li><div data-rel="大数据"><i class="fold iconfont icon-right"></i>大数据</div>
+                
+                    <ul class="sub hide">
+                        
+                        <li><div data-rel="hadoop">hadoop</div>
+                            
+                        </li>
+                            
+                    </ul>
+                
+            </li>
+            
+        
+    
+        
+            
+            <li><div data-rel="前端"><i class="fold iconfont icon-right"></i>前端</div>
+                
+                    <ul class="sub hide">
+                        
+                        <li><div data-rel="HTML">HTML</div>
+                            
+                        </li>
+                            
+                        <li><div data-rel="CSS">CSS</div>
+                            
+                        </li>
+                            
+                    </ul>
+                
+            </li>
+            
+        
+    
+        
+            
+        
+    
+        
+            
+        
+    
+        
+            
+        
+    
+        
+            
+        
+    
+        
+            
+        
+    
+        
+            
+            <li><div data-rel="笔记">笔记</div>
+                
+            </li>
+            
+        
+    
+        
+            
+        
+    
+        
+            
+        
+    
+        
+            
+        
+    
+        
+            
+        
+    
+        
+            
+        
+    
+</ul>
+<div class="left-bottom">
+    <div class="menus">
+    
+    
+    
+    
+    </div>
+    <div></div>
+</div>
+<input type="hidden" id="yelog_site_posts_number" value="71">
+
+<div style="display: none">
+    <span id="busuanzi_value_site_uv"></span>
+    <span id="busuanzi_value_site_pv"></span>
+</div>
+
+    </div>
+    <div class="nav-right">
+        <div class="friends-area">
+    <div class="friends-title">
+        友情链接
+        <i class="back-title-list"></i>
+    </div>
+    <div class="friends-content">
+        <ul>
+            
+            <li><a target="_blank" href="http://yelog.org/">叶落阁</a></li>
+            
+        </ul>
+    </div>
+</div>
+        <div class="title-list">
+    <form onkeydown="if(event.keyCode === 13){return false;}">
+        <input id="local-search-input" class="search" type="text" placeholder="Search..." />
+        <i class="cross"></i>
+        <span>
+            <label for="tagswitch">Tags:</label>
+            <input id="tagswitch" type="checkbox" style="display: none" />
+            <i id="tagsWitchIcon"></i>
+        </span>
+    </form>
+    <div class="tags-list">
+    
+    <li class="article-tag-list-item">
+        <a class="color5">HTTP</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a class="color4">protobuf</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a class="color5">MySQL SQL</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a class="color2">Spring</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a class="color5">java</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a class="color3">QT</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a class="color4">区块链</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a class="color4">分布式</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a class="color4">大数据</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a class="color3">前端</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a class="color3">MyBatis</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a class="color1">SpringBoot</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a class="color5">网络编程</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a class="color1">Redis</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a class="color4">多线程</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a class="color4">数据库</a>
+    </li>
+    
+    <div class="clearfix"></div>
+</div>
+
+    
+    <nav id="title-list-nav">
+        
+        <a  class="前端 CSS "
+           href="/2021/01/11/html/4_%E7%9B%92%E5%AD%90%E6%A8%A1%E5%9E%8B/"
+           data-tag="前端"
+           data-author="" >
+            <span class="post-title" title="【前端 4】盒子模型">【前端 4】盒子模型</span>
+            <span class="post-date" title="2021-01-11 09:41:10">2021/01/11</span>
+        </a>
+        
+        <a  class="前端 CSS "
+           href="/2021/01/09/html/3_CSS%E8%BF%9B%E9%98%B6/"
+           data-tag="前端"
+           data-author="" >
+            <span class="post-title" title="【前端 3】CSS进阶">【前端 3】CSS进阶</span>
+            <span class="post-date" title="2021-01-09 09:43:10">2021/01/09</span>
+        </a>
+        
+        <a  class="前端 CSS "
+           href="/2021/01/05/html/2_CSS/"
+           data-tag="前端"
+           data-author="" >
+            <span class="post-title" title="【前端 2】CSS">【前端 2】CSS</span>
+            <span class="post-date" title="2021-01-05 16:22:10">2021/01/05</span>
+        </a>
+        
+        <a  class="前端 HTML "
+           href="/2021/01/04/html/1_html/"
+           data-tag="前端"
+           data-author="" >
+            <span class="post-title" title="【前端 1】HTML">【前端 1】HTML</span>
+            <span class="post-date" title="2021-01-04 10:46:10">2021/01/04</span>
+        </a>
+        
+        <a  class="区块链 fabric "
+           href="/2020/12/12/fabric/08_%E9%93%BE%E7%A0%81/"
+           data-tag="区块链"
+           data-author="" >
+            <span class="post-title" title="07_链码接口使用">07_链码接口使用</span>
+            <span class="post-date" title="2020-12-12 11:43:23">2020/12/12</span>
+        </a>
+        
+        <a  class="区块链 fabric "
+           href="/2020/12/12/fabric/02_%E9%83%A8%E7%BD%B2%E8%B0%83%E7%94%A8%E9%93%BE%E7%A0%81/"
+           data-tag="区块链"
+           data-author="" >
+            <span class="post-title" title="02_部署调用链码">02_部署调用链码</span>
+            <span class="post-date" title="2020-12-12 10:56:23">2020/12/12</span>
+        </a>
+        
+        <a  class="区块链 fabric "
+           href="/2020/12/09/fabric/07_dockerCompose%E5%90%AF%E5%8A%A8fabric/"
+           data-tag="区块链"
+           data-author="" >
+            <span class="post-title" title="06_docker compose启动节点">06_docker compose启动节点</span>
+            <span class="post-date" title="2020-12-09 11:35:23">2020/12/09</span>
+        </a>
+        
+        <a  class="区块链 fabric "
+           href="/2020/12/09/fabric/03_%E7%BD%91%E7%BB%9C%E7%BB%93%E6%9E%84%E5%8F%98%E5%8A%A8/"
+           data-tag="区块链"
+           data-author="" >
+            <span class="post-title" title="03_用户结构变动">03_用户结构变动</span>
+            <span class="post-date" title="2020-12-09 10:35:23">2020/12/09</span>
+        </a>
+        
+        <a  class="区块链 fabric "
+           href="/2020/12/02/fabric/01_%E6%90%AD%E5%BB%BA%E5%9F%BA%E7%A1%80%E7%BD%91%E7%BB%9C/"
+           data-tag="区块链"
+           data-author="" >
+            <span class="post-title" title="01_搭建基础网络">01_搭建基础网络</span>
+            <span class="post-date" title="2020-12-02 11:05:23">2020/12/02</span>
+        </a>
+        
+        <a  class="区块链 fabric "
+           href="/2020/12/01/fabric/05_java%20SDK%E4%BD%BF%E7%94%A8/"
+           data-tag="区块链"
+           data-author="" >
+            <span class="post-title" title="05_javaSDK使用">05_javaSDK使用</span>
+            <span class="post-date" title="2020-12-01 15:04:23">2020/12/01</span>
+        </a>
+        
+        <a  class="区块链 fabric "
+           href="/2020/12/01/fabric/04_%E7%94%A8%E6%88%B7%E4%BD%BF%E7%94%A8%E9%93%BE%E7%A0%81/"
+           data-tag="区块链"
+           data-author="" >
+            <span class="post-title" title="04_用户使用链码">04_用户使用链码</span>
+            <span class="post-date" title="2020-12-01 10:55:23">2020/12/01</span>
+        </a>
+        
+        <a  class="大数据 hadoop "
+           href="/2020/11/26/hadoop/%E5%AE%89%E8%A3%85/"
+           data-tag="大数据"
+           data-author="" >
+            <span class="post-title" title="【hadoop 3】hadoop分布式安装总结">【hadoop 3】hadoop分布式安装总结</span>
+            <span class="post-date" title="2020-11-26 17:50:09">2020/11/26</span>
+        </a>
+        
+        <a  class="客户端 QT "
+           href="/2020/10/29/QT/4_%E6%A8%A1%E5%9E%8B%20%E8%A7%86%E5%9B%BE%E7%BB%93%E6%9E%84/"
+           data-tag="QT"
+           data-author="" >
+            <span class="post-title" title="【QT 3】模型-视图结构">【QT 3】模型-视图结构</span>
+            <span class="post-date" title="2020-10-29 16:49:10">2020/10/29</span>
+        </a>
+        
+        <a  class="客户端 QT "
+           href="/2020/10/28/QT/3_%E6%8E%A7%E4%BB%B6/"
+           data-tag="QT"
+           data-author="" >
+            <span class="post-title" title="【QT 2】控件">【QT 2】控件</span>
+            <span class="post-date" title="2020-10-28 16:55:10">2020/10/28</span>
+        </a>
+        
+        <a  class="客户端 QT "
+           href="/2020/10/28/QT/2_%E5%B8%83%E5%B1%80%E7%AE%A1%E7%90%86/"
+           data-tag="QT"
+           data-author="" >
+            <span class="post-title" title="【QT 1】布局管理">【QT 1】布局管理</span>
+            <span class="post-date" title="2020-10-28 14:37:10">2020/10/28</span>
+        </a>
+        
+        <a  class="客户端 QT "
+           href="/2020/10/20/QT/QT%E7%95%8C%E9%9D%A2%E7%BC%96%E8%BE%91%E5%99%A8/"
+           data-tag="QT"
+           data-author="" >
+            <span class="post-title" title="【QT 4】QT界面编辑器">【QT 4】QT界面编辑器</span>
+            <span class="post-date" title="2020-10-20 15:52:10">2020/10/20</span>
+        </a>
+        
+        <a  class="SSM Spring "
+           href="/2020/06/01/%E7%AC%94%E8%AE%B0/spring/"
+           data-tag="Spring"
+           data-author="" >
+            <span class="post-title" title="【笔记】Spring总结">【笔记】Spring总结</span>
+            <span class="post-date" title="2020-06-01 03:57:17">2020/06/01</span>
+        </a>
+        
+        <a  class="笔记 "
+           href="/2020/05/12/%E7%AC%94%E8%AE%B0/%E6%95%B0%E6%8D%AE%E5%BA%93/"
+           data-tag="数据库"
+           data-author="" >
+            <span class="post-title" title="【笔记】数据库与MySQL">【笔记】数据库与MySQL</span>
+            <span class="post-date" title="2020-05-12 21:38:05">2020/05/12</span>
+        </a>
+        
+        <a  class="笔记 "
+           href="/2020/05/07/%E7%AC%94%E8%AE%B0/redis/"
+           data-tag="Redis"
+           data-author="" >
+            <span class="post-title" title="【笔记】Redis">【笔记】Redis</span>
+            <span class="post-date" title="2020-05-07 18:38:05">2020/05/07</span>
+        </a>
+        
+        <a  class="笔记 "
+           href="/2020/04/25/%E7%AC%94%E8%AE%B0/%E5%A4%9A%E7%BA%BF%E7%A8%8B/"
+           data-tag="多线程"
+           data-author="" >
+            <span class="post-title" title="【笔记】java并发">【笔记】java并发</span>
+            <span class="post-date" title="2020-04-25 15:38:01">2020/04/25</span>
+        </a>
+        
+        <a  class="大数据 hadoop "
+           href="/2020/03/18/hadoop/2_%E4%BD%BF%E7%94%A8hadoop/"
+           data-tag="大数据"
+           data-author="" >
+            <span class="post-title" title="【hadoop 2】hadoop三种模式使用">【hadoop 2】hadoop三种模式使用</span>
+            <span class="post-date" title="2020-03-18 17:49:04">2020/03/18</span>
+        </a>
+        
+        <a  class="SSM SpringBoot "
+           href="/2020/03/18/springboot/3_springboot%E7%9A%84%E9%85%8D%E7%BD%AE/"
+           data-tag="SpringBoot"
+           data-author="" >
+            <span class="post-title" title="【SpringBoot 02】配置文件">【SpringBoot 02】配置文件</span>
+            <span class="post-date" title="2020-03-18 12:58:23">2020/03/18</span>
+        </a>
+        
+        <a  class="SSM SpringBoot "
+           href="/2020/03/17/springboot/2_springboot%E7%9A%84helloworld/"
+           data-tag="SpringBoot"
+           data-author="" >
+            <span class="post-title" title="【SpringBoot 01】HelloWorld">【SpringBoot 01】HelloWorld</span>
+            <span class="post-date" title="2020-03-17 19:58:23">2020/03/17</span>
+        </a>
+        
+        <a  class="SSM SSM整合 "
+           href="/2020/03/05/3-SpringMVC/1_%E6%90%AD%E5%BB%BAspring/"
+           data-tag="java"
+           data-author="" >
+            <span class="post-title" title="【SSM实战】SSM框架整合">【SSM实战】SSM框架整合</span>
+            <span class="post-date" title="2020-03-05 20:37:01">2020/03/05</span>
+        </a>
+        
+        <a  class="SSM SpringMVC "
+           href="/2020/03/05/3-SpringMVC/7_SpringMVC%E5%BC%82%E5%B8%B8%E5%A4%84%E7%90%86%E4%B8%8E%E6%8B%A6%E6%88%AA%E5%99%A8/"
+           data-tag="java"
+           data-author="" >
+            <span class="post-title" title="【SpringMVC实战6】异常处理与拦截器">【SpringMVC实战6】异常处理与拦截器</span>
+            <span class="post-date" title="2020-03-05 13:06:19">2020/03/05</span>
+        </a>
+        
+        <a  class="SSM SpringMVC "
+           href="/2020/03/04/3-SpringMVC/6_SpringMVC%E5%93%8D%E5%BA%94/"
+           data-tag="java"
+           data-author="" >
+            <span class="post-title" title="【SpringMVC实战5】响应">【SpringMVC实战5】响应</span>
+            <span class="post-date" title="2020-03-04 19:26:39">2020/03/04</span>
+        </a>
+        
+        <a  class="SSM SpringMVC "
+           href="/2020/03/03/3-SpringMVC/4_SpringMVC%E7%9A%84%E5%B8%B8%E7%94%A8%E6%B3%A8%E8%A7%A3/"
+           data-tag="java"
+           data-author="" >
+            <span class="post-title" title="【SpringMVC实战3】常用注解">【SpringMVC实战3】常用注解</span>
+            <span class="post-date" title="2020-03-03 15:26:29">2020/03/03</span>
+        </a>
+        
+        <a  class="SSM SpringMVC "
+           href="/2020/03/03/3-SpringMVC/5_%E8%AF%B7%E6%B1%82%E5%8F%82%E6%95%B0%E7%BB%91%E5%AE%9A/"
+           data-tag="java"
+           data-author="" >
+            <span class="post-title" title="【SpringMVC实战4】请求参数绑定">【SpringMVC实战4】请求参数绑定</span>
+            <span class="post-date" title="2020-03-03 09:13:23">2020/03/03</span>
+        </a>
+        
+        <a  class="SSM SpringMVC "
+           href="/2020/03/02/3-SpringMVC/3_SpringMVC%E7%9A%84%E6%89%A7%E8%A1%8C%E6%B5%81%E7%A8%8B/"
+           data-tag="java"
+           data-author="" >
+            <span class="post-title" title="【SpringMVC实战2】执行流程">【SpringMVC实战2】执行流程</span>
+            <span class="post-date" title="2020-03-02 18:26:39">2020/03/02</span>
+        </a>
+        
+        <a  class="SSM SpringMVC "
+           href="/2020/03/02/3-SpringMVC/2_%E5%85%A5%E9%97%A8%E6%A1%88%E4%BE%8B/"
+           data-tag="java"
+           data-author="" >
+            <span class="post-title" title="【SpringMVC实战1】入门案例">【SpringMVC实战1】入门案例</span>
+            <span class="post-date" title="2020-03-02 14:26:39">2020/03/02</span>
+        </a>
+        
+        <a  class="SSM Spring "
+           href="/2020/02/21/13-Spring/8_%E4%BA%8B%E5%8A%A1%E6%8E%A7%E5%88%B6/"
+           data-tag="Spring"
+           data-author="" >
+            <span class="post-title" title="【Spring实战8】事务控制">【Spring实战8】事务控制</span>
+            <span class="post-date" title="2020-02-21 15:23:48">2020/02/21</span>
+        </a>
+        
+        <a  class="SSM Spring "
+           href="/2020/02/20/13-Spring/7_JdbcTemplate/"
+           data-tag="Spring"
+           data-author="" >
+            <span class="post-title" title="【Spring实战7】JdbcTemplate">【Spring实战7】JdbcTemplate</span>
+            <span class="post-date" title="2020-02-20 09:32:29">2020/02/20</span>
+        </a>
+        
+        <a  class="SSM Spring "
+           href="/2020/02/19/13-Spring/6_%E5%9F%BA%E4%BA%8Exml%E5%92%8C%E6%B3%A8%E8%A7%A3%E7%9A%84AOP%E9%85%8D%E7%BD%AE/"
+           data-tag="Spring"
+           data-author="" >
+            <span class="post-title" title="【Spring实战6】基于xml和注解的AOP配置">【Spring实战6】基于xml和注解的AOP配置</span>
+            <span class="post-date" title="2020-02-19 21:31:44">2020/02/19</span>
+        </a>
+        
+        <a  class="SSM Spring "
+           href="/2020/02/19/13-Spring/5_AOP/"
+           data-tag="Spring"
+           data-author="" >
+            <span class="post-title" title="【Spring实战5】AOP">【Spring实战5】AOP</span>
+            <span class="post-date" title="2020-02-19 18:56:47">2020/02/19</span>
+        </a>
+        
+        <a  class="SSM Spring "
+           href="/2020/02/18/13-Spring/4_%E5%8A%A8%E6%80%81%E4%BB%A3%E7%90%86/"
+           data-tag="Spring"
+           data-author="" >
+            <span class="post-title" title="【Spring实战4】动态代理">【Spring实战4】动态代理</span>
+            <span class="post-date" title="2020-02-18 17:15:32">2020/02/18</span>
+        </a>
+        
+        <a  class="SSM Spring "
+           href="/2020/02/14/13-Spring/3_%E5%9F%BA%E4%BA%8E%E6%B3%A8%E8%A7%A3%E7%9A%84IOC/"
+           data-tag="Spring"
+           data-author="" >
+            <span class="post-title" title="【Spring实战3】IoC注解">【Spring实战3】IoC注解</span>
+            <span class="post-date" title="2020-02-14 20:57:17">2020/02/14</span>
+        </a>
+        
+        <a  class="SSM Spring "
+           href="/2020/02/13/13-Spring/2_IOC/"
+           data-tag="Spring"
+           data-author="" >
+            <span class="post-title" title="【Spring实战2】IoC与DI">【Spring实战2】IoC与DI</span>
+            <span class="post-date" title="2020-02-13 20:56:03">2020/02/13</span>
+        </a>
+        
+        <a  class="SSM Spring "
+           href="/2020/02/13/13-Spring/1_%E7%A8%8B%E5%BA%8F%E8%80%A6%E5%90%88%E4%B8%8E%E8%A7%A3%E8%80%A6/"
+           data-tag="Spring"
+           data-author="" >
+            <span class="post-title" title="【Spring实战1】程序的耦合与解耦">【Spring实战1】程序的耦合与解耦</span>
+            <span class="post-date" title="2020-02-13 13:17:03">2020/02/13</span>
+        </a>
+        
+        <a  class="SSM MyBatis "
+           href="/2020/02/07/mybatis/10_%E6%B3%A8%E8%A7%A3%E5%BC%80%E5%8F%91/"
+           data-tag="MyBatis"
+           data-author="" >
+            <span class="post-title" title="【Mybatis实战5】注解开发">【Mybatis实战5】注解开发</span>
+            <span class="post-date" title="2020-02-07 16:18:37">2020/02/07</span>
+        </a>
+        
+        <a  class="SSM MyBatis "
+           href="/2020/02/06/mybatis/9_%E7%BC%93%E5%AD%98/"
+           data-tag="MyBatis"
+           data-author="" >
+            <span class="post-title" title="【Mybatis实战4】加载与缓存">【Mybatis实战4】加载与缓存</span>
+            <span class="post-date" title="2020-02-06 18:29:03">2020/02/06</span>
+        </a>
+        
+        <a  class="SSM MyBatis "
+           href="/2020/02/06/mybatis/8_%E5%8A%A8%E6%80%81SQL%E4%B8%8E%E5%A4%9A%E8%A1%A8%E6%93%8D%E4%BD%9C/"
+           data-tag="MyBatis"
+           data-author="" >
+            <span class="post-title" title="【Mybatis实战3】动态SQL与多表操作">【Mybatis实战3】动态SQL与多表操作</span>
+            <span class="post-date" title="2020-02-06 18:08:29">2020/02/06</span>
+        </a>
+        
+        <a  class="SSM MyBatis "
+           href="/2020/02/06/mybatis/6_mybatis%E8%BF%9B%E8%A1%8CCRUD/"
+           data-tag="MyBatis"
+           data-author="" >
+            <span class="post-title" title="【Mybatis实战2】CRUD操作">【Mybatis实战2】CRUD操作</span>
+            <span class="post-date" title="2020-02-06 13:21:03">2020/02/06</span>
+        </a>
+        
+        <a  class="SSM MyBatis "
+           href="/2020/02/05/mybatis/2_%E5%9F%BA%E4%BA%8Exml%E7%9A%84%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/"
+           data-tag="MyBatis"
+           data-author="" >
+            <span class="post-title" title="【Mybatis实战1】两种环境搭建方法及示例">【Mybatis实战1】两种环境搭建方法及示例</span>
+            <span class="post-date" title="2020-02-05 10:21:01">2020/02/05</span>
+        </a>
+        
+        <a  class="数据库 "
+           href="/2020/01/29/11-MySQL/3_%E5%A4%9A%E8%A1%A8%E6%9F%A5%E8%AF%A2%E4%B8%8E%E4%BA%8B%E5%8A%A1/"
+           data-tag="MySQL SQL"
+           data-author="" >
+            <span class="post-title" title="多表查询与事务">多表查询与事务</span>
+            <span class="post-date" title="2020-01-29 13:52:00">2020/01/29</span>
+        </a>
+        
+        <a  class="数据库 "
+           href="/2020/01/26/11-MySQL/2_SQL%E9%AB%98%E7%BA%A7/"
+           data-tag="MySQL SQL"
+           data-author="" >
+            <span class="post-title" title="数据库高级知识及SQL实现">数据库高级知识及SQL实现</span>
+            <span class="post-date" title="2020-01-26 23:01:52">2020/01/26</span>
+        </a>
+        
+        <a  class="数据库 "
+           href="/2020/01/23/11-MySQL/1_SQL%E8%AF%AD%E8%A8%80%E5%9F%BA%E6%9C%AC%E6%93%8D%E4%BD%9C/"
+           data-tag="MySQL SQL"
+           data-author="" >
+            <span class="post-title" title="SQL语言基础">SQL语言基础</span>
+            <span class="post-date" title="2020-01-23 20:06:39">2020/01/23</span>
+        </a>
+        
+        <a  class="网络 protobuf "
+           href="/2020/01/16/10-java%E7%BD%91%E7%BB%9C/2_protobuf/"
+           data-tag="protobuf"
+           data-author="" >
+            <span class="post-title" title="java使用protobuf">java使用protobuf</span>
+            <span class="post-date" title="2020-01-16 17:57:52">2020/01/16</span>
+        </a>
+        
+        <a  class="网络 HTTP "
+           href="/2020/01/15/10-java%E7%BD%91%E7%BB%9C/1_HTTP/"
+           data-tag="HTTP"
+           data-author="" >
+            <span class="post-title" title="java实现简单的HTTP">java实现简单的HTTP</span>
+            <span class="post-date" title="2020-01-15 18:03:21">2020/01/15</span>
+        </a>
+        
+        <a  class="大数据 hadoop "
+           href="/2020/01/06/hadoop/1_hadoop/"
+           data-tag="大数据"
+           data-author="" >
+            <span class="post-title" title="【hadoop 1】hadoop环境搭建">【hadoop 1】hadoop环境搭建</span>
+            <span class="post-date" title="2020-01-06 14:55:10">2020/01/06</span>
+        </a>
+        
+        <a  class="区块链 Fabric "
+           href="/2019/11/24/blockchain/09/"
+           data-tag="区块链"
+           data-author="" >
+            <span class="post-title" title="Hyperledger Fabric系统框架笔记">Hyperledger Fabric系统框架笔记</span>
+            <span class="post-date" title="2019-11-24 12:43:08">2019/11/24</span>
+        </a>
+        
+        <a  class="区块链 论文 "
+           href="/2019/11/21/blockchain/08/"
+           data-tag="区块链"
+           data-author="" >
+            <span class="post-title" title="闪电网络（四）比特币闪电网络：The Bitcoin Lightning Network">闪电网络（四）比特币闪电网络：The Bitcoin Lightning Network</span>
+            <span class="post-date" title="2019-11-21 21:31:53">2019/11/21</span>
+        </a>
+        
+        <a  class="区块链 论文 "
+           href="/2019/11/20/blockchain/07/"
+           data-tag="区块链"
+           data-author="" >
+            <span class="post-title" title="闪电网络（三）哈希时间锁合约：Hashed Timelock Contract (HTLC)">闪电网络（三）哈希时间锁合约：Hashed Timelock Contract (HTLC)</span>
+            <span class="post-date" title="2019-11-20 10:51:23">2019/11/20</span>
+        </a>
+        
+        <a  class="区块链 论文 "
+           href="/2019/11/20/blockchain/05/"
+           data-tag="区块链"
+           data-author="" >
+            <span class="post-title" title="闪电网络（二）双向支付通道：Bidirectional Payment Channels + RSMC">闪电网络（二）双向支付通道：Bidirectional Payment Channels + RSMC</span>
+            <span class="post-date" title="2019-11-20 10:51:23">2019/11/20</span>
+        </a>
+        
+        <a  class="区块链 论文 "
+           href="/2019/11/19/blockchain/06/"
+           data-tag="区块链"
+           data-author="" >
+            <span class="post-title" title="闪电网络（一）微支付通道">闪电网络（一）微支付通道</span>
+            <span class="post-date" title="2019-11-19 10:07:02">2019/11/19</span>
+        </a>
+        
+        <a  class="区块链 论文 "
+           href="/2019/11/15/blockchain/03/"
+           data-tag="区块链"
+           data-author="" >
+            <span class="post-title" title="论文翻译 OmniLedger">论文翻译 OmniLedger</span>
+            <span class="post-date" title="2019-11-15 16:15:33">2019/11/15</span>
+        </a>
+        
+        <a  class="网络 网络编程 "
+           href="/2019/11/03/networkProgram/%E7%BD%91%E7%BB%9C%E7%BC%96%E7%A8%8B10UDP%E8%BF%9E%E6%8E%A5/"
+           data-tag="网络编程"
+           data-author="" >
+            <span class="post-title" title="网络编程10：UDP连接">网络编程10：UDP连接</span>
+            <span class="post-date" title="2019-11-03 16:15:07">2019/11/03</span>
+        </a>
+        
+        <a  class="网络 网络编程 "
+           href="/2019/11/02/networkProgram/%E7%BD%91%E7%BB%9C%E7%BC%96%E7%A8%8B9TCP%E7%9A%84%E5%BC%82%E5%B8%B8/"
+           data-tag="网络编程"
+           data-author="" >
+            <span class="post-title" title="网络编程9：TCP的异常">网络编程9：TCP的异常</span>
+            <span class="post-date" title="2019-11-02 13:57:10">2019/11/02</span>
+        </a>
+        
+        <a  class="网络 网络编程 "
+           href="/2019/11/01/networkProgram/%E7%BD%91%E7%BB%9C%E7%BC%96%E7%A8%8B8TCP%E6%95%B0%E6%8D%AE%E4%BC%A0%E8%BE%93/"
+           data-tag="网络编程"
+           data-author="" >
+            <span class="post-title" title="网络编程8：TCP数据传输">网络编程8：TCP数据传输</span>
+            <span class="post-date" title="2019-11-01 18:34:10">2019/11/01</span>
+        </a>
+        
+        <a  class="网络 网络编程 "
+           href="/2019/10/31/networkProgram/%E7%BD%91%E7%BB%9C%E7%BC%96%E7%A8%8B7TCP%E8%BF%9E%E6%8E%A5%E7%8A%B6%E6%80%81/"
+           data-tag="网络编程"
+           data-author="" >
+            <span class="post-title" title="网络编程7：TCP连接状态">网络编程7：TCP连接状态</span>
+            <span class="post-date" title="2019-10-31 17:14:55">2019/10/31</span>
+        </a>
+        
+        <a  class="网络 网络编程 "
+           href="/2019/10/30/networkProgram/%E7%BD%91%E7%BB%9C%E7%BC%96%E7%A8%8B6%E5%85%B3%E9%97%AD%E8%BF%9E%E6%8E%A5/"
+           data-tag="网络编程"
+           data-author="" >
+            <span class="post-title" title="网络编程6：关闭连接">网络编程6：关闭连接</span>
+            <span class="post-date" title="2019-10-30 18:34:12">2019/10/30</span>
+        </a>
+        
+        <a  class="网络 网络编程 "
+           href="/2019/10/29/networkProgram/%E7%BD%91%E7%BB%9C%E7%BC%96%E7%A8%8B5%E7%BD%91%E7%BB%9C%E5%B7%A5%E5%85%B7/"
+           data-tag="网络编程"
+           data-author="" >
+            <span class="post-title" title="网络编程5：网络工具">网络编程5：网络工具</span>
+            <span class="post-date" title="2019-10-29 14:24:11">2019/10/29</span>
+        </a>
+        
+        <a  class="网络 网络编程 "
+           href="/2019/10/28/networkProgram/%E7%BD%91%E7%BB%9C%E7%BC%96%E7%A8%8B3UDP%E5%8D%8F%E8%AE%AE%E4%BD%BF%E7%94%A8socket/"
+           data-tag="网络编程"
+           data-author="" >
+            <span class="post-title" title="网络编程3：UDP协议使用socket">网络编程3：UDP协议使用socket</span>
+            <span class="post-date" title="2019-10-28 10:11:10">2019/10/28</span>
+        </a>
+        
+        <a  class="网络 网络编程 "
+           href="/2019/10/28/networkProgram/%E7%BD%91%E7%BB%9C%E7%BC%96%E7%A8%8B4%E6%9C%AC%E5%9C%B0socket/"
+           data-tag="网络编程"
+           data-author="" >
+            <span class="post-title" title="网络编程4：本地套接字">网络编程4：本地套接字</span>
+            <span class="post-date" title="2019-10-28 10:11:10">2019/10/28</span>
+        </a>
+        
+        <a  class="网络 网络编程 "
+           href="/2019/10/27/networkProgram/%E7%BD%91%E7%BB%9C%E7%BC%96%E7%A8%8B2TCP%E5%8D%8F%E8%AE%AE%E4%BD%BF%E7%94%A8socket/"
+           data-tag="网络编程"
+           data-author="" >
+            <span class="post-title" title="网络编程2：TCP协议使用socket">网络编程2：TCP协议使用socket</span>
+            <span class="post-date" title="2019-10-27 17:59:09">2019/10/27</span>
+        </a>
+        
+        <a  class="网络 网络编程 "
+           href="/2019/10/26/networkProgram/%E7%BD%91%E7%BB%9C%E7%BC%96%E7%A8%8B1/"
+           data-tag="网络编程"
+           data-author="" >
+            <span class="post-title" title="网络编程1：基础部分">网络编程1：基础部分</span>
+            <span class="post-date" title="2019-10-26 16:54:02">2019/10/26</span>
+        </a>
+        
+        <a  class="分布式 "
+           href="/2019/09/12/distribute/01/"
+           data-tag="分布式"
+           data-author="" >
+            <span class="post-title" title="分布式系统的一致性与共识">分布式系统的一致性与共识</span>
+            <span class="post-date" title="2019-09-12 13:47:52">2019/09/12</span>
+        </a>
+        
+        <a  class="网络 HTTP "
+           href="/2019/08/05/http/030205/"
+           data-tag="HTTP"
+           data-author="" >
+            <span class="post-title" title="HTTP协议学习（五）HTTPS与安全">HTTP协议学习（五）HTTPS与安全</span>
+            <span class="post-date" title="2019-08-05 20:46:07">2019/08/05</span>
+        </a>
+        
+        <a  class="网络 HTTP "
+           href="/2019/07/20/http/030204/"
+           data-tag="HTTP"
+           data-author="" >
+            <span class="post-title" title="HTTP协议学习（四）cookie、缓存、代理机制">HTTP协议学习（四）cookie、缓存、代理机制</span>
+            <span class="post-date" title="2019-07-20 13:15:07">2019/07/20</span>
+        </a>
+        
+        <a  class="网络 HTTP "
+           href="/2019/07/10/http/030203/"
+           data-tag="HTTP"
+           data-author="" >
+            <span class="post-title" title="HTTP协议学习（三）数据传输与连接">HTTP协议学习（三）数据传输与连接</span>
+            <span class="post-date" title="2019-07-10 14:36:55">2019/07/10</span>
+        </a>
+        
+        <a  class="网络 HTTP "
+           href="/2019/07/01/http/030202/"
+           data-tag="HTTP"
+           data-author="" >
+            <span class="post-title" title="HTTP协议学习（二）基础">HTTP协议学习（二）基础</span>
+            <span class="post-date" title="2019-07-01 14:05:51">2019/07/01</span>
+        </a>
+        
+        <a  class="网络 HTTP "
+           href="/2019/06/14/http/030201/"
+           data-tag="HTTP"
+           data-author="" >
+            <span class="post-title" title="HTTP协议学习（一）概念">HTTP协议学习（一）概念</span>
+            <span class="post-date" title="2019-06-14 16:08:25">2019/06/14</span>
+        </a>
+        
+    </nav>
+</div>
+    </div>
+    <div class="hide-list">
+        <div class="semicircle">
+            <div class="brackets first"><</div>
+            <div class="brackets">&gt;</div>
+        </div>
+    </div>
+</aside>
+<div class="post">
+    <div class="pjax">
+        <article id="post-blockchain/03" class="article article-type-post" itemscope itemprop="blogPost">
+    
+        <h1 class="article-title">论文翻译 OmniLedger</h1>
+    
+    <div class="article-meta">
+        
+        
+        
+        <span class="book">
+            
+                <a  data-rel="区块链">区块链</a>/
+            
+                <a  data-rel="论文">论文</a>
+            
+        </span>
+        
+        
+        <span class="tag">
+            
+            <a class="color4">区块链</a>
+            
+        </span>
+        
+    </div>
+    <div class="article-meta">
+        
+        创建时间:<time class="date" title='更新时间: 2020-03-06 06:45:33'>2019-11-15 16:15</time>
+        
+    </div>
+    <div class="article-meta">
+        
+        
+        
+    </div>
+    
+    <div class="toc-ref">
+    
+        <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#OmniLedger-A-Secure-Scale-Out-Decentralized-Ledger-via-Sharding"><span class="toc-text">OmniLedger: A Secure, Scale-Out, Decentralized Ledger via Sharding</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#0-Abstract"><span class="toc-text">0. Abstract</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#1-Introduction"><span class="toc-text">1. Introduction</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-Background"><span class="toc-text">2. Background</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#2-1-ByzCoin中的可扩展拜占庭共识"><span class="toc-text">2.1 ByzCoin中的可扩展拜占庭共识</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-2-交易处理与UTXO模型"><span class="toc-text">2.2 交易处理与UTXO模型</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-3-安全的分布式随机数生成器"><span class="toc-text">2.3 安全的分布式随机数生成器</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-4-抗女巫攻击的身份认证"><span class="toc-text">2.4 抗女巫攻击的身份认证</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-5-之前的分布式账本Elastico"><span class="toc-text">2.5 之前的分布式账本Elastico</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3-System-Overview"><span class="toc-text">3. System Overview</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#3-1-系统模型"><span class="toc-text">3.1 系统模型</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-2-网络模型"><span class="toc-text">3.2 网络模型</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-3-威胁模型"><span class="toc-text">3.3 威胁模型</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-4-系统目标"><span class="toc-text">3.4 系统目标</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-5-设计路线"><span class="toc-text">3.5 设计路线</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#4-关于安全性的设计"><span class="toc-text">4. 关于安全性的设计</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#4-1-基于抗bias的分布式随机数进行分片"><span class="toc-text">4.1 基于抗bias的分布式随机数进行分片</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4-2-在epoch过渡期间保持可操作性"><span class="toc-text">4.2 在epoch过渡期间保持可操作性</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4-3-跨分片交易"><span class="toc-text">4.3 跨分片交易</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#5-关于性能的设计"><span class="toc-text">5. 关于性能的设计</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#5-1-拜占庭容错"><span class="toc-text">5.1 拜占庭容错</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#5-2-并行区块提交"><span class="toc-text">5.2 并行区块提交</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#5-3-分片账本剪枝"><span class="toc-text">5.3 分片账本剪枝</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#5-4-Trust-but-Verify验证"><span class="toc-text">5.4 Trust-but-Verify验证</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#6-安全性分析"><span class="toc-text">6. 安全性分析</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#6-1-随机数生成"><span class="toc-text">6.1 随机数生成</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#6-2-分片大小安全"><span class="toc-text">6.2 分片大小安全</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#6-3-Epoch-安全"><span class="toc-text">6.3 Epoch 安全</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#6-4-组通信"><span class="toc-text">6.4 组通信</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#9-近期工作"><span class="toc-text">9. 近期工作</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#10-不足与展望"><span class="toc-text">10. 不足与展望</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#11-总结"><span class="toc-text">11. 总结</span></a></li></ol></li></ol>
+    
+<style>
+    .left-col .switch-btn,
+    .left-col .switch-area {
+        display: none;
+    }
+    .toc-level-3 i,
+    .toc-level-3 ol {
+        display: none !important;
+    }
+</style>
+</div>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="OmniLedger-A-Secure-Scale-Out-Decentralized-Ledger-via-Sharding"><a href="#OmniLedger-A-Secure-Scale-Out-Decentralized-Ledger-via-Sharding" class="headerlink" title="OmniLedger: A Secure, Scale-Out, Decentralized Ledger via Sharding"></a>OmniLedger: A Secure, Scale-Out, Decentralized Ledger via Sharding</h1><p><div class='inner-toc'><h2>目录</h2><ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#OmniLedger-A-Secure-Scale-Out-Decentralized-Ledger-via-Sharding"><span class="toc-text">OmniLedger: A Secure, Scale-Out, Decentralized Ledger via Sharding</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#0-Abstract"><span class="toc-text">0. Abstract</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#1-Introduction"><span class="toc-text">1. Introduction</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-Background"><span class="toc-text">2. Background</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#2-1-ByzCoin中的可扩展拜占庭共识"><span class="toc-text">2.1 ByzCoin中的可扩展拜占庭共识</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-2-交易处理与UTXO模型"><span class="toc-text">2.2 交易处理与UTXO模型</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-3-安全的分布式随机数生成器"><span class="toc-text">2.3 安全的分布式随机数生成器</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-4-抗女巫攻击的身份认证"><span class="toc-text">2.4 抗女巫攻击的身份认证</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-5-之前的分布式账本Elastico"><span class="toc-text">2.5 之前的分布式账本Elastico</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3-System-Overview"><span class="toc-text">3. System Overview</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#3-1-系统模型"><span class="toc-text">3.1 系统模型</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-2-网络模型"><span class="toc-text">3.2 网络模型</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-3-威胁模型"><span class="toc-text">3.3 威胁模型</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-4-系统目标"><span class="toc-text">3.4 系统目标</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-5-设计路线"><span class="toc-text">3.5 设计路线</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#4-关于安全性的设计"><span class="toc-text">4. 关于安全性的设计</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#4-1-基于抗bias的分布式随机数进行分片"><span class="toc-text">4.1 基于抗bias的分布式随机数进行分片</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4-2-在epoch过渡期间保持可操作性"><span class="toc-text">4.2 在epoch过渡期间保持可操作性</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4-3-跨分片交易"><span class="toc-text">4.3 跨分片交易</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#5-关于性能的设计"><span class="toc-text">5. 关于性能的设计</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#5-1-拜占庭容错"><span class="toc-text">5.1 拜占庭容错</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#5-2-并行区块提交"><span class="toc-text">5.2 并行区块提交</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#5-3-分片账本剪枝"><span class="toc-text">5.3 分片账本剪枝</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#5-4-Trust-but-Verify验证"><span class="toc-text">5.4 Trust-but-Verify验证</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#6-安全性分析"><span class="toc-text">6. 安全性分析</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#6-1-随机数生成"><span class="toc-text">6.1 随机数生成</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#6-2-分片大小安全"><span class="toc-text">6.2 分片大小安全</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#6-3-Epoch-安全"><span class="toc-text">6.3 Epoch 安全</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#6-4-组通信"><span class="toc-text">6.4 组通信</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#9-近期工作"><span class="toc-text">9. 近期工作</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#10-不足与展望"><span class="toc-text">10. 不足与展望</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#11-总结"><span class="toc-text">11. 总结</span></a></li></ol></li></ol></div></p>
+<p>这篇文章是今年上半年为研讨班准备的一篇论文。当时对区块链整个体系结构还是一知半解，就觉得区块链一年在网安顶会上面发的文章也都是非常有限的，能发CCS就一定有它厉害的地方，于是就拿来硬啃。不过当时对整个区块链的体系结构不太熟悉，在研讨班上果然就被老师问住了。。从一个问题开始往前追溯会遇到更多的问题，这样一环套一环，发现中间有很多地方都没搞明白。经过这半年的查漏补缺，整个知识体系也渐渐完善起来，现在再来认真的把这篇论文研究一下。</p>
+<p>当初只是因为本科毕业实习的时候，各种机缘巧合通过炒币接触到了区块链，一开始只是调交易所的API写一些量化交易的小脚本，对于区块链的技术也仅仅停留在公链的概念上，最近由于项目的关系，需要用到大数据背景下的区块链扩容，于是很自然就想到了分片。这篇文章也算是区块链分片这一分支为数不多的经典文章，能发顶会肯定有他的原因，下面就认真分析一遍吧，顺便以这里作为切入点来完整的学习一下分片机制。</p>
+<h2 id="0-Abstract"><a href="#0-Abstract" class="headerlink" title="0. Abstract"></a>0. Abstract</h2><p>Abstract—Designing a secure permissionless distributed ledger(blockchain) that performs on par with centralized payment processors, such as Visa, is a challenging task. Most existing distributed ledgers are unable to scale-out, i.e., to grow their total processing capacity with the number of validators; and those that do, compromise security or decentralization. </p>
+<p>设计一个可与中心化支付系统（比如Visa)的性能对标的 安全无权限的去中心化账本（区块链）是一件极具挑战的事。目前市面上大多数的分布式账本都不能够做到横向扩展，即随着验证者数量的增加而增加其总处理能力，并且那些具有高性能的则会损害安全性或去中心性。</p>
+<p>We present OmniLedger, a novel scale-out distributed ledger that preserves longterm security under permissionless operation. It ensures security and correctness by using a bias-resistant public-randomness protocol for choosing large, statistically representative shards that process transactions, and by introducing an efficient crossshard commit protocol that atomically handles transactions affecting multiple shards. </p>
+<p>我们提出OmniLedger，一种新型的高性能的去中心化账本，它具有无权限性，又保留了长期的安全性。它通过一种抗预测(bias-resistant)的公共随机协议(a bias-resistant public-randomness protocol)来选择具有统计代表性的大型分片来处理交易，以及通过引入一种有效的跨分片提交协议(an efficient crossshard commit protocol)来原子性的处理影响影响多分片的交易，从而保证了安全性和正确性。</p>
+<p>OmniLedger also optimizes performance via parallel intra-shard transaction processing, ledger pruning via collectively-signed state blocks, and low-latency “trust-butverify” validation for low-value transactions. An evaluation of our experimental prototype shows that OmniLedger’s throughput scales linearly in the number of active validators, supporting Visa-level workloads and beyond, while confirming typical transactions in under two seconds.</p>
+<p>omniledger同时通过并行的分片内交易处理来优化性能，通过集体签名状态区块、针对低价值交易的低延迟“trust but verify”验证等方法对账本进行剪枝。我们实验原型的一个评估显示OmniLedger的吞吐量随活跃的验证者数量的增加而线性增加，可支撑Visa级别的交易量，同时可以在2秒内对一般交易进行确认。</p>
+<h2 id="1-Introduction"><a href="#1-Introduction" class="headerlink" title="1. Introduction"></a>1. Introduction</h2><p>The scalability of distributed ledgers (DLs), in both total transaction volume and the number of independent participants involved in processing them, is a major challenge to their mainstream adoption, especially when weighted against security and decentralization challenges. </p>
+<p>分布式账本在总交易量和参与处理的独立参与者的数量的可扩展性，是一个被主流认可的主要挑战问题，特别是在与安全性和去中心化挑战对比的时候。 </p>
+<p>Many approaches exhibit different security and performance trade-offs [10], [11], [21], [32], [40]. Replacing the Nakamoto consensus [36] with PBFT [13], for example, can increase throughput while decreasing transaction commit latency [1], [32]. These approaches still require all validators or consensus group members to redundantly validate and process all transactions, hence the system’s total transaction processing capacity does not increase with added participants, and, in fact, gradually decreases due to increased coordination overheads.</p>
+<p>有许多办法展示了不同的安全性和性能权衡[10],[11],[21],[32],[40]。比如，通过替换中本聪共识(Nakamoto consensus)<code>[36]</code>为PBFT共识<code>[13]</code>，可以提高吞吐量的同时降低交易延迟<code>[1][32]</code>。这些办法仍然要求所有验证者或者共识组成员冗余性的验证和处理所有交易，因此系统总的交易处理容量是无法通过增加参与者而线性增加的，反而事实上会由于协调开销增加而逐渐降低性能。</p>
+<blockquote>
+<p>[10] V. Buterin, J. Coleman, and M. Wampler-Doty. <code>Notes on Scalable Blockchain Protocols (verson 0.3)</code>, 2015.</p>
+<p>[11] C. Cachin. <code>Architecture of the Hyperledger blockchain fabric.</code> In Workshop on Distributed Cryptocurrencies and Consensus Ledgers, 2016.</p>
+<p>[21] I. Eyal, A. E. Gencer, E. G. Sirer, and R. van Renesse. <code>BitcoinNG: A Scalable Blockchain Protocol.</code> In 13th USENIX Symposium on Networked Systems Design and Implementation (NSDI 16), Santa Clara, CA, Mar. 2016. USENIX Association.</p>
+<p>[32] E. Kokoris-Kogias, P. Jovanovic, N. Gailly, I. Khoffi, L. Gasser, and B. Ford. <code>Enhancing Bitcoin Security and Performance with Strong Consistency via Collective Signing.</code> In Proceedings of the 25th USENIX Conference on Security Symposium, 2016.</p>
+<p>[40]  J. Poon and T. Dryja. <code>The Bitcoin Lightning Network: Scalable OffChain Instant Payments,</code> Jan. 2016. </p>
+<p>[36]  S. Nakamoto. <code>Bitcoin: A Peer-to-Peer Electronic Cash System,</code> 2008. </p>
+<p>[13] M. Castro and B. Liskov. <code>Practical Byzantine Fault Tolerance.</code> In 3rd USENIX Symposium on Operating Systems Design and Implementation (OSDI), Feb. 1999.</p>
+<p>[1] I. Abraham, D. Malkhi, K. Nayak, L. Ren, and A. Spiegelman. <code>Solidus: An Incentive-compatible Cryptocurrency Based on Permissionless Byzantine Consensus.</code>CoRR, abs/1612.02916, 2016.</p>
+</blockquote>
+<p>The proven and obvious approach to building “scale-out” databases, whose capacity scales horizontally with the number of participants, is by sharding [14], or partitioning the state into multiple shards that are handled in parallel by different subsets of participating validators. </p>
+<p>建立可”横向扩展“数据库的成熟有效的方式是实现分片机制(Sharding)<code>[14]</code>，通过将状态切分到多个分片由不同子集的验证者进行并行处理。</p>
+<blockquote>
+<p>[14] J. C. Corbett, J. Dean, M. Epstein, A. Fikes, C. Frost, J. J. Furman, S. Ghemawat, A. Gubarev, C. Heiser, P. Hochschild, W. Hsieh, S. Kanthak, E. Kogan, H. Li, A. Lloyd, S. Melnik, D. Mwaura, D. Nagle, S. Quinlan, R. Rao, L. Rolig, Y. Saito, M. Szymaniak, C. Taylor, R. Wang, and D. Woodford. <code>Spanner: Google’s Globally Distributed Database</code>. ACM Trans. Comput. Syst., 31(3):8:1–8:22, Aug. 2013.</p>
+</blockquote>
+<p>Sharding could benefit DLs [15] by reducing the transaction processing load on each validator and by increasing the system’s total processing capacity proportionally with the number of participants. Existing proposals for sharded DLs, however, forfeit permissionless decentralization [16], introduce new security assumptions, and/or trade performance for security [34], as illustrated in Figure 1 and explored in detail in Sections II and IX.</p>
+<p>分片可以通过减少每个验证者上的事务处理量load，并通过与参与者数量成比例地增加系统的总处理能力，来使DL受益[15]。然而现有的对实现分片式去中心化账本的建议，要么放弃无权限去中心化<code>[16]</code>，要么引入新的安全假设以安全换性能<code>[34]</code>，如图1所示(在第2和第4章详细阐述)</p>
+<blockquote>
+<p>[15] K. Croman, C. Decke, I. Eyal, A. E. Gencer, A. Juels, A. Kosba, A. Miller, P. Saxena, E. Shi, E. G. Sirer, D. S. an, and R. Wattenhofer. <code>On Scaling Decentralized Blockchains (A Position Paper).</code> In 3rd Workshop on Bitcoin and Blockchain Research, 2016.</p>
+<p>[16] G. Danezis and S. Meiklejohn. <code>Centrally Banked Cryptocurrencies.</code> 23rd Annual Network &amp; Distributed System Security Symposium (NDSS), Feb. 2016.</p>
+<p>[34] L. Luu, V. Narayanan, C. Zheng, K. Baweja, S. Gilbert, and P. Saxena. <code>A Secure Sharding Protocol For Open Blockchains.</code> In Proceedings of the 2016 ACM SIGSAC Conference on Computer and Communications Security, CCS ’16, pages 17–30, New York, NY, USA, 2016. ACM.</p>
+</blockquote>
+<p><img src="/2019/11/15/blockchain/03/1573868353026.png" alt="1573868353026"></p>
+<p>We introduce OmniLedger, the first DL architecture that provides “scale-out” transaction processing capacity competitive with centralized payment-processing systems, such as Visa, without compromising security or support for permissionless decentralization. </p>
+<p>我们引入OmniLedger，这是第一个提供了“横向扩展”交易处理能力的DL架构，可与Visa等集中式支付处理系统竞争，而不会损害安全性或对去中心性。</p>
+<p>To achieve this goal, OmniLedger faces three key correctness and security challenges. First, OmniLedger must choose statistically representative groups of validators periodically via permissionless Sybil-attackresistant foundations such as proof-of-work [36], [38], [32] or proof-of-stake [31], [25]. </p>
+<p>为了达成这一目标，omniledger面临着三个正确性和安全性的挑战。</p>
+<p>第一：omniledger必须通过可抵御无权限女巫攻击的PoW<code>[36][38][32]</code>或PoS<code>[31][25]</code>机制来周期性地选择具有统计性代表的验证者分组。 </p>
+<blockquote>
+<p>POW:</p>
+<p>[36]  S. Nakamoto. <code>Bitcoin: A Peer-to-Peer Electronic Cash System,</code> 2008. </p>
+<p>[38] R. Pass and E. Shi. <code>Hybrid Consensus: Efficient Consensus in the Permissionless Model.</code> Cryptology ePrint Archive, Report 2016/917, 2016.</p>
+<p>[32] E. Kokoris-Kogias, P. Jovanovic, N. Gailly, I. Khoffi, L. Gasser, and B. Ford. <code>Enhancing Bitcoin Security and Performance with Strong Consistency via Collective Signing.</code> In Proceedings of the 25th USENIX Conference on Security Symposium, 2016.</p>
+<p>POS:</p>
+<p>[31] A. Kiayias, A. Russell, B. David, and R. Oliynykov. <code>Ouroboros: A Provably Secure Proof-of-Stake Blockchain Protocol.</code>Cryptology ePrint Archive, Report 2016/889, 2016</p>
+<p>[25] Y. Gilad, R. Hemo, S. Micali, G. Vlachos, and N. Zeldovich. <code>Algorand: Scaling Byzantine Agreements for Cryptocurrencies.</code>Cryptology ePrint Archive, Report 2017/454, 2017</p>
+</blockquote>
+<p>Second, OmniLedger must ensure a negligible probability that any shard is compromised across the (long-term) system lifetime via periodically (re)forming shards (subsets of validators to record state and process transactions), that are both sufficiently large and bias-resistant. </p>
+<p>第二，omniledger必须可以通过周期性（重新）重构分片（验证器的子集来记录状态和流程交易），使得任何分片在长时间受损的概率可以忽略不计，这些碎片既足够大又可以抵抗预测。</p>
+<p>Third, OmniLedger must correctly and atomically handle cross-shard transactions, or transactions that affect the ledger state held by two or more distinct shards</p>
+<p>第三，omniledger必须能够正确地，原子性地处理跨分片或涉及到多个独立分片的交易。</p>
+<p>To choose representative validators via proof-of-work, OmniLedger builds on ByzCoin [32] and Hybrid Consensus [38], using a sliding window of recent proof-of-work block miners as its validator set. To support the more power-efficient alternative of apportioning consensus group membership based on directly invested stake rather than work, </p>
+<p>为了通过工作量证明来选择具有代表性验证者，OmniLedger建立在ByzCoin [32]和Hybrid Consensus [38]的基础上，<strong>使用最近PoW区块矿工的滑动窗口作为其验证者集</strong> 。 为了支持更节能的替代方法，即直接基于PoS来分配共识组成员。</p>
+<blockquote>
+<p>[32] E. Kokoris-Kogias, P. Jovanovic, N. Gailly, I. Khoffi, L. Gasser, and B. Ford. <code>Enhancing Bitcoin Security and Performance with Strong Consistency via Collective Signing.</code> In Proceedings of the 25th USENIX Conference on Security Symposium, 2016.</p>
+<p>[38] R. Pass and E. Shi. <code>Hybrid Consensus: Efficient Consensus in the Permissionless Model.</code> Cryptology ePrint Archive, Report 2016/917, 2016.</p>
+</blockquote>
+<p>OmniLedger builds on Ouroboros [31] and Algorand [25], running a public randomness or cryptographic sortition protocol within a prior validator group to pick a subsequent validator group from the current stakeholder distribution defined in the ledger. To ensure that this sampling of representative validators is both scalable and strongly bias-resistant, OmniLedger uses RandHound [44], a protocol that serves this purpose under standard t-of-n threshold assumptions.</p>
+<p>OmniLedger建立在<strong>Ouroboros</strong> <code>[31]</code> 和 <strong>Algorand</strong> <code>[25]</code>之上，采用在一个先前的验证者分组中运行一个公共随机协议或加密抽签协议从账本的当前持币人分布中提取一个后续的验证者分组。为保证代表性验证者的抽取是可扩展和强抗预测性的，OmniLedger采用<strong>RandHound</strong><code>[44]</code>协议，这是一种为这种目的在标准<code>t-n</code>阀值假设下服务的协议。</p>
+<blockquote>
+<p>[31] A. Kiayias, A. Russell, B. David, and R. Oliynykov. <code>Ouroboros: A Provably Secure Proof-of-Stake Blockchain Protocol.</code>Cryptology ePrint Archive, Report 2016/889, 2016</p>
+<p>[25] Y. Gilad, R. Hemo, S. Micali, G. Vlachos, and N. Zeldovich. <code>Algorand: Scaling Byzantine Agreements for Cryptocurrencies.</code>Cryptology ePrint Archive, Report 2017/454, 2017</p>
+<p>[44] E. Syta, P. Jovanovic, E. Kokoris-Kogias, N. Gailly, L. Gasser, I. Khoffi, M. J. Fischer, and B. Ford. <code>Scalable Bias-Resistant Distributed Randomness.</code> In 38th IEEE Symposium on Security and Privacy, May 2017.</p>
+</blockquote>
+<p>Appropriate use of RandHound provides the basis by which OmniLedger addresses the second key security challenge of securely assigning validators to shards, and of periodically rotating these assignments as the set of validators evolves. OmniLedger chooses shards large enough, based on the analysis in Section VI, to ensure a negligible probability that any shard is ever compromised, even across years of operation.</p>
+<p>适当的<strong>利用RandHound</strong>为OmniLedger解决第二个安全性挑战提供了依据，即<strong>安全地为分片分配验证者</strong>，以及当更多验证者介入时周期性地进行循环分配。基于第四章的分析，OmniLedger引入足够大的分片来保证经过几年的运行任何分片被损害的概率可以忽略不计。</p>
+<p>Finally, to ensure that transactions either commit or abort atomically even when they affect state distributed across multiple shards (e.g., several cryptocurrency accounts), OmniLedger introduces Atomix, a two-phase client-driven “lock/unlock”protocol that ensures that clients can either fully commit a transaction across shards, or obtain “rejection proofs” to abort and unlock state affected by partially completed transactions.</p>
+<p>最后，为保证即使影响多个分片状态的交易进行原子性的提交或取消，OmniLedger引入了<strong>Atomix</strong>，一种2阶段客户端驱动的”锁/解锁”协议，用来保证客户端可以要么在跨分片完全提交一个交易，要么获取”拒绝证据“来取消或解锁被部分完成交易影响的状态。</p>
+<p>Besides addressing the above key security challenges, OmniLedger also introduces several performance and scalability refinements we found to be instrumental in achieving its usability goals. OmniLedger’s consensus protocol, ByzCoinX, enhances the PBFT-based consensus in ByzCoin [32] to preserve performance under Byzantine denial-of-service (DoS) attacks, by adopting a more robust group communication pattern. To help new or long-offline miners catch up to the current ledger state without having to download the entire history, OmniLedger adapts classic distributed checkpointing principles [20] to produce consistent, state blocks periodically.</p>
+<p>除了解决上述的关键安全性问题，OmniLedger也引入了几种我们发现的有助于实现其可用性目标的性能和扩展性改进方案。OmniLedger的共识协议, <strong>ByzCoinX</strong>，增强了ByzCoin中的PBFT共识，通过接受一种更加可靠的组通信模式可使其在处于拜占庭DoS攻击时保证性能。为帮助新的或长期掉线的矿工在不需要下载整个历史数据的情况下赶上最新的账本状态，OmniLedger接纳了经典的<strong>分布式checkpoint原则( classic distributed checkpointing principles)</strong><code>[20]</code>来定期生成一致的状态区块。</p>
+<blockquote>
+<p>[32] E. Kokoris-Kogias, P. Jovanovic, N. Gailly, I. Khoffi, L. Gasser, and B. Ford. <code>Enhancing Bitcoin Security and Performance with Strong Consistency via Collective Signing.</code> In Proceedings of the 25th USENIX Conference on Security Symposium, 2016.</p>
+<p>[20] E. N. Elnozahy, D. B. Johnson, and W. Zwaenepoel. <code>The Performance of Consistent Checkpointing.</code> In 11th Symposium on Reliable Distributed Systems, pages 39–47. IEEE, 1992.</p>
+</blockquote>
+<p>Finally, to minimize transaction latency in common cases such as low-value payments, OmniLedger supports optional trust-but-verify validation in which a first small tier of validators processes the transactions quickly and then hands them over to a second larger, hence slower, tier that reverifies the correctness of the first tier transactions and ensures long-term security. This two-level approach ensures that any misbehavior within the first tier is detected within minutes, and can be strongly disincentivized through recourse such as loss of deposits. Clients can wait for both tiers to process highvalue transactions for maximum security or just wait for the first tier to process low-value transactions.</p>
+<p>最后，为降低通常情况下的交易延迟，比如小额交易，OmniLedger支持可选的<strong>“trust-but-verify”验证方式</strong>，即在较小的第一层的验证者快速处理这些交易，然后把它们提交给更大但更慢的第二层来重新验证第一层交易的正确性以及长期的安全性。这种2层解决方案保证任何第一层的不当行为可以在数分钟内被检测，然后以损失押金的形式进行严厉地惩罚。客户可以等待两层处理完大额交易以保证最大的安全性，或者可以只等待第一层处理完小额交易。</p>
+<p>To evaluate OmniLedger, we implemented a prototype in Go on commodity servers (12-core VMs on Deterlab). Our experimental results show that OmniLedger scales linearly in the number of validators, yielding a throughput of 6,000 transactions per second with a 10-second consensus latency (for 1800 widely-distributed hosts, of which 12.5% are malicious). Furthermore, deploying OmniLedger with two-level, trust-butverify validation provides a throughput of 2,250 tps with a four-second first-tier latency under a 25% adversary. Finally, a Bitcoin validator with a month-long stale view of the state incurs 40% of the bandwidth, due to state blocks.</p>
+<p>为评估OmniLedger的效果，我们用Go语言实现了一个原型版本在商用服务器上运行（12核VM on Deterlab），我们的实验结果显示OmniLedger可以按照验证者数量线性横向扩展，在具有12.5%恶意节点的1800个广泛分布的的主机环境上实现了10秒共识延迟下达到了6000tps。而且，将OmniLedger以”信任但验证“的二层验证模型下部署时，在具有25% 恶意节点时实现了4秒第一层延迟的2250tps吞吐量。最后，由于区块同步，一个具有长达一个月陈旧状态视图的比特币验证者会产生40%的带宽流量。????</p>
+<p>We introduce the first DL architecture that provides horizontal scaling without compromising either long-term security or permissionless decentralization.</p>
+<ul>
+<li>We introduce Atomix, a Atomic Commit protocol, to commit transactions atomically across shards.</li>
+<li>We introduce ByzCoinX, a BFT consensus protocol that increases performance and robustness to DoS attacks.</li>
+<li>We introduce state blocks, that are deployed along OmniLedger to minimize storage and update overhead.</li>
+<li>We introduce two-tier trust-but-verify processing to minimize the latency of low-value transactions.</li>
+</ul>
+<p>引入了第一个提供水平扩展的不以损害长期安全性或无权限去中心化的去中心化架构。</p>
+<p>引入了<strong>Atomix</strong>，一种原子提交协议，实现跨分片的原子提交交易功能。</p>
+<p>引入了<strong>ByzCoinX</strong>，一种针对DoS攻击时增加性能和健壮性的BFT共识协议。</p>
+<p>引入了<strong>状态区块(state blocks)</strong>，在OmniLedger上部署以减小存储空间和更新开销。</p>
+<p>引入了<strong>trust but verify二层模型(或者叫乐观验证)</strong>来降低小额交易延迟。</p>
+<h2 id="2-Background"><a href="#2-Background" class="headerlink" title="2. Background"></a>2. Background</h2><h3 id="2-1-ByzCoin中的可扩展拜占庭共识"><a href="#2-1-ByzCoin中的可扩展拜占庭共识" class="headerlink" title="2.1 ByzCoin中的可扩展拜占庭共识"></a>2.1 ByzCoin中的可扩展拜占庭共识</h3><p>OmniLedger builds on the Byzantine consensus scheme in ByzCoin [32], because it scales efficiently to thousands of consensus group members. To make a traditional consensus algorithm such as PBFT [13] more scalable, ByzCoin uses collective signing or CoSi [45], a scalable cryptographic primitive that implements multisignatures [42]. ByzCoin distributes blocks by using multicast trees for performance, but falls back to a less-scalable star topology for fault tolerance. Although ByzCoin’s consensus is scalable, its total processing capacity does not increase with participation i.e., it does not scale-out.</p>
+<p>因为ByzCoin中的拜占庭共识机制能够很好地在数以千计的公式成员组中达成共识，omniledger就是基于byzcoin的共识协议。为了使传统的共识算法例如PBFT能够具有更好的扩展性，ByzCoin使用了集体签名（CoSi）[45]，一种可扩展的实现多重签名的密码原语。ByzCoin采用<strong>组播树(multicast trees)</strong>分发区块以提高性能，但是为了容错却回退使用了扩展性较差的<strong>星型拓扑</strong>。虽然ByzCoin的共识具有扩展性，但是其总体的处理容量却没有随着参与节点数量而增加，所以它是不能横向扩展的。</p>
+<blockquote>
+<p>[45] E. Syta, I. Tamas, D. Visher, D. I. Wolinsky, P. Jovanovic, L. Gasser, N. Gailly, I. Khoffi, and B. Ford. <code>Keeping Authorities “Honest or Bust” with Decentralized Witness Cosigning.</code> In 37th IEEE Symposium on Security and Privacy, May 2016.</p>
+<p>[42] C. P. Schnorr. <code>Efficient signature generation by smart cards.</code> Journal of Cryptology, 4(3):161–174, 1991.</p>
+</blockquote>
+<h3 id="2-2-交易处理与UTXO模型"><a href="#2-2-交易处理与UTXO模型" class="headerlink" title="2.2 交易处理与UTXO模型"></a>2.2 交易处理与UTXO模型</h3><p>Distributed ledgers derive current system state from a blockchain, or a sequence of totally ordered blocks that contain transactions. OmniLedger adopts the unspent transaction output (UTXO) model to represent ledger state, due to its<br>simplicity and parallelizability. In this model, the outputs of a transaction create new UTXOs (and assign them credits), and inputs completely “spend” existing UTXOs. During bootstrapping, new (full) nodes crawl the entire distributed ledger and build a database of valid UTXOs needed to subsequently decide whether a new block can be accepted. The UTXO model was introduced by Bitcoin [36] but has been widely adopted by other distributed ledger systems</p>
+<p>去中心化账本从区块链或一条<strong>包含交易的完全有序区块</strong>派生出了现在的系统状态。OmniLedger接受UTXO模型来代表账本状态，因为它其简单性和可并行性。在这个模型里，一个交易的输出创建新的UTXO（并授予其信用credits？），交易的输入则只能花费已存在的UTXO。在新的（全）节点启动时，会同步抓取整个分布式账本并建立合法UTXO的数据库以便用于后续验证新区块是否合法。这个UTXO模型是被比特币<code>[36]</code>引入的并且已经被其它去中心账本系统广泛认可。</p>
+<h3 id="2-3-安全的分布式随机数生成器"><a href="#2-3-安全的分布式随机数生成器" class="headerlink" title="2.3 安全的分布式随机数生成器"></a>2.3 安全的分布式随机数生成器</h3><p>RandHound [44] is a scalable, secure multi-party computation (MPC) protocol that provides unbiasable, decentralized randomness in a Byzantine setting. RandHound assumes the existence of an externally accountable client that wants to obtain provable randomness from a large group of semitrustworthy servers. To produce randomness, RandHound splits the group of servers into smaller ones and creates a publicly verifiable commit-then-reveal protocol [43] that employs the pigeonhole principle to prove that the final random number includes the contribution of at least one honest participant, thus perfectly randomizing RandHound’s output.</p>
+<p><strong>RandHound</strong><code>[44]</code>是一个可扩展的安全的多方计算(MPC)协议，在拜占庭环境里可提供无偏见的、去中心化的随机性。RandHound假设存在一个外部负责任的客户，他想从一大群半信任化的服务器中获取可证明的随机性。为了产生随机性，RandHound将服务器组拆分更小的组，并创建一个公开可验证的<strong>先提交后揭示</strong>(commit-then-reveal)的协议<code>[43]</code>，该协议采用<strong>鸽笼原理</strong>在包括至少一名诚实参与者贡献时来证明最终的随机数，因此完美地实现了对RandHound输出的随机化。</p>
+<blockquote>
+<p>[44] E. Syta, P. Jovanovic, E. Kokoris-Kogias, N. Gailly, L. Gasser, I. Khoffi, M. J. Fischer, and B. Ford. <code>Scalable Bias-Resistant Distributed Randomness.</code> In 38th IEEE Symposium on Security and Privacy, May 2017.</p>
+<p>[43] B. Schoenmakers. <code>A simple publicly verifiable secret sharing scheme and its application to electronic voting.</code> In IACR International Cryptology Conference (CRYPTO), pages 784–784, 1999.</p>
+</blockquote>
+<p>Cryptographic sortition [25] is used to select a subset of validators, according to some per-validator weight function. To enable validators to prove that they belong to the selected subset, they need a public/private key pair,  Sortition is implemented using a verifiable random function (VRF) [35] that takes an input x and returns a random hash (-bit long string) and a proof π based on ski. The proof π enables anyone knowing pki to check that the hash corresponds to x.</p>
+<p><strong>加密抽签(Cryptographic sortition)</strong><code>[25]</code>用来根据验证者权重函数对验证者选择一个子集。为了使验证者能够证明他们属于某个选中的子集，他们需要一个公钥和私钥对，<code>(pki, ski)</code>。抽签通过一个<strong>VRF(verifiable random function：可验证随机函数)</strong>实现：<code>输入x，然后返回一个随机hash(l-bit长的字符串)，和一个基于ski的证明 π。这个证明 π可使任何人知道用pki去验证该hash对应于x</code>。</p>
+<blockquote>
+<p>[25] Y. Gilad, R. Hemo, S. Micali, G. Vlachos, and N. Zeldovich. <code>Algorand: Scaling Byzantine Agreements for Cryptocurrencies.</code>Cryptology ePrint Archive, Report 2017/454, 2017</p>
+</blockquote>
+<h3 id="2-4-抗女巫攻击的身份认证"><a href="#2-4-抗女巫攻击的身份认证" class="headerlink" title="2.4 抗女巫攻击的身份认证"></a>2.4 抗女巫攻击的身份认证</h3><p>Unlike permissioned blockchains [16], where the validators are known, permissionless blockchains need to deal with the potential of Sybil attacks [19] to remain secure. Bitcoin [36] suggested the use of Proof-of-Work (PoW), where validators (aka miners) create a valid block by performing an expensive computation (iterating through a nonce and trying to bruteforce a hash of a block’s header such that it has a certain number of leading zeros). Bitcoin-NG [21] uses this PoW technique to enable a Sybil-resistant generation of identities. There are certain issues associated with PoW, such as the waste of electricity [17] and the fact that it causes recentralization [29] to mining pools. Other approaches for establishing Sybil-resistant identities such as Proof-of-Stake (PoS) [31] [25], Proof-of-Burn (PoB) [46] or Proof-of-Personhood [8] overcome PoW’s problems and are compatible with ByzCoins identity (key-block) blockchain, and in turn with OmniLedger</p>
+<p>不像有权限的区块链<code>[16]</code>，它的验证者都是已知的，无权限的区块链需要处理<strong>女巫攻击</strong><code>[19]</code>的潜在威胁以保证安全。比特币(Bitcoin)<code>[36]</code>建议使用PoW工作量证明，其矿工（验证者）创建一个合法区块需要消耗昂贵的计算（对一个nonce进行循环迭代，对区块头hash进行暴力破解使其以特定数量的0开头）。<strong>Bitcoin-NG</strong><code>[21]</code>使用同样的PoW技术以产生抗女巫攻击的身份。PoW机制本身有一些问题，比如浪费电力以及导致矿池重新中心化的事实。其它的抵抗女巫攻击的方法还有采用诸如PoS<code>[31][25]</code>、<strong>Proof-of-Burn(PoB)</strong><code>[46]</code>、<strong>Proof-of-Personhood</strong><code>[8]</code>等可以克服PoW的问题，并且可以兼容ByzCoin的身份区块链，当然也兼容OmniLedger。</p>
+<blockquote>
+<p>[16] G. Danezis and S. Meiklejohn. <code>Centrally Banked Cryptocurrencies.</code> 23rd Annual Network &amp; Distributed System Security Symposium (NDSS), Feb. 2016.</p>
+<p>[19] J. R. Douceur. <code>The Sybil Attack. In 1st International Workshop on Peer-to-Peer Systems (IPTPS),</code> Mar. 2002.</p>
+<p>[21] I. Eyal, A. E. Gencer, E. G. Sirer, and R. van Renesse. <code>BitcoinNG: A Scalable Blockchain Protocol.</code> In 13th USENIX Symposium on Networked Systems Design and Implementation (NSDI 16), Santa Clara, CA, Mar. 2016. USENIX Association.</p>
+<p>[31] A. Kiayias, A. Russell, B. David, and R. Oliynykov. <code>Ouroboros: A Provably Secure Proof-of-Stake Blockchain Protocol.</code>Cryptology ePrint Archive, Report 2016/889, 2016</p>
+<p>[25] Y. Gilad, R. Hemo, S. Micali, G. Vlachos, and N. Zeldovich. <code>Algorand: Scaling Byzantine Agreements for Cryptocurrencies.</code>Cryptology ePrint Archive, Report 2017/454, 2017</p>
+<p>[46]  B. Wiki. <code>Proof of burn</code> , Sept. 2017. </p>
+<p>[8] M. Borge, E. Kokoris-Kogias, P. Jovanovic, N. Gailly, L. Gasser, and B. Ford. <code>Proof-of-Personhood: Redemocratizing Permissionless Cryptocurrencies</code>. In 1st IEEE Security and Privacy On The Blockchain, Apr. 2017.</p>
+</blockquote>
+<h3 id="2-5-之前的分布式账本Elastico"><a href="#2-5-之前的分布式账本Elastico" class="headerlink" title="2.5 之前的分布式账本Elastico"></a>2.5 之前的分布式账本Elastico</h3><p>OmniLedger builds closely on Elastico [34], that previously explored sharding in permissionless ledgers. In every round, Elastico uses the least-significant bits of the PoW hash to distribute miners to different shards. After this setup, every shard runs PBFT [13] to reach consensus, and a leader shard verifies all the signatures and creates a global block.</p>
+<p>OmniLedger和先前探讨过的在无权限账本上实现分片的Elastico是很接近的。在每一轮，Elastico利用PoW哈希中最低比特位来分发矿工给不同的分片，然后每个分片运行PBFT<code>[13]</code>来达到共识，接着领导分片(leader shard)验证所有的签名，然后创建全局区块。</p>
+<blockquote>
+<p>[34] L. Luu, V. Narayanan, C. Zheng, K. Baweja, S. Gilbert, and P. Saxena. <code>A Secure Sharding Protocol For Open Blockchains.</code> In Proceedings of the 2016 ACM SIGSAC Conference on Computer and Communications Security, CCS ’16, pages 17–30, New York, NY, USA, 2016. ACM.</p>
+</blockquote>
+<p>OmniLedger addresses several challenges that Elastico leaves unsolved. First, Elastico’s relatively small shards (e.g., 100 validators per shard in experiments) yield a high failureprobability of 2.76%1 per shard per block under a 25% adversary, which cannot safely be relaxed in a PoW system [23]. For 16 shards, the failure probability is 97% over only 6 epochs. Second, Elastico’s shard selection is not strongly bias-resistant, as miners can selectively discard PoWs to bias results [7]. Third, Elastico does not ensure transaction atomicity across shards, leaving funds in one shard locked forever if another shard rejects the transaction. Fourth, the validators constantly switch shards, forcing themselves to store the global state, which can hinder performance but provides stronger guarantees against adaptive adversaries. Finally, the latency of transaction commitment is comparable to Bitcoin (≈ 10 min.), which is far from OmniLedger’s usability goals.</p>
+<p>omniledger解决了许多elastico没有解决的问题</p>
+<p>第一：Elastico相对小的分片(比如实验中每个分片100个验证者)，在低于25%恶意节点时会产生每分片每区块2.76%的高失败率，这在PoW系统中是不能被容忍的。在16个分片里仅仅6个周期就有高达97%的失败率。</p>
+<p>第二：Elastico的分片选举不是强抗偏见的，因此矿工可以<strong>选择性的忽视PoW</strong>来得到特定的结果<code>[7]</code>。</p>
+<p>第三：Elastico不能保证<strong>跨分片时的原子性交易</strong>，当另一个分片拒绝交易时，资金会永久锁定在一个分片中。</p>
+<p>第四：验证者总是在切换分片，导致它们需要保存全局状态，这可能会阻碍性能，但可以为自适应对手提供更强的保障。</p>
+<p>最后，交易确认的延迟跟比特币差不多（10 分钟），这和OmniLedger的可用性差远了。</p>
+<blockquote>
+<p>[23] A. Gervais, G. Karame, S. Capkun, and V. Capkun. <code>Is Bitcoin a decentralized currency?</code> IEEE security &amp; privacy, 12(3):54–60, 2014.</p>
+<p>[7] J. Bonneau, J. Clark, and S. Goldfeder. <code>On Bitcoin as a public randomness source.</code> IACR eprint archive, Oct. 2015.</p>
+</blockquote>
+<h2 id="3-System-Overview"><a href="#3-System-Overview" class="headerlink" title="3. System Overview"></a>3. System Overview</h2><p>This section presents the system, network and threat models, the design goals, and a roadmap towards OmniLedger that begins with a strawman design.</p>
+<p>这一部分将会展示系统、网络、威胁模型，设计目标，以及从雏形设计得到的omniledger设计路线。</p>
+<h3 id="3-1-系统模型"><a href="#3-1-系统模型" class="headerlink" title="3.1 系统模型"></a>3.1 系统模型</h3><p>We assume that there are n validators who process transactions and ensure the consistency of the system’s state. Each validator i has a public / private key pair (pki, ski), and we often identify i by pki. Validators are evenly distributed across m shards. We assume that the configuration parameters of a shard j are summarized in a shard-policy file. We denote by an epoch e the fixed time (e.g., a day) between global reconfiguration events where a new assignment of validators to shards is computed. The time during an epoch is counted in rounds r that do not have to be consistent between different shards. During each round, each shard processes transactions collected from clients. We assume that validators can establish identities through any Sybil-attack-resistant mechanism and commit them to the identity blockchain; to participate in epoch e validators have to register in epoch e−1. These identities are added into an identity blockchain as described in Section II-D</p>
+<p>我们假设一共有n个验证者来处理交易，并且保证系统的状态一致。每个验证者i都有一个公私钥对，我们通常使用公钥pki来验证它。验证者被均匀地分布在m个分片中。我们假设分片j的配置参数被写在一个分片规则（shard-policy）文件中，在全局的重配置事件(即验证者到分片的重新分配)中，epoch <code>e</code>表示一个固定的时间（比如1天），一个周期的时间以<code>r</code> 轮进行表示，这个在不同的分片不需要保证一致。在每一轮中，每一个分片处理从客户端中收集来的交易。我们假设验证者可以通过抗女巫攻击机制建立认证，并且将它们提交到identity链中，为了参加第e个epoch的验证，需要在第e-1个epoch中注册。至于身份是如何加入到身份区块链中的需要参考第3.4节中的内容</p>
+<h3 id="3-2-网络模型"><a href="#3-2-网络模型" class="headerlink" title="3.2 网络模型"></a>3.2 网络模型</h3><p>For the underlying network, we make the same assumption as prior work [31], [34], [36]. Specifically, we assume that (a) the network graph of honest validators is well connected and that (b) the communication channels between honest validators are synchronous, i.e., that if an honest validator broadcasts a message, then all honest validators receive the message within a known maximum delay Δ [39]. However, as Δ is in the scale of minutes, we cannot use it within epochs as we target latencies of seconds. Thus, all protocols inside one epoch use the partially synchronous model [13] with optimistic, exponentially increasing time-outs, whereas Δ is used for slow operations such as identity creation and shard assignment.</p>
+<p>关于底层网络，我们与以前的网络做出相同的假设[<code>31</code>], [<code>34</code>], [<code>36</code>]，特别地，我们假设忠诚节点的网络图是连接良好的，并且两个忠诚节点之间的交流是同步的，比如，如果一个忠诚节点广播了一条消息，所有的节点都在一个已知的时延Δ内会收到这条消息。但是这个Δ是以分钟为尺度的，如果我们以秒级为尺度，那么我们将无法在一个epoch内完成。因此，在一个时间周期内的所有协议使用乐观地部分同步模型<code>[13]</code>，而<code>∆</code>则用来进行诸如身份创建和分片分配之类的缓慢操作。</p>
+<blockquote>
+<p>[31] A. Kiayias, A. Russell, B. David, and R. Oliynykov. <code>Ouroboros: A Provably Secure Proof-of-Stake Blockchain Protocol.</code>Cryptology ePrint Archive, Report 2016/889, 2016</p>
+<p>[34] L. Luu, V. Narayanan, C. Zheng, K. Baweja, S. Gilbert, and P. Saxena. <code>A Secure Sharding Protocol For Open Blockchains.</code> In Proceedings of the 2016 ACM SIGSAC Conference on Computer and Communications Security, CCS ’16, pages 17–30, New York, NY, USA, 2016. ACM.</p>
+<p>[36]  S. Nakamoto. <code>Bitcoin: A Peer-to-Peer Electronic Cash System,</code> 2008. </p>
+<p>[13] M. Castro and B. Liskov. <code>Practical Byzantine Fault Tolerance.</code> In 3rd USENIX Symposium on Operating Systems Design and Implementation (OSDI), Feb. 1999.</p>
+</blockquote>
+<h3 id="3-3-威胁模型"><a href="#3-3-威胁模型" class="headerlink" title="3.3 威胁模型"></a>3.3 威胁模型</h3><p>We denote the number of Byzantine validators by f and assume, that n = 4f, i.e., at most 25% 2 of the validators can be malicious at any given moment, which is similar to prior DL’s [21], [32], [34]. These malicious nodes can behave arbitrarily, e.g., they might refuse to participate or collude to attack the system. The remaining validators are honest and faithfully follow the protocol. We further assume that the adversary is mildly adaptive [31], [34] on the order of epochs, i.e., he can try to corrupt validators, but it takes some time for such corruption attempts to actually take effect.</p>
+<p>我们假定<strong>拜占庭节点的数量是f，节点总数为n = 4f</strong>，也就是说，在任意时间内最多允许25%的节点是恶意的，这与先前的分布式账本是一致的[<code>21</code>], [<code>32</code>], [<code>34</code>]，这些恶意节点可以有任意的行为，比如说他们可以拒绝参与共识或者攻击系统。在本协议下剩余的节点则是忠诚且可信的。我们再假设对手具有适度的适应能力[<code>31</code>], [<code>34</code>]，也就是说，他可以选择黑掉任意验证者节点，但是从行为开始到产生影响需要一定时间。</p>
+<blockquote>
+<p>[<code>21</code>] I. Eyal, A. E. Gencer, E. G. Sirer, and R. van Renesse. <code>BitcoinNG: A Scalable Blockchain Protocol.</code> In 13th USENIX Symposium on Networked Systems Design and Implementation (NSDI 16), Santa Clara, CA, Mar. 2016. USENIX Association.</p>
+<p>[<code>32</code>] E. Kokoris-Kogias, P. Jovanovic, N. Gailly, I. Khoffi, L. Gasser, and B. Ford. <code>Enhancing Bitcoin Security and Performance with Strong Consistency via Collective Signing.</code> In Proceedings of the 25th USENIX Conference on Security Symposium, 2016.</p>
+<p>[<code>34</code>] L. Luu, V. Narayanan, C. Zheng, K. Baweja, S. Gilbert, and P. Saxena. <code>A Secure Sharding Protocol For Open Blockchains.</code> In Proceedings of the 2016 ACM SIGSAC Conference on Computer and Communications Security, CCS ’16, pages 17–30, New York, NY, USA, 2016. ACM.</p>
+<p>[<code>31</code>] A. Kiayias, A. Russell, B. David, and R. Oliynykov. <code>Ouroboros: A Provably Secure Proof-of-Stake Blockchain Protocol.</code>Cryptology ePrint Archive, Report 2016/889, 2016</p>
+</blockquote>
+<p>We further assume that the adversary is computationally bounded, that cryptographic primitives are secure, and that the computational Diffie-Hellman problem is hard.</p>
+<p>我们再假定对手是有计算边界的，那么加密原语是安全的，并且<strong>计算Diffie-Hellman问题是非常困难的</strong>。</p>
+<h3 id="3-4-系统目标"><a href="#3-4-系统目标" class="headerlink" title="3.4 系统目标"></a>3.4 系统目标</h3><p>OmniLedger has the following primary goals with respect to decentralization, security, and scalability.</p>
+<p>1) <strong>Full decentralization</strong>. OmniLedger does not have any single points of failure (such as trusted third parties).<br>2) <strong>Shard robustness.</strong> Each shard correctly and continuously processes transactions assigned to it.<br>3) <strong>Secure transactions.</strong> Transactions are committed atomically or eventually aborted, both within and across shards.<br>4) <strong>Scale-out.</strong> The expected throughput of OmniLedger increases linearly in the number of participating validators.<br>5) <strong>Low storage overhead.</strong> Validators do not need to store the full transaction history but only a periodically computed reference point that summarizes a shard’s state.<br>6) <strong>Low latency.</strong> OmniLedger provides low latency for transaction confirmations.</p>
+<p>omniledger的设计目标如下：其同时具有去中心性、安全性和可扩展性</p>
+<ol>
+<li><strong>完全去中心化</strong>：不存在任何单点故障造成系统无法用的问题，比如可信第三方故障将导致系统不可用</li>
+<li><strong>具有分片鲁棒性</strong>：每个分片都可<strong>持续正确地处理</strong>分配给它的交易</li>
+<li><strong>交易安全性</strong>：分片内或跨分片的交易都能原子性地提交确认或最终取消</li>
+<li><strong>可扩展</strong>：omniledger预期的吞吐量会随着参与者数量的增加而线性增加</li>
+<li><strong>低存储开销</strong>：验证者不需要存储全部的历史交易，而是只需要周期性地计算reference点来总结一个分片的状态</li>
+<li><strong>低延时</strong>：omniledger为交易确认提供了很低的延时</li>
+</ol>
+<h3 id="3-5-设计路线"><a href="#3-5-设计路线" class="headerlink" title="3.5 设计路线"></a>3.5 设计路线</h3><p>This section introduces SLedger, a strawman DL system that we use to outline OmniLedger’s design. Below we describe one epoch of SLedger and show how it transitions from epoch e − 1 to epoch e. </p>
+<p>这里介绍SLedger，这是一个提供了omniledger设计思路的草案，下面将会介绍SLedger并且展示如何从第e-1个epoch转换到第e个epoch的</p>
+<p>We start with the secure validator-assignment to shards. Permitting the validators to choose the shards they want to validate is insecure, as the adversary could focus all his validators in one shard. As a result, we need a source of randomness to ensure that the validators of one shard will be a sample of the overall system and w.h.p. will have the same fraction of malicious nodes. SLedger operates a trusted randomness beacon that broadcasts a random value rnde to all participants in each epoch e. Validators, who want to participate in SLedger starting from epoch e, have to first register to a global identity blockchain. They create their identities through a Sybil-attack-resistant mechanism in epoch e−1 and broadcast them, together with the respective proofs, on the gossip network at most Δ before epoch e − 1 ends.</p>
+<p>我们从安全的验证者被分配到分片开始，让验证者自己选择分片是不安全的，因为有些对手会将他的验证者全放在一个分片中。因此我们需要一种随机算法来保证一个分片内分到的的验证者是系统总体的一个样本，也就是每个分片中将具有相同比例的恶意节点。SLedger使用一个可信的随机数种子，使其在epoch <code>e</code>内广播一个随机值<code>rnd[e]</code>给所有参与者，如果验证者想要从第e个epoch开始参与到SLedger，则他们需要首先在全局的身份链中进行注册，在第<code>e-1</code>个epoch中<strong>通过一个抵抗女巫攻击的机制创建身份认证</strong>，然后在gossip网络中在第e-1个epoch结束之前最多 Δ 时间来广播他们的身份以及相关的证明。</p>
+<p>Epoch e begins with a leader, elected using randomness rnd[e−1], who requests from the already registered and active validators a (BFT) signature on a block with all identities that have been provably established so far. If at least 2/3 of these validators endorse the block, it becomes valid, and the leader appends it to the identity blockchain. Afterwards, all registered validators take rnd[e] to determine their assignment to one of the SLedger’s shards and to bootstrap their internal states from the shards’ distributed ledgers. Then, they are ready to start processing transactions using ByzCoin. The random shardassignment ensures that the ratio between malicious and honest validators in any given shard closely matches the ratio across all validators with high probability.</p>
+<p>第e个epoch的leader由随机数rnd[e-1]选出，该leader向已经注册且活跃的验证者们请求一个区块上的（BFT）签名，这个区块具有已证明被创建的所有身份信息。如果至少有2/3的验证者都赞成这一区块，它将变成合法的区块，并且leader将会把它自己添加到身份认证链上。然后，所有注册过的验证者将会通过随机数rnd[e]来决定自己分配到SLedger中的其中一个分片上，然后从相应分片的分布式账本中同步内部状态。那么，他们就可以使用ByzCoin的共识机制来处理交易了。随机的分片分配机制保证了在一个给定分片中恶意和诚实验证者的比例与在所有验证者中的恶意和诚实的比例是最有可能相接近的。</p>
+<p>SLedger already provides a similar functionality to OmniLedger, but it has several significant security restrictions. First, the randomness beacon is a trusted third party. Second, the system stops processing transactions during the global reconfiguration at the beginning of each epoch until enough validators have bootstrapped their internal states and third, there is no support for cross-shard transactions. SLedger’s design also falls short in performance. First, due to ByzCoin’s failure handling mechanism, its performance deteriorates when validators fail. Second, validators face high storage and bootstrapping overheads. Finally, SLedger cannot provide real-time confirmation latencies and high throughput.</p>
+<p>SLedger已经提供了与omniledger相似的原理，但是有几个明显的安全限制</p>
+<ul>
+<li>第一，这个随机数种子本质上就是一个可信的第三方</li>
+<li>第二，系统将会在每个epoch开始的全局重配置期间停止处理交易，直到有足够的验证者已经启动他们的内部状态</li>
+<li>第三，不支持跨分片的交易</li>
+</ul>
+<p>SLedger在性能方便同样表现不佳</p>
+<ul>
+<li>第一，由于byzcoin的失败处理机制，当验证者失败的时候它的性能会恶化</li>
+<li>第二，验证者面临着高昂的存储和启动开销</li>
+<li>第三，SLedger不能提供实时的低延迟高吞吐的交易验证</li>
+</ul>
+<p>To address the security challenges, we introduce OmniLedger’s security design in Section IV:</p>
+<p>1) In Section IV-A, we remove the trusted randomness beacon and show how validators can autonomously perform a secure sharding by using a combination of RandHound and VRF-based leader election via cryptographic sortition.<br>2) In Section IV-B, we show how to securely handle the validator assignment to shards between epochs while maintaining the ability to continuously process transactions.<br>3) In Section IV-C, we present Atomix, a novel two-step atomic commit protocol for atomically processing crossshard transactions in a Byzantine setting.</p>
+<p>因此，针对前三条安全限制，omniledger的设计做出了以下改善：</p>
+<ul>
+<li>第一，在4.1节中，我们移除了这个可信的随机种子，并且演示了验证者如何通过RandHound 和 VRF-based leader election via cryptographic sortition来进行安全的leader选举。</li>
+<li>第二，在4.2节中，我们展示了如何在跨两个epoch时安全地处理将验证者分配给分片，同时保证持续的处理交易。</li>
+<li>第三，在4.3节中，我们展示了Atomix，一个在拜占庭环境假设下的典型的两步原子提交协议来解决跨分片交易问题。</li>
+</ul>
+<p>To deal with the performance challenges, we introduce OmniLedger’s performance and usability design in Section V:<br>4) In Section V-A, we introduce ByzCoinX, a variant of ByzCoin, that utilizes more robust communication patterns to<br>efficiently process transactions within shards, even if some of the validators fail, and that resolves dependencies on the transaction level to achieve better block parallelization.<br>5) In Section V-C, we introduce state blocks that summarize the shards’ states in an epoch and that enable ledger pruning to reduce storage and bootstrapping costs for validators.<br>6) In Section V-D, we show how to enable optimistic realtime transaction confirmations without sacrificing security or throughput by utilizing an intra-shard architecture with trust-but-verify transaction validation. A high-level overview of the (security) architecture of OmniLedger is illustrated in Figure 2. </p>
+<p>为了解决性能不佳的问题，我们引入了omniledger的设计，在第5节会讲解</p>
+<ul>
+<li>第四，在5.1节中，我们引入了ByzCoinX，一个ByzCoin的变种，用来提供更加鲁棒的通信模式来有效地处理跨分片交易。即使有一些分片失败了，也可以在交易层面上解决依赖性以实现更好的<strong>区块并行化</strong>？？？。</li>
+<li>第五，在5.3节中，我们引入了<strong>状态区块</strong>的概念，这个区块用来汇总分片中一个epoch的状态，并且提供账本剪枝来减少存储和验证节点启动的开销</li>
+<li>第六，在5.4节中，我们展示通过利用trust but verify的<strong>分片内交易验证方式</strong><code>(an intra-shard architecture with trust-but-verify transaction validation)</code>，如何在不牺牲安全性或吞吐量的情况下进行乐观实时的交易确认。</li>
+</ul>
+<p>omniledger的安全模块的一个总览图：</p>
+<p><img src="/2019/11/15/blockchain/03/1573972865217.png" alt="1573972865217"></p>
+<p>OmniLedger architecture overview: At the beginning of an epoch e, all validators (shard membership is visualized through the different colors) (1) run RandHound to re-assign randomly a certain threshold of validators to new shards and assign new validators who registered to the identity blockchain in epoch e − 1. Validators ensure (2) consistency of the shards’ ledgers via ByzCoinX while clients ensure (3) consistency of their cross-shard transactions via Atomix (here the client spends inputs from shards 1 and 2 and outputs to shard 3).</p>
+<p>omniledger结构概述：在第e个epoch开始的时候，所有的验证者（不同分片的成员使用不同颜色标注）进行下面的操作：</p>
+<ol>
+<li>运行RandHound以随机地给各分片重新分配一个关于验证者的特定的阈值，并且将在第e-1个epoch中注册到身份认证链上的验证者分配给各个分片</li>
+<li>验证者通过<strong>byzcoinx来保证分片中账本的一致性</strong></li>
+<li>客户端通过<strong>Atomix保证他们跨分片交易的一致性</strong>（在上图中，这个客户端的交易输入来自分片1和2，输出为分片3）</li>
+</ol>
+<h2 id="4-关于安全性的设计"><a href="#4-关于安全性的设计" class="headerlink" title="4. 关于安全性的设计"></a>4. 关于安全性的设计</h2><h3 id="4-1-基于抗bias的分布式随机数进行分片"><a href="#4-1-基于抗bias的分布式随机数进行分片" class="headerlink" title="4.1 基于抗bias的分布式随机数进行分片"></a>4.1 基于抗bias的分布式随机数进行分片</h3><p>To generate a seed for sharding securely without requiring a trusted randomness beacon [16] or binding the protocol to PoW [34], we rely on a distributed randomness generation protocol that is collectively executed by the validators.</p>
+<p>为了在不使用可信的随机数种子或者绑定协议到pow的基础上，给安全分片生成一个随机数种子，我们需要一个分布式的随机数生成协议来正确地被验证者执行。</p>
+<blockquote>
+<p>[16] G. Danezis and S. Meiklejohn. <code>Centrally Banked Cryptocurrencies.</code> 23rd Annual Network &amp; Distributed System Security Symposium (NDSS), Feb. 2016.</p>
+</blockquote>
+<p>We require that the distributed-randomness generation protocol provide unbiasability, unpredictability, third-party verifiability, and scalability. Multiple proposals exist [7], [28], [44]. The first approach relies on Bitcoin, whereas the other two share many parts of the design; we focus on RandHound [44] due to better documentation and open-source implementation.</p>
+<p>我们需要分布式随机数生成协议来提供抗预测性、抗偏差性、第三方可验证性、可扩展性。有许多方法来实现这一效果，比如[<code>7</code>], [<code>28</code>], [<code>44</code>]，第一种方式依赖于比特币，另外两种则共享了很多的设计思想。我们这里主要关注RandHound，因为它的文档写的比较好，而且有开源实现。</p>
+<blockquote>
+<p>[7] J. Bonneau, J. Clark, and S. Goldfeder. <code>On Bitcoin as a public randomness source.</code> IACR eprint archive, Oct. 2015.</p>
+<p>[28]  T. Hanke and D. Williams. <code>Intoducing Random Beascons Using Threshold Relay Chains,</code> Sept. 2016. </p>
+<p>[44] E. Syta, P. Jovanovic, E. Kokoris-Kogias, N. Gailly, L. Gasser, I. Khoffi, M. J. Fischer, and B. Ford. <code>Scalable Bias-Resistant Distributed Randomness.</code> In 38th IEEE Symposium on Security and Privacy, May 2017.</p>
+</blockquote>
+<p>Because RandHound relies on a leader to orchestrate the protocol run, we need an appropriate mechanism to select one of the validators for this role. If we use a deterministic approach to perform leader election, then an adversary might be able to enforce up to f out of n failures in the worst case by refusing to run the protocol, resulting in up to 1 / 4 n failures given our threat model. Hence, the selection mechanism must be unpredictable and unbiasable, which leads to a chicken-andegg problem as we use RandHound to generate randomness with these properties in the first place. To overcome this predicament, we combine RandHound with a VRF-based leader election algorithm [44], [25].</p>
+<p>由于randhound依赖于一个leader来协调整个协议运行，我们需要一个合适的机制来选择一个验证者来担任这个角色。如果我们使用确定的方法来进行选举leader，那么攻击者只需要拒绝运行协议，就可以使得有f/n的几率（最高25%）失败，因此，leader选举必须是不可预测且无偏差的，但是我们第一次运行这个协议的时候也需要一个随机数，也就是会导致一个<strong>先有鸡还是先有蛋</strong>的问题。为了克服这种可预测性，我们将randhound和基于VRF的leader选择算法相结合。</p>
+<p>At the beginning of an epoch e, each validator i computes a ticket</p>
+<ul>
+<li><p>第一步：在每个epoch开始的时候，每一个验证者都计算出下面的值</p>
+<p><img src="/2019/11/15/blockchain/03/1573974828730.png" alt="1573974828730"></p>
+<p>$ config_e $ is the configuration containing all properly registered validators of epoch e (as stored in the identity blockchain) and $v$ is a view counter. </p>
+<ul>
+<li>$config_e$：是在第e个epoch中所有正常注册的验证者的配置信息，它保存在身份认证链中</li>
+<li>$v$：是一个视图计数器（view counter）</li>
+</ul>
+</li>
+</ul>
+<p>Validators then gossip these tickets with each other for a time Δ, after which they lock in the lowest-value valid ticket they have seen thus far and accept the corresponding node as the leader of the RandHound protocol run. </p>
+<ul>
+<li>第二步：计算出ticket值之后，验证者通过gossip在 Δ 时间内来互相广播这些ticket值，之后他们锁定一个他们迄今看到的最小的合法ticket值，使该值对应的节点为运行RandHound协议的leader</li>
+</ul>
+<p>If the elected node fails to start RandHound within another Δ, validators consider the current run as failed and ignore this validator for the rest of the epoch, even if he returns later on. </p>
+<ul>
+<li>第三步：如果被选中的节点在下一个 Δ 时间内启动失败，则所有的验证者则认为该节点失败了，并且在剩下的epoch内都忽略他，即使他后来上线了。</li>
+</ul>
+<p>In this case, the validators increase the view number to $v + 1$ and re-run the lottery. </p>
+<ul>
+<li>第四步：这种情况下，验证者将会把view数从v加到v+1，然后重新运行抽奖（选举）</li>
+</ul>
+<p>Once the validators have successfully completed a run of RandHound and the leader has broadcast $rnd_e$ together with its correctness proof, each of the n properly registered validators can first verify and then use $rnd_e$ to compute a permutation $π_e$ of $1, . . . , n$ and subdivide the result into m approximately equally-sized buckets, thereby determining its assignment of nodes to shards.</p>
+<ul>
+<li>第五步：一旦验证者成功地完成了randhound算法，并且leader已经成功广播了$rnd_e$（携带正确性证明）， <ul>
+<li><code>n</code>中的每个合理注册的验证者就可以先验证正确性</li>
+<li>然后用$rnd_e$来计算<code>1,...,n</code>的$π_e$排列，</li>
+<li>再将结果分配到大小都为<code>m</code>的桶里<code>(bukets)</code>，因此决定将哪些节点分配到哪个分片 </li>
+</ul>
+</li>
+</ul>
+<p>Security Arguments: we make the following observations to informally argue the security of the above approach. Each participant can produce only a single valid ticket per view v in a given epoch e, because the VRF-based leader election starts only after the valid identities have been fixed in the identity blockchain. Furthermore, as the output of a VRF is unpredictable as long as the private key ski is kept secret, the tickets of non-colluding nodes, hence the outcome of the lottery is also unpredictable. The synchrony bound Δ guarantees that the ticket of an honest leader is seen by all other honest validators. If the adversary wins the lottery, he can decide either to comply and run the RandHound protocol or to fail, which excludes that particular node from participating for the rest of the epoch.</p>
+<p><strong>安全论证</strong>：我们进行以下观察来用一种非正式的方法来讨论上面方案的安全性</p>
+<ul>
+<li><p>每一个参与者在给定epoch e的每个视图v内仅可以产生一个唯一的合法选票ticket，因为基于VRF的leader选举仅在合法的认证信息在身份认证链中固定下来之后才会进行</p>
+</li>
+<li><p>只要私钥ski是保密的，VRF的输出是不可预测的，因此抽奖最后的结果就是不可预测的</p>
+</li>
+<li><p>同步时间 Δ 保证了忠诚leader的选票可以被所有的忠诚的验证者看到</p>
+</li>
+<li><p>如果对手获得了选举的胜利，他可以决定遵循并运行<code>RandHound</code>协议，或者让其运行失败，这样该节点就会在此epoch之后的epoch中被排除在外。</p>
+</li>
+</ul>
+<p>After a successful run of RandHound, the adversary is the first to learn the randomness, hence the sharding assignment, however his benefit is minimal. The adversary can again either decide to cooperate and publish the random value or withhold it in the hope of winning the lottery again and obtaining a sharding assignment that fits his agenda better. However, the probability that an adversary wins the lottery a times in a row is upper bounded by the exponentially decreasing term (f/n)^a. Thus, after only a few re-runs of the lottery, an honest node wins with high probability and coordinates the sharding. Finally, we remark that an adversary cannot collect random values from multiple runs and then choose the one he likes best as validators accept only the latest random value that matches their view number v.</p>
+<ul>
+<li>成功地运行randhound之后，对手就是第一个得到随机数的人了，但是他的收益是很小的，对手可以再一次决定是配合并且将随机数广播出去，或者保留它以期望再次赢得抽奖，并获得最符合他要求的分片分配任务。</li>
+<li>然而，对手连续赢得a次选举的概率是按照公式$(f/n)^a$呈现指数级下降的</li>
+<li>因此，经过几轮重新抽奖，诚实节点以高概率赢得抽奖，然后协调分片。</li>
+<li>最后，我们认定攻击者不能在多轮抽奖中获得随机数，然后选择最符合其利益的那个，因为验证者只接受符合视图计数<code>v</code>的最新随机值。</li>
+</ul>
+<p>In Appendix B, we show how OmniLedger can be extended to probabilistically detect that the expected Δ does not hold and how it can still remain secure with a fall-back protocol.</p>
+<p>在附录B中，我们将展示omniledger是如何能够扩展概率性地检测预期的<code>∆</code>不存在，以及如何回退协议保证安全。</p>
+<h3 id="4-2-在epoch过渡期间保持可操作性"><a href="#4-2-在epoch过渡期间保持可操作性" class="headerlink" title="4.2 在epoch过渡期间保持可操作性"></a>4.2 在epoch过渡期间保持可操作性</h3><p>Recall that, in each epoch e, SLedger changes the assignments of all n validators to shards, which results in an idle phase during which the system cannot process transactions until enough validators have finished bootstrapping.</p>
+<p>在每一个epoch e中，SLedger改变验证者到分片的分配时，会导致<strong>一段空闲期</strong>，这段时间系统不能处理交易直到有足够的验证者完成启动。</p>
+<p>To maintain operability during transition phases, OmniLedger gradually swaps in new validators to each shard per epoch. This enables the remaining operators to continue providing service (in the honest scenario) to clients while the recently joined validators are bootstrapping. In order to achieve this continued operation we can swap-out at most 1/3 of the shard’s size (≈ n/m), however the bigger the batch is, the higher the risk gets that the number of remaining honest validators is insufficient to reach consensus and the more stress the bootstrapping of new validators causes to the network.</p>
+<p>为保持转换阶段的可操作性，OmniLedger在每个epoch<strong>逐渐地将新的验证者切换到新的分片</strong>。这可以保证剩下的操作者可以持续提供服务给客户，同时新加入的验证者同步进行启动。为了实现这种持续的操作，我们可以转移出最多<code>1/3</code>分片大小<code>(约为n/m)</code>的验证者数量，转出数量越多，剩余的诚实节点不足够达到共识的风险就更高，而且新节点时启动的对网络的压力也越大。</p>
+<p>To balance the chances of a temporary loss of liveness, the shard assignment of validators in OmniLedger works as follows. First, we fix a parameter $ k &lt;  \frac{1}{3}  \frac{n}{m}   $ specifying the swap-out batch, i.e., the number of validators that are swapped out at a given time. For OmniLedger, we decided to work in batches of $k = log  \frac{n}{m} $ . Then for each shard j, we derive a seed $H(j||rnd_e)$ to compute a permutation $π[j,e]$ of the shard’s validators, and we specify the permutation of the batches. We also compute another seed $H( 0||rnd_e)$ to permute and scatter the validators who joined in epoch e and to define the order in which they will do so (again, in batches of size k). After defining the random permutations, each batch waits Δ before starting to bootstrap in order to spread the load on the network. Once a validator is ready, he sends an announcement to the shard’s leader who then swaps the validator in.</p>
+<p>为平衡临时失去活性的可能性，OmniLedger中验证者分片分配按照以下步骤工作。</p>
+<ul>
+<li><p>设置参数$ k &lt;  \frac{1}{3}  \frac{n}{m}   $ , 作为批次转出的数量（即特定时间转移出分片的验证者数量）。针对OmniLedger，我们决定设置 $k = log  \frac{n}{m} $</p>
+</li>
+<li><p>然后针对每个分片<code>j</code>，我们获得一个种子$H(j||rnd_e)$来计算分片验证者的排列$π[j,e]$，并且我们指定批次排列。</p>
+</li>
+<li><p>同时计算另一个种子$H(0||rnd_e)$，来置换和分散新加入第e个epoch的验证者，并定义按照什么顺序进行（大小也为<code>k</code>）。</p>
+</li>
+<li><p>定义好随机排列后，每批次等待时间 ∆ 再开始启动以保证分散负担到网络上。</p>
+</li>
+<li><p>当一个验证者准备好后，他发送一个声明给将其转入分片的leader。</p>
+</li>
+</ul>
+<p>Security Arguments: During the transition phase, we ensure the safety of the BFT consensus in each shard as there are always at least$\frac{2}{3}  \frac{n}{m}$honest validators willing to participate in the consensus within each shard. And, as we use the epoch’s randomness $rnd_e$ to pick the permutation of the batches, we keep the shards’ configurations a moving target for an adaptive adversary. Finally, as long as there are $\frac{2}{3}  \frac{n}{m}$ honest and up-to-date validators, liveness is guaranteed. Whereas if this quorum is breached during transition (the new batch of honest validators has not yet updated), the liveness is lost only temporarily, until the new validators update. </p>
+<p><strong>安全论证</strong>：</p>
+<ul>
+<li><p>在转换阶段，我们在每个分片保证<code>BFT</code>共识的安全性，因为在每个分片里总是至少有$\frac{2}{3}  \frac{n}{m}$数量的诚实验证者愿意参与共识。</p>
+</li>
+<li><p>我们使用时代随机数$rnd_e$来获得批次排列，针对自适应攻击者我们保持分片配置是一个移动目标。</p>
+</li>
+<li><p>只要有$\frac{2}{3}  \frac{n}{m}$诚实和保持更新的节点，分片活性就可以保证。</p>
+</li>
+<li><p>反之如果转换期间未达到法定人数(新批次的诚实验证者还没更新完成)，分片活性会暂时不可用直到新验证者更新完成。</p>
+</li>
+</ul>
+<p>​    </p>
+<h3 id="4-3-跨分片交易"><a href="#4-3-跨分片交易" class="headerlink" title="4.3 跨分片交易"></a>4.3 跨分片交易</h3><p>To enable value transfer between different shards thereby achieving shard interoperability, support for secure cross-shard transactions is crucial in any sharded-ledger system. We expect that the majority of transactions to be cross-shard in the traditional model where UTXOs are randomly assigned to shards for processing [16], [34], see Appendix C.</p>
+<p>为了完成跨分片的价值交换，能够实现分片的互操作性，在任何分片型账本系统中支持安全的跨分片交易都是至关重要的。我们期望在传统模型中大多数交易是跨分片的，其中UTXO被自由地分配给分片进行处理<code>[16][34]</code>。具体参考<code>附件C</code>。</p>
+<blockquote>
+<p>[16] G. Danezis and S. Meiklejohn. <code>Centrally Banked Cryptocurrencies.</code> 23rd Annual Network &amp; Distributed System Security Symposium (NDSS), Feb. 2016.</p>
+<p>[34] L. Luu, V. Narayanan, C. Zheng, K. Baweja, S. Gilbert, and P. Saxena. <code>A Secure Sharding Protocol For Open Blockchains.</code> In Proceedings of the 2016 ACM SIGSAC Conference on Computer and Communications Security, CCS ’16, pages 17–30, New York, NY, USA, 2016. ACM.</p>
+</blockquote>
+<p>A simple but inadequate strawman approach to a cross-shard transaction, is to concurrently send a transaction to several shards for processing because some shards might commit the transaction while others might abort. In such a case, the UTXOs at the shard who accepted the transactions are lost as there is no straightforward way to roll back a half-committed transaction, without adding exploitable race conditions.</p>
+<p>一个针对跨分片交易的简单但不完善的草案，是<strong>将一个交易同步地发送给多个分片处理</strong>，因为有些分片会提交交易，其它的会取消。这种情况下，因为在没有添加可利用的竞争条件时，没有一种直接的方式可以回退半提交的交易，这些UTXO在接受交易的分片中被丢失。</p>
+<p>To address this issue, we propose a novel Byzantine Shard Atomic Commit (Atomix) protocol for atomically processing transactions across shards, such that each transaction is either committed or eventually aborted. The purpose is to ensure consistency of transactions between shards, to prevent double spending and to prevent unspent funds from being locked forever. In distributed computing, this problem is known as atomic commit [47] and atomic commit protocols [27], [30] are deployed on honest but unreliable processors. Deploying such protocols in OmniLedger is unnecessarily complex, because the shards are collectively honest, do not crash infinitely, and run ByzCoin (that provides BFT consensus). Atomix improves the strawman approach with a lock-then-unlock process. We intentionally keep the shards’ logic simple and make any direct shard-to-shard communication unnecessary by tasking the client with the responsibility of driving the unlock process while permitting any other party (e.g., validators or even other clients) to fill in for the client if a specific transaction stalls after being submitted for processing.</p>
+<p>为解决这个问题，我们提出一种新型的拜占庭分片原子提交协议<code>(Byzantine Shard Atomic Commit (Atomix))</code>来自动处理跨链交易，<strong>保证每个交易被完全提交或最终取消</strong>。目的是<strong>保证跨分片交易的一致性</strong>，以<strong>阻止双花或者未花费的资金被永久锁住</strong>。在分布式计算里，这个问题被称为原子提交<code>[47]</code>或原子提交协议<code>[27][30]</code>被部署到诚实但不可靠的处理器上。</p>
+<blockquote>
+<p>[47]  Wikipedia. <code>Atomic commit</code>, Feb. 2017 </p>
+<p>[27] R. Guerraoui. <code>Non-blocking atomic commit in asynchronous distributed systems with failure detectors.</code> Distributed Computing, 15(1):17–25, 2002</p>
+<p>[30] I. Keidar and D. Dolev. <code>Increasing the resilience of atomic commit, at no additional cost.</code> In Proceedings of the fourteenth ACM SIGACTSIGMOD-SIGART symposium on Principles of database systems, pages 245–254. ACM, 1995.</p>
+</blockquote>
+<p>Atomix uses the UTXO state model, see Section II-B for an overview, which enables the following simple and efficient three-step protocol, also depicted in Figure 3.</p>
+<p><code>Atomix</code>使用UTXO状态模型，它可使下面的简单而高效的三步协议成为可能。下图就是一个解释</p>
+<p><img src="/2019/11/15/blockchain/03/1573981360563.png" alt="1573981360563"></p>
+<p>1) <strong>Initialize</strong>. A client creates a cross-shard transaction (crossTX for short) whose inputs spend UTXOs of some input shards (ISs) and whose outputs create new UTXOs in some output shards (OSs). The client gossips the cross-TX and it eventually reaches all ISs  </p>
+<p>第一步：<strong>初始化</strong></p>
+<p>一个客户端创建了一个跨链交易，输入从ISs中获取，输出将会输出到OSs中，客户端会将这个跨链交易通过gossip协议广播到所有的IS（输入分片）中</p>
+<p>2) <strong>Lock</strong>. All input shards associated with a given cross-TX proceed as follows. First, to decide whether the inputs can be spent, each IS leader validates the transaction within his shard. If the transaction is valid, the leader marks within the state that the input is spent, logs the transaction in the shard’s ledger and gossips a proof-of-acceptance, a signed Merkle proof against the block where the transaction is included. If the transaction is rejected, the leader creates an analogous proof-of-rejection, where a special bit indicates an acceptance or rejection. The client can use each IS ledger to verify his proofs and that the transaction was indeed locked. After all ISs have processed the lock request, the client holds enough proofs to either commit the transaction or abort it and reclaim any locked funds, but not both.</p>
+<p>第二步：<strong>锁定</strong></p>
+<p>根据跨链交易得到的所有输入分片将会进行如下处理：</p>
+<ol>
+<li>确定输入是否可以被划掉，每一个输入分片的leader确认交易是否在自己的分片中</li>
+<li>如果交易是合法的，那么leader将会将这个输入标记为spent，然后关于这个交易的这条日志将会被gossip协议广播一个 <strong>接受的证明<code>(proof-of-acceptance)</code></strong> ，这是一种包含本交易的区块的被签名的merkle树证明。</li>
+<li>如果交易被拒绝，leader将会创建一个类似的 <strong>拒绝的证明（<code>proof-of-rejection</code>）</strong>，其中有一个特殊的比特表示拒绝或接受。</li>
+<li>客户端可以使用每一个IS的账本来验证交易是否已被锁定</li>
+<li>当所有的IS都进行完lock请求之后，client将会掌握足够多的的证明。他可以选择提交这个交易或者取消并清除已经建立的锁或者都不做？？</li>
+</ol>
+<p>3) <strong>Unlock</strong>. Depending on the outcome of the lock phase, the client is able to either commit or abort his transaction.<br>3a) Unlock to Commit. If all IS leaders issued proofs-of-acceptance, then the respective transaction can be committed. The client (or any other entity such as an IS leader after a time-out) creates and gossips an unlock-tocommit transaction that consists of the lock transaction and a proof-of-acceptance for each input UTXO. In turn, each involved OS validates the transaction and includes it in the next block of its ledger in order to update the state and enable the expenditure of the new funds.<br>3b) Unlock to Abort. If, however, even one IS issued a proof-of-rejection, then the transaction cannot be committed and has to abort. In order to reclaim the funds locked in the previous phase, the client (or any other entity) must request the involved ISs to unlock that particular transaction by gossiping an unlock-to-abort transaction that includes (at least) one proof-of-rejection for one of the input UTXOs. Upon receiving a request to unlock, the ISs’ leaders follow a similar procedure and mark the original UTXOs as spendable again.</p>
+<p>第三步：<strong>解锁</strong></p>
+<p>根绝加锁阶段的输出，客户端可以选择提交或中断交易</p>
+<ul>
+<li><strong>解锁提交</strong>：如果所有的输入分片的leader都返回了接受的证明，那么对应的交易就都可以被提交，客户端（或超时后为其它实体比如IS的leader）<strong>创建并广播一个unlock-to-commit的交易</strong>，这个交易中包含了<strong>每一个输入的UTXO中加锁的交易和接受的证明</strong>。相应的，每一个被包含的输出分片OS验证交易并且将它包含进下一个其分区账本区块中以更新其状态，并使新资金可被花费。</li>
+<li><strong>解锁中断</strong>：相反，如果其中一个IS反馈了拒绝的证明，此时交易就不能够被提交并且会被中断。为了回收上个阶段被锁住的资金，<strong>client必须发出广播一个unlock-to-abort的交易来请求相关的IS来解锁指定交易</strong>，这个被广播的交易中应当至少<strong>包含一个对其中一个输入UTXO的拒绝的证明</strong>。一旦收到了unlock的命令，IS的leader就会进行相似的步骤来使得原来被锁住的UTXO重新变为可以花费的。</li>
+</ul>
+<p>We remark that, although the focus of OmniLedger is on the UTXO model, Atomix can be extended with a locking mechanism for systems where objects are long-lived and hold state (e.g., smart contracts [48]), see Appendix D for details.</p>
+<p>我们评论一下，虽然OmniLedger专注在UTXO模型上，但是<code>Atomix</code>可以<strong>被扩展到其它的具有锁机制的系统</strong>，其中对象是长期活性和保存状态的。(比如智能合约[48]，请参考<code>附件D</code>)。</p>
+<p><strong>Security Arguments</strong>: We informally argue the previously stated security properties of Atomix, based on the following observations. Under our assumptions, shards are honest, do not fail, eventually receive all messages and reach BFT consensus. Consequently, (1) all shards always faithfully process valid transactions; (2) if all input shards issue a proof-of-acceptance, then every output shard unlocks to commit; (3) if even one input shard issues a proof-of-rejection, then all input shards unlocks to abort; and (4) if even one input shard issues a proof-of-rejection, then no output shard unlocks to commit.</p>
+<p>安全论证：基于下面的发现，我们来非正式地讨论它的安全性。在我们的假设下，分片是忠诚的，不会失败，最终会受到所有的信息，并且达到BFT一致。因此，</p>
+<ol>
+<li>所有的分片总是忠诚地处理合法的交易</li>
+<li>如果所有的输入分片都反馈了proof-of-acceptance，此时所有的输出分片将会解锁并提交</li>
+<li>如果哪怕有一个输入分片反馈了proof-of-rejection，此时所有的输入分片都必须解锁并中断。</li>
+<li>如果哪怕有一个输入分片反馈了proof-of-rejection，此时没有输出分片将会被解锁并提交</li>
+</ol>
+<p>In Atomix, each cross-TX eventually commits or aborts. Based on (1), each input shard returns exactly one response: either a proof-of-acceptance or a proof-of-rejection. Consequently, if a client has the required number of proofs (one per each input UTXO), then the client either only holds proofs-of-acceptance (allowing the transaction to be committed as (2) holds) or not (forcing the transaction to abort as (3) and (4) holds), but not both simultaneously.</p>
+<p>在atomix中，每一个跨分片的交易最终都会提交或中断，根据上面的第一条，每一个输入分片都会返回一个确定的结果，proof-of-acceptance或者proof-of-rejection，因此如果一个客户端已经拥有了要求的proof数量（每一个UTXO都会有一个proof），此时，客户端将对每个输入UTXO只会拥有接受证明或拒绝证明，而不会两者同时拥有。 （根据上面的34条）</p>
+<p>In Atomix, no cross-TX can be spent twice. As shown above, cross-shard transactions are atomic and are assigned to specific shards who are solely responsible for them. Based on (1), the assigned shards do not process a transaction twice and no other shard attempts to unlock to commit.</p>
+<p>在atomix中，没有跨分片交易可以被双花。正如前面所说的，跨分片交易都是原子性，并且只被分配给专门负责它们的特定分片。基于(1)，被分配的分片不会对同一个交易处理两次，没有其它分片会进行解锁提交。</p>
+<p>In Atomix, if a transaction cannot be committed, then the locked funds can be reclaimed. If a transaction cannot be committed, then there must exist at least one proof-of-rejection issued by an input shard, therefore (3) must hold. Once all input shards unlock to abort, the funds become available again.</p>
+<p>在atomix中，如果一个交易不能被提交，那么被锁定的资产将会被重新声明（也就是释放），如果一个交易不能够被提交，那么必须从输入分片中返回的结果中至少存在一个proof-of-rejection，一旦所有的输入分片都解锁并中断了，那么资产将会重新变成可用的</p>
+<p>We remark that funds are not automatically reclaimed and a client or other entity must initiate the unlock to abort process. Although this approach poses the risk that if a client crashes indefinitely his funds remain locked, it enables a simplified protocol with minimal logic that requires no direct shard-to-shard communication. A client who crashes indefinitely is equivalent to a client who loses his private key, which prevents him from spending the corresponding UTXOs. Furthermore, any entity in the system, for example a validator in exchange for a fee, can fill in for the client to create an unlock transaction, as all necessary information is gossiped.</p>
+<p>我们评论，资金<strong>不会被自动回收</strong>，客户端或其他实体必须启动解锁中止过程。虽然这种方法存在一种风险，就是如果客户端无限崩溃了，他的资金就被锁住了，但是它实现了不需要分片之间直接通信的具有最少逻辑的简化协议。<strong>客户端循环崩溃和客户端丢失它的私钥是一样的，会阻止他花费相关的UTXO。</strong>而且，系统中的任何实体，比如一个验证者，可以为客户端填写一个解锁交易，因为所有的信息都是经过gossip广播过的。<strong>（这里其实没有说明为什么可以，不过可以意会一下，这里的崩溃造成的结果是客户端不能够通过gossip协议来广播unlock-to-abort的交易，但是大家都知道这块是需要被解锁的，所以就代其进行如此操作，因为整个系统中的消息都是通过广播传递的）</strong></p>
+<p>To ensure better robustness, we can also assign the shard of the smallest-valued input UTXO to be a coordinator responsible for driving the process of creating unlock transactions. Because a shard’s leader might be malicious, f + 1 validators of the shard need to send the unlock transaction to guarantee that all transactions are eventually unlocked.</p>
+<p>为了保证更好的鲁棒性，我们可以把拥有<strong>最小输入价值的UTXO指定为一个协调器</strong>（coordinator），负责驱动创建解锁交易的执行。因为一个分片leader有可能是恶意的，<code>f+1</code>个分片中的验证者需要发送解锁交易来保证所有交易最终被解锁。 </p>
+<p>Size of Unlock Transactions: In Atomix, the unlock transactions are larger than regular transactions as appropriate proofs for input UTXOs need to be included. OmniLedger relies on ByzCoinX (a novel BFT-consensus described in Section V-A) for processing transactions within each shard. When the shard’s validators reach an agreement on a block that contains committed transactions, they produce a collective signature whose size is independent of the number of validators. This important feature enables us to keep Atomix proofs (and consequently the unlock transactions) short, even though the validity of each transaction is checked against the signed blocks of all input UTXOs. If ByzCoinX did not use collective signatures, the size of unlock transactions would be impractical. For example, for a shard of 100 validators a collective signature would only be 77 bytes, whereas a regular signature would be 9KB, almost two order’s of magnitude larger than the size of a simple transaction (500 bytes).</p>
+<p>用于解锁的交易的大小：在atomix中，解锁交易通常比普通的交易更大，由于不仅需要包含每个输入UTXO，并且还需需要包含每个UTXO相应的证明。OmniLedger<strong>依赖<code>ByzCoinX</code>来处理每个分片内的交易</strong>。当分片的验证者对包含已提交交易的区块达成一致时，他们产生一个集体签名，该签名的大小与验证者的数量无关。这个重要的特性可以使我们保持<code>Atomix证明</code>足够短，即使每个交易的合法性都是通过所有输入UTXO的签名区块被检查。如果ByzCoinX不使用集体签名，解锁交易的大小是不切实际的。比如，具有100个验证的分片一个集体签名只有77字节，而正常签名则有98KB，比一个简单交易大小大两个数量级。</p>
+<h2 id="5-关于性能的设计"><a href="#5-关于性能的设计" class="headerlink" title="5. 关于性能的设计"></a>5. 关于性能的设计</h2><p>In this section, we introduce the performance sub-protocols of OmniLedger. First, we describe a scalable BFT-consensus called ByzCoinX that is more robust and more parallelizable than ByzCoin. Then, we introduce state-blocks that enable fast bootstrapping and decrease storage-costs. Finally, we propose an optional trust-but-verify validation step to provide real-time latency for low-risk transactions</p>
+<p>在这一部分中，我们引入了omniledger中与性能相关的子协议，首先，我们将一个可扩展的BFT协议称为byzcoinx，它比byzcoin具有更强的鲁棒性和并行性。此时我们介绍state-block，它是用来保证验证者在切换分片后高速重启和降低存储开销的一个协议。最终，我们提出一个可选择的trust-but-verify验证步骤来对低风险的交易提供实时延迟。</p>
+<h3 id="5-1-拜占庭容错"><a href="#5-1-拜占庭容错" class="headerlink" title="5.1 拜占庭容错"></a>5.1 拜占庭容错</h3><p>The original ByzCoin design offers good scalability, partially due to the usage of a tree communication pattern. Maintaining such communication trees over long time periods can be difficult, as they are quite susceptible to faults. In the event of a failure, ByzCoin falls back on a more robust all-toall communication pattern, similarly to PBFT. Consequently, the consensus’s performance deteriorates significantly, which the adversary can exploit to hinder the system’s performance.</p>
+<p>原来的byzcoin提供了很好地可扩展性，部分原因是因为使用了<strong>组播树通信模式</strong>，长时间维护这样的组播树是一件困难的事情，因为他们容易受到故障的影响。在失败的情况下，byzcoin将会退回到更加健壮的全方位（all-to-all）通信模式，类似于PBFT，因此共识的性能急剧恶化，攻击者可以利用这个特点来影响系统的性能。</p>
+<p>To achieve better fault tolerance in OmniLedger, without resorting to a PBFT-like all-to-all communication pattern, we introduce for ByzCoinX a new communication pattern that trades-off some of ByzCoin’s high scalability for robustness, by changing the message propagation mechanism within the consensus group to resemble a two-level tree. During the setup of OmniLedger in an epoch, the generated randomness is not only used to assign validators to shards but also to assign them evenly to groups within a shard. The number of groups g, from which the maximum group size can be derived by taking the shard size into account, is specified in the shard policy file. At the beginning of a ByzCoinX roundtrip, the protocol leader randomly selects one of the validators in each group to be the group leader responsible for managing communication between the protocol leader and the respective group members. If a group leader does not reply before a predefined timeout, the protocol leader randomly chooses another group member to replace the failed leader. As soon as the protocol leader receives more than 2 3 of the validators’ acceptances, he proceeds to the next phase of the protocol. If the protocol leader fails, all validators initiate a PBFT-like view-change procedure.</p>
+<p>为了在omniledger中达到更好的容错性能，又不采用PBFT那种（all-to-all）通信的模式，我们引入了一种新的通信模式叫做byzcoinx，它为了健壮性会牺牲一部分byzcoin的高性能，方法是将<strong>共识组内的消息传播机制改成类似于两级树的形式</strong>，在每一个epoch建立设置的时候，产生的随机数不仅用在将验证者到分片的分配，同时也将验证者分配给分片内的相应组。组的数量<code>g</code>，其中通过考虑保存在分片策略文件中的分片大小可以导出最大的组大小。在ByzCoinX的开始轮次中，leader从每个组中随机地选出一个验证者作为组领导者，其负责管理协议领导者与各小组成员之间的通信。如果组领导者在一个预设时间内没有回复，协议领导者重新随机选择一个组领导者来代替失效的那个。一旦协议领导者接收到超过2/3的验证者认可，他就马上进入协议的下一步。如果协议领导者失效，所有验证者发起一个类似PBFT的视图改变步骤。</p>
+<h3 id="5-2-并行区块提交"><a href="#5-2-并行区块提交" class="headerlink" title="5.2 并行区块提交"></a>5.2 并行区块提交</h3><p>We now show how ByzCoinX parallelizes block commitments in the UTXO model by carefully analyzing and handling dependencies between transactions.</p>
+<p>我们现在通过认真分析和处理交易之间的依赖性，来展示在UTXO模型中byzcoinx是如何进行并行区块提交的。</p>
+<p>We observe that transactions that do not conflict with each other can be committed in different blocks and consequently can be safely processed in parallel. To identify conflicting transactions, we need to analyze the dependencies that are possible between transactions. Let txA and txB denote two transactions. Then, there are two cases that need to be carefully handled: (1) both txA and txB try to spend the same UTXO and (2) an UTXO created at the output of txA is spent at the input of txB (or vice versa). To address (1) and maintain consistency, only one of the two tx can be committed. To address (2), txA has to be committed to the ledger before txB, i.e., txB has to be in a block that depends (transitively) on the block containing txA. All transactions that do not exhibit these two properties can be processed safely in parallel. In particular we remark that transactions that credit the same address do not produce a conflict, because they generate different UTXOs</p>
+<p>我们发现互相不冲突的区块可以被提交到不同的区块中并且可以被安全地并行处理。为了区分冲突的交易，我们需要分析两个交易之间可能存在的依赖。令txA和txB在两个交易之中，同时这两个交易具有依赖性，此时，有两种情况需要被特殊处理：</p>
+<ul>
+<li><strong>txA和txB在同一个UTXO中被花费</strong></li>
+<li><strong>一个UTXO是txA的输出，被txB作为输入花费（或者相反）</strong></li>
+</ul>
+<p>第一种问题的解决方法是：这两个tx只有一个可以被提交</p>
+<p>第二种问题的解决方法是：txA必须先于txB被提交到账本中，也就是说，txB所在的区块必须依赖txA的区块</p>
+<p>所有未被上述两种问题提及的交易都可以正常地被并行处理</p>
+<p>特别地，我们认为，相同地址的交易不会产生冲突，因为他们产生不同的UTXO。</p>
+<p>To capture the concurrent processing of blocks, we adopt a block-based directed acyclic graph (blockDAG) [33] as a data structure, where every block can have multiple parents. The ByzCoinX protocol leader enforces that each pending block includes only non-conflicting transactions and captures UTXO dependencies by adding the hashes of former blocks (i.e., backpointers) upon which a given block’s transactions depend. To decrease the number of such hashes, we remark that UTXO dependencies are transitive, enabling us to relax the requirement that blocks have to capture all UTXO dependencies directly. Instead, a given block can simply add backpointers to a set of blocks, transitively capturing all dependencies.</p>
+<p>为了获得正在处理的区块，我们接受一个基于区块的有向无环图（blockDAG）[<code>33</code>]作为数据结构，其中的每一个区块都有多个双亲节点。byzcoinx协议的leader<strong>强制每个挂起的区块必须是没有冲突的</strong>，并通过添加当前区块中交易所依赖的上个区块的hash来捕获UTXO依赖性。为减少这类hash的数量，我们注意到UTXO依赖性是可传递的，这使得我们可放宽必须直接捕获所有UTXO依赖性的要求。相反，<strong>特定的区块可以简单添加反向指针到一个区块集</strong>，<strong>可传递性的捕获所有依赖性</strong>。</p>
+<h3 id="5-3-分片账本剪枝"><a href="#5-3-分片账本剪枝" class="headerlink" title="5.3 分片账本剪枝"></a>5.3 分片账本剪枝</h3><p>Now we tackle the issues of an ever-growing ledger and the resulting costly bootstrapping of new validators; this is particularly urgent for high-throughput DL systems. For example, whereas Bitcoin’s blockchain grows by ≈ 144 MB per day and has a total size of about 133 GB, next-generation systems with Visa-level throughput (e.g., 4000 tx/sec and 500 B/tx) can easily produce over 150 GB per day.</p>
+<p>现在我们来解决不断增长的账本问题，以及由此导致的新验证者启动开销过大的问题，这对高性能的去中心化账本尤其紧急。比如，比特币区块链每天增长144MB，目前的总大小是133GB，而下一代VISA级高性能的账本(比如, 4000tx/sec和500B/tx)每天就可以产生超过150GB。</p>
+<p>To reduce the storage and bootstrapping costs for validators (whose shard assignments might change periodically), we introduce state blocks that are similar to stable checkpoints in PBFT [13] and that summarize the entire state of a shard’s ledger. To create a state block $sb_{j,e}$ for shard j in epoch e, the shard’s validators execute the following steps: At the end of e, the shard’s leader stores the UTXOs in an ordered Merkle tree and puts the Merkle tree’s root hash in the header of $sb_{j,e}$. Afterwards, the validators run consensus on the header of $sb_{j,e}$ (note that each validator can construct the same ordered Merkle tree for verification) and, if successful, the leader stores the approved header in the shard’s ledger making $sb_{j,e}$ the genesis block of epoch e + 1. Finally, the body of$sb_{j,e-1}$ (UTXOs) can be discarded safely. We keep the regular blocks of epoch e, however, until after the end of epoch e+1 for the purpose of creating transaction proofs.</p>
+<p>为了使那些经常重新分配分片的验证者减小存储和启动开销，我们引入状态区块<code>(state blocks)</code>，它和<code>PBFT[13]</code>中的固定检查点很类似，就是汇总分片账本的全部状态。</p>
+<p>为了在第e个epoch中为第j个分片创建状态区块$sb_{j,e}$，该分片的验证者执行以下步骤</p>
+<ul>
+<li>在第e个epoch结束的时候，分片的leader<strong>将本分片的所有UTXO保存到一个排序的默克尔树，并将树根哈希存入$sb_{j,e}$区块头部。</strong></li>
+<li>然后，区块在$sb_{j,e}$的区块头上运行一致性协议（注意，每一个验证者可以构造相同排序的merkle树）</li>
+<li>如果成功，leader将会<strong>把通过的区块头存进分片账本中，然后使$sb_{j,e}$成为第e+1个epoch的创世区块</strong></li>
+<li>最后，$sb_{j,e}$区块主体中的UTXO可以被安全的丢弃。为了创建交易证明，我们保留第<code>e</code>个epoch的正常区块，直到第<code>e+1</code>个epoch结束。</li>
+</ul>
+<p>As OmniLedger’s state is split across multiple shards and as we store only the state blocks’ headers in a shard’s ledger, a client cannot prove the existence of a past transaction to another party by presenting an inclusion proof to the block where the transaction was committed. We work around this by moving the responsibility of storing transactions’ proofs-of-existence to the clients of OmniLedger. During epoch e + 1 clients can generate proofs-of-existence for transactions validated in epoch e using the normal block of epoch e and the state block. <strong>Such a proof for a given transaction tx contains the Merkle tree inclusion proof to the regular block B that committed tx in epoch e and a sequence of block headers from the state block$sb_{j,e}$ at the end of the epoch to block B.</strong> To reduce the size of these proofs, state blocks can include several multi-hop backpointers to headers of intermediate (regular) blocks similarly to skipchains [37].</p>
+<p>因为OmniLedger的状态是拆分到多个分片的，并且我们<strong>在分片账本中仅保存状态区块的头部</strong>，客户端通过提交一个交易被提交的区块的包含证明<strong>不能向其它实体证明一个过去交易是被提交的</strong>。我们通过将用于证明交易存在的存储交易的责任转移给client，来解决这个问题。在第e+1个epoch中，客户端可以使用第<code>e</code>个epoch的常规区块和状态区块来生成第<code>e</code>个epoch已验证交易的存在证明。对于给定事务tx的此类证明包含：</p>
+<ul>
+<li>在第e个epoch中提交的tx的常规块B的Merkle树（这句话好绕啊。。。？？？）</li>
+<li>一个epoch结束时状态区块$sb_{j,e}$以及常规区块B</li>
+</ul>
+<p>为了减少这些证明，状态区块可以包含多个多跳反向指针指向类似<code>skipchains[37]</code>的中间常规区块的头部。</p>
+<blockquote>
+<p>[37] K. Nikitin, E. Kokoris-Kogias, P. Jovanovic, N. Gailly, L. Gasser, I. Khoffi, J. Cappos, and B. Ford. <code>CHAINIAC: Proactive SoftwareUpdate Transparency via Collectively Signed Skipchains and Verified Builds.</code> In 26th USENIX Security Symposium (USENIX Security 17), pages 1271–1287. USENIX Association, 2017.</p>
+</blockquote>
+<p>Finally, if we naively implement the creation of state blocks, it stalls the epoch’s start, hence the transaction processing until $sb_{j,e}$ has been appended to the ledger. To avoid this downtime, the consistent validators of the shard in epoch e + 1 include an empty state-block at the beginning of the epoch as a placeholder; and once $sb_{j,e}$ is ready they commit it as a regular block, pointing back to the place-holder and $sb_{j,e-1}$.</p>
+<p>最终，如果我们简单的实现了状态区块的创造，它会阻碍epoch的启动，因为直到$sb_{j,e}$被写进区块之后交易才会开始执行。为了避免这种停机时间，第e+1个epoch一开始包含了一个空的状态区块作为占位符，一旦$sb_{j,e}$准备好了，验证者就将其作为普通区块的提交，并且指向上一个占位符和$sb_{j,e-1}$</p>
+<h3 id="5-4-Trust-but-Verify验证"><a href="#5-4-Trust-but-Verify验证" class="headerlink" title="5.4 Trust-but-Verify验证"></a>5.4 Trust-but-Verify验证</h3><p>There exists an inherent trade-off between the number of shards (and consequently the size of a shard), throughput and latency, as illustrated in Figure 4. A higher number of smaller shards results in a better performance but provides less resiliency against a more powerful attacker (25%). Because the design of OmniLedger favors security over scalability, we pessimistically assume an adversary who controls 25% of the validators and, accordingly, choose large shards at the cost of higher latency but guarantee the finality of transactions. This assumption, however, might not appropriately reflect the priorities of clients with frequent, latency-sensitive but low-value transactions (e.g., checking out at a grocery store, buying gas or paying for coffee) and who would like to have transactions processed as quickly as possible.</p>
+<p>在分片数量、吞吐量和时延仍然存在一个平衡，如下图所示，具有大量的小分片将会使得性能变得很好但是对于更强大的攻击者（25%）提供了更低的弹性。因为omniledger的设计更加偏重于安全过于可扩展性，我们假设一个掌握25%节点的攻击者，选择较大的分片将会导致较高的时延，不过保证了最终的交易。这一假设其实是不能恰当地反映那些具有频繁使用、延迟敏感但低价值交易的客户的优先级（比如，杂货店支付，购买汽油或咖啡等），他们喜欢交易处理地越快越好。</p>
+<p><img src="/2019/11/15/blockchain/03/1573999093184.png" alt="1573999093184"></p>
+<p>In response to the clients’ needs, we augment the intrashard architecture (see Figure 4) by following a “trust but verify” model, where optimistic validators process transactions quickly, providing a provisional but unlikely-to-change commitment and core validators subsequently verify again the transactions to provide finality and ensure verifiability. Optimistic validators follow the usual procedures for deciding which transactions are committed in which order; but they form much smaller groups, even as small as one validator per group. Consequently, they produce smaller blocks with real-time latencies but are potentially less secure as the adversary needs to control a (proportionally) smaller number of validators to subvert their operation. As a result, some bad transactions might be committed, but ultimately core validators verify all provisional commitments, detecting any inconsistencies and their culprits, which makes it possible to punish rogue validators and to compensate the defrauded customers for the damages. The trust-but-verify approach strikes a balance for processing small transactions in real-time, as validators are unlikely to misbehave for small amounts of money.</p>
+<p>为了满足客户的需求，我们增加一种分片内架构（如图4所示），通过遵循“trust-but-verify”模型，使乐观的验证者更快地处理交易，提供<strong>临时但不太可能改变的交易提交</strong>，然后核心的验证者随后再次核实交易以提供最终结果并确保可验证性。乐观验证者按照常规的步骤来决定<strong>哪些交易按哪种顺序提交</strong>，但是他们会组成更小的分组，甚至可能一个验证者一个组。因此他们实时地生成更小的区块，但是可能很不安全，因为攻击可能会按比例控制较小数量的验证者来破坏交易。结果是，一些不好的交易将会被提交，但是最终核心验证者验证所有提交的交易，检测任何不一致和他们的罪魁祸首，然后惩罚恶意验证者，并赔偿被欺诈的客户的损害。这种“trust-but-verify”的方法在实时处理小额交易时取得平衡，<strong>因为验证者不会因为少量的钱进行作恶</strong>。</p>
+<p>At the beginning of an epoch e, all validators assign themselves to shards by using the per-epoch randomness, and then bootstrap their states from the respective shard’s last state block. Then, OmniLedger assigns each validator randomly to one of multiple optimistic processing groups or a single core processing group. The shard-policy file specifies the number of optimistic and core validators, as well as the number of optimistic groups. Finally, in order to guarantee that any misbehavior will be contained inside the shard, it can also define the maximum amount of optimistic validated transactions to be equal to the stake or revenue of the validators.</p>
+<p>在第e个epoch开始的时候，所有的验证者通过每一轮的随机数将自己分配到分片中，然后从对应分片的上一个状态区块开始启动他们的状态。omniledger将每一个验证者随机分配到众多乐观处理的group中或单个核心处理group中。分片策略文件制定了乐观和核心验证者的数量，最后，为了保证所有的不正当行为都被包含在分片内，策略文件还定义了<strong>最大的乐观验证交易的数额必须等于验证者的押金或收入</strong>。</p>
+<p>Transactions are first processed by an optimistic group that produces optimistically validated blocks. These blocks serve as input for re-validation by core validators who run concurrently and combine inputs from multiple optimistic processing groups, thus maximizing the system’s throughput (Figure 4). Valid transactions are included in a finalized block that is added to the shard’s ledger and are finally included in the state block. However, when core validators detect an inconsistency, then the respective optimistically validated transaction is excluded and the validators who signed the invalid block are identified and held accountable, e.g., by withholding any rewards or by excluding them from the system. We remark that the exact details of such punishments depend on the incentive scheme that are out of scope of this paper. Given a minimal incentive to misbehave and the quantifiable confidence in the security of optimistic validation (Figure 5), clients can choose, depending on their needs, to take advantage of realtime processing with an optimistic assurance of finality or to wait to have their transaction finalized.</p>
+<p>先被乐观group处理的交易会生成乐观验证区块。这些区块会作为核心验证者的输入进行重新验证， 核心验证者会并行运行，并将乐观group处理后的输入区块进行重新组合以显示最大化系统吞吐量。合法的交易会被打包进行最终区块，然后加入账本并最终被包含进行状态区块。然而，当核心验证者检测到不一致性，那么对应乐观验证的交易就会被排除，对非法区块签名的验证者会被识别并追究其责任，通过<strong>扣留任何奖励或将其排除在外</strong>。我们认为具体的惩罚细节依赖于经济激励方案，不在本文范围内。给予行为不端的最小激励以及对乐观验证安全性的可量化信任（<code>参考图5</code>），客户可以根据需要选择利用实时处理和乐观的最终保证，或等待交易最终确定。</p>
+<p><img src="/2019/11/15/blockchain/03/1573999925817.png" alt="1573999925817"></p>
+<h2 id="6-安全性分析"><a href="#6-安全性分析" class="headerlink" title="6. 安全性分析"></a>6. 安全性分析</h2><h3 id="6-1-随机数生成"><a href="#6-1-随机数生成" class="headerlink" title="6.1 随机数生成"></a>6.1 随机数生成</h3><p>RandHound assumes an honest leader who is responsible for coordinating the protocol run and for making the produced randomness available to others. In OmniLedger, however, we cannot always guarantee that an honest leader will be selected. Although a dishonest leader cannot affect the unbiasability of the random output, he can choose to withhold the randomness if it is not to his liking, thus forcing the protocol to restart. We economically disincentivize such behavior and bound the bias by the randomized leader-election process.</p>
+<p>randhound假设忠诚的leader负责运行协议并为其他人产生随机数。在omniledger中，我们不能总是保证选择的leader是忠诚的。尽管一个不忠诚的节点不能够影响随机输出的无偏性，当他不喜欢生成的随机数时，他可以选择将这个随机数隐藏，因此这样就导致了协议的重启。我们从经济上抑制了这种行为，并通过随机的leader选举过程限制了bias（翻译为偏见比较合理）。</p>
+<p>The leader-election process is unpredictable as the adversary is bound by the usual cryptographic hardness assumptions and is unaware of (a) the private keys of the honest validators and (b) the input string x to the VRF function. Also, OmniLedger’s membership is unpredictable at the moment of private key selection and private keys are bound to identities. As a result, the adversary has at most m = 1/4 chance per round to control the elected leader as he controls at most 25% of all nodes. Each time an adversary-controlled leader is elected and runs RandHound the adversary can choose to accept the random output, and the sharding assignment produced by it, or to forfeit it and try again in hopes of a more favorable yet still random assignment. Consequently, the probability that an adversary controls n consecutive leaders is upper-bounded by $P [X ≥ n] = \frac{1}{4n} &lt; 10^{−λ}$. For λ = 6, the adversary will control at most 10 consecutive RandHound runs. This is an upper bound, as we do not include the exclusion of the previous leader from the consecutive elections.</p>
+<p>leader选举的过程是不可预测的，因为对手被通常的密码学难度假设限制，并且对手不知道（a）诚实验证者的私钥和（b）VRF函数的输入字符串x。同时，omniledger的成员身份也是不可预测的，并且私钥绑定身份。结果是，对手每轮最多有1/4的机会成为选举的leader。每次对手控制的leader被选择并且运行randhound，对手可以选择接受这个随机输出，然后分片就会由这个随机数产生，或者放弃它，然后再试一次，以期获得更有利但仍是随机的分配。因此，对手连续n次成为leader的概率为：$P [X ≥ n] = \frac{1}{4n} &lt; 10^{−λ}$，假设lambda=6，对手将会最多连续10次控制randhound的运行。这是一个上限，因为我们不包括将前任领导人排除在连续选举之外。</p>
+<h3 id="6-2-分片大小安全"><a href="#6-2-分片大小安全" class="headerlink" title="6.2 分片大小安全"></a>6.2 分片大小安全</h3><p>We previously made the assumption that each shard is collectively honest. This assumption holds as long as each shard has less than$c = \lfloor \frac{n}{3} \rfloor$malicious validators, because ByzCoinX requires $n = 3f + 1$ to provide BFT consensus.</p>
+<p>我们前面做出的假设是每一个分片都是集体忠诚的，这个假设说的是只要每一个分片少于$c = \lfloor \frac{n}{3} \rfloor$个恶意节点，因为byzcoinx要求$n = 3f + 1$以达成BFT协议</p>
+<p>The security of OmniLedger’s validator assignment mechanism is modeled as a random sampling problem with two possible outcomes (honest or malicious). Assuming an infinite pool of potential validators, we can use the binomial distribution (Eq. 1). We can assume random sampling due to RandHound’s unpredictability property that guarantees that each selection is completely random; this leads to the adversarial power of at most m = 0.25.</p>
+<p>omniledger的验证者选择机制的安全性是以两种输出（忠诚或恶意）随机采样问题来保证的，假设有一个无限数量的验证者池，我们可以用二项分布来模拟，我们假设随机采样取决于randhound的不可预测性来保证每一个选择是完全随机地，这将会导致对手最多能够使得下面公式中的m=0.25</p>
+<p><img src="/2019/11/15/blockchain/03/1574043085171.png" alt="1574043085171"></p>
+<p>To calculate the failure rate of one shard, i.e., the probability that a shard is controlled by an adversary, we use the cumulative distributions over the shard size n, where X is the random variable that represents the number of times we pick a malicious node. Figure 5 (right) illustrates the proposed shard size, based on the power of the adversary. In a similar fashion we calculate the confidence a client can have that an optimistic validation group is honest (left).</p>
+<p>为了计算一个分片的失败率，也就是说一个分片被对手掌控，我们使用分片大小n上的累积分布来描述，其中X是代表我们选择恶意节点的次数的随机变量。图5（在5.4节中）描述了分片大小基于对手的能力，我们以类似的方式计算出客户对乐观验证组诚实的信心（左）。</p>
+<h3 id="6-3-Epoch-安全"><a href="#6-3-Epoch-安全" class="headerlink" title="6.3 Epoch 安全"></a>6.3 Epoch 安全</h3><p>In the last section, we modeled the security of a single shard as a random selection process that does, however, not correspond to the system’s failure probability within on epoch. Instead, the total failure rate can be approximated by the union bound over the failure rates of individual shards.</p>
+<p>在上一个部分中，我们为单个分片设计了一个安全性模型，也就是一个随机选择过程，但是并不是针对一个epoch中系统的失败率而设计的，相反，总失败率可以通过联合对各个分片的失败率进行估计。</p>
+<p>We argue that, given an adequately large shard size, the epoch-failure probability is negligible. We can calculate an upper bound on the total-failure probability by permitting the adversary to run RandHound multiple times and select the output he prefers. This is a stronger assumption than what RandHound permits, as the adversary cannot go back to a previously computed output if he chose to re-run RandHound. An upper bound of the epoch failure event $X_E$ is given by </p>
+<p><img src="/2019/11/15/blockchain/03/1574043275521.png" alt="1574043275521"></p>
+<p>where $l$ is the number of consecutive views the adversary controls,  $n$ is the number of shards and $P [X_S]$ is the failure probability of one shard as calculated in Section VI-B. For l → ∞, we get $P [X_E] ≤ \frac{4}{3}· n · P [X_S]$. More concretely, the failure probability, given a 12.5%-adversary and 16 shards, is $4 · 10^{-5}$ or one failure in 68.5 years for one-day epochs</p>
+<p>我们认为，给定的分片大小如果足够大的话，一个epoch的失败概率就可以忽略不计，我们可以计算一个总失败率的上界，这个失败指的是允许对手运行randhound多次并且选择他想要的输出。这是一个比randhound允许更强大的假设，对手如果重新运行randound，则他不能够退回到一个以前计算的结果，一个epoch内的失败事件$X_E$的概率如上面那个公式所示</p>
+<p>公式中的l表示的是连续被对手控制的次数和，n指的是分片的数量，$P [X_S]$指的是在6.2节中计算出来的一个分片的概率。从1到∞，我们得到$P [X_E] ≤ \frac{4}{3}· n · P [X_S]$，更具体地讲，在12.5％的对手和16个分片的情况下，故障概率为$4 · 10^{-5}$，或者说以一个epoch为1天的时间算，68.5年才会发生一次故障</p>
+<h3 id="6-4-组通信"><a href="#6-4-组通信" class="headerlink" title="6.4 组通信"></a>6.4 组通信</h3><p>We now show that OmniLedger’s group-communication pattern has a high probability of convergence under faults. We assume that there are N nodes that are split in $\sqrt{N}$ groups of $\sqrt{N}$ nodes each.  </p>
+<p>我们现在展示omniledger的组播树通信机制在故障下具有很高的收敛可能性。我们假设有N个节点，分成$\sqrt{N}$个分组，每个分组中有$\sqrt{N}$个节点</p>
+<p>1) Setting the Time-Outs: In order to ensure that the shard leader will have enough time to find honest group leaders, we need to setup the view-change time-outs accordingly. OmniLedger achieves this by having two time-outs. The first    timeout $T_1$ is used by the shard leader to retry the request to non-responsive group members. The second timeout $T_2$ is used by the group members to identify a potential failure of a shard leader and to initiate a view-change [13]. To ensure that the shard leader has enough time to retry his requests, we have a fixed ratio of $T_1 = 0.1T_2$ . However, if the $T_2$ is triggered, then in the new view $T_2$ doubles (as is typical [13]) in order to contemplate for increase in the network’s asynchrony, hence $T_1$ should double to respect the ratio.</p>
+<p>第一，设置超时时间：为了保证分片leader有足够的时间来找到忠诚的group leader，我们需要设置视图切换的超时时间。omniledger通过两个超时时间来达成这一目标。第一个超时时间$T_1$被分片leader使用，以向无响应的组成员重试该请求。第二个超时时间$T_2$被组成员使用，用来识别leader潜在的失败并发起视图切换[<code>13</code>]。为了保证分片leader有足够的时间来重试它的请求，我们设置一个固定的时间比例为：$T_1 = 0.1T_2$，然而，如果$T_2$ 被触发，那么在新的视图中$T_2$ 将会被加倍。考虑增加网络的异步性，因此$ T_1 $应该加倍以遵守该比率。</p>
+<p>2) Reaching Consensus: We calculate the probability for a group size N = 600 where $\sqrt{N}$ = 25: Given a population of 600 nodes and a sampling size of 25, we use the hypergeometric distribution for our calculation which yields a probability of 99.93% that a given group will have less than 25 - 10 = 15 malicious nodes. A union bound over 25 groups yields a probability of 98.25% that no group will have more than 15 malicious nodes. In the worst case, where there are exactly 1/3 malicious nodes in total, we need all of the honest validators to reply. For a group that contains exactly 15 malicious nodes, the shard’s leader will find an honest group leader (for ByzCoinX) after 10 tries with a probability of $1 - ((15/24)^{10}) = 98.6%$. As a result, the total probability of failure is 1 - 0.986 ∗ 0.9825 = 0.031.</p>
+<p>第二，达成共识：我们使用N=600来计算概率，这时的$\sqrt{N}$ = 25。我们使用超几何分布来进行计算得出给定组的少于25-10 = 15个恶意节点的概率为99.93％。绑定到25个组的联合会产生98.25％的概率，即没有一个组具有超过15个恶意节点。在最坏的情况下，有1/3的恶意节点，我们需要让所有的忠诚节点回复。对于一个包含了15个恶意节点的组来说，分片的leader随后需要通过10次尝试来找到所有的忠诚节点。因此总的失败概率为1 - 0.986 ∗ 0.9825 = 0.031.</p>
+<p>这部分概率计算的步骤没太懂。。。</p>
+<p>We remark that this failure does not constitute a compromise of security of OmniLedger. Rather, it represents the probability of a failure for the shard leader who is in charge of coordinating the shard’s operation. If a shard leader indeed fails, then a new shard leader will be elected having 97% probability of successfully reaching consensus.</p>
+<p>我们认为此失败并不构成OmniLedger安全性的折衷（compromise）？相反的，它表示了用于协调分片操作的分片leader失败的概率。如果一个分片leader失败了，这时一个新的leader将会被选择，有97%的概率能够达成共识。</p>
+<h2 id="9-近期工作"><a href="#9-近期工作" class="headerlink" title="9. 近期工作"></a>9. 近期工作</h2><p>The growing interests in scaling blockchains have produced a number of prominent systems that we compare in Table IV. ByzCoin [32] is a first step to scalable BFT consensus, but cannot scale-out. Elastico is the first open scale-out DL, however, it suffers from performance and security challenges that we have already discussed in Section II. RSCoin [16] proposes sharding as a scalable approach for centrally banked cryptocurrencies. RSCoin relies on a trusted source of randomness for sharding and auditing, making its usage problematic in trustless settings. Furthermore, to validate transactions, each shard has to coordinate with the client and instead of running BFT, RSCoin uses a simple two-phase commit, assuming that safety is preserved if the majority of validators is honest. This approach, however, does not protect from double spending attempts by a malicious client colluding with a validator.</p>
+<p>对扩展区块链的兴趣日益浓厚，已经产生了许多杰出的系统，我们在表IV中进行了比较。 </p>
+<ul>
+<li>ByzCoin [<code>32</code>]是实现可扩展BFT共识的第一步，但无法向外扩展。 </li>
+<li>Elastico[<code>34</code>]是第一个开放式横向扩展DL，但是它遭受了我们在第二部分中已经讨论过的性能和安全性挑战。 </li>
+<li>RSCoin [<code>16</code>]提出将分片作为可扩展方法用于中央银行的加密货币。 RSCoin依靠可靠的随机性来进行分片和审核，从而使其在无信任设置中的使用成为问题。 此外，为了验证交易，每个分片必须与客户端协调，而不是运行BFT，RSCoin使用简单的两阶段提交，假设如果大多数验证者是诚实的，则可以确保安全性。 但是，这种方法不能防止恶意客户端与验证程序勾结而造成的双重支出尝试。</li>
+</ul>
+<p><img src="/2019/11/15/blockchain/03/1574045467799.png" alt="1574045467799"></p>
+<p>In short, prior solutions [16], [32], [34] achieve only two out of the three desired properties; decentralization, long-term security, and scale-out, as illustrated in Figure 1. OmniLedger overcomes this issue by scaling out, as far as throughput is concerned, and by maintaining consistency to the level required for safety, without imposing a total order.</p>
+<p>简而言之，现有解决方案[16]，[32]，[34]仅实现了三个所需特性中的两个； 去中心化，长期安全性和额扩展性，如图1所示。OmniLedger通过横向扩展（就吞吐量而言）并保持一致性至安全要求的水平（而不强加全局排序total order）来解决此问题。</p>
+<blockquote>
+<p>[16]G. Danezis and S. Meiklejohn. <code>Centrally Banked Cryptocurrencies.</code> 23rd Annual Network &amp; Distributed System Security Symposium (NDSS), Feb. 2016.</p>
+<p>[32] E. Kokoris-Kogias, P. Jovanovic, N. Gailly, I. Khoffi, L. Gasser, and B. Ford. <code>Enhancing Bitcoin Security and Performance with Strong Consistency via Collective Signing.</code> In Proceedings of the 25th USENIX Conference on Security Symposium, 2016.</p>
+<p>[34] L. Luu, V. Narayanan, C. Zheng, K. Baweja, S. Gilbert, and P. Saxena. <code>A Secure Sharding Protocol For Open Blockchains.</code> In Proceedings of the 2016 ACM SIGSAC Conference on Computer and Communications Security, CCS ’16, pages 17–30, New York, NY, USA, 2016. ACM.</p>
+</blockquote>
+<p>Bitcoin-NG scales Bitcoin without changing the consensus algorithm by observing that the PoW process does not have to be the same as the transaction validation process; this results in two separate timelines: one slow for PoW and one fast for transaction validation. Although Bitcoin-NG significantly increases the throughput of Bitcoin, it is still susceptible to the same attacks as Bitcoin [24], [3].</p>
+<p>通过观察PoW流程不必与交易验证流程相同，Bitcoin-NG可以在不更改共识算法的情况下扩展比特币。 这导致了两个单独的时间轴：一个是PoW速度较慢，另一个是事务验证快速。 尽管Bitcoin-NG大大提高了比特币的吞吐量，但它仍然容易受到与比特币相同的攻击[24]，[3]。</p>
+<blockquote>
+<p>[24] A. Gervais, H. Ritzdorf, G. O. Karame, and S. Capkun. <code>Tampering with the Delivery of Blocks and Transactions in Bitcoin.</code> In 22nd ACM SIGSAC Conference on Computer and Communications Security, pages 692–705. ACM, 2015.</p>
+<p>[3] M. Apostolaki, A. Zohar, and L. Vanbever. <code>Hijacking Bitcoin: Largescale Network Attacks on Cryptocurrencies.</code> 38th IEEE Symposium on Security and Privacy, May 2017.</p>
+</blockquote>
+<p>Other efforts to scale blockchains include: Tendermint [9], a protocol similar to PBFT for shard-level consensus that does not scale due to its similarities to PBFT, and the Lightning Network [40], an off-chain payment protocol for Bitcoin (also compatible to OmniLedger); it limits the amount of information committed to the blockchain.</p>
+<p>扩展区块链的其他努力包括：Tendermint [9]，类似于PBFT的分片级别共识协议，由于与PBFT的相似而无法扩展，以及Lightning Network [40]，比特币的链下支付协议（ 还与OmniLedger兼容）； 它限制了提交给区块链的信息量。</p>
+<blockquote>
+<p>[9]  E. Buchman. <code>Tendermint: Byzantine Fault Tolerance in the Age of Blockchains</code>, 2016. </p>
+<p>[40]  J. Poon and T. Dryja. <code>The Bitcoin Lightning Network: Scalable OffChain Instant Payments,</code> Jan. 2016. </p>
+</blockquote>
+<p>Chainspace [2], enhances RSCoin with a more general smart-contract capability. Chainspace also recognizes the need for cross-shard atomic commit but devises a rather complicated algorithm because it chooses to have the shards run the protocol without the use of a client, which increases the cross-shard communication. Our approach is synergistic to Chainspace, as we focus on an open scalable UTXO style DL, whereas Chainspace focuses on sharded smart-contracts and small-scale shards that can be deployed only under weak adversaries. However, combining OmniLedger and Chainspace has great potential to create an open, scalable smart-contract platform that provides scalability and security under strong adversaries.</p>
+<p>Chainspace [2]通过更通用的智能合约功能增强了RSCoin。 Chainspace还认识到需要进行跨分片的原子提交，但是设计了一种相当复杂的算法，因为它选择让分片在不使用客户端的情况下运行协议，从而增加了跨分片的通信。 我们的方法与Chainspace协同工作，因为我们专注于开放的可扩展UTXO样式DL，而Chainspace则专注于只能在弱对手下部署的分片智能合约和小规模分片。 但是，将OmniLedger和Chainspace结合使用具有巨大的潜力，可以创建一个开放的，可伸缩的智能合约平台，该平台可以在强大的对手下提供可伸缩性和安全性。</p>
+<blockquote>
+<p>[2] M. Al-Bassam, A. Sonnino, S. Bano, D. Hrycyszyn, and G. Danezis.<br><code>Chainspace: A Sharded Smart Contracts Platform.</code> arXiv preprint arXiv:1708.03778, 2017.</p>
+</blockquote>
+<h2 id="10-不足与展望"><a href="#10-不足与展望" class="headerlink" title="10. 不足与展望"></a>10. 不足与展望</h2><p>OmniLedger is still a proof of concept and has limitations that we want to address in future work. First, even if the epoch bootstrap does not interfere with the normal operation, its cost (in the order of minutes) is significant. We leave to future work the use of advanced cryptography, such as BLS [6] for performance improvements. Additionally, the actual throughput is dependent on the workload (see Appendix C). If all transactions touch all the shards before committing, then the system is better off with only one shard. We leave to future work the exploration of alternative ways of sharding, e.g.using locality measures. Furthermore, we rely on the fact that honest validators will detect that transactions are unfairly censored and change the leader in the case of censorship. But, further anti-censorship guarantees are needed. We provide a protocol sketch in Appendix A and leave to future work its implementation and further combination with secret sharing techniques for providing stronger guarantees. Another shortcoming of OmniLedger is that it does not formally reason around incentives of participants and focus on the usual honest or malicious devide, which can be proven unrealistic in anonymous open cryptocurrencies. Finally, the system is not suitable for highly adaptive adversaries, as the bootstrap time of an epoch is substantial and scales only moderately, thus leading to the need for day-long epochs.  </p>
+<p>OmniLedger仍然是概念的证明，并且存在我们在将来的工作中要解决的局限性。首先，即使每个epoch启动时不干扰正常操作，其成本（以分钟为单位）也很大。我们将未来的工作留给高级加密技术使用，例如BLS [6]来提高性能。此外，实际吞吐量取决于工作负载（请参阅附录C）。如果在提交之前所有事务与所有的分片都相关，那么系统最好只使用一个分片。我们将留待以后的工作来探索其他分片方式，例如使用本地化措施。此外，我们依靠这样一个事实，即诚实的验证者将检测到交易受到不公正的审查，并在审查制度下改变领导者。但是，需要进一步的反审查保证。我们在附录A中提供了协议草图，并留作以后的工作，并与秘密共享技术进一步结合以提供更强大的保证。 OmniLedger的另一个缺点是，它没有正式地围绕参与者的动机进行推理，而是专注于通常的诚实或恶意行为，这在匿名开放式加密货币中被证明是不现实的。最后，该系统不适用于高度适应性的对手，因为一个时期的引导时间很长，而且缩放比例适中，因此一个epoch的需要一整天的时间。</p>
+<h2 id="11-总结"><a href="#11-总结" class="headerlink" title="11. 总结"></a>11. 总结</h2><p>OmniLedger is the first DL that securely scales-out to offer a Visa-level throughput and a latency of seconds while preserving full decentralization and protecting against a Byzantine adversary. OmniLedger achieves this through a novel approach consisting of three steps. First, OmniLedger is designed with concurrency in mind; both the full system (through sharding) and each shard separately (through ByzCoinX) validate transactions in parallel, maximizing the resource utilization while preserving safety. Second, OmniLedger enables any user to transact safely with any other user, regardless of the shard they use, by deploying Atomix, an algorithm for cross-shard transactions as well as real-time validation with the introduction of a trust-but-verify approach. Finally, OmniLedger enables validators to securely and efficiently switch between shards, without being bound to a single anti-Sybil attack method and without stalling between reconfiguration events.</p>
+<p>OmniLedger是第一个安全扩展的DL，可提供Visa级的吞吐量和几秒钟的等待时间，同时保留完全的权力下放并抵御拜占庭的对手。 OmniLedger通过包含三个步骤的新颖方法来实现这一目标。 首先，OmniLedger在设计时考虑了并发性。 整个系统（通过分片）和每个分片（通过ByzCoinX）都可以并行验证事务，从而在确保安全的同时最大程度地利用资源。 其次，OmniLedger通过部署Atomix（一种跨分片事务处理算法以及引入了trust-but-verify方法的实时验证），使任何用户都能与任何其他用户安全地进行交易，而不论他们使用的是何种碎片。 。 最终，OmniLedger使验证程序能够在碎片之间安全有效地切换，而不必局限于单一的反Sybil攻击方法，也不会在重新配置事件之间停滞。</p>
+
+      
+       
+    </div>
+</article>
+
+
+
+
+
+
+
+    
+        <!-- MathJax配置，可通过单美元符号书写行内公式等 -->
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+    "HTML-CSS": {
+        preferredFont: "TeX",
+        availableFonts: ["STIX","TeX"],
+        linebreaks: { automatic:true },
+        EqnChunk: (MathJax.Hub.Browser.isMobile ? 10 : 50)
+    },
+    tex2jax: {
+        inlineMath: [ ["$", "$"], ["\\(","\\)"] ],
+        processEscapes: true,
+        ignoreClass: "tex2jax_ignore|dno",
+        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+    },
+    TeX: {
+        equationNumbers: { autoNumber: "AMS" },
+        noUndefined: { attributes: { mathcolor: "red", mathbackground: "#FFEEEE", mathsize: "90%" } },
+        Macros: { href: "{}" }
+    },
+    messageStyle: "none"
+    });
+</script>
+<!-- 给MathJax元素添加has-jax class -->
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax(), i;
+        for(i=0; i < all.length; i += 1) {
+            all[i].SourceElement().parentNode.className += ' has-jax';
+        }
+    });
+</script>
+<!-- 通过连接CDN加载MathJax的js代码 -->
+<script type="text/javascript" async
+        src="//cdn.bootcss.com/mathjax/2.7.2/MathJax.js?config=TeX-MML-AM_CHTML">
+</script>
+<input type="hidden" id="MathJax-js"
+        value="//cdn.bootcss.com/mathjax/2.7.2/MathJax.js?config=TeX-MML-AM_CHTML">
+</input>
+    
+
+
+
+
+    </div>
+    <div class="copyright">
+        <p class="footer-entry">©2019-2020 POWDER SNOW</p>
+
+    </div>
+    <div class="full-toc">
+        <button class="full"><span class="min "></span></button>
+<button class="post-toc-menu"><span class="post-toc-menu-icons"></span></button>
+<div class="post-toc"><span class="post-toc-title">目录</span>
+    <div class="post-toc-content">
+
+    </div>
+</div>
+<a class="" id="rocket" ></a>
+
+    </div>
+</div>
+<div class="acParent"></div>
+
+</body>
+<script src="/js/jquery.pjax.js?v=1.0.1" ></script>
+
+<script src="/js/script.js?v=1.0.1" ></script>
+<script>
+    var img_resize = 'default';
+    /*作者、标签的自动补全*/
+    $(function () {
+        $('.search').AutoComplete({
+            'data': ['#HTTP','#protobuf','#MySQL SQL','#Spring','#java','#QT','#区块链','#分布式','#大数据','#前端','#MyBatis','#SpringBoot','#网络编程','#Redis','#多线程','#数据库',],
+            'itemHeight': 20,
+            'width': 418
+        }).AutoComplete('show');
+    })
+    function initArticle() {
+        /*渲染对应的表格样式*/
+        
+            $(".post .pjax table").addClass("green_title");
+        
+
+        /*渲染打赏样式*/
+        
+
+        /*高亮代码块行号*/
+        
+
+        /*访问数量*/
+        
+
+        /*代码高亮，行号对齐*/
+        $('.pre-numbering').css('line-height',$('.has-numbering').css('line-height'));
+
+        
+        
+    }
+
+    /*打赏页面隐藏与展示*/
+    
+
+</script>
+
+<!--加入行号的高亮代码块样式-->
+
+<!--自定义样式设置-->
+<style>
+    
+    
+    .nav {
+        width: 544px;
+    }
+    .nav.fullscreen {
+        margin-left: -544px;
+    }
+    .nav-left {
+        width: 122px;
+    }
+    
+    
+    @media screen and (max-width: 1468px) {
+        .nav {
+            width: 492px;
+        }
+        .nav.fullscreen {
+            margin-left: -492px;
+        }
+        .nav-left {
+            width: 100px;
+        }
+    }
+    
+    
+    @media screen and (max-width: 1024px) {
+        .nav {
+            width: 492px;
+            margin-left: -492px
+        }
+        .nav.fullscreen {
+            margin-left: 0;
+        }
+        .nav .hide-list.fullscreen {
+            left: 492px
+        }
+    }
+    
+    @media screen and (max-width: 426px) {
+        .nav {
+            width: 100%;
+        }
+        .nav-left {
+            width: 100%;
+        }
+    }
+    
+    
+    .nav-right .title-list nav a .post-title, .nav-right .title-list #local-search-result a .post-title {
+        color: #383636;
+    }
+    
+    
+    .nav-right .title-list nav a .post-date, .nav-right .title-list #local-search-result a .post-date {
+        color: #5e5e5f;
+    }
+    
+    
+    .nav-right nav a.hover, #local-search-result a.hover{
+        background-color: #fbf4a8;
+    }
+    
+    
+
+    /*列表样式*/
+    
+    .post .pjax article .article-entry>ol, .post .pjax article .article-entry>ul, .post .pjax article>ol, .post .pjax article>ul{
+        border: #e2dede solid 1px;
+        border-radius: 10px;
+        padding: 10px 32px 10px 56px;
+    }
+    .post .pjax article .article-entry li>ol, .post .pjax article .article-entry li>ul,.post .pjax article li>ol, .post .pjax article li>ul{
+        padding-top: 5px;
+        padding-bottom: 5px;
+    }
+    .post .pjax article .article-entry>ol>li, .post .pjax article .article-entry>ul>li,.post .pjax article>ol>li, .post .pjax article>ul>li{
+        margin-bottom: auto;
+        margin-left: auto;
+    }
+    .post .pjax article .article-entry li>ol>li, .post .pjax article .article-entry li>ul>li,.post .pjax article li>ol>li, .post .pjax article li>ul>li{
+        margin-bottom: auto;
+        margin-left: auto;
+    }
+    
+
+    /* 背景图样式 */
+    
+    .post {
+        background: url(/img/bck.jpg);
+    }
+    
+    
+    .post.index {
+        background: url(/img/background.jpg);
+    }
+    
+
+
+    /*引用块样式*/
+    
+
+    /*文章列表背景图*/
+    
+    .nav-right:before {
+        content: ' ';
+        display: block;
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        opacity: 0.3;
+        background: url("/img/123.jpg");
+        background-repeat: no-repeat;
+        background-position: 50% 0;
+        -ms-background-size: cover;
+        -o-background-size: cover;
+        -moz-background-size: cover;
+        -webkit-background-size: cover;
+        background-size: cover;
+    }
+    
+
+    
+</style>
+
+
+
+
+
+
+
+</html>
